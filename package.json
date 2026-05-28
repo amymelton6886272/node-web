@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "dev:hmr": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "npm run build && node scripts/preview-with-api.mjs",
+    "preview:only": "vite preview --host 0.0.0.0",
+    "start": "npm run preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "playwright": "^1.60.0"
+  }
+}
