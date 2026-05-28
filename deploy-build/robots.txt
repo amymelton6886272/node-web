@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /#accounts
-Allow: /ads.txt
-
-Sitemap: https://web.wolffya.com/sitemap.xml
