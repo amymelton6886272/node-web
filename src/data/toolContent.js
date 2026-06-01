@@ -8,7 +8,7 @@ export const toolContent = {
         { heading: 'How to read the lowest-price badge', text: 'The lowest-price marker only reflects the lowest approximate CNY value among currently queried public prices. It is not a purchase recommendation. Original currency values remain visible for manual verification.' },
         { heading: 'When to use this tool', text: 'Use it to estimate price ranges, identify obvious regional differences, and confirm whether an App ID is listed in a storefront. For subscriptions and long-term services, also review IAP details and developer terms.' },
       ],
-      note: 'Do not treat the price page as only a search box. These explanations and related links help users understand context even before they run a query.',
+      //note: 'Do not treat the price page as only a search box. These explanations and related links help users understand context even before they run a query.',
       links: [{ href: '#iap', label: 'IAP Lookup' }, { href: '#guides', label: 'Pre-purchase checklist' }, { href: '#glossary', label: 'Price tier terms' }],
       linksLabel: 'Related reading'
     },
