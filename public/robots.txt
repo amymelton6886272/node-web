@@ -1,5 +1,9 @@
 User-agent: *
 Allow: /
 Allow: /ads.txt
+Disallow: /price?q=*
+Disallow: /appfree?q=*
+Disallow: /iap?q=*
+Disallow: /icon?q=*
 
 Sitemap: https://souk.eu.org/sitemap.xml
