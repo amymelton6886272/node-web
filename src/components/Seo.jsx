@@ -94,6 +94,7 @@ export function Head({ route }) {
     setMeta('description', meta.description);
     setMeta('og:title', meta.title, 'property');
     setMeta('og:description', meta.description, 'property');
+    setMeta('og:image', 'https://souk.eu.org/og-image.svg', 'property');
     setMeta('og:url', canonical, 'property');
     setMeta('twitter:title', meta.title);
     setMeta('twitter:description', meta.description);

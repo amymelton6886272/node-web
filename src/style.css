@@ -284,3 +284,42 @@ footer span{display:block;line-height:1.8}
 .breadcrumb a:hover{text-decoration:underline}
 .breadcrumbSep{color:var(--line);flex:0 0 auto}
 .breadcrumbCurrent{color:var(--muted);font-weight:500}
+
+/* Mobile touch target and UX improvements */
+@media(max-width:760px){
+  /* Larger touch targets (min 44px per Apple HIG) */
+  aside a{min-height:44px;padding:12px 10px}
+  .toplinks a{min-height:44px;display:flex;align-items:center}
+  .headerActions button{min-width:44px;min-height:44px}
+  .searchBtn{min-width:44px;min-height:44px}
+  .lang{min-height:44px;padding:8px 14px}
+  .breadcrumb{padding:12px 0}
+  .breadcrumb a{min-height:44px;display:inline-flex;align-items:center}
+  
+  /* Better sidebar on mobile - horizontal scroll */
+  aside{overflow-x:auto;overflow-y:hidden;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  aside::-webkit-scrollbar{display:none}
+  aside a{white-space:nowrap;flex:0 0 auto;min-width:90px}
+  
+  /* Cards touch feedback */
+  .card:active{transform:scale(0.98);transition:transform .1s}
+  .guideCard:active{transform:scale(0.98)}
+  .knowledgeArticle:active{transform:scale(0.99)}
+  
+  /* Checklist checkbox bigger touch area */
+  .checkItems button{width:32px;height:32px;min-width:32px;min-height:32px}
+  .riskQuestion>button{width:44px;height:44px;min-width:44px;min-height:44px}
+  
+  /* Search modal full screen on mobile */
+  .searchModal{width:calc(100vw - 24px);max-height:80vh}
+  .searchField{font-size:16px!important;padding:14px}
+  .searchItem{padding:16px 18px;min-height:56px}
+  
+  /* Hero padding reduction */
+  .hero{padding:24px 18px}
+  h1{font-size:30px}
+  
+  /* Footer padding */
+  footer{padding:20px 16px}
+  footer span{display:block;margin:4px 0}
+}

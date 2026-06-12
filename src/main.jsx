@@ -1,23 +1,24 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {lazy, Suspense, useEffect, useMemo, useState} from 'react';
 import { createRoot } from 'react-dom/client';
 import { Moon, Sun, Languages, Search } from 'lucide-react';
 import './style.css';
 import { LanguageProvider, useLang } from './LanguageContext.jsx';
 import { enabledFeatureIds, features } from './navigation.jsx';
-import Home from './pages/Home.jsx';
-import Accounts from './pages/Accounts.jsx';
-import Price from './pages/Price.jsx';
-import AppFree from './pages/AppFree.jsx';
-import IpCheck from './pages/IpCheck.jsx';
-import Iap from './pages/Iap.jsx';
-import IconSearch from './pages/IconSearch.jsx';
-import ProxyScripts from './pages/ProxyScripts.jsx';
-import AddressGenerator from './pages/AddressGenerator.jsx';
-import Guides from './pages/Guides.jsx';
-import Glossary from './pages/Glossary.jsx';
-import Checklists from './pages/Checklists.jsx';
-import AppRisk from './pages/AppRisk.jsx';
-import KnowledgeHub from './pages/KnowledgeHub.jsx';
+
+const Home = lazy(() => import('./pages/Home.jsx'));
+const Accounts = lazy(() => import('./pages/Accounts.jsx'));
+const Price = lazy(() => import('./pages/Price.jsx'));
+const AppFree = lazy(() => import('./pages/AppFree.jsx'));
+const IpCheck = lazy(() => import('./pages/IpCheck.jsx'));
+const Iap = lazy(() => import('./pages/Iap.jsx'));
+const IconSearch = lazy(() => import('./pages/IconSearch.jsx'));
+const ProxyScripts = lazy(() => import('./pages/ProxyScripts.jsx'));
+const AddressGenerator = lazy(() => import('./pages/AddressGenerator.jsx'));
+const Guides = lazy(() => import('./pages/Guides.jsx'));
+const Glossary = lazy(() => import('./pages/Glossary.jsx'));
+const Checklists = lazy(() => import('./pages/Checklists.jsx'));
+const AppRisk = lazy(() => import('./pages/AppRisk.jsx'));
+const KnowledgeHub = lazy(() => import('./pages/KnowledgeHub.jsx'));
 import { About, Disclaimer, Privacy, Contact } from './pages/Legal.jsx';
 import { SearchModal } from './components/common.jsx';
 import { Head, Breadcrumb } from './components/Seo.jsx';
@@ -77,7 +78,7 @@ function Layout(){
  useEffect(()=>{const f=()=>setPage(getPageFromPath(location.pathname)); addEventListener('popstate',f); return()=>removeEventListener('popstate',f)},[]);
  const Current = routes[page] || Home;
  const currentPath = page === 'home' ? '/' : '/' + page;
- return <><Head route={currentPath} /><header className="top"><a className="brand" href="/" onClick={e=>{e.preventDefault();navigateTo("home")}}><span className="logo" aria-label="Wolffy logo">W</span><b>Wolffy</b></a><nav className="toplinks"><a href="/" onClick={e=>{e.preventDefault();navigateTo("home")}}>{t.header.home}</a><a href="/about" onClick={e=>{e.preventDefault();navigateTo("about")}}>{t.header.about}</a><a href="/contact" onClick={e=>{e.preventDefault();navigateTo("contact")}}>{t.header.contact}</a><a href="/disclaimer" onClick={e=>{e.preventDefault();navigateTo("disclaimer")}}>{t.header.disclaimer}</a><a href="/privacy" onClick={e=>{e.preventDefault();navigateTo("privacy")}}>{t.header.privacy}</a></nav><div className="headerActions"><button className="searchBtn" onClick={()=>setSearchOpen(true)} title="Search (Ctrl+K)"><Search size={16}/></button><button className="lang" onClick={toggle} title="Switch language"><Languages size={16}/><span>{lang==='zh'?'EN':'中'}</span></button><button className="theme" onClick={()=>setDark(!dark)}>{dark?<Sun size={18}/>:<Moon size={18}/>}</button></div></header><div className="shell"><aside>{features.map(({id,Icon})=><a key={id} className={page===id?'active':''} href={`/${id}`} onClick={e=>{e.preventDefault();navigateTo(id)}}><Icon size={17}/>{t.nav[id]}</a>)}</aside><main><Breadcrumb route={currentPath} /><Current /></main></div><footer><span>{t.footer.builtWith}</span><span>Wolffy © 2026 · {t.footer.contact}: <a href="https://t.me/Wolffy_chat_bot" target="_blank" rel="noreferrer">@Wolffy_chat_bot</a> · <a href="/disclaimer" onClick={e=>{e.preventDefault();navigateTo("disclaimer")}}>{t.footer.disclaimer}</a> · <a href="/privacy" onClick={e=>{e.preventDefault();navigateTo("privacy")}}>{t.footer.privacy}</a></span></footer><SearchModal open={searchOpen} onClose={()=>setSearchOpen(false)}/></>
+ return <><Head route={currentPath} /><header className="top"><a className="brand" href="/" onClick={e=>{e.preventDefault();navigateTo("home")}}><span className="logo" aria-label="Wolffy logo">W</span><b>Wolffy</b></a><nav className="toplinks"><a href="/" onClick={e=>{e.preventDefault();navigateTo("home")}}>{t.header.home}</a><a href="/about" onClick={e=>{e.preventDefault();navigateTo("about")}}>{t.header.about}</a><a href="/contact" onClick={e=>{e.preventDefault();navigateTo("contact")}}>{t.header.contact}</a><a href="/disclaimer" onClick={e=>{e.preventDefault();navigateTo("disclaimer")}}>{t.header.disclaimer}</a><a href="/privacy" onClick={e=>{e.preventDefault();navigateTo("privacy")}}>{t.header.privacy}</a></nav><div className="headerActions"><button className="searchBtn" onClick={()=>setSearchOpen(true)} title="Search (Ctrl+K)"><Search size={16}/></button><button className="lang" onClick={toggle} title="Switch language"><Languages size={16}/><span>{lang==='zh'?'EN':'中'}</span></button><button className="theme" onClick={()=>setDark(!dark)}>{dark?<Sun size={18}/>:<Moon size={18}/>}</button></div></header><div className="shell"><aside>{features.map(({id,Icon})=><a key={id} className={page===id?'active':''} href={`/${id}`} onClick={e=>{e.preventDefault();navigateTo(id)}}><Icon size={17}/>{t.nav[id]}</a>)}</aside><main><Breadcrumb route={currentPath} /><Suspense fallback={<div style={{textAlign:'center',padding:'40px',color:'var(--muted)'}}>Loading...</div>}><Current /></Suspense></main></div><footer><span>{t.footer.builtWith}</span><span>Wolffy © 2026 · {t.footer.contact}: <a href="https://t.me/Wolffy_chat_bot" target="_blank" rel="noreferrer">@Wolffy_chat_bot</a> · <a href="/disclaimer" onClick={e=>{e.preventDefault();navigateTo("disclaimer")}}>{t.footer.disclaimer}</a> · <a href="/privacy" onClick={e=>{e.preventDefault();navigateTo("privacy")}}>{t.footer.privacy}</a></span></footer><SearchModal open={searchOpen} onClose={()=>setSearchOpen(false)}/></>
 }
 
 createRoot(document.getElementById('root')).render(<LanguageProvider><Layout/></LanguageProvider>);
