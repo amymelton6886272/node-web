@@ -205,19 +205,6 @@
     </noscript>
 
     <div id="root"></div>
-    <script>
-      window.__errors = [];
-      window.addEventListener('error', function(e) {
-        var msg = e.message || 'unknown error';
-        window.__errors.push({msg: msg, filename: e.filename, lineno: e.lineno, colno: e.colno, stack: e.error && e.error.stack});
-        document.title = 'ERR: ' + msg;
-        document.getElementById('root').innerHTML = '<pre style="color:red;padding:20px;font-size:13px;white-space:pre-wrap">' + msg.replace(/&/g,'&amp;').replace(/</g,'&lt;') + '\n' + (e.error && e.error.stack || '').replace(/&/g,'&amp;').replace(/</g,'&lt;') + '</pre>';
-      });
-      window.addEventListener('unhandledrejection', function(e) {
-        var m = e.reason && (e.reason.message || String(e.reason));
-        window.__errors.push({msg: 'Rejection: ' + m, stack: e.reason && e.reason.stack});
-      });
-    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
