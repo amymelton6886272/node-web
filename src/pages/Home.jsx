@@ -16,7 +16,7 @@ export default function Home(){
     </section>
 
     <div className="grid cards homeFeatureGrid">
-      {features.map(({id,Icon})=><a href={'/'+id} className="card" key={id} onClick={e=>{e.preventDefault();location.pushState({},'','/'+id);window.dispatchEvent(new PopStateEvent('popstate'))}}><Icon/><h3>{t.nav[id]}</h3><p>{t.homeDesc[id]}</p></a>)}
+      {features.map(({id,Icon})=><a href={'/'+id} className="card" key={id} onClick={e=>{e.preventDefault();history.pushState({},'','/'+id);window.dispatchEvent(new PopStateEvent('popstate'))}}><Icon/><h3>{t.nav[id]}</h3><p>{t.homeDesc[id]}</p></a>)}
     </div>
 
     <RichSection title={home.highlightsTitle} className="homeHighlights">

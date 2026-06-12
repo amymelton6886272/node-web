@@ -78,7 +78,7 @@ export default function Checklists() {
               <div className="checkFoot">
                 <div>{item.related.map((id) => {
                   const href = '/' + id;
-                  return <a key={id} href={href} onClick={e => { e.preventDefault(); location.pushState({}, '', href); window.dispatchEvent(new PopStateEvent('popstate')); }}>#{id}</a>;
+                  return <a key={id} href={href} onClick={e => { e.preventDefault(); history.pushState({}, '', href); window.dispatchEvent(new PopStateEvent('popstate')); }}>#{id}</a>;
                 })}</div>
                 <button onClick={() => reset(item.id)}>{page.reset}</button>
               </div>

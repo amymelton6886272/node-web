@@ -18,7 +18,7 @@ export function ContentSection({ title, intro, items = [], note, links = [], lin
       {links.length > 0 && (
         <div className="contentLinks">
           <span>{linksLabel || 'Related reading'}</span>
-          {links.map((link) => { const href = link.href.startsWith('#') ? '/' + link.href.slice(1) : link.href; return <a key={link.href} href={href} onClick={e => { e.preventDefault(); location.pushState({}, '', href); window.dispatchEvent(new PopStateEvent('popstate')); }}>{link.label}</a>; })}
+          {links.map((link) => { const href = link.href.startsWith('#') ? '/' + link.href.slice(1) : link.href; return <a key={link.href} href={href} onClick={e => { e.preventDefault(); history.pushState({}, '', href); window.dispatchEvent(new PopStateEvent('popstate')); }}>{link.label}</a>; })}
         </div>
       )}
     </section>

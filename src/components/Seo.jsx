@@ -170,7 +170,7 @@ export function Breadcrumb({ route }) {
 
   const navigate = (href) => (e) => {
     e.preventDefault();
-    location.pushState({}, '', href);
+    history.pushState({}, '', href);
     window.dispatchEvent(new PopStateEvent('popstate'));
   };
 
