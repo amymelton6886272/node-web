@@ -4,6 +4,23 @@ import { useLang } from '../LanguageContext.jsx';
 
 const SITE = 'https://souk.eu.org';
 
+const breadcrumbNames = {
+  '/': null,
+  '/price': 'Price Compare', '/appfree': 'Free Apps', '/iap': 'IAP Lookup',
+  '/icon': 'Icon Search', '/ip': 'IP Check', '/address': 'Address Generator',
+  '/guides': 'Guides', '/knowledge': 'Knowledge Base', '/checklists': 'Checklists',
+  '/glossary': 'Glossary', '/risk': 'Risk Assessor',
+  '/about': 'About', '/contact': 'Contact', '/privacy': 'Privacy Policy', '/disclaimer': 'Disclaimer',
+};
+const breadcrumbNamesZh = {
+  '/': null,
+  '/price': '价格对比', '/appfree': '限免应用', '/iap': '内购查询',
+  '/icon': '图标搜索', '/ip': 'IP 检测', '/address': '地址生成',
+  '/guides': '使用指南', '/knowledge': '知识库', '/checklists': '决策清单',
+  '/glossary': '术语表', '/risk': '风险评估',
+  '/about': '关于', '/contact': '联系我们', '/privacy': '隐私政策', '/disclaimer': '免责声明',
+};
+
 const metaByRoute = {
   '/': {
     title: 'Wolffy - Apple / iOS 实用工具合集 | App Store 价格对比、限免应用、IP 查询',
@@ -118,48 +135,34 @@ export function Head({ route }) {
         }
       } catch {}
     }
+
+    // Inject dynamic BreadcrumbList schema
+    let bcScript = document.getElementById('breadcrumb-ld');
+    if (!bcScript) {
+      bcScript = document.createElement('script');
+      bcScript.type = 'application/ld+json';
+      bcScript.id = 'breadcrumb-ld';
+      document.head.appendChild(bcScript);
+    }
+    if (path !== '/') {
+      const enName = breadcrumbNames[path];
+      const zhName = breadcrumbNamesZh[path];
+      const itemListElement = [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+        { '@type': 'ListItem', position: 2, name: enName || zhName || path.slice(1), item: SITE + path },
+      ];
+      bcScript.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement,
+      });
+    } else {
+      bcScript.textContent = '';
+    }
   }, [route]);
 
   return null;
 }
-
-const breadcrumbNames = {
-  '/': null,
-  '/price': 'Price Compare',
-  '/appfree': 'Free Apps',
-  '/iap': 'IAP Lookup',
-  '/icon': 'Icon Search',
-  '/ip': 'IP Check',
-  '/address': 'Address Generator',
-  '/guides': 'Guides',
-  '/knowledge': 'Knowledge Base',
-  '/checklists': 'Checklists',
-  '/glossary': 'Glossary',
-  '/risk': 'Risk Assessor',
-  '/about': 'About',
-  '/contact': 'Contact',
-  '/privacy': 'Privacy Policy',
-  '/disclaimer': 'Disclaimer',
-};
-
-const breadcrumbNamesZh = {
-  '/': null,
-  '/price': '价格对比',
-  '/appfree': '限免应用',
-  '/iap': '内购查询',
-  '/icon': '图标搜索',
-  '/ip': 'IP 检测',
-  '/address': '地址生成',
-  '/guides': '使用指南',
-  '/knowledge': '知识库',
-  '/checklists': '决策清单',
-  '/glossary': '术语表',
-  '/risk': '风险评估',
-  '/about': '关于',
-  '/contact': '联系我们',
-  '/privacy': '隐私政策',
-  '/disclaimer': '免责声明',
-};
 
 export function Breadcrumb({ route }) {
   const { lang } = useLang();
