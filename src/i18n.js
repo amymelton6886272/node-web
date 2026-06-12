@@ -15,7 +15,7 @@ checklists: 'Checklists',
 risk: 'App Risk',
 knowledge: 'Knowledge',
 },
-header: { hub: 'GitHub Hub', about: 'About', contact: 'Contact', disclaimer: 'Disclaimer', privacy: 'Privacy', home: 'Home' },
+    header: { hub: 'GitHub Hub', about: 'About', contact: 'Contact Us', disclaimer: 'Disclaimer', privacy: 'Privacy', home: 'Home' },
 footer: { contact: 'Contact TG Bot', disclaimer: 'Disclaimer', privacy: 'Privacy Policy', builtWith: 'Built with care. No account registration needed. Open to all App Store users.', copyright: 'Wolffy' },
 theme: { light: 'Light', dark: 'Dark' },
 home: {
@@ -675,7 +675,7 @@ usageTip: '⚠️ App Store only: sign in from the App Store / Media & Purchases
       risk: 'App \u98ce\u9669\u8bc4\u4f30',
       knowledge: '\u5b89\u5168\u77e5\u8bc6\u5e93',
     },
-    header: { hub: '\u52a0\u901f\u7ad9', about: '\u5173\u4e8e', contact: '\u8054\u7cfb', disclaimer: '\u514d\u8d23\u58f0\u660e', privacy: '\u9690\u79c1\u653f\u7b56', home: '\u9996\u9875' },
+    header: { hub: '\u52a0\u901f\u7ad9', about: '\u5173\u4e8e', contact: '\u8054\u7cfb\u6211\u4eec', disclaimer: '\u514d\u8d23\u58f0\u660e', privacy: '\u9690\u79c1\u653f\u7b56', home: '\u9996\u9875' },
     footer: { contact: '\u8054\u7cfb TG \u673a\u5668\u4eba', disclaimer: '\u514d\u8d23\u58f0\u660e', privacy: '\u9690\u79c1\u653f\u7b56', builtWith: '\u7528\u5fc3\u6784\u5efa \u00b7 \u65e0\u9700\u6ce8\u518c \u00b7 \u9762\u5411\u6240\u6709 App Store \u7528\u6237', copyright: 'Wolffy' },
     theme: { light: '\u6d45\u8272', dark: '\u6df1\u8272' },
     search: {

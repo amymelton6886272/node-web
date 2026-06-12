@@ -18,7 +18,7 @@ export function ContentSection({ title, intro, items = [], note, links = [], lin
       {links.length > 0 && (
         <div className="contentLinks">
           <span>{linksLabel || 'Related reading'}</span>
-          {links.map((link) => <a key={link.href} href={link.href}>{link.label}</a>)}
+          {links.map((link) => { const href = link.href.startsWith('#') ? '/' + link.href.slice(1) : link.href; return <a key={link.href} href={href} onClick={e => { e.preventDefault(); location.pushState({}, '', href); window.dispatchEvent(new PopStateEvent('popstate')); }}>{link.label}</a>; })}
         </div>
       )}
     </section>
@@ -35,9 +35,9 @@ export const contentByPage = {
       { heading: '减少误导性广告环境', text: '广告不应放在空白页、错误页、弹窗、纯导航页或无内容结果页。本站的广告区域只建议放在已有正文、教程或结果列表之后，并使用明确的“广告”标识。' },
     ],
     links: [
-      { href: '#guides', label: 'App Store 使用指南' },
-      { href: '#glossary', label: '术语表' },
-      { href: '#privacy', label: '隐私政策' },
+      { href: '/guides', label: 'App Store 使用指南' },
+      { href: '/glossary', label: '术语表' },
+      { href: '/privacy', label: '隐私政策' },
     ],
   },
   price: {
@@ -50,9 +50,9 @@ export const contentByPage = {
     ],
     //note: '提示：不要把价格页做成只有搜索框和广告的页面。保留这些说明、示例和相关链接，有助于证明页面具备独立价值。',
     links: [
-      { href: '#iap', label: '内购查询' },
-      { href: '#guides', label: '购买前检查清单' },
-      { href: '#glossary', label: '价格等级术语' },
+      { href: '/iap', label: '内购查询' },
+      { href: '/guides', label: '购买前检查清单' },
+      { href: '/glossary', label: '价格等级术语' },
     ],
   },
   appfree: {
@@ -64,9 +64,9 @@ export const contentByPage = {
       { heading: '保留上下文内容', text: '当接口暂时失败或当天数据为空时，页面仍应显示说明、筛选建议和相关文章，避免形成“无发布商内容但展示广告”的屏幕。' },
     ],
     links: [
-      { href: '#price', label: '价格对比' },
-      { href: '#iap', label: '检查内购' },
-      { href: '#guides', label: '限免应用指南' },
+      { href: '/price', label: '价格对比' },
+      { href: '/iap', label: '检查内购' },
+      { href: '/guides', label: '限免应用指南' },
     ],
   },
   iap: {
@@ -78,9 +78,9 @@ export const contentByPage = {
       { heading: '购买前检查', text: '建议检查试用期、续订周期、取消方式、家庭共享、退款规则和开发者信誉。儿童或家庭设备应额外启用购买限制。' },
     ],
     links: [
-      { href: '#price', label: '应用本体价格' },
-      { href: '#guides', label: '订阅避坑指南' },
-      { href: '#glossary', label: 'IAP 术语' },
+      { href: '/price', label: '应用本体价格' },
+      { href: '/guides', label: '订阅避坑指南' },
+      { href: '/glossary', label: 'IAP 术语' },
     ],
   },
   icon: {
@@ -92,8 +92,8 @@ export const contentByPage = {
       { heading: '搜索为空时的处理', text: '如果没有结果，页面仍提供使用说明和相关指南，不应在纯空结果区域投放广告。' },
     ],
     links: [
-      { href: '#guides', label: 'App 识别指南' },
-      { href: '#glossary', label: 'Bundle ID 与图标术语' },
+      { href: '/guides', label: 'App 识别指南' },
+      { href: '/glossary', label: 'Bundle ID 与图标术语' },
     ],
   },
   ip: {
@@ -105,8 +105,8 @@ export const contentByPage = {
       { heading: '隐私提醒', text: '页面只展示浏览器可获得的网络信息。使用公共 Wi‑Fi、代理或企业网络时，请避免在不可信环境中登录敏感账号。' },
     ],
     links: [
-      { href: '#proxy', label: '代理配置导航' },
-      { href: '#guides', label: '网络安全指南' },
+      { href: '/proxy', label: '代理配置导航' },
+      { href: '/guides', label: '网络安全指南' },
     ],
   },
   address: {
@@ -118,8 +118,8 @@ export const contentByPage = {
       { heading: '本地保存与导出', text: '收藏地址保存在浏览器 localStorage 中，不会自动上传到服务器。清理浏览器数据会删除这些内容。' },
     ],
     links: [
-      { href: '#ip', label: 'IP 检测' },
-      { href: '#privacy', label: '隐私政策' },
+      { href: '/ip', label: 'IP 检测' },
+      { href: '/privacy', label: '隐私政策' },
     ],
   },
   proxy: {
@@ -131,8 +131,8 @@ export const contentByPage = {
       { heading: '页面不提供规避建议', text: '本站只做工具信息整理和安全提醒，不承诺任何网络访问效果。广告也不应放在只有外链或下载按钮的区域。' },
     ],
     links: [
-      { href: '#ip', label: '检测网络出口' },
-      { href: '#guides', label: '安全使用指南' },
+      { href: '/ip', label: '检测网络出口' },
+      { href: '/guides', label: '安全使用指南' },
     ],
   },
 };

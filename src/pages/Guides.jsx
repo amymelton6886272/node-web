@@ -122,9 +122,9 @@ export default function Guides() {
                   {/* Related Links Footer */}
                   <div className="guideRelated">
                     <span>Explore more:</span>
-                    <a href="#glossary">App Store Glossary</a>
-                    <a href="#price">Price Compare Tool</a>
-                    <a href="#appfree">Free Apps</a>
+                    <a href="/glossary" onClick={e=>{e.preventDefault();location.pushState({},'','/glossary');window.dispatchEvent(new PopStateEvent('popstate'))}}>App Store Glossary</a>
+                    <a href="/price" onClick={e=>{e.preventDefault();location.pushState({},'','/price');window.dispatchEvent(new PopStateEvent('popstate'))}}>Price Compare Tool</a>
+                    <a href="/appfree" onClick={e=>{e.preventDefault();location.pushState({},'','/appfree');window.dispatchEvent(new PopStateEvent('popstate'))}}>Free Apps</a>
                   </div>
                 </>
               )}

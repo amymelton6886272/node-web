@@ -108,6 +108,27 @@ export const siteContent = {
       reminderTitle: 'Before acting on any result',
       reminders: ['Confirm final prices and subscriptions in the App Store checkout flow.', 'Read Apple and developer terms before switching regions or purchasing.', 'Do not enter real credentials or sensitive identity data into tools.', 'Treat risk scores and checklists as educational guidance, not guarantees.', 'Review third-party privacy policies when external services are involved.'],
     },
+    contact: {
+      title: 'Contact Wolffy',
+      sub: 'Questions, corrections, or feedback? Reach the maintainer through the channels below.',
+      sections: [
+        { title: 'How to reach us', text: 'Wolffy is maintained by an independent developer. The fastest way to get in touch is through the Telegram bot listed below. For content corrections, please include the page URL, the exact issue, your device and browser details, and any supporting screenshots.' },
+        { title: 'Content corrections', text: 'If you notice inaccurate information, outdated pricing, broken links, missing translations, or content that does not match the current App Store behavior, please report it. Include the specific page, the affected text or result, and the date you observed the issue. The maintainer reviews reports regularly and updates content when evidence supports the correction.' },
+        { title: 'Bug reports and feature requests', text: 'If a tool produces an unexpected error, fails to load, or you would like to suggest a new feature, describe the steps to reproduce, your browser and device model, and the expected versus actual behavior. Feature requests that align with the site\'s mission of helping users make informed App Store decisions are welcome.' },
+        { title: 'Privacy and data requests', text: 'Wolffy does not collect personal accounts or server-side user profiles. If you have questions about data handling, third-party requests, or advertising, please review the Privacy Policy linked below. For removal or correction requests, contact through the Telegram bot with your specific concern.' },
+        { title: 'Advertising inquiries', text: 'Wolffy follows a strict ad placement policy: no ads on empty screens, error states, modals, or pages without meaningful publisher content. If you are interested in sponsored content or partnership opportunities, reach out via the Telegram bot with your proposal.' },
+        { title: 'Response expectations', text: 'As an independent side project, response times may vary. The maintainer reads every message and responds to substantive inquiries. For urgent issues, include clear details so the maintainer can prioritize effectively.' },
+      ],
+      faqTitle: 'Contact guidelines',
+      items: [
+        'Include the page URL or tool name where the issue occurs.',
+        'Provide your browser (Safari, Chrome, Firefox) and device (iPhone, iPad, Mac).',
+        'For content corrections, explain what is wrong and what the correct information should be.',
+        'For bugs, describe the steps to reproduce and the expected result.',
+        'Check the Privacy Policy for questions about data collection or third-party services.',
+        'Review the Disclaimer for limitations on information accuracy and use.',
+      ],
+    },
   },
   zh: {
     home: {
@@ -217,6 +238,27 @@ export const siteContent = {
       ],
       reminderTitle: '根据任何结果行动前',
       reminders: ['在 App Store 结算流程中确认最终价格和订阅。', '切换地区或购买前阅读 Apple 与开发者条款。', '不要在工具中输入真实凭据或敏感身份信息。', '把风险分数和清单视为教育参考，而不是保证。', '涉及外部服务时查看第三方隐私政策。'],
+    },
+    contact: {
+      title: '联系 Wolffy',
+      sub: '有疑问、更正或反馈？通过以下渠道联系维护者。',
+      sections: [
+        { title: '如何联系', text: 'Wolffy 由独立开发者维护。最快的联系方式是通过下方列出的 Telegram 机器人。报告内容更正时，请附上页面 URL、具体问题、设备和浏览器信息，以及相关截图。' },
+        { title: '内容更正', text: '如果你发现信息不准确、价格过时、链接失效、翻译缺失或内容与当前 App Store 行为不符，请报告。附上具体页面、受影响的文本或结果，以及发现问题的日期。维护者会定期审查并在有证据支持时更新内容。' },
+        { title: 'Bug 报告与功能建议', text: '如果工具出现意外错误、加载失败，或者你有功能建议，请描述复现步骤、浏览器和设备型号，以及期望结果与实际结果。欢迎提与帮助用户做出 App Store 决策相关的功能建议。' },
+        { title: '隐私与数据请求', text: 'Wolffy 不收集用户账号或服务端个人资料。如果你对数据处理、第三方请求或广告有疑问，请查看下方链接的隐私政策。移除或更正请求请通过 Telegram 机器人联系并说明具体问题。' },
+        { title: '广告合作', text: 'Wolffy 严格遵守广告展示政策：不在空白页、错误页、弹窗或无实质发布商内容的页面展示广告。如有赞助内容或合作意向，请通过 Telegram 机器人发送提案。' },
+        { title: '响应时间', text: '作为独立业余项目，响应时间可能有所不同。维护者会阅读每一条消息并回复实质性问题。紧急问题请提供清晰详细的信息，以便维护者有效判断优先级。' },
+      ],
+      faqTitle: '联系须知',
+      items: [
+        '附上出现问题的页面 URL 或工具名称。',
+        '提供浏览器（Safari、Chrome、Firefox）和设备（iPhone、iPad、Mac）信息。',
+        '内容更正请说明哪里有误，正确信息应该是什么。',
+        'Bug 报告请描述复现步骤和期望结果。',
+        '数据收集或第三方服务相关问题请查看隐私政策。',
+        '信息准确性和使用限制请查看免责声明。',
+      ],
     },
   },
 };

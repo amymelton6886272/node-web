@@ -5,7 +5,8 @@
     "build": "vite build",
     "preview": "npm run build && node scripts/preview-with-api.mjs",
     "preview:only": "vite preview --host 0.0.0.0",
-    "start": "npm run preview"
+    "start": "npm run preview",
+    "prerender": "npm run build && npx vite preview --port 4173 & sleep 3 && node scripts/prerender.mjs http://127.0.0.1:4173 && kill %1"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",

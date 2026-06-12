@@ -38,16 +38,16 @@ function buildSearchIndex(t){
   const items=[];
   const toolIds=['price','appfree','ip','address','iap','icon','proxy','checklists','risk','knowledge'];
   for(const id of toolIds){const p=t[id];if(!p)continue;const title=p.title||t.nav?.[id]||id;
-    if(p.intro){const txt=[p.intro.p1,p.intro.p2,p.intro.p3,p.intro.p4].filter(Boolean).join(' ');items.push({title,url:'#'+id,text:txt,category:title});}
-    if(p.tips?.items?.length)items.push({title:title+' · Tips',url:'#'+id,text:p.tips.items.join(' '),category:title});
-    if(p.howItWorks){const txt=[p.howItWorks.p1,p.howItWorks.p2,p.howItWorks.p3].filter(Boolean).join(' ');items.push({title:title+' · How It Works',url:'#'+id,text:txt,category:title});}
-    if(p.troubleshooting?.items?.length)items.push({title:title+' · FAQ',url:'#'+id,text:p.troubleshooting.items.join(' '),category:title});}
-  if(t.guides?.articles)for(const a of t.guides.articles){const txt=a.title+' '+(a.sections||[]).map(s=>s.heading+' '+s.text).join(' ');items.push({title:a.title,url:'#guides',text:txt,category:t.search?.categories?.guides||'Guides'});}
-  if(t.glossary?.terms)for(const g of t.glossary.terms)items.push({title:g.term,url:'#glossary',text:g.term+' '+g.def,category:t.glossary.title||'Glossary'});
-  if(t.home){const why=[t.home.whyP1,t.home.whyP2,t.home.whyP3].filter(Boolean).join(' ');items.push({title:t.home.title||'Home',url:'#home',text:why+' '+t.home.sub,category:'Home'});
-    if(t.home.faq)for(const f of t.home.faq)items.push({title:f.q,url:'#home',text:f.q+' '+f.a,category:t.search?.categories?.faq||'FAQ'});
-    if(t.home.updates)for(const u of t.home.updates)items.push({title:u.text.slice(0,60),url:'#home',text:u.text,category:t.search?.categories?.updates||'Updates'});}
-  if(t.homeDesc)for(const[id,desc]of Object.entries(t.homeDesc))if(typeof desc==='string')items.push({title:t.nav?.[id]||id,url:'#'+id,text:desc,category:t.search?.categories?.tools||'Tools'});
+    if(p.intro){const txt=[p.intro.p1,p.intro.p2,p.intro.p3,p.intro.p4].filter(Boolean).join(' ');items.push({title,url:'/'+id,text:txt,category:title});}
+    if(p.tips?.items?.length)items.push({title:title+' · Tips',url:'/'+id,text:p.tips.items.join(' '),category:title});
+    if(p.howItWorks){const txt=[p.howItWorks.p1,p.howItWorks.p2,p.howItWorks.p3].filter(Boolean).join(' ');items.push({title:title+' · How It Works',url:'/'+id,text:txt,category:title});}
+    if(p.troubleshooting?.items?.length)items.push({title:title+' · FAQ',url:'/'+id,text:p.troubleshooting.items.join(' '),category:title});}
+  if(t.guides?.articles)for(const a of t.guides.articles){const txt=a.title+' '+(a.sections||[]).map(s=>s.heading+' '+s.text).join(' ');items.push({title:a.title,url:'/guides',text:txt,category:t.search?.categories?.guides||'Guides'});}
+  if(t.glossary?.terms)for(const g of t.glossary.terms)items.push({title:g.term,url:'/glossary',text:g.term+' '+g.def,category:t.glossary.title||'Glossary'});
+  if(t.home){const why=[t.home.whyP1,t.home.whyP2,t.home.whyP3].filter(Boolean).join(' ');items.push({title:t.home.title||'Home',url:'/',text:why+' '+t.home.sub,category:'Home'});
+    if(t.home.faq)for(const f of t.home.faq)items.push({title:f.q,url:'/',text:f.q+' '+f.a,category:t.search?.categories?.faq||'FAQ'});
+    if(t.home.updates)for(const u of t.home.updates)items.push({title:u.text.slice(0,60),url:'/',text:u.text,category:t.search?.categories?.updates||'Updates'});}
+  if(t.homeDesc)for(const[id,desc]of Object.entries(t.homeDesc))if(typeof desc==='string')items.push({title:t.nav?.[id]||id,url:'/'+id,text:desc,category:t.search?.categories?.tools||'Tools'});
   return items;
 }
 
@@ -55,6 +55,6 @@ export function SearchModal({open,onClose}){const {t}=useLang();const[q,setQ]=us
   useEffect(()=>{if(open){setQ('');const tm=setTimeout(()=>inp.current?.focus(),100);return()=>clearTimeout(tm)}},[open]);
   useEffect(()=>{const h=e=>{if(e.key==='Escape'&&open)onClose()};document.addEventListener('keydown',h);return()=>document.removeEventListener('keydown',h)},[open,onClose]);
   if(!open)return null;
-  const go=url=>{location.hash=url.replace('#','');onClose()};
+  const go=url=>{const path=url.replace('#','/');location.pushState({},'',path);window.dispatchEvent(new PopStateEvent('popstate'));onClose()};
   return <div className="searchOverlay" onClick={onClose}><div className="searchModal" onClick={e=>e.stopPropagation()}><div className="searchBox"><Search size={18} className="searchIcon"/><input ref={inp} type="text" value={q} onChange={e=>setQ(e.target.value)} placeholder={t.search?.placeholder||'Search...'} className="searchField"/><kbd>esc</kbd></div>{q&&results.length>0&&<div className="searchResults">{results.map((r,i)=><a key={i} className="searchItem" onClick={()=>go(r.url)}><span className="searchCat">{r.category}</span><span className="searchTitle">{r.title}</span></a>)}</div>}{q&&results.length===0&&<div className="searchEmpty">{t.search?.empty||'No results found'}</div>}</div></div>;
 }

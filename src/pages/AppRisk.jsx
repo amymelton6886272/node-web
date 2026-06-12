@@ -91,7 +91,7 @@ export default function AppRisk() {
             <ul>{active.slice(0, 5).map((q) => <li key={q.id}>{q.advice}</li>)}</ul>
           </>
         )}
-        <div className="riskActions"><a href="#checklists">{page.openChecklists}</a><a href="#iap">{page.checkIap}</a><a href="#guides">{page.readGuides}</a><button onClick={reset}>{page.reset}</button></div>
+        <div className="riskActions"><a href="/checklists" onClick={e=>{e.preventDefault();location.pushState({},'','/checklists');window.dispatchEvent(new PopStateEvent('popstate'))}}>{page.openChecklists}</a><a href="/iap" onClick={e=>{e.preventDefault();location.pushState({},'','/iap');window.dispatchEvent(new PopStateEvent('popstate'))}}>{page.checkIap}</a><a href="/guides" onClick={e=>{e.preventDefault();location.pushState({},'','/guides');window.dispatchEvent(new PopStateEvent('popstate'))}}>{page.readGuides}</a><button onClick={reset}>{page.reset}</button></div>
       </section>
     </>
   );
