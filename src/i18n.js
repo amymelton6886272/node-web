@@ -675,7 +675,6 @@ usageTip: '⚠️ App Store only: sign in from the App Store / Media & Purchases
         { term: 'Receipt Validation', def: 'Verifying IAP legitimacy via cryptographically signed Apple receipt. Prevents forgery and piracy.' },
         { term: 'Phased Release', def: 'Gradual app update rollout over 7 days. Allows monitoring crash rates before full release.' },
         { term: 'App Store Badge', def: 'Standardized download button graphic for websites and marketing. Available in multiple languages.' },
-      ,
         { term: 'Screen Time', def: 'iOS feature that tracks device usage, sets app limits, schedules downtime, and enforces content restrictions. Accessible through Settings > Screen Time.' },
         { term: 'Apple Pay', def: 'Apple\'s mobile payment system that stores credit/debit cards securely on your device. Used for in-app purchases, contactless payments, and online transactions.' },
         { term: 'iCloud+', def: 'Apple\'s paid cloud storage service that includes additional privacy features like Hide My Email and Private Relay. Plans range from 50GB to 12TB.' },
@@ -963,7 +962,6 @@ usageTip: '⚠️ App Store only: sign in from the App Store / Media & Purchases
             { heading: '\u907f\u5f00\u5e38\u89c1\u8ba2\u9605\u9677\u9631', text: '1 \u514d\u8d39\u8bd5\u7528\u81ea\u52a8\u8f6c\u5316\uff1a\u59cb\u7ec8\u5728\u514d\u8d39\u8bd5\u7528\u7ed3\u675f\u524d 2-3 \u5929\u8bbe\u7f6e\u65e5\u5386\u63d0\u9192\u30022 \u91cd\u590d\u8ba2\u9605\uff1a\u4f60\u53ef\u80fd\u540c\u65f6\u62e5\u6709\u4e2a\u4eba Apple Music \u8ba2\u9605\uff0c\u53c8\u5728\u652f\u4ed8 Apple Music \u5bb6\u5ead\u7248\u7684\u5bb6\u5ead\u7fa4\u7ec4\u4e2d\u2014\u2014\u53d6\u6d88\u4e2a\u4eba\u8ba2\u9605\u30023 \u4ef7\u683c\u4e0a\u6da8\uff1aApple \u4f1a\u901a\u77e5\u4f60\uff0c\u4f46\u53ef\u80fd\u9519\u8fc7\u901a\u77e5\u30024 \u5220\u9664\u5e94\u7528\u4e0d\u4f1a\u53d6\u6d88\u8ba2\u9605\u30025 \u533a\u57df\u5b9a\u4ef7\u5dee\u5f02\u53ef\u80fd\u7701\u94b1\u3002' },
           ],
         },
-      ,
         { title: 'Apple ID \u5b89\u5168\u6307\u5357\uff1a\u5982\u4f55\u4fdd\u62a4\u4f60\u7684\u8d26\u6237', date: '2026-01-15', icon: 'Shield', sections: [
           { heading: 'Apple ID \u5b89\u5168\u4e3a\u4ec0\u4e48\u91cd\u8981', text: 'Apple ID \u662f\u4f60 Apple \u8bbe\u5907\u4e0a\u6574\u4e2a\u6570\u5b57\u751f\u6d3b\u7684\u4e3b\u94a5\u5319\u3002\u5b83\u63a7\u5236 iCloud \u6570\u636e\u3001App Store \u8d2d\u4e70\u3001Apple Pay\u3001iMessage\u3001FaceTime \u548c\u67e5\u627e\u6211\u7684\u8bbf\u95ee\u3002\u5982\u679c\u6709\u4eba\u83b7\u5f97\u63a7\u5236\u6743\uff0c\u53ef\u4ee5\u9501\u5b9a\u8bbe\u5907\u3001\u8bbf\u95ee\u7167\u7247\u548c\u6d88\u606f\u3001\u8fdb\u884c\u672a\u6388\u6743\u8d2d\u4e70\u3002' },
           { heading: '\u542f\u7528\u53cc\u91cd\u9a8c\u8bc1', text: '\u8fdb\u5165\u8bbe\u7f6e > [\u4f60\u7684\u540d\u5b57] > \u767b\u5f55\u4e0e\u5b89\u5168\u5e76\u542f\u7528\u53cc\u91cd\u9a8c\u8bc1\u3002\u8fd9\u8981\u6c42\u6bcf\u6b21\u4ece\u65b0\u8bbe\u5907\u767b\u5f55\u65f6\u90fd\u9700\u8981\u4fe1\u4efb\u8bbe\u5907\u7684\u9a8c\u8bc1\u7801\u3002\u5373\u4f7f\u653b\u51fb\u8005\u77e5\u9053\u5bc6\u7801\uff0c\u4e5f\u65e0\u6cd5\u5b8c\u6210\u767b\u5f55\u3002' },
@@ -1056,7 +1054,6 @@ usageTip: '⚠️ App Store only: sign in from the App Store / Media & Purchases
         { term: 'Receipt Validation', def: '\u901a\u8fc7\u52a0\u5bc6\u7b7e\u540d\u7684 Apple \u6536\u636e\u9a8c\u8bc1\u5185\u8d2d\u5408\u6cd5\u6027\u3002\u9632\u6b62\u4f2a\u9020\u548c\u76d7\u7248\u3002' },
         { term: 'Phased Release', def: '7 \u5929\u5185\u6e10\u8fdb\u5f0f\u5e94\u7528\u66f4\u65b0\u53d1\u5e03\u3002\u5141\u8bb8\u5728\u5b8c\u5168\u53d1\u5e03\u524d\u76d1\u63a7\u5d29\u6e83\u7387\u3002' },
         { term: 'App Store Badge', def: '\u7528\u4e8e\u7f51\u7ad9\u548c\u8425\u9500\u7684\u6807\u51c6\u5316\u4e0b\u8f7d\u6309\u94ae\u56fe\u5f62\u3002\u63d0\u4f9b\u591a\u79cd\u8bed\u8a00\u7248\u672c\u3002' },
-      ,
         { term: '\u5c4f\u5e55\u4f7f\u7528\u65f6\u95f4', def: 'iOS \u529f\u80fd\uff0c\u8ddf\u8e2a\u8bbe\u5907\u4f7f\u7528\u60c5\u51b5\u3001\u8bbe\u7f6e\u5e94\u7528\u9650\u5236\u3001\u8c03\u5ea6\u505c\u6b62\u4f7f\u7528\u548c\u5f3a\u5236\u5185\u5bb9\u9650\u5236\u3002' },
         { term: 'Apple Pay', def: 'Apple \u7684\u79fb\u52a8\u652f\u4ed8\u7cfb\u7edf\uff0c\u5c06\u4fe1\u7528\u5361\u5b89\u5168\u5b58\u50a8\u5728\u8bbe\u5907\u4e0a\u3002' },
         { term: 'iCloud+', def: 'Apple \u7684\u4ed8\u8d39\u4e91\u5b58\u50a8\u670d\u52a1\uff0c\u5305\u62ec Hide My Email \u548c Private Relay \u7b49\u9690\u79c1\u529f\u80fd\u3002' },
