@@ -1,4 +1,5 @@
 import { useMemo, useState, useEffect } from 'react';
+import { AdBanner } from '../components/AdBanner.jsx';
 import { BookOpen, ChevronDown, ChevronUp, Clock, ListChecks } from 'lucide-react';
 import { Hero } from '../components/common.jsx';
 import { ContentSection } from '../components/ContentSection.jsx';
@@ -80,6 +81,7 @@ export default function KnowledgeHub() {
                       <p>{section.text}</p>
                     </section>
                   ))}
+                  <AdBanner />
                   <div className="knowledgeChecklist">
                     <h3><ListChecks size={18} /> {page.checklist}</h3>
                     <ul>{article.checklist.map((item, i) => <li key={i}>{item}</li>)}</ul>

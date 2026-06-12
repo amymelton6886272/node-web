@@ -3,6 +3,7 @@ import { Hero } from '../components/common.jsx';
 import { useLang } from '../LanguageContext.jsx';
 import { LANGS } from '../i18n.js';
 import { BookOpen, Smartphone, DollarSign, Search, Shield, Star, Users, Globe, Clock, List } from 'lucide-react';
+import { AdBanner } from '../components/AdBanner.jsx';
 
 const icons = { BookOpen, Smartphone, DollarSign, Search, Shield, Star, Users, Globe };
 const SITE = 'https://souk.eu.org';
@@ -149,6 +150,8 @@ export default function Guides() {
                       </div>
                     ))}
                   </div>
+
+                  <AdBanner />
 
                   {/* Related Links Footer */}
                   <div className="guideRelated">

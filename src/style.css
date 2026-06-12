@@ -323,3 +323,8 @@ footer span{display:block;line-height:1.8}
   footer{padding:20px 16px}
   footer span{display:block;margin:4px 0}
 }
+
+/* AdBanner — subtle container, never empty-screen or overlay. Keeps flow. */
+.adBanner{margin:24px 0;text-align:center;min-height:90px;overflow:hidden}
+.adBanner ins{display:block}
+@media(max-width:640px){.adBanner{margin:18px 0}}
