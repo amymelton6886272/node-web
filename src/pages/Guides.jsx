@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Hero } from '../components/common.jsx';
 import { useLang } from '../LanguageContext.jsx';
 import { LANGS } from '../i18n.js';
 import { BookOpen, Smartphone, DollarSign, Search, Shield, Star, Users, Globe, Clock, List } from 'lucide-react';
 
 const icons = { BookOpen, Smartphone, DollarSign, Search, Shield, Star, Users, Globe };
+const SITE = 'https://souk.eu.org';
 
 function wordCount(text) {
   if (!text) return 0;
@@ -23,6 +24,36 @@ export default function Guides() {
     : { ...(t.guides || {}), ...LANGS.en.guides };
   const guides = data?.articles || [];
   const [expanded, setExpanded] = useState({});
+
+  // Inject Article structured data for all guide articles
+  const lang = t?.guides?.articles ? (guides[0]?.sections?.[0]?.heading?.match(/[\u4e00-\u9fff]/) ? 'zh-CN' : 'en') : 'en';
+  useEffect(() => {
+    if (!guides.length) return;
+    const existing = document.querySelectorAll('script[data-guide-schema]');
+    existing.forEach(el => el.remove());
+    guides.forEach((g, i) => {
+      const firstText = (g.sections || [])[0]?.text || '';
+      const description = firstText.replace(/\\'/g, "'").replace(/["\\]/g, '').substring(0, 160);
+      const schema = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: g.title,
+        datePublished: g.date,
+        dateModified: g.date,
+        author: { '@type': 'Organization', name: 'Wolffy' },
+        publisher: { '@type': 'Organization', name: 'Wolffy', url: SITE },
+        description: description,
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE}/guides` },
+        articleSection: 'Guides',
+        inLanguage: lang,
+      };
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.setAttribute('data-guide-schema', `${i}`);
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+    });
+  }, [guides, lang]);
 
   const toggleArticle = (i) => {
     setExpanded((prev) => {

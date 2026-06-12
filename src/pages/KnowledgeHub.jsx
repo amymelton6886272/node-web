@@ -1,9 +1,11 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { BookOpen, ChevronDown, ChevronUp, Clock, ListChecks } from 'lucide-react';
 import { Hero } from '../components/common.jsx';
 import { ContentSection } from '../components/ContentSection.jsx';
 import { useLang } from '../LanguageContext.jsx';
 import { knowledgeContent } from '../data/knowledgeHub.js';
+
+const SITE = 'https://souk.eu.org';
 
 export default function KnowledgeHub() {
   const { lang } = useLang();
@@ -13,6 +15,31 @@ export default function KnowledgeHub() {
   const [open, setOpen] = useState({ [content.articles[0].id]: true });
   const articles = useMemo(() => content.articles.filter((a) => category === 'all' || a.category === category), [category, content.articles]);
   const toggle = (id) => setOpen((prev) => ({ ...prev, [id]: !prev[id] }));
+
+  // Inject Article structured data for all knowledge articles
+  useEffect(() => {
+    if (!content.articles?.length) return;
+    const existing = document.querySelectorAll('script[data-kb-schema]');
+    existing.forEach(el => el.remove());
+    content.articles.forEach((article, i) => {
+      const schema = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: article.title,
+        description: article.summary,
+        author: { '@type': 'Organization', name: 'Wolffy' },
+        publisher: { '@type': 'Organization', name: 'Wolffy', url: SITE },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE}/knowledge` },
+        articleSection: article.category || 'Knowledge Base',
+        inLanguage: lang === 'zh' ? 'zh-CN' : 'en',
+      };
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.setAttribute('data-kb-schema', `${i}`);
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+    });
+  }, [content.articles, lang]);
 
   return (
     <>
