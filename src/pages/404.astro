@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Page Not Found - Wolffy"
+  description="The requested Wolffy page could not be found. Use the main navigation to open tools, articles, privacy pages, and App Store guides."
+  path="/404"
+>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">404</p>
+      <h1>Page not found</h1>
+      <p>The page may have moved, or the link may be incomplete. Continue with one of the main Wolffy sections below.</p>
+    </div>
+  </section>
+
+  <section class="contentSection card">
+    <h2>Useful places to continue</h2>
+    <div class="contentLinks">
+      <a href="/">Home</a>
+      <a href="/price">Price Compare</a>
+      <a href="/iap">IAP Lookup</a>
+      <a href="/articles">Articles</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </section>
+</BaseLayout>

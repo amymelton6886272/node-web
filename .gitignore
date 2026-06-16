@@ -3,6 +3,8 @@ dist/
 deploy-build/
 .env
 .env.*
+!.env.example
+.astro/
 *.log
 *.bak
 .DS_Store

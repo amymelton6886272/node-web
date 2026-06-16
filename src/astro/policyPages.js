@@ -1,0 +1,88 @@
+export const policyPages = {
+  about: {
+    title: 'About Wolffy',
+    titleZh: '关于 Wolffy',
+    sub: 'An independent Apple / iOS resource hub combining practical tools, safety education, and transparent data-source notes.',
+    subZh: '一个独立的 Apple / iOS 资源站，结合实用工具、安全知识和透明的数据来源说明。',
+    sections: [
+      { title: 'What Wolffy is', titleZh: 'Wolffy 是什么', text: 'Wolffy is a lightweight web toolkit for Apple and iOS users. It brings together App Store price comparison, in-app purchase lookup, free-app discovery, icon lookup, IP checks, test address generation, app risk assessment, decision checklists, and long-form safety articles.', textZh: 'Wolffy 是面向 Apple 和 iOS 用户的轻量级工具与知识站。它整合了 App Store 跨区价格对比、内购查询、限免应用发现、图标查询、IP 检测、测试地址生成、应用风险评估、决策清单和长文安全指南。' },
+      { title: 'Why it exists', titleZh: '为什么建立这个站点', text: 'Many Apple-related decisions require information from several places: App Store pages, Apple account settings, regional storefronts, privacy labels, user reviews, refund instructions, and third-party APIs. Wolffy organizes those scattered signals into readable pages so users can slow down and make better decisions before paying, subscribing, switching regions, or granting sensitive permissions.', textZh: '很多 Apple 相关决策都需要同时查看多个来源：App Store 页面、Apple 账户设置、不同地区商店、隐私标签、用户评论、退款说明和第三方公开接口。Wolffy 会把这些分散信号整理成可阅读页面，帮助用户在付款、订阅、切换地区或授权敏感权限前先看清楚。' },
+      { title: 'Editorial principles', titleZh: '编辑原则', text: 'Content is written to be practical, cautious, and verifiable. Pages explain risks without exaggeration and encourage users to confirm purchases, refunds, subscriptions, and account changes through official sources. Advertising, if enabled, does not decide editorial conclusions or tool behavior.', textZh: '本站内容以实用、谨慎、可验证为原则。页面会说明风险，但不夸大结论；涉及购买、退款、订阅和账号变更时，会提醒用户以官方页面和账户设置为准。即使未来启用广告，广告也不会决定内容结论或工具行为。' },
+      { title: 'How the site is maintained', titleZh: '维护方式', text: 'Wolffy is maintained as an independent web project. Static pages, public data references, and client-side tools are preferred where possible because they are easier to audit, faster to load, and less invasive for visitors.', textZh: 'Wolffy 作为独立 Web 项目维护。站点优先使用静态页面、公开数据来源和浏览器端工具，因为这些方式更容易检查、加载更快，也更少打扰访问者。' },
+    ],
+  },
+  contact: {
+    title: 'Contact Wolffy',
+    titleZh: '联系 Wolffy',
+    sub: 'Questions, corrections, privacy requests, bug reports, or advertising inquiries can be sent to the maintainer.',
+    subZh: '如需反馈问题、内容更正、隐私请求、Bug 报告或广告合作，可以联系维护者。',
+    sections: [
+      { title: 'How to reach us', titleZh: '联系方式', text: 'Wolffy is maintained by an independent developer. The fastest way to get in touch is through the Telegram bot listed on the site: @Wolffy_chat_bot. Please include enough context so the issue can be reviewed without guessing.', textZh: 'Wolffy 由独立开发者维护。最快的联系方式是站点中列出的 Telegram Bot：@Wolffy_chat_bot。反馈时请尽量提供足够背景，方便维护者直接判断问题。' },
+      { title: 'Content corrections', titleZh: '内容更正', text: 'For corrections, include the page URL, affected text or result, the date observed, and any supporting context. If the issue involves App Store data, include the app name, App Store link, country or region, and a short description of what appears incorrect.', textZh: '如果需要更正内容，请提供页面地址、相关文字或结果、发现日期以及支持信息。如果问题涉及 App Store 数据，请附上应用名称、商店链接、国家或地区，以及你认为不准确的地方。' },
+      { title: 'Bug reports', titleZh: 'Bug 报告', text: 'For tool issues, include reproduction steps, browser and device information, expected behavior, and actual behavior. Screenshots are helpful when layout, loading, language switching, or mobile display is involved.', textZh: '如果反馈工具 Bug，请提供复现步骤、浏览器和设备信息、预期行为以及实际表现。涉及布局、加载、语言切换或移动端显示问题时，截图会很有帮助。' },
+      { title: 'Privacy and advertising inquiries', titleZh: '隐私与广告问题', text: 'For privacy requests or advertising questions, describe the page involved and the type of request. Wolffy does not require user registration, so most site preferences are stored in your browser rather than a server account.', textZh: '如有隐私请求或广告相关问题，请说明涉及页面和请求类型。Wolffy 不要求注册账号，大部分偏好设置保存在你的浏览器中，而不是服务器账号里。' },
+    ],
+  },
+  privacy: {
+    title: 'Privacy Policy',
+    titleZh: '隐私政策',
+    sub: 'What Wolffy stores locally, which third-party requests may occur, and how advertising scripts may be used.',
+    subZh: '说明 Wolffy 会在本地保存什么、可能请求哪些第三方服务，以及广告脚本可能如何使用。',
+    effective: 'Effective date: 2026-06-16',
+    effectiveZh: '生效日期：2026-06-16',
+    sections: [
+      { title: '1. Overview', titleZh: '1. 概览', text: 'Wolffy is primarily a client-side website. Core pages load as static HTML, JavaScript, and CSS. The site does not require registration, login, profile creation, or account passwords.', textZh: 'Wolffy 主要是浏览器端网站。核心页面以静态 HTML、JavaScript 和 CSS 加载。本站不要求注册、登录、创建个人资料或提交账号密码。' },
+      { title: '2. Local browser data', titleZh: '2. 浏览器本地数据', text: 'Language, theme, saved test addresses, checklist progress, and temporary interface state may be stored locally in your browser to improve usability. You can clear this data through your browser settings.', textZh: '语言、主题、已保存的测试地址、清单进度和临时界面状态可能保存在你的浏览器本地，用于改善使用体验。你可以通过浏览器设置清除这些数据。' },
+      { title: '3. Third-party requests', titleZh: '3. 第三方请求', text: 'Some tools may contact Apple public APIs, public IP metadata services, Apple media CDNs, public promotional feeds, or external links that you choose to open. Those services may receive normal request metadata under their own policies.', textZh: '部分工具可能会请求 Apple 公开 API、公开 IP 信息服务、Apple 媒体 CDN、公开促销信息源，或你主动打开的外部链接。这些服务可能会按其自身政策接收常规请求元数据。' },
+      { title: '4. Advertising', titleZh: '4. 广告', text: 'If Google AdSense or similar ads are enabled, the advertising provider may use cookies, local storage, IP address, page URL, and browser information according to its own policies. Wolffy does not ask users to click ads and does not place ads on empty-result-only screens.', textZh: '如果启用 Google AdSense 或类似广告服务，广告提供方可能会根据其政策使用 Cookie、本地存储、IP 地址、页面 URL 和浏览器信息。Wolffy 不要求用户点击广告，也不会把广告放在只有空结果的页面上。' },
+      { title: '5. Data minimization', titleZh: '5. 数据最小化', text: 'The site is designed to collect as little direct user information as possible. Tool queries are intended to happen only when you use a feature, and explanatory content remains available even when a third-party request fails.', textZh: '本站设计目标是尽量少收集直接用户信息。工具查询通常只在你使用对应功能时发生；即使第三方请求失败，页面仍会保留说明性内容。' },
+      { title: '6. User choices', titleZh: '6. 用户选择', text: 'You can disable cookies, clear local storage, use private browsing, or avoid tools that contact third-party services. Some interactive features may be less convenient when browser storage or network requests are blocked.', textZh: '你可以禁用 Cookie、清除本地存储、使用隐私浏览模式，或避免使用会联系第三方服务的工具。当浏览器存储或网络请求被阻止时，部分交互功能可能会变得不便。' },
+    ],
+  },
+  disclaimer: {
+    title: 'Disclaimer',
+    sub: 'Important limitations, data-source notes, and user responsibility for Wolffy tools and guides.',
+    effective: 'Effective date: 2026-06-16',
+    sections: [
+      { title: '1. Independent project', text: 'Wolffy is not affiliated with, endorsed by, sponsored by, or officially connected to Apple, Google, GitHub, Docker, app developers, payment providers, or any third-party service mentioned on the site.' },
+      { title: '2. Informational purpose', text: 'Content is provided for general information, research, education, and personal decision support. It is not legal, financial, cybersecurity, tax, refund, or purchase advice.' },
+      { title: '3. Verify before acting', text: 'Prices, subscriptions, app metadata, region availability, IP geolocation, and third-party links can change. Verify critical information through official sources before acting.' },
+    ],
+  },
+  terms: {
+    title: 'Terms of Use',
+    titleZh: '服务条款',
+    sub: 'Rules and limitations for using Wolffy tools, guides, generated data, and external links.',
+    subZh: '说明使用 Wolffy 工具、指南、生成数据和外部链接时的规则与限制。',
+    effective: 'Effective date: 2026-06-16',
+    effectiveZh: '生效日期：2026-06-16',
+    sections: [
+      { title: '1. Acceptance of terms', titleZh: '1. 接受条款', text: 'By accessing Wolffy, you agree to use the site for lawful, personal, research, educational, and development-support purposes. If you do not agree with these terms, please stop using the site.', textZh: '访问 Wolffy 即表示你同意仅将本站用于合法的个人、研究、教育和开发辅助目的。如果你不同意这些条款，请停止使用本站。' },
+      { title: '2. Informational tools only', titleZh: '2. 仅作为信息工具', text: 'Results are not guarantees, professional advice, purchase recommendations, or approval from Apple or any third-party service. Prices, app metadata, subscription markers, region availability, and IP data can change without notice.', textZh: '工具结果不构成保证、专业建议、购买推荐，也不代表 Apple 或任何第三方服务的批准。价格、应用元数据、订阅标记、地区可用性和 IP 数据都可能随时变化。' },
+      { title: '3. User responsibility', titleZh: '3. 用户责任', text: 'You are responsible for checking official sources before purchasing, subscribing, changing account regions, installing apps, granting permissions, or relying on generated test data. Wolffy is a research helper, not a final authority.', textZh: '在购买、订阅、切换账号地区、安装应用、授权权限或使用生成测试数据前，你有责任查看官方来源。Wolffy 是研究辅助工具，不是最终权威来源。' },
+      { title: '4. Prohibited use', titleZh: '4. 禁止用途', text: 'Do not use Wolffy for fraud, impersonation, unauthorized access, credential sharing, account abuse, platform circumvention, spam, scraping abuse, or misuse of generated data.', textZh: '不得将 Wolffy 用于欺诈、冒充身份、未授权访问、凭据共享、账号滥用、规避平台规则、垃圾信息、滥用抓取或滥用生成数据。' },
+      { title: '5. External services and links', titleZh: '5. 外部服务与链接', text: 'Some pages link to App Store pages, Apple resources, public APIs, GitHub repositories, or third-party websites. Wolffy does not control those services and is not responsible for their availability, pricing, content, or policies.', textZh: '部分页面会链接到 App Store、Apple 资源、公开 API、GitHub 仓库或第三方网站。Wolffy 不控制这些服务，也不对其可用性、价格、内容或政策负责。' },
+      { title: '6. Changes to the site', titleZh: '6. 站点变更', text: 'Features, pages, routes, content, and data sources may be changed, removed, or reorganized to improve quality, comply with platform policies, reduce abuse, or keep the site maintainable.', textZh: '为了提升质量、遵守平台政策、减少滥用或保持站点可维护性，本站可能调整、移除或重组功能、页面、路由、内容和数据来源。' },
+    ],
+  },
+  editorial: {
+    title: 'Editorial Policy',
+    sub: 'How Wolffy writes, reviews, labels, and corrects content for Apple and App Store research.',
+    effective: 'Effective date: 2026-06-16',
+    sections: [
+      { title: '1. Purpose', text: 'Wolffy publishes practical, cautious, and verifiable content for Apple and iOS users researching apps, subscriptions, permissions, privacy, refunds, and region decisions.' },
+      { title: '2. Independence', text: 'Wolffy is independent. Advertising and external services do not determine editorial conclusions.' },
+      { title: '3. Corrections', text: 'Users can report outdated, unclear, inaccurate, or incomplete content with the page URL and supporting details.' },
+    ],
+  },
+  'data-sources': {
+    title: 'Data Sources',
+    sub: 'Where Wolffy may obtain app, price, IP, address-format, and safety reference information.',
+    effective: 'Effective date: 2026-06-16',
+    sections: [
+      { title: '1. Apple and App Store data', text: 'App names, icons, prices, identifiers, descriptions, ratings, and availability signals may come from Apple public APIs, public App Store pages, or Apple-hosted media URLs.' },
+      { title: '2. IP and network data', text: 'IP checks may request information from public geolocation or network metadata services. Geolocation is approximate.' },
+      { title: '3. Generated test data', text: 'Address generator data is synthetic and intended for development, testing, UI mockups, and sample datasets only.' },
+    ],
+  },
+};

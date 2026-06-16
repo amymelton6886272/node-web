@@ -32,7 +32,6 @@ export default function Checklists() {
   return (
     <>
       <Hero title={page.heroTitle} sub={page.heroSub} />
-      <ContentSection title={page.title} intro={page.intro} items={page.items} links={page.links} linksLabel={page.linksLabel} />
       <div className="checkToolbar card">
         <div>
           <h2>{page.toolbarTitle}</h2>
@@ -78,7 +77,7 @@ export default function Checklists() {
               <div className="checkFoot">
                 <div>{item.related.map((id) => {
                   const href = '/' + id;
-                  return <a key={id} href={href} onClick={e => { e.preventDefault(); history.pushState({}, '', href); window.dispatchEvent(new PopStateEvent('popstate')); }}>#{id}</a>;
+                  return <a key={id} href={href}>#{id}</a>;
                 })}</div>
                 <button onClick={() => reset(item.id)}>{page.reset}</button>
               </div>
@@ -86,6 +85,7 @@ export default function Checklists() {
           );
         })}
       </div>
+      <ContentSection title={page.title} intro={page.intro} items={page.items} links={page.links} linksLabel={page.linksLabel} />
     </>
   );
 }

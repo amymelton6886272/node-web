@@ -31,7 +31,6 @@ export default function AppRisk() {
   return (
     <>
       <Hero title={page.heroTitle} sub={page.heroSub} />
-      <ContentSection title={page.title} intro={page.intro} items={page.items} links={page.links} linksLabel={page.linksLabel} />
 
       <section className="riskPanel card">
         <div className="riskInput">
@@ -91,8 +90,9 @@ export default function AppRisk() {
             <ul>{active.slice(0, 5).map((q) => <li key={q.id}>{q.advice}</li>)}</ul>
           </>
         )}
-        <div className="riskActions"><a href="/checklists" onClick={e=>{e.preventDefault();history.pushState({},'','/checklists');window.dispatchEvent(new PopStateEvent('popstate'))}}>{page.openChecklists}</a><a href="/iap" onClick={e=>{e.preventDefault();history.pushState({},'','/iap');window.dispatchEvent(new PopStateEvent('popstate'))}}>{page.checkIap}</a><a href="/guides" onClick={e=>{e.preventDefault();history.pushState({},'','/guides');window.dispatchEvent(new PopStateEvent('popstate'))}}>{page.readGuides}</a><button onClick={reset}>{page.reset}</button></div>
+        <div className="riskActions"><a href="/checklists">{page.openChecklists}</a><a href="/iap">{page.checkIap}</a><a href="/guides">{page.readGuides}</a><button onClick={reset}>{page.reset}</button></div>
       </section>
+      <ContentSection title={page.title} intro={page.intro} items={page.items} links={page.links} linksLabel={page.linksLabel} />
     </>
   );
 }

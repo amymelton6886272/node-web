@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import { policyPages } from '../astro/policyPages.js';
+
+export function getStaticPaths() {
+  return Object.entries(policyPages).map(([policy, page]) => ({
+    params: { policy },
+    props: { page, path: `/${policy}` },
+  }));
+}
+
+const { page, path } = Astro.props;
+---
+<BaseLayout title={`${page.title} - Wolffy`} description={page.sub} path={path}>
+  <div class="lang-en">
+    <Hero title={page.title} sub={page.sub} eyebrow="Publisher information" />
+  </div>
+  <div class="lang-zh">
+    <Hero title={page.titleZh || page.title} sub={page.subZh || page.sub} eyebrow="发布者信息" />
+  </div>
+  <section class="legal card">
+    <div class="policyTitleZh lang-zh">
+      <h2>{page.titleZh}</h2>
+      <p>{page.subZh}</p>
+    </div>
+    {(page.effective || page.effectiveZh) && (
+      <div class="effectiveDateGroup">
+        {page.effective && <p class="effectiveDate lang-en">{page.effective}</p>}
+        {page.effectiveZh && <p class="effectiveDate lang-zh">{page.effectiveZh}</p>}
+      </div>
+    )}
+    <div class="legalSections">
+      {page.sections.map((section) => (
+        <article class="legalSection">
+          <h2 class="lang-en">{section.title}</h2>
+          <p class="lang-en">{section.text}</p>
+          {section.titleZh && <h2 class="lang-zh">{section.titleZh}</h2>}
+          {section.textZh && <p class="lang-zh" lang="zh-CN">{section.textZh}</p>}
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

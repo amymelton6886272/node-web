@@ -87,8 +87,6 @@ export default function Iap(){
  };
  return <>
  <Hero title={t.iap.title} sub={t.iap.sub}/>
- <ToolIntro page="iap"/>
- <ContentSection {...content}/>
  <div className="searchbar iapSearchbar">
     <input value={q} onChange={e=>setQ(e.target.value)} onKeyDown={e=>{if(e.key==='Enter')query()}} placeholder={t.iap.placeholder}/>
     <select value={country} onChange={e=>setCountry(e.target.value)}>
@@ -114,4 +112,6 @@ export default function Iap(){
   </div>)}</div>
   {!state.loading&&state.searched&&state.apps.length===0&&!state.error&&<Empty text={t.iap.noMatch}/>}
   {!state.searched&&<FeaturedApps onSelect={query}/>}
+  <ToolIntro page="iap"/>
+  <ContentSection {...content}/>
  </>}

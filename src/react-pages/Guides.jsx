@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Hero } from '../components/common.jsx';
 import { useLang } from '../LanguageContext.jsx';
-import { LANGS } from '../i18n.js';
+import en from '../i18n/en.js';
 import { BookOpen, Smartphone, DollarSign, Search, Shield, Star, Users, Globe, Clock, List } from 'lucide-react';
 import { AdBanner } from '../components/AdBanner.jsx';
 
@@ -22,7 +22,7 @@ export default function Guides() {
   const { t } = useLang();
   const data = (t.guides && typeof t.guides === 'object' && t.guides.articles?.length)
     ? t.guides
-    : { ...(t.guides || {}), ...LANGS.en.guides };
+    : { ...(t.guides || {}), ...en.guides };
   const guides = data?.articles || [];
   const [expanded, setExpanded] = useState({});
 
@@ -156,9 +156,9 @@ export default function Guides() {
                   {/* Related Links Footer */}
                   <div className="guideRelated">
                     <span>Explore more:</span>
-                    <a href="/glossary" onClick={e=>{e.preventDefault();history.pushState({},'','/glossary');window.dispatchEvent(new PopStateEvent('popstate'))}}>App Store Glossary</a>
-                    <a href="/price" onClick={e=>{e.preventDefault();history.pushState({},'','/price');window.dispatchEvent(new PopStateEvent('popstate'))}}>Price Compare Tool</a>
-                    <a href="/appfree" onClick={e=>{e.preventDefault();history.pushState({},'','/appfree');window.dispatchEvent(new PopStateEvent('popstate'))}}>Free Apps</a>
+                    <a href="/glossary">App Store Glossary</a>
+                    <a href="/price">Price Compare Tool</a>
+                    <a href="/appfree">Free Apps</a>
                   </div>
                 </>
               )}

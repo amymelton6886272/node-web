@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { SITE } from '../../astro/site.js';
+import { articles, getArticlePath } from '../../data/articles.js';
+
+export function getStaticPaths() {
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const path = getArticlePath(article);
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: article.title,
+  description: article.description,
+  alternativeHeadline: article.titleZh,
+  datePublished: article.publishedAt,
+  dateModified: article.updatedAt,
+  author: { '@type': 'Organization', name: 'Wolffy' },
+  publisher: { '@type': 'Organization', name: 'Wolffy', url: SITE },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE}${path}` },
+  articleSection: article.category,
+  keywords: article.tags.join(', '),
+  inLanguage: ['en', 'zh-CN'],
+};
+---
+<BaseLayout title={`${article.title} - Wolffy`} description={article.description} path={path} ogType="article">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  </Fragment>
+  <div class="lang-en">
+    <Hero title={article.title} sub={article.description} eyebrow={article.category} />
+  </div>
+  <div class="lang-zh">
+    <Hero title={article.titleZh || article.title} sub={article.descriptionZh || article.description} eyebrow={article.category} />
+  </div>
+  <article class="articleDetail card">
+    {article.titleZh && (
+      <div class="articleZhIntro lang-zh" lang="zh-CN">
+        <h2>{article.titleZh}</h2>
+        <p>{article.descriptionZh}</p>
+      </div>
+    )}
+    <div class="articleMeta articleMetaTop">
+      <span>Updated {article.updatedAt}</span>
+      <span>{article.readTime}</span>
+      <span>{article.category}</span>
+    </div>
+    <nav class="articleToc" aria-label="Article sections">
+      <strong class="lang-en">On this page</strong>
+      <strong class="lang-zh">本文目录</strong>
+      {article.sections.map((section, index) => <a href={`#section-${index}`}><span class="lang-en">{section.heading}</span><span class="lang-zh">{section.headingZh || section.heading}</span></a>)}
+    </nav>
+    {article.sections.map((section, index) => (
+      <section id={`section-${index}`}>
+        <h2 class="lang-en">{section.heading}</h2>
+        <p class="lang-en">{section.text}</p>
+        {section.headingZh && <h2 class="lang-zh" lang="zh-CN">{section.headingZh}</h2>}
+        {section.textZh && <p class="lang-zh" lang="zh-CN">{section.textZh}</p>}
+      </section>
+    ))}
+    <div class="articleFooter">
+      <a href="/articles"><span class="lang-en">All articles</span><span class="lang-zh">全部文章</span></a>
+      <a href="/checklists"><span class="lang-en">Decision checklists</span><span class="lang-zh">决策清单</span></a>
+      <a href="/knowledge"><span class="lang-en">Knowledge base</span><span class="lang-zh">知识库</span></a>
+    </div>
+  </article>
+</BaseLayout>

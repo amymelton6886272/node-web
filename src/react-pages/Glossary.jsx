@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { Hero } from '../components/common.jsx';
 import { useLang } from '../LanguageContext.jsx';
-import { LANGS } from '../i18n.js';
+import en from '../i18n/en.js';
 import { Search, BookOpen } from 'lucide-react';
 
 export default function Glossary() {
   const { t } = useLang();
   const data = (t.glossary && typeof t.glossary === 'object' && t.glossary.terms?.length)
     ? t.glossary
-    : { ...(t.glossary || {}), ...LANGS.en.glossary };
+    : { ...(t.glossary || {}), ...en.glossary };
   const glossary = data;
   const terms = glossary?.terms || [];
   const [q, setQ] = useState('');

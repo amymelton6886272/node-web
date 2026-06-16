@@ -48,8 +48,6 @@ export default function IpCheck(){
  const rows=info?[[t.ip.ipAddr,info.ip],[t.ip.country,`${info.country||'-'} ${info.flag?.emoji||''}`],[t.ip.city,info.city||'-'],[t.ip.timezone,info.timezone?.id||'-'],[t.ip.asn,info.connection?.asn?`AS${info.connection.asn}`:'-'],[t.ip.isp,info.connection?.isp||'-'],[t.ip.org,info.connection?.org||'-'],[t.ip.coords,info.latitude&&info.longitude?`${info.latitude}, ${info.longitude}`:'-']]:[];
  return <>
  <Hero title={t.ip.title} sub={t.ip.sub}/>
- <ToolIntro page="ip"/>
- <ContentSection {...content}/>
  <div className="ipPanel card">
     <div><h3>{t.ip.panelTitle}</h3><p>{t.ip.panelDesc}</p></div>
     <button onClick={load} disabled={loading}>{loading?t.ip.refreshing:t.ip.refreshIP}</button>
@@ -59,4 +57,6 @@ export default function IpCheck(){
   {info&&<div className="ipHero card"><div className="ipAddress"><span>{info.flag?.emoji||'🌐'}</span><b>{info.ip}</b><em>{info.country} · {info.city}</em></div><div className="ipMap">{info.connection?.isp||info.connection?.org||t.ip.unknownISP}</div></div>}
   {info&&<div className="ipGrid">{rows.map(([k,v])=><div className="ipCell" key={k}><span>{k}</span><b>{v}</b></div>)}</div>}
   <div className="card ipTools"><h3>{t.ip.connTest}</h3><p>{t.ip.connDesc}</p><div className="searchbar"><input value={target} onChange={e=>setTarget(e.target.value)} placeholder="https://www.google.com"/><button onClick={checkSite}>Test</button></div>{probe&&<div className={probe.ok?'probe ok':'probe'}>{probe.loading?t.ip.testing:probe.ok?`${t.ip.reachable} · ${probe.ms}ms`:`${t.ip.unreachable} · ${probe.ms}ms`}</div>}<div className="quickSites">{['https://www.google.com','https://github.com','https://www.youtube.com','https://chat.openai.com','https://apps.apple.com'].map(u=><button key={u} onClick={()=>setTarget(u)}>{u.replace('https://','')}</button>)}</div></div>
+  <ToolIntro page="ip"/>
+  <ContentSection {...content}/>
  </>}

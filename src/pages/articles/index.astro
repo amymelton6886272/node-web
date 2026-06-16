@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { articles, getArticlePath } from '../../data/articles.js';
+---
+<BaseLayout title="Articles - Wolffy" description="Practical Apple and App Store research articles for safer purchasing, privacy, and account decisions." path="/articles">
+  <div class="lang-en">
+    <Hero title="Articles" sub="Practical Apple and App Store research articles written for safer purchasing, privacy, and account decisions." />
+  </div>
+  <div class="lang-zh">
+    <Hero title="文章" sub="围绕购买、隐私、账号和 App Store 决策的实用 Apple 研究文章。" />
+  </div>
+
+  <section class="articleToolbar card">
+    <div class="lang-en">
+      <h2>Publisher content</h2>
+      <p>Use these articles alongside Wolffy tools to understand pricing, subscriptions, privacy labels, app permissions, and account changes before acting.</p>
+    </div>
+    <div class="lang-zh">
+      <h2>发布者内容</h2>
+      <p lang="zh-CN">这些文章围绕 App Store 价格、订阅、隐私权限和账号地区切换展开，适合在使用工具前后作为决策参考。</p>
+    </div>
+  </section>
+
+  <div class="articleGrid">
+    {articles.map((article) => (
+      <a class="articleCard card" href={getArticlePath(article)}>
+        <span class="articleCategory">{article.category}</span>
+        <h2 class="lang-en">{article.title}</h2>
+        {article.titleZh && <h2 class="lang-zh" lang="zh-CN">{article.titleZh}</h2>}
+        <p class="lang-en">{article.description}</p>
+        {article.descriptionZh && <p class="lang-zh" lang="zh-CN">{article.descriptionZh}</p>}
+        <div class="articleMeta">
+          <span>{article.updatedAt}</span>
+          <span>{article.readTime}</span>
+        </div>
+        <div class="articleTags">{article.tags.map((tag) => <span>{tag}</span>)}</div>
+      </a>
+    ))}
+  </div>
+</BaseLayout>

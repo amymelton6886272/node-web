@@ -2,6 +2,7 @@ import { features } from '../navigation.jsx';
 import { Hero } from '../components/common.jsx';
 import { BilingualNote, RichSection, useSiteContent } from '../components/Bilingual.jsx';
 import { useLang } from '../LanguageContext.jsx';
+import { articles, getArticlePath } from '../data/articles.js';
 
 export default function Home(){
   const {t}=useLang();
@@ -16,7 +17,7 @@ export default function Home(){
     </section>
 
     <div className="grid cards homeFeatureGrid">
-      {features.map(({id,Icon})=><a href={'/'+id} className="card" key={id} onClick={e=>{e.preventDefault();history.pushState({},'','/'+id);window.dispatchEvent(new PopStateEvent('popstate'))}}><Icon/><h3>{t.nav[id]}</h3><p>{t.homeDesc[id]}</p></a>)}
+      {features.map(({id,Icon})=><a href={'/'+id} className="card" key={id}><Icon/><h3>{t.nav[id]}</h3><p>{t.homeDesc[id]}</p></a>)}
     </div>
 
     <RichSection title={home.highlightsTitle} className="homeHighlights">
@@ -34,6 +35,12 @@ export default function Home(){
     <RichSection title={home.contentTitle} className="homeContentBlocks">
       <div className="richGrid">
         {(home.contentBlocks||[]).map((item,i)=><article key={i} className="richBlock"><h3>{item.title}</h3><p>{item.text}</p></article>)}
+      </div>
+    </RichSection>
+
+    <RichSection title="Latest articles" className="homeArticles">
+      <div className="richGrid">
+        {articles.slice(0, 4).map((article)=><a className="richBlock" key={article.slug} href={getArticlePath(article)}><h3>{article.title}</h3><p>{article.description}</p></a>)}
       </div>
     </RichSection>
 

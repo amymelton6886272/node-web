@@ -1,0 +1,125 @@
+---
+import { SITE, isActive, navItems, sidebarGroups } from '../astro/site.js';
+
+const {
+  title = 'Wolffy - Apple / iOS Toolkit',
+  description = 'A practical Apple and iOS toolkit with App Store price comparison, IAP lookup, free app discovery, privacy guidance, and safety articles.',
+  path = Astro.url.pathname,
+  ogType = 'website',
+} = Astro.props;
+
+const canonical = new URL(path, SITE).toString();
+---
+<!doctype html>
+<html lang="en" data-lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ff6b9b" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${SITE}/og-image.svg`} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Wolffy Toolkit" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <script is:inline>
+      const savedLang = localStorage.getItem('lang');
+      const preferredLang = savedLang || ((navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en');
+      document.documentElement.dataset.lang = preferredLang;
+      document.documentElement.lang = preferredLang === 'zh' ? 'zh-CN' : 'en';
+    </script>
+    <link rel="stylesheet" href="/style.css" />
+    <slot name="head" />
+  </head>
+  <body>
+    <header class="top">
+      <a class="brand" href="/">
+        <span class="logo" aria-label="Wolffy logo">W</span>
+        <b>Wolffy</b>
+      </a>
+      <nav class="toplinks" aria-label="Main navigation">
+        {navItems.map((item) => <a class={isActive(path, item.href) ? 'active' : ''} href={item.href}><span class="lang-en">{item.label}</span><span class="lang-zh">{item.labelZh}</span></a>)}
+      </nav>
+      <div class="headerActions">
+        <button class="lang" type="button" data-lang-toggle aria-label="Toggle language"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+        <button class="theme" type="button" aria-label="Toggle theme" data-theme-toggle>◐</button>
+      </div>
+    </header>
+    <div class="shell">
+      <aside class="sideNav" aria-label="Tool navigation">
+        <div class="sideNavIntro">
+          <span class="lang-en">Toolkit</span>
+          <span class="lang-zh">工具箱</span>
+          <strong>Wolffy</strong>
+        </div>
+        {sidebarGroups.map((group) => (
+          <section class="sideGroup">
+            <h2><span class="lang-en">{group.label}</span><span class="lang-zh">{group.labelZh}</span></h2>
+            {group.items.map((item) => (
+              <a class={isActive(path, item.href) ? 'active' : ''} href={item.href}>
+                <span class="sideIcon" aria-hidden="true">{item.icon}</span>
+                <span class="sideText">
+                  <b><span class="lang-en">{item.label}</span><span class="lang-zh">{item.labelZh}</span></b>
+                  <small><span class="lang-en">{item.desc}</span><span class="lang-zh">{item.descZh}</span></small>
+                </span>
+              </a>
+            ))}
+          </section>
+        ))}
+      </aside>
+      <main id="main-content">
+        <slot />
+      </main>
+    </div>
+    <nav class="mobileDock" aria-label="Mobile shortcuts">
+      <a class={path === '/' ? 'active' : ''} href="/"><span class="dockIcon">⌂</span><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
+      <button type="button" data-jump-tool><span class="dockIcon">●</span><span class="lang-en">Use</span><span class="lang-zh">使用</span></button>
+      <a class={isActive(path, '/articles') ? 'active' : ''} href="/articles"><span class="dockIcon">≡</span><span class="lang-en">Read</span><span class="lang-zh">文章</span></a>
+      <button type="button" data-scroll-top><span class="dockIcon">↑</span><span class="lang-en">Top</span><span class="lang-zh">顶部</span></button>
+    </nav>
+    <footer>
+      <span class="lang-en">Built with care. No account registration needed. Open to all App Store users.</span>
+      <span class="lang-zh">用心维护。无需注册账号，面向所有 App Store 用户开放。</span>
+      <span>
+        Wolffy © 2026 · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/disclaimer">Disclaimer</a> · <a href="/terms">Terms</a> · <a href="/editorial">Editorial</a> · <a href="/data-sources">Data Sources</a>
+      </span>
+    </footer>
+    <script is:inline>
+      const button = document.querySelector('[data-theme-toggle]');
+      const langButton = document.querySelector('[data-lang-toggle]');
+      const jumpButton = document.querySelector('[data-jump-tool]');
+      const topButton = document.querySelector('[data-scroll-top]');
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') document.body.classList.add('dark');
+      button?.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+      });
+      langButton?.addEventListener('click', () => {
+        const next = document.documentElement.dataset.lang === 'zh' ? 'en' : 'zh';
+        localStorage.setItem('lang', next);
+        document.documentElement.dataset.lang = next;
+        document.documentElement.lang = next === 'zh' ? 'zh-CN' : 'en';
+        location.reload();
+      });
+      jumpButton?.addEventListener('click', () => {
+        const target = document.querySelector('.searchbar, .addressLayout, .ipPanel, .riskPanel, .checkToolbar, .knowledgeToolbar, .toolbar, .guideToolbar, .glossarySearch, main .card, main');
+        target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      topButton?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
+  </body>
+</html>

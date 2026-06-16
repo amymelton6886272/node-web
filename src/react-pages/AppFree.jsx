@@ -110,8 +110,6 @@ export default function AppFree(){
  const content=toolContent[lang]?.appfree||toolContent.en.appfree;
  return <>
  <Hero title={t.appfree.title} sub={t.appfree.sub}/>
- <ToolIntro page="appfree"/>
- <ContentSection {...content}/>
  {loading&&<p>{t.appfree.fetching}</p>}
   {error&&<p className="err">API error: {error}</p>}
   {!loading&&!error&&<div className="toolbar">
@@ -123,5 +121,7 @@ export default function AppFree(){
     <div className="appbody"><h3>{app.name}</h3><p>{app.desc||app.seller||'App Store free'}</p><small>{[app.type,app.tags,app.seller].filter(Boolean).join(' · ')}</small></div>
   </a>)}</div>
   {!loading&&!error&&list.length===0&&<Empty text={t.appfree.noFree}/>}
+  <ToolIntro page="appfree"/>
+  <ContentSection {...content}/>
  </>
 }

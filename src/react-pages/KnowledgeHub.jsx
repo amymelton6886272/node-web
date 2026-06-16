@@ -45,7 +45,6 @@ export default function KnowledgeHub() {
   return (
     <>
       <Hero title={page.heroTitle} sub={page.heroSub} />
-      <ContentSection title={page.title} intro={page.intro} items={page.items} links={page.links} linksLabel={page.linksLabel} />
 
       <section className="knowledgeToolbar card">
         <div>
@@ -92,6 +91,7 @@ export default function KnowledgeHub() {
           );
         })}
       </div>
+      <ContentSection title={page.title} intro={page.intro} items={page.items} links={page.links} linksLabel={page.linksLabel} />
     </>
   );
 }

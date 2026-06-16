@@ -29,8 +29,6 @@ export default function IconSearch(){
  const iconUrl=app=>(app.artworkUrl512||app.artworkUrl100||'').replace(/\d+x\d+bb\.(jpg|png|webp)$/,'1024x1024bb.$1');
  return <>
  <Hero title={t.icon.title} sub={t.icon.sub}/>
- <ToolIntro page="icon"/>
- <ContentSection {...content}/>
  <div className="searchbar iconSearchbar">
     <input value={q} onChange={e=>setQ(e.target.value)} onKeyDown={e=>{if(e.key==='Enter')search()}} placeholder={t.icon.placeholder}/>
     <select value={country} onChange={e=>setCountry(e.target.value)}>
@@ -48,4 +46,6 @@ export default function IconSearch(){
   </div>})}</div>
   {!state.loading&&state.searched&&state.data.length===0&&!state.error&&<Empty text={t.icon.noMatch}/>}
   {!state.searched&&<FeaturedApps onSelect={search}/>}
+  <ToolIntro page="icon"/>
+  <ContentSection {...content}/>
  </>}

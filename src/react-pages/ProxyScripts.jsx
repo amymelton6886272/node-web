@@ -16,7 +16,6 @@ const NAME_LABELS_EN = {
   '墨鱼': 'Moyu',
   '可莉 最小配置': 'Keli Minimal',
   '可莉 进阶配置': 'Keli Advanced',
-  'yfamily轻量版': 'yfamily Lite',
   '深巷有喵': 'Rabbit Spec',
   'blackmatrix7 广告分流': 'blackmatrix7 Advertising',
   'fmz200 App 去广告插件合集': 'fmz200 App Adblock Plugins',

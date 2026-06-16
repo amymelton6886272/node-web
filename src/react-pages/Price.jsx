@@ -54,8 +54,6 @@ export default function Price(){
  };
  const {t,lang}=useLang(); const content=toolContent[lang]?.price||toolContent.en.price; return <>
  <Hero title={t.price.title} sub={t.price.sub}/>
- <ToolIntro page="price"/>
- <ContentSection {...content}/>
  <div className="searchbar priceSearchbar">
     <input value={q} onChange={e=>setQ(e.target.value)} onKeyDown={e=>{if(e.key==='Enter')search()}} placeholder={t.price.placeholder}/>
     <select value={baseCountry} onChange={e=>setBaseCountry(e.target.value)}>{countries.map(([c,n])=><option value={c} key={c}>{n}</option>)}</select>
@@ -69,6 +67,8 @@ export default function Price(){
       <span>{p.name}</span><b>{p.formattedPrice}</b>{p.available&&<strong>{fmtCny(p.cny)}</strong>}<em>{p.available?t.price.openStore:t.price.na}</em>
     </a>)}</div>
   </div>})}</div>
-   {!state.loading&&state.searched&&state.apps.length===0&&!state.error&&<Empty text={t.price.noMatch}/>}
+  {!state.loading&&state.searched&&state.apps.length===0&&!state.error&&<Empty text={t.price.noMatch}/>}
   {!state.searched&&<FeaturedApps onSelect={search}/>}
+  <ToolIntro page="price"/>
+  <ContentSection {...content}/>
  </>}

@@ -1,0 +1,10 @@
+---
+const { title, sub, eyebrow = 'Apple / iOS Toolkit' } = Astro.props;
+---
+<section class="hero">
+  <div>
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{title}</h1>
+    <p>{sub}</p>
+  </div>
+</section>

@@ -1,19 +1,23 @@
 {
+  "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "dev:hmr": "vite --host 0.0.0.0",
-    "build": "vite build",
-    "preview": "npm run build && node scripts/preview-with-api.mjs",
-    "preview:only": "vite preview --host 0.0.0.0",
-    "start": "npm run preview",
-    "prerender": "npm run build && npx vite preview --port 4173 & sleep 3 && node scripts/prerender.mjs http://127.0.0.1:4173 && kill %1"
+    "dev": "astro dev --host 0.0.0.0",
+    "dev:hmr": "astro dev --host 0.0.0.0",
+    "sync:assets": "node scripts/sync-public-assets.mjs",
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "prebuild": "npm run sync:assets && npm run sitemap",
+    "build": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "npm run build && cross-env ASTRO_TELEMETRY_DISABLED=1 astro preview --host 0.0.0.0",
+    "preview:only": "cross-env ASTRO_TELEMETRY_DISABLED=1 astro preview --host 0.0.0.0",
+    "start": "npm run preview"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "lucide-react": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "vite": "latest"
+    "@astrojs/react": "^4.2.0",
+    "astro": "^5.13.0",
+    "cross-env": "^10.1.0",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "playwright": "^1.60.0"
