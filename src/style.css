@@ -370,26 +370,24 @@ footer span{display:block;line-height:1.8}
 @media(max-width:760px){.articleToolbar{flex-direction:column;align-items:stretch}.articleDetail{padding:22px}.articleCard{min-height:auto}}
 
 @media(max-width:760px){
-  body{background:#f7f8fb}
-  body{padding-bottom:76px}
+  body{background:#f7f8fb;padding-bottom:104px}
   .top{height:52px;padding:0 12px;gap:10px}
   .brand b{font-size:15px}
   .logo{width:28px;height:28px;border-radius:8px}
   .headerActions{margin-left:auto}
   .theme{display:none}
-  .mobileDock{position:fixed;left:10px;right:10px;bottom:10px;z-index:20;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:7px;border:1px solid var(--line);border-radius:20px;background:color-mix(in srgb,var(--card) 90%,transparent);box-shadow:0 18px 48px #11182724;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-  .mobileDock a,.mobileDock button{min-height:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border:0;border-radius:15px;background:transparent;color:var(--muted);text-decoration:none;font:inherit;font-size:11px;padding:4px}
-  .mobileDock a.active,.mobileDock button:active{background:linear-gradient(135deg,#ffe6f0,#eef4ff);color:#1c2740}
-  .dark .mobileDock a.active,.dark .mobileDock button:active{background:linear-gradient(135deg,#4c0519,#172554);color:#edf2ff}
-  .dockIcon{font-size:16px;font-weight:800;line-height:1;color:var(--accent)}
+  .mobileDock{display:none}
   .shell{min-height:auto}
-  aside.sideNav{position:sticky;top:52px;z-index:1;overflow-x:auto;overflow-y:hidden;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(14px)}
+  aside.sideNav{position:fixed;left:10px;right:10px;bottom:10px;top:auto;z-index:30;width:auto;height:auto;display:flex;gap:8px;overflow-x:auto;overflow-y:hidden;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:8px;border:1px solid color-mix(in srgb,var(--line) 82%,transparent);border-radius:22px;background:color-mix(in srgb,var(--card) 90%,transparent);box-shadow:0 18px 48px #11182726;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
   aside.sideNav::-webkit-scrollbar{display:none}
   .sideGroup{display:contents}
-  .sideGroup a{min-width:auto;flex:0 0 auto;padding:8px 10px;border-radius:999px;gap:7px;background:var(--card);border-color:var(--line)}
-  .sideGroup a.active{box-shadow:none}
-  .sideIcon{width:24px;height:24px;border-radius:999px;font-size:11px}
-  .sideText b{font-size:12px;white-space:nowrap}
+  .sideGroup a{min-width:72px;min-height:50px;flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;margin:0;padding:7px 9px;border-radius:16px;background:transparent;border-color:transparent}
+  .sideGroup a.active{box-shadow:none;background:linear-gradient(135deg,#ffe6f0,#eef4ff);border-color:#ffd0e2}
+  .dark .sideGroup a.active{background:linear-gradient(135deg,#4c0519,#172554);border-color:#713f72}
+  .sideIcon{width:25px;height:25px;border-radius:11px;font-size:11px}
+  .sideText{display:block;max-width:78px;text-align:center}
+  .sideText b{display:block;font-size:11px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .sideText small{display:none}
   main{padding:12px 10px 20px}
   .hero{padding:16px 14px;margin-bottom:10px;border-radius:16px;box-shadow:none}
   .hero .eyebrow{font-size:10px;margin:0 0 4px;letter-spacing:.04em}
@@ -443,5 +441,5 @@ footer span{display:block;line-height:1.8}
   .knowledgeHead{padding:14px}
   .knowledgeSummary{font-size:13px;line-height:1.6}
   .knowledgeBody{padding:14px}
-  footer{padding-bottom:96px}
+  footer{padding-bottom:118px}
 }
