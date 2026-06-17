@@ -73,12 +73,18 @@ export const policyPages = {
   },
   editorial: {
     title: 'Editorial Policy',
+    titleZh: '编辑政策',
     sub: 'How Wolffy writes, reviews, labels, and corrects content for Apple and App Store research.',
+    subZh: '说明 Wolffy 如何撰写、审查、标注和更正 Apple 与 App Store 相关研究内容。',
     effective: 'Effective date: 2026-06-16',
+    effectiveZh: '生效日期：2026-06-16',
     sections: [
-      { title: '1. Purpose', text: 'Wolffy publishes practical, cautious, and verifiable content for Apple and iOS users researching apps, subscriptions, permissions, privacy, refunds, and region decisions.' },
-      { title: '2. Independence', text: 'Wolffy is independent. Advertising and external services do not determine editorial conclusions.' },
-      { title: '3. Corrections', text: 'Users can report outdated, unclear, inaccurate, or incomplete content with the page URL and supporting details.' },
+      { title: '1. Purpose', titleZh: '1. 内容目的', text: 'Wolffy publishes practical, cautious, and verifiable content for Apple and iOS users researching apps, subscriptions, permissions, privacy, refunds, and region decisions.', textZh: 'Wolffy 面向 Apple 与 iOS 用户发布实用、谨慎且可核验的内容，帮助用户研究应用、订阅、权限、隐私、退款和地区相关决策。' },
+      { title: '2. Independence', titleZh: '2. 编辑独立性', text: 'Wolffy is independent. Advertising, affiliate links, sponsorships, external APIs, and third-party services do not determine editorial conclusions or tool behavior.', textZh: 'Wolffy 是独立项目。广告、联盟链接、赞助、外部 API 和第三方服务不会决定本站的编辑结论或工具行为。' },
+      { title: '3. Source handling', titleZh: '3. 来源处理', text: 'When content references app prices, App Store metadata, public APIs, platform behavior, or third-party resources, Wolffy treats those signals as research inputs rather than final authority.', textZh: '当内容引用应用价格、App Store 元数据、公开 API、平台行为或第三方资源时，Wolffy 会把这些信息视为研究输入，而不是最终权威。' },
+      { title: '4. Review standards', titleZh: '4. 审查标准', text: 'Pages are written to avoid exaggerated claims, hidden guarantees, or pressure tactics. Guidance should explain limits, encourage official verification, and distinguish facts from practical suggestions.', textZh: '页面写作会避免夸大说法、隐藏式保证或施压式引导。指南应说明限制，提醒用户通过官方来源核验，并区分事实信息与实践建议。' },
+      { title: '5. Corrections', titleZh: '5. 内容更正', text: 'Users can report outdated, unclear, inaccurate, or incomplete content with the page URL, observed date, affected text, and supporting details. Corrections may update article text, policy notes, sitemap dates, or related page copy.', textZh: '用户可以反馈过时、不清楚、不准确或不完整的内容。反馈时建议提供页面地址、发现日期、相关文字和支持信息。更正可能涉及文章正文、政策说明、sitemap 日期或相关页面文案。' },
+      { title: '6. Update rhythm', titleZh: '6. 更新节奏', text: 'Wolffy may update guides, glossary entries, checklists, and policy pages when platform behavior changes, user feedback reveals gaps, or maintenance work improves clarity and safety.', textZh: '当平台行为变化、用户反馈暴露缺口，或维护工作能提升清晰度与安全性时，Wolffy 可能更新指南、术语、检查清单和政策页面。' },
     ],
   },
   'data-sources': {
