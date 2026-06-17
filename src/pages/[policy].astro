@@ -17,19 +17,35 @@ const { page, path } = Astro.props;
     <Hero title={page.title} sub={page.sub} eyebrow="Publisher information" />
   </div>
   <div class="lang-zh">
-    <Hero title={page.titleZh || page.title} sub={page.subZh || page.sub} eyebrow="发布者信息" />
+    <Hero title={page.titleZh || page.title} sub={page.subZh || page.sub} eyebrow="发布信息" />
   </div>
+
   <section class="legal card">
+    {page.highlights && (
+      <div class="legalHighlights">
+        {page.highlights.map((item) => (
+          <article class="legalHighlight">
+            <span class="lang-en">{item.label}</span>
+            <span class="lang-zh">{item.labelZh || item.label}</span>
+            <b class="lang-en">{item.value}</b>
+            <b class="lang-zh">{item.valueZh || item.value}</b>
+          </article>
+        ))}
+      </div>
+    )}
+
     <div class="policyTitleZh lang-zh">
       <h2>{page.titleZh}</h2>
       <p>{page.subZh}</p>
     </div>
+
     {(page.effective || page.effectiveZh) && (
       <div class="effectiveDateGroup">
         {page.effective && <p class="effectiveDate lang-en">{page.effective}</p>}
         {page.effectiveZh && <p class="effectiveDate lang-zh">{page.effectiveZh}</p>}
       </div>
     )}
+
     <div class="legalSections">
       {page.sections.map((section) => (
         <article class="legalSection">
@@ -40,5 +56,33 @@ const { page, path } = Astro.props;
         </article>
       ))}
     </div>
+
+    {page.checklist && (
+      <section class="legalChecklistCard">
+        <h2 class="lang-en">{page.checklist.title}</h2>
+        <h2 class="lang-zh">{page.checklist.titleZh || page.checklist.title}</h2>
+        <ul>
+          {page.checklist.items.map((item) => (
+            <li>
+              <span class="lang-en">{item.text}</span>
+              <span class="lang-zh">{item.textZh || item.text}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {page.links && (
+      <div class="legalLinkRow">
+        <strong class="lang-en">Related pages</strong>
+        <strong class="lang-zh">相关页面</strong>
+        {page.links.map((link) => (
+          <a href={link.href}>
+            <span class="lang-en">{link.label}</span>
+            <span class="lang-zh">{link.labelZh || link.label}</span>
+          </a>
+        ))}
+      </div>
+    )}
   </section>
 </BaseLayout>

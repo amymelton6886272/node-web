@@ -77,15 +77,36 @@ footer span{display:block;line-height:1.8}
 .policyTitleZh p{font-size:14.5px;line-height:1.85;margin:0}
 .effectiveDateGroup{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}
 .effectiveDateGroup .effectiveDate{margin:0}
+.legalHighlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:0 0 18px}
+.legalHighlight{border:1px solid var(--line);border-radius:18px;padding:16px;background:linear-gradient(180deg,color-mix(in srgb,var(--card) 88%,transparent),color-mix(in srgb,var(--accent) 4%,var(--card)));box-shadow:0 12px 28px #11182708}
+.legalHighlight span{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;font-weight:800}
+.legalHighlight b{display:block;font-size:16px;line-height:1.45}
 .legalSection h3{font-size:17px;margin:16px 0 8px;letter-spacing:0}
 .legalSection p[lang="zh-CN"],.articleCard p[lang="zh-CN"],.articleDetail p[lang="zh-CN"]{color:var(--muted);line-height:1.9}
+.legalChecklistCard{margin-top:20px;padding:22px 24px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 6%,var(--card)),var(--card))}
+.legalChecklistCard h2{font-size:20px;margin:0 0 14px}
+.legalChecklistCard ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.legalChecklistCard li{position:relative;padding-left:22px;color:var(--muted);font-size:14px;line-height:1.8}
+.legalChecklistCard li::before{content:'\2713';position:absolute;left:0;top:1px;color:var(--accent);font-weight:800}
 .articleCard h2[lang="zh-CN"]{font-size:20px;margin:0 0 8px;letter-spacing:0}
 .articleToolbar h3{font-size:17px;margin:16px 0 6px}
 .articleZhIntro{border:1px solid var(--line);border-radius:18px;padding:16px 18px;margin:0 0 18px;background:color-mix(in srgb,var(--accent) 5%,var(--card))}
 .articleZhIntro h2{font-size:22px;margin:0 0 8px;letter-spacing:0}
 .articleZhIntro p{margin:0}
 .articleDetail section h3[lang="zh-CN"]{font-size:18px;margin:18px 0 8px;letter-spacing:0}
-@media(max-width:760px){.legal{padding:22px}.toplinks{gap:10px}}
+@media(max-width:760px){
+  .legal{padding:22px}
+  .toplinks{gap:10px}
+  .legalHighlights{grid-template-columns:1fr}
+  .legalHighlight{padding:14px 15px;border-radius:16px}
+  .policyTitleZh{padding:14px 15px}
+  .policyTitleZh h2{font-size:19px}
+  .policyTitleZh p,.legalSection p,.legalChecklistCard li{font-size:13.5px;line-height:1.8}
+  .legalChecklistCard{padding:18px 16px;border-radius:18px}
+  .legalChecklistCard h2{font-size:18px}
+  .legalLinkRow{gap:8px}
+  .legalLinkRow a{padding:7px 10px}
+}
 
 /* Icon search */
 .iconSearchbar select{min-width:110px;border:1px solid var(--line);background:var(--card);color:inherit;border-radius:14px;padding:0 14px;font:inherit;outline:none}
