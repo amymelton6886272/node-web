@@ -69,6 +69,7 @@ export default function Iap() {
             ? {
                 ...app,
                 iapItems: json.iapItems || [],
+                priceSignals: json.priceSignals?.length ? json.priceSignals : app.priceSignals,
                 pageState: json.pageState || 'unavailable',
                 iapState: app.iapState === 'yes' ? 'yes' : (json.iapState || app.iapState),
               }
@@ -153,6 +154,7 @@ export default function Iap() {
         {state.apps.map((app) => {
           const verdict = inspectApp(app, t);
           const hasItems = app.iapItems?.length > 0;
+          const hasPriceSignals = app.priceSignals?.length > 0;
 
           return (
             <div className="iapCard" key={app.trackId || app.bundleId}>
@@ -203,6 +205,18 @@ export default function Iap() {
                     ? '公开信息暂时不足，建议打开 App Store 页面继续确认。'
                     : 'Public information is not conclusive yet. Open the App Store page to confirm.')}
               </div>
+
+              {hasPriceSignals && (
+                <div className="iapItems">
+                  <h4>{lang === 'zh' ? '文案提到的价格' : 'Prices mentioned in text'}</h4>
+                  {app.priceSignals.map((price, index) => (
+                    <div className="iapItem" key={index}>
+                      <span>{lang === 'zh' ? '公开文案' : 'Public text'}</span>
+                      <b>{price}</b>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               {hasItems && (
                 <div className="iapItems">

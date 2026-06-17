@@ -35,6 +35,18 @@ function inspectMetadata(app) {
   return 'unknown';
 }
 
+function extractPriceSignals(text = '') {
+  const patterns = [
+    /(?:¥|￥|CNY|RMB)\s?\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?/gi,
+    /\d+(?:\.\d+)?\s?(?:元|人民币|month|mo|yr|year)/gi,
+    /\d+\s?(?:元|人民币)\s*[\/\/]\s*(?:月|年)/gi,
+    /\d+\s?(?:USD|HKD|JPY|KRW|TWD|EUR|GBP)\b/gi,
+  ];
+
+  const values = patterns.flatMap((pattern) => text.match(pattern) || []);
+  return [...new Set(values)].slice(0, 6);
+}
+
 export default async function handler(req, res) {
   const q = String(req.query.q || '').trim();
   const country = String(req.query.country || 'cn').toLowerCase();
@@ -75,6 +87,7 @@ export default async function handler(req, res) {
       artworkUrl100: app.artworkUrl100,
       primaryGenreName: app.primaryGenreName,
       description: app.description,
+      priceSignals: extractPriceSignals(app.description || ''),
       iapState: inspectMetadata(app),
       iapItems: [],
       pageState: 'idle',
