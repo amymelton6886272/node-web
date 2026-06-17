@@ -11,7 +11,7 @@ export default function IconSearch(){
  const [copied,setCopied]=useState('');
  const {t,lang}=useLang(); const content=toolContent[lang]?.icon||toolContent.en.icon;
  const search = async (keyword) => {
-   const term = (keyword !== undefined ? keyword : q).trim();
+   const term = typeof keyword === 'string' ? keyword.trim() : q.trim();
    if (!term) return;
    setQ(term);
    setState({loading:true,data:[],error:null,searched:true});
@@ -34,7 +34,7 @@ export default function IconSearch(){
     <select value={country} onChange={e=>setCountry(e.target.value)}>
       <option value="us">United States</option><option value="cn">China</option><option value="jp">Japan</option><option value="hk">Hong Kong</option><option value="tw">Taiwan</option><option value="gb">United Kingdom</option><option value="kr">Korea</option>
     </select>
-    <button onClick={search} disabled={state.loading}>{state.loading?t.icon.searching:t.icon.search}</button>
+    <button onClick={() => search()} disabled={state.loading}>{state.loading?t.icon.searching:t.icon.search}</button>
   </div>
   {copied&&<div className="toast">Copied: {copied}</div>}
   {state.error&&<p className="err">{t.icon.queryFailed} {state.error}</p>}

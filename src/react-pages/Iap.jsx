@@ -125,7 +125,7 @@ export default function Iap() {
   };
 
   const query = async (keyword) => {
-    const term = (keyword !== undefined ? keyword : q).trim();
+    const term = typeof keyword === 'string' ? keyword.trim() : q.trim();
     if (!term) return;
     setQ(term);
     setState({ loading: true, apps: [], error: null, searched: true });
@@ -163,7 +163,7 @@ export default function Iap() {
           <option value="gb">United Kingdom</option>
           <option value="kr">Korea</option>
         </select>
-        <button onClick={query} disabled={state.loading}>{state.loading ? t.iap.querying : t.iap.search}</button>
+        <button onClick={() => query()} disabled={state.loading}>{state.loading ? t.iap.querying : t.iap.search}</button>
       </div>
       <div className="notice"><ShieldAlert size={18} /><span>{t.iap.note}</span></div>
       {state.error && <p className="err">{t.iap.queryFailed} {state.error}</p>}
