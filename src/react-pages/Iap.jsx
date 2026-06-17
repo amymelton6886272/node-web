@@ -246,8 +246,8 @@ export default function Iap() {
                   ? '正在检查公开页面信号。'
                   : 'Checking public page signals.')}
                 {signal.detail === 'unknown' && (lang === 'zh'
-                  ? '暂时无法确认公开内购信号，请直接打开 App Store 页面查看。'
-                  : 'Unable to confirm public IAP signals right now. Check the App Store page directly.')}
+                  ? '当前未抓取到可公开展示的内购信号，建议打开 App Store 页面继续确认。'
+                  : 'No publicly readable IAP signal was captured for this result. Open the App Store page to confirm.')}
               </div>
 
               {hasItems && (
