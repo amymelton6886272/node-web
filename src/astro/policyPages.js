@@ -41,12 +41,18 @@ export const policyPages = {
   },
   disclaimer: {
     title: 'Disclaimer',
+    titleZh: '免责声明',
     sub: 'Important limitations, data-source notes, and user responsibility for Wolffy tools and guides.',
+    subZh: '说明 Wolffy 工具、指南、数据来源和外部链接的使用限制，以及用户在操作前需要自行核验的责任。',
     effective: 'Effective date: 2026-06-16',
+    effectiveZh: '生效日期：2026-06-16',
     sections: [
-      { title: '1. Independent project', text: 'Wolffy is not affiliated with, endorsed by, sponsored by, or officially connected to Apple, Google, GitHub, Docker, app developers, payment providers, or any third-party service mentioned on the site.' },
-      { title: '2. Informational purpose', text: 'Content is provided for general information, research, education, and personal decision support. It is not legal, financial, cybersecurity, tax, refund, or purchase advice.' },
-      { title: '3. Verify before acting', text: 'Prices, subscriptions, app metadata, region availability, IP geolocation, and third-party links can change. Verify critical information through official sources before acting.' },
+      { title: '1. Independent project', titleZh: '1. 独立项目', text: 'Wolffy is not affiliated with, endorsed by, sponsored by, or officially connected to Apple, Google, GitHub, Docker, app developers, payment providers, or any third-party service mentioned on the site.', textZh: 'Wolffy 是独立项目，与 Apple、Google、GitHub、Docker、应用开发者、支付服务商或本站提到的任何第三方服务不存在隶属、背书、赞助或官方合作关系。' },
+      { title: '2. Informational purpose', titleZh: '2. 仅供信息参考', text: 'Content is provided for general information, research, education, and personal decision support. It is not legal, financial, cybersecurity, tax, refund, or purchase advice.', textZh: '本站内容用于一般信息、研究、教育和个人决策辅助，不构成法律、财务、网络安全、税务、退款或购买建议。重要操作前，请以官方页面和专业意见为准。' },
+      { title: '3. Verify before acting', titleZh: '3. 操作前请自行核验', text: 'Prices, subscriptions, app metadata, region availability, IP geolocation, and third-party links can change. Verify critical information through official sources before acting.', textZh: '价格、订阅规则、应用元数据、地区可用性、IP 地理位置和第三方链接都可能变化。购买、订阅、切换地区、安装应用或授予权限前，请通过官方来源再次确认。' },
+      { title: '4. Tool limitations', titleZh: '4. 工具结果的限制', text: 'Search results, generated test data, app risk scores, checklists, and network diagnostics are aids for review, not guarantees. Missing data, cached responses, API changes, regional differences, or browser restrictions may affect results.', textZh: '搜索结果、生成的测试数据、应用风险评分、检查清单和网络诊断都只是辅助判断，不是保证。数据缺失、缓存、API 变化、地区差异或浏览器限制都可能影响结果。' },
+      { title: '5. External services and links', titleZh: '5. 外部服务与链接', text: 'Some pages link to App Store pages, Apple resources, public APIs, GitHub repositories, or third-party websites. Wolffy does not control those services and is not responsible for their availability, pricing, content, policies, or security practices.', textZh: '部分页面会链接到 App Store、Apple 资源、公开 API、GitHub 仓库或第三方网站。Wolffy 不控制这些服务，也不对其可用性、价格、内容、政策或安全实践负责。' },
+      { title: '6. Prohibited use', titleZh: '6. 禁止用途', text: 'Do not use Wolffy for fraud, impersonation, unauthorized access, credential sharing, account abuse, platform circumvention, spam, scraping abuse, or misuse of generated data.', textZh: '不得将 Wolffy 用于欺诈、冒充身份、未授权访问、凭据共享、账号滥用、规避平台规则、垃圾信息、滥用抓取或滥用生成数据。' },
     ],
   },
   terms: {
@@ -77,12 +83,18 @@ export const policyPages = {
   },
   'data-sources': {
     title: 'Data Sources',
+    titleZh: '数据来源',
     sub: 'Where Wolffy may obtain app, price, IP, address-format, and safety reference information.',
+    subZh: '说明 Wolffy 可能从哪里获取应用、价格、IP、地址格式和安全参考信息，以及这些数据的限制。',
     effective: 'Effective date: 2026-06-16',
+    effectiveZh: '生效日期：2026-06-16',
     sections: [
-      { title: '1. Apple and App Store data', text: 'App names, icons, prices, identifiers, descriptions, ratings, and availability signals may come from Apple public APIs, public App Store pages, or Apple-hosted media URLs.' },
-      { title: '2. IP and network data', text: 'IP checks may request information from public geolocation or network metadata services. Geolocation is approximate.' },
-      { title: '3. Generated test data', text: 'Address generator data is synthetic and intended for development, testing, UI mockups, and sample datasets only.' },
+      { title: '1. Apple and App Store data', titleZh: '1. Apple 与 App Store 数据', text: 'App names, icons, prices, identifiers, descriptions, ratings, and availability signals may come from Apple public APIs, public App Store pages, or Apple-hosted media URLs.', textZh: '应用名称、图标、价格、标识符、描述、评分和可用性信号可能来自 Apple 公开 API、公开 App Store 页面或 Apple 托管的媒体资源地址。' },
+      { title: '2. Price and subscription signals', titleZh: '2. 价格与订阅信号', text: 'Price comparison and in-app purchase pages may use Apple lookup responses, public storefront metadata, visible checkout context, and user-entered search terms. Final pricing can still depend on account region, taxes, trials, offers, and payment method.', textZh: '价格对比和内购查询页面可能使用 Apple lookup 响应、公开商店元数据、可见结算上下文和用户输入的搜索词。最终价格仍可能受账号地区、税费、试用、优惠和付款方式影响。' },
+      { title: '3. IP and network data', titleZh: '3. IP 与网络数据', text: 'IP checks may request information from public geolocation or network metadata services. Geolocation is approximate and may reflect an ISP, proxy, data center, or registry location rather than a precise physical location.', textZh: 'IP 检测可能请求公开地理位置或网络元数据服务。地理位置是近似结果，可能反映运营商、代理、数据中心或注册信息位置，而不是精确物理地址。' },
+      { title: '4. Generated test data', titleZh: '4. 生成的测试数据', text: 'Address generator data is synthetic and intended for development, testing, UI mockups, and sample datasets only. It should not be used for identity verification, delivery, billing, fraud, or platform bypass attempts.', textZh: '地址生成器数据是合成数据，仅用于开发、测试、界面样稿和示例数据集。不应用于身份验证、配送、账单、欺诈或绕过平台验证。' },
+      { title: '5. Editorial and safety references', titleZh: '5. 编辑与安全参考', text: 'Guides, checklists, glossary entries, and risk explanations are written from public platform behavior, Apple documentation patterns, common App Store user issues, and cautious editorial review.', textZh: '指南、检查清单、术语解释和风险说明基于公开平台行为、Apple 文档模式、常见 App Store 用户问题以及谨慎的编辑整理。' },
+      { title: '6. Data freshness and corrections', titleZh: '6. 数据时效与更正', text: 'Public data can be delayed, incomplete, cached, unavailable, or different by region. If a result appears wrong, compare it with the official source and contact Wolffy with the page URL, date observed, and supporting details.', textZh: '公开数据可能延迟、不完整、被缓存、暂时不可用，或因地区不同而变化。如果结果看起来不正确，请先与官方来源对比，并在反馈时提供页面地址、发现日期和支持信息。' },
     ],
   },
 };
