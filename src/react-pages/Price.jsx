@@ -6,7 +6,6 @@ import { useLang } from '../LanguageContext.jsx';
 
 export default function Price() {
   const [q, setQ] = useState('');
-  const [baseCountry, setBaseCountry] = useState('cn');
   const [state, setState] = useState({ loading: false, apps: [], error: null, searched: false });
 
   const countries = [
@@ -48,6 +47,8 @@ export default function Price() {
     if (value === 0) return '¥0.00';
     return `≈ ¥${value.toFixed(2)}`;
   };
+
+  const baseCountry = 'us';
 
   const search = async (keyword) => {
     const term = typeof keyword === 'string' ? keyword.trim() : q.trim();
@@ -118,10 +119,10 @@ export default function Price() {
       <Hero title={t.price.title} sub={t.price.sub} />
       <div className="searchbar priceSearchbar">
         <input value={q} onChange={(e) => setQ(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter') search(); }} placeholder={t.price.placeholder} />
-        <select value={baseCountry} onChange={(e) => setBaseCountry(e.target.value)}>
-          {countries.map(([code, name]) => <option value={code} key={code}>{name}</option>)}
-        </select>
         <button onClick={() => search()} disabled={state.loading}>{state.loading ? t.price.comparing : t.price.search}</button>
+      </div>
+      <div className="notice">
+        <span>{lang === 'zh' ? '默认直接展示热门地区价格，不需要先手动选区域。' : 'Popular regions are shown by default, so you do not need to choose a region first.'}</span>
       </div>
       {state.error && <p className="err">{t.price.queryFailed} {state.error}</p>}
       {state.loading && <p>{t.price.querying}</p>}

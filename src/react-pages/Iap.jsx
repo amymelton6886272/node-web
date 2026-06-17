@@ -16,12 +16,8 @@ const REGIONS = [
 ];
 
 function inspectApp(app, t) {
-  if (app?.iapState === 'yes') {
-    return { label: t.iap.includesIAP, cls: 'badge ok', note: 'yes' };
-  }
-  if (app?.iapState === 'no') {
-    return { label: t.iap.noIAP, cls: 'badge', note: 'no' };
-  }
+  if (app?.iapState === 'yes') return { label: t.iap.includesIAP, cls: 'badge ok', note: 'yes' };
+  if (app?.iapState === 'no') return { label: t.iap.noIAP, cls: 'badge', note: 'no' };
   return { label: t.iap.pending, cls: 'badge warn', note: 'unknown' };
 }
 
@@ -39,11 +35,11 @@ function dedupe(values = []) {
 
 export default function Iap() {
   const [q, setQ] = useState('');
-  const [country, setCountry] = useState('cn');
   const [state, setState] = useState({ loading: false, apps: [], error: null, searched: false });
 
   const { t, lang } = useLang();
   const content = toolContent[lang]?.iap || toolContent.en.iap;
+  const defaultCountry = 'us';
 
   const query = async (keyword) => {
     const term = typeof keyword === 'string' ? keyword.trim() : q.trim();
@@ -53,7 +49,7 @@ export default function Iap() {
     setState({ loading: true, apps: [], error: null, searched: true });
 
     try {
-      const res = await fetch(`/api/iap?q=${encodeURIComponent(term)}&country=${country}`);
+      const res = await fetch(`/api/iap?q=${encodeURIComponent(term)}&country=${defaultCountry}`);
       if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
 
       const json = await res.json();
@@ -72,7 +68,7 @@ export default function Iap() {
     }));
 
     try {
-      const res = await fetch(`/api/iap-detail?trackId=${encodeURIComponent(trackId)}&country=${country}`);
+      const res = await fetch(`/api/iap-detail?trackId=${encodeURIComponent(trackId)}&country=${defaultCountry}`);
       if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
 
       const json = await res.json();
@@ -113,11 +109,6 @@ export default function Iap() {
           }}
           placeholder={t.iap.placeholder}
         />
-        <select value={country} onChange={(e) => setCountry(e.target.value)}>
-          {REGIONS.map((region) => (
-            <option key={region.code} value={region.code}>{region.label}</option>
-          ))}
-        </select>
         <button onClick={() => query()} disabled={state.loading}>
           {state.loading ? t.iap.querying : t.iap.search}
         </button>
@@ -127,8 +118,8 @@ export default function Iap() {
         <ShieldAlert size={18} />
         <span>
           {lang === 'zh'
-            ? '这页已改成内购比价视角：先看是否存在订阅/内购，再看公开价格区间与明细。'
-            : 'This page now uses an IAP comparison view: check whether IAP exists first, then review public price ranges and detail.'}
+            ? '默认直接展示热门地区的内购比价视角，不需要先单独选择区域。'
+            : 'The page now defaults to a popular-region IAP comparison view, so you do not need to choose a region first.'}
         </span>
       </div>
 
@@ -137,25 +128,32 @@ export default function Iap() {
           <h2>{lang === 'zh' ? '比价页现在看什么' : 'What this compare page shows'}</h2>
           <p>
             {lang === 'zh'
-              ? '主卡片会优先展示内购信号、公开价格区间、地区状态和可抓到的条目。没有官方公开条目时，页面也尽量把文案里的订阅价格整理出来。'
-              : 'Each result card focuses on IAP signal, public price ranges, store status, and any captured purchase items. When no official public list is readable, the page still organizes pricing mentioned in public text.'}
+              ? '默认以热门地区结果作为主视角，先确认是否存在订阅或内购，再看公开价格区间和条目明细。'
+              : 'The page uses popular-region results as the default view, helping you confirm subscription or IAP signals first, then review public price ranges and item details.'}
           </p>
         </div>
         <div className="iapGuideGrid">
           <article className="iapGuideItem">
-            <b>{lang === 'zh' ? '先看信号' : 'Signal first'}</b>
-            <p>{lang === 'zh' ? '先确认这个应用是否公开表现出订阅或内购特征。' : 'Confirm whether the app publicly shows subscription or IAP behavior.'}</p>
+            <b>{lang === 'zh' ? '少一步操作' : 'One less step'}</b>
+            <p>{lang === 'zh' ? '搜索后直接看到热门地区结果，不用先切换国家。' : 'Search results appear directly without asking you to switch store regions first.'}</p>
           </article>
           <article className="iapGuideItem">
-            <b>{lang === 'zh' ? '再看价格' : 'Then compare prices'}</b>
-            <p>{lang === 'zh' ? '把描述文案和页面里提到的价格集中放在同一块。' : 'Keep description-based prices and page-captured prices together in one compact area.'}</p>
+            <b>{lang === 'zh' ? '聚焦热门区' : 'Popular regions first'}</b>
+            <p>{lang === 'zh' ? '先用常见地区做判断，更符合大多数人的查询习惯。' : 'Popular regions are prioritized because they fit the most common lookup habits.'}</p>
           </article>
           <article className="iapGuideItem">
-            <b>{lang === 'zh' ? '最后补明细' : 'Detail on demand'}</b>
-            <p>{lang === 'zh' ? '只有你点开比价时才抓公开页面，避免拖慢首屏。' : 'Public detail fetching happens only on demand so the first result stays quick.'}</p>
+            <b>{lang === 'zh' ? '明细仍按需补' : 'Details stay on demand'}</b>
+            <p>{lang === 'zh' ? '公开页面仍然只在需要时补抓，不拖慢首屏。' : 'Public page details are still fetched only when needed, keeping the first result fast.'}</p>
           </article>
         </div>
       </section>
+
+      <div className="toolRelated">
+        <span>{lang === 'zh' ? '热门地区' : 'Popular regions'}</span>
+        {REGIONS.map((region) => (
+          <a key={region.code} href={`/price?region=${region.code}`}>{region.label}</a>
+        ))}
+      </div>
 
       {state.error && <p className="err">{t.iap.queryFailed} {state.error}</p>}
       {state.loading && <p>{t.iap.queryingStore}</p>}
@@ -201,7 +199,7 @@ export default function Iap() {
 
               <div className="iapFlag">
                 <span className={verdict.cls}>{verdict.label}</span>
-                <span>{lang === 'zh' ? '地区' : 'Store'} {country.toUpperCase()}</span>
+                <span>{lang === 'zh' ? '默认地区' : 'Default store'} {defaultCountry.toUpperCase()}</span>
                 <span>{pageStateLabel(app.pageState, lang)}</span>
               </div>
 
@@ -230,8 +228,8 @@ export default function Iap() {
                     : 'No clear public IAP signal was identified for this result.')}
                 {verdict.note === 'unknown' &&
                   (lang === 'zh'
-                    ? '公开信息暂时不足，建议继续查看页面或切换地区。'
-                    : 'Public information is still inconclusive. Check the page or compare another region.')}
+                    ? '公开信息暂时不足，建议继续查看页面或补抓公开条目。'
+                    : 'Public information is still inconclusive. Check the page or load public detail.')}
               </div>
 
               {hasItems && (
