@@ -3,6 +3,17 @@ const IAP_MARKERS = [
   /in-app purchases?/i,
   /app\s*\u5185\u8d2d/i,
   /\u5185\u8d2d/i,
+  /\u81ea\u52a8\u7eed\u8d39/i,
+  /\u8fde\u7eed\u5305\u6708/i,
+  /\u8fde\u7eed\u5305\u5e74/i,
+  /\u8ba2\u9605\u670d\u52a1/i,
+  /\u53d6\u6d88\u8ba2\u9605/i,
+  /subscription/i,
+  /subscriptions/i,
+  /auto-?renew/i,
+  /recurring billing/i,
+  /itunes account/i,
+  /app store account/i,
 ];
 
 function hasIapMarker(text = '') {
