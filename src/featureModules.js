@@ -14,7 +14,7 @@ export const featureModules = [
   {
     id: 'iap',
     icon: 'search',
-    enabled: true,
+    enabled: false,
   },
   {
     id: 'appfree',

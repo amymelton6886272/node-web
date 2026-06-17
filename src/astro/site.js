@@ -10,8 +10,7 @@ export const navItems = [
 ];
 
 export const sidebarItems = [
-  { href: '/price', label: 'Price Compare', labelZh: '价格对比', icon: '$', desc: 'Regional price checks', descZh: '查看不同地区的价格差异' },
-  { href: '/iap', label: 'IAP Lookup', labelZh: '内购查询', icon: 'I', desc: 'Subscriptions and trials', descZh: '核对订阅、试用与续费信息' },
+  { href: '/price', label: 'Subscription Compare', labelZh: '订阅比价', icon: '$', desc: 'Base app and subscription prices', descZh: '查看软件本体与订阅项目的各区价格' },
   { href: '/appfree', label: 'Free Apps', labelZh: '限免应用', icon: 'F', desc: 'Limited-time deals', descZh: '发现限时免费的应用与游戏' },
   { href: '/icon', label: 'Icon Lookup', labelZh: '图标查询', icon: 'A', desc: 'App identity lookup', descZh: '快速识别应用图标与来源' },
   { href: '/ip', label: 'IP Check', labelZh: 'IP 检测', icon: 'IP', desc: 'Network location clues', descZh: '判断网络出口与地区信息' },
@@ -28,17 +27,17 @@ export const sidebarGroups = [
   {
     label: 'Tools',
     labelZh: '工具',
-    items: sidebarItems.slice(0, 6),
+    items: sidebarItems.slice(0, 5),
   },
   {
     label: 'Learn',
     labelZh: '内容',
-    items: sidebarItems.slice(6, 8),
+    items: sidebarItems.slice(5, 7),
   },
   {
     label: 'Decide',
     labelZh: '决策',
-    items: sidebarItems.slice(8),
+    items: sidebarItems.slice(7),
   },
 ];
 

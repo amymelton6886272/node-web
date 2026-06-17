@@ -4,6 +4,12 @@
   "functions": {
     "api/iap.js": {
       "maxDuration": 10
+    },
+    "api/iap-detail.js": {
+      "maxDuration": 10
+    },
+    "api/iap-compare.js": {
+      "maxDuration": 15
     }
   },
   "headers": [

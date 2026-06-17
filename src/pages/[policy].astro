@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import { policyPages } from '../astro/policyPages.js';
 
+export const prerender = true;
+
 export function getStaticPaths() {
   return Object.entries(policyPages).map(([policy, page]) => ({
     params: { policy },

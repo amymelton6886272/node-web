@@ -1,11 +1,7 @@
 export const toolPages = {
   price: {
-    title: 'App Store Price Compare - Wolffy',
-    description: 'Compare App Store prices across regions and understand currency differences before buying.',
-  },
-  iap: {
-    title: 'IAP Lookup - Wolffy',
-    description: 'Look up App Store app metadata and in-app purchase signals before paying or subscribing.',
+    title: 'App Store Subscription Compare - Wolffy',
+    description: 'Search an app once, then compare the app itself and public subscription prices across regions.',
   },
   appfree: {
     title: 'Limited-Time Free Apps - Wolffy',

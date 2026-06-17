@@ -4,7 +4,6 @@ import { toolPages } from '../astro/toolPages.js';
 import PriceIsland from '../islands/PriceIsland.jsx';
 import AppFreeIsland from '../islands/AppFreeIsland.jsx';
 import IpIsland from '../islands/IpIsland.jsx';
-import IapIsland from '../islands/IapIsland.jsx';
 import IconIsland from '../islands/IconIsland.jsx';
 import AddressIsland from '../islands/AddressIsland.jsx';
 import GuidesIsland from '../islands/GuidesIsland.jsx';
@@ -12,6 +11,8 @@ import GlossaryIsland from '../islands/GlossaryIsland.jsx';
 import ChecklistsIsland from '../islands/ChecklistsIsland.jsx';
 import RiskIsland from '../islands/RiskIsland.jsx';
 import KnowledgeIsland from '../islands/KnowledgeIsland.jsx';
+
+export const prerender = true;
 
 export function getStaticPaths() {
   return Object.entries(toolPages).map(([tool, meta]) => ({
@@ -21,12 +22,15 @@ export function getStaticPaths() {
 }
 
 const { tool, meta, path } = Astro.props;
+
+if (tool === 'iap') {
+  return Astro.redirect('/price');
+}
 ---
 <BaseLayout title={meta.title} description={meta.description} path={path}>
   {tool === 'price' && <PriceIsland client:load />}
   {tool === 'appfree' && <AppFreeIsland client:load />}
   {tool === 'ip' && <IpIsland client:load />}
-  {tool === 'iap' && <IapIsland client:load />}
   {tool === 'icon' && <IconIsland client:load />}
   {tool === 'address' && <AddressIsland client:load />}
   {tool === 'guides' && <GuidesIsland client:load />}

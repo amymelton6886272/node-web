@@ -90,7 +90,7 @@ export default function AppRisk() {
             <ul>{active.slice(0, 5).map((q) => <li key={q.id}>{q.advice}</li>)}</ul>
           </>
         )}
-        <div className="riskActions"><a href="/checklists">{page.openChecklists}</a><a href="/iap">{page.checkIap}</a><a href="/guides">{page.readGuides}</a><button onClick={reset}>{page.reset}</button></div>
+        <div className="riskActions"><a href="/checklists">{page.openChecklists}</a><a href="/price">{page.checkIap}</a><a href="/guides">{page.readGuides}</a><button onClick={reset}>{page.reset}</button></div>
       </section>
       <ContentSection title={page.title} intro={page.intro} items={page.items} links={page.links} linksLabel={page.linksLabel} />
     </>

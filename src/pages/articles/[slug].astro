@@ -4,6 +4,8 @@ import Hero from '../../components/Hero.astro';
 import { SITE } from '../../astro/site.js';
 import { articles, getArticlePath } from '../../data/articles.js';
 
+export const prerender = true;
+
 export function getStaticPaths() {
   return articles.map((article) => ({
     params: { slug: article.slug },
