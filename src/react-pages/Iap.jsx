@@ -89,7 +89,7 @@ export default function Iap() {
     if (checked === 'yes') return { label: t.iap.includesIAP, cls: 'badge ok' };
     if (checked === 'no') return { label: t.iap.noIAP, cls: 'badge' };
     if (checked === 'checking') return { label: t.iap.checking, cls: 'badge warn' };
-    if (checked === 'unknown') return { label: t.iap.checkFailed, cls: 'badge warn' };
+    if (checked === 'pending') return { label: t.iap.pending, cls: 'badge warn' };
     return metadataSuggestsIap(app)
       ? { label: t.iap.includesIAP, cls: 'badge ok' }
       : { label: t.iap.pending, cls: 'badge warn' };
@@ -117,7 +117,7 @@ export default function Iap() {
         } catch {
           setIapStatus((prev) => ({
             ...prev,
-            [app.trackId]: metadataSuggestsIap(app) ? 'yes' : 'unknown',
+            [app.trackId]: metadataSuggestsIap(app) ? 'yes' : 'pending',
           }));
         }
       }),
@@ -177,7 +177,7 @@ export default function Iap() {
         </div>
         <div className="iapFlag"><span className={detectIap(app).cls}>{detectIap(app).label}</span><span>{app.primaryGenreName || 'App Store'}</span><span>{app.version ? `Version ${app.version}` : ''}</span></div>
         {iapItems[app.trackId]?.length > 0 && <div className="iapItems"><h4>{t.iap.iapItems}</h4>{iapItems[app.trackId].map((item, i) => <div className="iapItem" key={i}><span>{item.name}</span><b>{item.price}</b></div>)}</div>}
-        {iapStatus[app.trackId] === 'yes' && !iapItems[app.trackId]?.length && state.apps.length === 1 && <p className="iapHint">{t.iap.iapHint}</p>}
+        {(iapStatus[app.trackId] === 'yes' || iapStatus[app.trackId] === 'pending') && !iapItems[app.trackId]?.length && state.apps.length === 1 && <p className="iapHint">{t.iap.iapHint}</p>}
         {app.description && <p className="iapDesc">{app.description}</p>}
         <div className="iconActions"><a href={app.trackViewUrl} target="_blank" rel="noreferrer">{t.iap.openAppStore}</a><button onClick={() => setQ(app.bundleId)}>{t.iap.fillBundle}</button></div>
       </div>)}</div>
