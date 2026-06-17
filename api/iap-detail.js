@@ -79,12 +79,35 @@ export default async function handler(req, res) {
   }
 
   try {
+    const lookupUrl = `https://itunes.apple.com/lookup?id=${encodeURIComponent(trackId)}&country=${country}`;
+    let trackViewUrl = '';
+    let formattedPrice = '';
+    try {
+      const lookupRes = await fetchWithTimeout(lookupUrl, 5000);
+      if (lookupRes.ok) {
+        const lookupJson = await lookupRes.json();
+        const app = (lookupJson.results || [])[0];
+        trackViewUrl = app?.trackViewUrl || '';
+        formattedPrice = app?.formattedPrice || '';
+      }
+    } catch {
+      trackViewUrl = '';
+      formattedPrice = '';
+    }
+
     const appUrl = `https://apps.apple.com/${country}/app/id${trackId}`;
     const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(appUrl)}`;
     const response = await fetchWithTimeout(proxyUrl);
 
     if (!response.ok) {
-      res.status(200).json({ pageState: 'unavailable', iapItems: [], priceRange: [], iapState: 'unknown' });
+      res.status(200).json({
+        pageState: 'unavailable',
+        iapItems: [],
+        priceRange: [],
+        iapState: 'unknown',
+        trackViewUrl,
+        formattedPrice,
+      });
       return;
     }
 
@@ -98,8 +121,17 @@ export default async function handler(req, res) {
       iapItems,
       priceRange,
       iapState: hasSignal ? 'yes' : 'unknown',
+      trackViewUrl,
+      formattedPrice,
     });
   } catch {
-    res.status(200).json({ pageState: 'unavailable', iapItems: [], priceRange: [], iapState: 'unknown' });
+    res.status(200).json({
+      pageState: 'unavailable',
+      iapItems: [],
+      priceRange: [],
+      iapState: 'unknown',
+      trackViewUrl: '',
+      formattedPrice: '',
+    });
   }
 }
