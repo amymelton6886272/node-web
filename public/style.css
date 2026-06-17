@@ -443,3 +443,49 @@ footer span{display:block;line-height:1.8}
   .knowledgeBody{padding:14px}
   footer{padding-bottom:118px}
 }
+
+/* UI polish pass */
+:root{
+  --soft:#f1f4f9;
+  --shadow:0 18px 48px #11182712;
+  --shadow-strong:0 24px 70px #11182718;
+}
+body{background:linear-gradient(180deg,#fafbff 0,#f4f6fb 360px,#f7f8fb 100%)}
+body.dark{background:linear-gradient(180deg,#101521 0,#0e1118 420px,#0b0f16 100%)}
+.top{z-index:40;box-shadow:0 10px 34px #1118270a}
+.logo{box-shadow:inset 0 0 0 1px #ffffffb8,0 8px 18px #ff6b9b20;font-weight:900;color:#e11d48}
+.toplinks a{padding:7px 10px;border-radius:999px;color:var(--muted);font-size:13px;font-weight:700}
+.toplinks a:hover,.toplinks a.active{background:color-mix(in srgb,var(--accent) 9%,transparent);color:var(--accent)}
+.lang,.theme{border:1px solid var(--line);background:var(--card);box-shadow:0 8px 22px #1118270a}
+.theme{width:38px;height:38px;border-radius:12px;padding:0}
+main{width:100%;box-sizing:border-box}
+.hero{border-radius:22px;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 12%,var(--card)),var(--card) 46%,color-mix(in srgb,#60a5fa 10%,var(--card)));box-shadow:var(--shadow)}
+.hero h1{letter-spacing:0;line-height:1.06}
+.card,.contentBlock,.articleCard,.priceCard,.iapCard,.iconCard,.checkCard,.riskQuestion,.knowledgeArticle{box-shadow:var(--shadow)}
+.card:hover,.articleCard:hover,.priceCard:hover,.iapCard:hover,.iconCard:hover{border-color:color-mix(in srgb,var(--accent) 22%,var(--line))}
+button,.iconActions a,.iconActions button,.contentLinks a,.toolRelated a,.articleToc a,.articleFooter a{transition:transform .15s,box-shadow .15s,border-color .15s,background .15s,color .15s}
+button:hover{transform:translateY(-1px)}
+.searchbar input,.searchbar select,.riskInput input,.accountTools input,.accountTools select{box-shadow:inset 0 1px 0 #ffffff80}
+.sideNav{box-shadow:6px 0 40px #1118270a}
+.sideGroup a{border-radius:14px}
+.sideIcon{box-shadow:inset 0 1px 0 #ffffff99}
+@media(max-width:760px){
+  body{background:#f8fafc;padding-bottom:calc(112px + env(safe-area-inset-bottom))}
+  .top{position:sticky;top:0;border-bottom:1px solid color-mix(in srgb,var(--line) 72%,transparent);background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+  .brand{min-width:0}
+  .brand b{font-size:16px}
+  .lang{border-radius:999px;font-weight:800}
+  .shell{display:block}
+  aside.sideNav{left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));gap:7px;padding:8px;border-radius:24px;background:color-mix(in srgb,var(--card) 88%,transparent);box-shadow:0 20px 60px #1118272b}
+  .sideGroup a{min-width:68px;min-height:52px;border-radius:17px}
+  .sideGroup a.active{background:linear-gradient(135deg,#ffe6f0,#edf4ff);box-shadow:0 8px 20px #ff6b9b1f}
+  .sideIcon{width:27px;height:27px;border-radius:12px}
+  .sideText b{font-size:10.8px}
+  main{padding:12px 10px 26px}
+  .hero{padding:18px 16px;border-radius:18px;margin-bottom:12px}
+  .hero h1{font-size:24px}
+  .grid,.articleGrid,.contentGrid{gap:12px}
+  .card,.contentSection,.toolIntro,.articleCard,.priceCard,.iapCard,.iconCard,.checkCard,.riskPanel,.knowledgeArticle{border-radius:18px}
+  .searchbar input,.searchbar select,.searchbar button{border-radius:14px}
+  footer{padding-bottom:calc(126px + env(safe-area-inset-bottom))}
+}
