@@ -57,13 +57,13 @@ function extractIapItems(html) {
 function extractPriceSignals(text = '') {
   const patterns = [
     /(?:¥|￥|CNY|RMB)\s?\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?/gi,
-    /\d+(?:\.\d+)?\s?(?:元|人民币|month|mo|yr|year)/gi,
-    /\d+\s?(?:元|人民币)\s*[\/\/]\s*(?:月|年)/gi,
+    /\d+(?:\.\d+)?\s?(?:\u5143|\u4eba\u6c11\u5e01|month|mo|yr|year)/gi,
+    /\d+\s?(?:\u5143|\u4eba\u6c11\u5e01)\s*[\/]\s*(?:\u6708|\u5e74)/gi,
     /\d+\s?(?:USD|HKD|JPY|KRW|TWD|EUR|GBP)\b/gi,
   ];
 
   const values = patterns.flatMap((pattern) => text.match(pattern) || []);
-  return [...new Set(values)].slice(0, 6);
+  return [...new Set(values)].slice(0, 8);
 }
 
 export default async function handler(req, res) {
@@ -84,22 +84,22 @@ export default async function handler(req, res) {
     const response = await fetchWithTimeout(proxyUrl);
 
     if (!response.ok) {
-      res.status(200).json({ pageState: 'unavailable', iapItems: [], iapState: 'unknown' });
+      res.status(200).json({ pageState: 'unavailable', iapItems: [], priceRange: [], iapState: 'unknown' });
       return;
     }
 
     const html = await response.text();
     const iapItems = extractIapItems(html).slice(0, 8);
+    const priceRange = extractPriceSignals(html);
     const hasSignal = iapItems.length > 0 || hasIapMarker(html);
-    const priceSignals = extractPriceSignals(html);
 
     res.status(200).json({
       pageState: iapItems.length ? 'items' : 'page',
       iapItems,
-      priceSignals,
+      priceRange,
       iapState: hasSignal ? 'yes' : 'unknown',
     });
   } catch {
-    res.status(200).json({ pageState: 'unavailable', iapItems: [], iapState: 'unknown' });
+    res.status(200).json({ pageState: 'unavailable', iapItems: [], priceRange: [], iapState: 'unknown' });
   }
 }
