@@ -10,18 +10,18 @@ export const navItems = [
 ];
 
 export const sidebarItems = [
-  { href: '/price', label: 'Price Compare', labelZh: '价格对比', icon: '$', desc: 'Regional price checks', descZh: '多地区价格参考' },
-  { href: '/iap', label: 'IAP Lookup', labelZh: '内购查询', icon: 'I', desc: 'Subscriptions and trials', descZh: '订阅与试用判断' },
-  { href: '/appfree', label: 'Free Apps', labelZh: '限免应用', icon: 'F', desc: 'Limited-time deals', descZh: '限时免费发现' },
-  { href: '/icon', label: 'Icon Lookup', labelZh: '图标查询', icon: 'A', desc: 'App identity lookup', descZh: '应用身份识别' },
-  { href: '/ip', label: 'IP Check', labelZh: 'IP 检测', icon: 'IP', desc: 'Network location clues', descZh: '网络位置线索' },
-  { href: '/address', label: 'Address', labelZh: '地址生成', icon: '@', desc: 'Regional test data', descZh: '地区测试数据' },
-  { href: '/knowledge', label: 'Knowledge', labelZh: '知识库', icon: 'K', desc: 'Concepts and explainers', descZh: '概念与说明' },
-  { href: '/articles', label: 'Articles', labelZh: '文章', icon: 'R', desc: 'Practical reading', descZh: '实用阅读内容' },
-  { href: '/risk', label: 'App Risk', labelZh: '应用风险', icon: '!', desc: 'Permission risk review', descZh: '权限风险评估' },
-  { href: '/checklists', label: 'Checklists', labelZh: '检查清单', icon: 'C', desc: 'Before-you-act lists', descZh: '行动前核对' },
-  { href: '/guides', label: 'Guides', labelZh: '指南', icon: 'G', desc: 'Step-by-step help', descZh: '分步帮助' },
-  { href: '/glossary', label: 'Glossary', labelZh: '术语表', icon: 'T', desc: 'Plain definitions', descZh: '通俗定义' },
+  { href: '/price', label: 'Price Compare', labelZh: '价格对比', icon: '$', desc: 'Regional price checks', descZh: '查看不同地区的价格差异' },
+  { href: '/iap', label: 'IAP Lookup', labelZh: '内购查询', icon: 'I', desc: 'Subscriptions and trials', descZh: '核对订阅、试用与续费信息' },
+  { href: '/appfree', label: 'Free Apps', labelZh: '限免应用', icon: 'F', desc: 'Limited-time deals', descZh: '发现限时免费的应用与游戏' },
+  { href: '/icon', label: 'Icon Lookup', labelZh: '图标查询', icon: 'A', desc: 'App identity lookup', descZh: '快速识别应用图标与来源' },
+  { href: '/ip', label: 'IP Check', labelZh: 'IP 检测', icon: 'IP', desc: 'Network location clues', descZh: '判断网络出口与地区信息' },
+  { href: '/address', label: 'Address', labelZh: '地址生成', icon: '@', desc: 'Regional test data', descZh: '生成不同地区的测试地址资料' },
+  { href: '/knowledge', label: 'Knowledge', labelZh: '知识库', icon: 'K', desc: 'Concepts and explainers', descZh: '整理常见概念与基础说明' },
+  { href: '/articles', label: 'Articles', labelZh: '文章', icon: 'R', desc: 'Practical reading', descZh: '浏览更新中的实用内容' },
+  { href: '/risk', label: 'App Risk', labelZh: '应用风险', icon: '!', desc: 'Permission risk review', descZh: '评估权限、隐私与风险点' },
+  { href: '/checklists', label: 'Checklists', labelZh: '检查清单', icon: 'C', desc: 'Before-you-act lists', descZh: '用清单减少操作遗漏' },
+  { href: '/guides', label: 'Guides', labelZh: '指南', icon: 'G', desc: 'Step-by-step help', descZh: '按步骤完成常见任务' },
+  { href: '/glossary', label: 'Glossary', labelZh: '术语表', icon: 'T', desc: 'Plain definitions', descZh: '用更直白的话解释术语' },
 ];
 
 export const sidebarGroups = [
@@ -32,7 +32,7 @@ export const sidebarGroups = [
   },
   {
     label: 'Learn',
-    labelZh: '学习',
+    labelZh: '内容',
     items: sidebarItems.slice(6, 8),
   },
   {

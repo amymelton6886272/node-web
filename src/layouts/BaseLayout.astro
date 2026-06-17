@@ -70,6 +70,10 @@ const canonical = new URL(path, SITE).toString();
           <span class="lang-en">Toolkit</span>
           <span class="lang-zh">工具箱</span>
           <strong>Wolffy</strong>
+          <p>
+            <span class="lang-en">Fast access to search, lookup, and App Store utility pages.</span>
+            <span class="lang-zh">把常用查询、检索和 App Store 工具页放到一个更顺手的入口里。</span>
+          </p>
         </div>
         {sidebarGroups.map((group) => (
           <section class="sideGroup">
@@ -77,21 +81,23 @@ const canonical = new URL(path, SITE).toString();
               <span class="lang-en">{group.label}</span>
               <span class="lang-zh">{group.labelZh}</span>
             </h2>
-            {group.items.map((item) => (
-              <a class={isActive(path, item.href) ? 'active' : ''} href={item.href}>
-                <span class="sideIcon" aria-hidden="true">{item.icon}</span>
-                <span class="sideText">
-                  <b>
-                    <span class="lang-en">{item.label}</span>
-                    <span class="lang-zh">{item.labelZh}</span>
-                  </b>
-                  <small>
-                    <span class="lang-en">{item.desc}</span>
-                    <span class="lang-zh">{item.descZh}</span>
-                  </small>
-                </span>
-              </a>
-            ))}
+            <div class="sideGroupItems">
+              {group.items.map((item) => (
+                <a class={isActive(path, item.href) ? 'active' : ''} href={item.href}>
+                  <span class="sideIcon" aria-hidden="true">{item.icon}</span>
+                  <span class="sideText">
+                    <b>
+                      <span class="lang-en">{item.label}</span>
+                      <span class="lang-zh">{item.labelZh}</span>
+                    </b>
+                    <small>
+                      <span class="lang-en">{item.desc}</span>
+                      <span class="lang-zh">{item.descZh}</span>
+                    </small>
+                  </span>
+                </a>
+              ))}
+            </div>
           </section>
         ))}
       </aside>
