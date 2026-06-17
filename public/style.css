@@ -124,6 +124,13 @@ footer span{display:block;line-height:1.8}
 
 /* IAP search */
 .iapSearchbar select{min-width:110px;border:1px solid var(--line);background:var(--card);color:inherit;border-radius:14px;padding:0 14px;font:inherit;outline:none}
+.iapGuide{margin:0 0 18px;padding:22px 24px}
+.iapGuideIntro h2{margin:0 0 8px;font-size:21px}
+.iapGuideIntro p{margin:0;color:var(--muted);font-size:14px;line-height:1.8}
+.iapGuideGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.iapGuideItem{border:1px solid var(--line);border-radius:18px;padding:15px;background:color-mix(in srgb,var(--card) 84%,transparent)}
+.iapGuideItem b{display:block;margin:0 0 6px;font-size:14px}
+.iapGuideItem p{margin:0;color:var(--muted);font-size:12.8px;line-height:1.7}
 .iapGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:20px}
 .iapCard{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:16px;min-width:0}
 .iapHead{display:flex;gap:14px;align-items:center;min-width:0}
@@ -136,8 +143,10 @@ footer span{display:block;line-height:1.8}
 .iapStats span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
 .okText{color:#059669}
 .iapFlag{display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+.iapMetaRow{display:flex;gap:8px;flex-wrap:wrap}
+.iapMetaPill{display:inline-flex;align-items:center;gap:4px;padding:6px 10px;border-radius:999px;background:var(--soft);border:1px solid var(--line);font-size:12px;color:var(--muted)}
 .iapDesc{color:var(--muted);line-height:1.7;margin:0;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
-@media(max-width:760px){.iapSearchbar{grid-template-columns:1fr}.iapSearchbar select{height:44px}.iapGrid{grid-template-columns:1fr}.iapStats{grid-template-columns:1fr 1fr}.iapHead p,.iapHead small{max-width:190px}}
+@media(max-width:760px){.iapSearchbar{grid-template-columns:1fr}.iapSearchbar select{height:44px}.iapGuide{padding:18px 16px}.iapGuideIntro h2{font-size:18px}.iapGuideGrid{grid-template-columns:1fr}.iapGrid{grid-template-columns:1fr}.iapStats{grid-template-columns:1fr 1fr}.iapHead p,.iapHead small{max-width:190px}}
 
 .badge.warn{background:#fef3c7;color:#92400e;border-color:#fde68a}
 .dark .badge.warn{background:#451a03;color:#fcd34d;border-color:#78350f}

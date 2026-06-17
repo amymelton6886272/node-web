@@ -189,6 +189,31 @@ export default function Iap() {
         <span>{t.iap.note}</span>
       </div>
 
+      <section className="iapGuide card">
+        <div className="iapGuideIntro">
+          <h2>{lang === 'zh' ? '这页现在能帮你确认什么' : 'What this page can confirm'}</h2>
+          <p>
+            {lang === 'zh'
+              ? '它更适合用来识别应用是否存在公开的内购信号，而不是保证列出完整内购清单。真正的购买条款仍应以 App Store 页面和结算流程为准。'
+              : 'This page is best for identifying whether an app shows public IAP signals, not for guaranteeing a complete purchase catalog. Final terms still belong to the App Store page and checkout flow.'}
+          </p>
+        </div>
+        <div className="iapGuideGrid">
+          <article className="iapGuideItem">
+            <b>{lang === 'zh' ? '已识别到内购' : 'IAP detected'}</b>
+            <p>{lang === 'zh' ? '页面或元数据里已经出现明确内购信号。' : 'A public page or metadata signal clearly suggests in-app purchases.'}</p>
+          </article>
+          <article className="iapGuideItem">
+            <b>{lang === 'zh' ? '只拿到部分明细' : 'Partial detail only'}</b>
+            <p>{lang === 'zh' ? '有时只能抓到公开列出的少量项目，不代表完整目录。' : 'Sometimes only a small public subset is readable, not the full catalog.'}</p>
+          </article>
+          <article className="iapGuideItem">
+            <b>{lang === 'zh' ? '建议回到官方页' : 'Confirm on the App Store'}</b>
+            <p>{lang === 'zh' ? '试用、续费、家庭共享和地区差异都应该去官方页面确认。' : 'Trials, renewals, family sharing, and region differences should be confirmed on the official page.'}</p>
+          </article>
+        </div>
+      </section>
+
       {state.error && <p className="err">{t.iap.queryFailed} {state.error}</p>}
       {state.loading && <p>{t.iap.queryingStore}</p>}
 
@@ -232,6 +257,18 @@ export default function Iap() {
                 <span>{app.version ? `Version ${app.version}` : ''}</span>
               </div>
 
+              <div className="iapMetaRow">
+                <span className="iapMetaPill">{lang === 'zh' ? '地区' : 'Store'}: {country.toUpperCase()}</span>
+                <span className="iapMetaPill">
+                  {lang === 'zh' ? '信号来源' : 'Signal source'}:{' '}
+                  {signal.detail === 'page' ? (lang === 'zh' ? '公开页面' : 'Public page')
+                    : signal.detail === 'metadata' ? (lang === 'zh' ? '应用元数据' : 'App metadata')
+                      : signal.detail === 'text' ? (lang === 'zh' ? '描述文本' : 'Description text')
+                        : signal.detail === 'checking' ? (lang === 'zh' ? '检查中' : 'Checking')
+                          : (lang === 'zh' ? '待确认' : 'Needs confirmation')}
+                </span>
+              </div>
+
               <div className="contentNote">
                 {signal.detail === 'page' && (lang === 'zh'
                   ? '已从公开 App Store 页面识别到内购信号。'
@@ -270,7 +307,10 @@ export default function Iap() {
 
               <div className="iconActions">
                 <a href={app.trackViewUrl} target="_blank" rel="noreferrer">{t.iap.openAppStore}</a>
-                <button onClick={() => setQ(app.bundleId || '')}>{t.iap.fillBundle}</button>
+                <button onClick={() => {
+                  setQ(app.bundleId || '');
+                  if (app.bundleId) query(app.bundleId);
+                }}>{t.iap.fillBundle}</button>
               </div>
             </div>
           );
