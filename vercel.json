@@ -1,6 +1,11 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "deploy-build",
+  "functions": {
+    "api/iap.js": {
+      "maxDuration": 10
+    }
+  },
   "headers": [
     {
       "source": "/_astro/(.*)",

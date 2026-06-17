@@ -5,132 +5,23 @@ import { ContentSection } from '../components/ContentSection.jsx';
 import { toolContent } from '../data/toolContent.js';
 import { useLang } from '../LanguageContext.jsx';
 
-const IAP_MARKERS = [
-  /offers?\s+in-app purchases?/i,
-  /in-app purchases?/i,
-  /app\s*内购买/i,
-  /app\s*内购/i,
-  /内购/i,
-];
-
-const APP_PAGE_PROXIES = [
-  (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-  (url) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
-];
-
-function hasIapMarker(text = '') {
-  return IAP_MARKERS.some((pattern) => pattern.test(text));
-}
-
-function deriveIapSignal(app) {
-  const text = [
-    app?.formattedPrice,
-    app?.description,
-    app?.trackViewUrl,
-    ...(app?.advisories || []),
-  ]
-    .filter(Boolean)
-    .join(' ');
-
-  const hasSignal = app?.offersIAP === true || hasIapMarker(text);
-
-  return {
-    hasSignal,
-    source: app?.offersIAP === true ? 'metadata' : hasSignal ? 'text' : 'none',
-  };
-}
-
-async function fetchAppPage(appUrl) {
-  let lastError = null;
-  for (const buildProxyUrl of APP_PAGE_PROXIES) {
-    try {
-      const res = await fetch(buildProxyUrl(appUrl));
-      if (!res.ok) throw new Error(`page ${res.status}`);
-      const html = await res.text();
-      if (html) return html;
-    } catch (error) {
-      lastError = error;
-    }
+function inspectApp(app, t) {
+  if (app?.iapState === 'yes') {
+    return { label: t.iap.includesIAP, cls: 'badge ok', note: 'yes' };
   }
-  throw lastError || new Error('proxy unavailable');
-}
-
-function extractIapItems(html) {
-  try {
-    const match = html.match(/<script type=\"application\/json\" id=\"serialized-server-data\">([\s\S]*?)<\/script>/);
-    if (!match) return [];
-
-    const data = JSON.parse(match[1]);
-    const info = data?.data?.[0]?.data?.shelfMapping?.information?.items || [];
-    const row = info.find((item) => hasIapMarker(item?.title || ''));
-    const pairs = (row?.items_V3 || []).filter((item) => item?.$kind === 'textPair' && item.leadingText && item.trailingText);
-    if (pairs.length) return pairs.map((item) => ({ name: item.leadingText, price: item.trailingText }));
-
-    const oldPairs = row?.items?.flatMap((item) => item?.textPairs || []) || [];
-    return oldPairs.filter((item) => item?.[0] && item?.[1]).map(([name, price]) => ({ name, price }));
-  } catch {
-    return [];
+  if (app?.iapState === 'no') {
+    return { label: t.iap.noIAP, cls: 'badge', note: 'no' };
   }
-}
-
-function signalMeta(status, app, t) {
-  if (status === 'yes') return { label: t.iap.includesIAP, cls: 'badge ok', detail: 'page' };
-  if (status === 'no') return { label: t.iap.noIAP, cls: 'badge', detail: 'page' };
-  if (status === 'checking') return { label: t.iap.checking, cls: 'badge warn', detail: 'checking' };
-
-  const derived = deriveIapSignal(app);
-  if (derived.hasSignal) {
-    return { label: t.iap.includesIAP, cls: 'badge ok', detail: derived.source };
-  }
-
-  return { label: t.iap.pending, cls: 'badge warn', detail: 'unknown' };
+  return { label: t.iap.pending, cls: 'badge warn', note: 'unknown' };
 }
 
 export default function Iap() {
   const [q, setQ] = useState('');
   const [country, setCountry] = useState('cn');
   const [state, setState] = useState({ loading: false, apps: [], error: null, searched: false });
-  const [iapStatus, setIapStatus] = useState({});
-  const [iapItems, setIapItems] = useState({});
-
-  const parseInput = (value) => {
-    const text = value.trim();
-    const idMatch = text.match(/id(\d{5,})/) || text.match(/^\d{5,}$/);
-    if (idMatch) return { mode: 'lookup', query: idMatch[1] || idMatch[0] };
-    if (/^([a-zA-Z0-9-]+\.)+[a-zA-Z0-9-]+$/.test(text)) return { mode: 'bundle', query: text };
-    return { mode: 'search', query: text };
-  };
 
   const { t, lang } = useLang();
   const content = toolContent[lang]?.iap || toolContent.en.iap;
-
-  const checkIapFromPage = async (apps) => {
-    const targets = apps.slice(0, 8).filter((app) => app.trackId);
-    if (!targets.length) return;
-
-    setIapItems({});
-    setIapStatus(Object.fromEntries(targets.map((app) => [app.trackId, 'checking'])));
-
-    await Promise.all(
-      targets.map(async (app) => {
-        try {
-          const store = (country || 'cn').toLowerCase();
-          const appUrl = `https://apps.apple.com/${store}/app/id${app.trackId}`;
-          const html = await fetchAppPage(appUrl);
-          const items = extractIapItems(html);
-          const has = items.length > 0 || hasIapMarker(html);
-
-          if (items.length) {
-            setIapItems((prev) => ({ ...prev, [app.trackId]: items.slice(0, 8) }));
-          }
-
-          setIapStatus((prev) => ({ ...prev, [app.trackId]: has ? 'yes' : 'no' }));
-        } catch {
-          setIapStatus((prev) => ({ ...prev, [app.trackId]: 'pending' }));
-        }
-      }),
-    );
-  };
 
   const query = async (keyword) => {
     const term = typeof keyword === 'string' ? keyword.trim() : q.trim();
@@ -140,21 +31,11 @@ export default function Iap() {
     setState({ loading: true, apps: [], error: null, searched: true });
 
     try {
-      const parsed = parseInput(term);
-      const url = parsed.mode === 'lookup'
-        ? `https://itunes.apple.com/lookup?id=${encodeURIComponent(parsed.query)}&country=${country}`
-        : parsed.mode === 'bundle'
-          ? `https://itunes.apple.com/lookup?bundleId=${encodeURIComponent(parsed.query)}&country=${country}`
-          : `https://itunes.apple.com/search?term=${encodeURIComponent(parsed.query)}&country=${country}&entity=software&limit=12`;
-
-      const res = await fetch(url);
+      const res = await fetch(`/api/iap?q=${encodeURIComponent(term)}&country=${country}`);
       if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
 
       const json = await res.json();
-      const apps = (json.results || []).filter((app) => app.kind !== 'mac-software');
-
-      setState({ loading: false, apps, error: null, searched: true });
-      checkIapFromPage(apps);
+      setState({ loading: false, apps: json.apps || [], error: null, searched: true });
     } catch (error) {
       setState({ loading: false, apps: [], error: String(error), searched: true });
     }
@@ -163,11 +44,14 @@ export default function Iap() {
   return (
     <>
       <Hero title={t.iap.title} sub={t.iap.sub} />
+
       <div className="searchbar iapSearchbar">
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          onKeyDown={(e) => { if (e.key === 'Enter') query(); }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') query();
+          }}
           placeholder={t.iap.placeholder}
         />
         <select value={country} onChange={(e) => setCountry(e.target.value)}>
@@ -186,30 +70,34 @@ export default function Iap() {
 
       <div className="notice">
         <ShieldAlert size={18} />
-        <span>{t.iap.note}</span>
+        <span>
+          {lang === 'zh'
+            ? '内购结果现在优先来自服务端查询，页面抓取只用于补充公开明细。'
+            : 'IAP results now come from a server-side lookup first, with page fetching used only for public detail enrichment.'}
+        </span>
       </div>
 
       <section className="iapGuide card">
         <div className="iapGuideIntro">
-          <h2>{lang === 'zh' ? '这页现在能帮你确认什么' : 'What this page can confirm'}</h2>
+          <h2>{lang === 'zh' ? '这页现在怎么工作' : 'How this page works now'}</h2>
           <p>
             {lang === 'zh'
-              ? '它更适合用来识别应用是否存在公开的内购信号，而不是保证列出完整内购清单。真正的购买条款仍应以 App Store 页面和结算流程为准。'
-              : 'This page is best for identifying whether an app shows public IAP signals, not for guaranteeing a complete purchase catalog. Final terms still belong to the App Store page and checkout flow.'}
+              ? '它会先调用站点自己的轻量接口，再由服务端去请求 Apple 公开数据。这样前端更稳，也更容易做缓存。'
+              : 'It calls a lightweight site API first, then the server requests public Apple data. That makes the frontend steadier and easier to cache.'}
           </p>
         </div>
         <div className="iapGuideGrid">
           <article className="iapGuideItem">
-            <b>{lang === 'zh' ? '已识别到内购' : 'IAP detected'}</b>
-            <p>{lang === 'zh' ? '页面或元数据里已经出现明确内购信号。' : 'A public page or metadata signal clearly suggests in-app purchases.'}</p>
+            <b>{lang === 'zh' ? '资源更可控' : 'More controlled usage'}</b>
+            <p>{lang === 'zh' ? '单次只处理少量结果，并带短缓存。' : 'Each query handles only a small result set with short caching.'}</p>
           </article>
           <article className="iapGuideItem">
-            <b>{lang === 'zh' ? '只拿到部分明细' : 'Partial detail only'}</b>
-            <p>{lang === 'zh' ? '有时只能抓到公开列出的少量项目，不代表完整目录。' : 'Sometimes only a small public subset is readable, not the full catalog.'}</p>
+            <b>{lang === 'zh' ? '结果更稳定' : 'More stable results'}</b>
+            <p>{lang === 'zh' ? '浏览器不再直接依赖公共代理。' : 'The browser no longer depends directly on a public proxy.'}</p>
           </article>
           <article className="iapGuideItem">
-            <b>{lang === 'zh' ? '建议回到官方页' : 'Confirm on the App Store'}</b>
-            <p>{lang === 'zh' ? '试用、续费、家庭共享和地区差异都应该去官方页面确认。' : 'Trials, renewals, family sharing, and region differences should be confirmed on the official page.'}</p>
+            <b>{lang === 'zh' ? '明细仍是补充' : 'Details are still optional'}</b>
+            <p>{lang === 'zh' ? '若公开页面不可读，主判断仍会保留。' : 'If the public page is unavailable, the main verdict still remains.'}</p>
           </article>
         </div>
       </section>
@@ -219,16 +107,18 @@ export default function Iap() {
 
       <div className="iapGrid">
         {state.apps.map((app) => {
-          const signal = signalMeta(iapStatus[app.trackId], app, t);
-          const hasItems = iapItems[app.trackId]?.length > 0;
-          const derived = deriveIapSignal(app);
+          const verdict = inspectApp(app, t);
+          const hasItems = app.iapItems?.length > 0;
 
           return (
             <div className="iapCard" key={app.trackId || app.bundleId}>
               <div className="iapHead">
-                <img src={(app.artworkUrl100 || app.artworkUrl512 || '').replace(/\d+x\d+bb\.(jpg|png|webp)$/, '200x200bb.$1')} alt="" />
+                <img
+                  src={(app.artworkUrl100 || '').replace(/\d+x\d+bb\.(jpg|png|webp)$/, '200x200bb.$1')}
+                  alt=""
+                />
                 <div>
-                  <h3>{app.trackName || app.name}</h3>
+                  <h3>{app.trackName}</h3>
                   <p>{app.artistName}</p>
                   <small>{app.bundleId || 'Bundle ID unavailable'}</small>
                 </div>
@@ -240,57 +130,56 @@ export default function Iap() {
                   <span>{t.iap.appPrice}</span>
                 </div>
                 <div>
-                  <b className={app.features?.includes('iosUniversal') ? 'okText' : ''}>
-                    {app.features?.includes('iosUniversal') ? t.iap.universal : '-'}
-                  </b>
-                  <span>{t.iap.universal}</span>
+                  <b>{app.primaryGenreName || '-'}</b>
+                  <span>{lang === 'zh' ? '分类' : 'Category'}</span>
                 </div>
                 <div>
-                  <b className={app.trackContentRating ? 'okText' : ''}>{app.trackContentRating || '-'}</b>
-                  <span>{t.iap.ageRating}</span>
+                  <b>{app.version || '-'}</b>
+                  <span>{lang === 'zh' ? '版本' : 'Version'}</span>
                 </div>
               </div>
 
               <div className="iapFlag">
-                <span className={signal.cls}>{signal.label}</span>
-                <span>{app.primaryGenreName || 'App Store'}</span>
-                <span>{app.version ? `Version ${app.version}` : ''}</span>
-              </div>
-
-              <div className="iapMetaRow">
-                <span className="iapMetaPill">{lang === 'zh' ? '地区' : 'Store'}: {country.toUpperCase()}</span>
-                <span className="iapMetaPill">
-                  {lang === 'zh' ? '信号来源' : 'Signal source'}:{' '}
-                  {signal.detail === 'page' ? (lang === 'zh' ? '公开页面' : 'Public page')
-                    : signal.detail === 'metadata' ? (lang === 'zh' ? '应用元数据' : 'App metadata')
-                      : signal.detail === 'text' ? (lang === 'zh' ? '描述文本' : 'Description text')
-                        : signal.detail === 'checking' ? (lang === 'zh' ? '检查中' : 'Checking')
-                          : (lang === 'zh' ? '待确认' : 'Needs confirmation')}
+                <span className={verdict.cls}>{verdict.label}</span>
+                <span>{lang === 'zh' ? '地区' : 'Store'} {country.toUpperCase()}</span>
+                <span>
+                  {app.pageState === 'items'
+                    ? lang === 'zh'
+                      ? '已抓到明细'
+                      : 'Items captured'
+                    : app.pageState === 'page'
+                      ? lang === 'zh'
+                        ? '页面可读'
+                        : 'Page readable'
+                      : app.pageState === 'unavailable'
+                        ? lang === 'zh'
+                          ? '页面暂不可用'
+                          : 'Page unavailable'
+                        : lang === 'zh'
+                          ? '待确认'
+                          : 'Needs confirmation'}
                 </span>
               </div>
 
               <div className="contentNote">
-                {signal.detail === 'page' && (lang === 'zh'
-                  ? '已从公开 App Store 页面识别到内购信号。'
-                  : 'Detected from the public App Store page.')}
-                {signal.detail === 'metadata' && (lang === 'zh'
-                  ? '已从应用元数据识别到内购信号，建议再到 App Store 页面确认明细。'
-                  : 'Detected from app metadata. Confirm item details on the App Store page.')}
-                {signal.detail === 'text' && (lang === 'zh'
-                  ? '已从公开描述文本识别到内购提示，明细可能不会公开列出。'
-                  : 'Detected from public description text. Item details may not be publicly listed.')}
-                {signal.detail === 'checking' && (lang === 'zh'
-                  ? '正在检查公开页面信号。'
-                  : 'Checking public page signals.')}
-                {signal.detail === 'unknown' && (lang === 'zh'
-                  ? '当前未抓取到可公开展示的内购信号，建议打开 App Store 页面继续确认。'
-                  : 'No publicly readable IAP signal was captured for this result. Open the App Store page to confirm.')}
+                {verdict.note === 'yes' &&
+                  (lang === 'zh'
+                    ? '当前结果已识别到内购信号。'
+                    : 'An IAP signal has been identified for this result.')}
+                {verdict.note === 'no' &&
+                  (lang === 'zh'
+                    ? '当前没有识别到明确的公开内购信号。'
+                    : 'No clear public IAP signal was identified for this result.')}
+                {verdict.note === 'unknown' &&
+                  (lang === 'zh'
+                    ? '公开信息暂时不足，建议打开 App Store 页面继续确认。'
+                    : 'Public information is not conclusive yet. Open the App Store page to confirm.')}
               </div>
 
               {hasItems && (
                 <div className="iapItems">
                   <h4>{t.iap.iapItems}</h4>
-                  {iapItems[app.trackId].map((item, index) => (
+                  {app.iapItems.map((item, index) => (
                     <div className="iapItem" key={index}>
                       <span>{item.name}</span>
                       <b>{item.price}</b>
@@ -299,25 +188,31 @@ export default function Iap() {
                 </div>
               )}
 
-              {!hasItems && (signal.detail === 'page' || signal.detail === 'metadata' || signal.detail === 'text' || derived.hasSignal) && (
-                <p className="iapHint">{t.iap.iapHint}</p>
-              )}
+              {!hasItems && verdict.note === 'yes' && <p className="iapHint">{t.iap.iapHint}</p>}
 
               {app.description && <p className="iapDesc">{app.description}</p>}
 
               <div className="iconActions">
-                <a href={app.trackViewUrl} target="_blank" rel="noreferrer">{t.iap.openAppStore}</a>
-                <button onClick={() => {
-                  setQ(app.bundleId || '');
-                  if (app.bundleId) query(app.bundleId);
-                }}>{t.iap.fillBundle}</button>
+                <a href={app.trackViewUrl} target="_blank" rel="noreferrer">
+                  {t.iap.openAppStore}
+                </a>
+                <button
+                  onClick={() => {
+                    setQ(app.bundleId || '');
+                    if (app.bundleId) query(app.bundleId);
+                  }}
+                >
+                  {t.iap.fillBundle}
+                </button>
               </div>
             </div>
           );
         })}
       </div>
 
-      {!state.loading && state.searched && state.apps.length === 0 && !state.error && <Empty text={t.iap.noMatch} />}
+      {!state.loading && state.searched && state.apps.length === 0 && !state.error && (
+        <Empty text={t.iap.noMatch} />
+      )}
       {!state.searched && <FeaturedApps onSelect={query} />}
       <ToolIntro page="iap" />
       <ContentSection {...content} />
