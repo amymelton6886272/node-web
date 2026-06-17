@@ -15,6 +15,14 @@ function inspectApp(app, t) {
   return { label: t.iap.pending, cls: 'badge warn', note: 'unknown' };
 }
 
+function pageStateLabel(pageState, lang) {
+  if (pageState === 'items') return lang === 'zh' ? '已抓到明细' : 'Items captured';
+  if (pageState === 'page') return lang === 'zh' ? '页面可读' : 'Page readable';
+  if (pageState === 'loading') return lang === 'zh' ? '加载明细中' : 'Loading details';
+  if (pageState === 'unavailable') return lang === 'zh' ? '页面暂不可用' : 'Page unavailable';
+  return lang === 'zh' ? '待确认' : 'Needs confirmation';
+}
+
 export default function Iap() {
   const [q, setQ] = useState('');
   const [country, setCountry] = useState('cn');
@@ -38,6 +46,42 @@ export default function Iap() {
       setState({ loading: false, apps: json.apps || [], error: null, searched: true });
     } catch (error) {
       setState({ loading: false, apps: [], error: String(error), searched: true });
+    }
+  };
+
+  const loadDetails = async (trackId) => {
+    setState((prev) => ({
+      ...prev,
+      apps: prev.apps.map((app) => (
+        app.trackId === trackId ? { ...app, pageState: 'loading' } : app
+      )),
+    }));
+
+    try {
+      const res = await fetch(`/api/iap-detail?trackId=${encodeURIComponent(trackId)}&country=${country}`);
+      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+
+      const json = await res.json();
+      setState((prev) => ({
+        ...prev,
+        apps: prev.apps.map((app) => (
+          app.trackId === trackId
+            ? {
+                ...app,
+                iapItems: json.iapItems || [],
+                pageState: json.pageState || 'unavailable',
+                iapState: app.iapState === 'yes' ? 'yes' : (json.iapState || app.iapState),
+              }
+            : app
+        )),
+      }));
+    } catch {
+      setState((prev) => ({
+        ...prev,
+        apps: prev.apps.map((app) => (
+          app.trackId === trackId ? { ...app, pageState: 'unavailable' } : app
+        )),
+      }));
     }
   };
 
@@ -72,8 +116,8 @@ export default function Iap() {
         <ShieldAlert size={18} />
         <span>
           {lang === 'zh'
-            ? '内购结果现在优先来自服务端查询，页面抓取只用于补充公开明细。'
-            : 'IAP results now come from a server-side lookup first, with page fetching used only for public detail enrichment.'}
+            ? '现在先返回快速主结果，公开内购明细改为按需加载。'
+            : 'The page now returns the fast main result first, and public IAP details load on demand.'}
         </span>
       </div>
 
@@ -82,22 +126,22 @@ export default function Iap() {
           <h2>{lang === 'zh' ? '这页现在怎么工作' : 'How this page works now'}</h2>
           <p>
             {lang === 'zh'
-              ? '它会先调用站点自己的轻量接口，再由服务端去请求 Apple 公开数据。这样前端更稳，也更容易做缓存。'
-              : 'It calls a lightweight site API first, then the server requests public Apple data. That makes the frontend steadier and easier to cache.'}
+              ? '主结果优先使用 Apple 元数据快速返回，只有在你需要时才去补抓公开页面明细。'
+              : 'The main result now comes back quickly from Apple metadata, and public page details are fetched only when needed.'}
           </p>
         </div>
         <div className="iapGuideGrid">
           <article className="iapGuideItem">
-            <b>{lang === 'zh' ? '资源更可控' : 'More controlled usage'}</b>
-            <p>{lang === 'zh' ? '单次只处理少量结果，并带短缓存。' : 'Each query handles only a small result set with short caching.'}</p>
+            <b>{lang === 'zh' ? '首个结果更快' : 'Faster first result'}</b>
+            <p>{lang === 'zh' ? '不再为每条结果默认等待页面抓取。' : 'The page no longer waits on detail fetching for every result.'}</p>
           </article>
           <article className="iapGuideItem">
-            <b>{lang === 'zh' ? '结果更稳定' : 'More stable results'}</b>
-            <p>{lang === 'zh' ? '浏览器不再直接依赖公共代理。' : 'The browser no longer depends directly on a public proxy.'}</p>
+            <b>{lang === 'zh' ? '明细按需请求' : 'Details on demand'}</b>
+            <p>{lang === 'zh' ? '只有点开某个应用时才请求公开页面。' : 'The public page is requested only when a specific app needs detail loading.'}</p>
           </article>
           <article className="iapGuideItem">
-            <b>{lang === 'zh' ? '明细仍是补充' : 'Details are still optional'}</b>
-            <p>{lang === 'zh' ? '若公开页面不可读，主判断仍会保留。' : 'If the public page is unavailable, the main verdict still remains.'}</p>
+            <b>{lang === 'zh' ? '失败不拖慢主流程' : 'Failure does not block'}</b>
+            <p>{lang === 'zh' ? '即使明细抓取失败，主判断和跳转仍然可用。' : 'Even if detail fetching fails, the main verdict and App Store link remain usable.'}</p>
           </article>
         </div>
       </section>
@@ -142,23 +186,7 @@ export default function Iap() {
               <div className="iapFlag">
                 <span className={verdict.cls}>{verdict.label}</span>
                 <span>{lang === 'zh' ? '地区' : 'Store'} {country.toUpperCase()}</span>
-                <span>
-                  {app.pageState === 'items'
-                    ? lang === 'zh'
-                      ? '已抓到明细'
-                      : 'Items captured'
-                    : app.pageState === 'page'
-                      ? lang === 'zh'
-                        ? '页面可读'
-                        : 'Page readable'
-                      : app.pageState === 'unavailable'
-                        ? lang === 'zh'
-                          ? '页面暂不可用'
-                          : 'Page unavailable'
-                        : lang === 'zh'
-                          ? '待确认'
-                          : 'Needs confirmation'}
-                </span>
+                <span>{pageStateLabel(app.pageState, lang)}</span>
               </div>
 
               <div className="contentNote">
@@ -203,6 +231,14 @@ export default function Iap() {
                   }}
                 >
                   {t.iap.fillBundle}
+                </button>
+                <button
+                  onClick={() => loadDetails(app.trackId)}
+                  disabled={!app.trackId || app.pageState === 'loading'}
+                >
+                  {app.pageState === 'loading'
+                    ? (lang === 'zh' ? '加载中' : 'Loading')
+                    : (lang === 'zh' ? '查看公开明细' : 'Load public details')}
                 </button>
               </div>
             </div>
