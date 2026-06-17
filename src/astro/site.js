@@ -19,9 +19,9 @@ export const sidebarItems = [
   { href: '/knowledge', label: 'Knowledge', labelZh: '知识库', icon: 'K', desc: 'Concepts and explainers', descZh: '概念与说明' },
   { href: '/articles', label: 'Articles', labelZh: '文章', icon: 'R', desc: 'Practical reading', descZh: '实用阅读内容' },
   { href: '/risk', label: 'App Risk', labelZh: '应用风险', icon: '!', desc: 'Permission risk review', descZh: '权限风险评估' },
-  { href: '/checklists', label: 'Checklists', labelZh: '检查清单', icon: '✓', desc: 'Before-you-act lists', descZh: '行动前核对' },
-  { href: '/guides', label: 'Guides', labelZh: '指南', icon: 'G', desc: 'Step-by-step help', descZh: '步骤式帮助' },
-  { href: '/glossary', label: 'Glossary', labelZh: '术语表', icon: 'T', desc: 'Plain definitions', descZh: '术语解释' },
+  { href: '/checklists', label: 'Checklists', labelZh: '检查清单', icon: 'C', desc: 'Before-you-act lists', descZh: '行动前核对' },
+  { href: '/guides', label: 'Guides', labelZh: '指南', icon: 'G', desc: 'Step-by-step help', descZh: '分步帮助' },
+  { href: '/glossary', label: 'Glossary', labelZh: '术语表', icon: 'T', desc: 'Plain definitions', descZh: '通俗定义' },
 ];
 
 export const sidebarGroups = [

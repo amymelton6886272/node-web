@@ -108,7 +108,7 @@ export const contentByPage = {
       { heading: '隐私提醒', text: '页面只展示浏览器可获得的网络信息。使用公共 Wi‑Fi、代理或企业网络时，请避免在不可信环境中登录敏感账号。' },
     ],
     links: [
-      { href: '/proxy', label: '代理配置导航' },
+      { href: '/knowledge', label: '网络安全指南' },
       { href: '/guides', label: '网络安全指南' },
     ],
   },

@@ -49,10 +49,18 @@ const canonical = new URL(path, SITE).toString();
         <b>Wolffy</b>
       </a>
       <nav class="toplinks" aria-label="Main navigation">
-        {navItems.map((item) => <a class={isActive(path, item.href) ? 'active' : ''} href={item.href}><span class="lang-en">{item.label}</span><span class="lang-zh">{item.labelZh}</span></a>)}
+        {navItems.map((item) => (
+          <a class={isActive(path, item.href) ? 'active' : ''} href={item.href}>
+            <span class="lang-en">{item.label}</span>
+            <span class="lang-zh">{item.labelZh}</span>
+          </a>
+        ))}
       </nav>
       <div class="headerActions">
-        <button class="lang" type="button" data-lang-toggle aria-label="Toggle language"><span class="lang-en">中文</span><span class="lang-zh">EN</span></button>
+        <button class="lang" type="button" data-lang-toggle aria-label="Toggle language">
+          <span class="lang-en">中文</span>
+          <span class="lang-zh">EN</span>
+        </button>
         <button class="theme" type="button" aria-label="Toggle theme" data-theme-toggle>◐</button>
       </div>
     </header>
@@ -65,13 +73,22 @@ const canonical = new URL(path, SITE).toString();
         </div>
         {sidebarGroups.map((group) => (
           <section class="sideGroup">
-            <h2><span class="lang-en">{group.label}</span><span class="lang-zh">{group.labelZh}</span></h2>
+            <h2>
+              <span class="lang-en">{group.label}</span>
+              <span class="lang-zh">{group.labelZh}</span>
+            </h2>
             {group.items.map((item) => (
               <a class={isActive(path, item.href) ? 'active' : ''} href={item.href}>
                 <span class="sideIcon" aria-hidden="true">{item.icon}</span>
                 <span class="sideText">
-                  <b><span class="lang-en">{item.label}</span><span class="lang-zh">{item.labelZh}</span></b>
-                  <small><span class="lang-en">{item.desc}</span><span class="lang-zh">{item.descZh}</span></small>
+                  <b>
+                    <span class="lang-en">{item.label}</span>
+                    <span class="lang-zh">{item.labelZh}</span>
+                  </b>
+                  <small>
+                    <span class="lang-en">{item.desc}</span>
+                    <span class="lang-zh">{item.descZh}</span>
+                  </small>
                 </span>
               </a>
             ))}
@@ -83,10 +100,26 @@ const canonical = new URL(path, SITE).toString();
       </main>
     </div>
     <nav class="mobileDock" aria-label="Mobile shortcuts">
-      <a class={path === '/' ? 'active' : ''} href="/"><span class="dockIcon">⌂</span><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
-      <button type="button" data-jump-tool><span class="dockIcon">●</span><span class="lang-en">Use</span><span class="lang-zh">使用</span></button>
-      <a class={isActive(path, '/articles') ? 'active' : ''} href="/articles"><span class="dockIcon">≡</span><span class="lang-en">Read</span><span class="lang-zh">文章</span></a>
-      <button type="button" data-scroll-top><span class="dockIcon">↑</span><span class="lang-en">Top</span><span class="lang-zh">顶部</span></button>
+      <a class={path === '/' ? 'active' : ''} href="/">
+        <span class="dockIcon">⌂</span>
+        <span class="lang-en">Home</span>
+        <span class="lang-zh">首页</span>
+      </a>
+      <button type="button" data-jump-tool>
+        <span class="dockIcon">●</span>
+        <span class="lang-en">Use</span>
+        <span class="lang-zh">使用</span>
+      </button>
+      <a class={isActive(path, '/articles') ? 'active' : ''} href="/articles">
+        <span class="dockIcon">≡</span>
+        <span class="lang-en">Read</span>
+        <span class="lang-zh">文章</span>
+      </a>
+      <button type="button" data-scroll-top>
+        <span class="dockIcon">↑</span>
+        <span class="lang-en">Top</span>
+        <span class="lang-zh">顶部</span>
+      </button>
     </nav>
     <footer>
       <span class="lang-en">Built with care. No account registration needed. Open to all App Store users.</span>
