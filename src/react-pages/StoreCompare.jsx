@@ -234,6 +234,9 @@ function displayMoney(item, lang) {
   if (!item) return '';
   if (!item.formattedPrice) return '';
   const fallbackCurrency = item.currencyCode || AREA_TO_CURRENCY[item.area] || '';
+  if (lang !== 'zh' && fallbackCurrency === 'USD') {
+    return item.formattedPrice;
+  }
   const fallbackCny = (
     typeof item.cnyPrice === 'number'
       ? item.cnyPrice
@@ -263,6 +266,7 @@ function originalMoney(item) {
   if (!item?.formattedPrice) return '';
   if (typeof item.cnyPrice === 'number' && item.cnyPrice === 0) return '';
   if (typeof item.numericPrice === 'number' && item.numericPrice === 0) return '';
+  if ((item.currencyCode || AREA_TO_CURRENCY[item.area]) === 'USD') return '';
   return item.formattedPrice;
 }
 
