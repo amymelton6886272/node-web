@@ -19,19 +19,58 @@ if (!globalThis.__wolffyCompareCache) {
   globalThis.__wolffyCompareCache = compareCache;
 }
 const CACHE_TTL_MS = 10 * 60 * 1000;
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v5';
 const APP17_BASE = 'https://app.17nas.com';
+const APP_VBR_BASE = 'https://app.vbr.me';
+const CNY_TO_USD_RATE = 0.147717;
+const LIVE_RATES_FROM_CNY = {
+  USD: 0.147717,
+  CNY: 1,
+  JPY: 23.69988,
+  HKD: 1.157202,
+  TWD: 4.666356,
+  KRW: 223.713647,
+  INR: 14.009723,
+  PHP: 8.944544,
+  PKR: 41.179377,
+  EGP: 7.415808,
+  NGN: 200.538985,
+  TRY: 6.821282,
+  BRL: 0.747496,
+};
+const AREA_TO_CURRENCY = {
+  us: 'USD',
+  cn: 'CNY',
+  jp: 'JPY',
+  hk: 'HKD',
+  tw: 'TWD',
+  kr: 'KRW',
+  in: 'INR',
+  ph: 'PHP',
+  pk: 'PKR',
+  eg: 'EGP',
+  ng: 'NGN',
+  tr: 'TRY',
+  br: 'BRL',
+};
 
 const IAP_MARKERS = [
   /offers?\s+in-app purchases?/i,
   /in-app purchases?/i,
+  /in-app purchase/i,
   /app\s*\u5185\u8d2d/i,
   /\u5185\u8d2d/i,
+  /\u5185\u8d2d\u4e70/i,
+  /\u8d2d\u4e70\u9879\u76ee/i,
   /\u81ea\u52a8\u7eed\u8d39/i,
   /\u8fde\u7eed\u5305\u6708/i,
   /\u8fde\u7eed\u5305\u5e74/i,
   /\u8ba2\u9605\u670d\u52a1/i,
   /\u53d6\u6d88\u8ba2\u9605/i,
+  /\u30a2\u30d7\u30ea\u5185\u8ab2\u91d1/i,
+  /\uc571\s*\ub0b4\s*\uad6c\uc785/i,
+  /\u0e01\u0e32\u0e23\u0e0b\u0e37\u0e49\u0e2d\u0e20\u0e32\u0e22\u0e43\u0e19\u0e41\u0e2d\u0e1b/i,
+  /compras?\s+dentro\s+do\s+app/i,
   /subscription/i,
   /subscriptions/i,
   /auto-?renew/i,
@@ -151,12 +190,87 @@ async function postJson(url, body, timeoutMs = 10000) {
   }
 }
 
+function decodePossiblyMojibake(value = '') {
+  const text = String(value || '');
+  if (!/[ÃÂâåäæèé]/.test(text)) return text;
+  try {
+    return new TextDecoder('utf-8').decode(Uint8Array.from([...text].map((char) => char.charCodeAt(0) & 0xff)));
+  } catch {
+    return text;
+  }
+}
+
 function formatMoney(item = {}) {
   if (item.formattedPrice) return item.formattedPrice;
   if (typeof item.price === 'number' && item.currency) return `${item.currency}${item.price}`;
   if (typeof item.price === 'number' && item.currencyCode) return `${item.currencyCode} ${item.price}`;
   if (typeof item.price === 'number') return String(item.price);
   return '';
+}
+
+function deriveCurrencyCode(area, value = '') {
+  const text = String(value || '');
+  if (/HK\$/i.test(text)) return 'HKD';
+  if (/NT\$/i.test(text)) return 'TWD';
+  if (/R\$/i.test(text)) return 'BRL';
+  if (/EGP/i.test(text)) return 'EGP';
+  if (/Rs\b/i.test(text)) return 'PKR';
+  if (/₹/.test(text)) return 'INR';
+  if (/₱/.test(text)) return 'PHP';
+  if (/₺/.test(text)) return 'TRY';
+  if (/₩|￦/.test(text)) return 'KRW';
+  if (/¥/.test(text)) return area === 'cn' ? 'CNY' : 'JPY';
+  if (/\$/.test(text)) return area === 'tw' ? 'TWD' : 'USD';
+  return AREA_TO_CURRENCY[area] || '';
+}
+
+function parseLocalizedNumber(value) {
+  const text = String(value || '').replace(/\s|\u00a0/g, '');
+  if (!text) return null;
+  if (/^(free|gratis|무료|免費|無料)$/i.test(text)) return 0;
+  let numeric = text.replace(/[^\d.,-]/g, '');
+  if (!numeric) return null;
+
+  const lastComma = numeric.lastIndexOf(',');
+  const lastDot = numeric.lastIndexOf('.');
+  if (lastComma !== -1 && lastDot !== -1) {
+    if (lastComma > lastDot) {
+      numeric = numeric.replace(/\./g, '').replace(',', '.');
+    } else {
+      numeric = numeric.replace(/,/g, '');
+    }
+  } else if (lastComma !== -1) {
+    numeric = /,\d{1,2}$/.test(numeric) ? numeric.replace(',', '.') : numeric.replace(/,/g, '');
+  } else if ((numeric.match(/\./g) || []).length > 1) {
+    const parts = numeric.split('.');
+    const decimal = parts.pop();
+    numeric = `${parts.join('')}.${decimal}`;
+  }
+
+  const parsed = Number(numeric);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function enrichComparablePrice(area, formattedPrice, numericPrice = null) {
+  const currencyCode = deriveCurrencyCode(area, formattedPrice);
+  const normalizedPrice = typeof numericPrice === 'number' ? numericPrice : parseLocalizedNumber(formattedPrice);
+  if (typeof normalizedPrice !== 'number') {
+    return {
+      numericPrice: null,
+      currencyCode,
+      cnyPrice: null,
+      usdPrice: null,
+    };
+  }
+  const cnyPrice = currencyCode && LIVE_RATES_FROM_CNY[currencyCode]
+    ? normalizedPrice / LIVE_RATES_FROM_CNY[currencyCode]
+    : null;
+  return {
+    numericPrice: normalizedPrice,
+    currencyCode,
+    cnyPrice,
+    usdPrice: typeof cnyPrice === 'number' ? cnyPrice * CNY_TO_USD_RATE : null,
+  };
 }
 
 function normalizeApp17Image(url = '') {
@@ -181,19 +295,47 @@ async function loadApp17NasData(trackId) {
     const comparison = comparisonRows.map((row) => ({
       object: row.object === '软件本体' ? 'App' : row.object,
       priceList: (row.priceList || []).map((price) => ({
+        ...enrichComparablePrice(price.area, formatMoney(price), typeof price.cnyPrice === 'number' ? price.cnyPrice : (typeof price.price === 'number' ? price.price : null)),
         area: price.area,
         areaName: price.areaName,
         price: formatMoney(price),
         formattedPrice: formatMoney(price),
-        numericPrice: typeof price.cnyPrice === 'number' ? price.cnyPrice : (typeof price.price === 'number' ? price.price : null),
         trackViewUrl: snapshot?.appStoreUrl || '',
         currency: price.currency || '',
-        currencyCode: price.currencyCode || '',
+        currencyCode: price.currencyCode || deriveCurrencyCode(price.area, formatMoney(price)),
         cnyPrice: typeof price.cnyPrice === 'number' ? price.cnyPrice : null,
       })),
     }));
 
     return { snapshot, comparison };
+  } catch {
+    return null;
+  }
+}
+
+async function loadAppVbrData(trackId) {
+  try {
+    const comparisonJson = await postJson(`${APP_VBR_BASE}/app/getAppInfoComparison`, { appId: String(trackId) }, 15000);
+    const comparisonRows = comparisonJson?.code === 0 ? comparisonJson.data || [] : [];
+    if (!comparisonRows.length) return null;
+
+    const comparison = comparisonRows.map((row) => ({
+      object: decodePossiblyMojibake(row.object) === '软件本体' ? 'App' : decodePossiblyMojibake(row.object),
+      priceList: (row.priceList || []).map((price) => ({
+        area: price.area,
+        areaName: decodePossiblyMojibake(price.areaName),
+        price: formatMoney(price),
+        formattedPrice: formatMoney(price),
+        numericPrice: typeof price.price === 'number' ? price.price : null,
+        trackViewUrl: '',
+        currency: decodePossiblyMojibake(price.currency || ''),
+        currencyCode: price.currencyCode || deriveCurrencyCode(price.area, formatMoney(price)),
+        cnyPrice: typeof price.cnyPrice === 'number' ? price.cnyPrice : null,
+        usdPrice: typeof price.cnyPrice === 'number' ? price.cnyPrice * CNY_TO_USD_RATE : null,
+      })),
+    }));
+
+    return { comparison };
   } catch {
     return null;
   }
@@ -209,11 +351,18 @@ export function extractIapItems(html) {
     const shelfMapping = product?.shelfMapping || {};
     const shelfOrderings = product?.shelfOrderings || {};
     const interestingShelfNames = new Set(['subscriptions', 'inAppPurchases', ...Object.values(shelfOrderings).flat()]);
+    const looksLikePrice = (value = '') => {
+      const text = String(value || '').trim();
+      if (!text) return false;
+      if (/^(free|gratis|무료|免費|無料)$/i.test(text)) return true;
+      return /(?:[$¥￥₩￦₹₱₺₦]|HK\$|NT\$|R\$|Rs\b|EGP|USD|CNY|JPY|KRW|TWD|HKD|INR|PHP|PKR|BRL|TRY|NGN)\s*[\d,.]+|[\d,.]+\s*(?:元|円|₩|￦|TL)/i.test(text);
+    };
 
     const pushIfValid = (bucket, name, price) => {
       const cleanName = String(name || '').trim();
       const cleanPrice = String(price || '').trim();
       if (!cleanName || !cleanPrice) return;
+      if (!looksLikePrice(cleanPrice)) return;
       bucket.push({ name: cleanName, price: cleanPrice });
     };
 
@@ -237,6 +386,18 @@ export function extractIapItems(html) {
             pushIfValid(bucket, pair[0], pair[1]);
           }
         }
+        for (const child of item?.items || []) {
+          for (const pair of child?.textPairs || []) {
+            if (Array.isArray(pair) && pair[0] && pair[1]) {
+              pushIfValid(bucket, pair[0], pair[1]);
+            }
+          }
+          for (const pair of child?.items_V3 || []) {
+            if (pair?.$kind === 'textPair' && pair.leadingText && pair.trailingText) {
+              pushIfValid(bucket, pair.leadingText, pair.trailingText);
+            }
+          }
+        }
         if (item?.title && item?.offerLabel) {
           pushIfValid(bucket, item.title, item.offerLabel);
         }
@@ -258,6 +419,15 @@ export function extractIapItems(html) {
       return bucket;
     };
 
+    const infoRows = shelfMapping.information?.items || [];
+    for (const row of infoRows) {
+      const rowText = `${row?.title || ''} ${row?.subtitle || ''}`;
+      const fromRow = extractPairsFromShelf(row);
+      if (hasIapMarker(rowText) || fromRow.length) {
+        parsed.push(...fromRow);
+      }
+    }
+
     for (const [name, shelf] of Object.entries(shelfMapping)) {
       if (interestingShelfNames.has(name) || /subscription|inapp|purchase/i.test(name) || hasIapMarker(`${shelf?.title || ''} ${JSON.stringify(shelf || {})}`)) {
         parsed.push(...extractPairsFromShelf(shelf, name));
@@ -265,7 +435,7 @@ export function extractIapItems(html) {
     }
 
     const info = shelfMapping.information?.items || [];
-    const row = info.find((item) => hasIapMarker(item?.title || ''));
+    const row = info.find((item) => hasIapMarker(item?.title || '') || extractPairsFromShelf(item).length);
     if (row) {
       parsed.push(...extractPairsFromShelf(row));
       for (const pair of row?.items_V3 || []) {
@@ -333,8 +503,11 @@ export async function loadAppByRegion(trackId, region) {
 
   try {
     const appUrl = lookupApp?.trackViewUrl || `https://apps.apple.com/${region.code}/app/id${trackId}`;
-    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(appUrl)}`;
-    const response = await fetchWithTimeout(proxyUrl, 7000);
+    let response = await fetchWithTimeout(appUrl, 7000);
+    if (!response.ok) {
+      const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(appUrl)}`;
+      response = await fetchWithTimeout(proxyUrl, 7000);
+    }
 
     if (response.ok) {
       const html = await response.text();
@@ -427,12 +600,6 @@ export function buildComparison(regions = []) {
     return current;
   };
 
-  const toNumericPrice = (value) => {
-    if (!value) return null;
-    const match = String(value).replace(/,/g, '').match(/(\d+(?:\.\d+)?)/);
-    return match ? Number(match[1]) : null;
-  };
-
   for (const region of regions) {
     for (const item of region.iapItems || []) {
       const name = item.name?.trim();
@@ -447,14 +614,25 @@ export function buildComparison(regions = []) {
       }
       const bucket = itemsByName.get(key);
       bucket.display = chooseDisplayName(bucket.display, simplifyText(name), region.area);
-      bucket.priceList.push({
+      const normalizedPrice = {
+        ...enrichComparablePrice(region.area, item.price),
         area: region.area,
         areaName: region.areaName,
         price: item.price,
         formattedPrice: item.price,
-        numericPrice: toNumericPrice(item.price),
         trackViewUrl: region.trackViewUrl,
-      });
+      };
+      const existingIndex = bucket.priceList.findIndex((price) => price.area === region.area);
+      if (existingIndex === -1) {
+        bucket.priceList.push(normalizedPrice);
+      } else {
+        const existing = bucket.priceList[existingIndex];
+        const existingComparable = typeof existing.cnyPrice === 'number' ? existing.cnyPrice : Number.POSITIVE_INFINITY;
+        const nextComparable = typeof normalizedPrice.cnyPrice === 'number' ? normalizedPrice.cnyPrice : Number.POSITIVE_INFINITY;
+        if (nextComparable < existingComparable) {
+          bucket.priceList[existingIndex] = normalizedPrice;
+        }
+      }
     }
   }
 
@@ -462,11 +640,11 @@ export function buildComparison(regions = []) {
     {
       object: 'App',
       priceList: regions.map((region) => ({
+        ...enrichComparablePrice(region.area, region.formattedPrice || ''),
         area: region.area,
         areaName: region.areaName,
         price: region.formattedPrice || '',
         formattedPrice: region.formattedPrice || '',
-        numericPrice: toNumericPrice(region.formattedPrice || ''),
         trackViewUrl: region.trackViewUrl,
       })),
     },
@@ -517,6 +695,25 @@ function buildSnapshotFromApp17(app, app17, comparison) {
   };
 }
 
+function buildSnapshotFromExternal(app, comparison, dataSource) {
+  const comparisonAreas = new Set(
+    comparison.flatMap((row) => row.priceList || []).map((price) => price.area).filter(Boolean),
+  );
+
+  return {
+    appId: String(app.trackId),
+    trackName: app.trackName,
+    developer: app.artistName,
+    appStoreUrl: app.trackViewUrl,
+    appImage: app.artworkUrl100,
+    capturedAt: Date.now(),
+    dataSource,
+    highlightArea: comparison[0]?.priceList?.[0]?.area || 'us',
+    regionCount: comparisonAreas.size,
+    objectCount: Math.max(0, comparison.length - 1),
+  };
+}
+
 export async function queryIapCompare(q, country = 'us') {
   const cacheKey = `${CACHE_VERSION}::${country}::${q.trim().toLowerCase()}`;
   const cached = compareCache.get(cacheKey);
@@ -547,6 +744,18 @@ export async function queryIapCompare(q, country = 'us') {
     .map(normalizeApp);
 
   const results = await Promise.all(apps.map(async (app) => {
+    const appVbr = await loadAppVbrData(app.trackId);
+    const appVbrHasDetailRows = appVbr?.comparison?.some((row) => row.object !== 'App' && (row.priceList || []).length > 0);
+    if (appVbrHasDetailRows) {
+      const snapshot = buildSnapshotFromExternal(app, appVbr.comparison, 'appVbr+apple');
+      return {
+        ...app,
+        snapshot,
+        regions: [],
+        comparison: appVbr.comparison,
+      };
+    }
+
     const app17 = await loadApp17NasData(app.trackId);
     const app17HasDetailRows = app17?.comparison?.some((row) => row.object !== 'App' && (row.priceList || []).length > 0);
     if (app17HasDetailRows) {

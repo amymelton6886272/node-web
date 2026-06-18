@@ -216,6 +216,7 @@ footer span{display:block;line-height:1.8}
 .storeHotBar strong{font-size:13px;white-space:nowrap}
 .storeHotChips{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
 .storeHotChip{display:inline-flex;align-items:center;min-height:30px;padding:0 10px;border-radius:999px;background:#ecfeff;color:#0f766e;border:1px solid #67e8f9;font-size:12.5px;font-weight:800;white-space:nowrap}
+.storeFlag{width:18px;height:13px;display:inline-block;flex:0 0 auto;margin-right:6px;border-radius:3px;object-fit:cover;box-shadow:0 0 0 1px color-mix(in srgb,var(--line) 88%,transparent)}
 .dark .storeHotChip{background:#083344;color:#67e8f9;border-color:#155e75}
 .storeHotChip.best{background:#dcfce7;color:#166534;border-color:#86efac}
 .dark .storeHotChip.best{background:#052e16;color:#86efac;border-color:#14532d}
@@ -237,11 +238,12 @@ footer span{display:block;line-height:1.8}
 .storeRegionCard.best{border-color:#facc15;background:linear-gradient(180deg,#fffdf0,#fff)}
 .dark .storeRegionCard.best{background:linear-gradient(180deg,#2a2206,#171c27);border-color:#ca8a04}
 .storeRegionTop{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-.storeRegionTop strong{display:block;font-size:15px;line-height:1.25}
+.storeRegionTop strong{display:flex;align-items:center;font-size:15px;line-height:1.25}
 .storeRegionTop span{display:block;font-size:12px;color:var(--muted);margin-top:3px}
 .storeRegionTop em{font-style:normal;display:inline-flex;align-items:center;padding:4px 8px;border-radius:999px;background:#fef3c7;color:#92400e;font-size:11px;font-weight:800;white-space:nowrap}
 .dark .storeRegionTop em{background:#451a03;color:#fcd34d}
 .storeRegionCard b{font-size:28px;letter-spacing:0;line-height:1.1}
+.storeRegionOriginal{font-size:13px;color:var(--muted);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .storeRegionCard small{font-size:12px;color:var(--muted)}
 .storeUnifiedScroller{overflow-x:auto}
 .storeUnifiedTable{width:100%;min-width:1680px;border-collapse:separate;border-spacing:0}
@@ -291,7 +293,6 @@ footer span{display:block;line-height:1.8}
 .storeCard{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:var(--shadow);display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
 .storeCard::after{content:"";position:absolute;right:-28px;top:-28px;width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,#fbcfe8,#bfdbfe);opacity:.45;pointer-events:none}
 .dark .storeCard::after{opacity:.16}
-.storeFlag{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;font-size:30px;background:var(--soft);border:1px solid var(--line)}
 .storeInfo{min-width:0}.storeInfo h3{margin:0 0 3px;font-size:19px}.storeInfo p{margin:0 0 7px;color:var(--muted)}.storeInfo code{font-size:12px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--muted)}
 .storeActions{grid-column:1/-1;display:flex;gap:9px;position:relative;z-index:1}
 .storeActions a,.storeActions button{flex:1;text-align:center;border:1px solid var(--line);background:var(--soft);color:inherit;text-decoration:none;border-radius:999px;padding:10px 12px;font-size:14px;cursor:pointer;font:inherit}

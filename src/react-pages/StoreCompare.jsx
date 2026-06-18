@@ -4,24 +4,54 @@ import { Hero, Empty, FeaturedApps } from '../components/common.jsx';
 import { useLang } from '../LanguageContext.jsx';
 
 const REGIONS = [
-  { code: 'us', label: 'US', zhName: '美国', enName: 'United States' },
-  { code: 'cn', label: 'CN', zhName: '中国', enName: 'China' },
-  { code: 'jp', label: 'JP', zhName: '日本', enName: 'Japan' },
-  { code: 'hk', label: 'HK', zhName: '香港', enName: 'Hong Kong' },
-  { code: 'tw', label: 'TW', zhName: '台湾', enName: 'Taiwan' },
-  { code: 'kr', label: 'KR', zhName: '韩国', enName: 'Korea' },
-  { code: 'in', label: 'IN', zhName: '印度', enName: 'India' },
-  { code: 'ph', label: 'PH', zhName: '菲律宾', enName: 'Philippines' },
-  { code: 'pk', label: 'PK', zhName: '巴基斯坦', enName: 'Pakistan' },
-  { code: 'eg', label: 'EG', zhName: '埃及', enName: 'Egypt' },
-  { code: 'ng', label: 'NG', zhName: '尼日利亚', enName: 'Nigeria' },
-  { code: 'tr', label: 'TR', zhName: '土耳其', enName: 'Turkey' },
-  { code: 'br', label: 'BR', zhName: '巴西', enName: 'Brazil' },
+  { code: 'us', label: 'US', zhName: '美国', enName: 'United States', flagUrl: 'https://flagcdn.com/us.svg' },
+  { code: 'cn', label: 'CN', zhName: '中国', enName: 'China', flagUrl: 'https://flagcdn.com/cn.svg' },
+  { code: 'jp', label: 'JP', zhName: '日本', enName: 'Japan', flagUrl: 'https://flagcdn.com/jp.svg' },
+  { code: 'hk', label: 'HK', zhName: '香港', enName: 'Hong Kong', flagUrl: 'https://flagcdn.com/hk.svg' },
+  { code: 'tw', label: 'TW', zhName: '台湾', enName: 'Taiwan', flagUrl: 'https://flagcdn.com/tw.svg' },
+  { code: 'kr', label: 'KR', zhName: '韩国', enName: 'Korea', flagUrl: 'https://flagcdn.com/kr.svg' },
+  { code: 'in', label: 'IN', zhName: '印度', enName: 'India', flagUrl: 'https://flagcdn.com/in.svg' },
+  { code: 'ph', label: 'PH', zhName: '菲律宾', enName: 'Philippines', flagUrl: 'https://flagcdn.com/ph.svg' },
+  { code: 'pk', label: 'PK', zhName: '巴基斯坦', enName: 'Pakistan', flagUrl: 'https://flagcdn.com/pk.svg' },
+  { code: 'eg', label: 'EG', zhName: '埃及', enName: 'Egypt', flagUrl: 'https://flagcdn.com/eg.svg' },
+  { code: 'ng', label: 'NG', zhName: '尼日利亚', enName: 'Nigeria', flagUrl: 'https://flagcdn.com/ng.svg' },
+  { code: 'tr', label: 'TR', zhName: '土耳其', enName: 'Turkey', flagUrl: 'https://flagcdn.com/tr.svg' },
+  { code: 'br', label: 'BR', zhName: '巴西', enName: 'Brazil', flagUrl: 'https://flagcdn.com/br.svg' },
 ];
 
 const LOCAL_COMPARE_ENDPOINT = '/compare-api/iap-compare';
 const PROD_COMPARE_ENDPOINT = '/api/iap-compare';
 const CNY_TO_USD_RATE = 0.147717;
+const LIVE_RATES_FROM_CNY = {
+  USD: 0.147717,
+  CNY: 1,
+  JPY: 23.69988,
+  HKD: 1.157202,
+  TWD: 4.666356,
+  KRW: 223.713647,
+  INR: 14.009723,
+  PHP: 8.944544,
+  PKR: 41.179377,
+  EGP: 7.415808,
+  NGN: 200.538985,
+  TRY: 6.821282,
+  BRL: 0.747496,
+};
+const AREA_TO_CURRENCY = {
+  us: 'USD',
+  cn: 'CNY',
+  jp: 'JPY',
+  hk: 'HKD',
+  tw: 'TWD',
+  kr: 'KRW',
+  in: 'INR',
+  ph: 'PHP',
+  pk: 'PKR',
+  eg: 'EGP',
+  ng: 'NGN',
+  tr: 'TRY',
+  br: 'BRL',
+};
 
 function detectSearchCountry(term, lang) {
   if (/[\u3400-\u9fff]/.test(term)) return 'cn';
@@ -34,10 +64,23 @@ function priceCount(priceList = []) {
   return priceList.filter((item) => item.formattedPrice).length;
 }
 
+function comparablePrice(item) {
+  if (!item) return Number.POSITIVE_INFINITY;
+  if (typeof item.cnyPrice === 'number' && Number.isFinite(item.cnyPrice)) return item.cnyPrice;
+  const fallbackCurrency = item.currencyCode || AREA_TO_CURRENCY[item.area] || '';
+  if (typeof item.numericPrice === 'number' && fallbackCurrency && LIVE_RATES_FROM_CNY[fallbackCurrency]) {
+    return item.numericPrice / LIVE_RATES_FROM_CNY[fallbackCurrency];
+  }
+  return Number.POSITIVE_INFINITY;
+}
+
 function cheapestArea(priceList = []) {
-  const ranked = priceList.filter((item) => typeof item.numericPrice === 'number' && item.numericPrice >= 0);
+  const ranked = priceList
+    .filter((item) => item?.formattedPrice)
+    .map((item) => ({ item, value: comparablePrice(item) }))
+    .filter(({ value }) => Number.isFinite(value) && value >= 0);
   if (!ranked.length) return null;
-  return ranked.reduce((best, current) => (current.numericPrice < best.numericPrice ? current : best));
+  return ranked.reduce((best, current) => (current.value < best.value ? current : best)).item;
 }
 
 function bestRows(rows = []) {
@@ -59,7 +102,12 @@ function normalizeObjectName(value = '') {
 function canonicalObjectKey(value = '') {
   const normalized = normalizeObjectName(value);
   if (!normalized || normalized === 'App') return normalized;
-  return normalized.replace(/youtube/gi, 'YouTube').replace(/\s+/g, ' ').trim().toLowerCase();
+  return normalized
+    .replace(/youtube/gi, 'YouTube')
+    .replace(/\byoutube premium family\b/i, 'YouTube Premium Family')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
 }
 
 function objectLabelScore(value = '') {
@@ -96,6 +144,10 @@ function shouldKeepMergedRow(row, appName = '') {
   const name = String(row.object).trim();
   const coverage = priceCount(row.priceList || []);
   if (!name || name === 'App') return true;
+  if (/collectible avatar/i.test(name)) return false;
+  if (/^r\/.+\s+club$/i.test(name)) return false;
+  if (/\bcoins?\b/i.test(name)) return false;
+  if (/加持團|support group|club membership/i.test(name)) return false;
   if (/^@.+\s+subscription$/i.test(name)) return false;
   if (/^(promote|promover)\b/i.test(name)) return false;
   if (/boosted tweet|tweets? impulsionados|プロモーションする|ブーストしたツイート/i.test(name)) return false;
@@ -119,9 +171,17 @@ function mergeComparisonRows(rows = [], appName = '') {
     bucket.object = preferredObjectLabel(bucket.object, label);
     const seen = new Set(bucket.priceList.map((item) => item.area));
     for (const price of row.priceList || []) {
-      if (!price?.area || seen.has(price.area)) continue;
-      bucket.priceList.push(price);
-      seen.add(price.area);
+      if (!price?.area) continue;
+      const existingIndex = bucket.priceList.findIndex((item) => item.area === price.area);
+      if (existingIndex === -1) {
+        bucket.priceList.push(price);
+        seen.add(price.area);
+        continue;
+      }
+      const existing = bucket.priceList[existingIndex];
+      if (comparablePrice(price) < comparablePrice(existing)) {
+        bucket.priceList[existingIndex] = price;
+      }
     }
   }
   return [...merged.values()].filter((row) => shouldKeepMergedRow(row, appName));
@@ -131,8 +191,8 @@ function topRegionChips(priceList = []) {
   return [...priceList]
     .filter((item) => item.formattedPrice)
     .sort((a, b) => {
-      const av = typeof a.numericPrice === 'number' ? a.numericPrice : Number.POSITIVE_INFINITY;
-      const bv = typeof b.numericPrice === 'number' ? b.numericPrice : Number.POSITIVE_INFINITY;
+      const av = comparablePrice(a);
+      const bv = comparablePrice(b);
       return av - bv;
     })
     .slice(0, 4);
@@ -142,8 +202,8 @@ function compactTopRegions(priceList = []) {
   return [...priceList]
     .filter((item) => item.formattedPrice)
     .sort((a, b) => {
-      const av = typeof a.numericPrice === 'number' ? a.numericPrice : Number.POSITIVE_INFINITY;
-      const bv = typeof b.numericPrice === 'number' ? b.numericPrice : Number.POSITIVE_INFINITY;
+      const av = comparablePrice(a);
+      const bv = comparablePrice(b);
       return av - bv;
     })
     .slice(0, 6);
@@ -166,11 +226,28 @@ function regionDisplayName(region, lang) {
   return lang === 'zh' ? region.zhName : region.enName;
 }
 
+function findRegion(area) {
+  return REGIONS.find((region) => region.code === area) || null;
+}
+
 function displayMoney(item, lang) {
   if (!item) return '';
+  if (!item.formattedPrice) return '';
+  const fallbackCurrency = item.currencyCode || AREA_TO_CURRENCY[item.area] || '';
+  const fallbackCny = (
+    typeof item.cnyPrice === 'number'
+      ? item.cnyPrice
+      : (
+          typeof item.numericPrice === 'number'
+          && fallbackCurrency
+          && LIVE_RATES_FROM_CNY[fallbackCurrency]
+        )
+        ? item.numericPrice / LIVE_RATES_FROM_CNY[fallbackCurrency]
+        : null
+  );
   const targetValue = lang === 'zh'
-    ? item.cnyPrice
-    : (typeof item.usdPrice === 'number' ? item.usdPrice : (typeof item.cnyPrice === 'number' ? item.cnyPrice * CNY_TO_USD_RATE : null));
+    ? fallbackCny
+    : (typeof item.usdPrice === 'number' ? item.usdPrice : (typeof fallbackCny === 'number' ? fallbackCny * CNY_TO_USD_RATE : null));
   if (typeof targetValue === 'number' && Number.isFinite(targetValue)) {
     return new Intl.NumberFormat(lang === 'zh' ? 'zh-CN' : 'en-US', {
       style: 'currency',
@@ -180,6 +257,21 @@ function displayMoney(item, lang) {
     }).format(targetValue);
   }
   return item.formattedPrice || '';
+}
+
+function originalMoney(item) {
+  if (!item?.formattedPrice) return '';
+  if (typeof item.cnyPrice === 'number' && item.cnyPrice === 0) return '';
+  if (typeof item.numericPrice === 'number' && item.numericPrice === 0) return '';
+  return item.formattedPrice;
+}
+
+function dualMoney(item, lang) {
+  const converted = displayMoney(item, lang);
+  const original = originalMoney(item);
+  if (!converted) return '';
+  if (!original || original === converted) return converted;
+  return `${converted} · ${original}`;
 }
 
 function getDisplayPrice(priceList = [], area, lang) {
@@ -297,6 +389,9 @@ export default function StoreCompare() {
                     <article className="storeSummaryCard" key={row.object}>
                       <strong>{row.object === 'App' ? (lang === 'zh' ? '软件本体' : 'App') : row.object}</strong>
                       <b>{cheapest.area.toUpperCase()} / {displayMoney(cheapest, lang)}</b>
+                      {originalMoney(cheapest) !== displayMoney(cheapest, lang) && (
+                        <small>{lang === 'zh' ? '原价 ' : 'Original '}{originalMoney(cheapest)}</small>
+                      )}
                       <span>{lang === 'zh' ? '当前最低公开价格' : 'Current lowest public price'}</span>
                     </article>
                   ))}
@@ -309,7 +404,8 @@ export default function StoreCompare() {
                   <div className="storeHotChips">
                     {topActiveDeals.map((item) => (
                       <span key={`${app.trackId}-${item.area}`} className="storeHotChip">
-                        {item.area.toUpperCase()} / {displayMoney(item, lang)}
+                        {findRegion(item.area)?.flagUrl && <img className="storeFlag" src={findRegion(item.area)?.flagUrl} alt="" loading="lazy" />}
+                        {item.area.toUpperCase()} / {dualMoney(item, lang)}
                       </span>
                     ))}
                   </div>
@@ -376,7 +472,7 @@ export default function StoreCompare() {
                     {cheapestArea(activeRow.priceList || []) && (
                       <span className="storeUnifiedBest">
                         {lang === 'zh' ? '最低价 ' : 'Lowest '}
-                        {cheapestArea(activeRow.priceList || []).area.toUpperCase()} / {displayMoney(cheapestArea(activeRow.priceList || []), lang)}
+                        {cheapestArea(activeRow.priceList || []).area.toUpperCase()} / {dualMoney(cheapestArea(activeRow.priceList || []), lang)}
                       </span>
                     )}
                   </div>
@@ -384,6 +480,7 @@ export default function StoreCompare() {
                   <div className="storeRegionGrid">
                     {visibleRegions.map((region) => {
                       const price = getDisplayPrice(activeRow.priceList || [], region.code, lang);
+                      const priceItem = activeRow.priceList?.find((entry) => entry.area === region.code);
                       if (!price) return null;
                       const cheapest = cheapestArea(activeRow.priceList || []);
                       const isBest = cheapest?.area === region.code;
@@ -391,7 +488,7 @@ export default function StoreCompare() {
                         <article key={`${activeRow.object}-${region.code}`} className={isBest ? 'storeRegionCard best' : 'storeRegionCard'}>
                           <div className="storeRegionTop">
                             <div>
-                              <strong>{regionDisplayName(region, lang)}</strong>
+                              <strong>{region.flagUrl && <img className="storeFlag" src={region.flagUrl} alt="" loading="lazy" />}{regionDisplayName(region, lang)}</strong>
                               <span>{region.label}</span>
                             </div>
                             {isBest && (
@@ -399,7 +496,12 @@ export default function StoreCompare() {
                             )}
                           </div>
                           <b>{price}</b>
-                          <small>{lang === 'zh' ? '当前公开价格' : 'Current public price'}</small>
+                          {originalMoney(priceItem) && originalMoney(priceItem) !== price && (
+                            <span className="storeRegionOriginal">
+                              {lang === 'zh' ? '原币 ' : 'Original '}{originalMoney(priceItem)}
+                            </span>
+                          )}
+                          <small>{lang === 'zh' ? '换算公开价格' : 'Converted public price'}</small>
                         </article>
                       );
                     })}

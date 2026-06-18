@@ -14,3 +14,6 @@ __pycache__/
 *.pyc
 .vite-cache/
 apple-id-sync/venv/
+.vercel/
+cross-env
+npm
