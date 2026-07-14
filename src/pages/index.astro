@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import { articles, getArticlePath } from '../data/articles.js';
 
+export const prerender = true;
+
 const highlights = [
   { title: 'Compare before you pay', titleZh: '付款前先比较', text: 'Check App Store prices across regions, understand currency differences, and avoid assuming the lowest converted price is always the best purchasing choice.', textZh: '查看不同地区的 App Store 价格，理解汇率差异，不要把最低换算价格直接当成最优购买选择。' },
   { title: 'Review monetization signals', titleZh: '查看变现信号', text: 'Look up in-app purchase markers, learn how subscriptions work, and use the risk assessor before starting trials or authorizing recurring billing.', textZh: '查询内购标记，理解订阅和试用规则，在开始试用或授权自动续费前先评估风险。' },
@@ -15,6 +17,60 @@ const workflow = [
   { step: '2', title: 'Read the context', titleZh: '阅读上下文', text: 'Each page includes explanations, limitations, data-source notes, and common mistakes so results are not interpreted in isolation.', textZh: '每个页面都包含说明、限制、数据来源和常见误区，避免把单个结果孤立解读。' },
   { step: '3', title: 'Use checklists before acting', titleZh: '行动前查看清单', text: 'Before paying, subscribing, switching regions, or installing high-permission apps, review the matching checklist or risk assessment.', textZh: '在付款、订阅、切换地区或安装高权限应用前，先查看对应清单或风险评估。' },
   { step: '4', title: 'Verify at the source', titleZh: '回到官方来源确认', text: 'For purchases, subscriptions, refunds, and availability, always confirm the final state in the App Store or Apple account settings.', textZh: '涉及购买、订阅、退款和可用性时，最终状态应以 App Store 或 Apple 账户设置为准。' },
+];
+
+const faqs = [
+  {
+    q: 'Is Wolffy an official Apple website?',
+    qZh: 'Wolffy 是 Apple 官方网站吗？',
+    a: 'No. Wolffy is an independent research and education site. It helps you inspect public App Store signals and learn safer purchasing habits, but it does not speak for Apple and cannot change Apple account outcomes.',
+    aZh: '不是。Wolffy 是独立的研究与教育站点，帮助你查看公开 App Store 信号并学习更稳妥的购买习惯，但不能代表 Apple，也不能改变 Apple 账号结果。',
+  },
+  {
+    q: 'Can I treat the price comparison as the final checkout amount?',
+    qZh: '价格对比结果能当作最终结算金额吗？',
+    a: 'No. Regional tables and converted estimates are research signals. Taxes, account region, payment method, trials, and subscription packaging can change the amount you actually pay. Always confirm the official App Store checkout screen.',
+    aZh: '不能。地区价格表和换算估值只是研究信号。税费、账号地区、付款方式、试用和订阅包装都会改变实际支付金额。请始终以官方 App Store 结算页为准。',
+  },
+  {
+    q: 'Does deleting an app cancel a subscription?',
+    qZh: '删除应用会取消订阅吗？',
+    a: 'No. Cancellation lives in Settings > Apple ID > Subscriptions. Delete the app only after you confirm the plan is cancelled or set to expire if you no longer want renewals.',
+    aZh: '不会。取消入口在“设置 > Apple ID > 订阅”。如果你不再需要续费，请先确认方案已取消或将到期，再删除应用。',
+  },
+  {
+    q: 'What should I do before starting a free trial?',
+    qZh: '开始免费试用前该做什么？',
+    a: 'Write down the end date, renewal price, and cancellation path. Set a reminder one day early. On family devices, also check Ask to Buy and Screen Time purchase restrictions.',
+    aZh: '先记下结束日期、续费价格和取消路径，并提前一天设置提醒。家庭设备还要检查“购买前询问”和屏幕使用时间中的购买限制。',
+  },
+  {
+    q: 'Where does Wolffy get its data?',
+    qZh: 'Wolffy 的数据从哪里来？',
+    a: 'Most tools use public App Store metadata, public promotional feeds, browser-visible network information, or local generation in your browser. See the Data Sources page for limitations and verification guidance.',
+    aZh: '大多数工具使用公开 App Store 元数据、公开促销源、浏览器可见网络信息，或在浏览器本地生成。限制与核验说明见“数据来源”页面。',
+  },
+  {
+    q: 'Does Wolffy require an account?',
+    qZh: 'Wolffy 需要注册账号吗？',
+    a: 'No. You can browse guides and use basic tools without registration. Language preference and temporary UI state may be stored locally in your browser.',
+    aZh: '不需要。你可以在不注册的情况下浏览指南并使用基础工具。语言偏好和临时界面状态可能会保存在浏览器本地。',
+  },
+];
+
+const latestArticles = [...articles]
+  .sort((a, b) => String(b.updatedAt || b.publishedAt).localeCompare(String(a.updatedAt || a.publishedAt)))
+  .slice(0, 6);
+
+const quickLinks = [
+  { href: '/price', label: 'Price compare', labelZh: '价格对比' },
+  { href: '/appfree', label: 'Free apps', labelZh: '限免应用' },
+  { href: '/iap', label: 'IAP lookup', labelZh: '内购查询' },
+  { href: '/risk', label: 'Risk assessor', labelZh: '风险评估' },
+  { href: '/checklists', label: 'Checklists', labelZh: '决策清单' },
+  { href: '/articles', label: 'All articles', labelZh: '全部文章' },
+  { href: '/data-sources', label: 'Data sources', labelZh: '数据来源' },
+  { href: '/privacy', label: 'Privacy', labelZh: '隐私政策' },
 ];
 ---
 <BaseLayout title="Wolffy - Apple / iOS Toolkit" description="Compare App Store prices, inspect IAP signals, discover free apps, search app icons, check IP details, and read practical Apple safety guides." path="/">
@@ -30,6 +86,16 @@ const workflow = [
     <h2 class="lang-zh">内容优先的工具站，而不是空白搜索页</h2>
     <p class="lang-en">Wolffy combines lightweight utilities with long-form explanations, checklists, and policy-aware guidance. Even before you search, every page explains what the tool does, where data comes from, what can go wrong, and how to verify results yourself.</p>
     <p class="lang-zh">Wolffy 将轻量工具、长文说明、检查清单和合规意识结合在一起。即使还没有搜索，每个页面也会说明工具用途、数据来源、可能限制以及如何自行核对结果。</p>
+    <div class="contentLinks" style="border-top:0;margin-top:14px;padding-top:0;">
+      <span class="lang-en">Quick links</span>
+      <span class="lang-zh">快速入口</span>
+      {quickLinks.map((link) => (
+        <a href={link.href}>
+          <span class="lang-en">{link.label}</span>
+          <span class="lang-zh">{link.labelZh}</span>
+        </a>
+      ))}
+    </div>
   </section>
 
   <section class="richSection card">
@@ -51,9 +117,44 @@ const workflow = [
   <section class="richSection card">
     <h2 class="lang-en">Latest articles</h2>
     <h2 class="lang-zh">最新文章</h2>
+    <p class="lang-en contentLead">Practical guides on refunds, free trials, Family Sharing, permissions, region research, and subscription hygiene. These pages are written as original publisher content, not empty tool wrappers.</p>
+    <p class="lang-zh contentLead">覆盖退款、免费试用、家庭共享、权限、地区研究和订阅维护的实用指南。这些页面是原创发布商内容，而不是空壳工具包装。</p>
     <div class="richGrid">
-      {articles.map((article) => <a class="richBlock" href={getArticlePath(article)}><h3 class="lang-en">{article.title}</h3><h3 class="lang-zh">{article.titleZh}</h3><p class="lang-en">{article.description}</p><p class="lang-zh">{article.descriptionZh}</p></a>)}
+      {latestArticles.map((article) => (
+        <a class="richBlock" href={getArticlePath(article)}>
+          <h3 class="lang-en">{article.title}</h3>
+          <h3 class="lang-zh">{article.titleZh}</h3>
+          <p class="lang-en">{article.description}</p>
+          <p class="lang-zh">{article.descriptionZh}</p>
+          <p class="lang-en" style="margin-top:10px;font-size:12px;color:var(--muted);">{article.readTime} · Updated {article.updatedAt}</p>
+          <p class="lang-zh" style="margin-top:10px;font-size:12px;color:var(--muted);">{article.readTime} · 更新于 {article.updatedAt}</p>
+        </a>
+      ))}
     </div>
+    <div class="contentLinks">
+      <span class="lang-en">More reading</span>
+      <span class="lang-zh">更多阅读</span>
+      <a href="/articles"><span class="lang-en">All articles</span><span class="lang-zh">全部文章</span></a>
+      <a href="/guides"><span class="lang-en">Guides</span><span class="lang-zh">指南</span></a>
+      <a href="/knowledge"><span class="lang-en">Knowledge base</span><span class="lang-zh">知识库</span></a>
+      <a href="/checklists"><span class="lang-en">Checklists</span><span class="lang-zh">清单</span></a>
+      <a href="/glossary"><span class="lang-en">Glossary</span><span class="lang-zh">术语表</span></a>
+    </div>
+  </section>
+
+  <section class="homeFaq card">
+    <h2 class="lang-en">Frequently asked questions</h2>
+    <h2 class="lang-zh">常见问题</h2>
+    {faqs.map((item) => (
+      <details>
+        <summary>
+          <span class="lang-en">{item.q}</span>
+          <span class="lang-zh">{item.qZh}</span>
+        </summary>
+        <p class="lang-en">{item.a}</p>
+        <p class="lang-zh">{item.aZh}</p>
+      </details>
+    ))}
   </section>
 
   <section class="homeWhy card">
@@ -61,7 +162,9 @@ const workflow = [
     <h2 class="lang-zh">为什么需要 Wolffy</h2>
     <p class="lang-en">Apple ecosystem information is useful but fragmented. Prices vary by region, subscriptions are easy to overlook, permission prompts are hard to evaluate, and App Store policies are not always obvious to everyday users.</p>
     <p class="lang-en">The site is intentionally small: no account registration, no forced newsletter, no paywall for basic safety information, and no dark patterns. When a page uses external data, it explains the source and its limits instead of presenting the result as a final authority.</p>
+    <p class="lang-en">If you are researching a purchase, start with price comparison and IAP lookup, then open the matching article or checklist before you pay. For family devices, combine risk assessment with Ask to Buy and Screen Time controls. For account changes, read the region and subscription guides first.</p>
     <p class="lang-zh">Apple 生态的信息很有用，但经常分散在不同地方。价格会因地区变化，订阅容易被忽略，权限弹窗不容易判断，App Store 规则对普通用户也不总是直观。</p>
     <p class="lang-zh">本站刻意保持轻量：不要求注册账号，不强制订阅通讯，不把基础安全信息放进付费墙，也不使用诱导式设计。当页面使用外部数据时，会说明来源和限制，而不是把结果包装成最终结论。</p>
+    <p class="lang-zh">如果你在研究一次购买，先做价格对比和内购查询，再打开对应文章或清单后付款。家庭设备请把风险评估与购买前询问、屏幕使用时间结合使用。涉及账号变更时，先阅读切区和订阅相关指南。</p>
   </section>
 </BaseLayout>

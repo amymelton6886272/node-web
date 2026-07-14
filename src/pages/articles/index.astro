@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import { articles, getArticlePath } from '../../data/articles.js';
+
+export const prerender = true;
 ---
 <BaseLayout title="Articles - Wolffy" description="Practical Apple and App Store research articles for safer purchasing, privacy, and account decisions." path="/articles">
   <div class="lang-en">
