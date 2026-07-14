@@ -823,183 +823,165 @@ button:hover{transform:translateY(-1px)}
   .toolIntroTitle{font-size:22px}
   .toolWorkspace{scroll-margin-top:16px}
 }
-/* ===== SubCost + Trial (native site patterns) ===== */
-.subcostNativeList{display:grid;gap:12px}
-.subcostNativeCard{padding:16px !important}
-.subcostNativeCard.is-paused{opacity:.72}
-.swFormGrid{
-  display:grid;
-  grid-template-columns:minmax(0,1.5fr) minmax(120px,.7fr) minmax(220px,1fr) minmax(0,1.3fr);
-  gap:12px;
-  align-items:end
+/* ===== SubCost + Trial (shared tool shell) ===== */
+.swTool{padding:20px !important;margin-bottom:16px}
+.swToolHead{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:16px
 }
-.trialFormGrid{
-  grid-template-columns:minmax(0,1.4fr) minmax(150px,.8fr) minmax(110px,.6fr) minmax(120px,.7fr) minmax(220px,1fr) minmax(0,1.2fr)
+.swToolHead.compact{margin-bottom:14px}
+.swToolHeadMain{display:flex;gap:14px;align-items:flex-start;min-width:0}
+.swToolIcon{
+  width:48px;height:48px;border-radius:16px;display:grid;place-items:center;flex:0 0 auto;
+  background:linear-gradient(135deg,#ffe6f0,#eef4ff);
+  color:var(--accent);border:1px solid var(--line)
+}
+.dark .swToolIcon{background:linear-gradient(135deg,#4c0519,#172554)}
+.swToolHead h3{margin:0 0 5px;font-size:18px}
+.swToolHead h4{margin:0 0 4px;font-size:16px}
+.swToolHead p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.55}
+.swToolActions{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.swToolActions button{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--soft,#eef2f7);color:inherit;border:1px solid var(--line);
+  border-radius:999px;padding:8px 12px;font:inherit;font-size:13px;font-weight:700
+}
+.swToolActions button.danger{background:#fee2e2;color:#b91c1c;border-color:#fecaca}
+.dark .swToolActions button.danger{background:#450a0a;color:#fecaca;border-color:#7f1d1d}
+
+.swStatGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.swStat{
+  border:1px solid var(--line);border-radius:18px;padding:14px 15px;
+  background:color-mix(in srgb,var(--card) 88%,transparent);
+  box-shadow:0 8px 20px #11182708
+}
+.swStat span{display:block;color:var(--muted);font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px}
+.swStat b{display:block;font-size:24px;letter-spacing:-.04em;line-height:1.1}
+.swStat.primary{
+  background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 14%,var(--card)),var(--card));
+  border-color:color-mix(in srgb,var(--accent) 28%,var(--line))
+}
+.swStat.primary b{color:#e11d48}
+.dark .swStat.primary b{color:#fb7185}
+.swHint{margin:14px 0 0;color:var(--muted);font-size:13.5px}
+
+.swPlanList{display:grid;gap:12px}
+.swPlan{
+  border:1px solid var(--line);border-radius:18px;padding:16px;
+  background:color-mix(in srgb,var(--card) 90%,transparent)
+}
+.swPlan.is-paused{opacity:.72}
+.swPlanTop{display:flex;gap:12px;align-items:flex-start}
+.swPlanIndex{
+  width:30px;height:30px;border-radius:10px;display:grid;place-items:center;flex:0 0 auto;
+  background:color-mix(in srgb,var(--accent) 12%,var(--card));
+  border:1px solid var(--line);color:var(--accent);font-size:12px;font-weight:900
+}
+.swPlanFields{
+  flex:1;min-width:0;
+  display:grid;
+  grid-template-columns:minmax(0,1.5fr) minmax(110px,.7fr) minmax(220px,1fr) minmax(0,1.3fr);
+  gap:12px;align-items:end
+}
+.trialFields{
+  grid-template-columns:minmax(0,1.4fr) minmax(150px,.85fr) minmax(110px,.65fr) minmax(120px,.7fr) minmax(220px,1fr) minmax(0,1.2fr)
 }
 .swField{display:grid;gap:7px;min-width:0}
-.swField > span{
-  font-size:12px;
-  color:var(--muted);
-  font-weight:800;
-  letter-spacing:.02em
+.swField > span{font-size:12px;color:var(--muted);font-weight:800;letter-spacing:.02em}
+.swField input{
+  width:100%;min-width:0;min-height:46px;box-sizing:border-box;
+  border:1px solid var(--line);background:var(--card);color:inherit;
+  border-radius:14px;padding:13px 14px;font:inherit;font-size:15px;outline:none;
+  box-shadow:inset 0 1px 0 #ffffff80;-webkit-appearance:none;appearance:none
 }
-.swFieldGrow{min-width:0}
-.swControl{
-  margin:0 !important;
-  width:100%
-}
-.swControl input,
-.swControl select{
-  width:100%;
-  min-width:0;
-  min-height:46px;
-  border:1px solid var(--line);
-  background:var(--card);
-  color:inherit;
-  border-radius:14px;
-  padding:13px 14px;
-  font:inherit;
-  font-size:15px;
-  outline:none;
-  box-shadow:inset 0 1px 0 #ffffff80;
-  -webkit-appearance:none;
-  appearance:none
-}
-.dark .swControl input,
-.dark .swControl select{box-shadow:inset 0 1px 0 #ffffff10}
-.swControl input::placeholder{color:color-mix(in srgb,var(--muted) 82%,transparent)}
-.swControl input:hover,
-.swControl select:hover{border-color:color-mix(in srgb,var(--accent) 28%,var(--line))}
-.swControl input:focus,
-.swControl select:focus{
+.dark .swField input{box-shadow:inset 0 1px 0 #ffffff10}
+.swField input::placeholder{color:color-mix(in srgb,var(--muted) 82%,transparent)}
+.swField input:hover{border-color:color-mix(in srgb,var(--accent) 28%,var(--line))}
+.swField input:focus{
   border-color:color-mix(in srgb,var(--accent) 48%,var(--line));
   box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 14%,transparent), inset 0 1px 0 #ffffff80
 }
-.swControl input[type="date"]{
-  color-scheme:light;
-  line-height:1.2
-}
-body.dark .swControl input[type="date"]{color-scheme:dark}
-.swControl input[type="date"]::-webkit-calendar-picker-indicator{
-  opacity:.55;
-  cursor:pointer
-}
-.swFieldCycle{min-width:0}
+.swField input[type="date"]{color-scheme:light;line-height:1.2}
+body.dark .swField input[type="date"]{color-scheme:dark}
+.swField input[type="date"]::-webkit-calendar-picker-indicator{opacity:.55;cursor:pointer}
+
 .swCycleTabs{
-  display:grid !important;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:0;
-  margin:0;
-  padding:4px;
-  min-height:46px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  background:var(--soft,#eef2f7);
+  display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0;padding:4px;
+  min-height:46px;border:1px solid var(--line);border-radius:14px;background:var(--soft,#eef2f7);
   box-shadow:inset 0 1px 0 #ffffff80
 }
 .swCycleTabs button{
-  border:0 !important;
-  border-radius:10px !important;
-  background:transparent !important;
-  color:var(--muted) !important;
-  box-shadow:none !important;
-  min-height:38px;
-  padding:0 8px !important;
-  font-size:13px !important;
-  font-weight:800 !important
+  border:0 !important;border-radius:10px !important;background:transparent !important;color:var(--muted) !important;
+  box-shadow:none !important;min-height:38px;padding:0 8px !important;font-size:13px !important;font-weight:800 !important
 }
 .swCycleTabs button.on{
-  background:var(--card) !important;
-  color:inherit !important;
-  border:1px solid var(--line) !important;
+  background:var(--card) !important;color:inherit !important;border:1px solid var(--line) !important;
   box-shadow:0 6px 16px #11182712 !important
 }
 .dark .swCycleTabs button.on{box-shadow:0 8px 18px #00000040 !important}
-.subcostNativeFoot{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:12px;
-  padding-top:12px;
-  border-top:1px solid var(--line)
+
+.swPlanFoot{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  margin-top:14px;padding-top:12px;border-top:1px solid var(--line)
 }
-.subcostNativeFoot > button{
-  background:var(--soft,#eef2f7);
-  color:inherit;
-  border:1px solid var(--line);
-  border-radius:999px;
-  padding:8px 12px;
-  font:inherit;
-  font-size:13px;
-  font-weight:700;
-  display:inline-flex;
-  align-items:center;
-  gap:6px
+.swToggle{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--soft,#eef2f7);color:inherit;border:1px solid var(--line);
+  border-radius:999px;padding:8px 12px 8px 10px;font:inherit;font-size:13px;font-weight:700
 }
-.subcostNativeFoot > button.on{
-  background:color-mix(in srgb,#22c55e 12%,var(--card));
-  color:#047857;
-  border-color:#86efac
+.swToggle i{
+  width:28px;height:16px;border-radius:999px;position:relative;display:inline-block;
+  background:#cbd5e1;border:1px solid #94a3b8
 }
-.subcostNativeFoot > button.danger{
-  background:#fee2e2;
-  color:#b91c1c;
-  border-color:#fecaca
+.swToggle i:before{
+  content:"";position:absolute;top:1px;left:1px;width:12px;height:12px;border-radius:50%;
+  background:#fff;box-shadow:0 1px 2px #00000022;transition:transform .15s
 }
-.dark .subcostNativeFoot > button.danger{background:#450a0a;color:#fecaca;border-color:#7f1d1d}
-.subcostNativeMeta{
-  display:flex;
-  align-items:center;
-  gap:7px;
-  flex-wrap:wrap;
-  color:var(--muted);
-  font-size:13px
+.swToggle.on{background:color-mix(in srgb,#22c55e 12%,var(--card));color:#047857;border-color:#86efac}
+.swToggle.on i{background:#22c55e;border-color:#16a34a}
+.swToggle.on i:before{transform:translateX(12px)}
+.swPlanCost{display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+.swPill{
+  display:inline-flex;align-items:center;min-height:26px;padding:0 9px;border-radius:999px;
+  background:var(--soft,#eef2f7);border:1px solid var(--line);font-size:12px;font-weight:800
 }
-.subcostNativeMeta span:first-child{
-  display:inline-flex;
-  align-items:center;
-  min-height:26px;
-  padding:0 9px;
-  border-radius:999px;
-  background:var(--soft,#eef2f7);
-  border:1px solid var(--line);
-  font-size:12px;
-  font-weight:800
+.swPlanCost strong{color:inherit;font-size:15px;letter-spacing:-.02em}
+.swPlanCost small{font-size:12px;font-weight:700;color:var(--muted);margin-left:2px}
+.swPlanCost em{font-style:normal;opacity:.5}
+.swGhost{
+  display:inline-flex;align-items:center;gap:6px;
+  background:transparent;color:var(--muted);border:1px solid var(--line);
+  border-radius:999px;padding:8px 12px;font:inherit;font-size:13px;font-weight:700
 }
-.subcostNativeMeta b{color:inherit;font-size:15px;letter-spacing:-.02em}
-.subcostNativeMeta em{font-style:normal;font-size:12px}
-.ipAddress span svg{display:block;color:var(--accent)}
-.trialNativeForm{padding:18px !important;margin-bottom:16px}
-.trialNativeBlock{margin-top:18px}
-.trialNativeBlock h3{margin:0 0 10px;font-size:17px}
-.trialNativeBody{
-  margin:0;
-  padding:14px 16px;
-  border:1px solid var(--line);
-  border-radius:16px;
-  background:var(--soft,#eef2f7);
-  white-space:pre-wrap;
-  font:inherit;
-  font-size:13.5px;
-  line-height:1.7;
-  color:inherit;
-  overflow:auto
+.swGhost.danger{background:#fee2e2;color:#b91c1c;border-color:#fecaca}
+.dark .swGhost.danger{background:#450a0a;color:#fecaca;border-color:#7f1d1d}
+
+.swResultBlock{margin-top:16px}
+.swResultHead{margin-bottom:10px}
+.swResultBody{
+  margin:0;padding:14px 16px;border:1px solid var(--line);border-radius:16px;
+  background:var(--soft,#eef2f7);white-space:pre-wrap;font:inherit;font-size:13.5px;line-height:1.7;color:inherit;overflow:auto
 }
-.trialNativeChecks{margin-top:4px}
-.trialNativeChecks li{cursor:default}
-.trialNativeChecks button{pointer-events:none}
+.swChecks{margin-top:4px}
+.swChecks li{cursor:default}
+.swChecks button{pointer-events:none}
+.swFooterNotes{margin-top:16px}
+
 @media (max-width:1100px){
-  .swFormGrid,
-  .trialFormGrid{grid-template-columns:1fr 1fr}
-  .swFieldCycle{grid-column:1 / -1}
+  .swPlanFields,.trialFields{grid-template-columns:1fr 1fr}
+  .swField.cycle,.swField.note{grid-column:1 / -1}
+  .swStatGrid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
-  .swFormGrid,
-  .trialFormGrid{grid-template-columns:1fr}
-  .subcostNativeFoot{align-items:stretch}
-  .subcostNativeFoot > button{justify-content:center}
-  .ipPanel .savedActions{width:100%;display:grid;grid-template-columns:1fr 1fr}
-  .ipPanel .savedActions button{justify-content:center}
+  .swToolHead,.swPlanTop,.swPlanFoot{flex-direction:column;align-items:stretch}
+  .swToolActions{width:100%;display:grid;grid-template-columns:1fr 1fr}
+  .swToolActions button{justify-content:center}
+  .swPlanFields,.trialFields{grid-template-columns:1fr}
+  .swField.cycle,.swField.note{grid-column:auto}
+  .swStatGrid{grid-template-columns:1fr 1fr}
+  .swPlanCost{justify-content:flex-start}
+  .swGhost{justify-content:center}
 }

@@ -20,13 +20,13 @@ const copy = {
     year: 'Yearly',
     notes: 'Personal note',
     notesPh: 'e.g. shared iPad / Ask to Buy off / test only',
-    sample: 'Load sample',
+    sample: 'Sample',
     clear: 'Clear',
     resultTitle: 'Reminder packet',
     cancelBy: 'Cancel by',
     remindOn: 'Remind on',
     trialEnd: 'Trial ends',
-    yearlyEst: 'Approx. yearly if renewed',
+    yearlyEst: 'Yearly if renewed',
     calendarTitle: 'Calendar title',
     calendarBody: 'Calendar / Notes body',
     checklistTitle: 'Action checklist',
@@ -54,13 +54,13 @@ const copy = {
     year: '年付',
     notes: '个人备注',
     notesPh: '例如：共用 iPad / 未开购买前询问 / 仅测试',
-    sample: '载入示例',
+    sample: '示例',
     clear: '清空',
     resultTitle: '提醒包',
     cancelBy: '最晚取消日',
     remindOn: '建议提醒日',
     trialEnd: '试用结束日',
-    yearlyEst: '若续费的大约年成本',
+    yearlyEst: '若续费年成本',
     calendarTitle: '日历标题',
     calendarBody: '日历 / 备忘录正文',
     checklistTitle: '行动清单',
@@ -95,6 +95,18 @@ function yearlyFrom(price, cycle) {
   if (cycle === 'week') return n * 52;
   if (cycle === 'year') return n;
   return n * 12;
+}
+
+function CycleTabs({ value, onChange, labels, ariaLabel }) {
+  return (
+    <div className="tabs swCycleTabs" role="group" aria-label={ariaLabel}>
+      {[['week', labels.week], ['month', labels.month], ['year', labels.year]].map(([v, label]) => (
+        <button key={v} type="button" className={value === v ? 'on' : ''} onClick={() => onChange(v)}>
+          {label}
+        </button>
+      ))}
+    </div>
+  );
 }
 
 export default function TrialReminder() {
@@ -212,117 +224,100 @@ export default function TrialReminder() {
     <>
       <Hero title={t.title} sub={t.sub} />
 
-      <div className="ipPanel card">
-        <div>
-          <h3>{t.formTitle}</h3>
-          <p>{t.formDesc}</p>
-        </div>
-        <div className="savedActions">
-          <button type="button" onClick={loadSample}><Sparkles size={15} /> {t.sample}</button>
-          <button type="button" className="danger" onClick={clear}><Eraser size={15} /> {t.clear}</button>
-        </div>
-      </div>
-
-      <section className="card trialNativeForm">
-        <div className="swFormGrid trialFormGrid">
-          <label className="swField swFieldGrow">
-            <span>{t.appName}</span>
-            <div className="searchbar swControl">
-              <input value={appName} onChange={(e) => setAppName(e.target.value)} placeholder={t.appPh} />
-            </div>
-          </label>
-          <label className="swField">
-            <span>{t.startDate}</span>
-            <div className="searchbar swControl">
-              <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
-            </div>
-          </label>
-          <label className="swField">
-            <span>{t.days}</span>
-            <div className="searchbar swControl">
-              <input inputMode="numeric" value={days} onChange={(e) => setDays(e.target.value)} placeholder="7" />
-            </div>
-          </label>
-          <label className="swField">
-            <span>{t.renewPrice}</span>
-            <div className="searchbar swControl">
-              <input inputMode="decimal" value={renewPrice} onChange={(e) => setRenewPrice(e.target.value)} placeholder="9.99" />
-            </div>
-          </label>
-          <div className="swField swFieldCycle">
-            <span>{t.cycle}</span>
-            <div className="tabs swCycleTabs" role="group" aria-label={t.cycle}>
-              {[
-                ['week', t.week],
-                ['month', t.month],
-                ['year', t.year],
-              ].map(([value, label]) => (
-                <button
-                  key={value}
-                  type="button"
-                  className={cycle === value ? 'on' : ''}
-                  onClick={() => setCycle(value)}
-                >
-                  {label}
-                </button>
-              ))}
+      <section className="swTool card">
+        <div className="swToolHead">
+          <div className="swToolHeadMain">
+            <div className="swToolIcon"><CalendarClock size={22} strokeWidth={2.2} /></div>
+            <div>
+              <h3>{t.formTitle}</h3>
+              <p>{t.formDesc}</p>
             </div>
           </div>
-          <label className="swField swFieldGrow">
+          <div className="savedActions swToolActions">
+            <button type="button" onClick={loadSample}><Sparkles size={15} /> {t.sample}</button>
+            <button type="button" className="danger" onClick={clear}><Eraser size={15} /> {t.clear}</button>
+          </div>
+        </div>
+
+        <div className="swPlanFields trialFields">
+          <label className="swField name">
+            <span>{t.appName}</span>
+            <input value={appName} onChange={(e) => setAppName(e.target.value)} placeholder={t.appPh} />
+          </label>
+          <label className="swField date">
+            <span>{t.startDate}</span>
+            <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
+          </label>
+          <label className="swField days">
+            <span>{t.days}</span>
+            <input inputMode="numeric" value={days} onChange={(e) => setDays(e.target.value)} placeholder="7" />
+          </label>
+          <label className="swField price">
+            <span>{t.renewPrice}</span>
+            <input inputMode="decimal" value={renewPrice} onChange={(e) => setRenewPrice(e.target.value)} placeholder="9.99" />
+          </label>
+          <div className="swField cycle">
+            <span>{t.cycle}</span>
+            <CycleTabs value={cycle} onChange={setCycle} labels={t} ariaLabel={t.cycle} />
+          </div>
+          <label className="swField note">
             <span>{t.notes}</span>
-            <div className="searchbar swControl">
-              <input value={notes} onChange={(e) => setNotes(e.target.value)} placeholder={t.notesPh} />
-            </div>
+            <input value={notes} onChange={(e) => setNotes(e.target.value)} placeholder={t.notesPh} />
           </label>
         </div>
       </section>
 
-      <section className="card">
-        <div className="addressTop">
+      <section className="swTool card">
+        <div className="swToolHead compact">
           <div>
             <h3>{t.resultTitle}</h3>
             <p>{packet ? packet.title : t.empty}</p>
           </div>
+          {packet && (
+            <div className="savedActions swToolActions">
+              <button type="button" onClick={() => copyText(packet.title)}><Copy size={14} /> {t.copyTitle}</button>
+              <button type="button" onClick={() => copyText(packet.body)}><Copy size={14} /> {t.copyBody}</button>
+              <button type="button" onClick={() => copyText(packet.all)}><Copy size={14} /> {t.copyAll}</button>
+            </div>
+          )}
         </div>
 
         {!packet ? (
           <div className="empty"><strong>{t.empty}</strong></div>
         ) : (
           <>
-            <div className="ipHero card" style={{ marginBottom: 16 }}>
-              <div className="ipAddress">
-                <span><CalendarClock size={28} strokeWidth={2.2} /></span>
+            <div className="swStatGrid">
+              <div className="swStat primary">
+                <span>{t.cancelBy}</span>
                 <b>{packet.cancelBy}</b>
-                <em>{t.cancelBy}</em>
               </div>
-              <div className="ipMap">{packet.remindOn} · {t.remindOn}</div>
+              <div className="swStat">
+                <span>{t.remindOn}</span>
+                <b>{packet.remindOn}</b>
+              </div>
+              <div className="swStat">
+                <span>{t.trialEnd}</span>
+                <b>{packet.end}</b>
+              </div>
+              <div className="swStat">
+                <span>{t.yearlyEst}</span>
+                <b>{packet.yearly != null ? packet.yearly.toFixed(2) : '—'}</b>
+              </div>
             </div>
 
-            <div className="ipGrid">
-              <div className="ipCell"><span>{t.cancelBy}</span><b>{packet.cancelBy}</b></div>
-              <div className="ipCell"><span>{t.remindOn}</span><b>{packet.remindOn}</b></div>
-              <div className="ipCell"><span>{t.trialEnd}</span><b>{packet.end}</b></div>
-              <div className="ipCell"><span>{t.yearlyEst}</span><b>{packet.yearly != null ? packet.yearly.toFixed(2) : '—'}</b></div>
-            </div>
-
-            <div className="trialNativeBlock">
-              <div className="savedHead">
+            <div className="swResultBlock">
+              <div className="swResultHead">
                 <div>
-                  <h3>{t.calendarTitle}</h3>
+                  <h4>{t.calendarTitle}</h4>
                   <p>{packet.title}</p>
                 </div>
-                <div className="savedActions">
-                  <button type="button" onClick={() => copyText(packet.title)}><Copy size={14} /> {t.copyTitle}</button>
-                  <button type="button" onClick={() => copyText(packet.body)}><Copy size={14} /> {t.copyBody}</button>
-                  <button type="button" onClick={() => copyText(packet.all)}><Copy size={14} /> {t.copyAll}</button>
-                </div>
               </div>
-              <pre className="trialNativeBody">{packet.body}</pre>
+              <pre className="swResultBody">{packet.body}</pre>
             </div>
 
-            <div className="trialNativeBlock">
-              <h3>{t.checklistTitle}</h3>
-              <ol className="checkItems trialNativeChecks">
+            <div className="swResultBlock">
+              <h4>{t.checklistTitle}</h4>
+              <ol className="checkItems swChecks">
                 {packet.checklist.map((item) => (
                   <li key={item} className="done">
                     <button type="button" aria-hidden="true" tabIndex={-1}><CalendarClock size={16} /></button>
@@ -334,14 +329,16 @@ export default function TrialReminder() {
           </>
         )}
 
-        <p className="contentNote">{t.tip}</p>
-        <p className="contentNote">{t.disclaimer}</p>
-        <div className="contentLinks">
-          <span>{lang === 'zh' ? '相关阅读' : 'Related reading'}</span>
-          <a href="/subcost">{lang === 'zh' ? '订阅成本' : 'Sub cost'}</a>
-          <a href="/checklists">{lang === 'zh' ? '决策清单' : 'Checklists'}</a>
-          <a href="/articles/free-trial-trap-checklist">{lang === 'zh' ? '试用陷阱' : 'Trial traps'}</a>
-          <a href="/articles/cancel-apple-subscription-step-by-step">{lang === 'zh' ? '取消订阅' : 'Cancel subscription'}</a>
+        <div className="swFooterNotes">
+          <p className="contentNote">{t.tip}</p>
+          <p className="contentNote">{t.disclaimer}</p>
+          <div className="contentLinks">
+            <span>{lang === 'zh' ? '相关阅读' : 'Related reading'}</span>
+            <a href="/subcost">{lang === 'zh' ? '订阅成本' : 'Sub cost'}</a>
+            <a href="/checklists">{lang === 'zh' ? '决策清单' : 'Checklists'}</a>
+            <a href="/articles/free-trial-trap-checklist">{lang === 'zh' ? '试用陷阱' : 'Trial traps'}</a>
+            <a href="/articles/cancel-apple-subscription-step-by-step">{lang === 'zh' ? '取消订阅' : 'Cancel subscription'}</a>
+          </div>
         </div>
       </section>
 
