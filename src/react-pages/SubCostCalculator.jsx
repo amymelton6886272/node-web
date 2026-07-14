@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Download, Plus, RotateCcw, Save, Trash2, Wallet } from 'lucide-react';
-import { Hero, Empty } from '../components/common.jsx';
+import { Empty } from '../components/common.jsx';
 import { useLang } from '../LanguageContext.jsx';
 
 const emptyRow = () => ({
@@ -201,7 +201,6 @@ export default function SubCostCalculator() {
 
   return (
     <>
-      <Hero title={t.title} sub={t.sub} />
 
       <section className="swTool card">
         <div className="swToolHead">

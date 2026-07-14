@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Hero, Empty } from '../components/common.jsx';
+import { Empty } from '../components/common.jsx';
 import { useLang } from '../LanguageContext.jsx';
 
 export default function IpCheck(){
@@ -45,7 +45,6 @@ export default function IpCheck(){
  const {t,lang}=useLang();
  const rows=info?[[t.ip.ipAddr,info.ip],[t.ip.country,`${info.country||'-'} ${info.flag?.emoji||''}`],[t.ip.city,info.city||'-'],[t.ip.timezone,info.timezone?.id||'-'],[t.ip.asn,info.connection?.asn?`AS${info.connection.asn}`:'-'],[t.ip.isp,info.connection?.isp||'-'],[t.ip.org,info.connection?.org||'-'],[t.ip.coords,info.latitude&&info.longitude?`${info.latitude}, ${info.longitude}`:'-']]:[];
  return <>
- <Hero title={t.ip.title} sub={t.ip.sub}/>
  <div className="ipPanel card">
     <div><h3>{t.ip.panelTitle}</h3><p>{t.ip.panelDesc}</p></div>
     <button onClick={load} disabled={loading}>{loading?t.ip.refreshing:t.ip.refreshIP}</button>

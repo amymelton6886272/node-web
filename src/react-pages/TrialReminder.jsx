@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react';
 import { CalendarClock, Copy, Eraser, Sparkles } from 'lucide-react';
-import { Hero } from '../components/common.jsx';
 import { useLang } from '../LanguageContext.jsx';
 
 const copy = {
@@ -222,7 +221,6 @@ export default function TrialReminder() {
 
   return (
     <>
-      <Hero title={t.title} sub={t.sub} />
 
       <section className="swTool card">
         <div className="swToolHead">

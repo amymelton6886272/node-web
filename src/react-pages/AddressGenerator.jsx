@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Download, Trash2 } from 'lucide-react';
-import { Hero, Empty } from '../components/common.jsx';
+import { Empty } from '../components/common.jsx';
 import { useLang } from '../LanguageContext.jsx';
 import { addressCountries } from '../data/addressData.js';
 import { makeAddress } from '../utils/address.js';
@@ -30,7 +30,6 @@ export default function AddressGenerator(){
  const fields=[[labels.name,item.name,'name'],[labels.gender,item.gender,'gender'],[labels.phone,item.phone,'phoneClean'],[labels.street,item.street,'street'],[labels.city,item.city,'city'],[labels.postal,item.postal,'postal'],[labels.address,item.address,'address']];
  const mapUrl=`https://www.google.com/maps?q=${encodeURIComponent(item.address)}&output=embed`;
  return <>
- <Hero title={labels.title} sub={labels.sub}/>
  <div className="addressLayout">
     <section className="addressMain card">
       <div className="addressTop"><div><h3>{labels.generated}</h3><p>{labels.clickCopy}</p></div><span className="configType">{lang==='zh'?`${countryInfo.zh} · ${countryInfo.name}`:countryInfo.name}</span></div>

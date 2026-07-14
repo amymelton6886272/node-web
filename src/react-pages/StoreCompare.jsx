@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { ShieldAlert } from 'lucide-react';
-import { Hero, Empty, FeaturedApps } from '../components/common.jsx';
+import { Empty, FeaturedApps } from '../components/common.jsx';
 import { useLang } from '../LanguageContext.jsx';
 
 const REGIONS = [
@@ -321,13 +321,6 @@ export default function StoreCompare() {
 
   return (
     <>
-      <Hero
-        title={lang === 'zh' ? 'App 订阅与价格对比' : 'App subscription and price compare'}
-        sub={lang === 'zh'
-          ? '搜索一次应用，统一展示软件本体、公开订阅名称、热门地区价格，并自动标出当前最低价。'
-          : 'Search an app to list the app itself plus public subscriptions, compare regions side by side, and mark the lowest price.'}
-      />
-
       <div className="searchbar priceSearchbar">
         <input
           value={q}

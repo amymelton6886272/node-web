@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Gift } from 'lucide-react';
-import { Hero, Empty } from '../components/common.jsx';
+import { Empty } from '../components/common.jsx';
 import { useLang } from '../LanguageContext.jsx';
 
 const WARM_DAY_API = 'https://kdbi2plm.lc-cn-n1-shared.com/1.1/classes/free_newpro?order=-datekey&limit=1&keys=datekey,uuid,appinfo,iapCount,game';
@@ -106,7 +106,6 @@ export default function AppFree(){
  const list=tab==='All'?Object.values(groups).flat():groups[tab]||[];
  const dateLabel=data?.last_updated||data?.datekey&&String(data.datekey).replace(/(\d{4})(\d{2})(\d{2})/,'$1.$2.$3')||t.appfree.dailyDate;
  return <>
- <Hero title={t.appfree.title} sub={t.appfree.sub}/>
  {loading&&<p>{t.appfree.fetching}</p>}
   {error&&<p className="err">API error: {error}</p>}
   {!loading&&!error&&<div className="toolbar">

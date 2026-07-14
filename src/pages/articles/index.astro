@@ -15,12 +15,12 @@ export const prerender = true;
 
   <section class="articleToolbar card">
     <div class="lang-en">
-      <h2>Publisher content</h2>
-      <p>Use these articles alongside Storewise tools to understand pricing, subscriptions, privacy labels, app permissions, and account changes before acting.</p>
+      <h2>Research notes before you pay</h2>
+      <p>Practical Apple / App Store articles for pricing, trials, privacy labels, permissions, and account region decisions. Read alongside Storewise tools.</p>
     </div>
     <div class="lang-zh">
-      <h2>发布者内容</h2>
-      <p lang="zh-CN">这些文章围绕 App Store 价格、订阅、隐私权限和账号地区切换展开，适合在使用工具前后作为决策参考。</p>
+      <h2>付款前的研究笔记</h2>
+      <p lang="zh-CN">围绕价格、试用、隐私标签、权限与账号切区的实用文章，可与 Storewise 工具一起使用。</p>
     </div>
   </section>
 
@@ -35,6 +35,7 @@ export const prerender = true;
         <div class="articleMeta">
           <span>{article.updatedAt}</span>
           <span>{article.readTime}</span>
+          <span>{article.category}</span>
         </div>
         <div class="articleTags">{article.tags.map((tag) => <span>{tag}</span>)}</div>
       </a>

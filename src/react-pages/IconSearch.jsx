@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Hero, Empty, FeaturedApps } from '../components/common.jsx';
+import { Empty, FeaturedApps } from '../components/common.jsx';
 import { useLang } from '../LanguageContext.jsx';
 
 export default function IconSearch(){
@@ -26,7 +26,6 @@ export default function IconSearch(){
  const copy=async(text,label)=>{await navigator.clipboard.writeText(text); setCopied(label); setTimeout(()=>setCopied(''),1300)};
  const iconUrl=app=>(app.artworkUrl512||app.artworkUrl100||'').replace(/\d+x\d+bb\.(jpg|png|webp)$/,'1024x1024bb.$1');
  return <>
- <Hero title={t.icon.title} sub={t.icon.sub}/>
  <div className="searchbar iconSearchbar">
     <input value={q} onChange={e=>setQ(e.target.value)} onKeyDown={e=>{if(e.key==='Enter')search()}} placeholder={t.icon.placeholder}/>
     <select value={country} onChange={e=>setCountry(e.target.value)}>
