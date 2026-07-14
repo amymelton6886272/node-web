@@ -8,6 +8,7 @@ const emptyRow = () => ({
   price: '',
   cycle: 'month',
   active: true,
+  note: '',
 });
 
 const copy = {
@@ -15,15 +16,16 @@ const copy = {
     title: 'Subscription Cost Calculator',
     sub: 'Estimate monthly and yearly spend for App Store and other recurring subscriptions. Data stays in your browser.',
     panelTitle: 'Your subscriptions',
-    panelDesc: 'Add each plan once. Convert weekly, monthly, yearly, and one-time-looking offers into comparable monthly and annual cost.',
+    panelDesc: 'Add each plan once. Convert weekly, monthly, and yearly offers into comparable monthly and annual cost.',
     name: 'Name',
+    namePh: 'App / plan',
     price: 'Price',
     cycle: 'Billing cycle',
     active: 'Active',
-    add: 'Add subscription',
+    add: 'Add plan',
     remove: 'Remove',
     clear: 'Clear all',
-    sample: 'Load sample set',
+    sample: 'Load sample',
     summary: 'Cost summary',
     monthly: 'Estimated monthly',
     yearly: 'Estimated yearly',
@@ -33,25 +35,28 @@ const copy = {
     month: 'Monthly',
     year: 'Yearly',
     note: 'Notes',
-    notePh: 'Optional: trial end date, family device, cancel path…',
+    notePh: 'Trial end, family device, cancel path…',
     tip: 'Tip: convert every offer to yearly cost before you compare “cheap” weekly plans with annual unlocks.',
     empty: 'Add at least one active subscription with a price to see totals.',
     save: 'Save locally',
     saved: 'Saved in this browser',
-    load: 'Load saved',
     export: 'Export JSON',
+    perMo: '/mo',
+    perYr: '/yr',
+    inactive: 'Paused',
     disclaimer: 'This calculator is a research aid. Final charges depend on taxes, storefront, trials, and Apple account settings.',
   },
   zh: {
     title: '订阅成本计算器',
     sub: '估算 App Store 及其他循环订阅的月成本与年成本。数据只保存在你的浏览器。',
     panelTitle: '你的订阅列表',
-    panelDesc: '把每个方案添加一次。把周付、月付、年付和看起来像一次性的报价，换算成可比较的月成本与年成本。',
+    panelDesc: '把每个方案添加一次。把周付、月付、年付报价换算成可比较的月成本与年成本。',
     name: '名称',
+    namePh: '应用 / 方案',
     price: '价格',
     cycle: '计费周期',
     active: '生效中',
-    add: '添加订阅',
+    add: '添加方案',
     remove: '删除',
     clear: '清空',
     sample: '载入示例',
@@ -64,13 +69,15 @@ const copy = {
     month: '月付',
     year: '年付',
     note: '备注',
-    notePh: '可选：试用结束日、家庭设备、取消路径…',
+    notePh: '试用结束日、家庭设备、取消路径…',
     tip: '提示：比较“便宜”周付和年付解锁前，先把所有报价换算成年成本。',
     empty: '至少添加一条带价格的生效订阅，才能看到汇总。',
     save: '本地保存',
     saved: '已保存在本浏览器',
-    load: '读取保存',
     export: '导出 JSON',
+    perMo: '/月',
+    perYr: '/年',
+    inactive: '已暂停',
     disclaimer: '本计算器仅供研究辅助。最终扣费取决于税费、商店地区、试用和 Apple 账户设置。',
   },
 };
@@ -137,7 +144,10 @@ export default function SubCostCalculator() {
   const add = () => setRows((list) => [...list, emptyRow()]);
   const clear = () => {
     setRows([emptyRow()]);
-    try { localStorage.removeItem('storewise_subcost'); try{localStorage.removeItem('wolffy_subcost')}catch{}; } catch {}
+    try {
+      localStorage.removeItem('storewise_subcost');
+      localStorage.removeItem('wolffy_subcost');
+    } catch {}
   };
   const loadSample = () => setRows(sampleRows.map((r) => ({ ...r })));
   const save = () => {
@@ -162,89 +172,138 @@ export default function SubCostCalculator() {
   };
 
   const money = (n) => (Number.isFinite(n) ? n.toFixed(2) : '0.00');
+  const cycleLabel = (c) => (c === 'week' ? t.week : c === 'year' ? t.year : t.month);
 
   return (
     <>
       <Hero title={t.title} sub={t.sub} />
 
-      <section className="card">
-        <div className="addressTop">
+      <section className="card subcostPanel">
+        <div className="subcostSummary">
+          <div className="subcostSummaryMain">
+            <span className="subcostKicker">{t.summary}</span>
+            <div className="subcostBigRow">
+              <div className="subcostBig">
+                <em>{t.monthly}</em>
+                <b>{money(totals.monthly)}</b>
+              </div>
+              <div className="subcostBig">
+                <em>{t.yearly}</em>
+                <b>{money(totals.yearly)}</b>
+              </div>
+            </div>
+          </div>
+          <div className="subcostMeta">
+            <div className="subcostMetaItem">
+              <span>{t.activeCount}</span>
+              <b>{totals.activeCount}</b>
+            </div>
+            <div className="subcostMetaItem">
+              <span>{t.totalListed}</span>
+              <b>{totals.totalListed}</b>
+            </div>
+          </div>
+        </div>
+        {totals.activeCount === 0 && <p className="subcostEmpty">{t.empty}</p>}
+      </section>
+
+      <section className="card subcostPanel">
+        <div className="subcostHead">
           <div>
             <h3>{t.panelTitle}</h3>
             <p>{t.panelDesc}</p>
           </div>
-        </div>
-
-        <div className="savedActions" style={{ marginBottom: '0.85rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-          <button onClick={add}>{t.add}</button>
-          <button onClick={loadSample}>{t.sample}</button>
-          <button onClick={save}>{t.save}</button>
-          <button onClick={exportJson}>{t.export}</button>
-          <button className="danger" onClick={clear}>{t.clear}</button>
-        </div>
-
-        <div className="savedGrid">
-          {rows.map((row) => (
-            <div className="savedCard" key={row.id}>
-              <label style={{ display: 'grid', gap: '0.35rem' }}>
-                <span>{t.name}</span>
-                <input value={row.name} onChange={(e) => update(row.id, 'name', e.target.value)} placeholder="App / plan" />
-              </label>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', marginTop: '0.5rem' }}>
-                <label style={{ display: 'grid', gap: '0.35rem' }}>
-                  <span>{t.price}</span>
-                  <input
-                    inputMode="decimal"
-                    value={row.price}
-                    onChange={(e) => update(row.id, 'price', e.target.value)}
-                    placeholder="9.99"
-                  />
-                </label>
-                <label style={{ display: 'grid', gap: '0.35rem' }}>
-                  <span>{t.cycle}</span>
-                  <select value={row.cycle} onChange={(e) => update(row.id, 'cycle', e.target.value)}>
-                    <option value="week">{t.week}</option>
-                    <option value="month">{t.month}</option>
-                    <option value="year">{t.year}</option>
-                  </select>
-                </label>
-              </div>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.6rem' }}>
-                <input type="checkbox" checked={!!row.active} onChange={(e) => update(row.id, 'active', e.target.checked)} />
-                <span>{t.active}</span>
-              </label>
-              <label style={{ display: 'grid', gap: '0.35rem', marginTop: '0.5rem' }}>
-                <span>{t.note}</span>
-                <input value={row.note || ''} onChange={(e) => update(row.id, 'note', e.target.value)} placeholder={t.notePh} />
-              </label>
-              <div className="savedMini" style={{ marginTop: '0.65rem' }}>
-                <button onClick={() => remove(row.id)}>{t.remove}</button>
-                <b>
-                  {money(toMonthly(row.price, row.cycle))}/mo · {money(toYearly(row.price, row.cycle))}/yr
-                </b>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="card" style={{ marginTop: '1rem' }}>
-        <h3>{t.summary}</h3>
-        {totals.activeCount === 0 ? (
-          <p>{t.empty}</p>
-        ) : (
-          <div className="ipGrid">
-            <div className="ipCell"><span>{t.monthly}</span><b>{money(totals.monthly)}</b></div>
-            <div className="ipCell"><span>{t.yearly}</span><b>{money(totals.yearly)}</b></div>
-            <div className="ipCell"><span>{t.activeCount}</span><b>{totals.activeCount}</b></div>
-            <div className="ipCell"><span>{t.totalListed}</span><b>{totals.totalListed}</b></div>
+          <div className="subcostToolbar">
+            <button type="button" className="subcostBtn primary" onClick={add}>{t.add}</button>
+            <button type="button" className="subcostBtn" onClick={loadSample}>{t.sample}</button>
+            <button type="button" className="subcostBtn" onClick={save}>{t.save}</button>
+            <button type="button" className="subcostBtn" onClick={exportJson}>{t.export}</button>
+            <button type="button" className="subcostBtn danger" onClick={clear}>{t.clear}</button>
           </div>
-        )}
-        <p className="contentNote" style={{ marginTop: '0.85rem' }}>{t.tip}</p>
+        </div>
+
+        <div className="subcostList">
+          {rows.map((row, index) => {
+            const mo = toMonthly(row.price, row.cycle);
+            const yr = toYearly(row.price, row.cycle);
+            return (
+              <article className={`subcostRow ${row.active ? '' : 'is-paused'}`} key={row.id}>
+                <div className="subcostRowTop">
+                  <div className="subcostIndex">{index + 1}</div>
+                  <div className="subcostFields">
+                    <label className="subcostField wide">
+                      <span>{t.name}</span>
+                      <input
+                        value={row.name}
+                        onChange={(e) => update(row.id, 'name', e.target.value)}
+                        placeholder={t.namePh}
+                      />
+                    </label>
+                    <label className="subcostField">
+                      <span>{t.price}</span>
+                      <input
+                        inputMode="decimal"
+                        value={row.price}
+                        onChange={(e) => update(row.id, 'price', e.target.value)}
+                        placeholder="9.99"
+                      />
+                    </label>
+                    <label className="subcostField">
+                      <span>{t.cycle}</span>
+                      <select value={row.cycle} onChange={(e) => update(row.id, 'cycle', e.target.value)}>
+                        <option value="week">{t.week}</option>
+                        <option value="month">{t.month}</option>
+                        <option value="year">{t.year}</option>
+                      </select>
+                    </label>
+                    <label className="subcostField wide">
+                      <span>{t.note}</span>
+                      <input
+                        value={row.note || ''}
+                        onChange={(e) => update(row.id, 'note', e.target.value)}
+                        placeholder={t.notePh}
+                      />
+                    </label>
+                  </div>
+                </div>
+
+                <div className="subcostRowFoot">
+                  <button
+                    type="button"
+                    className={`subcostToggle ${row.active ? 'on' : ''}`}
+                    onClick={() => update(row.id, 'active', !row.active)}
+                    aria-pressed={!!row.active}
+                  >
+                    <i />
+                    <span>{row.active ? t.active : t.inactive}</span>
+                  </button>
+                  <div className="subcostCalc">
+                    <span className="subcostPill">{cycleLabel(row.cycle)}</span>
+                    <b>
+                      {money(mo)}
+                      <small>{t.perMo}</small>
+                    </b>
+                    <em>·</em>
+                    <b>
+                      {money(yr)}
+                      <small>{t.perYr}</small>
+                    </b>
+                  </div>
+                  <button type="button" className="subcostBtn ghost" onClick={() => remove(row.id)}>
+                    {t.remove}
+                  </button>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        <p className="contentNote">{t.tip}</p>
         <p className="contentNote">{t.disclaimer}</p>
         <div className="contentLinks">
           <span>{lang === 'zh' ? '相关阅读' : 'Related reading'}</span>
           <a href="/price">{lang === 'zh' ? '价格对比' : 'Price compare'}</a>
+          <a href="/trial">{lang === 'zh' ? '试用提醒' : 'Trial reminder'}</a>
           <a href="/checklists">{lang === 'zh' ? '决策清单' : 'Checklists'}</a>
           <a href="/articles/when-paid-app-beats-subscription">{lang === 'zh' ? '买断 vs 订阅' : 'Paid vs subscription'}</a>
           <a href="/articles/spot-subscription-fatigue-apps">{lang === 'zh' ? '订阅疲劳' : 'Subscription fatigue'}</a>
