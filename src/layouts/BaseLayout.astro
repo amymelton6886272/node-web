@@ -2,8 +2,8 @@
 import { SITE, isActive, navItems, sidebarGroups } from '../astro/site.js';
 
 const {
-  title = 'Wolffy - Apple / iOS Toolkit',
-  description = 'A practical Apple and iOS toolkit with App Store price comparison, IAP lookup, free app discovery, privacy guidance, and safety articles.',
+  title = 'Storewise - App Store research tools & safety guides',
+  description = 'Independent App Store research tools: compare regional prices, estimate subscription cost, check free trials, review permissions, and read practical safety guides before you pay.',
   path = Astro.url.pathname,
   ogType = 'website',
   includeSiteSchema = true,
@@ -13,19 +13,19 @@ const canonical = new URL(path, SITE).toString();
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Wolffy',
+  name: 'Storewise',
   url: SITE,
   logo: `${SITE}/favicon.svg`,
-  description: 'Independent bilingual Apple / iOS toolkit with App Store research tools, safety guides, and decision checklists.',
+  description: 'Independent bilingual App Store research site with price tools, subscription helpers, safety guides, and decision checklists.',
 };
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Wolffy',
+  name: 'Storewise',
   url: SITE,
   description,
   inLanguage: ['en', 'zh-CN'],
-  publisher: { '@type': 'Organization', name: 'Wolffy', url: SITE },
+  publisher: { '@type': 'Organization', name: 'Storewise', url: SITE },
 };
 ---
 <!doctype html>
@@ -46,7 +46,7 @@ const websiteSchema = {
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`${SITE}/og-image.svg`} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:site_name" content="Wolffy Toolkit" />
+    <meta property="og:site_name" content="Storewise" />
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
@@ -69,8 +69,8 @@ const websiteSchema = {
   <body>
     <header class="top">
       <a class="brand" href="/">
-        <span class="logo" aria-label="Wolffy logo">W</span>
-        <b>Wolffy</b>
+        <span class="logo" aria-label="Storewise logo">S</span>
+        <b>Storewise</b>
       </a>
       <nav class="toplinks" aria-label="Main navigation">
         {navItems.map((item) => (
@@ -91,12 +91,12 @@ const websiteSchema = {
     <div class="shell">
       <aside class="sideNav" aria-label="Tool navigation">
         <div class="sideNavIntro">
-          <span class="lang-en">Toolkit</span>
-          <span class="lang-zh">工具箱</span>
-          <strong>Wolffy</strong>
+          <span class="lang-en">App Store research</span>
+          <span class="lang-zh">App Store 研究</span>
+          <strong>Storewise</strong>
           <p>
-            <span class="lang-en">Fast access to search, lookup, and App Store utility pages.</span>
-            <span class="lang-zh">把常用查询、检索和 App Store 工具页放到一个更顺手的入口里。</span>
+            <span class="lang-en">Compare prices, review trials, and check risk signals before you pay.</span>
+            <span class="lang-zh">付款前先比价、核对试用并查看风险信号。</span>
           </p>
         </div>
         {sidebarGroups.map((group) => (
@@ -152,10 +152,10 @@ const websiteSchema = {
       </button>
     </nav>
     <footer>
-      <span class="lang-en">Built with care. No account registration needed. Open to all App Store users.</span>
-      <span class="lang-zh">用心维护。无需注册账号，面向所有 App Store 用户开放。</span>
+      <span class="lang-en">Independent App Store research tools. No account required. Always verify final prices on Apple.</span>
+      <span class="lang-zh">独立 App Store 研究工具。无需注册。最终价格请以 Apple 官方页面为准。</span>
       <span>
-        Wolffy © 2026 · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/disclaimer">Disclaimer</a> · <a href="/terms">Terms</a> · <a href="/editorial">Editorial</a> · <a href="/data-sources">Data Sources</a>
+        Storewise © 2026 · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/disclaimer">Disclaimer</a> · <a href="/terms">Terms</a> · <a href="/editorial">Editorial</a> · <a href="/data-sources">Data Sources</a>
       </span>
     </footer>
     <script is:inline>

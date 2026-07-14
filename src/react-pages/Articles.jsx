@@ -37,8 +37,8 @@ function ArticleDetail({ article }) {
       description: article.description,
       datePublished: article.publishedAt,
       dateModified: article.updatedAt,
-      author: { '@type': 'Organization', name: 'Wolffy' },
-      publisher: { '@type': 'Organization', name: 'Wolffy', url: SITE },
+      author: { '@type': 'Organization', name: 'Storewise' },
+      publisher: { '@type': 'Organization', name: 'Storewise', url: SITE },
       mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE}${getArticlePath(article)}` },
       articleSection: article.category,
       keywords: article.tags.join(', '),
@@ -103,7 +103,7 @@ export default function Articles({ slug }) {
       <section className="articleToolbar card">
         <div>
           <h2>Publisher content</h2>
-          <p>Use these articles alongside Wolffy tools to understand pricing, subscriptions, privacy labels, app permissions, and account changes before acting.</p>
+          <p>Use these articles alongside Storewise tools to understand pricing, subscriptions, privacy labels, app permissions, and account changes before acting.</p>
         </div>
         <div className="tabs">
           {categories.map((item) => <button key={item} className={category === item ? 'on' : ''} onClick={() => setCategory(item)}>{item}</button>)}

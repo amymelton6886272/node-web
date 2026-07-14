@@ -9,14 +9,14 @@ export default function AddressGenerator(){
  const {t,lang}=useLang();
  const [country,setCountry]=useState('US');
  const [item,setItem]=useState(()=>makeAddress('US'));
- const [saved,setSaved]=useState(()=>{try{return JSON.parse(localStorage.getItem('wolffy_addresses')||'[]')}catch{return []}});
+ const [saved,setSaved]=useState(()=>{try{return JSON.parse(localStorage.getItem('storewise_addresses')||localStorage.getItem('wolffy_addresses')||'[]')}catch{return []}});
  const [copied,setCopied]=useState('');
  const [note,setNote]=useState('');
  const countryInfo=addressCountries.find(x=>x.code===country)||addressCountries[0];
  const labels=t.address;
  const copy=async(text,label)=>{await navigator.clipboard.writeText(text); setCopied(label); setTimeout(()=>setCopied(''),1300)};
  const generate=(next=country)=>{setCountry(next); setItem(makeAddress(next)); setNote('')};
- const persist=(list)=>{setSaved(list); localStorage.setItem('wolffy_addresses',JSON.stringify(list))};
+ const persist=(list)=>{setSaved(list); localStorage.setItem('storewise_addresses',JSON.stringify(list))};
  const save=()=>{persist([{...item,note:note.trim()},...saved]); setCopied(labels.saved); setTimeout(()=>setCopied(''),1300)};
  const remove=id=>persist(saved.filter(x=>x.id!==id));
  const clear=()=>{if(confirm(labels.clearConfirm)) persist([])};

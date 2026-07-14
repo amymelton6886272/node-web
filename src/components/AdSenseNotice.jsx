@@ -4,7 +4,7 @@ export function AdPlacementPolicy() {
       <span className="adLabel">Advertising policy</span>
       <h2>Ads appear only after meaningful publisher content</h2>
       <p>
-        To keep the site useful and compliant, Wolffy does not place ad units on empty
+        To keep the site useful and compliant, Storewise does not place ad units on empty
         result pages, error-only states, pop-ups, search modals, or purely navigational
         areas. When enabled, ad units should follow tutorial text, explanatory sections,
         or real query results with a clear advertising label.

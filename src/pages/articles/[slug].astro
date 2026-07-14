@@ -26,10 +26,10 @@ const articleSchema = {
   alternativeHeadline: article.titleZh,
   datePublished: article.publishedAt,
   dateModified: article.updatedAt,
-  author: { '@type': 'Organization', name: 'Wolffy', url: SITE },
+  author: { '@type': 'Organization', name: 'Storewise', url: SITE },
   publisher: {
     '@type': 'Organization',
-    name: 'Wolffy',
+    name: 'Storewise',
     url: SITE,
     logo: { '@type': 'ImageObject', url: `${SITE}/favicon.svg` },
   },
@@ -37,7 +37,7 @@ const articleSchema = {
   articleSection: article.category,
   keywords: article.tags.join(', '),
   inLanguage: ['en', 'zh-CN'],
-  isPartOf: { '@type': 'WebSite', name: 'Wolffy', url: SITE },
+  isPartOf: { '@type': 'WebSite', name: 'Storewise', url: SITE },
 };
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -49,7 +49,7 @@ const breadcrumbSchema = {
   ],
 };
 ---
-<BaseLayout title={`${article.title} - Wolffy`} description={article.description} path={path} ogType="article">
+<BaseLayout title={`${article.title} - Storewise`} description={article.description} path={path} ogType="article">
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

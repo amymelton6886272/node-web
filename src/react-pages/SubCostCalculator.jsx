@@ -102,7 +102,7 @@ export default function SubCostCalculator() {
   const t = copy[lang] || copy.en;
   const [rows, setRows] = useState(() => {
     try {
-      const raw = localStorage.getItem('wolffy_subcost');
+      const raw = localStorage.getItem('storewise_subcost') || localStorage.getItem('wolffy_subcost');
       if (raw) {
         const parsed = JSON.parse(raw);
         if (Array.isArray(parsed) && parsed.length) return parsed;
@@ -137,12 +137,12 @@ export default function SubCostCalculator() {
   const add = () => setRows((list) => [...list, emptyRow()]);
   const clear = () => {
     setRows([emptyRow()]);
-    try { localStorage.removeItem('wolffy_subcost'); } catch {}
+    try { localStorage.removeItem('storewise_subcost'); try{localStorage.removeItem('wolffy_subcost')}catch{}; } catch {}
   };
   const loadSample = () => setRows(sampleRows.map((r) => ({ ...r })));
   const save = () => {
     try {
-      localStorage.setItem('wolffy_subcost', JSON.stringify(rows));
+      localStorage.setItem('storewise_subcost', JSON.stringify(rows));
       flash(t.saved);
     } catch {}
   };

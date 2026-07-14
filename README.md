@@ -1,6 +1,6 @@
-# Wolffy
+# Storewise
 
-Wolffy is a bilingual Apple / iOS toolkit and safety knowledge site built with Astro + React islands.
+Storewise is a bilingual Apple / iOS toolkit and safety knowledge site built with Astro + React islands.
 
 ## Vercel deployment
 

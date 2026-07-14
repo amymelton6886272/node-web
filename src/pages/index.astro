@@ -22,10 +22,10 @@ const workflow = [
 
 const faqs = [
   {
-    q: 'Is Wolffy an official Apple website?',
-    qZh: 'Wolffy 是 Apple 官方网站吗？',
-    a: 'No. Wolffy is an independent research and education site. It helps you inspect public App Store signals and learn safer purchasing habits, but it does not speak for Apple and cannot change Apple account outcomes.',
-    aZh: '不是。Wolffy 是独立的研究与教育站点，帮助你查看公开 App Store 信号并学习更稳妥的购买习惯，但不能代表 Apple，也不能改变 Apple 账号结果。',
+    q: 'Is Storewise an official Apple website?',
+    qZh: 'Storewise 是 Apple 官方网站吗？',
+    a: 'No. Storewise is an independent App Store research site. It helps you inspect public signals and prepare safer purchase decisions, but it does not speak for Apple and cannot change Apple account outcomes.',
+    aZh: '不是。Storewise 是独立的 App Store 研究站点，帮助你查看公开信号并做好更稳妥的购买准备，但不能代表 Apple，也不能改变 Apple 账号结果。',
   },
   {
     q: 'Can I treat the price comparison as the final checkout amount?',
@@ -46,14 +46,14 @@ const faqs = [
     aZh: '先记下结束日期、续费价格和取消路径，并提前一天设置提醒。家庭设备还要检查“购买前询问”和屏幕使用时间中的购买限制。',
   },
   {
-    q: 'Where does Wolffy get its data?',
-    qZh: 'Wolffy 的数据从哪里来？',
+    q: 'Where does Storewise get its data?',
+    qZh: 'Storewise 的数据从哪里来？',
     a: 'Most tools use public App Store metadata, public promotional feeds, browser-visible network information, or local generation in your browser. See the Data Sources page for limitations and verification guidance.',
     aZh: '大多数工具使用公开 App Store 元数据、公开促销源、浏览器可见网络信息，或在浏览器本地生成。限制与核验说明见“数据来源”页面。',
   },
   {
-    q: 'Does Wolffy require an account?',
-    qZh: 'Wolffy 需要注册账号吗？',
+    q: 'Does Storewise require an account?',
+    qZh: 'Storewise 需要注册账号吗？',
     a: 'No. You can browse guides and use basic tools without registration. Language preference and temporary UI state may be stored locally in your browser.',
     aZh: '不需要。你可以在不注册的情况下浏览指南并使用基础工具。语言偏好和临时界面状态可能会保存在浏览器本地。',
   },
@@ -89,22 +89,22 @@ const quickLinks = [
   { href: '/privacy', label: 'Privacy', labelZh: '隐私政策' },
 ];
 ---
-<BaseLayout title="Wolffy - Apple / iOS Toolkit" description="Compare App Store prices, inspect IAP signals, discover free apps, search app icons, check IP details, and read practical Apple safety guides." path="/">
+<BaseLayout title="Storewise - check App Store prices, trials, and risks before you pay" description="Storewise is an independent App Store research site. Compare regional prices, estimate subscription cost, build free-trial reminders, review permission risks, and read practical safety guides before you buy." path="/">
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
   <div class="lang-en">
-    <Hero title="Wolffy - practical Apple tools and safety guides" sub="Compare App Store prices, inspect in-app purchases, discover limited-time free apps, understand permissions, and make safer download decisions." />
+    <Hero title="Decide smarter before you pay on the App Store" sub="Storewise helps you compare regional prices, estimate subscription cost, catch free-trial traps, and review permission risks — with practical guides, not empty search boxes." />
   </div>
   <div class="lang-zh">
-    <Hero title="Wolffy - 实用 Apple 工具与安全指南" sub="比较 App Store 价格、检查内购信号、发现限免应用、理解权限风险，并做出更稳妥的下载决策。" />
+    <Hero title="在 App Store 付款前，先把关键信息看清楚" sub="Storewise 帮你比较地区价格、估算订阅成本、识别试用陷阱并评估权限风险——提供实用指南，而不是空壳搜索框。" />
   </div>
 
   <section class="homeIntro card">
-    <h2 class="lang-en">A content-first toolkit, not a blank search page</h2>
-    <h2 class="lang-zh">内容优先的工具站，而不是空白搜索页</h2>
-    <p class="lang-en">Wolffy combines lightweight utilities with long-form explanations, checklists, and policy-aware guidance. Even before you search, every page explains what the tool does, where data comes from, what can go wrong, and how to verify results yourself.</p>
-    <p class="lang-zh">Wolffy 将轻量工具、长文说明、检查清单和合规意识结合在一起。即使还没有搜索，每个页面也会说明工具用途、数据来源、可能限制以及如何自行核对结果。</p>
+    <h2 class="lang-en">Research tools first, empty pages never</h2>
+    <h2 class="lang-zh">先给研究工具，不给空页面</h2>
+    <p class="lang-en">Storewise is built for purchase decisions: price comparison, subscription cost, trial reminders, risk checks, and bilingual safety guides. Every tool page starts with a short overview, puts the interactive tool near the top, and keeps a full guide below for verification.</p>
+    <p class="lang-zh">Storewise 面向购买决策：价格对比、订阅成本、试用提醒、风险检查和双语安全指南。每个工具页先给短说明，把交互工具放在上方，下方保留完整指南方便核对。</p>
     <div class="contentLinks" style="border-top:0;margin-top:14px;padding-top:0;">
       <span class="lang-en">Quick links</span>
       <span class="lang-zh">快速入口</span>
@@ -177,13 +177,13 @@ const quickLinks = [
   </section>
 
   <section class="homeWhy card">
-    <h2 class="lang-en">Why Wolffy exists</h2>
-    <h2 class="lang-zh">为什么需要 Wolffy</h2>
-    <p class="lang-en">Apple ecosystem information is useful but fragmented. Prices vary by region, subscriptions are easy to overlook, permission prompts are hard to evaluate, and App Store policies are not always obvious to everyday users.</p>
-    <p class="lang-en">The site is intentionally small: no account registration, no forced newsletter, no paywall for basic safety information, and no dark patterns. When a page uses external data, it explains the source and its limits instead of presenting the result as a final authority.</p>
-    <p class="lang-en">If you are researching a purchase, start with price comparison and IAP lookup, then open the matching article or checklist before you pay. For family devices, combine risk assessment with Ask to Buy and Screen Time controls. For account changes, read the region and subscription guides first.</p>
-    <p class="lang-zh">Apple 生态的信息很有用，但经常分散在不同地方。价格会因地区变化，订阅容易被忽略，权限弹窗不容易判断，App Store 规则对普通用户也不总是直观。</p>
-    <p class="lang-zh">本站刻意保持轻量：不要求注册账号，不强制订阅通讯，不把基础安全信息放进付费墙，也不使用诱导式设计。当页面使用外部数据时，会说明来源和限制，而不是把结果包装成最终结论。</p>
-    <p class="lang-zh">如果你在研究一次购买，先做价格对比和内购查询，再打开对应文章或清单后付款。家庭设备请把风险评估与购买前询问、屏幕使用时间结合使用。涉及账号变更时，先阅读切区和订阅相关指南。</p>
+    <h2 class="lang-en">Why Storewise exists</h2>
+    <h2 class="lang-zh">为什么需要 Storewise</h2>
+    <p class="lang-en">App Store decisions are easy to rush and hard to reverse. Regional prices differ, free trials renew quietly, subscriptions stack up, and permission prompts are easy to accept without context.</p>
+    <p class="lang-en">Storewise keeps the workflow small and transparent: no account wall, no forced newsletter, no dark patterns. Tools stay near the top of the page; guides and source notes stay close enough to verify results before you act.</p>
+    <p class="lang-en">Typical path: compare price → estimate subscription cost or set a trial reminder → open the matching checklist → confirm the final amount and renewal terms in the App Store.</p>
+    <p class="lang-zh">App Store 决策很容易冲动，也很难撤销。地区价格不同，免费试用会静默续费，订阅会叠加，权限弹窗也容易在缺乏上下文时被点同意。</p>
+    <p class="lang-zh">Storewise 刻意保持轻量和透明：没有账号墙、没有强制订阅、没有诱导式设计。工具放在页面上方，指南和数据来源说明就在旁边，方便行动前核对。</p>
+    <p class="lang-zh">推荐路径：先比价 → 估算订阅成本或设置试用提醒 → 打开对应清单 → 在 App Store 确认最终金额与续费条款。</p>
   </section>
 </BaseLayout>

@@ -308,7 +308,7 @@ footer span{display:block;line-height:1.8}
 .aboutStack .card{padding:24px}
 .aboutStack .card p+p{margin-top:12px}
 
-/* Wolffy brand logo */
+/* Storewise brand logo */
 .logo{width:34px;height:34px;border-radius:12px;display:inline-grid;place-items:center;background:linear-gradient(135deg,#111827 0%,#6366f1 48%,#fb7185 100%);color:#fff;font-weight:900;font-size:18px;letter-spacing:-.04em;box-shadow:0 12px 28px #6366f14a, inset 0 1px 0 #ffffff55;position:relative;overflow:hidden;line-height:1}
 .logo::before{content:"";position:absolute;inset:4px;border-radius:9px;border:1px solid rgba(255,255,255,.28);pointer-events:none}
 .logo::after{content:"";position:absolute;width:18px;height:18px;right:-5px;top:-5px;border-radius:50%;background:rgba(255,255,255,.35);filter:blur(.2px)}

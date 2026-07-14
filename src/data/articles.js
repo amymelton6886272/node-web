@@ -41,11 +41,11 @@ export const articles = [
           '申请退款不等于取消订阅。提交退款后，仍要到“设置 > Apple ID > 订阅”确认是否已取消，否则可能继续续费。删除应用不会停止扣费。家庭设备还要检查“购买前询问”和屏幕使用时间中的购买限制，避免同类扣费再次发生。',
       },
       {
-        heading: 'Use Wolffy as research help, not as the final authority',
-        headingZh: '把 Wolffy 当研究辅助，而不是最终权威',
-        text: 'Wolffy can help you inspect pricing signals, IAP markers, and common risk patterns before or after a purchase. It cannot approve refunds, reverse charges, or speak for Apple. Always treat reportaproblem.apple.com, App Store receipts, and Apple account settings as the source of truth. If your case involves a child account, work device, or shared payment method, document ownership carefully before you submit.',
+        heading: 'Use Storewise as research help, not as the final authority',
+        headingZh: '把 Storewise 当研究辅助，而不是最终权威',
+        text: 'Storewise can help you inspect pricing signals, IAP markers, and common risk patterns before or after a purchase. It cannot approve refunds, reverse charges, or speak for Apple. Always treat reportaproblem.apple.com, App Store receipts, and Apple account settings as the source of truth. If your case involves a child account, work device, or shared payment method, document ownership carefully before you submit.',
         textZh:
-          'Wolffy 可以帮助你在购买前后查看价格信号、内购标记和常见风险，但不能批准退款、撤销扣费，也不能代表 Apple。最终仍以 reportaproblem.apple.com、App Store 收据和 Apple 账户设置为准。如果涉及儿童账号、工作设备或共享付款方式，提交前先把归属关系记录清楚。',
+          'Storewise 可以帮助你在购买前后查看价格信号、内购标记和常见风险，但不能批准退款、撤销扣费，也不能代表 Apple。最终仍以 reportaproblem.apple.com、App Store 收据和 Apple 账户设置为准。如果涉及儿童账号、工作设备或共享付款方式，提交前先把归属关系记录清楚。',
       },
       {
         heading: 'A practical pre-submit checklist',
@@ -72,9 +72,9 @@ export const articles = [
       {
         heading: 'Start with the official checkout price',
         headingZh: '从官方结算价开始',
-        text: 'Use Wolffy as a research helper, but treat the App Store checkout screen as the final source. Regional tables can show useful differences, yet taxes, account region, payment method, trials, and subscription terms can change the amount you actually pay. If a page shows only a converted estimate, keep the original currency visible and re-check before you buy.',
+        text: 'Use Storewise as a research helper, but treat the App Store checkout screen as the final source. Regional tables can show useful differences, yet taxes, account region, payment method, trials, and subscription terms can change the amount you actually pay. If a page shows only a converted estimate, keep the original currency visible and re-check before you buy.',
         textZh:
-          '可以把 Wolffy 当作研究辅助，但最终价格以 App Store 结算页为准。跨区价格表能显示有价值的差异，但税费、账号地区、付款方式、试用和订阅条款都会改变实际支付金额。如果页面只给出换算估值，请保留原币种并在购买前再次核对。',
+          '可以把 Storewise 当作研究辅助，但最终价格以 App Store 结算页为准。跨区价格表能显示有价值的差异，但税费、账号地区、付款方式、试用和订阅条款都会改变实际支付金额。如果页面只给出换算估值，请保留原币种并在购买前再次核对。',
       },
       {
         heading: 'Compare the same product, not just the same name',
@@ -107,9 +107,9 @@ export const articles = [
       {
         heading: 'A practical buying workflow',
         headingZh: '实用购买流程',
-        text: '1) identify the exact app and plan, 2) compare regional base prices and public subscription signals, 3) inspect IAP and trial terms, 4) review privacy labels and recent reviews, 5) confirm Family Sharing needs, and 6) verify the final amount in the official checkout. Wolffy’s price and checklist pages are designed to support this sequence, not replace it.',
+        text: '1) identify the exact app and plan, 2) compare regional base prices and public subscription signals, 3) inspect IAP and trial terms, 4) review privacy labels and recent reviews, 5) confirm Family Sharing needs, and 6) verify the final amount in the official checkout. Storewise’s price and checklist pages are designed to support this sequence, not replace it.',
         textZh:
-          '1）确认具体应用与方案；2）比较各地区本体价格和公开订阅信号；3）检查内购与试用条款；4）查看隐私标签和近期评论；5）确认家庭共享需求；6）在官方结算页核对最终金额。Wolffy 的价格页和清单页是为这条流程服务的，而不是替代它。',
+          '1）确认具体应用与方案；2）比较各地区本体价格和公开订阅信号；3）检查内购与试用条款；4）查看隐私标签和近期评论；5）确认家庭共享需求；6）在官方结算页核对最终金额。Storewise 的价格页和清单页是为这条流程服务的，而不是替代它。',
       },
     ],
   },
@@ -214,9 +214,9 @@ export const articles = [
       {
         heading: 'Use lookup tools without over-trusting them',
         headingZh: '使用查询工具，但不要过度信任',
-        text: 'Wolffy can help surface public IAP signals and regional differences, but Apple page structures and regional catalogs change. A failed lookup does not prove that no IAP exists. Always confirm the final offer sheet in the App Store before paying.',
+        text: 'Storewise can help surface public IAP signals and regional differences, but Apple page structures and regional catalogs change. A failed lookup does not prove that no IAP exists. Always confirm the final offer sheet in the App Store before paying.',
         textZh:
-          'Wolffy 可以帮助展示公开内购信号和地区差异，但 Apple 页面结构和地区目录会变化。查询失败不代表没有内购。付款前仍要以 App Store 最终报价页为准。',
+          'Storewise 可以帮助展示公开内购信号和地区差异，但 Apple 页面结构和地区目录会变化。查询失败不代表没有内购。付款前仍要以 App Store 最终报价页为准。',
       },
       {
         heading: 'Decision rule before installing',
@@ -278,9 +278,9 @@ export const articles = [
       {
         heading: 'A quick privacy review routine',
         headingZh: '一套快速隐私复查流程',
-        text: 'Before install: read labels and permissions. During first launch: grant only what is required. After one week: review Settings, notifications, background refresh, and tracking prompts. Wolffy’s risk and checklist pages are designed to support this routine without replacing iOS system settings.',
+        text: 'Before install: read labels and permissions. During first launch: grant only what is required. After one week: review Settings, notifications, background refresh, and tracking prompts. Storewise’s risk and checklist pages are designed to support this routine without replacing iOS system settings.',
         textZh:
-          '安装前：阅读标签和权限。首次启动：只授权必要项。一周后：复查设置、通知、后台刷新和追踪提示。Wolffy 的风险页和清单页是为这套流程服务的，不能替代 iOS 系统设置。',
+          '安装前：阅读标签和权限。首次启动：只授权必要项。一周后：复查设置、通知、后台刷新和追踪提示。Storewise 的风险页和清单页是为这套流程服务的，不能替代 iOS 系统设置。',
       },
     ],
   },
@@ -335,9 +335,9 @@ export const articles = [
       {
         heading: 'Use tools, then verify manually',
         headingZh: '先用工具，再人工确认',
-        text: 'Wolffy can help you inspect icons, pricing signals, risk markers, and related guides quickly. Still open the official App Store page, developer site, and privacy policy before installing anything important. Speed is useful; verification is safer.',
+        text: 'Storewise can help you inspect icons, pricing signals, risk markers, and related guides quickly. Still open the official App Store page, developer site, and privacy policy before installing anything important. Speed is useful; verification is safer.',
         textZh:
-          'Wolffy 可以帮你快速查看图标、价格信号、风险标记和相关指南。但安装重要应用前，仍应打开官方 App Store 页、开发者站点与隐私政策。效率有价值，核验更安全。',
+          'Storewise 可以帮你快速查看图标、价格信号、风险标记和相关指南。但安装重要应用前，仍应打开官方 App Store 页、开发者站点与隐私政策。效率有价值，核验更安全。',
       },
     ],
   },
@@ -392,9 +392,9 @@ export const articles = [
       {
         heading: 'A safer decision sequence',
         headingZh: '更稳妥的决策顺序',
-        text: '1) define why you want the switch, 2) check balance and active plans, 3) verify payment support, 4) confirm critical app availability, 5) review Family Sharing impact, and 6) only then change the storefront. Use Wolffy’s checklists and price tools as preparation, then complete the change in official Apple settings.',
+        text: '1) define why you want the switch, 2) check balance and active plans, 3) verify payment support, 4) confirm critical app availability, 5) review Family Sharing impact, and 6) only then change the storefront. Use Storewise’s checklists and price tools as preparation, then complete the change in official Apple settings.',
         textZh:
-          '1）明确切区原因；2）检查余额与有效方案；3）确认支付支持；4）确认关键应用可用性；5）评估家庭共享影响；6）最后才修改商店地区。用 Wolffy 的清单和价格工具做准备，真正修改仍在官方 Apple 设置中完成。',
+          '1）明确切区原因；2）检查余额与有效方案；3）确认支付支持；4）确认关键应用可用性；5）评估家庭共享影响；6）最后才修改商店地区。用 Storewise 的清单和价格工具做准备，真正修改仍在官方 Apple 设置中完成。',
       },
     ],
   },
@@ -449,9 +449,9 @@ export const articles = [
       {
         heading: 'A clean post-trial routine',
         headingZh: '一套干净的试用后流程',
-        text: '1) review actual usage, 2) compare renewal price with alternatives, 3) cancel early if unsure, 4) save screenshots of terms, and 5) re-check Subscriptions after cancellation. Wolffy can help you inspect pricing and risk context, but the cancellation action itself must happen in Apple settings.',
+        text: '1) review actual usage, 2) compare renewal price with alternatives, 3) cancel early if unsure, 4) save screenshots of terms, and 5) re-check Subscriptions after cancellation. Storewise can help you inspect pricing and risk context, but the cancellation action itself must happen in Apple settings.',
         textZh:
-          '1）回顾实际使用；2）比较续费价与替代方案；3）不确定就提前取消；4）保存条款截图；5）取消后再回订阅页确认。Wolffy 可帮助查看价格和风险上下文，但取消动作本身必须在 Apple 设置中完成。',
+          '1）回顾实际使用；2）比较续费价与替代方案；3）不确定就提前取消；4）保存条款截图；5）取消后再回订阅页确认。Storewise 可帮助查看价格和风险上下文，但取消动作本身必须在 Apple 设置中完成。',
       },
     ],
   },
@@ -478,9 +478,9 @@ export const articles = [
       {
         heading: 'Identify the exact app',
         headingZh: '确认具体是哪一个应用',
-        text: 'Match the app name, developer, icon, and App Store link. Similar names and cloned icons are common in crowded categories. Wolffy’s icon lookup can help confirm identity, but the official listing remains authoritative.',
+        text: 'Match the app name, developer, icon, and App Store link. Similar names and cloned icons are common in crowded categories. Storewise’s icon lookup can help confirm identity, but the official listing remains authoritative.',
         textZh:
-          '核对应用名、开发者、图标和 App Store 链接。在拥挤品类里，近似名称和仿制图标很常见。Wolffy 的图标查询可辅助确认身份，但官方列表仍是权威来源。',
+          '核对应用名、开发者、图标和 App Store 链接。在拥挤品类里，近似名称和仿制图标很常见。Storewise 的图标查询可辅助确认身份，但官方列表仍是权威来源。',
       },
       {
         heading: 'Inspect price and monetization together',
@@ -506,9 +506,9 @@ export const articles = [
       {
         heading: 'Verify officially, then decide',
         headingZh: '官方核验后再决定',
-        text: 'Return to the App Store checkout screen, Apple subscription settings, and any developer terms that matter. If the purchase is expensive, family-shared, or hard to reverse, open Wolffy’s checklist page and complete the remaining items before you pay.',
+        text: 'Return to the App Store checkout screen, Apple subscription settings, and any developer terms that matter. If the purchase is expensive, family-shared, or hard to reverse, open Storewise’s checklist page and complete the remaining items before you pay.',
         textZh:
-          '回到 App Store 结算页、Apple 订阅设置，以及任何关键开发者条款。如果购买金额高、涉及家庭共享或难以撤销，先打开 Wolffy 清单页补全剩余检查项，再付款。',
+          '回到 App Store 结算页、Apple 订阅设置，以及任何关键开发者条款。如果购买金额高、涉及家庭共享或难以撤销，先打开 Storewise 清单页补全剩余检查项，再付款。',
       },
     ],
   },
@@ -563,9 +563,9 @@ export const articles = [
       {
         heading: 'Use a stop-check before every free install',
         headingZh: '每次安装免费应用前做止损检查',
-        text: 'Ask: Do I need this today? Is the developer clear? Are permissions proportional? Is billing understandable? Can I remove it cleanly? If any answer is no, wait. Wolffy’s free-app and risk pages are useful for this stop-check, but your final decision should stay conservative on primary devices.',
+        text: 'Ask: Do I need this today? Is the developer clear? Are permissions proportional? Is billing understandable? Can I remove it cleanly? If any answer is no, wait. Storewise’s free-app and risk pages are useful for this stop-check, but your final decision should stay conservative on primary devices.',
         textZh:
-          '自问：我今天真的需要吗？开发者清楚吗？权限成比例吗？扣费模式可理解吗？能否干净卸载？任一答案为否，就先等等。Wolffy 的限免页和风险页有助于这项止损检查，但主力设备上的最终决策仍应保守。',
+          '自问：我今天真的需要吗？开发者清楚吗？权限成比例吗？扣费模式可理解吗？能否干净卸载？任一答案为否，就先等等。Storewise 的限免页和风险页有助于这项止损检查，但主力设备上的最终决策仍应保守。',
       },
     ],
   },
@@ -621,8 +621,8 @@ export const articles = [
       {
         heading: 'Publisher takeaway',
         headingZh: '发布者总结',
-        text: 'Treat subscription management as a recurring account hygiene task. Check Apple ID subscriptions monthly, cancel early when value is unclear, and never confuse app deletion with cancellation. Wolffy can help you inspect pricing and risk context, but the cancel action itself must happen in Apple settings.',
-        textZh: '把订阅管理当成例行账号维护。每月检查 Apple ID 订阅，价值不清就提前取消，永远不要把删应用当成取消。Wolffy 可帮助查看价格和风险上下文，但取消动作本身必须在 Apple 设置中完成。',
+        text: 'Treat subscription management as a recurring account hygiene task. Check Apple ID subscriptions monthly, cancel early when value is unclear, and never confuse app deletion with cancellation. Storewise can help you inspect pricing and risk context, but the cancel action itself must happen in Apple settings.',
+        textZh: '把订阅管理当成例行账号维护。每月检查 Apple ID 订阅，价值不清就提前取消，永远不要把删应用当成取消。Storewise 可帮助查看价格和风险上下文，但取消动作本身必须在 Apple 设置中完成。',
       },
     ],
   },
@@ -678,8 +678,8 @@ export const articles = [
       {
         heading: 'Publisher takeaway',
         headingZh: '发布者总结',
-        text: 'Purchase history is a control surface, not just a receipt archive. Use it to cancel weak plans, document disputes, and keep family billing predictable. Wolffy’s pricing and checklist pages help explain context, but the official purchase history remains the source of truth.',
-        textZh: '购买记录是控制面，不只是收据存档。用它取消弱方案、记录争议、让家庭扣费可预期。Wolffy 的价格页和清单页能帮助解释上下文，但官方购买记录仍是真相来源。',
+        text: 'Purchase history is a control surface, not just a receipt archive. Use it to cancel weak plans, document disputes, and keep family billing predictable. Storewise’s pricing and checklist pages help explain context, but the official purchase history remains the source of truth.',
+        textZh: '购买记录是控制面，不只是收据存档。用它取消弱方案、记录争议、让家庭扣费可预期。Storewise 的价格页和清单页能帮助解释上下文，但官方购买记录仍是真相来源。',
       },
     ],
   },
@@ -735,8 +735,8 @@ export const articles = [
       {
         heading: 'Publisher takeaway',
         headingZh: '发布者总结',
-        text: 'Permission prompts are product decisions disguised as popups. A conservative default protects photos, contacts, and location better than trusting every onboarding flow. Wolffy’s risk and privacy pages can help frame the decision, but iOS Settings remain the control panel.',
-        textZh: '权限弹窗其实是伪装成弹窗的产品决策。保守默认比信任每次引导流程更能保护照片、通讯录和位置。Wolffy 的风险页和隐私页可帮助判断，但控制面板仍是 iOS 设置。',
+        text: 'Permission prompts are product decisions disguised as popups. A conservative default protects photos, contacts, and location better than trusting every onboarding flow. Storewise’s risk and privacy pages can help frame the decision, but iOS Settings remain the control panel.',
+        textZh: '权限弹窗其实是伪装成弹窗的产品决策。保守默认比信任每次引导流程更能保护照片、通讯录和位置。Storewise 的风险页和隐私页可帮助判断，但控制面板仍是 iOS 设置。',
       },
     ],
   },
@@ -843,8 +843,8 @@ export const articles = [
       {
         heading: 'A safe comparison workflow',
         headingZh: '一套安全的比较流程',
-        text: '1) identify the exact app and plan, 2) compare public regional prices, 3) inspect IAP and trial terms, 4) evaluate account impact, 5) decide whether research is enough, and 6) only then consider a switch. Wolffy’s price tools support steps 1–3; Apple settings own the rest.',
-        textZh: '1）确认具体应用与方案；2）比较公开地区价格；3）检查内购与试用；4）评估账号影响；5）判断研究是否已经足够；6）最后才考虑切区。Wolffy 价格工具支持前三步，其余由 Apple 设置负责。',
+        text: '1) identify the exact app and plan, 2) compare public regional prices, 3) inspect IAP and trial terms, 4) evaluate account impact, 5) decide whether research is enough, and 6) only then consider a switch. Storewise’s price tools support steps 1–3; Apple settings own the rest.',
+        textZh: '1）确认具体应用与方案；2）比较公开地区价格；3）检查内购与试用；4）评估账号影响；5）判断研究是否已经足够；6）最后才考虑切区。Storewise 价格工具支持前三步，其余由 Apple 设置负责。',
       },
       {
         heading: 'Publisher takeaway',
@@ -1020,8 +1020,8 @@ export const articles = [
       {
         heading: 'Publisher takeaway',
         headingZh: '发布者总结',
-        text: 'Pick the channel that matches the problem type: purchase outcome, product bug, or future billing control. Prepare evidence once, cancel when needed, and keep the story consistent. Wolffy can help you understand risk and pricing context, but official Apple and developer channels own the resolution.',
-        textZh: '按问题类型选渠道：购买结果、产品 Bug，还是未来扣费控制。证据准备一次，需要时先取消，并保持叙述一致。Wolffy 可帮助理解风险和价格上下文，但处理权在官方 Apple 与开发者渠道。',
+        text: 'Pick the channel that matches the problem type: purchase outcome, product bug, or future billing control. Prepare evidence once, cancel when needed, and keep the story consistent. Storewise can help you understand risk and pricing context, but official Apple and developer channels own the resolution.',
+        textZh: '按问题类型选渠道：购买结果、产品 Bug，还是未来扣费控制。证据准备一次，需要时先取消，并保持叙述一致。Storewise 可帮助理解风险和价格上下文，但处理权在官方 Apple 与开发者渠道。',
       },
     ],
   },
@@ -1070,8 +1070,8 @@ export const articles = [
         textZh: '有些应用先支持通过 Apple 登录，随后又强制单独密码和恢复邮箱。有 Sign in with Apple 就优先使用；仍在使用该服务时不要停用对应 Hide My Email；停用前先导出重要数据。',
       },
       {
-        heading: 'What Wolffy helps you check first',
-        headingZh: 'Wolffy 能先帮你检查什么',
+        heading: 'What Storewise helps you check first',
+        headingZh: 'Storewise 能先帮你检查什么',
         text: 'Before signup, use the risk assessor and privacy-related checklists to judge whether the app is worth an account at all. If the listing looks low quality, if IAP is aggressive, or if the developer identity is unclear, do not give any email—relay or primary—until you verify the storefront page and recent reviews.',
         textZh: '注册前先用风险评估和隐私清单判断这个应用是否值得建号。如果详情页质量低、内购激进或开发者身份不清，在核验商店页和近期评论前，不要提供任何邮箱——包括转发地址和主邮箱。',
       },
@@ -1129,8 +1129,8 @@ export const articles = [
       {
         heading: 'Publisher takeaway',
         headingZh: '发布者总结',
-        text: 'Purchase controls are a system: role design, in-app purchase limits, authentication prompts, trial discipline, and weekly review. Wolffy checklists can help you inspect the decision path, but Apple family settings and account roles are where the real protection lives.',
-        textZh: '购买控制是一套系统：角色设计、内购限制、身份验证提示、试用纪律和每周复审。Wolffy 清单可帮助检查决策路径，但真正的保护在 Apple 家庭设置与账号角色里。',
+        text: 'Purchase controls are a system: role design, in-app purchase limits, authentication prompts, trial discipline, and weekly review. Storewise checklists can help you inspect the decision path, but Apple family settings and account roles are where the real protection lives.',
+        textZh: '购买控制是一套系统：角色设计、内购限制、身份验证提示、试用纪律和每周复审。Storewise 清单可帮助检查决策路径，但真正的保护在 Apple 家庭设置与账号角色里。',
       },
     ],
   },
@@ -1180,8 +1180,8 @@ export const articles = [
       {
         heading: 'Publisher takeaway',
         headingZh: '发布者总结',
-        text: 'Gift cards are useful prepaid tools, not a free pass around account hygiene. Match region, limit experimental spending, protect codes, and understand how balance affects later mobility. Research first with Wolffy tools, then manage money inside official Apple flows.',
-        textZh: '礼品卡是有用的预付工具，不是绕过账号卫生的通行证。匹配地区、限制试验性消费、保护兑换码，并理解余额如何影响后续机动性。先用 Wolffy 工具研究，再在官方 Apple 流程里管理资金。',
+        text: 'Gift cards are useful prepaid tools, not a free pass around account hygiene. Match region, limit experimental spending, protect codes, and understand how balance affects later mobility. Research first with Storewise tools, then manage money inside official Apple flows.',
+        textZh: '礼品卡是有用的预付工具，不是绕过账号卫生的通行证。匹配地区、限制试验性消费、保护兑换码，并理解余额如何影响后续机动性。先用 Storewise 工具研究，再在官方 Apple 流程里管理资金。',
       },
     ],
   },
@@ -1231,8 +1231,8 @@ export const articles = [
       {
         heading: 'Publisher takeaway',
         headingZh: '发布者总结',
-        text: 'The best monetization model is the one that matches your real usage. Convert prices to yearly cost, inspect hybrid locks, and verify the final terms in the App Store. Wolffy price and IAP tools help you see signals, but your usage pattern decides the value.',
-        textZh: '最好的变现模型是匹配真实使用的那一个。把价格换算成年成本，检查混合锁定，并在 App Store 核验最终条款。Wolffy 价格与内购工具帮你看信号，但价值由你的使用模式决定。',
+        text: 'The best monetization model is the one that matches your real usage. Convert prices to yearly cost, inspect hybrid locks, and verify the final terms in the App Store. Storewise price and IAP tools help you see signals, but your usage pattern decides the value.',
+        textZh: '最好的变现模型是匹配真实使用的那一个。把价格换算成年成本，检查混合锁定，并在 App Store 核验最终条款。Storewise 价格与内购工具帮你看信号，但价值由你的使用模式决定。',
       },
     ],
   },
@@ -1282,8 +1282,8 @@ export const articles = [
       {
         heading: 'Publisher takeaway',
         headingZh: '发布者总结',
-        text: 'Treat VPN apps, profiles, and certificates as separate risk classes. Prefer App Store apps with clear policies, reject surprise profile installs, and never install certificates you cannot explain. Wolffy risk and knowledge pages help you frame the decision, but device Settings is where you remove dangerous trust.',
-        textZh: '把 VPN 应用、描述文件和证书当成不同风险等级。优先选择政策清楚的 App Store 应用，拒绝突然出现的描述文件安装，绝不安装自己解释不清的证书。Wolffy 风险与知识页帮助框定决策，但危险信任要在设备设置里清除。',
+        text: 'Treat VPN apps, profiles, and certificates as separate risk classes. Prefer App Store apps with clear policies, reject surprise profile installs, and never install certificates you cannot explain. Storewise risk and knowledge pages help you frame the decision, but device Settings is where you remove dangerous trust.',
+        textZh: '把 VPN 应用、描述文件和证书当成不同风险等级。优先选择政策清楚的 App Store 应用，拒绝突然出现的描述文件安装，绝不安装自己解释不清的证书。Storewise 风险与知识页帮助框定决策，但危险信任要在设备设置里清除。',
       },
     ],
   },

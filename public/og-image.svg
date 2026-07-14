@@ -35,11 +35,11 @@
   
   <!-- Logo -->
   <rect x="80" y="180" width="70" height="70" rx="18" fill="url(#accent)"/>
-  <text x="115" y="228" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="36" font-weight="800" fill="white" text-anchor="middle">W</text>
+  <text x="115" y="228" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="36" font-weight="800" fill="white" text-anchor="middle">S</text>
   
   <!-- Title -->
-  <text x="170" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="56" font-weight="800" fill="white">Wolffy</text>
-  <text x="170" y="255" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="22" fill="#9aa6bb">Apple / iOS Toolkit</text>
+  <text x="170" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="56" font-weight="800" fill="white">Storewise</text>
+  <text x="170" y="255" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="22" fill="#9aa6bb">App Store research tools</text>
   
   <!-- Feature tags -->
   <g transform="translate(80, 310)">
