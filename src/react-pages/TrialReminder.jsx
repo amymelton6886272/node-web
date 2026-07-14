@@ -224,34 +224,55 @@ export default function TrialReminder() {
       </div>
 
       <section className="card trialNativeForm">
-        <div className="addressFields">
-          <label className="addressField trialNativeField">
+        <div className="swFormGrid trialFormGrid">
+          <label className="swField swFieldGrow">
             <span>{t.appName}</span>
-            <input value={appName} onChange={(e) => setAppName(e.target.value)} placeholder={t.appPh} />
+            <div className="searchbar swControl">
+              <input value={appName} onChange={(e) => setAppName(e.target.value)} placeholder={t.appPh} />
+            </div>
           </label>
-          <label className="addressField trialNativeField">
+          <label className="swField">
             <span>{t.startDate}</span>
-            <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
+            <div className="searchbar swControl">
+              <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
+            </div>
           </label>
-          <label className="addressField trialNativeField">
+          <label className="swField">
             <span>{t.days}</span>
-            <input inputMode="numeric" value={days} onChange={(e) => setDays(e.target.value)} placeholder="7" />
+            <div className="searchbar swControl">
+              <input inputMode="numeric" value={days} onChange={(e) => setDays(e.target.value)} placeholder="7" />
+            </div>
           </label>
-          <label className="addressField trialNativeField">
+          <label className="swField">
             <span>{t.renewPrice}</span>
-            <input inputMode="decimal" value={renewPrice} onChange={(e) => setRenewPrice(e.target.value)} placeholder="9.99" />
+            <div className="searchbar swControl">
+              <input inputMode="decimal" value={renewPrice} onChange={(e) => setRenewPrice(e.target.value)} placeholder="9.99" />
+            </div>
           </label>
-          <label className="addressField trialNativeField">
+          <div className="swField swFieldCycle">
             <span>{t.cycle}</span>
-            <select value={cycle} onChange={(e) => setCycle(e.target.value)}>
-              <option value="week">{t.week}</option>
-              <option value="month">{t.month}</option>
-              <option value="year">{t.year}</option>
-            </select>
-          </label>
-          <label className="addressField trialNativeField">
+            <div className="tabs swCycleTabs" role="group" aria-label={t.cycle}>
+              {[
+                ['week', t.week],
+                ['month', t.month],
+                ['year', t.year],
+              ].map(([value, label]) => (
+                <button
+                  key={value}
+                  type="button"
+                  className={cycle === value ? 'on' : ''}
+                  onClick={() => setCycle(value)}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+          <label className="swField swFieldGrow">
             <span>{t.notes}</span>
-            <input value={notes} onChange={(e) => setNotes(e.target.value)} placeholder={t.notesPh} />
+            <div className="searchbar swControl">
+              <input value={notes} onChange={(e) => setNotes(e.target.value)} placeholder={t.notesPh} />
+            </div>
           </label>
         </div>
       </section>

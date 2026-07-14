@@ -226,39 +226,56 @@ export default function SubCostCalculator() {
               const yr = toYearly(row.price, row.cycle);
               return (
                 <article className={`subcostNativeCard card ${row.active ? '' : 'is-paused'}`} key={row.id}>
-                  <div className="subcostNativeGrid">
-                    <label>
+                  <div className="swFormGrid">
+                    <label className="swField swFieldGrow">
                       <span>{t.name}</span>
-                      <input
-                        value={row.name}
-                        onChange={(e) => update(row.id, 'name', e.target.value)}
-                        placeholder={t.namePh}
-                      />
+                      <div className="searchbar swControl">
+                        <input
+                          value={row.name}
+                          onChange={(e) => update(row.id, 'name', e.target.value)}
+                          placeholder={t.namePh}
+                        />
+                      </div>
                     </label>
-                    <label>
+                    <label className="swField">
                       <span>{t.price}</span>
-                      <input
-                        inputMode="decimal"
-                        value={row.price}
-                        onChange={(e) => update(row.id, 'price', e.target.value)}
-                        placeholder="9.99"
-                      />
+                      <div className="searchbar swControl">
+                        <input
+                          inputMode="decimal"
+                          value={row.price}
+                          onChange={(e) => update(row.id, 'price', e.target.value)}
+                          placeholder="9.99"
+                        />
+                      </div>
                     </label>
-                    <label>
+                    <div className="swField swFieldCycle">
                       <span>{t.cycle}</span>
-                      <select value={row.cycle} onChange={(e) => update(row.id, 'cycle', e.target.value)}>
-                        <option value="week">{t.week}</option>
-                        <option value="month">{t.month}</option>
-                        <option value="year">{t.year}</option>
-                      </select>
-                    </label>
-                    <label>
+                      <div className="tabs swCycleTabs" role="group" aria-label={t.cycle}>
+                        {[
+                          ['week', t.week],
+                          ['month', t.month],
+                          ['year', t.year],
+                        ].map(([value, label]) => (
+                          <button
+                            key={value}
+                            type="button"
+                            className={row.cycle === value ? 'on' : ''}
+                            onClick={() => update(row.id, 'cycle', value)}
+                          >
+                            {label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                    <label className="swField swFieldGrow">
                       <span>{t.note}</span>
-                      <input
-                        value={row.note || ''}
-                        onChange={(e) => update(row.id, 'note', e.target.value)}
-                        placeholder={t.notePh}
-                      />
+                      <div className="searchbar swControl">
+                        <input
+                          value={row.note || ''}
+                          onChange={(e) => update(row.id, 'note', e.target.value)}
+                          placeholder={t.notePh}
+                        />
+                      </div>
                     </label>
                   </div>
 
