@@ -1,7 +1,5 @@
 import { useMemo, useState } from 'react';
 import { Hero } from '../components/common.jsx';
-import { ContentSection } from '../components/ContentSection.jsx';
-import { toolContent } from '../data/toolContent.js';
 import { useLang } from '../LanguageContext.jsx';
 
 const emptyRow = () => ({
@@ -102,7 +100,6 @@ const sampleRows = [
 export default function SubCostCalculator() {
   const { lang } = useLang();
   const t = copy[lang] || copy.en;
-  const content = toolContent[lang]?.subcost || toolContent.en.subcost;
   const [rows, setRows] = useState(() => {
     try {
       const raw = localStorage.getItem('wolffy_subcost');
@@ -255,7 +252,6 @@ export default function SubCostCalculator() {
       </section>
 
       {toast && <div className="toast">{toast}</div>}
-      {content && <ContentSection {...content} />}
     </>
   );
 }

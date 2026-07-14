@@ -1,7 +1,5 @@
 import { useMemo, useState } from 'react';
 import { Hero } from '../components/common.jsx';
-import { ContentSection } from '../components/ContentSection.jsx';
-import { toolContent } from '../data/toolContent.js';
 import { useLang } from '../LanguageContext.jsx';
 
 const copy = {
@@ -99,7 +97,6 @@ function yearlyFrom(price, cycle) {
 export default function TrialReminder() {
   const { lang } = useLang();
   const t = copy[lang] || copy.en;
-  const content = toolContent[lang]?.trial || toolContent.en.trial;
   const today = new Date();
   const todayStr = fmt(today);
   const [appName, setAppName] = useState('');
@@ -301,7 +298,6 @@ export default function TrialReminder() {
         </div>
       </section>
       {toast && <div className="toast">{toast}</div>}
-      {content && <ContentSection {...content} />}
     </>
   );
 }

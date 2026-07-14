@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import { Hero, Empty, ToolIntro, FeaturedApps } from '../components/common.jsx';
-import { ContentSection } from '../components/ContentSection.jsx';
-import { toolContent } from '../data/toolContent.js';
+import { Hero, Empty, FeaturedApps } from '../components/common.jsx';
 import { useLang } from '../LanguageContext.jsx';
 
 export default function IconSearch(){
@@ -9,7 +7,7 @@ export default function IconSearch(){
  const [country,setCountry]=useState('us');
  const [state,setState]=useState({loading:false,data:[],error:null,searched:false});
  const [copied,setCopied]=useState('');
- const {t,lang}=useLang(); const content=toolContent[lang]?.icon||toolContent.en.icon;
+ const {t,lang}=useLang();
  const search = async (keyword) => {
    const term = typeof keyword === 'string' ? keyword.trim() : q.trim();
    if (!term) return;
@@ -46,6 +44,4 @@ export default function IconSearch(){
   </div>})}</div>
   {!state.loading&&state.searched&&state.data.length===0&&!state.error&&<Empty text={t.icon.noMatch}/>}
   {!state.searched&&<FeaturedApps onSelect={search}/>}
-  <ToolIntro page="icon"/>
-  <ContentSection {...content}/>
  </>}

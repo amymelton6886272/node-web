@@ -30,30 +30,33 @@ if (tool === 'iap') {
   return Astro.redirect('/price');
 }
 
-// Content tools that already render substantial bilingual text in React still
-// benefit from a static intro so crawlers see publisher content without JS.
+// Content-first pages already put substantial body text inside the React UI.
+// Utility tools: short intro above, interactive tool, long guide below.
 const contentFirstTools = new Set(['guides', 'glossary', 'checklists', 'risk', 'knowledge']);
+const isContentFirst = contentFirstTools.has(tool);
 ---
 <BaseLayout title={meta.title} description={meta.description} path={path}>
-  {/* Static publisher content first — visible to AdSense crawlers without JS */}
-  {!contentFirstTools.has(tool) && <ToolStaticContent tool={tool} />}
+  {!isContentFirst && <ToolStaticContent tool={tool} variant="intro" />}
 
-  {tool === 'price' && <PriceIsland client:load />}
-  {tool === 'appfree' && <AppFreeIsland client:load />}
-  {tool === 'ip' && <IpIsland client:load />}
-  {tool === 'icon' && <IconIsland client:load />}
-  {tool === 'address' && <AddressIsland client:load />}
-  {tool === 'guides' && <GuidesIsland client:load />}
-  {tool === 'glossary' && <GlossaryIsland client:load />}
-  {tool === 'checklists' && <ChecklistsIsland client:load />}
-  {tool === 'risk' && <RiskIsland client:load />}
-  {tool === 'knowledge' && <KnowledgeIsland client:load />}
-  {tool === 'subcost' && <SubCostIsland client:load />}
-  {tool === 'trial' && <TrialReminderIsland client:load />}
+  <div id="tool-workspace" class="toolWorkspace">
+    {tool === 'price' && <PriceIsland client:load />}
+    {tool === 'appfree' && <AppFreeIsland client:load />}
+    {tool === 'ip' && <IpIsland client:load />}
+    {tool === 'icon' && <IconIsland client:load />}
+    {tool === 'address' && <AddressIsland client:load />}
+    {tool === 'guides' && <GuidesIsland client:load />}
+    {tool === 'glossary' && <GlossaryIsland client:load />}
+    {tool === 'checklists' && <ChecklistsIsland client:load />}
+    {tool === 'risk' && <RiskIsland client:load />}
+    {tool === 'knowledge' && <KnowledgeIsland client:load />}
+    {tool === 'subcost' && <SubCostIsland client:load />}
+    {tool === 'trial' && <TrialReminderIsland client:load />}
+  </div>
 
-  {/* For content-first tools, still add a short static footer note for crawlers */}
-  {contentFirstTools.has(tool) && (
-    <section class="card" style="margin-top:1rem;">
+  {!isContentFirst && <ToolStaticContent tool={tool} variant="full" />}
+
+  {isContentFirst && (
+    <section class="card toolReviewNotes" style="margin-top:1rem;" aria-label="Publisher note">
       <div class="lang-en">
         <h2>Publisher note</h2>
         <p>

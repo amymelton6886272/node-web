@@ -1,8 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Gift } from 'lucide-react';
-import { Hero, Empty, ToolIntro } from '../components/common.jsx';
-import { ContentSection } from '../components/ContentSection.jsx';
-import { toolContent } from '../data/toolContent.js';
+import { Hero, Empty } from '../components/common.jsx';
 import { useLang } from '../LanguageContext.jsx';
 
 const WARM_DAY_API = 'https://kdbi2plm.lc-cn-n1-shared.com/1.1/classes/free_newpro?order=-datekey&limit=1&keys=datekey,uuid,appinfo,iapCount,game';
@@ -107,7 +105,6 @@ export default function AppFree(){
  const tabs=['All',...Object.keys(groups).filter(k=>groups[k].length)];
  const list=tab==='All'?Object.values(groups).flat():groups[tab]||[];
  const dateLabel=data?.last_updated||data?.datekey&&String(data.datekey).replace(/(\d{4})(\d{2})(\d{2})/,'$1.$2.$3')||t.appfree.dailyDate;
- const content=toolContent[lang]?.appfree||toolContent.en.appfree;
  return <>
  <Hero title={t.appfree.title} sub={t.appfree.sub}/>
  {loading&&<p>{t.appfree.fetching}</p>}
@@ -121,7 +118,5 @@ export default function AppFree(){
     <div className="appbody"><h3>{app.name}</h3><p>{app.desc||app.seller||'App Store free'}</p><small>{[app.type,app.tags,app.seller].filter(Boolean).join(' · ')}</small></div>
   </a>)}</div>
   {!loading&&!error&&list.length===0&&<Empty text={t.appfree.noFree}/>}
-  <ToolIntro page="appfree"/>
-  <ContentSection {...content}/>
  </>
 }

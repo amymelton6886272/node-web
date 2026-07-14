@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Download, Trash2 } from 'lucide-react';
-import { Hero, Empty, ToolIntro } from '../components/common.jsx';
-import { ContentSection } from '../components/ContentSection.jsx';
-import { toolContent } from '../data/toolContent.js';
+import { Hero, Empty } from '../components/common.jsx';
 import { useLang } from '../LanguageContext.jsx';
 import { addressCountries } from '../data/addressData.js';
 import { makeAddress } from '../utils/address.js';
@@ -16,7 +14,6 @@ export default function AddressGenerator(){
  const [note,setNote]=useState('');
  const countryInfo=addressCountries.find(x=>x.code===country)||addressCountries[0];
  const labels=t.address;
- const content=toolContent[lang]?.address||toolContent.en.address;
  const copy=async(text,label)=>{await navigator.clipboard.writeText(text); setCopied(label); setTimeout(()=>setCopied(''),1300)};
  const generate=(next=country)=>{setCountry(next); setItem(makeAddress(next)); setNote('')};
  const persist=(list)=>{setSaved(list); localStorage.setItem('wolffy_addresses',JSON.stringify(list))};
@@ -51,7 +48,5 @@ export default function AddressGenerator(){
     <div className="savedHead"><div><h3>{labels.savedTitle}</h3><p>{saved.length} {labels.records}</p></div><div className="savedActions"><button onClick={()=>exportFile('csv')}><Download size={15}/> CSV</button><button onClick={()=>exportFile('json')}><Download size={15}/> JSON</button><button className="danger" onClick={clear}><Trash2 size={15}/> {labels.clear}</button></div></div>
     {saved.length===0?<Empty text={labels.empty}/>:<div className="savedGrid">{saved.map(x=><div className="savedCard" key={x.id}><div><b>{x.name}</b><span>{lang==='zh'?(x.countryZh||x.countryName||x.country):(x.countryName||x.country)} · {x.time}</span></div>{x.note&&<p>{x.note}</p>}<button className="savedAddress" onClick={()=>copy(x.address,labels.address)}>{x.address}</button><div className="savedMini"><button onClick={()=>copy(x.phoneClean||x.phone,labels.phone)}>{x.phoneClean||x.phone}</button><button onClick={()=>remove(x.id)}>{labels.delete}</button></div></div>)}</div>}
   </section>
-  <ToolIntro page="address"/>
-  <ContentSection {...content}/>
  </>;
 }
