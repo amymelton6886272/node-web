@@ -8,13 +8,13 @@ export const prerender = true;
 
 const highlights = [
   { title: 'Compare before you pay', titleZh: '付款前先比较', text: 'Check App Store prices across regions, understand currency differences, and avoid assuming the lowest converted price is always the best purchasing choice.', textZh: '查看不同地区的 App Store 价格，理解汇率差异，不要把最低换算价格直接当成最优购买选择。' },
-  { title: 'Review monetization signals', titleZh: '查看变现信号', text: 'Look up in-app purchase markers, learn how subscriptions work, and use the risk assessor before starting trials or authorizing recurring billing.', textZh: '查询内购标记，理解订阅和试用规则，在开始试用或授权自动续费前先评估风险。' },
+  { title: 'Review monetization signals', titleZh: '查看变现信号', text: 'Look up in-app purchase markers, estimate subscription cost, and use the risk assessor before starting trials or authorizing recurring billing.', textZh: '查询内购标记，估算订阅成本，在开始试用或授权自动续费前先评估风险。' },
   { title: 'Read practical safety content', titleZh: '阅读实用安全内容', text: 'Use articles, knowledge pages, checklists, privacy explanations, and family-device guidance when a simple API result is not enough.', textZh: '当单个接口结果不足以判断时，可以结合文章、知识库、清单、隐私说明和家庭设备指南一起参考。' },
   { title: 'Stay privacy aware', titleZh: '保持隐私意识', text: 'Most interactions happen in your browser. Pages explain when third-party APIs may receive your request.', textZh: '大多数交互在浏览器中完成。页面会说明哪些情况下第三方 API 可能收到你的请求。' },
 ];
 
 const workflow = [
-  { step: '1', title: 'Identify the app or task', titleZh: '明确应用或任务', text: 'Start with a price search, IAP lookup, icon lookup, IP check, or article depending on what you need to decide.', textZh: '根据你的决策目标，从价格查询、内购查询、图标查询、IP 检测或文章阅读开始。' },
+  { step: '1', title: 'Identify the app or task', titleZh: '明确应用或任务', text: 'Start with a price search, IAP lookup, subscription estimate, trial reminder, or article depending on what you need to decide.', textZh: '根据你的决策目标，从价格查询、内购查询、订阅估算、试用提醒或文章阅读开始。' },
   { step: '2', title: 'Read the context', titleZh: '阅读上下文', text: 'Each page includes explanations, limitations, data-source notes, and common mistakes so results are not interpreted in isolation.', textZh: '每个页面都包含说明、限制、数据来源和常见误区，避免把单个结果孤立解读。' },
   { step: '3', title: 'Use checklists before acting', titleZh: '行动前查看清单', text: 'Before paying, subscribing, switching regions, or installing high-permission apps, review the matching checklist or risk assessment.', textZh: '在付款、订阅、切换地区或安装高权限应用前，先查看对应清单或风险评估。' },
   { step: '4', title: 'Verify at the source', titleZh: '回到官方来源确认', text: 'For purchases, subscriptions, refunds, and availability, always confirm the final state in the App Store or Apple account settings.', textZh: '涉及购买、订阅、退款和可用性时，最终状态应以 App Store 或 Apple 账户设置为准。' },
@@ -76,39 +76,71 @@ const latestArticles = [...articles]
   .sort((a, b) => String(b.updatedAt || b.publishedAt).localeCompare(String(a.updatedAt || a.publishedAt)))
   .slice(0, 6);
 
-const quickLinks = [
-  { href: '/price', label: 'Price compare', labelZh: '价格对比' },
-  { href: '/subcost', label: 'Sub cost calculator', labelZh: '订阅成本' },
-  { href: '/trial', label: 'Trial reminder', labelZh: '试用提醒' },
-  { href: '/appfree', label: 'Free apps', labelZh: '限免应用' },
-  { href: '/iap', label: 'IAP lookup', labelZh: '内购查询' },
-  { href: '/risk', label: 'Risk assessor', labelZh: '风险评估' },
-  { href: '/checklists', label: 'Checklists', labelZh: '决策清单' },
-  { href: '/articles', label: 'All articles', labelZh: '全部文章' },
+const featuredTools = [
+  { href: '/price', icon: '$', label: 'Price compare', labelZh: '价格对比', desc: 'Regional App Store prices', descZh: '多地区价格对照' },
+  { href: '/subcost', icon: '¥', label: 'Sub cost', labelZh: '订阅成本', desc: 'Monthly / yearly estimate', descZh: '月成本与年成本估算' },
+  { href: '/trial', icon: 'D', label: 'Trial reminder', labelZh: '试用提醒', desc: 'Cancel deadline builder', descZh: '生成取消提醒与日历文案' },
+  { href: '/risk', icon: '!', label: 'Risk assessor', labelZh: '风险评估', desc: 'Permission risk review', descZh: '权限与风险点自查' },
+  { href: '/checklists', icon: 'C', label: 'Checklists', labelZh: '决策清单', desc: 'Before-you-act lists', descZh: '行动前检查清单' },
+  { href: '/appfree', icon: 'F', label: 'Free apps', labelZh: '限免应用', desc: 'Limited-time deals', descZh: '限时免费与优惠线索' },
+];
+
+const trustLinks = [
   { href: '/data-sources', label: 'Data sources', labelZh: '数据来源' },
   { href: '/privacy', label: 'Privacy', labelZh: '隐私政策' },
+  { href: '/editorial', label: 'Editorial', labelZh: '编辑原则' },
+  { href: '/disclaimer', label: 'Disclaimer', labelZh: '免责声明' },
+  { href: '/articles', label: 'All articles', labelZh: '全部文章' },
+  { href: '/about', label: 'About', labelZh: '关于' },
 ];
 ---
 <BaseLayout title="Storewise - check App Store prices, trials, and risks before you pay" description="Storewise is an independent App Store research site. Compare regional prices, estimate subscription cost, build free-trial reminders, review permission risks, and read practical safety guides before you buy." path="/">
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
+
   <div class="lang-en">
-    <Hero title="Decide smarter before you pay on the App Store" sub="Storewise helps you compare regional prices, estimate subscription cost, catch free-trial traps, and review permission risks — with practical guides, not empty search boxes." />
+    <Hero title="Decide smarter before you pay on the App Store" sub="Compare regional prices, estimate subscription cost, catch free-trial traps, and review permission risks — with practical guides next to every tool." eyebrow="App Store research" />
   </div>
   <div class="lang-zh">
-    <Hero title="在 App Store 付款前，先把关键信息看清楚" sub="Storewise 帮你比较地区价格、估算订阅成本、识别试用陷阱并评估权限风险——提供实用指南，而不是空壳搜索框。" />
+    <Hero title="在 App Store 付款前，先把关键信息看清楚" sub="比较地区价格、估算订阅成本、识别试用陷阱并评估权限风险——工具旁边就有可核对的实用指南。" eyebrow="App Store 研究" />
   </div>
 
+  <section class="homeFeatured card">
+    <div class="homeSectionHead">
+      <div>
+        <h2 class="lang-en">Start with a tool</h2>
+        <h2 class="lang-zh">先从工具开始</h2>
+        <p class="lang-en">Interactive research first. Short explanations stay nearby so you can verify results before you act.</p>
+        <p class="lang-zh">先做可交互研究，短说明就在旁边，方便行动前核对结果。</p>
+      </div>
+    </div>
+    <div class="homeToolGrid">
+      {featuredTools.map((tool) => (
+        <a class="homeToolCard" href={tool.href}>
+          <span class="homeToolIcon" aria-hidden="true">{tool.icon}</span>
+          <span class="homeToolText">
+            <b><span class="lang-en">{tool.label}</span><span class="lang-zh">{tool.labelZh}</span></b>
+            <small><span class="lang-en">{tool.desc}</span><span class="lang-zh">{tool.descZh}</span></small>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
   <section class="homeIntro card">
-    <h2 class="lang-en">Research tools first, empty pages never</h2>
-    <h2 class="lang-zh">先给研究工具，不给空页面</h2>
-    <p class="lang-en">Storewise is built for purchase decisions: price comparison, subscription cost, trial reminders, risk checks, and bilingual safety guides. Every tool page starts with a short overview, puts the interactive tool near the top, and keeps a full guide below for verification.</p>
-    <p class="lang-zh">Storewise 面向购买决策：价格对比、订阅成本、试用提醒、风险检查和双语安全指南。每个工具页先给短说明，把交互工具放在上方，下方保留完整指南方便核对。</p>
-    <div class="contentLinks" style="border-top:0;margin-top:14px;padding-top:0;">
-      <span class="lang-en">Quick links</span>
-      <span class="lang-zh">快速入口</span>
-      {quickLinks.map((link) => (
+    <div class="homeSectionHead">
+      <div>
+        <h2 class="lang-en">Research tools first, empty pages never</h2>
+        <h2 class="lang-zh">先给研究工具，不给空页面</h2>
+        <p class="lang-en">Storewise is built for purchase decisions: price comparison, subscription cost, trial reminders, risk checks, and bilingual safety guides. Every utility page starts with a short overview, puts the interactive tool near the top, and keeps a full guide below for verification.</p>
+        <p class="lang-zh">Storewise 面向购买决策：价格对比、订阅成本、试用提醒、风险检查和双语安全指南。每个工具页先给短说明，把交互工具放在上方，下方保留完整指南方便核对。</p>
+      </div>
+    </div>
+    <div class="homeTrustLinks">
+      <span class="lang-en">Trust & reading</span>
+      <span class="lang-zh">信任与阅读</span>
+      {trustLinks.map((link) => (
         <a href={link.href}>
           <span class="lang-en">{link.label}</span>
           <span class="lang-zh">{link.labelZh}</span>
@@ -118,35 +150,66 @@ const quickLinks = [
   </section>
 
   <section class="richSection card">
-    <h2 class="lang-en">What you can do here</h2>
-    <h2 class="lang-zh">你可以在这里做什么</h2>
+    <div class="homeSectionHead">
+      <div>
+        <h2 class="lang-en">What you can do here</h2>
+        <h2 class="lang-zh">你可以在这里做什么</h2>
+      </div>
+    </div>
     <div class="richGrid">
-      {highlights.map((item) => <article class="richBlock"><h3 class="lang-en">{item.title}</h3><h3 class="lang-zh">{item.titleZh}</h3><p class="lang-en">{item.text}</p><p class="lang-zh">{item.textZh}</p></article>)}
+      {highlights.map((item) => (
+        <article class="richBlock">
+          <h3 class="lang-en">{item.title}</h3>
+          <h3 class="lang-zh">{item.titleZh}</h3>
+          <p class="lang-en">{item.text}</p>
+          <p class="lang-zh">{item.textZh}</p>
+        </article>
+      ))}
     </div>
   </section>
 
   <section class="richSection card">
-    <h2 class="lang-en">Recommended workflow</h2>
-    <h2 class="lang-zh">推荐使用流程</h2>
+    <div class="homeSectionHead">
+      <div>
+        <h2 class="lang-en">Recommended workflow</h2>
+        <h2 class="lang-zh">推荐使用流程</h2>
+      </div>
+    </div>
     <div class="workflowList">
-      {workflow.map((item) => <article class="workflowItem"><span>{item.step}</span><div><h3 class="lang-en">{item.title}</h3><h3 class="lang-zh">{item.titleZh}</h3><p class="lang-en">{item.text}</p><p class="lang-zh">{item.textZh}</p></div></article>)}
+      {workflow.map((item) => (
+        <article class="workflowItem">
+          <span>{item.step}</span>
+          <div>
+            <h3 class="lang-en">{item.title}</h3>
+            <h3 class="lang-zh">{item.titleZh}</h3>
+            <p class="lang-en">{item.text}</p>
+            <p class="lang-zh">{item.textZh}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
   <section class="richSection card">
-    <h2 class="lang-en">Latest articles</h2>
-    <h2 class="lang-zh">最新文章</h2>
-    <p class="lang-en contentLead">Practical guides on refunds, free trials, Family Sharing, permissions, region research, and subscription hygiene. These pages are written as original publisher content, not empty tool wrappers.</p>
-    <p class="lang-zh contentLead">覆盖退款、免费试用、家庭共享、权限、地区研究和订阅维护的实用指南。这些页面是原创发布商内容，而不是空壳工具包装。</p>
+    <div class="homeSectionHead">
+      <div>
+        <h2 class="lang-en">Latest articles</h2>
+        <h2 class="lang-zh">最新文章</h2>
+        <p class="lang-en contentLead">Practical guides on refunds, free trials, Family Sharing, permissions, region research, and subscription hygiene. These pages are written as original publisher content, not empty tool wrappers.</p>
+        <p class="lang-zh contentLead">覆盖退款、免费试用、家庭共享、权限、地区研究和订阅维护的实用指南。这些页面是原创发布商内容，而不是空壳工具包装。</p>
+      </div>
+    </div>
     <div class="richGrid">
       {latestArticles.map((article) => (
-        <a class="richBlock" href={getArticlePath(article)}>
+        <a class="richBlock homeArticleCard" href={getArticlePath(article)}>
           <h3 class="lang-en">{article.title}</h3>
           <h3 class="lang-zh">{article.titleZh}</h3>
           <p class="lang-en">{article.description}</p>
           <p class="lang-zh">{article.descriptionZh}</p>
-          <p class="lang-en" style="margin-top:10px;font-size:12px;color:var(--muted);">{article.readTime} · Updated {article.updatedAt}</p>
-          <p class="lang-zh" style="margin-top:10px;font-size:12px;color:var(--muted);">{article.readTime} · 更新于 {article.updatedAt}</p>
+          <div class="homeArticleMeta">
+            <span class="lang-en">{article.readTime} · Updated {article.updatedAt}</span>
+            <span class="lang-zh">{article.readTime} · 更新于 {article.updatedAt}</span>
+          </div>
         </a>
       ))}
     </div>
@@ -162,8 +225,12 @@ const quickLinks = [
   </section>
 
   <section class="homeFaq card">
-    <h2 class="lang-en">Frequently asked questions</h2>
-    <h2 class="lang-zh">常见问题</h2>
+    <div class="homeSectionHead">
+      <div>
+        <h2 class="lang-en">Frequently asked questions</h2>
+        <h2 class="lang-zh">常见问题</h2>
+      </div>
+    </div>
     {faqs.map((item) => (
       <details>
         <summary>
@@ -177,8 +244,12 @@ const quickLinks = [
   </section>
 
   <section class="homeWhy card">
-    <h2 class="lang-en">Why Storewise exists</h2>
-    <h2 class="lang-zh">为什么需要 Storewise</h2>
+    <div class="homeSectionHead">
+      <div>
+        <h2 class="lang-en">Why Storewise exists</h2>
+        <h2 class="lang-zh">为什么需要 Storewise</h2>
+      </div>
+    </div>
     <p class="lang-en">App Store decisions are easy to rush and hard to reverse. Regional prices differ, free trials renew quietly, subscriptions stack up, and permission prompts are easy to accept without context.</p>
     <p class="lang-en">Storewise keeps the workflow small and transparent: no account wall, no forced newsletter, no dark patterns. Tools stay near the top of the page; guides and source notes stay close enough to verify results before you act.</p>
     <p class="lang-en">Typical path: compare price → estimate subscription cost or set a trial reminder → open the matching checklist → confirm the final amount and renewal terms in the App Store.</p>

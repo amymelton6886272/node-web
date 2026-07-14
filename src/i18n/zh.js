@@ -48,7 +48,7 @@ const zh = {
     }
   },
   "home": {
-    "eyebrow": "Apple / iOS 工具箱",
+    "eyebrow": "App Store 研究",
     "title": "Storewise",
     "sub": "轻量级 Apple 工具箱：限免应用、价格对比、内购状态、图标查询和代理配置导航。",
     "introTitle": "想查什么？",

@@ -1,10 +1,14 @@
 ---
-const { title, sub, eyebrow = 'Apple / iOS Toolkit' } = Astro.props;
+const {
+  title,
+  sub,
+  eyebrow = 'Storewise',
+} = Astro.props;
 ---
 <section class="hero">
-  <div>
+  <div class="heroInner">
     <p class="eyebrow">{eyebrow}</p>
     <h1>{title}</h1>
-    <p>{sub}</p>
+    {sub && <p class="heroSub">{sub}</p>}
   </div>
 </section>

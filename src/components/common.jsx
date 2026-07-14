@@ -3,7 +3,7 @@ import { ShieldAlert, Search } from 'lucide-react';
 import { useLang } from '../LanguageContext.jsx';
 import { AdBanner } from './AdBanner.jsx';
 
-export function Hero({title,sub}){const {t}=useLang(); return <section className="hero"><div><p className="eyebrow">{t.home.eyebrow}</p><h1>{title}</h1><p>{sub}</p></div></section>}
+export function Hero({title,sub,eyebrow}){const {t}=useLang(); return <section className="hero"><div className="heroInner"><p className="eyebrow">{eyebrow || t.home.eyebrow}</p><h1>{title}</h1>{sub ? <p className="heroSub">{sub}</p> : null}</div></section>}
 export function Notice(){const {t}=useLang(); return <div className="notice"><ShieldAlert size={18}/><span>{t.notice.security}</span></div>}
 export function Empty({text}){const {lang}=useLang();return <div className="empty"><strong>{text}</strong><p>{lang==='zh'?'当前没有可展示的结果。你仍然可以阅读本页的使用说明、限制说明和相关指南，或更换关键词后再次查询。':'No results are available right now. You can still read this page’s explanation, limitations, and related guides, or try another keyword.'}</p></div>}
 

@@ -35,7 +35,7 @@ const en = {
     "dark": "Dark"
   },
   "home": {
-    "eyebrow": "Apple / iOS Toolkit",
+    "eyebrow": "App Store research",
     "title": "Storewise",
     "sub": "A lightweight Apple toolkit: free apps, price comparison, IAP status, icon lookup, and proxy config navigation.",
     "introTitle": "What do you want to look up?",

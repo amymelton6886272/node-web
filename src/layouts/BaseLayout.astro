@@ -70,7 +70,11 @@ const websiteSchema = {
     <header class="top">
       <a class="brand" href="/">
         <span class="logo" aria-label="Storewise logo">S</span>
-        <b>Storewise</b>
+        <span class="brandText">
+          <b>Storewise</b>
+          <small class="lang-en">Check before you pay</small>
+          <small class="lang-zh">付款前先核对</small>
+        </span>
       </a>
       <nav class="toplinks" aria-label="Main navigation">
         {navItems.map((item) => (
@@ -135,6 +139,11 @@ const websiteSchema = {
         <span class="lang-en">Home</span>
         <span class="lang-zh">首页</span>
       </a>
+      <a class={isActive(path, '/price') ? 'active' : ''} href="/price">
+        <span class="dockIcon">$</span>
+        <span class="lang-en">Tools</span>
+        <span class="lang-zh">工具</span>
+      </a>
       <button type="button" data-jump-tool>
         <span class="dockIcon">U</span>
         <span class="lang-en">Use</span>
@@ -151,12 +160,26 @@ const websiteSchema = {
         <span class="lang-zh">顶部</span>
       </button>
     </nav>
-    <footer>
-      <span class="lang-en">Independent App Store research tools. No account required. Always verify final prices on Apple.</span>
-      <span class="lang-zh">独立 App Store 研究工具。无需注册。最终价格请以 Apple 官方页面为准。</span>
-      <span>
-        Storewise © 2026 · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/disclaimer">Disclaimer</a> · <a href="/terms">Terms</a> · <a href="/editorial">Editorial</a> · <a href="/data-sources">Data Sources</a>
-      </span>
+    <footer class="siteFooter">
+      <div class="footerMain">
+        <div class="footerBrand">
+          <span class="logo" aria-hidden="true">S</span>
+          <div>
+            <strong>Storewise</strong>
+            <p class="lang-en">Independent App Store research tools. No account required. Always verify final prices on Apple.</p>
+            <p class="lang-zh">独立 App Store 研究工具。无需注册。最终价格请以 Apple 官方页面为准。</p>
+          </div>
+        </div>
+        <div class="footerLinks">
+          <a href="/contact"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></a>
+          <a href="/privacy"><span class="lang-en">Privacy</span><span class="lang-zh">隐私</span></a>
+          <a href="/disclaimer"><span class="lang-en">Disclaimer</span><span class="lang-zh">免责声明</span></a>
+          <a href="/terms"><span class="lang-en">Terms</span><span class="lang-zh">条款</span></a>
+          <a href="/editorial"><span class="lang-en">Editorial</span><span class="lang-zh">编辑原则</span></a>
+          <a href="/data-sources"><span class="lang-en">Data Sources</span><span class="lang-zh">数据来源</span></a>
+        </div>
+      </div>
+      <div class="footerMeta">Storewise © 2026</div>
     </footer>
     <script is:inline>
       const button = document.querySelector('[data-theme-toggle]');
@@ -177,7 +200,7 @@ const websiteSchema = {
         location.reload();
       });
       jumpButton?.addEventListener('click', () => {
-        const target = document.querySelector('.searchbar, .addressLayout, .ipPanel, .riskPanel, .checkToolbar, .knowledgeToolbar, .toolbar, .guideToolbar, .glossarySearch, main .card, main');
+        const target = document.querySelector('#tool-workspace, .swTool, .searchbar, .addressLayout, .ipPanel, .riskPanel, .checkToolbar, .knowledgeToolbar, .toolbar, .guideToolbar, .glossarySearch, main .card, main');
         target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
       topButton?.addEventListener('click', () => {
