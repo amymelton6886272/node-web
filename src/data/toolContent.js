@@ -96,6 +96,25 @@ export const toolContent = {
         { href: '/articles/manage-apple-subscriptions-after-trial', label: 'After free trial' },
       ],
       linksLabel: 'Related reading'
+    },
+    trial: {
+      title: 'How to build a free-trial cancel reminder',
+      intro: 'Most trial traps happen because the end date is not written down. This page turns a start date and trial length into a cancel deadline, reminder day, calendar text, and a short action checklist.',
+      items: [
+        { heading: 'Cancel before the last day when possible', text: 'Many plans need cancellation at least 24 hours before renewal. The tool suggests a cancel-by date one day before the trial ends and a reminder one day earlier than that when the trial is long enough.' },
+        { heading: 'Annualize the renewal before you keep it', text: 'If a weekly plan looks cheap, convert it to yearly cost. Pair this page with the subscription cost calculator when you are deciding whether the trial is worth keeping.' },
+        { heading: 'Family devices need extra controls', text: 'A reminder is not enough on shared iPads. Re-check Ask to Buy and Screen Time purchase restrictions so the same trial path cannot restart silently.' },
+        { heading: 'What this tool cannot do', text: 'It cannot read Apple subscriptions, create system calendar events by itself, or cancel billing. Copy the text into your own Calendar/Notes and confirm the live plan in Apple settings.' },
+        { heading: 'Recommended next steps', text: 'Generate the packet, set a calendar alert, cancel if value is unclear, then review monthly costs. Keep screenshots if you later need Report a Problem.' },
+      ],
+      links: [
+        { href: '/subcost', label: 'Sub cost calculator' },
+        { href: '/checklists', label: 'Decision checklists' },
+        { href: '/articles/free-trial-trap-checklist', label: 'Trial trap checklist' },
+        { href: '/articles/cancel-apple-subscription-step-by-step', label: 'Cancel subscription' },
+        { href: '/articles/manage-apple-subscriptions-after-trial', label: 'After free trial' },
+      ],
+      linksLabel: 'Related reading'
     }
   },
   zh: {
@@ -136,6 +155,25 @@ export const toolContent = {
         { href: '/checklists', label: '决策清单' },
         { href: '/articles/when-paid-app-beats-subscription', label: '买断 vs 订阅' },
         { href: '/articles/spot-subscription-fatigue-apps', label: '订阅疲劳' },
+        { href: '/articles/manage-apple-subscriptions-after-trial', label: '试用后管理' },
+      ],
+      linksLabel: '相关阅读'
+    },
+    trial: {
+      title: '如何生成免费试用取消提醒',
+      intro: '多数试用陷阱来自没有写下结束日。本页把开始日期和试用天数转成取消截止日、提醒日、日历文案和简短行动清单。',
+      items: [
+        { heading: '尽量在最后一天前取消', text: '很多方案需要至少提前 24 小时取消。工具会建议在试用结束前一天作为最晚取消日，并在可能时再提前一天提醒。' },
+        { heading: '保留前先把续费年化', text: '如果周付看起来便宜，先换算成年成本。决定是否保留试用时，可配合订阅成本计算器一起看。' },
+        { heading: '家庭设备需要额外控制', text: '共用 iPad 上仅有提醒不够。复查购买前询问和屏幕使用时间购买限制，避免同一试用路径静默重启。' },
+        { heading: '这个工具做不到什么', text: '它不能读取 Apple 订阅、不能直接创建系统日历事件，也不能取消扣费。请把文案复制到自己的日历/备忘录，并在 Apple 设置中确认真实方案。' },
+        { heading: '建议的下一步', text: '生成提醒包，设置日历提醒；价值不清就取消；然后每月复查成本。若后续需要报告问题，保留截图。' },
+      ],
+      links: [
+        { href: '/subcost', label: '订阅成本' },
+        { href: '/checklists', label: '决策清单' },
+        { href: '/articles/free-trial-trap-checklist', label: '试用陷阱清单' },
+        { href: '/articles/cancel-apple-subscription-step-by-step', label: '取消订阅' },
         { href: '/articles/manage-apple-subscriptions-after-trial', label: '试用后管理' },
       ],
       linksLabel: '相关阅读'

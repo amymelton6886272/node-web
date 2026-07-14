@@ -43,4 +43,8 @@ export const toolPages = {
     title: 'Subscription Cost Calculator - Wolffy',
     description: 'Estimate monthly and yearly subscription spend for App Store plans. Convert weekly, monthly, and yearly offers into comparable totals.',
   },
+  trial: {
+    title: 'Free Trial Reminder Builder - Wolffy',
+    description: 'Turn a free-trial start date into a cancel deadline, reminder text, calendar body, and action checklist. Everything stays in your browser.',
+  },
 };

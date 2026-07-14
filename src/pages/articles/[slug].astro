@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import { SITE } from '../../astro/site.js';
 import { articles, getArticlePath } from '../../data/articles.js';
+import { getRelatedArticles, getRelatedTools } from '../../data/related.js';
 
 export const prerender = true;
 
@@ -15,6 +16,8 @@ export function getStaticPaths() {
 
 const { article } = Astro.props;
 const path = getArticlePath(article);
+const relatedTools = getRelatedTools(article);
+const relatedArticles = getRelatedArticles(article);
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -23,17 +26,33 @@ const articleSchema = {
   alternativeHeadline: article.titleZh,
   datePublished: article.publishedAt,
   dateModified: article.updatedAt,
-  author: { '@type': 'Organization', name: 'Wolffy' },
-  publisher: { '@type': 'Organization', name: 'Wolffy', url: SITE },
+  author: { '@type': 'Organization', name: 'Wolffy', url: SITE },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Wolffy',
+    url: SITE,
+    logo: { '@type': 'ImageObject', url: `${SITE}/favicon.svg` },
+  },
   mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE}${path}` },
   articleSection: article.category,
   keywords: article.tags.join(', '),
   inLanguage: ['en', 'zh-CN'],
+  isPartOf: { '@type': 'WebSite', name: 'Wolffy', url: SITE },
+};
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+    { '@type': 'ListItem', position: 2, name: 'Articles', item: `${SITE}/articles` },
+    { '@type': 'ListItem', position: 3, name: article.title, item: `${SITE}${path}` },
+  ],
 };
 ---
 <BaseLayout title={`${article.title} - Wolffy`} description={article.description} path={path} ogType="article">
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   </Fragment>
   <div class="lang-en">
     <Hero title={article.title} sub={article.description} eyebrow={article.category} />
@@ -66,10 +85,43 @@ const articleSchema = {
         {section.textZh && <p class="lang-zh" lang="zh-CN">{section.textZh}</p>}
       </section>
     ))}
+
+    <section class="relatedBlock" aria-label="Related tools">
+      <h2 class="lang-en">Related tools</h2>
+      <h2 class="lang-zh">相关工具</h2>
+      <p class="lang-en contentLead">Use these pages next if you need a practical check after reading this guide.</p>
+      <p class="lang-zh contentLead">读完本指南后，可继续用这些页面做实际核对。</p>
+      <div class="contentLinks" style="border-top:0;margin-top:0;padding-top:0;">
+        {relatedTools.map((tool) => (
+          <a href={tool.href}>
+            <span class="lang-en">{tool.label}</span>
+            <span class="lang-zh">{tool.labelZh}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="relatedBlock" aria-label="Related articles">
+      <h2 class="lang-en">Related articles</h2>
+      <h2 class="lang-zh">相关文章</h2>
+      <div class="richGrid">
+        {relatedArticles.map((item) => (
+          <a class="richBlock" href={item.href}>
+            <h3 class="lang-en">{item.title}</h3>
+            <h3 class="lang-zh">{item.titleZh}</h3>
+            <p class="lang-en">{item.description}</p>
+            <p class="lang-zh">{item.descriptionZh}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
     <div class="articleFooter">
       <a href="/articles"><span class="lang-en">All articles</span><span class="lang-zh">全部文章</span></a>
       <a href="/checklists"><span class="lang-en">Decision checklists</span><span class="lang-zh">决策清单</span></a>
       <a href="/knowledge"><span class="lang-en">Knowledge base</span><span class="lang-zh">知识库</span></a>
+      <a href="/subcost"><span class="lang-en">Sub cost calculator</span><span class="lang-zh">订阅成本</span></a>
+      <a href="/trial"><span class="lang-en">Trial reminder</span><span class="lang-zh">试用提醒</span></a>
     </div>
   </article>
 </BaseLayout>

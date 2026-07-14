@@ -6,9 +6,27 @@ const {
   description = 'A practical Apple and iOS toolkit with App Store price comparison, IAP lookup, free app discovery, privacy guidance, and safety articles.',
   path = Astro.url.pathname,
   ogType = 'website',
+  includeSiteSchema = true,
 } = Astro.props;
 
 const canonical = new URL(path, SITE).toString();
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Wolffy',
+  url: SITE,
+  logo: `${SITE}/favicon.svg`,
+  description: 'Independent bilingual Apple / iOS toolkit with App Store research tools, safety guides, and decision checklists.',
+};
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Wolffy',
+  url: SITE,
+  description,
+  inLanguage: ['en', 'zh-CN'],
+  publisher: { '@type': 'Organization', name: 'Wolffy', url: SITE },
+};
 ---
 <!doctype html>
 <html lang="en" data-lang="en">
@@ -33,6 +51,12 @@ const canonical = new URL(path, SITE).toString();
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    {includeSiteSchema && (
+      <>
+        <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+        <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+      </>
+    )}
     <script is:inline>
       const savedLang = localStorage.getItem('lang');
       const preferredLang = savedLang || ((navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en');

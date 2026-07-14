@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import { SITE } from '../astro/site.js';
 import { articles, getArticlePath } from '../data/articles.js';
 
 export const prerender = true;
@@ -58,6 +59,19 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
+
 const latestArticles = [...articles]
   .sort((a, b) => String(b.updatedAt || b.publishedAt).localeCompare(String(a.updatedAt || a.publishedAt)))
   .slice(0, 6);
@@ -65,6 +79,7 @@ const latestArticles = [...articles]
 const quickLinks = [
   { href: '/price', label: 'Price compare', labelZh: '价格对比' },
   { href: '/subcost', label: 'Sub cost calculator', labelZh: '订阅成本' },
+  { href: '/trial', label: 'Trial reminder', labelZh: '试用提醒' },
   { href: '/appfree', label: 'Free apps', labelZh: '限免应用' },
   { href: '/iap', label: 'IAP lookup', labelZh: '内购查询' },
   { href: '/risk', label: 'Risk assessor', labelZh: '风险评估' },
@@ -75,6 +90,9 @@ const quickLinks = [
 ];
 ---
 <BaseLayout title="Wolffy - Apple / iOS Toolkit" description="Compare App Store prices, inspect IAP signals, discover free apps, search app icons, check IP details, and read practical Apple safety guides." path="/">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <div class="lang-en">
     <Hero title="Wolffy - practical Apple tools and safety guides" sub="Compare App Store prices, inspect in-app purchases, discover limited-time free apps, understand permissions, and make safer download decisions." />
   </div>

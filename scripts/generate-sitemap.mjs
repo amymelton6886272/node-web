@@ -28,6 +28,8 @@ const staticRoutes = [
   { path: '/checklists', changefreq: 'weekly', priority: '0.8', lastmod: '2026-07-14' },
   { path: '/glossary', changefreq: 'monthly', priority: '0.7', lastmod: '2026-07-14' },
   { path: '/risk', changefreq: 'monthly', priority: '0.7', lastmod: '2026-07-14' },
+  { path: '/subcost', changefreq: 'weekly', priority: '0.9', lastmod: '2026-07-15' },
+  { path: '/trial', changefreq: 'weekly', priority: '0.9', lastmod: '2026-07-15' },
 ];
 
 const articleRoutes = articles.map((article) => ({
