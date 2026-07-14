@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { CalendarClock, Copy, Eraser, Sparkles } from 'lucide-react';
 import { Hero } from '../components/common.jsx';
 import { useLang } from '../LanguageContext.jsx';
 
@@ -7,7 +8,7 @@ const copy = {
     title: 'Free Trial Reminder Builder',
     sub: 'Turn a free-trial start date into a cancel reminder, calendar text, and a short action checklist. Everything stays in your browser.',
     formTitle: 'Trial details',
-    formDesc: 'Enter the plan name, trial length, and optional renewal price. The page builds a reminder packet you can copy into Notes or Calendar.',
+    formDesc: 'Enter the plan name, trial length, and optional renewal price. Results update as you type.',
     appName: 'App / plan name',
     appPh: 'App name',
     startDate: 'Trial start date',
@@ -34,7 +35,6 @@ const copy = {
     copyBody: 'Copy body',
     copied: 'Copied',
     empty: 'Fill the app name and start date to generate a reminder.',
-    live: 'Updates as you type',
     disclaimer: 'This tool does not access Apple subscriptions and cannot cancel billing. Always confirm the live plan in Settings > Apple ID > Subscriptions.',
     tip: 'Set the reminder at least one day before the cancel deadline. Deleting the app never cancels a trial.',
   },
@@ -42,7 +42,7 @@ const copy = {
     title: '免费试用提醒生成器',
     sub: '把试用开始日期转成取消提醒、日历文案和简短行动清单。全部在浏览器本地完成。',
     formTitle: '试用信息',
-    formDesc: '填写方案名称、试用天数和可选续费价格。页面会生成可复制到备忘录或日历的提醒包。',
+    formDesc: '填写方案名称、试用天数和可选续费价格。结果会随输入即时更新。',
     appName: '应用 / 方案名称',
     appPh: '应用名称',
     startDate: '试用开始日期',
@@ -69,7 +69,6 @@ const copy = {
     copyBody: '复制正文',
     copied: '已复制',
     empty: '填写应用名称和开始日期后生成提醒。',
-    live: '输入即时生成',
     disclaimer: '本工具不会访问 Apple 订阅，也不能取消扣费。请始终到“设置 > Apple ID > 订阅”确认真实方案。',
     tip: '至少在取消截止日前一天设置提醒。删除应用不会取消试用。',
   },
@@ -101,8 +100,7 @@ function yearlyFrom(price, cycle) {
 export default function TrialReminder() {
   const { lang } = useLang();
   const t = copy[lang] || copy.en;
-  const today = new Date();
-  const todayStr = fmt(today);
+  const todayStr = fmt(new Date());
   const [appName, setAppName] = useState('');
   const [startDate, setStartDate] = useState(todayStr);
   const [days, setDays] = useState('7');
@@ -119,9 +117,7 @@ export default function TrialReminder() {
     const cancelBy = addDays(startDate, Math.max(0, length - 1));
     const remindOn = addDays(startDate, Math.max(0, length - 2));
     const yearly = yearlyFrom(renewPrice, cycle);
-    const title = lang === 'zh'
-      ? `取消试用：${name}`
-      : `Cancel trial: ${name}`;
+    const title = lang === 'zh' ? `取消试用：${name}` : `Cancel trial: ${name}`;
     const bodyLines = lang === 'zh'
       ? [
           `应用/方案：${name}`,
@@ -216,122 +212,117 @@ export default function TrialReminder() {
     <>
       <Hero title={t.title} sub={t.sub} />
 
-      <div className="trialLayout">
-        <section className="card trialPanel">
-          <div className="trialHead">
-            <div>
-              <h3>{t.formTitle}</h3>
-              <p>{t.formDesc}</p>
-            </div>
-            <span className="trialLive">{t.live}</span>
-          </div>
-
-          <div className="trialForm">
-            <label className="trialField wide">
-              <span>{t.appName}</span>
-              <input value={appName} onChange={(e) => setAppName(e.target.value)} placeholder={t.appPh} />
-            </label>
-            <label className="trialField">
-              <span>{t.startDate}</span>
-              <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
-            </label>
-            <label className="trialField">
-              <span>{t.days}</span>
-              <input inputMode="numeric" value={days} onChange={(e) => setDays(e.target.value)} placeholder="7" />
-            </label>
-            <label className="trialField">
-              <span>{t.renewPrice}</span>
-              <input inputMode="decimal" value={renewPrice} onChange={(e) => setRenewPrice(e.target.value)} placeholder="9.99" />
-            </label>
-            <label className="trialField">
-              <span>{t.cycle}</span>
-              <select value={cycle} onChange={(e) => setCycle(e.target.value)}>
-                <option value="week">{t.week}</option>
-                <option value="month">{t.month}</option>
-                <option value="year">{t.year}</option>
-              </select>
-            </label>
-            <label className="trialField wide">
-              <span>{t.notes}</span>
-              <input value={notes} onChange={(e) => setNotes(e.target.value)} placeholder={t.notesPh} />
-            </label>
-          </div>
-
-          <div className="trialToolbar">
-            <button type="button" className="trialBtn primary" onClick={loadSample}>{t.sample}</button>
-            <button type="button" className="trialBtn danger" onClick={clear}>{t.clear}</button>
-          </div>
-        </section>
-
-        <section className="card trialPanel trialResult">
-          <div className="trialHead">
-            <div>
-              <h3>{t.resultTitle}</h3>
-            </div>
-          </div>
-
-          {!packet ? (
-            <div className="trialEmpty">{t.empty}</div>
-          ) : (
-            <>
-              <div className="trialStats">
-                <div className="trialStat accent">
-                  <span>{t.cancelBy}</span>
-                  <b>{packet.cancelBy}</b>
-                </div>
-                <div className="trialStat">
-                  <span>{t.remindOn}</span>
-                  <b>{packet.remindOn}</b>
-                </div>
-                <div className="trialStat">
-                  <span>{t.trialEnd}</span>
-                  <b>{packet.end}</b>
-                </div>
-                <div className="trialStat">
-                  <span>{t.yearlyEst}</span>
-                  <b>{packet.yearly != null ? packet.yearly.toFixed(2) : '—'}</b>
-                </div>
-              </div>
-
-              <div className="trialBlock">
-                <div className="trialBlockHead">
-                  <h4>{t.calendarTitle}</h4>
-                  <div className="trialCopyRow">
-                    <button type="button" className="trialBtn" onClick={() => copyText(packet.title)}>{t.copyTitle}</button>
-                    <button type="button" className="trialBtn" onClick={() => copyText(packet.body)}>{t.copyBody}</button>
-                    <button type="button" className="trialBtn primary" onClick={() => copyText(packet.all)}>{t.copyAll}</button>
-                  </div>
-                </div>
-                <div className="trialTitleChip">{packet.title}</div>
-              </div>
-
-              <div className="trialBlock">
-                <h4>{t.calendarBody}</h4>
-                <pre className="trialBody">{packet.body}</pre>
-              </div>
-
-              <div className="trialBlock">
-                <h4>{t.checklistTitle}</h4>
-                <ol className="trialChecklist">
-                  {packet.checklist.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ol>
-              </div>
-            </>
-          )}
-
-          <p className="contentNote">{t.tip}</p>
-          <p className="contentNote">{t.disclaimer}</p>
-          <div className="contentLinks">
-            <span>{lang === 'zh' ? '相关阅读' : 'Related reading'}</span>
-            <a href="/subcost">{lang === 'zh' ? '订阅成本' : 'Sub cost'}</a>
-            <a href="/checklists">{lang === 'zh' ? '决策清单' : 'Checklists'}</a>
-            <a href="/articles/free-trial-trap-checklist">{lang === 'zh' ? '试用陷阱' : 'Trial traps'}</a>
-            <a href="/articles/cancel-apple-subscription-step-by-step">{lang === 'zh' ? '取消订阅' : 'Cancel subscription'}</a>
-          </div>
-        </section>
+      <div className="ipPanel card">
+        <div>
+          <h3>{t.formTitle}</h3>
+          <p>{t.formDesc}</p>
+        </div>
+        <div className="savedActions">
+          <button type="button" onClick={loadSample}><Sparkles size={15} /> {t.sample}</button>
+          <button type="button" className="danger" onClick={clear}><Eraser size={15} /> {t.clear}</button>
+        </div>
       </div>
+
+      <section className="card trialNativeForm">
+        <div className="addressFields">
+          <label className="addressField trialNativeField">
+            <span>{t.appName}</span>
+            <input value={appName} onChange={(e) => setAppName(e.target.value)} placeholder={t.appPh} />
+          </label>
+          <label className="addressField trialNativeField">
+            <span>{t.startDate}</span>
+            <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
+          </label>
+          <label className="addressField trialNativeField">
+            <span>{t.days}</span>
+            <input inputMode="numeric" value={days} onChange={(e) => setDays(e.target.value)} placeholder="7" />
+          </label>
+          <label className="addressField trialNativeField">
+            <span>{t.renewPrice}</span>
+            <input inputMode="decimal" value={renewPrice} onChange={(e) => setRenewPrice(e.target.value)} placeholder="9.99" />
+          </label>
+          <label className="addressField trialNativeField">
+            <span>{t.cycle}</span>
+            <select value={cycle} onChange={(e) => setCycle(e.target.value)}>
+              <option value="week">{t.week}</option>
+              <option value="month">{t.month}</option>
+              <option value="year">{t.year}</option>
+            </select>
+          </label>
+          <label className="addressField trialNativeField">
+            <span>{t.notes}</span>
+            <input value={notes} onChange={(e) => setNotes(e.target.value)} placeholder={t.notesPh} />
+          </label>
+        </div>
+      </section>
+
+      <section className="card">
+        <div className="addressTop">
+          <div>
+            <h3>{t.resultTitle}</h3>
+            <p>{packet ? packet.title : t.empty}</p>
+          </div>
+        </div>
+
+        {!packet ? (
+          <div className="empty"><strong>{t.empty}</strong></div>
+        ) : (
+          <>
+            <div className="ipHero card" style={{ marginBottom: 16 }}>
+              <div className="ipAddress">
+                <span><CalendarClock size={28} strokeWidth={2.2} /></span>
+                <b>{packet.cancelBy}</b>
+                <em>{t.cancelBy}</em>
+              </div>
+              <div className="ipMap">{packet.remindOn} · {t.remindOn}</div>
+            </div>
+
+            <div className="ipGrid">
+              <div className="ipCell"><span>{t.cancelBy}</span><b>{packet.cancelBy}</b></div>
+              <div className="ipCell"><span>{t.remindOn}</span><b>{packet.remindOn}</b></div>
+              <div className="ipCell"><span>{t.trialEnd}</span><b>{packet.end}</b></div>
+              <div className="ipCell"><span>{t.yearlyEst}</span><b>{packet.yearly != null ? packet.yearly.toFixed(2) : '—'}</b></div>
+            </div>
+
+            <div className="trialNativeBlock">
+              <div className="savedHead">
+                <div>
+                  <h3>{t.calendarTitle}</h3>
+                  <p>{packet.title}</p>
+                </div>
+                <div className="savedActions">
+                  <button type="button" onClick={() => copyText(packet.title)}><Copy size={14} /> {t.copyTitle}</button>
+                  <button type="button" onClick={() => copyText(packet.body)}><Copy size={14} /> {t.copyBody}</button>
+                  <button type="button" onClick={() => copyText(packet.all)}><Copy size={14} /> {t.copyAll}</button>
+                </div>
+              </div>
+              <pre className="trialNativeBody">{packet.body}</pre>
+            </div>
+
+            <div className="trialNativeBlock">
+              <h3>{t.checklistTitle}</h3>
+              <ol className="checkItems trialNativeChecks">
+                {packet.checklist.map((item) => (
+                  <li key={item} className="done">
+                    <button type="button" aria-hidden="true" tabIndex={-1}><CalendarClock size={16} /></button>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </>
+        )}
+
+        <p className="contentNote">{t.tip}</p>
+        <p className="contentNote">{t.disclaimer}</p>
+        <div className="contentLinks">
+          <span>{lang === 'zh' ? '相关阅读' : 'Related reading'}</span>
+          <a href="/subcost">{lang === 'zh' ? '订阅成本' : 'Sub cost'}</a>
+          <a href="/checklists">{lang === 'zh' ? '决策清单' : 'Checklists'}</a>
+          <a href="/articles/free-trial-trap-checklist">{lang === 'zh' ? '试用陷阱' : 'Trial traps'}</a>
+          <a href="/articles/cancel-apple-subscription-step-by-step">{lang === 'zh' ? '取消订阅' : 'Cancel subscription'}</a>
+        </div>
+      </section>
 
       {toast && <div className="toast">{toast}</div>}
     </>
