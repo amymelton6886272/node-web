@@ -15,6 +15,7 @@ export const sidebarItems = [
   { href: '/icon', label: 'Icon Lookup', labelZh: '图标查询', icon: 'A', desc: 'App identity lookup', descZh: '快速识别应用图标与来源' },
   { href: '/ip', label: 'IP Check', labelZh: 'IP 检测', icon: 'IP', desc: 'Network location clues', descZh: '判断网络出口与地区信息' },
   { href: '/address', label: 'Address', labelZh: '地址生成', icon: '@', desc: 'Regional test data', descZh: '生成不同地区的测试地址资料' },
+  { href: '/subcost', label: 'Sub Cost', labelZh: '订阅成本', icon: '¥', desc: 'Monthly/yearly estimate', descZh: '估算订阅月成本与年成本' },
   { href: '/knowledge', label: 'Knowledge', labelZh: '知识库', icon: 'K', desc: 'Concepts and explainers', descZh: '整理常见概念与基础说明' },
   { href: '/articles', label: 'Articles', labelZh: '文章', icon: 'R', desc: 'Practical reading', descZh: '浏览更新中的实用内容' },
   { href: '/risk', label: 'App Risk', labelZh: '应用风险', icon: '!', desc: 'Permission risk review', descZh: '评估权限、隐私与风险点' },
@@ -27,17 +28,17 @@ export const sidebarGroups = [
   {
     label: 'Tools',
     labelZh: '工具',
-    items: sidebarItems.slice(0, 5),
+    items: sidebarItems.slice(0, 6),
   },
   {
     label: 'Learn',
     labelZh: '内容',
-    items: sidebarItems.slice(5, 7),
+    items: sidebarItems.slice(6, 8),
   },
   {
     label: 'Decide',
     labelZh: '决策',
-    items: sidebarItems.slice(7),
+    items: sidebarItems.slice(8),
   },
 ];
 

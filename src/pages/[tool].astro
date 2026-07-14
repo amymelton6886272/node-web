@@ -12,6 +12,7 @@ import GlossaryIsland from '../islands/GlossaryIsland.jsx';
 import ChecklistsIsland from '../islands/ChecklistsIsland.jsx';
 import RiskIsland from '../islands/RiskIsland.jsx';
 import KnowledgeIsland from '../islands/KnowledgeIsland.jsx';
+import SubCostIsland from '../islands/SubCostIsland.jsx';
 
 export const prerender = true;
 
@@ -46,6 +47,7 @@ const contentFirstTools = new Set(['guides', 'glossary', 'checklists', 'risk', '
   {tool === 'checklists' && <ChecklistsIsland client:load />}
   {tool === 'risk' && <RiskIsland client:load />}
   {tool === 'knowledge' && <KnowledgeIsland client:load />}
+  {tool === 'subcost' && <SubCostIsland client:load />}
 
   {/* For content-first tools, still add a short static footer note for crawlers */}
   {contentFirstTools.has(tool) && (

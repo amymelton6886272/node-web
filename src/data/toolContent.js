@@ -77,6 +77,25 @@ export const toolContent = {
       ],
       links: [{ href: '/ip', label: 'IP Check' }, { href: '/guides', label: 'App Store guides' }, { href: '/knowledge', label: 'Safety knowledge base' }, { href: '/privacy', label: 'Privacy Policy' }],
       linksLabel: 'Related reading'
+    },
+    subcost: {
+      title: 'How to estimate real subscription cost',
+      intro: 'Weekly prices look small until they are annualized. This calculator converts weekly, monthly, and yearly plans into comparable monthly and yearly totals so you can decide whether a trial or paid plan matches your actual usage.',
+      items: [
+        { heading: 'Why annualization matters', text: 'A 4.99 weekly plan is roughly 259.48 per year before tax. Users often compare the weekly number with a yearly unlock and pick the wrong option. Convert every offer to the same time base first.' },
+        { heading: 'Count only active plans', text: 'Paused, cancelled-but-not-expired, and family-shared plans can confuse totals. Mark only the plans that still create real spend. Keep notes for trial end dates and cancel paths.' },
+        { heading: 'Local privacy by design', text: 'Rows are stored in browser localStorage only if you click save. Export JSON for spreadsheets. Nothing is uploaded to Wolffy servers.' },
+        { heading: 'What this tool cannot do', text: 'It cannot read your Apple account, cancel subscriptions, or include tax automatically. Always confirm final amounts and renewal dates in Settings > Apple ID > Subscriptions and the App Store checkout page.' },
+        { heading: 'Recommended workflow', text: '1) list every recurring plan, 2) annualize cost, 3) open the matching checklist, 4) cancel low-value plans, 5) re-check next week. Pair this page with paid-vs-subscription and subscription-fatigue articles.' },
+      ],
+      links: [
+        { href: '/price', label: 'Price compare' },
+        { href: '/checklists', label: 'Decision checklists' },
+        { href: '/articles/when-paid-app-beats-subscription', label: 'Paid vs subscription' },
+        { href: '/articles/spot-subscription-fatigue-apps', label: 'Subscription fatigue' },
+        { href: '/articles/manage-apple-subscriptions-after-trial', label: 'After free trial' },
+      ],
+      linksLabel: 'Related reading'
     }
   },
   zh: {
@@ -101,6 +120,25 @@ export const toolContent = {
     },
     address: {
       title: '地址生成器的正确使用范围', intro: '地址生成器用于测试表单、演示数据和本地草稿，不应用于欺诈、规避平台规则或冒充真实身份。生成内容保存在浏览器本地，用户可以自行复制或导出。', items: [{ heading: '测试数据与真实地址的区别', text: '页面会组合城市、街道和邮编格式，让数据看起来接近真实场景，但并不保证对应真实居民或可投递地址。' }, { heading: '适合开发和设计流程', text: '常见用途包括结账表单测试、CRM 示例数据、UI 截图和国际化字段验证。涉及合规或物流时，应使用官方地址校验服务。' },      { heading: '本地保存与导出', text: '收藏地址保存在浏览器 localStorage 中，不会自动上传到服务器。清理浏览器数据会删除这些内容。' }, { heading: '工作原理', text: '生成器根据所选国家组合真实城市名称、街道模式和有效邮编格式，生成外观合理的地址记录。通过加权随机算法——像"主街"这样的常见街道类型出现概率高于稀有类型——确保输出自然。你可以生成单条地址或批量导出最多 100 条的 CSV 文件。所有数据在浏览器本地使用模板组装，生成过程不会向服务器发送任何请求。' }, { heading: '常见问题排查', text: '地址看起来很假：生成器创建的只是用于测试的逼真数据，并非经过验证的可投递地址。如需实际地址验证，请使用 USPS 地址校验、SmartyStreets 等专业服务。 || CSV 导出无法下载：检查浏览器是否允许本站下载。某些企业策略或浏览器扩展会拦截自动下载。尝试右键点击导出按钮，选择"另存链接为"。 || 国家格式看起来不对：如果邮政编码或地址顺序与预期不符，请确认已选择正确的国家。每个国家有各自独立的区域模板。' }],links: [{ href: '/ip', label: 'IP 检测' }, { href: '/guides', label: 'App Store 指南' }, { href: '/knowledge', label: '安全知识库' }, { href: '/privacy', label: '隐私政策' }], linksLabel: '相关阅读'
+    },
+    subcost: {
+      title: '如何估算真实订阅成本',
+      intro: '周付价格在换算成年成本前看起来总是很小。这个计算器把周付、月付和年付统一成可比较的月成本与年成本，帮助你判断试用或付费方案是否匹配真实使用。',
+      items: [
+        { heading: '为什么要做年化', text: '4.99 的周付方案在税前大约等于每年 259.48。用户常拿周价格和年付解锁直接比，结果选错。先把所有报价换算到同一时间基准。' },
+        { heading: '只统计仍在花钱的方案', text: '已暂停、已取消但未到期、以及家庭共享方案容易干扰总数。只勾选仍产生真实支出的项目，并用备注记录试用结束日和取消路径。' },
+        { heading: '本地隐私设计', text: '只有点击保存时，列表才会写入浏览器 localStorage。可导出 JSON 到表格工具。数据不会上传到 Wolffy 服务器。' },
+        { heading: '这个工具做不到什么', text: '它不能读取你的 Apple 账户、不能取消订阅，也不能自动计入税费。最终金额和续费日期请到“设置 > Apple ID > 订阅”和 App Store 结算页确认。' },
+        { heading: '推荐流程', text: '1）列出全部循环方案；2）年化成本；3）打开对应清单；4）取消低价值项目；5）下周复查。建议配合“买断 vs 订阅”和“订阅疲劳”文章一起使用。' },
+      ],
+      links: [
+        { href: '/price', label: '价格对比' },
+        { href: '/checklists', label: '决策清单' },
+        { href: '/articles/when-paid-app-beats-subscription', label: '买断 vs 订阅' },
+        { href: '/articles/spot-subscription-fatigue-apps', label: '订阅疲劳' },
+        { href: '/articles/manage-apple-subscriptions-after-trial', label: '试用后管理' },
+      ],
+      linksLabel: '相关阅读'
     }
   }
 };

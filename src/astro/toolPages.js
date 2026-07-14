@@ -39,4 +39,8 @@ export const toolPages = {
     title: 'App Store Glossary - Wolffy',
     description: 'Understand common Apple and App Store terms including Bundle ID, IAP, TestFlight, price tiers, and family sharing.',
   },
+  subcost: {
+    title: 'Subscription Cost Calculator - Wolffy',
+    description: 'Estimate monthly and yearly subscription spend for App Store plans. Convert weekly, monthly, and yearly offers into comparable totals.',
+  },
 };
