@@ -12,9 +12,9 @@ export const riskContent = {
       ],
       linksLabel: 'Related reading',
       links: [
-        { href: '#checklists', label: 'Checklists' },
-        { href: '#iap', label: 'IAP Lookup' },
-        { href: '#privacy', label: 'Privacy Policy' },
+        { href: '/checklists', label: 'Checklists' },
+        { href: '/iap', label: 'IAP Lookup' },
+        { href: '/privacy', label: 'Privacy Policy' },
       ],
       startTitle: 'Start assessment', startText: 'Enter an app name for your own reference, or simply select the warning signs you observed. All scoring happens locally in your browser.', placeholder: 'Example: a VPN, wallpaper, scanner, budgeting, or AI app', currentApp: 'Current app', resultTitle: 'Result and next steps', resultText: 'Prioritize the categories with the highest scores based on the signals you selected.', noSignals: 'No warning signs selected yet. Check the App Store page, permission prompts, subscription wording, and recent reviews one by one.', focus: 'Focus first', openChecklists: 'Open checklists', checkIap: 'Check IAP', readGuides: 'Read guides', reset: 'Reset', scoreOf: '/ 100'
     },
@@ -37,7 +37,7 @@ export const riskContent = {
     page: {
       heroTitle: 'App 安全风险评估器', heroSub: '根据权限、订阅、开发者、评论和设备管理等信号，为准备安装或付费的 App 做一次快速风险自查。', title: 'App 安全风险评估器解决什么问题？', intro: '很多用户在 App Store 看到评分、截图和榜单后就直接下载，但真正影响体验的风险往往藏在权限、订阅、开发者可信度和近期评论里。这个评估器把常见风险信号转化为可勾选的问题，帮助用户形成更稳健的安装和付费决策。',
       items: [{ heading: '不依赖第三方接口', text: '页面默认就提供完整评估框架、说明和建议。即使用户没有输入任何 App 名称，也能阅读风险知识并使用清单进行自查。' }, { heading: '比单纯搜索更有指导性', text: '搜索工具告诉你某个 App 是否存在，风险评估器告诉你应该看哪些证据：权限是否匹配功能、订阅是否透明、开发者是否可信、评论是否出现共性问题。' }, { heading: '适合 AdSense 内容价值要求', text: '它属于原创解释型内容与交互工具结合的页面，不是外链聚合、空结果页或广告承载页。广告如需展示，应放在说明和评估结果之后。' }],
-      linksLabel: '相关阅读', links: [{ href: '#checklists', label: '决策清单' }, { href: '#iap', label: '内购查询' }, { href: '#privacy', label: '隐私政策' }],
+      linksLabel: '相关阅读', links: [{ href: '/checklists', label: '决策清单' }, { href: '/iap', label: '内购查询' }, { href: '/privacy', label: '隐私政策' }],
       startTitle: '开始评估', startText: '可以输入 App 名称方便记录，也可以直接勾选你观察到的风险信号。所有计算都在浏览器本地完成。', placeholder: '例如：某款 VPN、壁纸、扫描、记账或 AI 应用', currentApp: '当前 App', resultTitle: '评估结论与下一步', resultText: '根据你勾选的风险信号，优先处理分数最高的类别。', noSignals: '还没有勾选风险信号。建议在 App Store 页面、设置权限弹窗、订阅说明和最近评论中逐项核对。', focus: '优先关注', openChecklists: '打开决策清单', checkIap: '检查内购', readGuides: '阅读指南', reset: '重新评估', scoreOf: '/ 100'
     },
     categories: { trust: '可信度', privacy: '隐私', billing: '扣费', quality: '质量', security: '安全', family: '家庭' },

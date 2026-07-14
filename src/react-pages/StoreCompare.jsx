@@ -1,6 +1,8 @@
-﻿import { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { ShieldAlert } from 'lucide-react';
-import { Hero, Empty, FeaturedApps } from '../components/common.jsx';
+import { Hero, Empty, FeaturedApps, ToolIntro } from '../components/common.jsx';
+import { ContentSection, contentByPage } from '../components/ContentSection.jsx';
+import { toolContent } from '../data/toolContent.js';
 import { useLang } from '../LanguageContext.jsx';
 
 const REGIONS = [
@@ -327,6 +329,8 @@ export default function StoreCompare() {
           ? '搜索一次应用，统一展示软件本体、公开订阅名称、热门地区价格，并自动标出当前最低价。'
           : 'Search an app to list the app itself plus public subscriptions, compare regions side by side, and mark the lowest price.'}
       />
+      <ToolIntro page="price" />
+      <ContentSection {...(toolContent[lang === 'zh' ? 'zh' : 'en']?.price || contentByPage.price || {})} />
 
       <div className="searchbar priceSearchbar">
         <input

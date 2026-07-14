@@ -1,6 +1,17 @@
 User-agent: *
 Allow: /
 Allow: /ads.txt
+Allow: /articles
+Allow: /guides
+Allow: /knowledge
+Allow: /checklists
+Allow: /glossary
+Allow: /about
+Allow: /privacy
+Allow: /terms
+Allow: /contact
+Allow: /editorial
+Allow: /data-sources
 Disallow: /price?q=*
 Disallow: /appfree?q=*
 Disallow: /iap?q=*

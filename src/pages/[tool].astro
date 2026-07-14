@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { toolPages } from '../astro/toolPages.js';
+import ToolStaticContent from '../components/ToolStaticContent.astro';
 import PriceIsland from '../islands/PriceIsland.jsx';
 import AppFreeIsland from '../islands/AppFreeIsland.jsx';
 import IpIsland from '../islands/IpIsland.jsx';
@@ -26,8 +27,15 @@ const { tool, meta, path } = Astro.props;
 if (tool === 'iap') {
   return Astro.redirect('/price');
 }
+
+// Content tools that already render substantial bilingual text in React still
+// benefit from a static intro so crawlers see publisher content without JS.
+const contentFirstTools = new Set(['guides', 'glossary', 'checklists', 'risk', 'knowledge']);
 ---
 <BaseLayout title={meta.title} description={meta.description} path={path}>
+  {/* Static publisher content first — visible to AdSense crawlers without JS */}
+  {!contentFirstTools.has(tool) && <ToolStaticContent tool={tool} />}
+
   {tool === 'price' && <PriceIsland client:load />}
   {tool === 'appfree' && <AppFreeIsland client:load />}
   {tool === 'ip' && <IpIsland client:load />}
@@ -38,4 +46,38 @@ if (tool === 'iap') {
   {tool === 'checklists' && <ChecklistsIsland client:load />}
   {tool === 'risk' && <RiskIsland client:load />}
   {tool === 'knowledge' && <KnowledgeIsland client:load />}
+
+  {/* For content-first tools, still add a short static footer note for crawlers */}
+  {contentFirstTools.has(tool) && (
+    <section class="card" style="margin-top:1rem;">
+      <div class="lang-en">
+        <h2>Publisher note</h2>
+        <p>
+          This page is part of Wolffy’s original educational content. The interactive sections help you apply the guidance,
+          but the explanations, checklists, and definitions remain useful even when no search query is entered.
+        </p>
+        <div class="contentLinks">
+          <span>Related reading</span>
+          <a href="/articles">Articles</a>
+          <a href="/checklists">Checklists</a>
+          <a href="/knowledge">Knowledge base</a>
+          <a href="/privacy">Privacy</a>
+        </div>
+      </div>
+      <div class="lang-zh" lang="zh-CN">
+        <h2>发布者说明</h2>
+        <p>
+          本页属于 Wolffy 的原创教育内容。交互区域用于把说明落到实际操作上；即使不输入搜索关键词，
+          页面中的解释、清单和定义本身也具有独立阅读价值。
+        </p>
+        <div class="contentLinks">
+          <span>相关阅读</span>
+          <a href="/articles">文章</a>
+          <a href="/checklists">决策清单</a>
+          <a href="/knowledge">知识库</a>
+          <a href="/privacy">隐私政策</a>
+        </div>
+      </div>
+    </section>
+  )}
 </BaseLayout>

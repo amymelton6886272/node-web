@@ -1,0 +1,118 @@
+---
+/**
+ * Server-rendered publisher content for tool pages.
+ * AdSense reviewers and crawlers see this HTML without executing React islands.
+ */
+import { toolContent } from '../data/toolContent.js';
+
+const { tool } = Astro.props;
+const en = toolContent.en?.[tool];
+const zh = toolContent.zh?.[tool];
+
+function normalizeLinks(links = []) {
+  return links.map((link) => {
+    const href = (link.href || '').replace(/^#/, '/');
+    return { ...link, href: href === '/' ? '/' : href };
+  });
+}
+
+const enLinks = normalizeLinks(en?.links || []);
+const zhLinks = normalizeLinks(zh?.links || []);
+---
+
+{(en || zh) && (
+  <section class="contentSection card toolStaticContent" aria-label="Publisher content">
+    {en && (
+      <div class="lang-en">
+        {en.title && <h2>{en.title}</h2>}
+        {en.intro && <p class="contentLead">{en.intro}</p>}
+        {en.items?.length > 0 && (
+          <div class="contentGrid">
+            {en.items.map((item) => (
+              <article class="contentBlock">
+                <h3>{item.heading}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        )}
+        {en.note && <p class="contentNote">{en.note}</p>}
+        {enLinks.length > 0 && (
+          <div class="contentLinks">
+            <span>{en.linksLabel || 'Related reading'}</span>
+            {enLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+          </div>
+        )}
+      </div>
+    )}
+
+    {zh && (
+      <div class="lang-zh" lang="zh-CN">
+        {zh.title && <h2>{zh.title}</h2>}
+        {zh.intro && <p class="contentLead">{zh.intro}</p>}
+        {zh.items?.length > 0 && (
+          <div class="contentGrid">
+            {zh.items.map((item) => (
+              <article class="contentBlock">
+                <h3>{item.heading}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        )}
+        {zh.note && <p class="contentNote">{zh.note}</p>}
+        {zhLinks.length > 0 && (
+          <div class="contentLinks">
+            <span>{zh.linksLabel || '相关阅读'}</span>
+            {zhLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+          </div>
+        )}
+      </div>
+    )}
+  </section>
+)}
+
+<section class="card toolReviewNotes" aria-label="How to use this page">
+  <div class="lang-en">
+    <h2>How to use this page safely</h2>
+    <ol class="workflowList" style="list-style:decimal;padding-left:1.2rem;display:grid;gap:.75rem;">
+      <li>
+        <strong>Read the context first.</strong>
+        <p>Understand what the tool measures, what it cannot guarantee, and which official sources you should re-check before acting.</p>
+      </li>
+      <li>
+        <strong>Run the tool only after you know the goal.</strong>
+        <p>Search for a specific app, permission risk, network signal, or checklist item. Avoid treating empty results or partial API data as final truth.</p>
+      </li>
+      <li>
+        <strong>Verify at Apple or the original source.</strong>
+        <p>Prices, subscriptions, refunds, region availability, and permission prompts should always be confirmed in the App Store or iOS Settings.</p>
+      </li>
+      <li>
+        <strong>Use related guides when the decision is expensive or hard to reverse.</strong>
+        <p>For paid apps, trials, family devices, and region switching, open the matching checklist or article before you commit.</p>
+      </li>
+    </ol>
+  </div>
+  <div class="lang-zh" lang="zh-CN">
+    <h2>如何安全使用本页</h2>
+    <ol class="workflowList" style="list-style:decimal;padding-left:1.2rem;display:grid;gap:.75rem;">
+      <li>
+        <strong>先读说明，再动手。</strong>
+        <p>先弄清楚这个工具测量什么、不能保证什么，以及行动前应回到哪些官方来源复核。</p>
+      </li>
+      <li>
+        <strong>明确目标后再查询。</strong>
+        <p>针对具体应用、权限风险、网络信号或清单项查询；不要把空结果或不完整接口数据当成最终结论。</p>
+      </li>
+      <li>
+        <strong>以 Apple 或原始来源为准。</strong>
+        <p>价格、订阅、退款、地区可用性与权限提示，最终都应以 App Store 或 iOS 设置为准。</p>
+      </li>
+      <li>
+        <strong>高成本或难撤销的决策，先看相关指南。</strong>
+        <p>付费应用、试用、家庭设备和切区前，建议先打开对应清单或文章。</p>
+      </li>
+    </ol>
+  </div>
+</section>
