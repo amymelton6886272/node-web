@@ -12,9 +12,34 @@ Allow: /terms
 Allow: /contact
 Allow: /editorial
 Allow: /data-sources
-Disallow: /price?q=*
-Disallow: /appfree?q=*
-Disallow: /iap?q=*
-Disallow: /icon?q=*
+Allow: /price
+Allow: /appfree
+Allow: /icon
+Allow: /ip
+Allow: /address
+Allow: /subcost
+Allow: /trial
+Allow: /risk
+Allow: /iap
+
+# Block thin/dynamic tool query URLs (search terms, app IDs, country variants)
+# Prefer crawling clean tool shells + /articles/* research notes.
+Disallow: /*?*
+Disallow: /price?*
+Disallow: /appfree?*
+Disallow: /iap?*
+Disallow: /icon?*
+Disallow: /ip?*
+Disallow: /address?*
+Disallow: /subcost?*
+Disallow: /trial?*
+Disallow: /risk?*
+Disallow: /guides?*
+Disallow: /knowledge?*
+Disallow: /glossary?*
+Disallow: /checklists?*
+Disallow: /articles?*
+Disallow: /compare-api/
+Disallow: /api/
 
 Sitemap: https://souk.eu.org/sitemap.xml
