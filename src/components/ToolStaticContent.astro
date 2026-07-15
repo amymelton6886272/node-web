@@ -1,9 +1,9 @@
 ---
 /**
- * Server-rendered publisher content for tool pages.
+ * Server-rendered static content for tool pages.
  * variant:
  *  - intro: compact title/lead above the interactive tool
- *  - full:  detailed guide below the tool (AdSense + humans)
+ *  - full:  detailed guide below the tool 
  *  - all:   legacy full block (intro + details + howto)
  */
 import { toolContent } from '../data/toolContent.js';
@@ -58,7 +58,7 @@ const showHowto = variant === 'full' || variant === 'all';
 )}
 
 {(en || zh) && showDetails && (
-  <section id="tool-guide" class="contentSection card toolStaticContent" aria-label="Publisher content">
+  <section id="tool-guide" class="contentSection card toolStaticContent" aria-label="Page guide">
     {en && (
       <div class="lang-en">
         {variant === 'full' && en.title && <h2>{en.title}</h2>}

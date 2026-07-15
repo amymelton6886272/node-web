@@ -28,7 +28,7 @@ const policyPages = {
       { title: '2. Independence', text: 'Storewise is independent and is not affiliated with Apple, Google, GitHub, Docker, app developers, payment providers, or advertising networks mentioned on the site. Trademarks and service marks belong to their respective owners.' },
       { title: '3. Writing standards', text: 'Content should explain what a tool does, where data may come from, what the result does not prove, and when users should verify information at the source. Pages should avoid exaggeration, fear-based claims, unsupported rankings, and misleading calls to action.' },
       { title: '4. Corrections', text: 'If content is outdated, unclear, inaccurate, or missing important context, users can contact the maintainer with the page URL, the affected text or result, device/browser information, and supporting details. Reasonable corrections may be reviewed and published.' },
-      { title: '5. Advertising separation', text: 'Ads, if enabled, do not determine editorial conclusions. Advertising units should be visually separated from publisher content and should not appear on empty results, error-only screens, pop-ups, or purely navigational areas.' },
+      { title: '5. Advertising separation', text: 'Ads, if enabled, do not determine editorial conclusions. Advertising units should be visually separated from page content and should not appear on empty results, error-only screens, pop-ups, or purely navigational areas.' },
     ],
   },
   dataSources: {

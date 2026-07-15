@@ -18,7 +18,7 @@ export const knowledgeContent = {
         { href: '/appfree', label: 'Free Apps' },
         { href: '/icon', label: 'Icon Lookup' },
       ],
-      chooseTitle: 'Choose a topic', chooseText: 'Keep these pages accessible before AdSense review. They are stable, readable publisher content.', toc: 'Sections', checklist: 'Action checklist', fallbackCategory: 'Guide'
+      chooseTitle: 'Choose a topic', chooseText: 'These pages are stable, readable guides you can open any time for App Store and iOS research.', toc: 'Sections', checklist: 'Action checklist', fallbackCategory: 'Guide'
     },
     categories: [
       { id: 'all', label: 'All' }, { id: 'privacy', label: 'Permissions' }, { id: 'billing', label: 'Subscriptions & refunds' }, { id: 'region', label: 'Regions' }, { id: 'family', label: 'Parental controls' }
@@ -89,7 +89,7 @@ knowledgeContent.zh = {
   page: {
     heroTitle: 'Apple 安全知识库', heroSub: '权限、订阅退款、App Store 地区差异、隐私评分和家长控制指南。', title: 'Apple / iOS 安全知识库', intro: '这里集中整理权限、订阅、退款、地区差异和家长控制等长期有效的内容。它不是简单转载或外链列表，而是把用户在安装、购买、切区和管理家庭设备时最常遇到的问题整理成可阅读、可执行的指南。',
     items: [{ heading: '补足工具页的上下文', text: '价格、内购、风险评估和清单工具能解决具体问题，但用户还需要理解背后的规则。知识库负责解释权限含义、订阅取消、退款路径和地区限制。' }, { heading: '提升默认页面内容价值', text: '所有文章在用户点击前就有摘要和结构化章节，展开后有完整正文和检查项，不依赖搜索结果或接口返回。' }, { heading: '适合持续更新', text: '后续可以继续加入 App Store 审核政策、TestFlight、家庭共享、隐私标签解读、常见扣费案例等专题。' }],
-    linksLabel: '相关阅读', links: [{ href: '/risk', label: '风险评估器' }, { href: '/checklists', label: '决策清单' }, { href: '/iap', label: '内购查询' }, { href: '/appfree', label: '限免应用' }, { href: '/icon', label: '图标查询' }], chooseTitle: '选择主题', chooseText: '建议复审前保持这些内容页面可访问。它们属于稳定、可阅读的发布商内容。', toc: '本文章节', checklist: '可执行检查项', fallbackCategory: '指南'
+    linksLabel: '相关阅读', links: [{ href: '/risk', label: '风险评估器' }, { href: '/checklists', label: '决策清单' }, { href: '/iap', label: '内购查询' }, { href: '/appfree', label: '限免应用' }, { href: '/icon', label: '图标查询' }], chooseTitle: '选择主题', chooseText: '建议复审前保持这些内容页面可访问。它们属于稳定、可阅读的研究指南。', toc: '本文章节', checklist: '可执行检查项', fallbackCategory: '指南'
   },
   categories: [{ id: 'all', label: '全部' }, { id: 'privacy', label: '隐私权限' }, { id: 'billing', label: '订阅退款' }, { id: 'region', label: '地区差异' }, { id: 'family', label: '家长控制' }],
   articles: [

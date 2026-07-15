@@ -1,6 +1,6 @@
 /**
  * Prerender script — uses Playwright to generate static HTML for each route.
- * This ensures Google AdSense crawlers can see the full page content.
+ * Prefers static HTML so public pages remain readable without waiting for client hydration.
  *
  * Usage: node scripts/prerender.mjs [base_url] [output_dir]
  */

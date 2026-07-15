@@ -4,7 +4,7 @@ const AD_CLIENT = import.meta.env.VITE_ADSENSE_CLIENT || 'ca-pub-396820249580802
 const DEFAULT_SLOT = import.meta.env.VITE_ADSENSE_SLOT || '';
 
 /**
- * Responsive AdSense unit. Place it only after meaningful publisher content,
+ * Responsive AdSense unit. Place it only after meaningful page content,
  * never on empty, search-only, modal, or error-only screens.
  */
 export function AdBanner({ slot = DEFAULT_SLOT, label = 'Advertisement' }) {

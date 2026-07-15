@@ -102,7 +102,7 @@ export default function Articles({ slug }) {
       <Hero title="Articles" sub="Practical Apple and App Store research articles written for safer purchasing, privacy, and account decisions." />
       <section className="articleToolbar card">
         <div>
-          <h2>Publisher content</h2>
+          <h2>Articles</h2>
           <p>Use these articles alongside Storewise tools to understand pricing, subscriptions, privacy labels, app permissions, and account changes before acting.</p>
         </div>
         <div className="tabs">
