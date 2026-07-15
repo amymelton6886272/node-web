@@ -8,8 +8,8 @@ export const articles = [
     descriptionZh: '整理购买记录、问题说明和退款边界的实用清单，帮助用户更清楚地提交 App Store 退款申请。',
     category: 'Support',
     tags: ['Refunds', 'Purchase history', 'Support'],
-    publishedAt: '2026-06-17',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-04-28',
+    updatedAt: '2026-05-03',
     readTime: '9 min read',
     sections: [
       {
@@ -113,8 +113,8 @@ export const articles = [
     descriptionZh: '一份实用清单，帮助你比较不同地区的 App Store 价格，并避免把简单换算价格误认为最终付款成本。',
     category: 'Purchasing',
     tags: ['App Store', 'Pricing', 'Subscriptions'],
-    publishedAt: '2026-06-14',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-03-28',
+    updatedAt: '2026-03-28',
     readTime: '10 min read',
     sections: [
       {
@@ -218,8 +218,8 @@ export const articles = [
     descriptionZh: '适合家庭用户的购买安全检查，覆盖共用设备、付款方式、订阅和 App Store 购买权限。',
     category: 'Family',
     tags: ['Family Sharing', 'Ask to Buy', 'Subscriptions'],
-    publishedAt: '2026-06-11',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-05-29',
+    updatedAt: '2026-06-11',
     readTime: '9 min read',
     sections: [
       {
@@ -323,8 +323,8 @@ export const articles = [
     descriptionZh: '理解一次性解锁、消耗型内购和订阅的差异，从而判断免费或低价应用的真实成本。',
     category: 'Purchasing',
     tags: ['IAP', 'Subscriptions', 'Trials'],
-    publishedAt: '2026-06-09',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-05-01',
+    updatedAt: '2026-05-25',
     readTime: '9 min read',
     sections: [
       {
@@ -428,8 +428,8 @@ export const articles = [
     descriptionZh: '用通俗语言解释隐私标签、敏感权限，以及应用何时在索取超出必要的访问。',
     category: 'Privacy',
     tags: ['Privacy labels', 'Permissions', 'Tracking'],
-    publishedAt: '2026-06-07',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-05-07',
+    updatedAt: '2026-05-07',
     readTime: '10 min read',
     sections: [
       {
@@ -533,8 +533,8 @@ export const articles = [
     descriptionZh: '从截图、文案、评论、权限和开发者身份识别低质量上架页，减少踩坑安装。',
     category: 'Safety',
     tags: ['App quality', 'Reviews', 'ASO'],
-    publishedAt: '2026-06-05',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-07-10',
+    updatedAt: '2026-07-15',
     readTime: '9 min read',
     sections: [
       {
@@ -638,8 +638,8 @@ export const articles = [
     descriptionZh: '切换商店地区前，围绕余额、订阅、支付方式、可下载性和长期维护成本的谨慎指南。',
     category: 'Regions',
     tags: ['Region switching', 'Gift cards', 'Account safety'],
-    publishedAt: '2026-06-03',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-04-24',
+    updatedAt: '2026-05-15',
     readTime: '10 min read',
     sections: [
       {
@@ -743,8 +743,8 @@ export const articles = [
     descriptionZh: '如何跟踪试用结束日期、干净取消、避免意外续费，并判断付费方案是否仍值得保留。',
     category: 'Subscriptions',
     tags: ['Trials', 'Auto-renew', 'Billing'],
-    publishedAt: '2026-06-01',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-05-15',
+    updatedAt: '2026-05-29',
     readTime: '9 min read',
     sections: [
       {
@@ -848,8 +848,8 @@ export const articles = [
     descriptionZh: '把价格、内购、隐私、评论和官方核验串起来的分步流程，避免只凭单一信号就付款。',
     category: 'Workflow',
     tags: ['Workflow', 'Due diligence', 'Purchasing'],
-    publishedAt: '2026-07-14',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-05-22',
+    updatedAt: '2026-06-05',
     readTime: '11 min read',
     sections: [
       {
@@ -953,8 +953,8 @@ export const articles = [
     descriptionZh: '列出免费 App 的明确止损条件，避免隐私、扣费和维护风险高于实际价值。',
     category: 'Safety',
     tags: ['Free apps', 'Risk', 'Permissions'],
-    publishedAt: '2026-07-14',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-06-08',
+    updatedAt: '2026-06-16',
     readTime: '8 min read',
     sections: [
       {
@@ -1058,8 +1058,8 @@ export const articles = [
     descriptionZh: '覆盖 iPhone、iPad 和 Mac 的 App Store 订阅取消步骤，包含试用、家庭方案和常见错误。',
     category: 'Subscriptions',
     tags: ['Cancel subscription', 'Auto-renew', 'Apple ID'],
-    publishedAt: '2026-07-14',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-06-30',
+    updatedAt: '2026-07-15',
     readTime: '10 min read',
     sections: [
       {
@@ -1163,8 +1163,8 @@ export const articles = [
     descriptionZh: '一套实用方法，用于复查 App Store 扣费、发现被遗忘的试用，并管好家庭或工作账号。',
     category: 'Support',
     tags: ['Purchase history', 'Billing', 'Account hygiene'],
-    publishedAt: '2026-07-14',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-04-10',
+    updatedAt: '2026-04-10',
     readTime: '9 min read',
     sections: [
       {
@@ -1268,8 +1268,8 @@ export const articles = [
     descriptionZh: '当应用索取定位、相机、照片、通讯录、追踪或通知时，如何决定允许、拒绝或下次再问。',
     category: 'Privacy',
     tags: ['Permissions', 'Privacy', 'iOS settings'],
-    publishedAt: '2026-07-14',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-05-23',
+    updatedAt: '2026-05-23',
     readTime: '10 min read',
     sections: [
       {
@@ -1373,8 +1373,8 @@ export const articles = [
     descriptionZh: '帮助你避开免费试用后意外续费的警示信号、时间陷阱和清理步骤。',
     category: 'Subscriptions',
     tags: ['Free trial', 'Auto-renew', 'Billing risk'],
-    publishedAt: '2026-07-14',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-07-12',
+    updatedAt: '2026-07-15',
     readTime: '9 min read',
     sections: [
       {
@@ -1484,8 +1484,8 @@ export const articles = [
     descriptionZh: '一套谨慎的研究方法，用于比较地区价格与可下载性，同时保护余额、订阅和家庭角色。',
     category: 'Regions',
     tags: ['Region comparison', 'Account safety', 'Pricing'],
-    publishedAt: '2026-07-14',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-03-13',
+    updatedAt: '2026-07-15',
     readTime: '10 min read',
     sections: [
       {
@@ -1589,8 +1589,8 @@ export const articles = [
     descriptionZh: '从定价、付费墙、试用和功能包装识别容易导致低价值周期扣费的应用模式。',
     category: 'Purchasing',
     tags: ['Subscriptions', 'Paywalls', 'Value'],
-    publishedAt: '2026-07-14',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-03-08',
+    updatedAt: '2026-03-22',
     readTime: '9 min read',
     sections: [
       {
@@ -1694,8 +1694,8 @@ export const articles = [
     descriptionZh: '适合儿童或多成员共用 iPhone / iPad 的下载、试用、权限与购买家庭规则。',
     category: 'Family',
     tags: ['Family Sharing', 'Screen Time', 'Child safety'],
-    publishedAt: '2026-07-14',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-03-23',
+    updatedAt: '2026-04-16',
     readTime: '10 min read',
     sections: [
       {
@@ -1799,8 +1799,8 @@ export const articles = [
     descriptionZh: '帮助你在开发者支持、Apple 退款、取消订阅和扣费争议之间做选择的实用指南。',
     category: 'Support',
     tags: ['Refunds', 'Report a Problem', 'Support path'],
-    publishedAt: '2026-07-14',
-    updatedAt: '2026-07-14',
+    publishedAt: '2026-06-18',
+    updatedAt: '2026-07-06',
     readTime: '9 min read',
     sections: [
       {
@@ -1905,8 +1905,8 @@ export const articles = [
     descriptionZh: '安装新 App 时如何使用 Apple Hide My Email 的实用指南，避免一次注册就把主邮箱暴露给不可靠开发者。',
     category: 'Privacy',
     tags: ['Hide My Email', 'Privacy', 'Sign-up safety'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-03-20',
+    updatedAt: '2026-04-01',
     readTime: '10 min read',
     sections: [
       {
@@ -2010,8 +2010,8 @@ export const articles = [
     descriptionZh: '如何配置购买前询问、屏幕使用时间购买限制和家庭角色，让免费试用与误触不再变成意外账单。',
     category: 'Family',
     tags: ['Screen Time', 'Family Sharing', 'Purchase controls'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-05-26',
+    updatedAt: '2026-06-25',
     readTime: '11 min read',
     sections: [
       {
@@ -2109,8 +2109,8 @@ export const articles = [
     descriptionZh: '如何处理 Apple 礼品卡、账户余额和地区限制，避免日后造成退款或账号恢复问题。',
     category: 'Purchasing',
     tags: ['Gift cards', 'Apple balance', 'Account safety'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-04-07',
+    updatedAt: '2026-05-06',
     readTime: '9 min read',
     sections: [
       {
@@ -2208,8 +2208,8 @@ export const articles = [
     descriptionZh: '在买断制与订阅之间做选择的决策框架，覆盖使用频率、更新需求和隐藏的长期成本。',
     category: 'Purchasing',
     tags: ['Paid apps', 'Subscriptions', 'Value'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-04-23',
+    updatedAt: '2026-05-16',
     readTime: '10 min read',
     sections: [
       {
@@ -2307,8 +2307,8 @@ export const articles = [
     descriptionZh: '用直白语言说明何时 VPN 应用、配置描述文件和证书是合理的，何时属于高风险安装路径。',
     category: 'Security',
     tags: ['VPN', 'Profiles', 'Certificates', 'Security'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-05-11',
+    updatedAt: '2026-05-26',
     readTime: '11 min read',
     sections: [
       {
@@ -2406,8 +2406,8 @@ export const articles = [
     descriptionZh: '共用 Apple 付款方式的家庭实用步骤：明确归属、记录扣费、停止续费，并减少重复争议。',
     category: 'Family',
     tags: ['Family Sharing', 'Billing', 'Shared payment'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-03-29',
+    updatedAt: '2026-04-13',
     readTime: '10 min read',
     sections: [
       {
@@ -2505,8 +2505,8 @@ export const articles = [
     descriptionZh: '面向准备研究美区 Apple ID 注册、支付方式限制、礼品卡余额规则和常见账号风险的实用避坑指南，帮助你在切区前先看清边界。',
     category: 'Account Safety',
     tags: ['Apple ID', 'US region', 'Payment methods', 'Gift cards'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-06-26',
+    updatedAt: '2026-07-12',
     readTime: '18 min read',
     sections: [
       {
@@ -2590,7 +2590,7 @@ export const articles = [
     descriptionZh: '深入拆解免费试用转正套路、诱导性付费墙，以及五个值得你在点允许前先停手的高风险 iOS 权限。',
     category: 'Privacy',
     tags: ['Permissions', 'Subscriptions', 'Free trials', 'Privacy labels'],
-    publishedAt: '2026-07-15',
+    publishedAt: '2026-07-03',
     updatedAt: '2026-07-15',
     readTime: '16 min read',
     sections: [
@@ -2698,8 +2698,8 @@ export const articles = [
     descriptionZh: '结构化梳理切换 App Store 地区前的风险矩阵，覆盖支付方式、礼品卡、家庭共享、订阅与账号恢复路径。',
     category: 'Account Safety',
     tags: ['Region switching', 'Apple ID', 'Risk matrix', 'Subscriptions'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-03-17',
+    updatedAt: '2026-03-21',
     readTime: '16 min read',
     sections: [
       {
@@ -2776,8 +2776,8 @@ export const articles = [
     descriptionZh: '如何安全兑换与保护 Apple 礼品卡余额，以及会掏空预付价值的常见社工诈骗模式。',
     category: 'Payments',
     tags: ['Gift cards', 'Scams', 'Balance', 'Apple ID'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-04-19',
+    updatedAt: '2026-05-18',
     readTime: '16 min read',
     sections: [
       {
@@ -2854,8 +2854,8 @@ export const articles = [
     descriptionZh: '面向 iOS 用户的免费试用评估、取消提醒设置，以及避免多账号续费混乱的防御手册。',
     category: 'Subscriptions',
     tags: ['Free trials', 'Auto renew', 'Cancel path', 'Reminders'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-06-13',
+    updatedAt: '2026-07-09',
     readTime: '16 min read',
     sections: [
       {
@@ -2932,8 +2932,8 @@ export const articles = [
     descriptionZh: '用审计思路阅读隐私营养标签，对照真实权限弹窗，并判断安装风险的实用方法。',
     category: 'Privacy',
     tags: ['Privacy labels', 'Permissions', 'Data collection', 'App review'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-04-01',
+    updatedAt: '2026-04-01',
     readTime: '16 min read',
     sections: [
       {
@@ -3010,8 +3010,8 @@ export const articles = [
     descriptionZh: '如何评估 iOS 上的 VPN 应用与配置描述文件，包括证书提示、始终开启宣传，以及更安全的核验步骤。',
     category: 'Security',
     tags: ['VPN', 'Profiles', 'Certificates', 'iOS security'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-04-13',
+    updatedAt: '2026-05-13',
     readTime: '16 min read',
     sections: [
       {
@@ -3088,7 +3088,7 @@ export const articles = [
     descriptionZh: '预防家庭场景下 App Store 意外扣费的实用指南，包括组织者职责、购买前询问缺口与争议准备。',
     category: 'Family',
     tags: ['Family Sharing', 'Ask to Buy', 'Shared payment', 'Children'],
-    publishedAt: '2026-07-15',
+    publishedAt: '2026-07-06',
     updatedAt: '2026-07-15',
     readTime: '16 min read',
     sections: [
@@ -3166,8 +3166,8 @@ export const articles = [
     descriptionZh: '如何评估 TestFlight 邀请与非官方安装叙事，避免把正当内测与高风险分发渠道混为一谈。',
     category: 'Security',
     tags: ['TestFlight', 'Sideloading', 'Beta apps', 'Malware risk'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-03-04',
+    updatedAt: '2026-03-04',
     readTime: '16 min read',
     sections: [
       {
@@ -3244,8 +3244,8 @@ export const articles = [
     descriptionZh: '在安装、订阅或授权前，如何识别仿冒应用与被放大的热度信号。',
     category: 'App Safety',
     tags: ['Lookalike apps', 'Reviews', 'Search ads', 'Install safety'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-06-03',
+    updatedAt: '2026-07-10',
     readTime: '16 min read',
     sections: [
       {
@@ -3322,8 +3322,8 @@ export const articles = [
     descriptionZh: '分步盘点 Apple 订阅、估算年化开销，并按先保护关键工具的顺序取消的方法。',
     category: 'Subscriptions',
     tags: ['Subscription audit', 'Cancel order', 'Budget', 'Apple ID'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-06-10',
+    updatedAt: '2026-07-05',
     readTime: '16 min read',
     sections: [
       {
@@ -3400,8 +3400,8 @@ export const articles = [
     descriptionZh: '如何用隐藏邮件地址与注册纪律减少垃圾邮件、密码复用和废弃 App 账号风险。',
     category: 'Privacy',
     tags: ['Hide My Email', 'Signups', 'Passwords', 'Account hygiene'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-03-03',
+    updatedAt: '2026-04-08',
     readTime: '16 min read',
     sections: [
       {
@@ -3478,8 +3478,8 @@ export const articles = [
     descriptionZh: '在使用 Apple Report a Problem 处理购买与订阅时，如何准备证据、选择时机并清楚表达。',
     category: 'Support',
     tags: ['Refunds', 'Report a Problem', 'Evidence', 'Subscriptions'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-05-05',
+    updatedAt: '2026-05-17',
     readTime: '16 min read',
     sections: [
       {
@@ -3556,8 +3556,8 @@ export const articles = [
     descriptionZh: '针对消息、照片、定位、通知和本地网络等日常权限弹窗的可复用决策树。',
     category: 'Privacy',
     tags: ['Permissions', 'Decision tree', 'Daily apps', 'Privacy'],
-    publishedAt: '2026-07-15',
-    updatedAt: '2026-07-15',
+    publishedAt: '2026-06-21',
+    updatedAt: '2026-06-21',
     readTime: '16 min read',
     sections: [
       {
