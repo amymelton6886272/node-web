@@ -96,30 +96,30 @@ const trustLinks = [
   { href: '/about', label: 'About', labelZh: '关于' },
 ];
 ---
-<BaseLayout title="Storewise Guides - App Store safety, region research, and subscription hygiene" description="Independent bilingual guides for App Store purchase safety: US-region Apple ID research, free-trial traps, permission decisions, Family Sharing charges, refund evidence, and practical subscription hygiene. Tools stay available as secondary research helpers." path="/">
+<BaseLayout title="Storewise - App Store guides, price checks, and safer purchase research" description="Storewise helps you research App Store purchases with bilingual guides, regional price checks, subscription cost estimates, free-trial reminders, and permission risk notes before you pay." path="/">
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
 
   <div class="lang-en">
-    <Hero title="Practical App Store guides before you pay, switch regions, or grant permissions" sub="Long-form bilingual articles on free-trial traps, US-region Apple ID research, Family Sharing charges, privacy labels, refund evidence, and subscription hygiene. Research tools stay one click away as secondary helpers." eyebrow="Publisher guides first" />
+    <Hero title="Research App Store purchases before you pay" sub="Clear bilingual guides on free trials, region research, Family Sharing charges, privacy labels, and subscription hygiene — with practical tools for price checks, cost estimates, and risk notes." eyebrow="App Store research" />
   </div>
   <div class="lang-zh">
-    <Hero title="付款、切区或授权前，先读可核验的 App Store 指南" sub="覆盖免费试用陷阱、美区 Apple ID 研究、家庭共享扣费、隐私标签、退款证据与订阅卫生的双语长文。研究工具作为二级入口，一键可达。" eyebrow="审核期优先发布长文" />
+    <Hero title="在 App Store 付款前，先做好研究" sub="用双语指南梳理免费试用、地区研究、家庭共享扣费、隐私标签与订阅管理；并提供价格核对、成本估算与风险备注等实用工具。" eyebrow="App Store 研究" />
   </div>
 
   <section class="homeIntro card">
     <div class="homeSectionHead">
       <div>
-        <h2 class="lang-en">Why the homepage is a guide hub right now</h2>
-        <h2 class="lang-zh">为什么首页暂时以指南中心呈现</h2>
-        <p class="lang-en">Storewise is an independent publisher for App Store purchase research. During quality review, the homepage leads with original long-form guides so crawlers and readers land on structured articles first. Interactive tools remain fully available under Tools, but they are intentionally secondary while we emphasize transparent, human-written content about risks, workflows, and verification steps.</p>
-        <p class="lang-zh">Storewise 是面向 App Store 购买研究的独立发布站。在内容质量审核期间，首页优先展示原创长文，让爬虫和读者先落到结构清晰的文章。工具箱仍然完整可用，但会作为二级入口，以便更突出关于风险、流程与核验步骤的真人写作内容。</p>
+        <h2 class="lang-en">What Storewise is</h2>
+        <h2 class="lang-zh">Storewise 是什么</h2>
+        <p class="lang-en">Storewise is an independent App Store research site. We publish practical guides and maintain small browser tools so you can compare prices, estimate subscription cost, catch free-trial deadlines, and review permission risks before you buy, subscribe, switch regions, or grant access.</p>
+        <p class="lang-zh">Storewise 是独立的 App Store 研究站点。我们发布实用指南，并维护轻量浏览器工具，帮助你在购买、订阅、切区或授权前比较价格、估算订阅成本、盯住试用截止日，并核对权限风险。</p>
       </div>
     </div>
     <div class="homeTrustLinks">
-      <span class="lang-en">Trust pages</span>
-      <span class="lang-zh">合规与信任</span>
+      <span class="lang-en">About & policies</span>
+      <span class="lang-zh">关于与政策</span>
       {trustLinks.map((link) => (
         <a href={link.href}>
           <span class="lang-en">{link.label}</span>
@@ -132,10 +132,10 @@ const trustLinks = [
   <section class="richSection card homeDeepGuides">
     <div class="homeSectionHead">
       <div>
-        <h2 class="lang-en">Deep guides (start here)</h2>
-        <h2 class="lang-zh">深度指南（从这里开始）</h2>
-        <p class="lang-en contentLead">These articles are written as multi-section research notes: scenario, failure modes, verification steps, and safer defaults. They are not thin tool wrappers.</p>
-        <p class="lang-zh contentLead">这些文章按研究笔记结构写作：场景、失败模式、核验步骤与更稳妥默认策略，而不是单薄的工具壳页面。</p>
+        <h2 class="lang-en">Featured guides</h2>
+        <h2 class="lang-zh">精选指南</h2>
+        <p class="lang-en contentLead">Multi-section articles on account research, free-trial traps, permissions, Family Sharing, refunds, and safer defaults — written to be checked against official Apple screens.</p>
+        <p class="lang-zh contentLead">覆盖账号研究、免费试用陷阱、权限、家庭共享、退款与更稳妥默认策略的多章节文章，便于对照官方 Apple 界面核验。</p>
       </div>
       <a class="homeSectionCta" href="/articles">
         <span class="lang-en">All articles</span>
@@ -166,14 +166,14 @@ const trustLinks = [
   <section class="homeFeatured card">
     <div class="homeSectionHead">
       <div>
-        <h2 class="lang-en">Research tools (secondary menu)</h2>
-        <h2 class="lang-zh">研究工具（二级入口）</h2>
-        <p class="lang-en">Use tools after reading the matching guide. Each utility page still includes SSR explanations and limitations.</p>
-        <p class="lang-zh">建议先读对应指南再使用工具。每个工具页仍保留服务端渲染的说明与限制。</p>
+        <h2 class="lang-en">Tools</h2>
+        <h2 class="lang-zh">工具</h2>
+        <p class="lang-en">Use these when you need a quick check. Every tool page includes a short overview and a longer guide below the workspace.</p>
+        <p class="lang-zh">需要快速核对时用这些工具。每个工具页上方有简短说明，下方保留完整指南。</p>
       </div>
       <a class="homeSectionCta" href="/price">
-        <span class="lang-en">Open tools</span>
-        <span class="lang-zh">打开工具箱</span>
+        <span class="lang-en">Browse tools</span>
+        <span class="lang-zh">浏览工具</span>
       </a>
     </div>
     <div class="homeToolGrid">
@@ -233,8 +233,8 @@ const trustLinks = [
   <section class="richSection card">
     <div class="homeSectionHead">
       <div>
-        <h2 class="lang-en">More recent articles</h2>
-        <h2 class="lang-zh">更多近期文章</h2>
+        <h2 class="lang-en">Latest articles</h2>
+        <h2 class="lang-zh">最新文章</h2>
         <p class="lang-en contentLead">Practical guides on refunds, free trials, Family Sharing, permissions, region research, and subscription hygiene. These pages are written as original publisher content, not empty tool wrappers.</p>
         <p class="lang-zh contentLead">覆盖退款、免费试用、家庭共享、权限、地区研究和订阅维护的实用指南。这些页面是原创发布商内容，而不是空壳工具包装。</p>
       </div>
