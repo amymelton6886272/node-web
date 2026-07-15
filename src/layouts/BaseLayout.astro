@@ -122,6 +122,10 @@ const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbs);
     <slot name="head" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">
+      <span class="lang-en">Skip to main content</span>
+      <span class="lang-zh">跳到主要内容</span>
+    </a>
     <header class="top">
       <a class="brand" href="/">
         <span class="logo" aria-label="Storewise logo">S</span>
@@ -184,7 +188,7 @@ const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbs);
           </section>
         ))}
       </aside>
-      <main id="main-content">
+      <main id="main-content" tabindex="-1">
         <slot />
       </main>
     </div>
