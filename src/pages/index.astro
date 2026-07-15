@@ -97,7 +97,7 @@ const trustLinks = [
   { href: '/about', label: 'About', labelZh: '关于' },
 ];
 ---
-<BaseLayout title="Storewise - App Store guides, price checks, and safer purchase research" description="Storewise helps you research App Store purchases with bilingual guides, regional price checks, subscription cost estimates, free-trial reminders, and permission risk notes before you pay." path="/">
+<BaseLayout title="Storewise - App Store guides, price checks, and safer purchase research" description="Storewise helps you research App Store purchases with bilingual guides, regional price checks, subscription cost estimates, free-trial reminders, and permission risk notes before you pay." path="/" breadcrumbs={[{ name: 'Home', item: SITE }]}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>

@@ -8,6 +8,9 @@ const {
   ogType = 'website',
   includeSiteSchema = true,
   robots = 'index,follow',
+  // Optional trail: [{ name, item? }]. Last crumb defaults to this page canonical when item omitted.
+  breadcrumbs = [],
+  extraSchemas = [],
 } = Astro.props;
 
 // Always canonicalize to path without query/hash so dynamic tool searches never mint indexable URLs.
@@ -30,6 +33,46 @@ const websiteSchema = {
   inLanguage: ['en', 'zh-CN'],
   publisher: { '@type': 'Organization', name: 'Storewise', url: SITE },
 };
+
+// Home-only SoftwareApplication for the free browser research tools described on-page.
+// Free access only — price 0 matches the no-account, no-paywall tools on the homepage.
+const softwareApplicationSchema = cleanPath === '/' ? {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Storewise',
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Web',
+  url: SITE,
+  description,
+  isAccessibleForFree: true,
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+  publisher: { '@type': 'Organization', name: 'Storewise', url: SITE },
+  inLanguage: ['en', 'zh-CN'],
+} : null;
+
+function buildBreadcrumbSchema(crumbs) {
+  if (!Array.isArray(crumbs) || crumbs.length === 0) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((crumb, index) => {
+      const entry = {
+        '@type': 'ListItem',
+        position: index + 1,
+        name: crumb.name,
+      };
+      const itemUrl = crumb.item || (index === crumbs.length - 1 ? canonical : null);
+      if (itemUrl) entry.item = itemUrl;
+      return entry;
+    }),
+  };
+}
+
+const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbs);
 ---
 <!doctype html>
 <html lang="en" data-lang="en">
@@ -58,8 +101,17 @@ const websiteSchema = {
       <>
         <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
         <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+        {softwareApplicationSchema && (
+          <script type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />
+        )}
       </>
     )}
+    {breadcrumbSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    )}
+    {extraSchemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
     <script is:inline>
       const savedLang = localStorage.getItem('lang');
       const preferredLang = savedLang || ((navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en');

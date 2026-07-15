@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../astro/site.js';
 import Hero from '../../components/Hero.astro';
 import { articles, getArticlePath } from '../../data/articles.js';
 import { getHubLinks, getAllSeriesForIndex } from '../../data/related.js';
@@ -15,7 +16,7 @@ const hubLinks = getHubLinks();
 const featured = sorted.slice(0, 6);
 const seriesList = getAllSeriesForIndex();
 ---
-<BaseLayout title="Articles - Storewise" description="Practical Apple and App Store research articles for safer purchasing, privacy, and account decisions." path="/articles">
+<BaseLayout title="Articles - Storewise" description="Practical Apple and App Store research articles for safer purchasing, privacy, and account decisions." path="/articles" breadcrumbs={[{ name: 'Home', item: SITE }, { name: 'Articles', item: `${SITE}/articles` }]}>
   <Hero
     title="Articles"
     titleZh="文章"

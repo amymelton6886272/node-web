@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../astro/site.js';
 import { toolPages } from '../astro/toolPages.js';
 import ToolStaticContent from '../components/ToolStaticContent.astro';
 import PriceIsland from '../islands/PriceIsland.jsx';
@@ -34,8 +35,37 @@ if (tool === 'iap') {
 // Utility tools: short intro above, interactive tool, long guide below.
 const contentFirstTools = new Set(['guides', 'glossary', 'checklists', 'risk', 'knowledge']);
 const isContentFirst = contentFirstTools.has(tool);
+
+const toolSoftwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: meta.title.replace(/ - Storewise$/, ''),
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Web',
+  url: `${SITE}${path}`,
+  description: meta.description,
+  isAccessibleForFree: true,
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+  publisher: { '@type': 'Organization', name: 'Storewise', url: SITE },
+  isPartOf: { '@type': 'WebSite', name: 'Storewise', url: SITE },
+};
+
+const toolBreadcrumbs = [
+  { name: 'Home', item: SITE },
+  { name: meta.title.replace(/ - Storewise$/, ''), item: `${SITE}${path}` },
+];
 ---
-<BaseLayout title={meta.title} description={meta.description} path={path}>
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  path={path}
+  breadcrumbs={toolBreadcrumbs}
+  extraSchemas={[toolSoftwareSchema]}
+>
   {!isContentFirst && <ToolStaticContent tool={tool} variant="intro" />}
 
   <div id="tool-workspace" class="toolWorkspace">
