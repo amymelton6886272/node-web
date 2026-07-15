@@ -2,8 +2,17 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import { articles, getArticlePath } from '../../data/articles.js';
+import { getHubLinks } from '../../data/related.js';
 
 export const prerender = true;
+
+const sorted = [...articles].sort((a, b) =>
+  String(b.updatedAt || b.publishedAt).localeCompare(String(a.updatedAt || a.publishedAt))
+);
+
+const categories = [...new Set(sorted.map((a) => a.category).filter(Boolean))];
+const hubLinks = getHubLinks();
+const featured = sorted.slice(0, 6);
 ---
 <BaseLayout title="Articles - Storewise" description="Practical Apple and App Store research articles for safer purchasing, privacy, and account decisions." path="/articles">
   <div class="lang-en">
@@ -24,8 +33,59 @@ export const prerender = true;
     </div>
   </section>
 
+  <section class="relatedBlock card" aria-label="Article topics and hubs">
+    <div class="homeSectionHead" style="margin-bottom:12px;">
+      <div>
+        <h2 class="lang-en">Topics & hubs</h2>
+        <h2 class="lang-zh">主题与枢纽</h2>
+        <p class="lang-en contentLead">Start from a topic cluster, or jump into tools and policy pages that support the research.</p>
+        <p class="lang-zh contentLead">可从主题簇开始，或直接进入支撑研究的工具与政策页。</p>
+      </div>
+    </div>
+    <div class="articleTags" style="margin-bottom:12px;">
+      {categories.map((cat) => <span class="articleCategory">{cat}</span>)}
+    </div>
+    <div class="contentLinks" style="border-top:0;margin-top:0;padding-top:0;">
+      {hubLinks.map((link) => (
+        <a href={link.href}>
+          <span class="lang-en">{link.label}</span>
+          <span class="lang-zh">{link.labelZh}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="richSection card homeDeepGuides" style="margin-bottom:18px;">
+    <div class="homeSectionHead">
+      <div>
+        <h2 class="lang-en">Start here</h2>
+        <h2 class="lang-zh">先从这里读</h2>
+        <p class="lang-en contentLead">Recently updated guides with multi-section depth. Good entry points for Search and first-time readers.</p>
+        <p class="lang-zh contentLead">近期更新的多章节指南，适合作为搜索与新读者的入口。</p>
+      </div>
+    </div>
+    <div class="articleGrid">
+      {featured.map((article) => (
+        <a class="articleCard homeArticleCard" href={getArticlePath(article)}>
+          <div class="articleMeta">
+            <span>{article.category}</span>
+            <span>{article.readTime}</span>
+          </div>
+          <h3 class="lang-en">{article.title}</h3>
+          <h3 class="lang-zh">{article.titleZh}</h3>
+          <p class="lang-en">{article.description}</p>
+          <p class="lang-zh">{article.descriptionZh}</p>
+          <div class="homeArticleMeta">
+            <span class="lang-en">Updated {article.updatedAt}</span>
+            <span class="lang-zh">更新于 {article.updatedAt}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
   <div class="articleGrid">
-    {articles.map((article) => (
+    {sorted.map((article) => (
       <a class="articleCard card" href={getArticlePath(article)}>
         <span class="articleCategory">{article.category}</span>
         <h2 class="lang-en">{article.title}</h2>

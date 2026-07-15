@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import { SITE } from '../../astro/site.js';
 import { articles, getArticlePath } from '../../data/articles.js';
-import { getRelatedArticles, getRelatedTools } from '../../data/related.js';
+import { getRelatedArticles, getRelatedTools, getHubLinks } from '../../data/related.js';
 
 export const prerender = true;
 
@@ -18,6 +18,7 @@ const { article } = Astro.props;
 const path = getArticlePath(article);
 const relatedTools = getRelatedTools(article);
 const relatedArticles = getRelatedArticles(article);
+const hubLinks = getHubLinks();
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -116,12 +117,31 @@ const breadcrumbSchema = {
       </div>
     </section>
 
+    <section class="relatedBlock" aria-label="Explore more on Storewise">
+      <h2 class="lang-en">Explore more on Storewise</h2>
+      <h2 class="lang-zh">继续探索 Storewise</h2>
+      <p class="lang-en contentLead">Jump to research hubs, practical tools, or site policies without going back to the homepage.</p>
+      <p class="lang-zh contentLead">可直接进入研究枢纽、实用工具或站点政策页，无需回到首页。</p>
+      <div class="contentLinks" style="border-top:0;margin-top:0;padding-top:0;">
+        {hubLinks.map((link) => (
+          <a href={link.href}>
+            <span class="lang-en">{link.label}</span>
+            <span class="lang-zh">{link.labelZh}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
     <div class="articleFooter">
       <a href="/articles"><span class="lang-en">All articles</span><span class="lang-zh">全部文章</span></a>
+      <a href="/guides"><span class="lang-en">Guides hub</span><span class="lang-zh">指南中心</span></a>
       <a href="/checklists"><span class="lang-en">Decision checklists</span><span class="lang-zh">决策清单</span></a>
       <a href="/knowledge"><span class="lang-en">Knowledge base</span><span class="lang-zh">知识库</span></a>
+      <a href="/glossary"><span class="lang-en">Glossary</span><span class="lang-zh">术语表</span></a>
+      <a href="/price"><span class="lang-en">Price compare</span><span class="lang-zh">价格对比</span></a>
       <a href="/subcost"><span class="lang-en">Sub cost calculator</span><span class="lang-zh">订阅成本</span></a>
       <a href="/trial"><span class="lang-en">Trial reminder</span><span class="lang-zh">试用提醒</span></a>
+      <a href="/privacy"><span class="lang-en">Privacy</span><span class="lang-zh">隐私政策</span></a>
     </div>
   </article>
 </BaseLayout>

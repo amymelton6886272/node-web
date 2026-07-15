@@ -71,7 +71,7 @@ export function getRelatedTools(article, limit = 4) {
   return list.slice(0, limit);
 }
 
-export function getRelatedArticles(article, limit = 4) {
+export function getRelatedArticles(article, limit = 6) {
   const tags = new Set((article.tags || []).map((t) => String(t).toLowerCase()));
   const category = String(article.category || '').toLowerCase();
 
@@ -96,4 +96,20 @@ export function getRelatedArticles(article, limit = 4) {
     description: item.description,
     descriptionZh: item.descriptionZh || item.description,
   }));
+}
+
+/** Stable hub links for article footers / index side panels. */
+export function getHubLinks() {
+  return [
+    { href: '/articles', label: 'All articles', labelZh: '全部文章' },
+    { href: '/guides', label: 'Guides', labelZh: '指南' },
+    { href: '/knowledge', label: 'Knowledge base', labelZh: '知识库' },
+    { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
+    { href: '/glossary', label: 'Glossary', labelZh: '术语表' },
+    { href: '/price', label: 'Price compare', labelZh: '价格对比' },
+    { href: '/subcost', label: 'Sub cost calculator', labelZh: '订阅成本' },
+    { href: '/trial', label: 'Trial reminder', labelZh: '试用提醒' },
+    { href: '/risk', label: 'App risk assessor', labelZh: '风险评估' },
+    { href: '/privacy', label: 'Privacy policy', labelZh: '隐私政策' },
+  ];
 }
