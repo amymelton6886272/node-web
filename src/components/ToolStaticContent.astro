@@ -32,6 +32,7 @@ const showHowto = variant === 'full' || variant === 'all';
       <div class="lang-en">
         {en.title && <h1 class="toolIntroTitle">{en.title}</h1>}
         {en.intro && <p class="contentLead toolIntroLead">{en.intro}</p>}
+        {en.notice && <p class="toolComplianceNotice" role="note">{en.notice}</p>}
         <div class="toolIntroActions">
           <a class="toolJumpBtn" href="#tool-workspace">Use the tool</a>
           {showDetails === false && (
@@ -45,6 +46,7 @@ const showHowto = variant === 'full' || variant === 'all';
       <div class="lang-zh" lang="zh-CN">
         {zh.title && <h1 class="toolIntroTitle">{zh.title}</h1>}
         {zh.intro && <p class="contentLead toolIntroLead">{zh.intro}</p>}
+        {zh.notice && <p class="toolComplianceNotice" role="note">{zh.notice}</p>}
         <div class="toolIntroActions">
           <a class="toolJumpBtn" href="#tool-workspace">开始使用工具</a>
           {showDetails === false && (
@@ -63,6 +65,7 @@ const showHowto = variant === 'full' || variant === 'all';
       <div class="lang-en">
         {variant === 'full' && en.title && <h2>{en.title}</h2>}
         {variant === 'full' && en.intro && <p class="contentLead">{en.intro}</p>}
+        {en.notice && <p class="toolComplianceNotice" role="note">{en.notice}</p>}
         {en.items?.length > 0 && (
           <div class="contentGrid">
             {en.items.map((item) => (
@@ -87,6 +90,7 @@ const showHowto = variant === 'full' || variant === 'all';
       <div class="lang-zh" lang="zh-CN">
         {variant === 'full' && zh.title && <h2>{zh.title}</h2>}
         {variant === 'full' && zh.intro && <p class="contentLead">{zh.intro}</p>}
+        {zh.notice && <p class="toolComplianceNotice" role="note">{zh.notice}</p>}
         {zh.items?.length > 0 && (
           <div class="contentGrid">
             {zh.items.map((item) => (
