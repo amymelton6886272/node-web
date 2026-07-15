@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import { SITE } from '../../astro/site.js';
 import { articles, getArticlePath } from '../../data/articles.js';
-import { getRelatedArticles, getRelatedTools, getHubLinks } from '../../data/related.js';
+import { getRelatedArticles, getRelatedTools, getHubLinks, getArticleSeries } from '../../data/related.js';
 
 export const prerender = true;
 
@@ -19,6 +19,7 @@ const path = getArticlePath(article);
 const relatedTools = getRelatedTools(article);
 const relatedArticles = getRelatedArticles(article);
 const hubLinks = getHubLinks();
+const series = getArticleSeries(article);
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -78,6 +79,61 @@ const breadcrumbSchema = {
       <strong class="lang-zh">本文目录</strong>
       {article.sections.map((section, index) => <a href={`#section-${index}`}><span class="lang-en">{section.heading}</span><span class="lang-zh">{section.headingZh || section.heading}</span></a>)}
     </nav>
+
+    {series && (
+      <section class="seriesNav card" aria-label="Reading series">
+        <div class="seriesNavHead">
+          <div>
+            <p class="seriesEyebrow lang-en">Reading series · {series.position}/{series.total}</p>
+            <p class="seriesEyebrow lang-zh">阅读系列 · {series.position}/{series.total}</p>
+            <h2 class="lang-en">{series.title}</h2>
+            <h2 class="lang-zh">{series.titleZh}</h2>
+            <p class="lang-en contentLead">{series.description}</p>
+            <p class="lang-zh contentLead">{series.descriptionZh}</p>
+          </div>
+        </div>
+        <ol class="seriesList">
+          {series.items.map((item, index) => (
+            <li class:list={[{ current: item.slug === article.slug }]}>
+              <a href={item.href} aria-current={item.slug === article.slug ? 'page' : undefined}>
+                <span class="seriesStep">{index + 1}</span>
+                <span class="lang-en">{item.title}</span>
+                <span class="lang-zh">{item.titleZh}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+        <div class="seriesPager">
+          {series.prev ? (
+            <a class="seriesPagerLink prev" href={series.prev.href}>
+              <span class="lang-en">Previous</span>
+              <span class="lang-zh">上一篇</span>
+              <strong class="lang-en">{series.prev.title}</strong>
+              <strong class="lang-zh">{series.prev.titleZh}</strong>
+            </a>
+          ) : (
+            <span class="seriesPagerLink disabled">
+              <span class="lang-en">Start of series</span>
+              <span class="lang-zh">系列起点</span>
+            </span>
+          )}
+          {series.next ? (
+            <a class="seriesPagerLink next" href={series.next.href}>
+              <span class="lang-en">Continue</span>
+              <span class="lang-zh">继续阅读</span>
+              <strong class="lang-en">{series.next.title}</strong>
+              <strong class="lang-zh">{series.next.titleZh}</strong>
+            </a>
+          ) : (
+            <span class="seriesPagerLink disabled">
+              <span class="lang-en">End of series</span>
+              <span class="lang-zh">系列终点</span>
+            </span>
+          )}
+        </div>
+      </section>
+    )}
+
     {article.sections.map((section, index) => (
       <section id={`section-${index}`}>
         <h2 class="lang-en">{section.heading}</h2>
@@ -86,6 +142,33 @@ const breadcrumbSchema = {
         {section.textZh && <p class="lang-zh" lang="zh-CN">{section.textZh}</p>}
       </section>
     ))}
+
+    {series && series.next && (
+      <section class="seriesContinue card" aria-label="Continue series">
+        <p class="seriesEyebrow lang-en">Next in this series · {series.position + 1}/{series.total}</p>
+        <p class="seriesEyebrow lang-zh">本系列下一篇 · {series.position + 1}/{series.total}</p>
+        <h2 class="lang-en">{series.next.title}</h2>
+        <h2 class="lang-zh">{series.next.titleZh}</h2>
+        <p class="lang-en contentLead">Keep the same research path so related decisions stay consistent.</p>
+        <p class="lang-zh contentLead">沿同一研究路径继续，相关决策会更连贯。</p>
+        <div class="seriesPager">
+          <a class="seriesPagerLink next" href={series.next.href}>
+            <span class="lang-en">Continue reading</span>
+            <span class="lang-zh">继续阅读</span>
+            <strong class="lang-en">{series.next.title}</strong>
+            <strong class="lang-zh">{series.next.titleZh}</strong>
+          </a>
+          {series.prev && (
+            <a class="seriesPagerLink prev" href={series.prev.href}>
+              <span class="lang-en">Previous</span>
+              <span class="lang-zh">上一篇</span>
+              <strong class="lang-en">{series.prev.title}</strong>
+              <strong class="lang-zh">{series.prev.titleZh}</strong>
+            </a>
+          )}
+        </div>
+      </section>
+    )}
 
     <section class="relatedBlock" aria-label="Related tools">
       <h2 class="lang-en">Related tools</h2>

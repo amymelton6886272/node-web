@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import { articles, getArticlePath } from '../../data/articles.js';
-import { getHubLinks } from '../../data/related.js';
+import { getHubLinks, getAllSeriesForIndex } from '../../data/related.js';
 
 export const prerender = true;
 
@@ -13,6 +13,7 @@ const sorted = [...articles].sort((a, b) =>
 const categories = [...new Set(sorted.map((a) => a.category).filter(Boolean))];
 const hubLinks = getHubLinks();
 const featured = sorted.slice(0, 6);
+const seriesList = getAllSeriesForIndex();
 ---
 <BaseLayout title="Articles - Storewise" description="Practical Apple and App Store research articles for safer purchasing, privacy, and account decisions." path="/articles">
   <div class="lang-en">
@@ -51,6 +52,42 @@ const featured = sorted.slice(0, 6);
           <span class="lang-en">{link.label}</span>
           <span class="lang-zh">{link.labelZh}</span>
         </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="richSection card homeSeries" aria-label="Reading series">
+    <div class="homeSectionHead">
+      <div>
+        <h2 class="lang-en">Reading series</h2>
+        <h2 class="lang-zh">阅读系列</h2>
+        <p class="lang-en contentLead">Follow an ordered path instead of bouncing between isolated posts. Each series links prev/next guides for the same decision flow.</p>
+        <p class="lang-zh contentLead">按顺序阅读，而不是在孤立文章之间跳转。每个系列都把同一决策流程的上一篇/下一篇串起来。</p>
+      </div>
+    </div>
+    <div class="seriesIndexGrid">
+      {seriesList.map((series) => (
+        <article class="seriesIndexCard">
+          <h3 class="lang-en">{series.title}</h3>
+          <h3 class="lang-zh">{series.titleZh}</h3>
+          <p class="lang-en">{series.description}</p>
+          <p class="lang-zh">{series.descriptionZh}</p>
+          <ol class="seriesList compact">
+            {series.items.map((item, index) => (
+              <li>
+                <a href={item.href}>
+                  <span class="seriesStep">{index + 1}</span>
+                  <span class="lang-en">{item.title}</span>
+                  <span class="lang-zh">{item.titleZh}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+          <a class="homeSectionCta" href={series.startHref}>
+            <span class="lang-en">Start series</span>
+            <span class="lang-zh">开始本系列</span>
+          </a>
+        </article>
       ))}
     </div>
   </section>
