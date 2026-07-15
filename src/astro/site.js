@@ -2,8 +2,8 @@ export const SITE = 'https://souk.eu.org';
 
 export const navItems = [
   { href: '/', label: 'Home', labelZh: '首页' },
-  { href: '/price', label: 'Tools', labelZh: '工具' },
   { href: '/articles', label: 'Articles', labelZh: '文章' },
+  { href: '/price', label: 'Tools', labelZh: '工具' },
   { href: '/about', label: 'About', labelZh: '关于' },
   { href: '/contact', label: 'Contact', labelZh: '联系' },
 ];

@@ -74,7 +74,9 @@ const faqSchema = {
 
 const latestArticles = [...articles]
   .sort((a, b) => String(b.updatedAt || b.publishedAt).localeCompare(String(a.updatedAt || a.publishedAt)))
-  .slice(0, 6);
+  .slice(0, 12);
+
+const featuredDeep = latestArticles.slice(0, 8);
 
 const featuredTools = [
   { href: '/price', icon: '$', label: 'Price compare', labelZh: '价格对比', desc: 'Regional App Store prices', descZh: '多地区价格对照' },
@@ -94,26 +96,85 @@ const trustLinks = [
   { href: '/about', label: 'About', labelZh: '关于' },
 ];
 ---
-<BaseLayout title="Storewise - check App Store prices, trials, and risks before you pay" description="Storewise is an independent App Store research site. Compare regional prices, estimate subscription cost, build free-trial reminders, review permission risks, and read practical safety guides before you buy." path="/">
+<BaseLayout title="Storewise Guides - App Store safety, region research, and subscription hygiene" description="Independent bilingual guides for App Store purchase safety: US-region Apple ID research, free-trial traps, permission decisions, Family Sharing charges, refund evidence, and practical subscription hygiene. Tools stay available as secondary research helpers." path="/">
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
 
   <div class="lang-en">
-    <Hero title="Decide smarter before you pay on the App Store" sub="Compare regional prices, estimate subscription cost, catch free-trial traps, and review permission risks — with practical guides next to every tool." eyebrow="App Store research" />
+    <Hero title="Practical App Store guides before you pay, switch regions, or grant permissions" sub="Long-form bilingual articles on free-trial traps, US-region Apple ID research, Family Sharing charges, privacy labels, refund evidence, and subscription hygiene. Research tools stay one click away as secondary helpers." eyebrow="Publisher guides first" />
   </div>
   <div class="lang-zh">
-    <Hero title="在 App Store 付款前，先把关键信息看清楚" sub="比较地区价格、估算订阅成本、识别试用陷阱并评估权限风险——工具旁边就有可核对的实用指南。" eyebrow="App Store 研究" />
+    <Hero title="付款、切区或授权前，先读可核验的 App Store 指南" sub="覆盖免费试用陷阱、美区 Apple ID 研究、家庭共享扣费、隐私标签、退款证据与订阅卫生的双语长文。研究工具作为二级入口，一键可达。" eyebrow="审核期优先发布长文" />
   </div>
+
+  <section class="homeIntro card">
+    <div class="homeSectionHead">
+      <div>
+        <h2 class="lang-en">Why the homepage is a guide hub right now</h2>
+        <h2 class="lang-zh">为什么首页暂时以指南中心呈现</h2>
+        <p class="lang-en">Storewise is an independent publisher for App Store purchase research. During quality review, the homepage leads with original long-form guides so crawlers and readers land on structured articles first. Interactive tools remain fully available under Tools, but they are intentionally secondary while we emphasize transparent, human-written content about risks, workflows, and verification steps.</p>
+        <p class="lang-zh">Storewise 是面向 App Store 购买研究的独立发布站。在内容质量审核期间，首页优先展示原创长文，让爬虫和读者先落到结构清晰的文章。工具箱仍然完整可用，但会作为二级入口，以便更突出关于风险、流程与核验步骤的真人写作内容。</p>
+      </div>
+    </div>
+    <div class="homeTrustLinks">
+      <span class="lang-en">Trust pages</span>
+      <span class="lang-zh">合规与信任</span>
+      {trustLinks.map((link) => (
+        <a href={link.href}>
+          <span class="lang-en">{link.label}</span>
+          <span class="lang-zh">{link.labelZh}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="richSection card homeDeepGuides">
+    <div class="homeSectionHead">
+      <div>
+        <h2 class="lang-en">Deep guides (start here)</h2>
+        <h2 class="lang-zh">深度指南（从这里开始）</h2>
+        <p class="lang-en contentLead">These articles are written as multi-section research notes: scenario, failure modes, verification steps, and safer defaults. They are not thin tool wrappers.</p>
+        <p class="lang-zh contentLead">这些文章按研究笔记结构写作：场景、失败模式、核验步骤与更稳妥默认策略，而不是单薄的工具壳页面。</p>
+      </div>
+      <a class="homeSectionCta" href="/articles">
+        <span class="lang-en">All articles</span>
+        <span class="lang-zh">全部文章</span>
+      </a>
+    </div>
+    <div class="articleGrid">
+      {featuredDeep.map((article) => (
+        <a class="articleCard homeArticleCard" href={getArticlePath(article)}>
+          <div class="articleMeta">
+            <span>{article.category}</span>
+            <span class="lang-en">{article.readTime}</span>
+            <span class="lang-zh">{article.readTime}</span>
+          </div>
+          <h3 class="lang-en">{article.title}</h3>
+          <h3 class="lang-zh">{article.titleZh}</h3>
+          <p class="lang-en">{article.description}</p>
+          <p class="lang-zh">{article.descriptionZh}</p>
+          <div class="homeArticleMeta">
+            <span class="lang-en">Updated {article.updatedAt}</span>
+            <span class="lang-zh">更新于 {article.updatedAt}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
 
   <section class="homeFeatured card">
     <div class="homeSectionHead">
       <div>
-        <h2 class="lang-en">Start with a tool</h2>
-        <h2 class="lang-zh">先从工具开始</h2>
-        <p class="lang-en">Interactive research first. Short explanations stay nearby so you can verify results before you act.</p>
-        <p class="lang-zh">先做可交互研究，短说明就在旁边，方便行动前核对结果。</p>
+        <h2 class="lang-en">Research tools (secondary menu)</h2>
+        <h2 class="lang-zh">研究工具（二级入口）</h2>
+        <p class="lang-en">Use tools after reading the matching guide. Each utility page still includes SSR explanations and limitations.</p>
+        <p class="lang-zh">建议先读对应指南再使用工具。每个工具页仍保留服务端渲染的说明与限制。</p>
       </div>
+      <a class="homeSectionCta" href="/price">
+        <span class="lang-en">Open tools</span>
+        <span class="lang-zh">打开工具箱</span>
+      </a>
     </div>
     <div class="homeToolGrid">
       {featuredTools.map((tool) => (
@@ -123,27 +184,6 @@ const trustLinks = [
             <b><span class="lang-en">{tool.label}</span><span class="lang-zh">{tool.labelZh}</span></b>
             <small><span class="lang-en">{tool.desc}</span><span class="lang-zh">{tool.descZh}</span></small>
           </span>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <section class="homeIntro card">
-    <div class="homeSectionHead">
-      <div>
-        <h2 class="lang-en">Research tools first, empty pages never</h2>
-        <h2 class="lang-zh">先给研究工具，不给空页面</h2>
-        <p class="lang-en">Storewise is built for purchase decisions: price comparison, subscription cost, trial reminders, risk checks, and bilingual safety guides. Every utility page starts with a short overview, puts the interactive tool near the top, and keeps a full guide below for verification.</p>
-        <p class="lang-zh">Storewise 面向购买决策：价格对比、订阅成本、试用提醒、风险检查和双语安全指南。每个工具页先给短说明，把交互工具放在上方，下方保留完整指南方便核对。</p>
-      </div>
-    </div>
-    <div class="homeTrustLinks">
-      <span class="lang-en">Trust & reading</span>
-      <span class="lang-zh">信任与阅读</span>
-      {trustLinks.map((link) => (
-        <a href={link.href}>
-          <span class="lang-en">{link.label}</span>
-          <span class="lang-zh">{link.labelZh}</span>
         </a>
       ))}
     </div>
@@ -193,8 +233,8 @@ const trustLinks = [
   <section class="richSection card">
     <div class="homeSectionHead">
       <div>
-        <h2 class="lang-en">Latest articles</h2>
-        <h2 class="lang-zh">最新文章</h2>
+        <h2 class="lang-en">More recent articles</h2>
+        <h2 class="lang-zh">更多近期文章</h2>
         <p class="lang-en contentLead">Practical guides on refunds, free trials, Family Sharing, permissions, region research, and subscription hygiene. These pages are written as original publisher content, not empty tool wrappers.</p>
         <p class="lang-zh contentLead">覆盖退款、免费试用、家庭共享、权限、地区研究和订阅维护的实用指南。这些页面是原创发布商内容，而不是空壳工具包装。</p>
       </div>

@@ -2,121 +2,121 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://souk.eu.org/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/about</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/contact</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/privacy</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/disclaimer</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/terms</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/editorial</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/data-sources</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/price</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/appfree</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/iap</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/icon</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/ip</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/address</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/guides</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/knowledge</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/articles</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/checklists</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/glossary</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://souk.eu.org/risk</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -272,6 +272,90 @@
   </url>
   <url>
     <loc>https://souk.eu.org/articles/shared-payment-method-family-disputes</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://souk.eu.org/articles/us-apple-id-registration-and-payment-research-2026</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://souk.eu.org/articles/ios-subscription-traps-and-five-permissions-to-refuse</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://souk.eu.org/articles/cross-region-apple-id-switching-risk-matrix-2026</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://souk.eu.org/articles/apple-gift-card-balance-safety-and-scam-patterns</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://souk.eu.org/articles/free-trial-to-paid-conversion-defense-playbook</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://souk.eu.org/articles/app-store-privacy-labels-how-to-read-like-an-auditor</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://souk.eu.org/articles/ios-configuration-profile-vpn-certificate-danger-guide</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://souk.eu.org/articles/family-sharing-ask-to-buy-and-unexpected-charges</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://souk.eu.org/articles/testflight-sideload-and-unofficial-install-risks</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://souk.eu.org/articles/app-store-search-ads-and-fake-popular-apps</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://souk.eu.org/articles/ios-subscription-stack-audit-and-cancel-order</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://souk.eu.org/articles/hide-my-email-signups-and-app-account-hygiene</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://souk.eu.org/articles/report-a-problem-refund-evidence-and-timing</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://souk.eu.org/articles/ios-permission-prompt-decision-tree-for-daily-apps</loc>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
