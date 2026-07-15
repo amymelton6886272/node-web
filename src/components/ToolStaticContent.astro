@@ -28,9 +28,14 @@ const showHowto = variant === 'full' || variant === 'all';
 
 {(en || zh) && showIntro && (
   <section class="card toolIntroStrip" aria-label="Tool overview">
+    {(en?.title || zh?.title) && (
+      <h1 class="toolIntroTitle">
+        {en?.title && <span class="lang-en">{en.title}</span>}
+        {zh?.title && <span class="lang-zh">{zh.title}</span>}
+      </h1>
+    )}
     {en && (
       <div class="lang-en">
-        {en.title && <h1 class="toolIntroTitle">{en.title}</h1>}
         {en.intro && <p class="contentLead toolIntroLead">{en.intro}</p>}
         {en.notice && <p class="toolComplianceNotice" role="note">{en.notice}</p>}
         <div class="toolIntroActions">
@@ -44,7 +49,6 @@ const showHowto = variant === 'full' || variant === 'all';
     )}
     {zh && (
       <div class="lang-zh" lang="zh-CN">
-        {zh.title && <h1 class="toolIntroTitle">{zh.title}</h1>}
         {zh.intro && <p class="contentLead toolIntroLead">{zh.intro}</p>}
         {zh.notice && <p class="toolComplianceNotice" role="note">{zh.notice}</p>}
         <div class="toolIntroActions">

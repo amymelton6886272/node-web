@@ -15,12 +15,14 @@ export function getStaticPaths() {
 const { page, path } = Astro.props;
 ---
 <BaseLayout title={`${page.title} - Storewise`} description={page.sub} path={path}>
-  <div class="lang-en">
-    <Hero title={page.title} sub={page.sub} eyebrow="Publisher information" />
-  </div>
-  <div class="lang-zh">
-    <Hero title={page.titleZh || page.title} sub={page.subZh || page.sub} eyebrow="发布信息" />
-  </div>
+  <Hero
+    title={page.title}
+    titleZh={page.titleZh || page.title}
+    sub={page.sub}
+    subZh={page.subZh || page.sub}
+    eyebrow="Publisher information"
+    eyebrowZh="发布信息"
+  />
 
   <section class="legal card">
     {page.highlights && (

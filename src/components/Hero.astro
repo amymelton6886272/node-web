@@ -1,14 +1,50 @@
 ---
 const {
   title,
+  titleZh,
   sub,
+  subZh,
   eyebrow = 'Storewise',
+  eyebrowZh,
 } = Astro.props;
+
+const hasZhTitle = Boolean(titleZh);
+const hasZhSub = Boolean(subZh);
+const hasZhEyebrow = Boolean(eyebrowZh);
 ---
 <section class="hero">
   <div class="heroInner">
-    <p class="eyebrow">{eyebrow}</p>
-    <h1>{title}</h1>
-    {sub && <p class="heroSub">{sub}</p>}
+    <p class="eyebrow">
+      {hasZhEyebrow ? (
+        <>
+          <span class="lang-en">{eyebrow}</span>
+          <span class="lang-zh">{eyebrowZh}</span>
+        </>
+      ) : (
+        eyebrow
+      )}
+    </p>
+    <h1>
+      {hasZhTitle ? (
+        <>
+          <span class="lang-en">{title}</span>
+          <span class="lang-zh">{titleZh}</span>
+        </>
+      ) : (
+        title
+      )}
+    </h1>
+    {sub && (
+      <p class="heroSub">
+        {hasZhSub ? (
+          <>
+            <span class="lang-en">{sub}</span>
+            <span class="lang-zh">{subZh}</span>
+          </>
+        ) : (
+          sub
+        )}
+      </p>
+    )}
   </div>
 </section>

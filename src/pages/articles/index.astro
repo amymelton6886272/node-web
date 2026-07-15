@@ -16,12 +16,12 @@ const featured = sorted.slice(0, 6);
 const seriesList = getAllSeriesForIndex();
 ---
 <BaseLayout title="Articles - Storewise" description="Practical Apple and App Store research articles for safer purchasing, privacy, and account decisions." path="/articles">
-  <div class="lang-en">
-    <Hero title="Articles" sub="Practical Apple and App Store research articles written for safer purchasing, privacy, and account decisions." />
-  </div>
-  <div class="lang-zh">
-    <Hero title="文章" sub="围绕购买、隐私、账号和 App Store 决策的实用 Apple 研究文章。" />
-  </div>
+  <Hero
+    title="Articles"
+    titleZh="文章"
+    sub="Practical Apple and App Store research articles written for safer purchasing, privacy, and account decisions."
+    subZh="围绕购买、隐私、账号和 App Store 决策的实用 Apple 研究文章。"
+  />
 
   <section class="articleToolbar card">
     <div class="lang-en">

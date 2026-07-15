@@ -56,12 +56,13 @@ const breadcrumbSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   </Fragment>
-  <div class="lang-en">
-    <Hero title={article.title} sub={article.description} eyebrow={article.category} />
-  </div>
-  <div class="lang-zh">
-    <Hero title={article.titleZh || article.title} sub={article.descriptionZh || article.description} eyebrow={article.category} />
-  </div>
+  <Hero
+    title={article.title}
+    titleZh={article.titleZh || article.title}
+    sub={article.description}
+    subZh={article.descriptionZh || article.description}
+    eyebrow={article.category}
+  />
   <article class="articleDetail card">
     {article.titleZh && (
       <div class="articleZhIntro lang-zh" lang="zh-CN">
