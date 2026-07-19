@@ -24,7 +24,7 @@ const staticRoutes = [
   { path: '/address', changefreq: 'monthly', priority: '0.6', lastmod: '2026-07-06' },
   { path: '/guides', changefreq: 'weekly', priority: '0.9', lastmod: '2026-07-14' },
   { path: '/knowledge', changefreq: 'weekly', priority: '0.9', lastmod: '2026-07-14' },
-  { path: '/articles', changefreq: 'weekly', priority: '0.9', lastmod: '2026-07-15' },
+  { path: '/articles', changefreq: 'weekly', priority: '0.9', lastmod: '2026-07-19' },
   { path: '/checklists', changefreq: 'weekly', priority: '0.8', lastmod: '2026-07-12' },
   { path: '/glossary', changefreq: 'monthly', priority: '0.7', lastmod: '2026-07-05' },
   { path: '/risk', changefreq: 'monthly', priority: '0.7', lastmod: '2026-07-08' },
