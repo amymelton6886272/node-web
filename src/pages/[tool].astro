@@ -33,10 +33,13 @@ if (tool === 'ip' || tool === 'address') {
   return Astro.redirect('/price');
 }
 
-// Content-first pages already put substantial body text inside the React UI.
+// Content hubs also get SSR publisher blocks so crawlers see depth without JS.
 // Utility tools: short intro above, interactive tool, long guide below.
-const contentFirstTools = new Set(['guides', 'glossary', 'checklists', 'risk', 'knowledge']);
+const contentFirstTools = new Set(['glossary', 'checklists']);
 const isContentFirst = contentFirstTools.has(tool);
+const hubTools = new Set(['guides', 'knowledge', 'risk']);
+const isHubTool = hubTools.has(tool);
+
 
 const toolSoftwareSchema = {
   '@context': 'https://schema.org',
@@ -85,12 +88,67 @@ const toolBreadcrumbs = [
 
   {!isContentFirst && <ToolStaticContent tool={tool} variant="full" />}
 
-  {isContentFirst && (
-    <section class="card toolReviewNotes" style="margin-top:1rem;" aria-label="Publisher note">
+  {isHubTool && (
+    <section class="card toolReviewNotes" style="margin-top:1rem;" aria-label="How to use this hub">
       <div class="lang-en">
-        <h2>Publisher note</h2>
+        <h2>How to use this hub</h2>
+        <ol class="workflowList" style="list-style:decimal;padding-left:1.2rem;display:grid;gap:.75rem;">
+          <li>
+            <strong>Read the overview, then pick one path.</strong>
+            <p>Use the topic sections as a map. Open one checklist or research note instead of opening five tabs at once.</p>
+          </li>
+          <li>
+            <strong>Run a tool only after the decision criteria are clear.</strong>
+            <p>Price, trial, risk, and cost tools are most useful when you already know what would make you stop.</p>
+          </li>
+          <li>
+            <strong>Verify on official Apple screens before money moves.</strong>
+            <p>Storewise is independent research. Final prices, renewals, refunds, and permissions live in App Store and Settings.</p>
+          </li>
+        </ol>
+        <div class="contentLinks">
+          <span>Related hubs</span>
+          <a href="/articles">Articles</a>
+          <a href="/guides">Guides</a>
+          <a href="/knowledge">Knowledge</a>
+          <a href="/checklists">Checklists</a>
+          <a href="/privacy">Privacy</a>
+        </div>
+      </div>
+      <div class="lang-zh" lang="zh-CN">
+        <h2>如何使用本枢纽</h2>
+        <ol class="workflowList" style="list-style:decimal;padding-left:1.2rem;display:grid;gap:.75rem;">
+          <li>
+            <strong>先读概览，再选一条路径。</strong>
+            <p>把主题区块当地图。打开一份清单或研究笔记，而不是一次开五个标签页。</p>
+          </li>
+          <li>
+            <strong>决策标准清楚后再运行工具。</strong>
+            <p>比价、试用、风险与成本工具，在你已经知道“什么情况下会停止”时最有用。</p>
+          </li>
+          <li>
+            <strong>涉及金钱前在官方 Apple 界面核验。</strong>
+            <p>Storewise 是独立研究。最终价格、续费、退款与权限以 App Store 和设置为准。</p>
+          </li>
+        </ol>
+        <div class="contentLinks">
+          <span>相关枢纽</span>
+          <a href="/articles">文章</a>
+          <a href="/guides">指南</a>
+          <a href="/knowledge">知识库</a>
+          <a href="/checklists">清单</a>
+          <a href="/privacy">隐私</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {isContentFirst && (
+    <section class="card toolReviewNotes" style="margin-top:1rem;" aria-label="Reading note">
+      <div class="lang-en">
+        <h2>Reading note</h2>
         <p>
-          This page is part of Storewise’s original educational content. The interactive sections help you apply the guidance,
+          This page is original educational content. Interactive sections help you apply the guidance,
           but the explanations, checklists, and definitions remain useful even when no search query is entered.
         </p>
         <div class="contentLinks">
@@ -102,9 +160,9 @@ const toolBreadcrumbs = [
         </div>
       </div>
       <div class="lang-zh" lang="zh-CN">
-        <h2>发布者说明</h2>
+        <h2>阅读说明</h2>
         <p>
-          本页属于 Storewise 的原创教育内容。交互区域用于把说明落到实际操作上；即使不输入搜索关键词，
+          本页是原创教育内容。交互区域用于把说明落到操作上；即使不输入搜索关键词，
           页面中的解释、清单和定义本身也具有独立阅读价值。
         </p>
         <div class="contentLinks">

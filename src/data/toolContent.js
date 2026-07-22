@@ -91,6 +91,54 @@ export const toolContent = {
       ],
       links: [{ href: '/subcost', label: 'Sub cost calculator' }, { href: '/checklists', label: 'Decision checklists' }, { href: '/articles/free-trial-trap-checklist', label: 'Trial trap checklist' }, { href: '/articles/cancel-apple-subscription-step-by-step', label: 'Cancel subscription' }, { href: '/articles/manage-apple-subscriptions-after-trial', label: 'After free trial' }],
       linksLabel: 'Related reading'
+    },
+    guides: {
+      title: 'App Store guides hub: research before you pay',
+      intro: 'This hub organizes practical App Store workflows for subscriptions, free trials, family devices, privacy labels, refunds, and region decisions. Read a topic overview first, then open the matching checklist, tool, or long-form research note.',
+      items: [
+        { heading: 'How to use this hub', text: 'Start with the decision you face today: cancel a trial, compare a price, review a child install, or prepare a refund packet. Use the topic cards below as a map, not as a dump of links. Each path points to a deeper article series and a tool you can run in the browser.' },
+        { heading: 'Subscription and trial paths', text: 'Weekly plans look cheap until annualized. Before you tap Start Trial, write the first charge date, cancel path, and post-trial yearly cost. Pair the trial reminder tool with the free-trial trap checklist and the after-trial management guide.' },
+        { heading: 'Family and shared payment paths', text: 'Surprise charges on Family Sharing are usually a roles problem: organizer, payer, user, and child approver are not the same person. Use Ask to Buy, Screen Time purchase locks, and a monthly shared-card audit before you argue about a single line item.' },
+        { heading: 'Privacy and permission paths', text: 'Read Privacy labels as risk rows, not marketing. Default-deny contacts, precise location, and tracking for simple utilities. Re-audit monthly on shared and child devices. The risk assessor and permission articles turn vague unease into a stop/install decision.' },
+        { heading: 'Region and storefront paths', text: 'Do not switch your primary Apple ID region only to chase a converted price. Write an exit plan, payment match, media library impact, and subscription handling first. Price compare is a research signal; official checkout remains the source of truth.' },
+        { heading: 'Refund and support paths', text: 'Refunds need evidence: order, timeline, screenshots, and a clear reason. Report a Problem is not the same as canceling a subscription. Keep Purchase History and bank descriptors before you escalate.' },
+        { heading: 'Reading order for new visitors', text: '1) research workflow article, 2) free-trial trap checklist, 3) subscription cost calculator, 4) family purchase safety, 5) privacy labels guide. That sequence covers most expensive mistakes without reading every page on day one.' },
+        { heading: 'What this hub is not', text: 'These guides are independent research notes. They do not reverse charges, change Apple policy, or replace official documentation. When a tool feed is empty, the explanations and linked articles still stand on their own.' }
+      ],
+      links: [{ href: '/articles', label: 'All research notes' }, { href: '/checklists', label: 'Decision checklists' }, { href: '/knowledge', label: 'Knowledge base' }, { href: '/subcost', label: 'Sub cost calculator' }, { href: '/trial', label: 'Trial reminder' }],
+      linksLabel: 'Continue with'
+    },
+    knowledge: {
+      title: 'Apple safety knowledge base: concepts before clicks',
+      intro: 'The knowledge base explains recurring App Store and iOS safety concepts in plain language: permissions, privacy labels, subscriptions, refunds, family controls, and common scam patterns. Use it when you need definitions and context before running a tool.',
+      items: [
+        { heading: 'Why concepts matter more than one-off tips', text: 'App Store mistakes repeat because the same concepts are misunderstood: trial is not free forever, delete is not cancel, free install is not free to own, and a privacy label row is not a marketing badge. This page keeps those definitions stable while tools change.' },
+        { heading: 'Permissions and tracking', text: 'Contacts, photos, microphone, camera, and precise location are high-cost permissions for low-value jobs. Tracking rows on Privacy labels deserve a pause. Prefer Allow Once and revoke after the task ends, especially on child devices.' },
+        { heading: 'Subscriptions and renewals', text: 'Auto-renew plans need a cancel path, a first charge date, and annualized math. A cheap weekly number can exceed a yearly unlock. Keep Settings > Apple ID > Subscriptions as the operational surface, not the app icon.' },
+        { heading: 'Family Sharing vocabulary', text: 'Organizer, member, Ask to Buy, purchase sharing, and shared payment method are different controls. Confusing them produces unfair blame and repeated charges. Document roles before the next surprise debit.' },
+        { heading: 'Scams and social engineering', text: 'Gift-card code phishing, fake refund callers, configuration-profile “helpers”, and clone apps recycle the same story: urgency plus official-looking UI. Knowledge entries teach the pattern so you recognize it without memorizing every brand name.' },
+        { heading: 'How to study a topic here', text: 'Open the concept, write one sentence in your own words, then open the matching checklist or research article. If you cannot restate the concept, do not install or pay yet.' },
+        { heading: 'Pair with tools', text: 'After reading, use risk assessor for install decisions, sub cost for billing stacks, trial reminder for cancel deadlines, and price compare for storefront signals. Tools without concepts create confident mistakes.' },
+        { heading: 'Limits of this library', text: 'Definitions summarize public patterns and practical workflows. Apple UI labels and policies change by region and iOS version. Always verify the live Settings and App Store screens for your account.' }
+      ],
+      links: [{ href: '/risk', label: 'App risk assessor' }, { href: '/guides', label: 'Guides hub' }, { href: '/articles', label: 'Research notes' }, { href: '/checklists', label: 'Checklists' }, { href: '/glossary', label: 'Glossary' }],
+      linksLabel: 'Related'
+    },
+    risk: {
+      title: 'App risk assessor: stop signals before install',
+      intro: 'Use this page to turn vague discomfort into a structured install decision. Score common risk signals — permissions, monetization traps, developer identity, privacy labels, and family exposure — before you tap Get.',
+      items: [
+        { heading: 'What a useful risk review covers', text: 'A good review is not a fear list. It asks: what job does this app do, what data does it need, how does it make money, who built it, and what happens on a shared or child device. If any answer is missing, delay install.' },
+        { heading: 'Permission red flags', text: 'Flashlight, cleaner, battery, and wallpaper apps that want contacts, SMS, or always-on location are classic overreach. Deny first. If the core feature fails without the permission, re-read the product page and reviews for billing or tracking complaints.' },
+        { heading: 'Monetization red flags', text: 'Hidden weekly renewals, forced reviews before cancel instructions, re-trial after reinstall, and core features locked behind the first screen are product risks, not personal failings. Annualize every plan before you keep a trial.' },
+        { heading: 'Developer and listing quality', text: 'Rotating shell developer names, clone icons, walls of short five-star reviews, and long silence in updates are stop signals. Search the developer with refund and scam before you trust a brand-new listing.' },
+        { heading: 'Family and shared device exposure', text: 'On shared iPads, free installs can open paid IAP funnels for children. Combine risk scoring with Ask to Buy and Screen Time purchase locks. A “maybe later” install on a child device is often a billing incident waiting for a weekend.' },
+        { heading: 'How to use the interactive assessor', text: 'Answer the prompts honestly, write the top two risks in a note, and choose install, wait, or never. Ambiguous maybes become forgotten trials. Save screenshots of the listing if the decision involves money.' },
+        { heading: 'After a high-risk install', text: 'If you already installed, revoke unused permissions, cancel unexpected trials, and check Purchase History the same day. Document what signal you ignored so the household rule improves.' },
+        { heading: 'Limits', text: 'Risk scores are educational heuristics, not malware verdicts or legal advice. Official App Store screens, enterprise MDM policy, and your own threat model still decide the final call.' }
+      ],
+      links: [{ href: '/checklists', label: 'Decision checklists' }, { href: '/knowledge', label: 'Knowledge base' }, { href: '/articles/when-not-to-install-free-apps', label: 'When not to install free apps' }, { href: '/articles/privacy-labels-and-permissions', label: 'Privacy labels guide' }, { href: '/appfree', label: 'Free apps list' }],
+      linksLabel: 'Related'
     }
   },
   zh: {
@@ -185,6 +233,54 @@ export const toolContent = {
       ],
       links: [{ href: '/subcost', label: '订阅成本' }, { href: '/checklists', label: '决策清单' }, { href: '/articles/free-trial-trap-checklist', label: '试用陷阱清单' }, { href: '/articles/cancel-apple-subscription-step-by-step', label: '取消订阅' }, { href: '/articles/manage-apple-subscriptions-after-trial', label: '试用后管理' }],
       linksLabel: '相关阅读'
+    },
+    guides: {
+      title: 'App Store 指南中心：付款前先研究',
+      intro: '本中心整理订阅、免费试用、家庭设备、隐私标签、退款与切区等实用流程。先读主题概览，再打开对应清单、工具或长文研究笔记。',
+      items: [
+        { heading: '如何使用本中心', text: '从今天的决策开始：取消试用、比价、审核儿童安装，或准备退款材料。把下方主题卡当地图，而不是链接堆。每条路径指向更深的文章系列和可在浏览器运行的工具。' },
+        { heading: '订阅与试用路径', text: '周付在年化前总是看起来便宜。点开始试用前写好首次扣费日、取消路径与试用后年成本。把试用提醒工具与试用陷阱清单、试用后管理指南一起用。' },
+        { heading: '家庭与共用支付路径', text: '家庭共享意外扣费多半是角色问题：组织者、付款人、使用者与儿童批准人不是同一人。先用购买前询问、屏幕使用时间购买锁与月度共用卡审计，再争论单笔账单。' },
+        { heading: '隐私与权限路径', text: '把隐私标签当风险行而不是营销。对手电筒级工具默认拒绝通讯录、精确位置与跟踪。共用与儿童设备每月复审。风险评估与权限文章把模糊不安变成停装/安装决策。' },
+        { heading: '地区与店面路径', text: '不要只为换算价更低就切换主 Apple ID 地区。先写退出计划、支付匹配、媒体库影响与订阅处理。比价是研究信号；官方结算仍是事实来源。' },
+        { heading: '退款与支持路径', text: '退款需要证据：订单、时间线、截图与清楚原因。Report a Problem 不等于取消订阅。升级前保留购买记录与银行描述。' },
+        { heading: '新访问者阅读顺序', text: '1）研究流程文；2）试用陷阱清单；3）订阅成本计算器；4）家庭购买安全；5）隐私标签指南。这条序列覆盖多数高成本错误，不必第一天读完全站。' },
+        { heading: '本中心不是什么', text: '这些指南是独立研究笔记。不能撤销扣费、不能改 Apple 政策，也不能替代官方文档。工具源为空时，说明与链接文章仍可独立阅读。' }
+      ],
+      links: [{ href: '/articles', label: '全部研究笔记' }, { href: '/checklists', label: '决策清单' }, { href: '/knowledge', label: '知识库' }, { href: '/subcost', label: '订阅成本' }, { href: '/trial', label: '试用提醒' }],
+      linksLabel: '继续阅读'
+    },
+    knowledge: {
+      title: 'Apple 安全知识库：先懂概念再点击',
+      intro: '知识库用直白话解释反复出现的 App Store 与 iOS 安全概念：权限、隐私标签、订阅、退款、家庭控制与常见诈骗模式。在运行工具前需要定义与上下文时使用本页。',
+      items: [
+        { heading: '为什么概念比零散技巧更重要', text: 'App Store 错误会重复，是因为同一概念被误解：试用不是永远免费，删除不等于取消，免费安装不等于免费拥有，隐私标签行不是营销徽章。工具会变，概念应保持稳定。' },
+        { heading: '权限与跟踪', text: '通讯录、照片、麦克风、相机与精确位置，对低价值用途是高成本权限。隐私标签上的跟踪行值得暂停。优先“允许一次”，任务结束后收回，儿童设备尤其如此。' },
+        { heading: '订阅与续费', text: '自动续订需要取消路径、首次扣费日与年化计算。便宜的周价可能超过年付解锁。操作面是“设置 > Apple ID > 订阅”，不是应用图标。' },
+        { heading: '家庭共享词汇', text: '组织者、成员、购买前询问、购买共享与共用付款方式是不同控制。混淆它们会产生不公指责与重复扣费。下次意外扣款前先写清角色。' },
+        { heading: '诈骗与社工', text: '礼品卡兑码钓鱼、假退款来电、配置描述文件“帮手”与山寨应用重复同一剧本：紧迫感加官方感界面。知识条目教模式，而不是背品牌名。' },
+        { heading: '如何在这里学习一个主题', text: '打开概念，用自己的话写一句，再打开对应清单或研究文。若复述不出来，就先别安装或付款。' },
+        { heading: '与工具配合', text: '读完后，用风险评估做安装决策，用订阅成本看账单堆叠，用试用提醒管取消截止，用比价看店面信号。没有概念的工具只会让人更自信地犯错。' },
+        { heading: '本库的限制', text: '定义概括公开模式与实用流程。Apple 界面文案与政策因地区和 iOS 版本而变。请以你账号下的实时设置与 App Store 屏幕为准。' }
+      ],
+      links: [{ href: '/risk', label: '应用风险评估' }, { href: '/guides', label: '指南中心' }, { href: '/articles', label: '研究笔记' }, { href: '/checklists', label: '清单' }, { href: '/glossary', label: '术语表' }],
+      linksLabel: '相关'
+    },
+    risk: {
+      title: '应用风险评估：安装前的停止信号',
+      intro: '用本页把模糊不安变成结构化安装决策。在点“获取”前，给权限、变现陷阱、开发者身份、隐私标签与家庭暴露等常见风险打分。',
+      items: [
+        { heading: '有用的风险审查覆盖什么', text: '好的审查不是恐吓清单。它问：应用解决什么任务、需要什么数据、如何赚钱、谁做的、在共用/儿童设备上会怎样。任一答案缺失就暂缓安装。' },
+        { heading: '权限红旗', text: '手电筒、清理、省电、壁纸类应用若要通讯录、短信或常开定位，是典型越权。先拒绝。若无权限核心功能就失败，重读产品页与评论中的扣费/跟踪投诉。' },
+        { heading: '变现红旗', text: '隐藏周续费、取消说明前强求好评、重装再试用、核心功能锁在第一屏后，是产品风险不是个人问题。保留试用前先年化每个方案。' },
+        { heading: '开发者与上架质量', text: '换壳开发者名、山寨图标、五星短评墙、长期不更新都是停止信号。信任全新上架前，先搜开发者名加 refund 与 scam。' },
+        { heading: '家庭与共用设备暴露', text: '共用 iPad 上，免费安装可能给儿童打开付费内购漏斗。风险评分要配合购买前询问与屏幕使用时间购买锁。儿童设备上的“以后再说”安装，常常是周末账单事故。' },
+        { heading: '如何使用交互评估', text: '如实回答提示，把前两大风险写进笔记，并选择安装、等待或永不。模糊的也许会变成遗忘的试用。涉及金钱时保存上架页截图。' },
+        { heading: '高风险安装之后', text: '若已安装，当天收回无用权限、取消意外试用并查购买记录。记下你忽略的信号，改进家庭规则。' },
+        { heading: '限制', text: '风险分是教育性启发，不是恶意软件判决或法律意见。最终仍以官方 App Store 屏幕、企业 MDM 策略与你自己的威胁模型为准。' }
+      ],
+      links: [{ href: '/checklists', label: '决策清单' }, { href: '/knowledge', label: '知识库' }, { href: '/articles/when-not-to-install-free-apps', label: '何时不要装免费应用' }, { href: '/articles/privacy-labels-and-permissions', label: '隐私标签指南' }, { href: '/appfree', label: '限免列表' }],
+      linksLabel: '相关'
     }
   }
 };
