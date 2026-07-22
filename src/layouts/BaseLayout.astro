@@ -205,20 +205,28 @@ const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbs);
           <button type="button" class="mobileToolsClose" data-tools-close aria-label="Close">×</button>
         </div>
         <div class="mobileToolsList">
-          {sidebarItems.map((item) => (
-            <a class={isActive(path, item.href) ? 'active' : ''} href={item.href}>
-              <span class="sideIcon" aria-hidden="true">{item.icon}</span>
-              <span class="sideText">
-                <b>
-                  <span class="lang-en">{item.label}</span>
-                  <span class="lang-zh">{item.labelZh}</span>
-                </b>
-                <small>
-                  <span class="lang-en">{item.desc}</span>
-                  <span class="lang-zh">{item.descZh}</span>
-                </small>
-              </span>
-            </a>
+          {sidebarGroups.map((group) => (
+            <section class="mobileToolsGroup">
+              <h3>
+                <span class="lang-en">{group.label}</span>
+                <span class="lang-zh">{group.labelZh}</span>
+              </h3>
+              {group.items.map((item) => (
+                <a class={isActive(path, item.href) ? 'active' : ''} href={item.href}>
+                  <span class="sideIcon" aria-hidden="true">{item.icon}</span>
+                  <span class="sideText">
+                    <b>
+                      <span class="lang-en">{item.label}</span>
+                      <span class="lang-zh">{item.labelZh}</span>
+                    </b>
+                    <small>
+                      <span class="lang-en">{item.desc}</span>
+                      <span class="lang-zh">{item.descZh}</span>
+                    </small>
+                  </span>
+                </a>
+              ))}
+            </section>
           ))}
         </div>
       </div>
