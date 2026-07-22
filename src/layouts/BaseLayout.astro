@@ -193,14 +193,14 @@ const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbs);
       </main>
     </div>
     <div class="mobileToolsSheet" data-tools-sheet hidden>
-      <button class="mobileToolsBackdrop" type="button" data-tools-close aria-label="Close tools menu"></button>
-      <div class="mobileToolsPanel" role="dialog" aria-modal="true" aria-label="Tools menu">
+      <button class="mobileToolsBackdrop" type="button" data-tools-close aria-label="Close site menu"></button>
+      <div class="mobileToolsPanel" role="dialog" aria-modal="true" aria-label="Site menu">
         <div class="mobileToolsHead">
           <div>
-            <strong class="lang-en">All tools</strong>
-            <strong class="lang-zh">全部工具</strong>
-            <p class="lang-en">Pick a tool, then jump into the workspace.</p>
-            <p class="lang-zh">选择工具后可直接进入操作区。</p>
+            <strong class="lang-en">Browse</strong>
+            <strong class="lang-zh">浏览</strong>
+            <p class="lang-en">Content first, then decisions and tools.</p>
+            <p class="lang-zh">先内容，再决策与工具。</p>
           </div>
           <button type="button" class="mobileToolsClose" data-tools-close aria-label="Close">×</button>
         </div>
@@ -237,10 +237,10 @@ const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbs);
         <span class="lang-en">Home</span>
         <span class="lang-zh">首页</span>
       </a>
-      <button type="button" data-tools-open class={['/price','/appfree','/icon','/subcost','/trial','/knowledge','/risk','/checklists','/guides','/glossary'].some((h) => isActive(path, h)) ? 'active' : ''}>
+      <button type="button" data-tools-open class={sidebarItems.some((item) => isActive(path, item.href) && item.href !== '/articles') ? 'active' : ''}>
         <span class="dockIcon">◈</span>
-        <span class="lang-en">Tools</span>
-        <span class="lang-zh">工具</span>
+        <span class="lang-en">Menu</span>
+        <span class="lang-zh">目录</span>
       </button>
       <button type="button" data-jump-tool class="dockPrimary">
         <span class="dockIcon">◎</span>
