@@ -4283,6 +4283,9 @@ export function getArticleBySlug(slug) {
   return articles.find((article) => article.slug === slug);
 }
 
-export function getArticlePath(slug) {
+/** Accepts a slug string or an article object with `.slug`. */
+export function getArticlePath(slugOrArticle) {
+  const slug = typeof slugOrArticle === 'string' ? slugOrArticle : slugOrArticle?.slug;
+  if (!slug) return '/articles';
   return `/articles/${slug}`;
 }
