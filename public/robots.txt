@@ -15,8 +15,6 @@ Allow: /data-sources
 Allow: /price
 Allow: /appfree
 Allow: /icon
-Allow: /ip
-Allow: /address
 Allow: /subcost
 Allow: /trial
 Allow: /risk
@@ -29,7 +27,9 @@ Disallow: /price?*
 Disallow: /appfree?*
 Disallow: /iap?*
 Disallow: /icon?*
+Disallow: /ip
 Disallow: /ip?*
+Disallow: /address
 Disallow: /address?*
 Disallow: /subcost?*
 Disallow: /trial?*

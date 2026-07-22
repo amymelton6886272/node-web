@@ -11,14 +11,6 @@ export const toolPages = {
     title: 'App Store Icon Search - Storewise',
     description: 'Search App Store apps and copy high-resolution icon links for reference.',
   },
-  ip: {
-    title: 'IP Check - Storewise',
-    description: 'Check outbound IP address, region, ASN, ISP, and basic connectivity signals.',
-  },
-  address: {
-    title: 'Address Generator - Storewise',
-    description: 'Generate realistic test address data locally for forms, UI mockups, and development workflows.',
-  },
   knowledge: {
     title: 'Apple Safety Knowledge Base - Storewise',
     description: 'Plain-language Apple safety articles about permissions, privacy labels, subscriptions, refunds, and common risks.',

@@ -5,9 +5,7 @@ import { toolPages } from '../astro/toolPages.js';
 import ToolStaticContent from '../components/ToolStaticContent.astro';
 import PriceIsland from '../islands/PriceIsland.jsx';
 import AppFreeIsland from '../islands/AppFreeIsland.jsx';
-import IpIsland from '../islands/IpIsland.jsx';
 import IconIsland from '../islands/IconIsland.jsx';
-import AddressIsland from '../islands/AddressIsland.jsx';
 import GuidesIsland from '../islands/GuidesIsland.jsx';
 import GlossaryIsland from '../islands/GlossaryIsland.jsx';
 import ChecklistsIsland from '../islands/ChecklistsIsland.jsx';
@@ -28,6 +26,10 @@ export function getStaticPaths() {
 const { tool, meta, path } = Astro.props;
 
 if (tool === 'iap') {
+  return Astro.redirect('/price');
+}
+
+if (tool === 'ip' || tool === 'address') {
   return Astro.redirect('/price');
 }
 
@@ -71,9 +73,7 @@ const toolBreadcrumbs = [
   <div id="tool-workspace" class="toolWorkspace">
     {tool === 'price' && <PriceIsland client:load />}
     {tool === 'appfree' && <AppFreeIsland client:load />}
-    {tool === 'ip' && <IpIsland client:load />}
     {tool === 'icon' && <IconIsland client:load />}
-    {tool === 'address' && <AddressIsland client:load />}
     {tool === 'guides' && <GuidesIsland client:load />}
     {tool === 'glossary' && <GlossaryIsland client:load />}
     {tool === 'checklists' && <ChecklistsIsland client:load />}

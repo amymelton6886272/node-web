@@ -26,7 +26,7 @@ const TOPIC_TOOLS = {
   security: [
     { href: '/risk', label: 'App risk assessor', labelZh: '风险评估' },
     { href: '/knowledge', label: 'Knowledge base', labelZh: '知识库' },
-    { href: '/ip', label: 'IP check', labelZh: 'IP 检测' },
+    { href: '/guides', label: 'Guides', labelZh: '指南' },
   ],
   region: [
     { href: '/price', label: 'Price compare', labelZh: '价格对比' },

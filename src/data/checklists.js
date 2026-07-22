@@ -15,7 +15,7 @@ export const checklistContent = {
         { href: '/price', label: 'Price Compare' },
         { href: '/iap', label: 'IAP Lookup' },
         { href: '/appfree', label: 'Free Apps' },
-        { href: '/address', label: 'Address Generator' },
+        { href: '/price', label: 'Price Compare' },
         { href: '/privacy', label: 'Privacy Policy' },
       ],
       toolbarTitle: 'Choose a scenario',
@@ -93,7 +93,7 @@ export const checklistContent = {
         { href: '/price', label: '价格对比' },
         { href: '/iap', label: '内购查询' },
         { href: '/appfree', label: '限免应用' },
-        { href: '/address', label: '地址生成' },
+        { href: '/price', label: '价格对比' },
         { href: '/privacy', label: '隐私政策' },
       ],
       toolbarTitle: '选择检查场景', toolbarText: '按你的当前任务筛选清单。勾选状态只保存在当前页面，不会上传服务器。', minutes: '分钟', completed: '已完成', pitfalls: '常见误区', reset: '重置'

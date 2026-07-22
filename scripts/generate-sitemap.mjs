@@ -20,8 +20,6 @@ const staticRoutes = [
   { path: '/appfree', changefreq: 'daily', priority: '0.9', lastmod: '2026-07-19' },
   { path: '/iap', changefreq: 'weekly', priority: '0.8', lastmod: '2026-07-19' },
   { path: '/icon', changefreq: 'weekly', priority: '0.7', lastmod: '2026-07-19' },
-  { path: '/ip', changefreq: 'monthly', priority: '0.7', lastmod: '2026-07-19' },
-  { path: '/address', changefreq: 'monthly', priority: '0.6', lastmod: '2026-07-19' },
   { path: '/guides', changefreq: 'weekly', priority: '0.9', lastmod: '2026-07-14' },
   { path: '/knowledge', changefreq: 'weekly', priority: '0.9', lastmod: '2026-07-14' },
   { path: '/articles', changefreq: 'weekly', priority: '0.9', lastmod: '2026-07-19' },

@@ -12,8 +12,6 @@ export const sidebarItems = [
   { href: '/price', label: 'Price Compare', labelZh: '价格对比', icon: '$', desc: 'Regional app & sub prices', descZh: '多地区应用与订阅价格' },
   { href: '/appfree', label: 'Free Apps', labelZh: '限免应用', icon: 'F', desc: 'Limited-time deals', descZh: '发现限时免费与优惠' },
   { href: '/icon', label: 'Icon Lookup', labelZh: '图标查询', icon: 'A', desc: 'App identity lookup', descZh: '快速识别应用图标与来源' },
-  { href: '/ip', label: 'IP Check', labelZh: 'IP 检测', icon: 'IP', desc: 'Network location clues', descZh: '判断网络出口与地区信息' },
-  { href: '/address', label: 'Address', labelZh: '地址生成', icon: '@', desc: 'Regional test data', descZh: '生成不同地区测试地址' },
   { href: '/subcost', label: 'Sub Cost', labelZh: '订阅成本', icon: '¥', desc: 'Monthly / yearly estimate', descZh: '估算月成本与年成本' },
   { href: '/trial', label: 'Trial Reminder', labelZh: '试用提醒', icon: 'D', desc: 'Cancel deadline builder', descZh: '生成试用取消提醒' },
   { href: '/knowledge', label: 'Knowledge', labelZh: '知识库', icon: 'K', desc: 'Concepts and explainers', descZh: '常见概念与基础说明' },
@@ -28,17 +26,17 @@ export const sidebarGroups = [
   {
     label: 'Tools',
     labelZh: '工具',
-    items: sidebarItems.slice(0, 7),
+    items: sidebarItems.slice(0, 5),
   },
   {
     label: 'Learn',
     labelZh: '内容',
-    items: sidebarItems.slice(7, 9),
+    items: sidebarItems.slice(5, 7),
   },
   {
     label: 'Decide',
     labelZh: '决策',
-    items: sidebarItems.slice(9),
+    items: sidebarItems.slice(7),
   },
 ];
 

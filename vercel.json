@@ -40,5 +40,27 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/ip",
+      "destination": "/price",
+      "permanent": true
+    },
+    {
+      "source": "/ip/",
+      "destination": "/price",
+      "permanent": true
+    },
+    {
+      "source": "/address",
+      "destination": "/price",
+      "permanent": true
+    },
+    {
+      "source": "/address/",
+      "destination": "/price",
+      "permanent": true
+    }
   ]
 }

@@ -29,12 +29,12 @@ export const featureModules = [
   {
     id: 'ip',
     icon: 'wifi',
-    enabled: true,
+    enabled: false,
   },
   {
     id: 'address',
     icon: 'mapPin',
-    enabled: true,
+    enabled: false,
   },
   {
     id: 'proxy',

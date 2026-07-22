@@ -22,14 +22,6 @@ const routeMeta = {
     en: ['App Store Icon Search - Storewise', 'Search App Store apps and copy high-resolution icon links for reference.'],
     zh: ['App Store 图标搜索 - Storewise', '搜索应用并获取高清图标链接，用于识别、设计参考和资料整理。'],
   },
-  '/ip': {
-    en: ['IP Check - Storewise', 'Check outbound IP address, region, ASN, ISP, and basic connectivity signals.'],
-    zh: ['IP 地址检测 - Storewise', '检测当前出口 IP、地理位置、ASN、运营商和基础连通性。'],
-  },
-  '/address': {
-    en: ['Address Generator - Storewise', 'Generate realistic test address data locally for forms, UI mockups, and development workflows.'],
-    zh: ['地址生成器 - Storewise', '在本地生成测试地址数据，用于表单、界面演示和开发调试。'],
-  },
   '/guides': {
     en: ['App Store Guides - Storewise', 'Read practical App Store guides for subscriptions, privacy, refunds, family devices, and region decisions.'],
     zh: ['App Store 使用指南 - Storewise', '阅读订阅、隐私、退款、家庭设备和跨区决策相关的实用指南。'],
@@ -75,7 +67,7 @@ const routeMeta = {
     zh: ['编辑政策 - Storewise', '说明 Storewise 如何撰写、审核、标注和更正 Apple 与 App Store 研究内容。'],
   },
   '/data-sources': {
-    en: ['Data Sources - Storewise', 'Where Storewise may obtain app, price, IP, address-format, and safety reference information.'],
+    en: ['Data Sources - Storewise', 'Where Storewise may obtain app, price, promotional, and safety reference information.'],
     zh: ['数据来源 - Storewise', '说明 Storewise 可能使用的应用、价格、IP、地址格式和安全参考信息来源。'],
   },
   '/articles': {

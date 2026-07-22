@@ -229,7 +229,7 @@ const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbs);
         <span class="lang-en">Home</span>
         <span class="lang-zh">首页</span>
       </a>
-      <button type="button" data-tools-open class={['/price','/appfree','/icon','/ip','/address','/subcost','/trial','/knowledge','/risk','/checklists','/guides','/glossary'].some((h) => isActive(path, h)) ? 'active' : ''}>
+      <button type="button" data-tools-open class={['/price','/appfree','/icon','/subcost','/trial','/knowledge','/risk','/checklists','/guides','/glossary'].some((h) => isActive(path, h)) ? 'active' : ''}>
         <span class="dockIcon">◈</span>
         <span class="lang-en">Tools</span>
         <span class="lang-zh">工具</span>
@@ -308,7 +308,7 @@ const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbs);
       });
       jumpButton?.addEventListener('click', () => {
         closeTools();
-        const target = document.querySelector('#tool-workspace, .swTool, .searchbar, .addressLayout, .ipPanel, .riskPanel, .checkToolbar, .knowledgeToolbar, .toolbar, .guideToolbar, .glossarySearch, main .card, main');
+        const target = document.querySelector('#tool-workspace, .swTool, .searchbar, .riskPanel, .checkToolbar, .knowledgeToolbar, .toolbar, .guideToolbar, .glossarySearch, main .card, main');
         if (target) {
           const top = target.getBoundingClientRect().top + window.scrollY - 72;
           window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });

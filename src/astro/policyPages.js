@@ -184,7 +184,7 @@ export const policyPages = {
   'data-sources': {
     title: 'Data Sources',
     titleZh: '数据来源',
-    sub: 'Where Storewise may obtain app, price, IP, address-format, and safety reference information.',
+    sub: 'Where Storewise may obtain app, price, promotional feed, and safety reference information.',
     subZh: '说明 Storewise 可能从哪里获取应用、价格、IP、地址格式和安全参考信息，以及这些数据的限制。',
     effective: 'Effective date: 2026-07-15',
     effectiveZh: '生效日期：2026-07-15',

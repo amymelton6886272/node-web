@@ -17,7 +17,7 @@ const OUTPUT_DIR = process.argv[3] || join(projectRoot, 'deploy-build');
 
 const ROUTES = [
   '/', '/about', '/contact', '/disclaimer', '/privacy',
-  '/price', '/appfree', '/iap', '/icon', '/ip', '/address',
+  '/price', '/appfree', '/iap', '/icon',
   '/guides', '/knowledge', '/checklists', '/glossary', '/risk',
 ];
 
