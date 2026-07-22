@@ -231,14 +231,13 @@ export const articles = [
     slug: 'family-sharing-purchase-safety',
     title: 'Family Sharing Purchase Safety for iPhone and iPad',
     titleZh: 'iPhone 和 iPad 家庭共享购买安全',
-    description:
-      'Simple checks for families who share devices, payment methods, subscriptions, and App Store purchases across Apple accounts.',
-    descriptionZh: '适合家庭用户的购买安全检查，覆盖共用设备、付款方式、订阅和 App Store 购买权限。',
+    description: 'Make Family Sharing purchases safer with Ask to Buy, Screen Time, role clarity, and a monthly shared-card audit for unexpected Apple charges.',
+    descriptionZh: '用购买前询问、屏幕使用时间、角色清晰与月度共用卡审计，降低家庭共享意外扣费。',
     category: 'Family',
     tags: ['Family Sharing', 'Ask to Buy', 'Subscriptions'],
     publishedAt: '2026-05-29',
-    updatedAt: '2026-06-11',
-    readTime: '9 min read',
+    updatedAt: '2026-07-19',
+    readTime: '11 min read',
     sections: [
       {
         heading: 'Turn on Ask to Buy where it matters',
@@ -329,21 +328,39 @@ export const articles = [
       headingZh: '家庭共享购买安全何时升级到自助以外',
       text: 'Self-help covers most cases around Family Sharing purchase safety, but escalation has a place. Escalate to Apple Report a Problem when money moved without authorization, after cancel with proof, or when digital goods never arrived. Escalate to the developer when account data export or deletion is required. Escalate to your bank only after platform paths are documented, unless fraud is clear and time sensitive. Escalate inside the household when the same failure repeats twice in a month; that is a controls problem, not bad luck. Do not escalate with anger-only messages. Bring the timeline, screenshots, Apple ID identity, and desired outcome. Parallel escalation to many channels on day one creates confusion and conflicting case numbers. Sequence beats spray. After escalation, tighten the local system so you are not filing the same case quarterly. The point of escalation is recovery plus prevention, not a permanent support lifestyle. If you file more than two purchase disputes in a quarter, freeze new installs for thirty days and run a full subscription and permission audit.',
       textZh: '围绕家庭共享购买安全多数情况可自助，但升级有其位置。未授权扣费、有证据的取消后扣费、数字商品未到达时，升级到 Apple Report a Problem。需要导出或删除账号数据时升级到开发者。除非欺诈明确且紧急，否则先走平台路径并留档再找银行。若同一失败一月内重复两次，在家庭内升级：这是控制问题不是倒霉。不要只发情绪升级。带上时间线、截图、Apple ID 身份与期望结果。第一天并行多渠道会造成混乱与冲突工单。顺序优于撒网。升级后收紧本地系统，避免每季度重复提交。升级的目的是恢复加预防，不是永久客服生活。若一季度超过两起购买争议，冻结新安装三十天，并做完整订阅与权限审计。',
-    }
-  ],
+    },
+  
+    {
+      heading: 'Role card on the fridge',
+      headingZh: '冰箱上的角色卡',
+      text: 'Print four lines: organizer, payer, adult members, child members. Write who can approve buys and who gets billed. When a surprise charge appears, fill the role card before blame. Clarity turns moral arguments into configuration work.',
+      textZh: '打印四行：组织者、付款人、成人成员、儿童成员。写明谁能批准购买、谁被扣款。出现意外扣费时先填角色卡再指责。清晰把道德争论变成配置工作。',
+    },
+    {
+      heading: 'Controls that match ages',
+      headingZh: '匹配年龄的控制',
+      text: 'Ask to Buy for minors, Screen Time purchase locks, and separate Apple IDs beat a single shared password. Review free downloads too — free is how many IAP funnels start. Rehearse a monthly five-minute subscription review with the payer present.',
+      textZh: '未成年人购买前询问、屏幕使用时间购买锁、独立 Apple ID，优于共用密码。也要审免费下载——很多内购漏斗从免费开始。与付款人当面预演每月五分钟订阅复查。',
+    },
+    {
+      heading: 'Incident packet for surprise charges',
+      headingZh: '意外扣费材料包',
+      text: 'Collect purchase history line, bank descriptor, device, time, and desired outcome. Prefer Apple Report a Problem for App Store items. Change a control the same day you request a refund so the story does not repeat next week.',
+      textZh: '收集购买记录行、银行描述、设备、时间与期望结果。App Store 项目优先 Report a Problem。申请退款当天就改控制，避免下周重复。',
+    },
+],
   },
   {
     slug: 'understand-in-app-purchases',
     title: 'Understanding In-App Purchases Before Installing',
     titleZh: '安装前先理解 App 内购买',
-    description:
-      'Learn how one-time unlocks, consumables, and subscriptions differ so you can judge the real cost of a free or cheap app.',
-    descriptionZh: '理解一次性解锁、消耗型内购和订阅的差异，从而判断免费或低价应用的真实成本。',
+    description: 'Read App Store IAP types like a buyer: consumables, unlocks, subscriptions, trials, Family Sharing limits, and a pre-purchase evidence pack.',
+    descriptionZh: '像买家一样读 App Store 内购类型：消耗型、解锁、订阅、试用、家庭共享限制与购买前证据包。',
     category: 'Purchasing',
     tags: ['IAP', 'Subscriptions', 'Trials'],
     publishedAt: '2026-05-01',
-    updatedAt: '2026-05-25',
-    readTime: '9 min read',
+    updatedAt: '2026-07-19',
+    readTime: '11 min read',
     sections: [
       {
         heading: 'Free to install is not free to use',
@@ -434,21 +451,39 @@ export const articles = [
       headingZh: '应用内购买何时升级到自助以外',
       text: 'Self-help covers most cases around in-app purchases, but escalation has a place. Escalate to Apple Report a Problem when money moved without authorization, after cancel with proof, or when digital goods never arrived. Escalate to the developer when account data export or deletion is required. Escalate to your bank only after platform paths are documented, unless fraud is clear and time sensitive. Escalate inside the household when the same failure repeats twice in a month; that is a controls problem, not bad luck. Do not escalate with anger-only messages. Bring the timeline, screenshots, Apple ID identity, and desired outcome. Parallel escalation to many channels on day one creates confusion and conflicting case numbers. Sequence beats spray. After escalation, tighten the local system so you are not filing the same case quarterly. The point of escalation is recovery plus prevention, not a permanent support lifestyle. If you file more than two purchase disputes in a quarter, freeze new installs for thirty days and run a full subscription and permission audit.',
       textZh: '围绕应用内购买多数情况可自助，但升级有其位置。未授权扣费、有证据的取消后扣费、数字商品未到达时，升级到 Apple Report a Problem。需要导出或删除账号数据时升级到开发者。除非欺诈明确且紧急，否则先走平台路径并留档再找银行。若同一失败一月内重复两次，在家庭内升级：这是控制问题不是倒霉。不要只发情绪升级。带上时间线、截图、Apple ID 身份与期望结果。第一天并行多渠道会造成混乱与冲突工单。顺序优于撒网。升级后收紧本地系统，避免每季度重复提交。升级的目的是恢复加预防，不是永久客服生活。若一季度超过两起购买争议，冻结新安装三十天，并做完整订阅与权限审计。',
-    }
-  ],
+    },
+  
+    {
+      heading: 'Five IAP buckets on one sticky note',
+      headingZh: '一张便签上的五类内购',
+      text: 'Label every item as: one-time unlock, consumable, auto-renew subscription, non-renewing subscription, or unclear. Unclear means do not buy yet. Consumables disappear when spent; unlocks should persist on the same Apple ID; subscriptions need cancel paths. This sticky note prevents mixing a tip jar with a weekly trap.',
+      textZh: '把每项标成：一次解锁、消耗型、自动续订、非续订订阅、或不清。不清就先别买。消耗型用完即无；解锁应在同一 Apple ID 保留；订阅需要取消路径。这张便签避免把打赏和周付陷阱混为一谈。',
+    },
+    {
+      heading: 'Trial math before Start',
+      headingZh: '点开始前的试用数学',
+      text: 'Convert post-trial price to monthly and yearly. Write the first charge date on a calendar with a cancel reminder two days earlier when possible. If the app hides the post-trial price until after Sign in with Apple, treat that as a quality signal and slow down. Pair this with the trial reminder tool on Storewise.',
+      textZh: '把试用后价格换算成月与年。在日历写首次扣费日，并尽量提前两天设取消提醒。若应用要登录后才显示试用后价格，视为质量信号并放慢。配合 Storewise 试用提醒工具。',
+    },
+    {
+      heading: 'Restore purchases and Family Sharing limits',
+      headingZh: '恢复购买与家庭共享限制',
+      text: 'Know whether Restore Purchases exists and whether Family Sharing applies. Consumable packs usually do not share. After any buy, verify the entitlement on a second device signed into the same Apple ID when the purchase is expensive. Keep the receipt email or Purchase History line for support.',
+      textZh: '确认是否有恢复购买、是否适用家庭共享。消耗包通常不共享。高价购买后，在登录同一 Apple ID 的第二台设备验证权益。保留收据邮件或购买记录行以便支持。',
+    },
+],
   },
   {
     slug: 'privacy-labels-and-permissions',
     title: 'Reading App Privacy Labels and Permissions',
     titleZh: '如何阅读 App 隐私标签和权限',
-    description:
-      'A plain-language guide to privacy labels, sensitive permissions, and when an app is asking for more access than it needs.',
-    descriptionZh: '用通俗语言解释隐私标签、敏感权限，以及应用何时在索取超出必要的访问。',
+    description: 'Use App Store privacy labels and first-run permission prompts together: what to deny by default, what to allow temporarily, and how to re-audit monthly.',
+    descriptionZh: '把 App Store 隐私标签与首启权限提示一起用：默认拒绝什么、临时允许什么、如何每月复审。',
     category: 'Privacy',
     tags: ['Privacy labels', 'Permissions', 'Tracking'],
     publishedAt: '2026-05-07',
-    updatedAt: '2026-05-07',
-    readTime: '10 min read',
+    updatedAt: '2026-07-19',
+    readTime: '11 min read',
     sections: [
       {
         heading: 'Start with functional necessity',
@@ -539,8 +574,27 @@ export const articles = [
       headingZh: '隐私标签与权限何时升级到自助以外',
       text: 'Self-help covers most cases around privacy labels and permissions, but escalation has a place. Escalate to Apple Report a Problem when money moved without authorization, after cancel with proof, or when digital goods never arrived. Escalate to the developer when account data export or deletion is required. Escalate to your bank only after platform paths are documented, unless fraud is clear and time sensitive. Escalate inside the household when the same failure repeats twice in a month; that is a controls problem, not bad luck. Do not escalate with anger-only messages. Bring the timeline, screenshots, Apple ID identity, and desired outcome. Parallel escalation to many channels on day one creates confusion and conflicting case numbers. Sequence beats spray. After escalation, tighten the local system so you are not filing the same case quarterly. The point of escalation is recovery plus prevention, not a permanent support lifestyle. If you file more than two purchase disputes in a quarter, freeze new installs for thirty days and run a full subscription and permission audit.',
       textZh: '围绕隐私标签与权限多数情况可自助，但升级有其位置。未授权扣费、有证据的取消后扣费、数字商品未到达时，升级到 Apple Report a Problem。需要导出或删除账号数据时升级到开发者。除非欺诈明确且紧急，否则先走平台路径并留档再找银行。若同一失败一月内重复两次，在家庭内升级：这是控制问题不是倒霉。不要只发情绪升级。带上时间线、截图、Apple ID 身份与期望结果。第一天并行多渠道会造成混乱与冲突工单。顺序优于撒网。升级后收紧本地系统，避免每季度重复提交。升级的目的是恢复加预防，不是永久客服生活。若一季度超过两起购买争议，冻结新安装三十天，并做完整订阅与权限审计。',
-    }
-  ],
+    },
+  
+    {
+      heading: 'Read labels as risk rows, not marketing',
+      headingZh: '把标签当风险行，而不是营销',
+      text: 'For each data type linked to tracking or identity, ask whether the app job truly needs it. Photo libraries, contacts, and precise location are high-cost rows for flashlight-level tools. If the label is empty but the app behaves like an ad network, slow down and inspect runtime prompts carefully.',
+      textZh: '对关联跟踪或身份的每一类数据，问应用用途是否真需要。相册、通讯录、精确位置对手电筒级工具是高成本行。若标签空空但行为像广告网络，放慢并仔细看运行时提示。',
+    },
+    {
+      heading: 'Default deny, temporary allow',
+      headingZh: '默认拒绝，临时允许',
+      text: 'Prefer Allow Once or deny until a feature fails. After a trip, editing session, or upload, return to Settings and revoke what is no longer needed. Monthly, open Settings > Privacy and Security and audit apps with location, microphone, camera, and tracking access.',
+      textZh: '优先允许一次或直到功能失败再开。旅行、编辑或上传结束后回到设置收回不再需要的权限。每月打开设置中的隐私与安全性，审计拥有位置、麦克风、相机与跟踪的应用。',
+    },
+    {
+      heading: 'Children and shared devices',
+      headingZh: '儿童与共用设备',
+      text: 'On child devices, combine privacy labels with Screen Time restrictions and Ask to Buy. Do not let a free game become a microphone or contacts pipeline. Document household rules in one note so substitutes do not approve dangerous installs.',
+      textZh: '儿童设备把隐私标签与屏幕使用时间限制、购买前询问结合。别让免费游戏变成麦克风或通讯录管道。把家庭规则写在一则笔记，避免代管人批准危险安装。',
+    },
+],
   },
   {
     slug: 'spot-low-quality-app-store-listings',
@@ -651,14 +705,13 @@ export const articles = [
     slug: 'safe-region-switching',
     title: 'What to Check Before Switching App Store Regions',
     titleZh: '切换 App Store 地区前要检查什么',
-    description:
-      'A cautious guide to balances, subscriptions, payment methods, availability, and long-term maintenance costs before changing storefronts.',
-    descriptionZh: '切换商店地区前，围绕余额、订阅、支付方式、可下载性和长期维护成本的谨慎指南。',
+    description: 'Switch App Store regions only with a written risk plan: payment methods, media libraries, subscriptions, and exit criteria for 2026 storefront moves.',
+    descriptionZh: '仅在有书面风险计划时切换 App Store 地区：支付方式、媒体库、订阅与 2026 切区退出标准。',
     category: 'Regions',
     tags: ['Region switching', 'Gift cards', 'Account safety'],
     publishedAt: '2026-04-24',
-    updatedAt: '2026-05-15',
-    readTime: '10 min read',
+    updatedAt: '2026-07-19',
+    readTime: '11 min read',
     sections: [
       {
         heading: 'Clear blockers before you switch',
@@ -749,8 +802,27 @@ export const articles = [
       headingZh: 'App Store 换区何时升级到自助以外',
       text: 'Self-help covers most cases around App Store region changes, but escalation has a place. Escalate to Apple Report a Problem when money moved without authorization, after cancel with proof, or when digital goods never arrived. Escalate to the developer when account data export or deletion is required. Escalate to your bank only after platform paths are documented, unless fraud is clear and time sensitive. Escalate inside the household when the same failure repeats twice in a month; that is a controls problem, not bad luck. Do not escalate with anger-only messages. Bring the timeline, screenshots, Apple ID identity, and desired outcome. Parallel escalation to many channels on day one creates confusion and conflicting case numbers. Sequence beats spray. After escalation, tighten the local system so you are not filing the same case quarterly. The point of escalation is recovery plus prevention, not a permanent support lifestyle. If you file more than two purchase disputes in a quarter, freeze new installs for thirty days and run a full subscription and permission audit.',
       textZh: '围绕App Store 换区多数情况可自助，但升级有其位置。未授权扣费、有证据的取消后扣费、数字商品未到达时，升级到 Apple Report a Problem。需要导出或删除账号数据时升级到开发者。除非欺诈明确且紧急，否则先走平台路径并留档再找银行。若同一失败一月内重复两次，在家庭内升级：这是控制问题不是倒霉。不要只发情绪升级。带上时间线、截图、Apple ID 身份与期望结果。第一天并行多渠道会造成混乱与冲突工单。顺序优于撒网。升级后收紧本地系统，避免每季度重复提交。升级的目的是恢复加预防，不是永久客服生活。若一季度超过两起购买争议，冻结新安装三十天，并做完整订阅与权限审计。',
-    }
-  ],
+    },
+  
+    {
+      heading: 'Write an exit plan before you switch',
+      headingZh: '切区前先写退出计划',
+      text: 'List why you are switching, how long you will stay, which payment method will work, and the exact condition to switch back. Include media library, subscriptions, Game Center, and family organizer impact. If you cannot fill this plan, do not switch for a single cheap app. Region changes are account operations, not coupons.',
+      textZh: '写明为何切区、停留多久、哪张支付方式可用、以及切回条件。包含媒体库、订阅、Game Center 与家庭组织者影响。若填不全，不要为单个便宜应用切区。切区是账号操作，不是优惠券。',
+    },
+    {
+      heading: 'Payment and storefront mismatch traps',
+      headingZh: '支付与店面错配陷阱',
+      text: 'A payment method that does not match the target storefront often fails at the worst moment. Some people add temporary balance or cards that create later recovery pain. Confirm you can complete at least one small legitimate purchase or free download path after the switch before moving large catalogs. Keep screenshots of both old and new storefront settings.',
+      textZh: '支付方式与目标店面不匹配时常在最糟时刻失败。有人加临时余额或卡片，后续恢复更痛。切区后先确认能完成一次小额合法购买或免费下载路径，再搬动大目录。保留旧/新店面设置截图。',
+    },
+    {
+      heading: 'Subscriptions do not always travel cleanly',
+      headingZh: '订阅并不总能干净迁移',
+      text: 'Active subscriptions may stay tied to the old storefront economics or become awkward to manage. Cancel what you do not need before switching when policy allows, and re-check Settings > Subscriptions afterward. If a service offers web billing, compare that path instead of forcing a region change. Prefer research tools that compare prices without moving your primary Apple ID.',
+      textZh: '有效订阅可能仍绑旧店面经济条件或变得难管理。政策允许时先取消不需要的，切区后再查设置中的订阅。若服务提供网页计费，先比较该路径而不是强行切区。优先用能比价却不必移动主 Apple ID 的研究工具。',
+    },
+],
   },
   {
     slug: 'manage-apple-subscriptions-after-trial',
@@ -861,13 +933,12 @@ export const articles = [
     slug: 'app-store-research-workflow',
     title: 'A Practical App Store Research Workflow Before You Pay',
     titleZh: '付款前的 App Store 实用研究流程',
-    description:
-      'A step-by-step workflow that combines pricing, IAP, privacy, reviews, and official verification so you do not buy based on one signal alone.',
-    descriptionZh: '把价格、内购、隐私、评论和官方核验串起来的分步流程，避免只凭单一信号就付款。',
+    description: 'A repeatable App Store research workflow before you install or pay: listing audit, privacy labels, pricing ladder, permissions, and stop rules.',
+    descriptionZh: '安装或付款前可重复的 App Store 研究流程：上架审计、隐私标签、价格阶梯、权限与停止规则。',
     category: 'Workflow',
     tags: ['Workflow', 'Due diligence', 'Purchasing'],
     publishedAt: '2026-05-22',
-    updatedAt: '2026-06-05',
+    updatedAt: '2026-07-19',
     readTime: '11 min read',
     sections: [
       {
@@ -959,21 +1030,39 @@ export const articles = [
       headingZh: 'App Store 研究工作流何时升级到自助以外',
       text: 'Self-help covers most cases around App Store research workflow, but escalation has a place. Escalate to Apple Report a Problem when money moved without authorization, after cancel with proof, or when digital goods never arrived. Escalate to the developer when account data export or deletion is required. Escalate to your bank only after platform paths are documented, unless fraud is clear and time sensitive. Escalate inside the household when the same failure repeats twice in a month; that is a controls problem, not bad luck. Do not escalate with anger-only messages. Bring the timeline, screenshots, Apple ID identity, and desired outcome. Parallel escalation to many channels on day one creates confusion and conflicting case numbers. Sequence beats spray. After escalation, tighten the local system so you are not filing the same case quarterly. The point of escalation is recovery plus prevention, not a permanent support lifestyle. If you file more than two purchase disputes in a quarter, freeze new installs for thirty days and run a full subscription and permission audit.',
       textZh: '围绕App Store 研究工作流多数情况可自助，但升级有其位置。未授权扣费、有证据的取消后扣费、数字商品未到达时，升级到 Apple Report a Problem。需要导出或删除账号数据时升级到开发者。除非欺诈明确且紧急，否则先走平台路径并留档再找银行。若同一失败一月内重复两次，在家庭内升级：这是控制问题不是倒霉。不要只发情绪升级。带上时间线、截图、Apple ID 身份与期望结果。第一天并行多渠道会造成混乱与冲突工单。顺序优于撒网。升级后收紧本地系统，避免每季度重复提交。升级的目的是恢复加预防，不是永久客服生活。若一季度超过两起购买争议，冻结新安装三十天，并做完整订阅与权限审计。',
-    }
-  ],
+    },
+  
+    {
+      heading: 'The 12-minute listing audit',
+      headingZh: '12 分钟上架审计',
+      text: 'Minute 0 to 3: developer name, age rating, update date, download size. Minute 3 to 6: privacy labels and heavy permission rows. Minute 6 to 9: price, IAP ladder, trial language. Minute 9 to 12: recent reviews for billing and crash themes. Fail any critical cell and stop — do not just try it.',
+      textZh: '0 到 3 分钟：开发者、年龄分级、更新日期、体积。3 到 6：隐私标签与重权限行。6 到 9：价格、内购阶梯、试用文案。9 到 12：近期评论里的扣费与崩溃主题。关键格失败就停——不要先试试。',
+    },
+    {
+      heading: 'Stop rules that save money',
+      headingZh: '能省钱的停止规则',
+      text: 'Stop if the core feature is only shown after a paywall you cannot preview, if reviews mention hard cancellation, if the app demands contacts for a flashlight-level job, or if the developer identity is a revolving set of shell names. Write the stop rule you used; it trains better habits than memory alone.',
+      textZh: '若核心功能付费后才能预览、评论提到难取消、手电筒级工具索要通讯录，或开发者身份是不断换壳的名字，就停止。写下你用的停止规则；比单靠记忆更能养成习惯。',
+    },
+    {
+      heading: 'Hand-off to tools and checklists',
+      headingZh: '交接给工具与清单',
+      text: 'Use price compare, IAP lookup, risk assessor, and decision checklists as stages, not replacements for judgment. End every research session with one of: install, wait, or never. Ambiguous maybe-later piles become forgotten trials. Store the decision in a Purchases note with the date.',
+      textZh: '把比价、内购查询、风险评估与决策清单当阶段，而不是替代判断。每次研究以安装、等待或永不之一结束。模糊的以后再说会堆成遗忘的试用。把决定与日期记入 Purchases 笔记。',
+    },
+],
   },
   {
     slug: 'when-not-to-install-free-apps',
     title: 'When You Should Not Install a Free App',
     titleZh: '什么时候不该安装免费应用',
-    description:
-      'Clear stop conditions for free App Store apps that create more privacy, billing, or maintenance risk than value.',
-    descriptionZh: '列出免费 App 的明确止损条件，避免隐私、扣费和维护风险高于实际价值。',
+    description: 'Skip free App Store installs that fail privacy, permission, billing, and quality checks — a 2026 stop-install checklist for iPhone households.',
+    descriptionZh: '跳过通不过隐私、权限、扣费与质量检查的免费安装——2026 家庭 iPhone 停装清单。',
     category: 'Safety',
     tags: ['Free apps', 'Risk', 'Permissions'],
     publishedAt: '2026-06-08',
-    updatedAt: '2026-06-16',
-    readTime: '8 min read',
+    updatedAt: '2026-07-19',
+    readTime: '11 min read',
     sections: [
       {
         heading: 'The free app asks for the wrong powers',
@@ -1064,8 +1153,27 @@ export const articles = [
       headingZh: '高风险免费应用何时升级到自助以外',
       text: 'Self-help covers most cases around risky free apps, but escalation has a place. Escalate to Apple Report a Problem when money moved without authorization, after cancel with proof, or when digital goods never arrived. Escalate to the developer when account data export or deletion is required. Escalate to your bank only after platform paths are documented, unless fraud is clear and time sensitive. Escalate inside the household when the same failure repeats twice in a month; that is a controls problem, not bad luck. Do not escalate with anger-only messages. Bring the timeline, screenshots, Apple ID identity, and desired outcome. Parallel escalation to many channels on day one creates confusion and conflicting case numbers. Sequence beats spray. After escalation, tighten the local system so you are not filing the same case quarterly. The point of escalation is recovery plus prevention, not a permanent support lifestyle. If you file more than two purchase disputes in a quarter, freeze new installs for thirty days and run a full subscription and permission audit.',
       textZh: '围绕高风险免费应用多数情况可自助，但升级有其位置。未授权扣费、有证据的取消后扣费、数字商品未到达时，升级到 Apple Report a Problem。需要导出或删除账号数据时升级到开发者。除非欺诈明确且紧急，否则先走平台路径并留档再找银行。若同一失败一月内重复两次，在家庭内升级：这是控制问题不是倒霉。不要只发情绪升级。带上时间线、截图、Apple ID 身份与期望结果。第一天并行多渠道会造成混乱与冲突工单。顺序优于撒网。升级后收紧本地系统，避免每季度重复提交。升级的目的是恢复加预防，不是永久客服生活。若一季度超过两起购买争议，冻结新安装三十天，并做完整订阅与权限审计。',
-    }
-  ],
+    },
+  
+    {
+      heading: 'Free-to-install is not free-to-own',
+      headingZh: '免费安装不等于免费拥有',
+      text: 'Many free apps sell the install, then the subscription, then the upsell pack. Before install, annualize the likely paid path. If you cannot name the paid path, you are the product funnel. Prefer apps that explain pricing on the product page without a dark pattern.',
+      textZh: '很多免费应用先卖安装，再卖订阅，再卖升级包。安装前先年化可能的付费路径。若说不出付费路径，你就是漏斗。优先产品页能说清价格、无暗模式的应用。',
+    },
+    {
+      heading: 'Permission and clone red flags',
+      headingZh: '权限与山寨红旗',
+      text: 'Skip apps whose icons and names mimic market leaders, whose developers rotate monthly, or who request contacts, SMS, or precise location for a simple utility. Search the developer name with refund and scam before you trust a wall of short five-star reviews.',
+      textZh: '跳过图标名称模仿龙头、开发者每月换壳，或简单工具却要通讯录、短信、精确位置的应用。信任五星短评墙前，先搜开发者名加 refund 与 scam。',
+    },
+    {
+      heading: 'Household install freeze',
+      headingZh: '家庭安装冻结',
+      text: 'When fatigue is high, set a seven-day install freeze for non-essential free apps. Use the freeze to clear unused apps and review Screen Time. New free installs require a written job-to-be-done and a delete date if the job is not met.',
+      textZh: '疲劳高时，对非必要免费应用设七天安装冻结。用冻结期清理不用应用并复查屏幕使用时间。新免费安装必须写用途，未达成则到删除日删除。',
+    },
+],
   },
   {
     slug: 'cancel-apple-subscription-step-by-step',
@@ -2194,14 +2302,13 @@ export const articles = [
     slug: 'app-store-gift-cards-and-balance-safety',
     title: 'App Store Gift Cards and Account Balance Safety Rules',
     titleZh: 'App Store 礼品卡与账户余额安全规则',
-    description:
-      'How to handle Apple gift cards, account balance, and region constraints without creating refund or account-recovery problems later.',
-    descriptionZh: '如何处理 Apple 礼品卡、账户余额和地区限制，避免日后造成退款或账号恢复问题。',
+    description: 'Keep App Store gift cards and account balance safe: redeem rules, scam patterns, shared-device controls, and evidence steps when balance disappears.',
+    descriptionZh: '保护 App Store 礼品卡与账户余额：兑换规则、诈骗模式、共用设备控制，以及余额异常时的取证步骤。',
     category: 'Purchasing',
     tags: ['Gift cards', 'Apple balance', 'Account safety'],
     publishedAt: '2026-04-07',
-    updatedAt: '2026-05-06',
-    readTime: '9 min read',
+    updatedAt: '2026-07-19',
+    readTime: '11 min read',
     sections: [
       {
         heading: 'Balance is convenient and sticky',
@@ -2286,21 +2393,39 @@ export const articles = [
       headingZh: '礼品卡与商店余额何时升级到自助以外',
       text: 'Self-help covers most cases around gift cards and store credit, but escalation has a place. Escalate to Apple Report a Problem when money moved without authorization, after cancel with proof, or when digital goods never arrived. Escalate to the developer when account data export or deletion is required. Escalate to your bank only after platform paths are documented, unless fraud is clear and time sensitive. Escalate inside the household when the same failure repeats twice in a month; that is a controls problem, not bad luck. Do not escalate with anger-only messages. Bring the timeline, screenshots, Apple ID identity, and desired outcome. Parallel escalation to many channels on day one creates confusion and conflicting case numbers. Sequence beats spray. After escalation, tighten the local system so you are not filing the same case quarterly. The point of escalation is recovery plus prevention, not a permanent support lifestyle. If you file more than two purchase disputes in a quarter, freeze new installs for thirty days and run a full subscription and permission audit.',
       textZh: '围绕礼品卡与商店余额多数情况可自助，但升级有其位置。未授权扣费、有证据的取消后扣费、数字商品未到达时，升级到 Apple Report a Problem。需要导出或删除账号数据时升级到开发者。除非欺诈明确且紧急，否则先走平台路径并留档再找银行。若同一失败一月内重复两次，在家庭内升级：这是控制问题不是倒霉。不要只发情绪升级。带上时间线、截图、Apple ID 身份与期望结果。第一天并行多渠道会造成混乱与冲突工单。顺序优于撒网。升级后收紧本地系统，避免每季度重复提交。升级的目的是恢复加预防，不是永久客服生活。若一季度超过两起购买争议，冻结新安装三十天，并做完整订阅与权限审计。',
-    }
-  ],
+    },
+  
+    {
+      heading: 'Redeem only inside official Apple surfaces',
+      headingZh: '只在官方 Apple 界面兑换',
+      text: 'Buy and redeem gift cards through Apple, major retailers you trust, or your own unused balance transfer paths. Avoid third-party discount codes sold in chat apps. Before redeeming, confirm the Apple ID that will receive the balance — family mix-ups are common. After redeem, screenshot Purchase History and balance. If a seller asks you to install a configuration profile or remote-support app first, stop; that is not a gift-card workflow.',
+      textZh: '仅通过 Apple、可信零售商或你自己的未用余额路径购买与兑换。避免聊天软件里的折扣码。兑换前确认接收余额的 Apple ID——家庭搞混很常见。兑换后截图购买记录与余额。若卖家要求先装配置描述文件或远程协助应用，立刻停止；那不是礼品卡流程。',
+    },
+    {
+      heading: 'Shared devices and balance theft patterns',
+      headingZh: '共用设备与余额被盗模式',
+      text: 'On shared iPads, Screen Time and a strong device passcode matter as much as the card PIN. Watch for unexpected media purchases, in-app currency packs, and rapid balance drain after a guest used the device. Disable free downloads without approval when children are on the same Apple ID ecosystem. If balance vanishes, preserve screenshots, note times, and use Report a Problem plus Apple Support rather than only arguing inside the household.',
+      textZh: '共用 iPad 上，屏幕使用时间与强设备密码和卡密一样重要。留意访客使用后出现的意外媒体购买、内购货币包与余额快速下降。儿童同在一个 Apple ID 生态时，关闭无需批准的免费下载。余额消失时保留截图、记录时间，走 Report a Problem 与 Apple 支持，而不是只在家庭内争论。',
+    },
+    {
+      heading: 'Scam checklist before you pay a stranger',
+      headingZh: '付钱给陌生人前的诈骗清单',
+      text: 'Refuse deals that require you to send codes first, photograph both sides of a physical card for a buyer, or accept payment only after you redeem on their Apple ID. Real gift-card value is the code; once shared, recovery is hard. Prefer in-person retail purchase when the amount is large. Keep the receipt with the last four digits of payment method for disputes.',
+      textZh: '拒绝要求你先发码、给买家拍实体卡正反面、或只在你登入对方 Apple ID 兑换后才付款的交易。礼品卡价值就是兑换码，一旦分享很难追回。金额大时优先线下零售。保留收据与支付方式后四位以便争议。',
+    },
+],
   },
   {
     slug: 'when-paid-app-beats-subscription',
     title: 'When a Paid App Is Better Than a Subscription',
     titleZh: '什么时候买断制 App 比订阅更划算',
-    description:
-      'A decision framework for choosing one-time paid apps over subscriptions, including usage frequency, update needs, and hidden recurring costs.',
-    descriptionZh: '在买断制与订阅之间做选择的决策框架，覆盖使用频率、更新需求和隐藏的长期成本。',
+    description: 'Decide paid unlock vs subscription with annualized math, feature access after cancel, and a household budget cap for 2026 App Store plans.',
+    descriptionZh: '用年化成本、取消后功能是否保留与家庭预算上限，在 2026 决定买断还是订阅。',
     category: 'Purchasing',
     tags: ['Paid apps', 'Subscriptions', 'Value'],
     publishedAt: '2026-04-23',
-    updatedAt: '2026-05-16',
-    readTime: '10 min read',
+    updatedAt: '2026-07-19',
+    readTime: '11 min read',
     sections: [
       {
         heading: 'Start from yearly cost, not weekly price',
@@ -2385,8 +2510,27 @@ export const articles = [
       headingZh: '买断与订阅取舍何时升级到自助以外',
       text: 'Self-help covers most cases around paid apps versus subscriptions, but escalation has a place. Escalate to Apple Report a Problem when money moved without authorization, after cancel with proof, or when digital goods never arrived. Escalate to the developer when account data export or deletion is required. Escalate to your bank only after platform paths are documented, unless fraud is clear and time sensitive. Escalate inside the household when the same failure repeats twice in a month; that is a controls problem, not bad luck. Do not escalate with anger-only messages. Bring the timeline, screenshots, Apple ID identity, and desired outcome. Parallel escalation to many channels on day one creates confusion and conflicting case numbers. Sequence beats spray. After escalation, tighten the local system so you are not filing the same case quarterly. The point of escalation is recovery plus prevention, not a permanent support lifestyle. If you file more than two purchase disputes in a quarter, freeze new installs for thirty days and run a full subscription and permission audit.',
       textZh: '围绕买断与订阅取舍多数情况可自助，但升级有其位置。未授权扣费、有证据的取消后扣费、数字商品未到达时，升级到 Apple Report a Problem。需要导出或删除账号数据时升级到开发者。除非欺诈明确且紧急，否则先走平台路径并留档再找银行。若同一失败一月内重复两次，在家庭内升级：这是控制问题不是倒霉。不要只发情绪升级。带上时间线、截图、Apple ID 身份与期望结果。第一天并行多渠道会造成混乱与冲突工单。顺序优于撒网。升级后收紧本地系统，避免每季度重复提交。升级的目的是恢复加预防，不是永久客服生活。若一季度超过两起购买争议，冻结新安装三十天，并做完整订阅与权限审计。',
-    }
-  ],
+    },
+  
+    {
+      heading: 'Annualize before emotion',
+      headingZh: '先年化，再情绪',
+      text: 'Convert weekly and monthly offers to yearly cost and compare with the one-time unlock. Include the features you actually need, not the entire Pro matrix. If you will use the app fewer than three months, a subscription can win; for multi-year light use, paid unlock often wins.',
+      textZh: '把周付月付换算成年成本，再与一次解锁比。只计入真正需要的功能，而不是整张 Pro 表。若使用少于三个月，订阅可能更合适；多年轻度使用，买断往往更优。',
+    },
+    {
+      heading: 'Feature access after cancel',
+      headingZh: '取消后的功能访问',
+      text: 'Ask what remains when the subscription ends: export, offline files, past transcripts, or a hard lock. If cancel destroys your data path, price that risk. Prefer products that let you export before billing ends. Test export on day one of a trial.',
+      textZh: '问订阅结束后还剩什么：导出、离线文件、历史转写，还是硬锁。若取消摧毁数据路径，把该风险计入价格。优先允许在计费结束前导出的产品。试用第一天就测导出。',
+    },
+    {
+      heading: 'Household budget cap',
+      headingZh: '家庭预算上限',
+      text: 'Set a monthly software cap in local currency. New subscriptions require retiring an old one when the cap is hit. Paid unlocks can be planned as quarterly purchases instead of silent renewals. Revisit the cap when family members add seats.',
+      textZh: '用本币设定每月软件上限。触顶后新订阅必须先退役旧订阅。买断可按季度计划，而不是静默续费。家庭成员加席位时重审上限。',
+    },
+],
   },
   {
     slug: 'ios-vpn-profile-and-certificate-risks',

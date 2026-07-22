@@ -16,7 +16,11 @@ export const policyPages = {
       { title: 'How it is maintained', titleZh: '网站如何维护', text: 'Storewise is maintained as an independent project with a preference for static pages, client-side tools, and public data references. That keeps pages fast, easier to audit, and less invasive for visitors. The goal is usefulness and clarity rather than account-heavy workflows.', textZh: 'Storewise 作为独立项目维护，优先使用静态页面、浏览器端工具和公开数据来源。这样页面更快、更容易检查，也更少打扰访问者。整体目标是让网站实用、清楚，而不是堆砌复杂账号流程。' },
       { title: 'Editorial principles', titleZh: '内容原则', text: 'Pages are written to be practical, cautious, and verifiable. The site avoids promising guaranteed outcomes, avoids pressure-heavy calls to action, and encourages users to confirm prices, subscriptions, region changes, refunds, and permissions through official sources.', textZh: '内容尽量保持实用、谨慎、可核验。本站不会承诺结果，也不会用夸张方式催促用户操作；涉及价格、订阅、切区、退款和权限时，会尽量提醒你回到官方来源确认。' },
       { title: 'What Storewise is not', titleZh: 'Storewise 不是什么', text: 'Storewise is not an official Apple property, not a payment platform, not an account service, and not a legal or financial advisor. It is a research helper meant to support safer and more informed user choices.', textZh: 'Storewise 不是 Apple 官方产品，不是支付平台，不是账号服务，也不是法律或财务顾问。它更像一个研究辅助站，用来帮助用户做出更稳妥的信息判断。' },
-    ],
+    
+      { title: 'How research notes are structured', titleZh: '研究笔记如何组织', text: 'Long-form articles are multi-section guides with practical checklists, failure modes, and verification steps. They sit on crawlable paths under /articles, not only as homepage teaser cards. Related series links help you move from trial traps to cancel workflows without losing context. Tools and notes are meant to be used together: research first, then act in official Apple screens.', textZh: '长文是多章节指南，含实用清单、失败模式与验证步骤。它们在可抓取的 /articles 路径上，而不只是首页卡片。相关阅读系列帮助你从试用陷阱走到取消流程且不丢上下文。工具与笔记应一起用：先研究，再在官方 Apple 界面行动。' },
+
+      { title: 'Independence and conflicts of interest', titleZh: '独立性与利益冲突', text: 'Storewise does not sell App Store accounts, gift-card arbitrage services, or paid region-switching. When advertising is present, ad delivery is separate from editorial ranking of guides. Product mentions, if any, should be readable as research notes with limitations stated nearby. Readers should still verify every price and policy on official surfaces.', textZh: 'Storewise 不出售 App Store 账号、礼品卡套利或付费切区服务。若有广告，投放与指南编辑排序分开。若出现产品提及，应作为带限制说明的研究笔记阅读。价格与政策仍须在官方界面核验。' },
+],
     checklist: {
       title: 'What you can expect here',
       titleZh: '你能在这里得到什么',
@@ -45,7 +49,9 @@ export const policyPages = {
       { title: 'Best way to report tool bugs', titleZh: '工具 Bug 如何反馈', text: 'For tool issues, the most useful report usually contains reproduction steps, browser and device details, what you expected to happen, and what actually happened. A screenshot is very helpful when the problem involves layout, language switching, mobile display, or a broken result state.', textZh: '如果是工具 Bug，最有效的反馈通常包括复现步骤、浏览器和设备信息、预期行为以及实际结果。涉及布局、语言切换、移动端显示或结果异常时，截图会非常有帮助。' },
       { title: 'Privacy and partnership requests', titleZh: '隐私与合作请求', text: 'For privacy-related questions or advertising and partnership inquiries, describe the page involved and the type of request you are making. Storewise does not require registration, so most preference data lives in the browser rather than in a user account on a server.', textZh: '如果是隐私相关问题，或者广告与合作咨询，请说明涉及页面和请求类型。Storewise 不要求注册账号，所以大多数偏好数据保存在浏览器中，而不是服务器用户账户里。' },
       { title: 'What helps us respond faster', titleZh: '什么信息能加快处理', text: 'Short, specific, evidence-backed messages are easiest to act on. If you already tested on another browser, device, or language setting, say so. That makes it much easier to tell the difference between a page bug, a data-source issue, and a local browser problem.', textZh: '简短、具体、带证据的反馈最容易处理。如果你已经换过浏览器、设备或语言设置测试，也请顺手说明。这能帮助更快区分是页面 Bug、数据源问题，还是本地浏览器状态导致的异常。' },
-    ],
+    
+      { title: 'Response expectations for a small project', titleZh: '小型项目的响应预期', text: 'This is a small independent project, so responses may take several business days. Urgent billing disputes with Apple must go through Apple Support or Report a Problem — Storewise cannot reverse charges. For security issues, describe the page and avoid pasting secrets. For content corrections, a URL plus the corrected fact is enough to start.', textZh: '这是小型独立项目，回复可能需要数个工作日。与 Apple 的紧急扣费争议须走 Apple 支持或 Report a Problem——Storewise 无法撤销扣费。安全问题请描述页面并避免粘贴密钥。内容更正提供 URL 与正确事实即可开始。' },
+],
     checklist: {
       title: 'Contact checklist',
       titleZh: '反馈前建议附上',
@@ -66,8 +72,8 @@ export const policyPages = {
     titleZh: '隐私政策',
     sub: 'What Storewise stores locally, which third-party requests may occur, and how advertising scripts may be used.',
     subZh: '说明 Storewise 会在本地保存什么、可能请求哪些第三方服务，以及广告脚本可能如何使用。',
-    effective: 'Effective date: 2026-07-15',
-    effectiveZh: '生效日期：2026-07-15',
+    effective: 'Effective date: 2026-07-19',
+    effectiveZh: '生效日期：2026-07-19',
     highlights: [
       { label: 'Accounts', labelZh: '账号', value: 'No registration required', valueZh: '无需注册账号' },
       { label: 'Storage', labelZh: '存储', value: 'Mostly browser-local', valueZh: '主要保存在浏览器本地' },
@@ -113,7 +119,9 @@ export const policyPages = {
       { title: '4. Tool limitations', titleZh: '4. 工具结果的限制', text: 'Search results, generated test data, app risk scores, checklists, and network diagnostics are aids for review, not guarantees. Missing data, cached responses, API changes, regional differences, or browser restrictions may affect results.', textZh: '搜索结果、生成的测试数据、应用风险评分、检查清单和网络诊断都只是辅助判断，并不是保证。数据缺失、缓存、API 变化、地区差异或浏览器限制都可能影响结果。' },
       { title: '5. External services and links', titleZh: '5. 外部服务与链接', text: 'Some pages link to App Store pages, Apple resources, public APIs, GitHub repositories, or third-party websites. Storewise does not control those services and is not responsible for their availability, pricing, content, policies, or security practices.', textZh: '部分页面会链接到 App Store、Apple 资源、公开 API、GitHub 仓库或第三方网站。Storewise 不控制这些服务，也不对其可用性、价格、内容、政策或安全实践负责。' },
       { title: '6. Prohibited use', titleZh: '6. 禁止用途', text: 'Do not use Storewise for fraud, impersonation, unauthorized access, credential sharing, account abuse, platform circumvention, spam, scraping abuse, or misuse of generated data.', textZh: '不得将 Storewise 用于欺诈、冒充身份、未授权访问、凭据共享、账号滥用、规避平台规则、垃圾信息、滥用抓取或滥用生成数据。' },
-    ],
+    
+      { title: 'No guarantee of App Store outcomes', titleZh: '不保证 App Store 结果', text: 'Refund approvals, trial conversions, region switches, and family purchase disputes are decided by Apple, developers, banks, and households — not by this website. Guides reduce common mistakes but cannot promise a specific refund, price, or safety outcome. Always keep official receipts and settings screenshots for high-stakes actions.', textZh: '退款批准、试用转正、切区与家庭购买争议由 Apple、开发者、银行与家庭决定——不是本站。指南减少常见错误，但不能承诺特定退款、价格或安全结果。高风险操作请保留官方收据与设置截图。' },
+],
   },
   terms: {
     title: 'Terms of Use',
@@ -135,7 +143,9 @@ export const policyPages = {
       { title: '5. External services and links', titleZh: '5. 外部服务与链接', text: 'Some pages link to App Store pages, Apple resources, public APIs, GitHub repositories, or third-party websites. Storewise does not control those services and is not responsible for their availability, pricing, content, or policies.', textZh: '部分页面会链接到 App Store、Apple 资源、公开 API、GitHub 仓库或第三方网站。Storewise 不控制这些服务，也不对其可用性、价格、内容或政策负责。' },
       { title: '6. Site changes and maintenance', titleZh: '6. 站点变更与维护', text: 'Features, pages, routes, content, and data sources may be changed, removed, or reorganized to improve quality, comply with platform policies, reduce abuse, or keep the site maintainable.', textZh: '为了提升质量、遵守平台政策、减少滥用或保持站点可维护性，本站可能调整、移除或重组功能、页面、路由、内容和数据来源。' },
       { title: '7. Service availability', titleZh: '7. 可用性说明', text: 'Storewise is offered on an as-available basis. Maintenance, third-party API changes, network failures, browser restrictions, or regional issues may affect whether a tool works at a given moment.', textZh: 'Storewise 按“可用即提供”的方式运行。维护、第三方 API 变化、网络故障、浏览器限制或地区问题，都可能影响某个工具在特定时刻是否可用。' },
-    ],
+    
+      { title: 'Acceptable research use', titleZh: '可接受的研究用途', text: 'You may use Storewise to research App Store purchases, test UI forms with clearly synthetic data, and learn household safety workflows. You may not use generated addresses or tooling to commit fraud, evade platform rules, or misrepresent identity. Automated scraping that degrades public APIs or the site may be rate-limited or blocked.', textZh: '你可用 Storewise 研究 App Store 购买、用明确合成数据测试 UI 表单，并学习家庭安全流程。不得用生成地址或工具实施欺诈、规避平台规则或虚假身份。损害公开 API 或本站的自动化抓取可能被限速或拦截。' },
+],
     checklist: {
       title: 'Using the site responsibly',
       titleZh: '使用本站时请注意',
@@ -165,7 +175,11 @@ export const policyPages = {
       { title: '4. Review standards', titleZh: '4. 审查标准', text: 'Pages are written to avoid exaggerated claims, hidden guarantees, or pressure tactics. Guidance should explain limits, encourage official verification, and distinguish facts from practical suggestions.', textZh: '页面写作会避免夸大说法、隐藏式保证或施压式引导。指南应说明限制，提醒用户通过官方来源核验，并区分事实信息与实践建议。' },
       { title: '5. Corrections', titleZh: '5. 内容更正', text: 'Users can report outdated, unclear, inaccurate, or incomplete content with the page URL, observed date, affected text, and supporting details. Corrections may update article text, policy notes, sitemap dates, or related page copy.', textZh: '用户可以反馈过时、不清楚、不准确或不完整的内容。反馈时建议提供页面地址、发现日期、相关文字和支持信息。更正可能涉及文章正文、政策说明、sitemap 日期或相关页面文案。' },
       { title: '6. Update rhythm', titleZh: '6. 更新节奏', text: 'Storewise may update guides, glossary entries, checklists, and policy pages when platform behavior changes, user feedback reveals gaps, or maintenance work improves clarity and safety.', textZh: '当平台行为变化、用户反馈暴露缺口，或维护工作能提升清晰度与安全性时，Storewise 可能更新指南、术语、检查清单和政策页面。' },
-    ],
+    
+      { title: 'Update cadence for research notes', titleZh: '研究笔记更新节奏', text: 'Guides are revised when App Store workflows, common scam patterns, or household controls change, and when readers report inaccuracies. Each article carries published and updated dates. Older notes may still be useful for process thinking, but pricing examples and UI paths should be re-checked on official screens before you act. Substantive updates expand practical sections rather than only changing a date stamp.', textZh: '当 App Store 流程、常见诈骗模式或家庭控制变化，或读者报告不准确时，会修订指南。每篇文章带发布与更新日期。旧笔记对流程思考仍可能有用，但价格示例与界面路径行动前须在官方屏幕重核。实质性更新会扩展实用章节，而不是只改日期戳。' },
+
+      { title: 'Corrections and sources', titleZh: '更正与来源', text: 'Primary sources include Apple public documentation and product surfaces, public App Store metadata, and hands-on workflow testing. When a page depends on third-party APIs, limitations are stated near the tool. Corrections are welcomed via the contact page with URL and evidence. Storewise prefers clear process guidance over unverifiable claims.', textZh: '主要来源包括 Apple 公开文档与产品界面、公开 App Store 元数据，以及实际流程测试。页面依赖第三方 API 时，限制写在工具附近。欢迎通过联系页提交带 URL 与证据的更正。Storewise 偏好清晰流程指导，而非无法核验的断言。' },
+],
   },
   'data-sources': {
     title: 'Data Sources',
@@ -181,6 +195,10 @@ export const policyPages = {
       { title: '4. Generated test data', titleZh: '4. 生成的测试数据', text: 'Address generator data is synthetic and intended for development, testing, UI mockups, and sample datasets only. It should not be used for identity verification, delivery, billing, fraud, or platform bypass attempts.', textZh: '地址生成器数据是合成数据，仅用于开发、测试、界面样稿和示例数据集。不应被用于身份验证、配送、账单、欺诈或绕过平台验证。' },
       { title: '5. Editorial and safety references', titleZh: '5. 编辑与安全参考', text: 'Guides, checklists, glossary entries, and risk explanations are written from public platform behavior, Apple documentation patterns, common App Store user issues, and cautious editorial review.', textZh: '指南、检查清单、术语解释和风险说明基于公开平台行为、Apple 文档模式、常见 App Store 用户问题以及谨慎的编辑整理。' },
       { title: '6. Data freshness and corrections', titleZh: '6. 数据时效与更正', text: 'Public data can be delayed, incomplete, cached, unavailable, or different by region. If a result appears wrong, compare it with the official source and contact Storewise with the page URL, date observed, and supporting details.', textZh: '公开数据可能延迟、不完整、被缓存、暂时不可用，或因地区不同而变化。如果结果看起来不正确，请先与官方来源对比，并在反馈时提供页面地址、发现日期和支持信息。' },
-    ],
+    
+      { title: 'What reviewers and crawlers should see', titleZh: '审核与爬虫应看到什么', text: 'Tool routes ship server-rendered explanations above and below interactive islands so a page is never only a search box. Article routes are multi-section HTML documents. Query-string variants of tools are discouraged for indexing because they create thin duplicate states. Public research notes and clean tool shells are the durable surface of the site.', textZh: '工具路由在交互岛上下提供服务端渲染说明，页面从不是只有搜索框。文章路由是多章节 HTML 文档。带查询串的工具变体不鼓励被索引，以免产生薄重复状态。公开研究笔记与干净工具壳是站点的持久表面。' },
+
+      { title: 'Freshness and failure handling', titleZh: '新鲜度与失败处理', text: 'App metadata, free lists, and network checks can fail or lag. When a feed is empty, pages keep explanatory content, limitations, and related guides instead of collapsing into a blank canvas. Users should re-check official storefronts for final prices and availability. Storewise optimizes for decision support under partial data, not for pretending every API always succeeds.', textZh: '应用元数据、限免列表与网络检测可能失败或滞后。源为空时，页面仍保留说明、限制与相关指南，而不是塌成空白画布。最终价格与可用性请重核官方店面。Storewise 优化的是部分数据下的决策支持，而不是假装每个 API 永远成功。' },
+],
   },
 };

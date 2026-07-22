@@ -10,8 +10,8 @@ export const toolContent = {
         { heading: 'How the comparison works', text: 'Storewise queries public App Store metadata for the selected regions, normalizes currency display, and keeps the original storefront price visible next to any converted estimate. Availability state is shown separately so a missing region is not mistaken for a zero price. When an interface fails, the page should keep explanatory content instead of collapsing into an empty search box.' },
         { heading: 'Common mistakes to avoid', text: 'Do not switch your main Apple ID region only because one converted price looks lower. Do not ignore taxes, trials, or subscription packaging. Do not assume the cheapest region offers the same feature set, language support, or refund path. For family or work accounts, operational risk can outweigh a small discount.' },
         { heading: 'Recommended next steps', text: 'After comparing base prices, open the related checklist, inspect subscription terms, and verify the final amount in the official App Store checkout. If the purchase is expensive or hard to reverse, save screenshots of the offer sheet before paying.' },
+        { heading: 'Build a one-page price brief before expensive buys', text: 'For purchases over your personal threshold, write app name, storefront, original price, converted estimate, IAP ladder, trial terms, and a walk-away price. If any cell is empty, delay payment. Share the brief with the household payer when Family Sharing is involved.' }
       ],
-      //note: 'Do not treat the price page as only a search box. These explanations and related links help users understand context even before they run a query.',
       links: [{ href: '/iap', label: 'IAP Lookup' }, { href: '/guides', label: 'App Store guides' }, { href: '/glossary', label: 'Price tier terms' }, { href: '/knowledge', label: 'Apple safety guides' }, { href: '/checklists', label: 'Decision checklists' }],
       linksLabel: 'Related reading'
     },
@@ -24,6 +24,9 @@ export const toolContent = {
         { heading: 'Keep context when feeds fail', text: 'If an API fails or no apps are available, the page still provides filtering advice and related guides instead of becoming an empty screen with ads.' },
         { heading: 'How free-app curation should work', text: 'A useful free-app page explains category, developer identity, update freshness, privacy burden, and whether the app is truly free or only free to install. The goal is decision support, not a raw dump of outbound links. When data is incomplete, the page should say so clearly.' },
         { heading: 'Before you install a free app', text: 'Confirm the current App Store price, scan recent reviews for billing complaints, check whether a subscription is required for core features, and review permissions. If the app demands high privileges for a simple job, skip it even when the download is free.' },
+        { heading: 'Score free apps on a 5-point card', text: 'Rate update freshness, developer identity, privacy burden, billing risk, and whether core features work offline or without an account. Install only if at least four scores are acceptable. Free downloads that fail this card are usually expensive later.' },
+        { heading: 'Permissions and notification pressure', text: 'A free cleaner, VPN, or battery tool that wants contacts, precise location, or always-on notifications is a red flag. Deny first, use the feature, then decide. Pair this page with the risk assessor and permission decision articles.' },
+        { heading: 'After install: 10-minute probation', text: 'Keep a 10-minute timer. If the app immediately paywalls the feature that made it free, pushes aggressive reviews, or restarts a trial you already cancelled, delete it and note the pattern for next time.' }
       ],
       links: [{ href: '/price', label: 'Price Compare' }, { href: '/iap', label: 'Check IAP' }, { href: '/guides', label: 'Free app guide' }, { href: '/risk', label: 'App Risk Assessor' }],
       linksLabel: 'Related reading'
@@ -35,6 +38,11 @@ export const toolContent = {
         { heading: 'Different IAP types', text: 'Common IAP models include one-time unlocks, consumables, auto-renewing subscriptions, and non-renewing subscriptions. A free app can still place core features behind IAP.' },
         { heading: 'A failed lookup does not mean no IAP', text: 'Network proxies, Apple page changes, and regional limits can prevent detection. The page avoids presenting incomplete data as a definite conclusion.' },
         { heading: 'What to check before buying', text: 'Review trial length, renewal period, cancellation path, Family Sharing, refund rules, and developer reputation. Extra purchase restrictions are recommended on family devices.' },
+        { heading: 'Map every SKU to a job-to-be-done', text: 'Write one sentence for each IAP: unlocks export, removes ads, adds seats, or sells consumable credits. If two SKUs buy the same job, keep the cheaper long-term option. Storewise lookup is a map, not a shopping cart.' },
+        { heading: 'Trials, free periods, and first charge dates', text: 'When a trial exists, record start date, length, first charge date, and cancel path before you tap Start. Annualize the post-trial price. A 3-day trial into a weekly plan can cost more than a yearly unlock if you forget to cancel.' },
+        { heading: 'Region and language mismatches', text: 'IAP names and prices can differ by storefront. If you switched regions or used a shared Apple ID, confirm the storefront that will bill you. Screenshots from another country are not your checkout sheet.' },
+        { heading: 'Family Sharing and Ask to Buy interactions', text: 'Some subscriptions share; consumables usually do not. On child devices, Ask to Buy may still allow free downloads that later open paid IAP. Pair this page with Screen Time purchase limits when the device is shared.' },
+        { heading: 'Evidence pack before you buy', text: 'Save the product page, IAP list, Privacy labels, and the final confirm sheet. If billing goes wrong, Report a Problem needs a timeline more than a long complaint. Re-check Settings > Apple ID > Subscriptions after any purchase.' }
       ],
       links: [{ href: '/price', label: 'App base price' }, { href: '/guides', label: 'Subscription safety guide' }, { href: '/glossary', label: 'IAP terms' }, { href: '/risk', label: 'App Risk Assessor' }, { href: '/checklists', label: 'Decision checklists' }],
       linksLabel: 'Related reading'
@@ -49,6 +57,7 @@ export const toolContent = {
         { heading: 'When search returns nothing', text: 'If no results are found, the page still offers usage guidance and related articles so you can refine the query or continue reading.' },
         { heading: 'How it works', text: 'Enter an App Store app ID, bundle ID, or app name into the search field. The tool calls the iTunes Search API (public and rate-limited) to fetch the app\'s official artwork at the highest available resolution — typically 1024×1024 pixels. It also retrieves the app name, developer, content rating, and App Store link. The icon URL is extracted from the artworkUrl100 field and automatically upscaled to the 1024px variant. Results are cached in your browser session to avoid redundant API calls.' },
         { heading: 'Troubleshooting', text: 'No results found: The iTunes Search API may rate-limit frequent requests or return empty results for region-restricted apps. Wait 30 seconds and try again, or verify the app ID is correct by visiting the App Store listing. || Low resolution icon: Some apps do not provide 1024px artwork; the tool falls back to the highest resolution available (512px or 256px). This is not an error — the developer simply did not upload a larger asset. || Wrong app returned: If searching by name, multiple apps may match. Use the exact App Store app ID (numeric) for guaranteed precision.' },
+        { heading: 'Attribution and fair use boundaries', text: 'Use icons for mockups, comparison tables, and internal design exploration with clear App Store links. Do not ship icons inside competing store clients, phishing pages, or ads that imply Apple or developer endorsement.' }
       ],
       links: [{ href: '/guides', label: 'App identification guide' }, { href: '/glossary', label: 'Bundle ID and icon terms' }, { href: '/knowledge', label: 'Apple safety guides' }],
       linksLabel: 'Related reading'
@@ -62,6 +71,7 @@ export const toolContent = {
         { heading: 'Privacy reminder', text: 'The page displays information your browser can obtain. When using public Wi‑Fi, proxies, or enterprise networks, avoid logging into sensitive accounts in untrusted environments.' },
         { heading: 'How it works', text: 'When you open this page, the tool automatically detects your current public IP address via browser network APIs and server-side headers. It then queries multiple IP geolocation databases to resolve your approximate country, region, city, ISP, and ASN. At the same time, it performs lightweight connectivity tests against a curated list of commonly accessed services (DNS resolvers, CDN endpoints, regional mirrors) to help you gauge whether your network path is working normally. All processing happens server-side—your IP is not stored or shared.' },
         { heading: 'Troubleshooting common issues', text: 'Location shows wrong city: IP geolocation databases often reflect your ISP\'s point of presence rather than your physical address. Mobile carriers and VPNs amplify this. If the location is critical, cross-check with a different IP lookup service. || Connectivity test fails: DNS blocking, firewall rules, and CORS policies can cause individual tests to fail even though the service is reachable directly. Test the same URL in a new browser tab. If multiple tests fail, check your local network, proxy settings, or try switching DNS servers. || No data at all: If the page loads blank, check that JavaScript is enabled and that no browser extension is blocking the fetch requests. Ad blockers and privacy extensions can sometimes interfere with the geolocation API calls.' },
+        { heading: 'When to treat IP results as operational alerts', text: 'If the exit country does not match your expected VPN or region plan, pause App Store purchases and banking until you understand the path. Mismatched exits are a common cause of storefront and fraud-check friction.' }
       ],
       links: [{ href: '/knowledge', label: 'Network safety guide' }, { href: '/glossary', label: 'Network terms' }, { href: '/privacy', label: 'Privacy Policy' }],
       linksLabel: 'Related reading'
@@ -76,6 +86,8 @@ export const toolContent = {
         { heading: 'Local saving and export', text: 'Saved addresses are stored in browser localStorage and are not automatically uploaded. Clearing browser site data will remove them.' },
         { heading: 'How it works', text: 'The generator combines real city names, street patterns, and valid postal-code formats from your selected country to produce plausible-looking address records. It uses weighted randomization — common street types like "Main St" appear more often than rare ones — to keep output natural. You can generate a single address or bulk-export a CSV of up to 100 records. The data is assembled entirely in your browser using local templates; no request is sent to a server during generation.' },
         { heading: 'Troubleshooting', text: 'Address looks fake: The generator creates realistic-looking data for testing, not verified deliverable addresses. For actual mail validation, use USPS Address Verification, SmartyStreets, or similar services. || CSV export not downloading: Check that your browser allows downloads from this site. Some enterprise policies or browser extensions block automatic downloads. Try right-clicking the export button and selecting "Save link as." || Country format looks wrong: If postal codes or address order do not match what you expect, double-check you selected the correct country. Each country has its own regional templates.' },
+        { heading: 'Keep generated data out of real account flows', text: 'Never paste generated addresses into banking, government, carrier, or merchant KYC forms. If a form requires a real address, use your lawful address or a service that is allowed for that purpose. Misuse can violate terms and local law.' },
+        { heading: 'QA checklist for forms', text: 'Test required fields, max lengths, postal validation, and locale-specific order. Export a small CSV fixture for regression tests instead of inventing new strings every time.' }
       ],
       links: [{ href: '/ip', label: 'IP Check' }, { href: '/guides', label: 'App Store guides' }, { href: '/knowledge', label: 'Safety knowledge base' }, { href: '/privacy', label: 'Privacy Policy' }],
       linksLabel: 'Related reading'
@@ -89,14 +101,10 @@ export const toolContent = {
         { heading: 'Local privacy by design', text: 'Rows are stored in browser localStorage only if you click save. Export JSON for spreadsheets. Nothing is uploaded to Storewise servers.' },
         { heading: 'What this tool cannot do', text: 'It cannot read your Apple account, cancel subscriptions, or include tax automatically. Always confirm final amounts and renewal dates in Settings > Apple ID > Subscriptions and the App Store checkout page.' },
         { heading: 'Recommended workflow', text: '1) list every recurring plan, 2) annualize cost, 3) open the matching checklist, 4) cancel low-value plans, 5) re-check next week. Pair this page with paid-vs-subscription and subscription-fatigue articles.' },
+        { heading: 'Household stack view', text: 'List plans by person and device, not only by app name. Two personal VPN plans on one organizer card are still one household problem. Cap the number of active AI, photo, and VPN seats before adding new trials.' },
+        { heading: 'Quarterly kill list', text: 'Every 90 days, force-rank subscriptions by hours used last month. The bottom two become cancel candidates unless they protect security or family safety. Re-run the calculator after each cancel.' }
       ],
-      links: [
-        { href: '/price', label: 'Price compare' },
-        { href: '/checklists', label: 'Decision checklists' },
-        { href: '/articles/when-paid-app-beats-subscription', label: 'Paid vs subscription' },
-        { href: '/articles/spot-subscription-fatigue-apps', label: 'Subscription fatigue' },
-        { href: '/articles/manage-apple-subscriptions-after-trial', label: 'After free trial' },
-      ],
+      links: [{ href: '/price', label: 'Price compare' }, { href: '/checklists', label: 'Decision checklists' }, { href: '/articles/when-paid-app-beats-subscription', label: 'Paid vs subscription' }, { href: '/articles/spot-subscription-fatigue-apps', label: 'Subscription fatigue' }, { href: '/articles/manage-apple-subscriptions-after-trial', label: 'After free trial' }],
       linksLabel: 'Related reading'
     },
     trial: {
@@ -108,14 +116,10 @@ export const toolContent = {
         { heading: 'Family devices need extra controls', text: 'A reminder is not enough on shared iPads. Re-check Ask to Buy and Screen Time purchase restrictions so the same trial path cannot restart silently.' },
         { heading: 'What this tool cannot do', text: 'It cannot read Apple subscriptions, create system calendar events by itself, or cancel billing. Copy the text into your own Calendar/Notes and confirm the live plan in Apple settings.' },
         { heading: 'Recommended next steps', text: 'Generate the packet, set a calendar alert, cancel if value is unclear, then review monthly costs. Keep screenshots if you later need Report a Problem.' },
+        { heading: 'Screenshot the offer before Start Trial', text: 'Capture price, period, free days, and fine print. If the UI differs from the product page, treat the confirm sheet as truth. Store the screenshot with the cancel-by date in the same note.' },
+        { heading: 'Shared devices and re-trials', text: 'Some apps re-offer trials after reinstall or alternate Apple IDs. On family devices, lock installs and purchases so a cancelled trial cannot restart from another profile.' }
       ],
-      links: [
-        { href: '/subcost', label: 'Sub cost calculator' },
-        { href: '/checklists', label: 'Decision checklists' },
-        { href: '/articles/free-trial-trap-checklist', label: 'Trial trap checklist' },
-        { href: '/articles/cancel-apple-subscription-step-by-step', label: 'Cancel subscription' },
-        { href: '/articles/manage-apple-subscriptions-after-trial', label: 'After free trial' },
-      ],
+      links: [{ href: '/subcost', label: 'Sub cost calculator' }, { href: '/checklists', label: 'Decision checklists' }, { href: '/articles/free-trial-trap-checklist', label: 'Trial trap checklist' }, { href: '/articles/cancel-apple-subscription-step-by-step', label: 'Cancel subscription' }, { href: '/articles/manage-apple-subscriptions-after-trial', label: 'After free trial' }],
       linksLabel: 'Related reading'
     }
   },
@@ -123,25 +127,94 @@ export const toolContent = {
     price: {
       title: 'App Store 跨区价格为什么需要谨慎比较？',
       intro: '同一款 App 在不同国家或地区可能使用不同价格等级、税率、货币和促销策略。简单地把当地价格换算成人民币并不等同于最终购买成本，因此 Storewise 同时展示原始商店价格、近似人民币和可用状态。',
-      items: [{ heading: '价格差异的来源', text: 'Apple 会根据地区价格等级、开发者定价、汇率调整和当地税费展示不同价格。部分应用在某些区不可用，或提供不同订阅方案。对比时应优先确认可购买性、家庭共享、语言支持和售后限制。' }, { heading: '如何阅读最低价提示', text: '最低价标记只代表当前查询到的公开价格中人民币估算最低的一项，不构成购买建议。汇率接口失败时会使用备用汇率，因此页面保留原币种价格，方便用户自行核对。' }, { heading: '适合的使用场景', text: '这个工具适合购买前快速判断价格区间、寻找是否存在明显区域差异、确认 App ID 是否在指定商店上架。对于订阅、内购和长期服务，建议继续查看 IAP 页面和开发者说明。' }, { heading: '比较过程如何工作', text: 'Storewise 会查询所选地区的公开 App Store 元数据，规范币种展示，并在换算估值旁保留原始商店价格。可用性状态会单独显示，避免把“未上架”误看成“价格为零”。当接口失败时，页面仍应保留说明内容，而不是只剩空搜索框。' }, { heading: '常见误区', text: '不要只因为换算价更低就切换主 Apple ID 地区；不要忽略税费、试用和订阅包装；不要假设最低价地区拥有相同功能、语言支持或退款路径。对家庭或工作账号，操作风险可能大于小额优惠。' }, { heading: '建议的下一步', text: '比较本体价格后，打开相关清单，检查订阅条款，并在官方 App Store 结算页核对最终金额。如果购买金额高或难以撤销，付款前先保存报价页截图。' }],
-      links: [{ href: '/iap', label: '内购查询' }, { href: '/guides', label: 'App Store 使用指南' }, { href: '/glossary', label: '价格等级术语' }, { href: '/knowledge', label: '安全知识库' }, { href: '/checklists', label: '决策清单' }], linksLabel: '相关阅读'
+      items: [
+        { heading: '价格差异的来源', text: 'Apple 会根据地区价格等级、开发者定价、汇率调整和当地税费展示不同价格。部分应用在某些区不可用，或提供不同订阅方案。对比时应优先确认可购买性、家庭共享、语言支持和售后限制。' },
+        { heading: '如何阅读最低价提示', text: '最低价标记只代表当前查询到的公开价格中人民币估算最低的一项，不构成购买建议。汇率接口失败时会使用备用汇率，因此页面保留原币种价格，方便用户自行核对。' },
+        { heading: '适合的使用场景', text: '这个工具适合购买前快速判断价格区间、寻找是否存在明显区域差异、确认 App ID 是否在指定商店上架。对于订阅、内购和长期服务，建议继续查看 IAP 页面和开发者说明。' },
+        { heading: '比较过程如何工作', text: 'Storewise 会查询所选地区的公开 App Store 元数据，规范币种展示，并在换算估值旁保留原始商店价格。可用性状态会单独显示，避免把“未上架”误看成“价格为零”。当接口失败时，页面仍应保留说明内容，而不是只剩空搜索框。' },
+        { heading: '常见误区', text: '不要只因为换算价更低就切换主 Apple ID 地区；不要忽略税费、试用和订阅包装；不要假设最低价地区拥有相同功能、语言支持或退款路径。对家庭或工作账号，操作风险可能大于小额优惠。' },
+        { heading: '建议的下一步', text: '比较本体价格后，打开相关清单，检查订阅条款，并在官方 App Store 结算页核对最终金额。如果购买金额高或难以撤销，付款前先保存报价页截图。' },
+        { heading: '高价购买前做一页价格简报', text: '超过个人阈值的购买，写下应用名、店面、原价、换算估值、内购阶梯、试用条款和走开价。任一格为空就暂缓付款。涉及家庭共享时与付款人共享简报。' }
+      ],
+      links: [{ href: '/iap', label: '内购查询' }, { href: '/guides', label: 'App Store 使用指南' }, { href: '/glossary', label: '价格等级术语' }, { href: '/knowledge', label: '安全知识库' }, { href: '/checklists', label: '决策清单' }],
+      linksLabel: '相关阅读'
     },
     appfree: {
-      title: '限免应用页面的筛选原则', intro: '限免信息变化很快，如果只堆第三方外链，信息会很薄。本站会补充应用分类、开发者、可用链接和使用提醒，帮助用户判断是否值得下载，而不是只展示一组外链。', items: [{ heading: '限免不等于永久免费', text: '很多应用只在短时间内免费，恢复原价后可能仍显示历史缓存。打开 App Store 前请再次确认价格，尤其是订阅型应用和包含内购的应用。' }, { heading: '优先查看应用质量信号', text: '建议结合开发者名称、评分、更新时间、隐私标签和评论趋势判断。没有维护、权限异常或描述夸张的应用，即使限免也不一定值得安装。' }, { heading: '保留上下文内容', text: '当接口暂时失败或当天数据为空时，页面仍应显示说明、筛选建议和相关文章，避免形成“无页面内容但展示广告”的屏幕。' }, { heading: '限免信息应如何整理', text: '有价值的限免页会补充分类、开发者身份、更新活跃度、隐私负担，以及应用是真免费还是仅免费安装。目标是辅助决策，而不是堆外链。数据不完整时，页面应明确说明。' }, { heading: '安装限免应用前', text: '再次确认 App Store 当前价格，查看近期评论是否有扣费投诉，检查核心功能是否依赖订阅，并核对权限。如果一个简单工具索要高权限，即使免费下载也应跳过。' }], links: [{ href: '/price', label: '价格对比' }, { href: '/iap', label: '检查内购' }, { href: '/guides', label: '限免应用指南' }, { href: '/risk', label: 'App 风险评估' }], linksLabel: '相关阅读'
+      title: '限免应用页面的筛选原则',
+      intro: '限免信息变化很快，如果只堆第三方外链，信息会很薄。本站会补充应用分类、开发者、可用链接和使用提醒，帮助用户判断是否值得下载，而不是只展示一组外链。',
+      items: [
+        { heading: '限免不等于永久免费', text: '很多应用只在短时间内免费，恢复原价后可能仍显示历史缓存。打开 App Store 前请再次确认价格，尤其是订阅型应用和包含内购的应用。' },
+        { heading: '优先查看应用质量信号', text: '建议结合开发者名称、评分、更新时间、隐私标签和评论趋势判断。没有维护、权限异常或描述夸张的应用，即使限免也不一定值得安装。' },
+        { heading: '保留上下文内容', text: '当接口暂时失败或当天数据为空时，页面仍应显示说明、筛选建议和相关文章，避免形成“无页面内容但展示广告”的屏幕。' },
+        { heading: '限免信息应如何整理', text: '有价值的限免页会补充分类、开发者身份、更新活跃度、隐私负担，以及应用是真免费还是仅免费安装。目标是辅助决策，而不是堆外链。数据不完整时，页面应明确说明。' },
+        { heading: '安装限免应用前', text: '再次确认 App Store 当前价格，查看近期评论是否有扣费投诉，检查核心功能是否依赖订阅，并核对权限。如果一个简单工具索要高权限，即使免费下载也应跳过。' },
+        { heading: '用 5 分卡给限免应用打分', text: '从更新活跃度、开发者身份、隐私负担、扣费风险、核心功能是否离线/免账号五维打分。至少四项可接受再装。过不了这张卡的免费下载，后面往往更贵。' },
+        { heading: '权限与通知压力', text: '清理、VPN 或省电类免费工具若索要通讯录、精确位置或常驻通知，视为红旗。先拒绝，用完功能再决定。配合风险评估与权限决策文章。' },
+        { heading: '安装后 10 分钟试用期', text: '定 10 分钟。若立刻锁死让你下载的功能、强推好评，或重启你已取消的试用，删除并记下模式，下次跳过同类。' }
+      ],
+      links: [{ href: '/price', label: '价格对比' }, { href: '/iap', label: '检查内购' }, { href: '/guides', label: '限免应用指南' }, { href: '/risk', label: 'App 风险评估' }],
+      linksLabel: '相关阅读'
     },
     iap: {
-      title: '内购查询结果如何判断？', intro: 'App Store 的内购信息可能因地区、语言和页面结构而变化。Storewise 会尝试从 Apple 页面识别内购项目，但仍建议用户以 App Store 结算页显示为准。', items: [{ heading: '内购类型差异', text: '常见内购包括一次性解锁、消耗型点数、自动续订订阅和非续订订阅。即使应用本体免费，也可能通过内购提供核心功能。' }, { heading: '查询失败不代表没有内购', text: '网络代理、Apple 页面结构变化或地区限制都可能导致识别失败。页面会标记“待确认”或“检查失败”，避免把不完整数据包装成确定结论。' }, { heading: '购买前检查', text: '建议检查试用期、续订周期、取消方式、家庭共享、退款规则和开发者信誉。儿童或家庭设备应额外启用购买限制。' }], links: [{ href: '/price', label: '应用本体价格' }, { href: '/guides', label: '订阅避坑指南' }, { href: '/glossary', label: 'IAP 术语' }, { href: '/risk', label: 'App 风险评估' }, { href: '/checklists', label: '决策清单' }], linksLabel: '相关阅读'
+      title: '内购查询结果如何判断？',
+      intro: 'App Store 的内购信息可能因地区、语言和页面结构而变化。Storewise 会尝试从 Apple 页面识别内购项目，但仍建议用户以 App Store 结算页显示为准。',
+      items: [
+        { heading: '内购类型差异', text: '常见内购包括一次性解锁、消耗型点数、自动续订订阅和非续订订阅。即使应用本体免费，也可能通过内购提供核心功能。' },
+        { heading: '查询失败不代表没有内购', text: '网络代理、Apple 页面结构变化或地区限制都可能导致识别失败。页面会标记“待确认”或“检查失败”，避免把不完整数据包装成确定结论。' },
+        { heading: '购买前检查', text: '建议检查试用期、续订周期、取消方式、家庭共享、退款规则和开发者信誉。儿童或家庭设备应额外启用购买限制。' },
+        { heading: '把每个 SKU 对应到用途', text: '为每个内购写一句话：解锁导出、去广告、加席位，还是卖消耗积分。若两个 SKU 买同一用途，保留长期更便宜的那个。Storewise 查询是地图，不是购物车。' },
+        { heading: '试用、免费期与首次扣费日', text: '有试用时，点开始前先记开始日、时长、首次扣费日和取消路径。把试用后价格年化。3 天试用接周付，若忘记取消可能比年付解锁更贵。' },
+        { heading: '地区与语言错配', text: '内购名称与价格可能因店面而异。若切过区或用共用 Apple ID，确认真正扣费的店面。其他国家截图不是你的结算页。' },
+        { heading: '家庭共享与购买前询问', text: '部分订阅可共享；消耗型通常不能。儿童设备上即使开启购买前询问，免费下载仍可能打开付费内购。共用设备请配合屏幕使用时间购买限制。' },
+        { heading: '购买前证据包', text: '保存产品页、内购列表、隐私标签和最终确认页。扣费异常时，Report a Problem 更需要时间线而不是长篇抱怨。任何购买后到“设置 > Apple ID > 订阅”复查。' }
+      ],
+      links: [{ href: '/price', label: '应用本体价格' }, { href: '/guides', label: '订阅避坑指南' }, { href: '/glossary', label: 'IAP 术语' }, { href: '/risk', label: 'App 风险评估' }, { href: '/checklists', label: '决策清单' }],
+      linksLabel: '相关阅读'
     },
     icon: {
-      title: '高清图标搜索的合理用途', intro: '图标搜索基于 App Store 公开 API 做索引与预览，方便你查看官方素材并复制高清链接，用于设计参考。',
-      notice: '版权声明：本站仅提供 App Store 公开 API 的数据索引，不存储任何应用图标。所有 App 商标、Logo、图标版权均归其各自开发者及 Apple Inc. 所有。', items: [{ heading: '为什么需要图标工具', text: 'App Store 图标 URL 包含尺寸参数，手动替换容易出错。工具会展示应用名称、开发者和图标链接，方便核对是否为目标应用。' }, { heading: '避免误用素材', text: '不要把图标用于冒充官方、误导下载或暗示授权。商业设计、文章配图或应用推荐页应标明来源并链接回 App Store。' }, { heading: '搜索为空时的处理', text: '如果没有结果，页面仍提供使用说明和相关指南，不应在纯空结果区域投放广告。' }, { heading: '工作原理', text: '在搜索框中输入 App Store 应用 ID、Bundle ID 或应用名称。工具调用 iTunes Search API（公开、有限速）获取官方应用素材的最高分辨率——通常为 1024×1024 像素。同时拉取应用名称、开发者、内容评级和 App Store 链接。图标 URL 从 artworkUrl100 字段提取并自动升级至 1024px 版本。搜索结果会缓存在浏览器会话中，避免重复请求。' }, { heading: '常见问题排查', text: '搜索无结果：iTunes Search API 可能对频繁请求施加限速，或对区域限制的应用返回空结果。等待 30 秒后重试，或前往 App Store 页面确认应用 ID 是否正确。 || 图标分辨率低：部分应用未提供 1024px 素材，工具会回退到最高可用分辨率（512px 或 256px）。这并非错误，只是开发者未上传更大尺寸的资产。 || 返回错误应用：如果按名称搜索，可能返回多个匹配结果。使用精确的 App Store 应用 ID（数字）可获得唯一结果。' }], links: [{ href: '/guides', label: 'App 识别指南' }, { href: '/glossary', label: 'Bundle ID 与图标术语' }, { href: '/knowledge', label: '安全知识库' }], linksLabel: '相关阅读'
+      title: '高清图标搜索的合理用途',
+      intro: '图标搜索基于 App Store 公开 API 做索引与预览，方便你查看官方素材并复制高清链接，用于设计参考。',
+      notice: '版权声明：本站仅提供 App Store 公开 API 的数据索引，不存储任何应用图标。所有 App 商标、Logo、图标版权均归其各自开发者及 Apple Inc. 所有。',
+      items: [
+        { heading: '为什么需要图标工具', text: 'App Store 图标 URL 包含尺寸参数，手动替换容易出错。工具会展示应用名称、开发者和图标链接，方便核对是否为目标应用。' },
+        { heading: '避免误用素材', text: '不要把图标用于冒充官方、误导下载或暗示授权。商业设计、文章配图或应用推荐页应标明来源并链接回 App Store。' },
+        { heading: '搜索为空时的处理', text: '如果没有结果，页面仍提供使用说明和相关指南，不应在纯空结果区域投放广告。' },
+        { heading: '工作原理', text: '在搜索框中输入 App Store 应用 ID、Bundle ID 或应用名称。工具调用 iTunes Search API（公开、有限速）获取官方应用素材的最高分辨率——通常为 1024×1024 像素。同时拉取应用名称、开发者、内容评级和 App Store 链接。图标 URL 从 artworkUrl100 字段提取并自动升级至 1024px 版本。搜索结果会缓存在浏览器会话中，避免重复请求。' },
+        { heading: '常见问题排查', text: '搜索无结果：iTunes Search API 可能对频繁请求施加限速，或对区域限制的应用返回空结果。等待 30 秒后重试，或前往 App Store 页面确认应用 ID 是否正确。 || 图标分辨率低：部分应用未提供 1024px 素材，工具会回退到最高可用分辨率（512px 或 256px）。这并非错误，只是开发者未上传更大尺寸的资产。 || 返回错误应用：如果按名称搜索，可能返回多个匹配结果。使用精确的 App Store 应用 ID（数字）可获得唯一结果。' },
+        { heading: '署名与合理使用边界', text: '图标可用于原型、对比表与内部设计探索，并附 App Store 链接。不要把图标放进竞品商店客户端、钓鱼页，或暗示 Apple/开发者背书的广告。' }
+      ],
+      links: [{ href: '/guides', label: 'App 识别指南' }, { href: '/glossary', label: 'Bundle ID 与图标术语' }, { href: '/knowledge', label: '安全知识库' }],
+      linksLabel: '相关阅读'
     },
     ip: {
-      title: 'IP 检测结果的解释方式', intro: 'IP 页面用于了解当前网络出口、地理位置、运营商和常见站点连通性。它不能保证准确判断真实位置，也不能替代专业网络诊断。', items: [{ heading: '地理位置只是数据库估计', text: '不同 IP 数据库可能给出不同城市或运营商。移动网络、数据中心和代理出口尤其容易出现偏差，因此结果应作为排查线索而非绝对事实。' }, { heading: '连通性测试的限制', text: '站点可访问性会受 DNS、浏览器策略、跨域限制和本地网络影响。单次失败不一定代表服务不可用，建议结合其他工具复测。' },      { heading: '隐私提醒', text: '页面只展示浏览器可获得的网络信息。使用公共 Wi‑Fi、代理或企业网络时，请避免在不可信环境中登录敏感账号。' }, { heading: '工作原理', text: '打开页面时，工具会通过浏览器网络 API 和服务端 Header 自动检测当前公网 IP。随后向多个 IP 地理位置数据库查询解析大致的国家、地区、城市、运营商和 ASN，同时针对一组常用服务（DNS 解析器、CDN 节点、区域镜像）执行轻量连通性测试，帮助你判断当前网络路径是否正常。所有处理在服务端完成，你的 IP 不会被存储或共享。' }, { heading: '常见问题排查', text: '位置显示错误：IP 数据库通常反映运营商接入点而非实际物理地址，移动网络和 VPN 会进一步放大偏差。如需精确位置，可交叉对比多个 IP 查询服务。 || 连通性测试失败：DNS 屏蔽、防火墙规则和 CORS 策略可能导致个别测试失败，但服务本身仍然可达。尝试在新标签页直接打开目标 URL。如多项测试同时失败，请检查本地网络、代理设置或更换 DNS。 || 页面无数据：如页面加载空白，请确认 JavaScript 已启用且无浏览器扩展拦截了请求。广告拦截器和隐私扩展有时会干扰地理位置 API 调用。' }],links: [{ href: '/knowledge', label: '网络安全指南' }, { href: '/glossary', label: '网络术语' }, { href: '/privacy', label: '隐私政策' }], linksLabel: '相关阅读'
+      title: 'IP 检测结果的解释方式',
+      intro: 'IP 页面用于了解当前网络出口、地理位置、运营商和常见站点连通性。它不能保证准确判断真实位置，也不能替代专业网络诊断。',
+      items: [
+        { heading: '地理位置只是数据库估计', text: '不同 IP 数据库可能给出不同城市或运营商。移动网络、数据中心和代理出口尤其容易出现偏差，因此结果应作为排查线索而非绝对事实。' },
+        { heading: '连通性测试的限制', text: '站点可访问性会受 DNS、浏览器策略、跨域限制和本地网络影响。单次失败不一定代表服务不可用，建议结合其他工具复测。' },
+        { heading: '隐私提醒', text: '页面只展示浏览器可获得的网络信息。使用公共 Wi‑Fi、代理或企业网络时，请避免在不可信环境中登录敏感账号。' },
+        { heading: '工作原理', text: '打开页面时，工具会通过浏览器网络 API 和服务端 Header 自动检测当前公网 IP。随后向多个 IP 地理位置数据库查询解析大致的国家、地区、城市、运营商和 ASN，同时针对一组常用服务（DNS 解析器、CDN 节点、区域镜像）执行轻量连通性测试，帮助你判断当前网络路径是否正常。所有处理在服务端完成，你的 IP 不会被存储或共享。' },
+        { heading: '常见问题排查', text: '位置显示错误：IP 数据库通常反映运营商接入点而非实际物理地址，移动网络和 VPN 会进一步放大偏差。如需精确位置，可交叉对比多个 IP 查询服务。 || 连通性测试失败：DNS 屏蔽、防火墙规则和 CORS 策略可能导致个别测试失败，但服务本身仍然可达。尝试在新标签页直接打开目标 URL。如多项测试同时失败，请检查本地网络、代理设置或更换 DNS。 || 页面无数据：如页面加载空白，请确认 JavaScript 已启用且无浏览器扩展拦截了请求。广告拦截器和隐私扩展有时会干扰地理位置 API 调用。' },
+        { heading: '何时把 IP 结果当运维告警', text: '若出口国家与预期 VPN/地区方案不符，先暂停 App Store 购买与网银，直到弄清路径。出口错配常导致店面与风控摩擦。' }
+      ],
+      links: [{ href: '/knowledge', label: '网络安全指南' }, { href: '/glossary', label: '网络术语' }, { href: '/privacy', label: '隐私政策' }],
+      linksLabel: '相关阅读'
     },
     address: {
-      title: '地址生成器的正确使用范围', intro: '地址生成器用于前端开发测试、界面排版、演示数据和学术研究。生成内容保存在浏览器本地，用户可以自行复制或导出。',
-      notice: '重要提示：本工具生成的地址仅用于前端开发测试、界面排版及学术研究，禁止用于任何真实注册、账单、欺诈或非法活动。', items: [{ heading: '测试数据与真实地址的区别', text: '页面会组合城市、街道和邮编格式，让数据看起来接近真实场景，但并不保证对应真实居民或可投递地址。' }, { heading: '适合开发和设计流程', text: '常见用途包括结账表单测试、CRM 示例数据、UI 截图和国际化字段验证。涉及合规或物流时，应使用官方地址校验服务。' },      { heading: '本地保存与导出', text: '收藏地址保存在浏览器 localStorage 中，不会自动上传到服务器。清理浏览器数据会删除这些内容。' }, { heading: '工作原理', text: '生成器根据所选国家组合真实城市名称、街道模式和有效邮编格式，生成外观合理的地址记录。通过加权随机算法——像"主街"这样的常见街道类型出现概率高于稀有类型——确保输出自然。你可以生成单条地址或批量导出最多 100 条的 CSV 文件。所有数据在浏览器本地使用模板组装，生成过程不会向服务器发送任何请求。' }, { heading: '常见问题排查', text: '地址看起来很假：生成器创建的只是用于测试的逼真数据，并非经过验证的可投递地址。如需实际地址验证，请使用 USPS 地址校验、SmartyStreets 等专业服务。 || CSV 导出无法下载：检查浏览器是否允许本站下载。某些企业策略或浏览器扩展会拦截自动下载。尝试右键点击导出按钮，选择"另存链接为"。 || 国家格式看起来不对：如果邮政编码或地址顺序与预期不符，请确认已选择正确的国家。每个国家有各自独立的区域模板。' }],links: [{ href: '/ip', label: 'IP 检测' }, { href: '/guides', label: 'App Store 指南' }, { href: '/knowledge', label: '安全知识库' }, { href: '/privacy', label: '隐私政策' }], linksLabel: '相关阅读'
+      title: '地址生成器的正确使用范围',
+      intro: '地址生成器用于前端开发测试、界面排版、演示数据和学术研究。生成内容保存在浏览器本地，用户可以自行复制或导出。',
+      notice: '重要提示：本工具生成的地址仅用于前端开发测试、界面排版及学术研究，禁止用于任何真实注册、账单、欺诈或非法活动。',
+      items: [
+        { heading: '测试数据与真实地址的区别', text: '页面会组合城市、街道和邮编格式，让数据看起来接近真实场景，但并不保证对应真实居民或可投递地址。' },
+        { heading: '适合开发和设计流程', text: '常见用途包括结账表单测试、CRM 示例数据、UI 截图和国际化字段验证。涉及合规或物流时，应使用官方地址校验服务。' },
+        { heading: '本地保存与导出', text: '收藏地址保存在浏览器 localStorage 中，不会自动上传到服务器。清理浏览器数据会删除这些内容。' },
+        { heading: '工作原理', text: '生成器根据所选国家组合真实城市名称、街道模式和有效邮编格式，生成外观合理的地址记录。通过加权随机算法——像"主街"这样的常见街道类型出现概率高于稀有类型——确保输出自然。你可以生成单条地址或批量导出最多 100 条的 CSV 文件。所有数据在浏览器本地使用模板组装，生成过程不会向服务器发送任何请求。' },
+        { heading: '常见问题排查', text: '地址看起来很假：生成器创建的只是用于测试的逼真数据，并非经过验证的可投递地址。如需实际地址验证，请使用 USPS 地址校验、SmartyStreets 等专业服务。 || CSV 导出无法下载：检查浏览器是否允许本站下载。某些企业策略或浏览器扩展会拦截自动下载。尝试右键点击导出按钮，选择"另存链接为"。 || 国家格式看起来不对：如果邮政编码或地址顺序与预期不符，请确认已选择正确的国家。每个国家有各自独立的区域模板。' },
+        { heading: '生成数据不要进入真实账户流程', text: '切勿把生成地址填进银行、政务、运营商或商户 KYC。若表单要求真实地址，使用合法地址或被允许的服务。误用可能违反条款与法律。' },
+        { heading: '表单 QA 清单', text: '测试必填、最大长度、邮编校验与地区字段顺序。导出小 CSV 固定夹具做回归，而不是每次现编字符串。' }
+      ],
+      links: [{ href: '/ip', label: 'IP 检测' }, { href: '/guides', label: 'App Store 指南' }, { href: '/knowledge', label: '安全知识库' }, { href: '/privacy', label: '隐私政策' }],
+      linksLabel: '相关阅读'
     },
     subcost: {
       title: '如何估算真实订阅成本',
@@ -152,14 +225,10 @@ export const toolContent = {
         { heading: '本地隐私设计', text: '只有点击保存时，列表才会写入浏览器 localStorage。可导出 JSON 到表格工具。数据不会上传到 Storewise 服务器。' },
         { heading: '这个工具做不到什么', text: '它不能读取你的 Apple 账户、不能取消订阅，也不能自动计入税费。最终金额和续费日期请到“设置 > Apple ID > 订阅”和 App Store 结算页确认。' },
         { heading: '推荐流程', text: '1）列出全部循环方案；2）年化成本；3）打开对应清单；4）取消低价值项目；5）下周复查。建议配合“买断 vs 订阅”和“订阅疲劳”文章一起使用。' },
+        { heading: '家庭堆叠视角', text: '按人与设备列计划，而不只按应用名。组织者卡上两个个人 VPN 仍是一个家庭问题。在加新试用前，先限制 AI、相册、VPN 有效席位数量。' },
+        { heading: '季度淘汰清单', text: '每 90 天按上月使用时长强制排序。倒数两个除非涉及安全或家庭安全，否则作为取消候选。每次取消后重跑计算器。' }
       ],
-      links: [
-        { href: '/price', label: '价格对比' },
-        { href: '/checklists', label: '决策清单' },
-        { href: '/articles/when-paid-app-beats-subscription', label: '买断 vs 订阅' },
-        { href: '/articles/spot-subscription-fatigue-apps', label: '订阅疲劳' },
-        { href: '/articles/manage-apple-subscriptions-after-trial', label: '试用后管理' },
-      ],
+      links: [{ href: '/price', label: '价格对比' }, { href: '/checklists', label: '决策清单' }, { href: '/articles/when-paid-app-beats-subscription', label: '买断 vs 订阅' }, { href: '/articles/spot-subscription-fatigue-apps', label: '订阅疲劳' }, { href: '/articles/manage-apple-subscriptions-after-trial', label: '试用后管理' }],
       linksLabel: '相关阅读'
     },
     trial: {
@@ -171,14 +240,10 @@ export const toolContent = {
         { heading: '家庭设备需要额外控制', text: '共用 iPad 上仅有提醒不够。复查购买前询问和屏幕使用时间购买限制，避免同一试用路径静默重启。' },
         { heading: '这个工具做不到什么', text: '它不能读取 Apple 订阅、不能直接创建系统日历事件，也不能取消扣费。请把文案复制到自己的日历/备忘录，并在 Apple 设置中确认真实方案。' },
         { heading: '建议的下一步', text: '生成提醒包，设置日历提醒；价值不清就取消；然后每月复查成本。若后续需要报告问题，保留截图。' },
+        { heading: '点开始试用前先截图报价', text: '截下价格、周期、免费天数与细则。若界面与产品页不一致，以确认页为准。把截图与最晚取消日放在同一笔记。' },
+        { heading: '共用设备与重复试用', text: '部分应用重装或换 Apple ID 后会再次试用。家庭设备上锁定安装与购买，避免已取消试用从另一配置重启。' }
       ],
-      links: [
-        { href: '/subcost', label: '订阅成本' },
-        { href: '/checklists', label: '决策清单' },
-        { href: '/articles/free-trial-trap-checklist', label: '试用陷阱清单' },
-        { href: '/articles/cancel-apple-subscription-step-by-step', label: '取消订阅' },
-        { href: '/articles/manage-apple-subscriptions-after-trial', label: '试用后管理' },
-      ],
+      links: [{ href: '/subcost', label: '订阅成本' }, { href: '/checklists', label: '决策清单' }, { href: '/articles/free-trial-trap-checklist', label: '试用陷阱清单' }, { href: '/articles/cancel-apple-subscription-step-by-step', label: '取消订阅' }, { href: '/articles/manage-apple-subscriptions-after-trial', label: '试用后管理' }],
       linksLabel: '相关阅读'
     }
   }
