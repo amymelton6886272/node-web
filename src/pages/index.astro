@@ -6,56 +6,150 @@ import { articles, getArticlePath } from '../data/articles.js';
 
 export const prerender = true;
 
-const highlights = [
-  { title: 'Compare before you pay', titleZh: '付款前先比较', text: 'Check App Store prices across regions, understand currency differences, and avoid assuming the lowest converted price is always the best purchasing choice.', textZh: '查看不同地区的 App Store 价格，理解汇率差异，不要把最低换算价格直接当成最优购买选择。' },
-  { title: 'Review monetization signals', titleZh: '查看变现信号', text: 'Look up in-app purchase markers, estimate subscription cost, and use the risk assessor before starting trials or authorizing recurring billing.', textZh: '查询内购标记，估算订阅成本，在开始试用或授权自动续费前先评估风险。' },
-  { title: 'Read practical safety content', titleZh: '阅读实用安全内容', text: 'Use articles, knowledge pages, checklists, privacy explanations, and family-device guidance when a simple API result is not enough.', textZh: '当单个接口结果不足以判断时，可以结合文章、知识库、清单、隐私说明和家庭设备指南一起参考。' },
-  { title: 'Stay privacy aware', titleZh: '保持隐私意识', text: 'Most interactions happen in your browser. Pages explain when third-party APIs may receive your request.', textZh: '大多数交互在浏览器中完成。页面会说明哪些情况下第三方 API 可能收到你的请求。' },
+/** Curated deep guides first (recent rewrites), then fill by recency. */
+const FEATURED_SLUGS = [
+  'free-trial-trap-checklist',
+  'spot-subscription-fatigue-apps',
+  'family-sharing-purchase-safety',
+  'when-not-to-install-free-apps',
+  'cancel-apple-subscription-step-by-step',
+  'app-store-price-check-before-buying',
+  'hide-my-email-and-app-signups',
+  'when-to-use-report-a-problem',
+  'app-store-gift-cards-and-balance-safety',
+  'ios-permission-prompts-decision-guide',
+  'screen-time-purchase-controls',
+  'child-device-app-install-rules',
+];
+
+const bySlug = Object.fromEntries(articles.map((a) => [a.slug, a]));
+const curated = FEATURED_SLUGS.map((s) => bySlug[s]).filter(Boolean);
+const byRecency = [...articles].sort((a, b) =>
+  String(b.updatedAt || b.publishedAt).localeCompare(String(a.updatedAt || a.publishedAt)),
+);
+const seen = new Set(curated.map((a) => a.slug));
+const fill = byRecency.filter((a) => !seen.has(a.slug));
+const featuredDeep = [...curated, ...fill].slice(0, 8);
+const moreArticles = [...curated, ...fill].slice(8, 14);
+
+const hubs = [
+  {
+    href: '/articles',
+    icon: 'R',
+    label: 'Articles',
+    labelZh: '文章',
+    desc: 'Long-form research playbooks',
+    descZh: '长文研究与实操手册',
+  },
+  {
+    href: '/knowledge',
+    icon: 'K',
+    label: 'Knowledge',
+    labelZh: '知识库',
+    desc: 'Concepts explained plainly',
+    descZh: '用直白话解释概念',
+  },
+  {
+    href: '/guides',
+    icon: 'G',
+    label: 'Guides',
+    labelZh: '指南',
+    desc: 'Step-by-step task help',
+    descZh: '按步骤完成任务',
+  },
+  {
+    href: '/checklists',
+    icon: 'C',
+    label: 'Checklists',
+    labelZh: '清单',
+    desc: 'Before you pay or install',
+    descZh: '付款或安装前自查',
+  },
+  {
+    href: '/risk',
+    icon: '!',
+    label: 'App Risk',
+    labelZh: '应用风险',
+    desc: 'Permission risk review',
+    descZh: '权限与风险点自查',
+  },
+  {
+    href: '/glossary',
+    icon: 'T',
+    label: 'Glossary',
+    labelZh: '术语表',
+    desc: 'Plain definitions',
+    descZh: '术语白话释义',
+  },
 ];
 
 const workflow = [
-  { step: '1', title: 'Identify the app or task', titleZh: '明确应用或任务', text: 'Start with a price search, IAP lookup, subscription estimate, trial reminder, or article depending on what you need to decide.', textZh: '根据你的决策目标，从价格查询、内购查询、订阅估算、试用提醒或文章阅读开始。' },
-  { step: '2', title: 'Read the context', titleZh: '阅读上下文', text: 'Each page includes explanations, limitations, data-source notes, and common mistakes so results are not interpreted in isolation.', textZh: '每个页面都包含说明、限制、数据来源和常见误区，避免把单个结果孤立解读。' },
-  { step: '3', title: 'Use checklists before acting', titleZh: '行动前查看清单', text: 'Before paying, subscribing, switching regions, or installing high-permission apps, review the matching checklist or risk assessment.', textZh: '在付款、订阅、切换地区或安装高权限应用前，先查看对应清单或风险评估。' },
-  { step: '4', title: 'Verify at the source', titleZh: '回到官方来源确认', text: 'For purchases, subscriptions, refunds, and availability, always confirm the final state in the App Store or Apple account settings.', textZh: '涉及购买、订阅、退款和可用性时，最终状态应以 App Store 或 Apple 账户设置为准。' },
+  {
+    step: '1',
+    title: 'Start from the decision, not the tool',
+    titleZh: '从决策出发，而不是从工具出发',
+    text: 'Paying, starting a trial, sharing a card, granting a permission, or switching regions each needs a different first page. Pick the matching guide or checklist before you open a utility.',
+    textZh: '付款、开试用、共用卡、授权限或切区，各自该从不同页面开始。先打开对应指南或清单，再碰工具。',
+  },
+  {
+    step: '2',
+    title: 'Capture the official surface',
+    titleZh: '先截官方界面',
+    text: 'Screenshot the App Store offer sheet, Privacy label, Subscriptions list, or system prompt you are about to act on. Research notes help you interpret; Apple screens remain the source of truth.',
+    textZh: '对你即将操作的 App Store 报价页、隐私标签、订阅列表或系统提示先截图。研究笔记帮助解读；Apple 界面仍是真相来源。',
+  },
+  {
+    step: '3',
+    title: 'Use one tool only if numbers matter',
+    titleZh: '只有数字重要时才开工具',
+    text: 'Price compare, subscription cost, trial reminder, and risk notes are optional helpers. If the decision is mostly policy or family process, skip tools and stay in the article workflow.',
+    textZh: '比价、订阅成本、试用提醒与风险备注是可选辅助。若决策主要是策略或家庭流程，可跳过工具，留在文章流程里。',
+  },
+  {
+    step: '4',
+    title: 'Verify after you act',
+    titleZh: '行动后再核验',
+    text: 'Same day for cancels and permissions, seven days for trials and installs. Keep one artifact: screenshot, calendar alert, or checklist result. Confirm the final state in Settings or the App Store.',
+    textZh: '取消与权限看当天，试用与安装看七天。只留一份工件：截图、日历提醒或清单结果。最终状态在设置或 App Store 确认。',
+  },
 ];
 
 const faqs = [
   {
     q: 'Is Storewise an official Apple website?',
     qZh: 'Storewise 是 Apple 官方网站吗？',
-    a: 'No. Storewise is an independent App Store research site. It helps you inspect public signals and prepare safer purchase decisions, but it does not speak for Apple and cannot change Apple account outcomes.',
-    aZh: '不是。Storewise 是独立的 App Store 研究站点，帮助你查看公开信号并做好更稳妥的购买准备，但不能代表 Apple，也不能改变 Apple 账号结果。',
+    a: 'No. Storewise is an independent research site. Guides and tools help you inspect public signals and prepare safer decisions, but they do not speak for Apple and cannot change account outcomes.',
+    aZh: '不是。Storewise 是独立研究站。指南与工具帮你查看公开信号并做好更稳妥的决策准备，但不能代表 Apple，也不能改变账号结果。',
   },
   {
-    q: 'Can I treat the price comparison as the final checkout amount?',
+    q: 'Should I start with tools or articles?',
+    qZh: '应该先用工具还是先读文章？',
+    a: 'Start with articles or checklists when the problem is process (family charges, trials, permissions, refunds). Use tools when you need a concrete number (price, annualized cost, trial deadline). Most safer outcomes come from process first.',
+    aZh: '若问题是流程（家庭扣费、试用、权限、退款），先读文章或清单。若需要具体数字（价格、年化成本、试用截止），再用工具。多数更稳妥的结果来自先流程。',
+  },
+  {
+    q: 'Can I treat price comparison as the final checkout amount?',
     qZh: '价格对比结果能当作最终结算金额吗？',
-    a: 'No. Regional tables and converted estimates are research signals. Taxes, account region, payment method, trials, and subscription packaging can change the amount you actually pay. Always confirm the official App Store checkout screen.',
-    aZh: '不能。地区价格表和换算估值只是研究信号。税费、账号地区、付款方式、试用和订阅包装都会改变实际支付金额。请始终以官方 App Store 结算页为准。',
+    a: 'No. Regional tables and converted estimates are research signals. Taxes, account region, payment method, trials, and packaging can change what you pay. Always confirm the official App Store checkout screen.',
+    aZh: '不能。地区价格表和换算估值只是研究信号。税费、账号地区、付款方式、试用和包装都会改变实际支付金额。请始终以官方 App Store 结算页为准。',
   },
   {
     q: 'Does deleting an app cancel a subscription?',
     qZh: '删除应用会取消订阅吗？',
-    a: 'No. Cancellation lives in Settings > Apple ID > Subscriptions. Delete the app only after you confirm the plan is cancelled or set to expire if you no longer want renewals.',
-    aZh: '不会。取消入口在“设置 > Apple ID > 订阅”。如果你不再需要续费，请先确认方案已取消或将到期，再删除应用。',
+    a: 'No. Cancellation lives in Settings > Apple ID > Subscriptions. Confirm cancelled or expiring status before you delete the app if you want renewals to stop.',
+    aZh: '不会。取消入口在“设置 > Apple ID > 订阅”。若要停续费，请先确认已取消或将到期，再删除应用。',
   },
   {
-    q: 'What should I do before starting a free trial?',
+    q: 'What should I do before a free trial?',
     qZh: '开始免费试用前该做什么？',
-    a: 'Write down the end date, renewal price, and cancellation path. Set a reminder one day early. On family devices, also check Ask to Buy and Screen Time purchase restrictions.',
-    aZh: '先记下结束日期、续费价格和取消路径，并提前一天设置提醒。家庭设备还要检查“购买前询问”和屏幕使用时间中的购买限制。',
+    a: 'Write the end date, renewal price, and cancel path. Set a reminder one day early (or tomorrow morning for short trials). On family devices, check Ask to Buy and Screen Time purchase locks first.',
+    aZh: '先记下结束日期、续费价格和取消路径，并提前一天设提醒（短试用可设明天早上）。家庭设备先检查“购买前询问”和屏幕使用时间购买限制。',
   },
   {
     q: 'Where does Storewise get its data?',
     qZh: 'Storewise 的数据从哪里来？',
-    a: 'Most tools use public App Store metadata, public promotional feeds, browser-visible network information, or local generation in your browser. See the Data Sources page for limitations and verification guidance.',
-    aZh: '大多数工具使用公开 App Store 元数据、公开促销源、浏览器可见网络信息，或在浏览器本地生成。限制与核验说明见“数据来源”页面。',
-  },
-  {
-    q: 'Does Storewise require an account?',
-    qZh: 'Storewise 需要注册账号吗？',
-    a: 'No. You can browse guides and use basic tools without registration. Language preference and temporary UI state may be stored locally in your browser.',
-    aZh: '不需要。你可以在不注册的情况下浏览指南并使用基础工具。语言偏好和临时界面状态可能会保存在浏览器本地。',
+    a: 'Most tools use public App Store metadata, public promotional feeds, browser-visible network information, or local generation in your browser. See Data Sources for limits and verification guidance.',
+    aZh: '大多数工具使用公开 App Store 元数据、公开促销源、浏览器可见网络信息，或在浏览器本地生成。限制与核验说明见“数据来源”。',
   },
 ];
 
@@ -65,64 +159,61 @@ const faqSchema = {
   mainEntity: faqs.map((item) => ({
     '@type': 'Question',
     name: item.q,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: item.a,
-    },
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
   })),
 };
 
-const latestArticles = [...articles]
-  .sort((a, b) => String(b.updatedAt || b.publishedAt).localeCompare(String(a.updatedAt || a.publishedAt)))
-  .slice(0, 12);
-
-const featuredDeep = latestArticles.slice(0, 8);
-const moreArticles = latestArticles.slice(8, 16);
-
 const featuredTools = [
   { href: '/price', icon: '$', label: 'Price compare', labelZh: '价格对比', desc: 'Regional App Store prices', descZh: '多地区价格对照' },
-  { href: '/subcost', icon: '¥', label: 'Sub cost', labelZh: '订阅成本', desc: 'Monthly / yearly estimate', descZh: '月成本与年成本估算' },
-  { href: '/trial', icon: 'D', label: 'Trial reminder', labelZh: '试用提醒', desc: 'Cancel deadline builder', descZh: '生成取消提醒与日历文案' },
-  { href: '/risk', icon: '!', label: 'Risk assessor', labelZh: '风险评估', desc: 'Permission risk review', descZh: '权限与风险点自查' },
-  { href: '/checklists', icon: 'C', label: 'Checklists', labelZh: '决策清单', desc: 'Before-you-act lists', descZh: '行动前检查清单' },
-  { href: '/appfree', icon: 'F', label: 'Free apps', labelZh: '限免应用', desc: 'Limited-time deals', descZh: '限时免费与优惠线索' },
+  { href: '/subcost', icon: '¥', label: 'Sub cost', labelZh: '订阅成本', desc: 'Monthly / yearly estimate', descZh: '月/年成本估算' },
+  { href: '/trial', icon: 'D', label: 'Trial reminder', labelZh: '试用提醒', desc: 'Cancel deadline builder', descZh: '取消提醒与日历文案' },
+  { href: '/risk', icon: '!', label: 'App risk', labelZh: '应用风险', desc: 'Permission risk review', descZh: '权限与风险点自查' },
 ];
 
 const trustLinks = [
-  { href: '/data-sources', label: 'Data sources', labelZh: '数据来源' },
-  { href: '/privacy', label: 'Privacy', labelZh: '隐私政策' },
   { href: '/editorial', label: 'Editorial', labelZh: '编辑原则' },
+  { href: '/data-sources', label: 'Data sources', labelZh: '数据来源' },
+  { href: '/privacy', label: 'Privacy', labelZh: '隐私' },
   { href: '/disclaimer', label: 'Disclaimer', labelZh: '免责声明' },
-  { href: '/articles', label: 'All articles', labelZh: '全部文章' },
   { href: '/about', label: 'About', labelZh: '关于' },
+  { href: '/contact', label: 'Contact', labelZh: '联系' },
 ];
 ---
-<BaseLayout title="Storewise: App Store guides before you pay" description="Research App Store purchases with bilingual guides and free tools for prices, subscription cost, trials, and permission risk." path="/" breadcrumbs={[{ name: 'Home', item: SITE }]}>
+<BaseLayout
+  title="Storewise: App Store research before you pay"
+  description="Bilingual App Store research guides and light tools for free trials, family charges, privacy labels, region checks, and subscription hygiene."
+  path="/"
+  breadcrumbs={[{ name: 'Home', item: SITE }]}
+>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
 
   <Hero
-    title="Research App Store purchases before you pay"
-    titleZh="在 App Store 付款前，先做好研究"
-    sub="Clear bilingual guides on free trials, region research, Family Sharing charges, privacy labels, and subscription hygiene — with practical tools for price checks, cost estimates, and risk notes."
-    subZh="用双语指南梳理免费试用、地区研究、家庭共享扣费、隐私标签与订阅管理；并提供价格核对、成本估算与风险备注等实用工具。"
-    eyebrow="App Store research"
-    eyebrowZh="App Store 研究"
+    title="App Store research before you pay"
+    titleZh="在 App Store 付款前先研究清楚"
+    sub="Independent bilingual guides on free trials, Family Sharing charges, permissions, refunds, and region research — with light tools only when numbers help."
+    subZh="独立双语指南，覆盖免费试用、家庭共享扣费、权限、退款与地区研究；只有需要数字时，才用轻量工具辅助。"
+    eyebrow="Content-first research"
+    eyebrowZh="内容优先的研究站"
   />
 
   <section class="homeIntro card">
     <div class="homeSectionHead">
       <div>
-        <h2 class="lang-en">What Storewise is</h2>
-        <h2 class="lang-zh">Storewise 是什么</h2>
-        <p class="lang-en">Storewise is an independent App Store research site. We publish practical guides and maintain small browser tools so you can compare prices, estimate subscription cost, catch free-trial deadlines, and review permission risks before you buy, subscribe, switch regions, or grant access.</p>
-        <p class="lang-zh">Storewise 是独立的 App Store 研究站点。我们发布实用指南，并维护轻量浏览器工具，帮助你在购买、订阅、切区或授权前比较价格、估算订阅成本、盯住试用截止日，并核对权限风险。</p>
+        <h2 class="lang-en">What this site is for</h2>
+        <h2 class="lang-zh">这个站点做什么</h2>
+        <p class="lang-en">
+          Storewise is an independent App Store research site. Start from long-form guides and checklists when the problem is process; open a tool only when you need a price, annualized cost, trial deadline, or risk note. We do not replace Apple Settings, checkout, or support.
+        </p>
+        <p class="lang-zh">
+          Storewise 是独立的 App Store 研究站。流程类问题先读长文与清单；只有需要价格、年化成本、试用截止或风险备注时再开工具。我们不替代 Apple 设置、结算页或官方支持。
+        </p>
       </div>
     </div>
     <div class="homeTrustLinks">
-      <span class="lang-en">About & policies</span>
-      <span class="lang-zh">关于与政策</span>
+      <span class="lang-en">Trust pages</span>
+      <span class="lang-zh">信任页</span>
       {trustLinks.map((link) => (
         <a href={link.href}>
           <span class="lang-en">{link.label}</span>
@@ -132,13 +223,35 @@ const trustLinks = [
     </div>
   </section>
 
+  <section class="homeFeatured card homeHubs">
+    <div class="homeSectionHead">
+      <div>
+        <h2 class="lang-en">Start here</h2>
+        <h2 class="lang-zh">从这里开始</h2>
+        <p class="lang-en contentLead">Content and decision hubs first. Tools stay available, but they are not the front door.</p>
+        <p class="lang-zh contentLead">先内容与决策枢纽。工具仍在，但不是大门。</p>
+      </div>
+    </div>
+    <div class="homeToolGrid homeHubGrid">
+      {hubs.map((hub) => (
+        <a class="homeToolCard" href={hub.href}>
+          <span class="homeToolIcon" aria-hidden="true">{hub.icon}</span>
+          <span class="homeToolText">
+            <b><span class="lang-en">{hub.label}</span><span class="lang-zh">{hub.labelZh}</span></b>
+            <small><span class="lang-en">{hub.desc}</span><span class="lang-zh">{hub.descZh}</span></small>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
   <section class="richSection card homeDeepGuides">
     <div class="homeSectionHead">
       <div>
-        <h2 class="lang-en">Featured guides</h2>
-        <h2 class="lang-zh">精选指南</h2>
-        <p class="lang-en contentLead">Multi-section articles on account research, free-trial traps, permissions, Family Sharing, refunds, and safer defaults — written to be checked against official Apple screens.</p>
-        <p class="lang-zh contentLead">覆盖账号研究、免费试用陷阱、权限、家庭共享、退款与更稳妥默认策略的多章节文章，便于对照官方 Apple 界面核验。</p>
+        <h2 class="lang-en">Featured research guides</h2>
+        <h2 class="lang-zh">精选研究指南</h2>
+        <p class="lang-en contentLead">Deep, multi-section playbooks for the decisions that usually create surprise charges or privacy regret.</p>
+        <p class="lang-zh contentLead">针对最容易造成意外扣费或隐私后悔的决策，提供多章节深读手册。</p>
       </div>
       <a class="homeSectionCta" href="/articles">
         <span class="lang-en">All articles</span>
@@ -150,8 +263,7 @@ const trustLinks = [
         <a class="articleCard homeArticleCard" href={getArticlePath(article)}>
           <div class="articleMeta">
             <span>{article.category}</span>
-            <span class="lang-en">{article.readTime}</span>
-            <span class="lang-zh">{article.readTime}</span>
+            <span>{article.readTime}</span>
           </div>
           <h3 class="lang-en">{article.title}</h3>
           <h3 class="lang-zh">{article.titleZh}</h3>
@@ -169,10 +281,10 @@ const trustLinks = [
   <section class="richSection card homeMoreGuides">
     <div class="homeSectionHead">
       <div>
-        <h2 class="lang-en">More research notes</h2>
-        <h2 class="lang-zh">更多研究笔记</h2>
-        <p class="lang-en contentLead">Additional guides for gift cards, refunds, privacy labels, TestFlight risk, and subscription stacks.</p>
-        <p class="lang-zh contentLead">补充礼品卡、退款、隐私标签、TestFlight 风险与订阅堆叠等指南。</p>
+        <h2 class="lang-en">More guides</h2>
+        <h2 class="lang-zh">更多指南</h2>
+        <p class="lang-en contentLead">Continue with region research, gift-card safety, refund paths, and permission hygiene.</p>
+        <p class="lang-zh contentLead">继续阅读地区研究、礼品卡安全、退款路径与权限卫生。</p>
       </div>
       <a class="homeSectionCta" href="/articles">
         <span class="lang-en">Browse all</span>
@@ -193,60 +305,6 @@ const trustLinks = [
         </a>
       ))}
     </div>
-    <div class="homeTrustLinks" style="margin-top:14px;">
-      <span class="lang-en">Research hubs</span>
-      <span class="lang-zh">研究枢纽</span>
-      <a href="/guides"><span class="lang-en">Guides</span><span class="lang-zh">指南</span></a>
-      <a href="/knowledge"><span class="lang-en">Knowledge</span><span class="lang-zh">知识库</span></a>
-      <a href="/glossary"><span class="lang-en">Glossary</span><span class="lang-zh">术语表</span></a>
-      <a href="/checklists"><span class="lang-en">Checklists</span><span class="lang-zh">清单</span></a>
-      <a href="/articles"><span class="lang-en">All articles</span><span class="lang-zh">全部文章</span></a>
-    </div>
-  </section>
-
-  <section class="homeFeatured card">
-    <div class="homeSectionHead">
-      <div>
-        <h2 class="lang-en">Tools</h2>
-        <h2 class="lang-zh">工具</h2>
-        <p class="lang-en">Use these when you need a quick check. Every tool page includes a short overview and a longer guide below the workspace.</p>
-        <p class="lang-zh">需要快速核对时用这些工具。每个工具页上方有简短说明，下方保留完整指南。</p>
-      </div>
-      <a class="homeSectionCta" href="/price">
-        <span class="lang-en">Browse tools</span>
-        <span class="lang-zh">浏览工具</span>
-      </a>
-    </div>
-    <div class="homeToolGrid">
-      {featuredTools.map((tool) => (
-        <a class="homeToolCard" href={tool.href}>
-          <span class="homeToolIcon" aria-hidden="true">{tool.icon}</span>
-          <span class="homeToolText">
-            <b><span class="lang-en">{tool.label}</span><span class="lang-zh">{tool.labelZh}</span></b>
-            <small><span class="lang-en">{tool.desc}</span><span class="lang-zh">{tool.descZh}</span></small>
-          </span>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <section class="richSection card">
-    <div class="homeSectionHead">
-      <div>
-        <h2 class="lang-en">What you can do here</h2>
-        <h2 class="lang-zh">你可以在这里做什么</h2>
-      </div>
-    </div>
-    <div class="richGrid">
-      {highlights.map((item) => (
-        <article class="richBlock">
-          <h3 class="lang-en">{item.title}</h3>
-          <h3 class="lang-zh">{item.titleZh}</h3>
-          <p class="lang-en">{item.text}</p>
-          <p class="lang-zh">{item.textZh}</p>
-        </article>
-      ))}
-    </div>
   </section>
 
   <section class="richSection card">
@@ -254,6 +312,8 @@ const trustLinks = [
       <div>
         <h2 class="lang-en">Recommended workflow</h2>
         <h2 class="lang-zh">推荐使用流程</h2>
+        <p class="lang-en contentLead">A short path that keeps research ahead of taps.</p>
+        <p class="lang-zh contentLead">让研究走在点击前面的短路径。</p>
       </div>
     </div>
     <div class="workflowList">
@@ -271,37 +331,29 @@ const trustLinks = [
     </div>
   </section>
 
-  <section class="richSection card">
+  <section class="homeFeatured card">
     <div class="homeSectionHead">
       <div>
-        <h2 class="lang-en">Latest articles</h2>
-        <h2 class="lang-zh">最新文章</h2>
-        <p class="lang-en contentLead">Practical guides on refunds, free trials, Family Sharing, permissions, region research, and subscription hygiene. These pages are original research notes you can read end to end, with clear steps and caveats.</p>
-        <p class="lang-zh contentLead">覆盖退款、免费试用、家庭共享、权限、地区研究和订阅维护的实用指南。这些页面是可通读的原创研究笔记，包含清晰步骤与注意事项。</p>
+        <h2 class="lang-en">Light tools (optional)</h2>
+        <h2 class="lang-zh">轻量工具（可选）</h2>
+        <p class="lang-en">Use only when a number or deadline helps. Each tool page still includes explanation and limits below the workspace.</p>
+        <p class="lang-zh">仅在数字或截止日有用时打开。每个工具页工作区下方仍有说明与限制。</p>
       </div>
+      <a class="homeSectionCta" href="/price">
+        <span class="lang-en">Price tool</span>
+        <span class="lang-zh">价格工具</span>
+      </a>
     </div>
-    <div class="richGrid">
-      {latestArticles.map((article) => (
-        <a class="richBlock homeArticleCard" href={getArticlePath(article)}>
-          <h3 class="lang-en">{article.title}</h3>
-          <h3 class="lang-zh">{article.titleZh}</h3>
-          <p class="lang-en">{article.description}</p>
-          <p class="lang-zh">{article.descriptionZh}</p>
-          <div class="homeArticleMeta">
-            <span class="lang-en">{article.readTime} · Updated {article.updatedAt}</span>
-            <span class="lang-zh">{article.readTime} · 更新于 {article.updatedAt}</span>
-          </div>
+    <div class="homeToolGrid homeToolGridCompact">
+      {featuredTools.map((tool) => (
+        <a class="homeToolCard" href={tool.href}>
+          <span class="homeToolIcon" aria-hidden="true">{tool.icon}</span>
+          <span class="homeToolText">
+            <b><span class="lang-en">{tool.label}</span><span class="lang-zh">{tool.labelZh}</span></b>
+            <small><span class="lang-en">{tool.desc}</span><span class="lang-zh">{tool.descZh}</span></small>
+          </span>
         </a>
       ))}
-    </div>
-    <div class="contentLinks">
-      <span class="lang-en">More reading</span>
-      <span class="lang-zh">更多阅读</span>
-      <a href="/articles"><span class="lang-en">All articles</span><span class="lang-zh">全部文章</span></a>
-      <a href="/guides"><span class="lang-en">Guides</span><span class="lang-zh">指南</span></a>
-      <a href="/knowledge"><span class="lang-en">Knowledge base</span><span class="lang-zh">知识库</span></a>
-      <a href="/checklists"><span class="lang-en">Checklists</span><span class="lang-zh">清单</span></a>
-      <a href="/glossary"><span class="lang-en">Glossary</span><span class="lang-zh">术语表</span></a>
     </div>
   </section>
 
@@ -327,15 +379,21 @@ const trustLinks = [
   <section class="homeWhy card">
     <div class="homeSectionHead">
       <div>
-        <h2 class="lang-en">Why Storewise exists</h2>
-        <h2 class="lang-zh">为什么需要 Storewise</h2>
+        <h2 class="lang-en">Editorial stance</h2>
+        <h2 class="lang-zh">编辑立场</h2>
       </div>
     </div>
-    <p class="lang-en">App Store decisions are easy to rush and hard to reverse. Regional prices differ, free trials renew quietly, subscriptions stack up, and permission prompts are easy to accept without context.</p>
-    <p class="lang-en">Storewise keeps the workflow small and transparent: no account wall, no forced newsletter, no dark patterns. Tools stay near the top of the page; guides and source notes stay close enough to verify results before you act.</p>
-    <p class="lang-en">Typical path: compare price → estimate subscription cost or set a trial reminder → open the matching checklist → confirm the final amount and renewal terms in the App Store.</p>
-    <p class="lang-zh">App Store 决策很容易冲动，也很难撤销。地区价格不同，免费试用会静默续费，订阅会叠加，权限弹窗也容易在缺乏上下文时被点同意。</p>
-    <p class="lang-zh">Storewise 刻意保持轻量和透明：没有账号墙、没有强制订阅、没有诱导式设计。工具放在页面上方，指南和数据来源说明就在旁边，方便行动前核对。</p>
-    <p class="lang-zh">推荐路径：先比价 → 估算订阅成本或设置试用提醒 → 打开对应清单 → 在 App Store 确认最终金额与续费条款。</p>
+    <p class="lang-en">
+      App Store decisions are easy to rush and hard to reverse. Free trials renew quietly, shared cards create household fights, and permission prompts arrive faster than context. Storewise exists to slow the first five minutes: read the decision, capture the official screen, then act.
+    </p>
+    <p class="lang-en">
+      We keep the product small: no account wall, no forced newsletter, no dark patterns. Tools stay optional. Guides stay long enough to be useful and specific enough to be checked against Apple Settings.
+    </p>
+    <p class="lang-zh">
+      App Store 决策容易冲动，也难撤销。免费试用会静默续费，共用卡会引发家庭争执，权限提示往往比上下文来得更快。Storewise 想做的是放慢前五分钟：先读懂决策、截下官方界面，再行动。
+    </p>
+    <p class="lang-zh">
+      产品刻意保持轻量：没有账号墙、没有强制订阅、没有诱导式设计。工具是可选的。指南要够长才有用，也要够具体，才能对照 Apple 设置核验。
+    </p>
   </section>
 </BaseLayout>

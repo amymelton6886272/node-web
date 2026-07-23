@@ -7,31 +7,43 @@ import { getHubLinks, getAllSeriesForIndex } from '../../data/related.js';
 
 export const prerender = true;
 
+const FEATURED_SLUGS = [
+  'free-trial-trap-checklist',
+  'spot-subscription-fatigue-apps',
+  'family-sharing-purchase-safety',
+  'when-not-to-install-free-apps',
+  'cancel-apple-subscription-step-by-step',
+  'app-store-price-check-before-buying',
+];
+const bySlug = Object.fromEntries(articles.map((a) => [a.slug, a]));
+const curated = FEATURED_SLUGS.map((s) => bySlug[s]).filter(Boolean);
 const sorted = [...articles].sort((a, b) =>
-  String(b.updatedAt || b.publishedAt).localeCompare(String(a.updatedAt || a.publishedAt))
+  String(b.updatedAt || b.publishedAt).localeCompare(String(a.updatedAt || a.publishedAt)),
 );
+const featuredIds = new Set(curated.map((a) => a.slug));
+const featured = curated.length ? curated : sorted.slice(0, 6);
+const rest = sorted.filter((a) => !featuredIds.has(a.slug));
 
 const categories = [...new Set(sorted.map((a) => a.category).filter(Boolean))];
 const hubLinks = getHubLinks();
-const featured = sorted.slice(0, 6);
 const seriesList = getAllSeriesForIndex();
 ---
 <BaseLayout title="Articles - Storewise" description="Practical Apple and App Store research articles for safer purchasing, privacy, and account decisions." path="/articles" breadcrumbs={[{ name: 'Home', item: SITE }, { name: 'Articles', item: `${SITE}/articles` }]}>
   <Hero
     title="Articles"
     titleZh="文章"
-    sub="Practical Apple and App Store research articles written for safer purchasing, privacy, and account decisions."
-    subZh="围绕购买、隐私、账号和 App Store 决策的实用 Apple 研究文章。"
+    sub="Long-form App Store research: free trials, family charges, permissions, refunds, and region decisions — written to check against official Apple screens."
+    subZh="App Store 长文研究：免费试用、家庭扣费、权限、退款与切区决策，便于对照官方 Apple 界面核验。"
   />
 
   <section class="articleToolbar card">
     <div class="lang-en">
       <h2>Research notes before you pay</h2>
-      <p>Practical Apple / App Store articles for pricing, trials, privacy labels, permissions, and account region decisions. Read alongside Storewise tools.</p>
+      <p>Start with a featured playbook, then browse by topic. Tools are optional helpers after you understand the decision.</p>
     </div>
     <div class="lang-zh">
       <h2>付款前的研究笔记</h2>
-      <p lang="zh-CN">围绕价格、试用、隐私标签、权限与账号切区的实用文章，可与 Storewise 工具一起使用。</p>
+      <p lang="zh-CN">先从精选手册开始，再按主题浏览。理解决策后，工具只是可选辅助。</p>
     </div>
   </section>
 
@@ -40,8 +52,8 @@ const seriesList = getAllSeriesForIndex();
       <div>
         <h2 class="lang-en">Topics & hubs</h2>
         <h2 class="lang-zh">主题与枢纽</h2>
-        <p class="lang-en contentLead">Start from a topic cluster, or jump into tools and policy pages that support the research.</p>
-        <p class="lang-zh contentLead">可从主题簇开始，或直接进入支撑研究的工具与政策页。</p>
+        <p class="lang-en contentLead">Jump into knowledge, guides, checklists, and policy pages that support the research corpus.</p>
+        <p class="lang-zh contentLead">进入支撑研究库的知识库、指南、清单与政策页。</p>
       </div>
     </div>
     <div class="articleTags" style="margin-bottom:12px;">
@@ -96,10 +108,10 @@ const seriesList = getAllSeriesForIndex();
   <section class="richSection card homeDeepGuides" style="margin-bottom:18px;">
     <div class="homeSectionHead">
       <div>
-        <h2 class="lang-en">Start here</h2>
-        <h2 class="lang-zh">先从这里读</h2>
-        <p class="lang-en contentLead">Recently updated guides with multi-section depth. Good entry points for Search and first-time readers.</p>
-        <p class="lang-zh contentLead">近期更新的多章节指南，适合作为搜索与新读者的入口。</p>
+        <h2 class="lang-en">Featured playbooks</h2>
+        <h2 class="lang-zh">精选手册</h2>
+        <p class="lang-en contentLead">Deep rewrites with scenarios, household scripts, and verification loops — best entry points for first-time readers.</p>
+        <p class="lang-zh contentLead">含场景、家庭话术与验证环的深度重写，适合作为新读者入口。</p>
       </div>
     </div>
     <div class="articleGrid">
@@ -123,7 +135,7 @@ const seriesList = getAllSeriesForIndex();
   </section>
 
   <div class="articleGrid">
-    {sorted.map((article) => (
+    {rest.map((article) => (
       <a class="articleCard card" href={getArticlePath(article)}>
         <span class="articleCategory">{article.category}</span>
         <h2 class="lang-en">{article.title}</h2>
