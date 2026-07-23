@@ -1021,6 +1021,8 @@ body{color:var(--fg)}
 .homeSectionHead p{margin:0;color:var(--muted);line-height:1.7}
 .homeFeatured{padding:22px 24px;margin-bottom:16px}
 .homeToolGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.homeToolGridCompact{grid-template-columns:repeat(4,minmax(0,1fr))}
+.homeHubGrid .homeToolCard{min-height:86px}
 .homeToolCard{
   display:flex;gap:12px;align-items:center;padding:14px 15px;border:1px solid var(--line);
   border-radius:18px;text-decoration:none;color:inherit;background:color-mix(in srgb,var(--card) 90%,transparent);
@@ -1088,10 +1090,11 @@ body{color:var(--fg)}
 }
 @media (max-width:1100px){
   .homeToolGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .homeToolGridCompact{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:760px){
   .brandText small{display:none}
-  .homeToolGrid{grid-template-columns:1fr}
+  .homeToolGrid,.homeToolGridCompact{grid-template-columns:1fr}
   .hero{padding:22px 18px;border-radius:20px}
   .hero h1{font-size:26px}
   .mobileDock{display:grid}
