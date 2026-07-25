@@ -4575,8 +4575,8 @@ export const articles = [
     category: 'Account Safety',
     tags: ['Apple ID', 'US region', 'Payment methods', 'Gift cards'],
     publishedAt: '2026-06-26',
-    updatedAt: '2026-07-12',
-    readTime: '10 min read',
+    updatedAt: '2026-07-19',
+    readTime: '13 min read',
     sections: [
     {
       heading: 'Start with the real goal, not a shortcut story',
@@ -4637,6 +4637,66 @@ export const articles = [
       headingZh: '谨慎的端到端流程',
       text: '1) Write the goal and risk budget. 2) Decide whether a secondary Media account is necessary. 3) Prepare recovery email and two-factor authentication. 4) Keep iCloud identity separate when appropriate. 5) Fund only with legitimate region-matched methods. 6) Research app quality, price, trial terms, and permissions. 7) Buy only after official checkout confirmation. 8) Log subscriptions and set cancel reminders. 9) Review trusted devices and purchase history monthly. 10) If any step depends on a stranger in a chat group, stop and redesign the plan. The cheapest-looking path is often the most expensive after account recovery, chargebacks, lost balances, or inaccessible purchases. Slow research beats fast regret. Use a research helper articles, checklists, and tools to structure the work, then verify every irreversible action on official Apple surfaces. Re-read this workflow before every new region experiment instead of relying on memory.',
       textZh: '1）写下目标与风险预算；2）判断是否真需要次要媒体账号；3）准备恢复邮箱与双重认证；4）必要时分离 iCloud 身份；5）只用合法且地区匹配的资金方式；6）研究应用质量、价格、试用与权限；7）仅在官方结算确认后购买；8）记录订阅并设取消提醒；9）每月检查受信设备与购买记录；10）若某一步必须依赖群聊陌生人，停下并重做计划。看起来最便宜的路径，往往在找回账号、拒付、余额丢失或购买不可用之后变成最贵。慢研究胜过快后悔。用 研究工具 文章、清单和工具结构化流程，再把每个不可逆操作放回官方 Apple 界面确认。每次新的地区实验前重读这套流程，而不是靠记忆。',
+    },
+    {
+      heading: 'Goal first: research, travel, or primary identity?',
+      headingZh: '先定目标：研究、旅行，还是主身份？',
+      text: 'Write the real goal before any registration steps. Research and travel experiments are not the same as moving a primary household Apple ID. Primary moves need exit plans and family impact checks. Research goals should prefer secondary identities with small budgets. If the goal is only a converted sticker, stop and open region comparison instead of registration theater.',
+      textZh: '任何注册步骤前写真实目标。研究与旅行实验不等于移动家庭主 Apple ID。主身份移动需要退出计划与家庭影响检查。研究目标应优先小预算次要身份。若目标只是换算标价，停下来打开地区比较，而不是注册表演。',
+    },
+    {
+      heading: 'Case: no-card myth becomes support dead end',
+      headingZh: '案例：无卡神话变成支持死胡同',
+      text: 'A tutorial promises free US registration without payment, then gift cards fail to redeem cleanly, and media library later becomes awkward. Recovery costs exceed any sticker gap. Rule: document payment eligibility and redeem destination before creating identities. No-card myths are marketing, not a plan. Prefer official surfaces and written stop dates for experiments.',
+      textZh: '教程承诺无支付免费美区注册，随后礼品卡兑换不顺，媒体库日后变麻烦。恢复成本超过任何标价差。规则：创建身份前记录支付资格与兑换目标。无卡神话是营销，不是计划。实验优先官方界面与书面停止日。',
+    },
+    {
+      heading: '2026 registration research checklist',
+      headingZh: '2026 注册研究清单',
+      text: 'Cells: goal, secondary vs primary, payment method eligibility, gift card plan, app availability needs, subscription impact, recovery email/phone ownership, stop date, owner adult. Empty cell means do not create the account today. Checklists beat video steps that skip failure modes. Store the filled checklist with screenshots.',
+      textZh: '格子：目标、次要还是主、支付资格、礼品卡计划、应用可用性需求、订阅影响、恢复邮箱/手机归属、停止日、负责成人。空格就今天不建号。清单胜过跳过失败模式的视频步骤。填完的清单与截图放一起。',
+    },
+    {
+      heading: 'Security hygiene that reduces real loss',
+      headingZh: '真正降低损失的安全卫生',
+      text: 'Use unique passwords, 2FA you control, recovery contacts you own, and no credential sharing with gray sellers. Do not upload identity documents to strangers promising region unlocks. After any suspicious profile or remote-support path, rotate credentials from a clean device. Hygiene is part of registration research, not an afterthought.',
+      textZh: '使用你控制的唯一密码与 2FA、你拥有的恢复联系人，不与灰产共享凭据。不要向承诺解锁地区的陌生人上传证件。任何可疑描述文件或远程协助路径后，从干净设备轮换凭据。卫生是注册研究的一部分，不是事后补丁。',
+    },
+    {
+      heading: 'Exit condition: goal, funding, stop date',
+      headingZh: '退出条件：目标、资金、停止日',
+      text: 'You are done when the goal is written, funding is legitimate and matched, and a stop or review date exists. Creating accounts without those three is incomplete research. If you decide not to register, file the stay decision with date—that is a valid outcome.',
+      textZh: '当目标写清、资金合法且匹配、存在停止或复查日时才算完成。没有这三样就建号是不完整研究。若决定不注册，把留下决策与日期归档——那是有效结果。',
+    },
+    {
+      heading: 'Payment methods: cards, balance, and myths',
+      headingZh: '支付方式：卡、余额与神话',
+      text: 'Document what payment methods the target storefront accepts for your situation. Balance-only experiments still need region thinking. Do not force unsupported cards. Write a fallback if payment fails mid-experiment. Payment reality kills more plans than registration UI.',
+      textZh: '记录目标店面在你情况下接受哪些支付。仅余额实验仍要有地区思维。不要强上不受支持的卡。写支付中途失败的后备。支付现实比注册界面杀死更多计划。',
+    },
+    {
+      heading: 'App availability is not safe usage',
+      headingZh: '应用可用不等于安全使用',
+      text: 'An app existing in a storefront does not mean language, support, features, or refund paths match your needs. Write non-price costs. Availability is one cell in the checklist, not a green light to move primary identity.',
+      textZh: '某店面有应用不代表语言、支持、功能或退款路径匹配你的需求。写非价格成本。可用性只是清单一格，不是移动主身份的绿灯。',
+    },
+    {
+      heading: 'Legal and policy boundaries in plain language',
+      headingZh: '白话政策边界',
+      text: 'Do not buy finished accounts, do not share credentials with gray sellers, and do not submit identity documents to strangers. Research stays inside official Apple surfaces and public metadata. Boundaries protect account health more than clever workarounds.',
+      textZh: '不要买成品账号，不要与灰产共享凭据，不要向陌生人提交证件。研究留在官方 Apple 界面与公开元数据。边界比聪明绕过更能保护账号健康。',
+    },
+    {
+      heading: 'Cautious end-to-end workflow',
+      headingZh: '谨慎端到端流程',
+      text: 'Goal → checklist → secondary identity decision → funding plan → create only if cells filled → stop date → audit Subscriptions → stay or limited experiment. Skipping to create first is how support dead ends begin. Write the workflow on one page.',
+      textZh: '目标→清单→次要身份决策→资金计划→格子填满才创建→停止日→审计订阅→留下或有限实验。先创建会打开支持死胡同。把流程写在一页。',
+    },
+    {
+      heading: 'Owner adult for any identity that can spend',
+      headingZh: '任何能花钱身份的负责成人',
+      text: 'If an identity can charge a shared card or hold family-critical media, name an owner adult. Ownerless secondary accounts become forgotten charge sources. Put the name on the checklist cover.',
+      textZh: '若身份能打共用卡或持有家庭关键媒体，具名负责成人。无主次要账号会变成被遗忘的扣费源。名字写在清单封面。',
     }
     ],
   },
@@ -4651,7 +4711,7 @@ export const articles = [
     tags: ['Permissions', 'Subscriptions', 'Free trials', 'Privacy labels'],
     publishedAt: '2026-07-03',
     updatedAt: '2026-07-19',
-    readTime: '13 min read',
+    readTime: '10 min read',
     sections: [
     {
       heading: 'Subscription traps usually start before the first charge',
@@ -4708,40 +4768,82 @@ export const articles = [
       textZh: '共享或儿童设备更适合默认拒绝。开启购买前询问、屏幕使用时间购买限制，以及适合年龄段的沟通安全功能。不要在儿童配置里测试未知订阅 App。若家人已开启试用，立刻记录 Apple ID 归属、付款方式归属和取消截止日。点允许前：哪个具体功能需要这个传感器？试用前：续费价、币种和取消路径是什么？买单年前：月付评估能否先回答问题？安装后：关掉哪些权限仍不影响我真正在意的功能？七天后：这个 App 创造了价值，还是只创造了弹窗？最终仍以 iOS 设置与 App Store 官方页面为准。',
     },
     {
-      heading: 'Working notes: subscription traps and permission refusals',
-      headingZh: '订阅陷阱与权限拒绝工作笔记',
-      text: 'Use this checklist before you act on subscription traps and permission refusals. First, write the Apple ID email, device name, and payment method in one note. Second, capture screenshots of the App Store product page price, the subscription or IAP sheet, and any Privacy label rows that look high risk. Third, decide the success condition in one sentence so you know when to stop researching. Fourth, set a calendar reminder for follow-up within seven days if money or child access is involved. Fifth, record the cancel or refund path while you still have the screen open. People lose money when they remember only the marketing promise and forget the administrative path. If any checklist cell is empty, pause. Empty cells are not minor paperwork; they are the exact places disputes fail later. Share the note with the household payer when Family Sharing is active so two people are not holding partial facts. Revisit the same checklist after install, because the live permission prompts and pay sheets sometimes differ from the listing. Treat differences as stop signals until you understand them. Finally, archive the note in a Purchases folder rather than a chat thread that will scroll away.',
-      textZh: '在处理订阅陷阱与权限拒绝前使用本清单。第一，把 Apple ID 邮箱、设备名与支付方式写在同一笔记。第二，截图 App Store 产品页价格、订阅或内购页，以及隐私标签中看起来高风险的行。第三，用一句话写成功条件，知道何时停止研究。第四，若涉及金钱或儿童访问，七日内设跟进日历。第五，在屏幕仍打开时记录取消或退款路径。人们亏钱往往因为只记得营销承诺，忘了行政路径。清单任一格为空就暂停。空格不是小手续，而是日后争议失败的精确位置。家庭共享时与付款人共享笔记，避免两人各握半份事实。安装后再走同一清单，因为实机权限与付款页有时与上架页不同。把差异当停止信号直到弄清。最后把笔记归档到 Purchases 文件夹，而不是会滑走的聊天记录。',
-    },
-    {
-      heading: 'Where households usually get burned on subscription traps and permission refusals',
-      headingZh: '家庭在subscription traps and permission refusals上常翻车的点',
-      text: 'Most failures around subscription traps and permission refusals are boring and preventable. The first mode is partial attention: you skim the free badge and skip the renewal line. The second is identity confusion: the wrong Apple ID is signed in, so restore and refund paths point elsewhere. The third is household drift: a child or partner can approve or initiate spend without a monitored Ask to Buy flow. The fourth is tool sprawl: you install a second app to fix the first app\'s limits and now pay twice. The fifth is delayed cleanup: permissions, notifications, and profiles remain after you stop using the product. Each mode has a cheap countermeasure. Read the offer sheet aloud. Confirm the Apple ID email before purchase. Test Ask to Buy with a free app. Prefer one tool per job. Schedule a monthly cleanup tied to an existing habit. If you only remember one rule, remember that speed is the enemy. The App Store is designed for fast taps; your household needs slow confirmation for anything that can recur. When a failure already happened, reconstruct the timeline with Purchase History before arguing about intent. Intent debates without timestamps waste energy and weaken refund filings.',
-      textZh: '订阅陷阱与权限拒绝相关失败大多无聊且可防。第一种是注意力不全：只扫免费角标跳过续费行。第二种是身份混淆：登错 Apple ID，恢复与退款路径指向别处。第三种是家庭漂移：孩子或伴侣可在无监控的购买前询问流程下发起消费。第四种是工具蔓延：装第二个应用补第一个的限制，结果付两份。第五种是延迟清理：停用后权限、通知与描述文件仍在。每种都有便宜对策。朗读报价页。购买前确认 Apple ID 邮箱。用免费应用测试购买前询问。一事一工具。把月度清理绑到已有习惯。若只记一条：速度是敌人。App Store 为快点击设计；家庭对会循环的项目需要慢确认。若失败已发生，先用购买记录重建时间线再争论动机。没有时间戳的动机辩论浪费精力并削弱退款材料。',
-    },
-    {
-      heading: 'Same-day and seven-day checks for subscription traps and permission refusals',
-      headingZh: '关于subscription traps and permission refusals的当天与七日复查',
-      text: 'A decision is incomplete until you verify the system state. After any change related to subscription traps and permission refusals, open Settings and confirm the subscription status, permission toggles, and profiles that should have changed. Open Purchase History and confirm the latest line matches your expectation for amount and app name. If you cancelled, confirm the end date is visible. If you bought a non-consumable, restore on a second device. If a child was involved, confirm Ask to Buy still works with a harmless free install request. Verification should take under ten minutes and produce screenshots. Without screenshots, next month you will not remember what good looked like. Put verification on the same day as the decision; delayed checks allow a renewal cycle to slip through. If verification fails, do not buy more fixes. Stop, document, and use the official cancel or Report a Problem path. Also verify negative space: apps you think you removed should be gone, and notification badges from upsells should be quiet. Quiet systems are a feature. If the device feels louder after a purchase, you probably accepted the wrong trade.',
-      textZh: '决策在验证系统状态前不算完成。任何与订阅陷阱与权限拒绝相关的变更后，打开设置确认订阅状态、权限开关与应已变化的描述文件。打开购买记录确认最新一行金额与应用名符合预期。若已取消，确认结束日可见。若买了非消耗型，在第二台设备恢复。若涉及儿童，用无害免费安装请求确认购买前询问仍可用。验证应在十分钟内完成并产出截图。没有截图，下月你不记得什么叫正常。验证与决策同一天做；延迟检查会放跑一个续费周期。验证失败时不要再买修复方案。停下、记录，并走官方取消或 Report a Problem。也验证负空间：你以为已删的应用应消失，推销通知应安静。安静是功能。若购买后设备更吵，你可能接受了错误交易。',
-    },
-    {
-      heading: 'What to say at home about subscription traps and permission refusals',
-      headingZh: '家里谈subscription traps and permission refusals时怎么说',
-      text: 'Technical controls fail when people do not share a script. For subscription traps and permission refusals, agree on a short spoken rule the whole household can repeat. Example: no new free trials without a cancel-by date on the calendar. Example: no paid buttons without an adult in the room on child devices. Example: any surprise charge is reported the same day with screenshots, not blamed first. Write the script in the family chat once, then pin it. When someone breaks the script, repair the process before debating character. Ask what screen they saw, what account was signed in, and what they thought would happen next. Replace shame with a better default: Ask to Buy, lower limits, or separate payment methods. Children especially need a path that rewards early reporting of mistakes. Adults need a path that does not turn every billing issue into a relationship fight. Rehearse the script after major iOS updates, because menus move and people invent workarounds. A household that can narrate its purchase rules will outrun most App Store dark patterns.',
-      textZh: '技术控制在人们没有共同话术时会失效。对于订阅陷阱与权限拒绝，约定全家人能复述的短规则。例如：没有日历取消日就不开新试用。例如：儿童设备没有成人在场不点付费按钮。例如：意外扣费当天带截图报告，而不是先责备。把话术写进家庭群并置顶。有人打破时，先修流程再争对错。问他们看到什么屏幕、登录哪个账号、以为下一步会发生什么。用更好默认替换羞耻：购买前询问、更低限额或分离支付方式。孩子尤其需要奖励早报告错误的路径。成人需要不把每次账单变成关系战争的路径。大版本 iOS 更新后重练话术，因为菜单会变、人会发明变通。能讲述购买规则的家庭，大多能跑赢 App Store 暗模式。',
-    },
-    {
-      heading: 'When subscription traps and permission refusals needs Apple, bank, or another adult',
-      headingZh: '何时subscription traps and permission refusals该找 Apple/银行/其他成人',
-      text: 'Self-help covers most cases around subscription traps and permission refusals, but escalation has a place. Escalate to Apple Report a Problem when money moved without authorization, after cancel with proof, or when digital goods never arrived. Escalate to the developer when account data export or deletion is required. Escalate to your bank only after platform paths are documented, unless fraud is clear and time sensitive. Escalate inside the household when the same failure repeats twice in a month; that is a controls problem, not bad luck. Do not escalate with anger-only messages. Bring the timeline, screenshots, Apple ID identity, and desired outcome. Parallel escalation to many channels on day one creates confusion and conflicting case numbers. Sequence beats spray. After escalation, tighten the local system so you are not filing the same case quarterly. The point of escalation is recovery plus prevention, not a permanent support lifestyle. If you file more than two purchase disputes in a quarter, freeze new installs for thirty days and run a full subscription and permission audit.',
-      textZh: '围绕订阅陷阱与权限拒绝多数情况可自助，但升级有其位置。未授权扣费、有证据的取消后扣费、数字商品未到达时，升级到 Apple Report a Problem。需要导出或删除账号数据时升级到开发者。除非欺诈明确且紧急，否则先走平台路径并留档再找银行。若同一失败一月内重复两次，在家庭内升级：这是控制问题不是倒霉。不要只发情绪升级。带上时间线、截图、Apple ID 身份与期望结果。第一天并行多渠道会造成混乱与冲突工单。顺序优于撒网。升级后收紧本地系统，避免每季度重复提交。升级的目的是恢复加预防，不是永久客服生活。若一季度超过两起购买争议，冻结新安装三十天，并做完整订阅与权限审计。',
-    },
-    {
       heading: 'Five default refusals on utilities',
       headingZh: '工具类默认拒绝的五类权限',
       text: 'For cleaners, shady VPNs, battery savers, and wallpapers: refuse contacts, SMS, always-on precise location, full photo library, and tracking until a concrete feature fails.',
       textZh: '清理、可疑 VPN、省电与壁纸：默认拒绝通讯录、短信、常开精确位置、完整相册与跟踪，直到具体功能失败再评估。',
+    },
+    {
+      heading: 'Soft trial to hard renewal pattern library',
+      headingZh: '软试用到硬续费模式库',
+      text: 'Patterns: short free trial into weekly Pro, export hostage after cancel, re-trial after reinstall, win-back push at 11 p.m., and Start buttons that hide post-trial price. Name the pattern before you argue about willpower. Pattern libraries turn shame into process. Put the matching pattern on the trial note.',
+      textZh: '模式：短免费试用进周 Pro、取消后导出挟持、重装再试用、晚上 11 点挽回报价、开始按钮藏试用后价格。争论意志力前先命名模式。模式库把羞耻变成流程。把匹配模式写在试用笔记上。',
+    },
+    {
+      heading: 'Family devices action checklist',
+      headingZh: '家庭设备动作清单',
+      text: 'Same day a trial starts on a shared card: capture terms, set cancel alert, confirm Ask to Buy and free-download gates, refuse non-essential permissions, and tell the payer. Same day a trap charges: cancel, packet, control change, then optional Report a Problem. Checklists beat after-the-fact blame.',
+      textZh: '共用卡开试用当天：抓条款、设取消提醒、确认购买前询问与免费下载闸门、拒绝非必要权限、告知付款人。陷阱扣费当天：取消、材料包、改控制，再可选 Report a Problem。清单胜过事后追责。',
+    },
+    {
+      heading: 'Case: battery app weekly + tracking + notifications',
+      headingZh: '案例：省电应用周付 + 跟踪 + 通知',
+      text: 'Free battery app wants tracking and notifications, then weekly unlock. Child installs because free. Outcome: spam and a charge. Recovery: revoke, cancel, delete, ninety-day hard-no for brand, free-download freeze until morning. Prevention: five refusals card + free-is-not-safe install rules.',
+      textZh: '免费省电应用要跟踪与通知，然后周付解锁。孩子因免费而装。结果：刷屏与扣费。恢复：收回、取消、删除、品牌 90 天硬拒绝、免费下载冻结到早上。预防：五项拒绝卡 + 免费不等于安全的安装规则。',
+    },
+    {
+      heading: 'ATT and limited photos as practical defaults',
+      headingZh: 'ATT 与有限照片作为实用默认',
+      text: 'Ask App Not to Track on utilities unless you can name a benefit. Prefer Limited Photos for single uploads. Exact location is rare on day zero for content apps. Defaults reduce decision fatigue while keeping real camera or mic jobs possible with Allow Once.',
+      textZh: '工具类除非说得出好处，否则要求 App 不跟踪。单次上传优先有限照片。内容类应用第零天很少需要精确位置。默认减少决策疲劳，同时真实相机或麦克风用途仍可用允许一次完成。',
+    },
+    {
+      heading: 'Exit condition: pattern named, permissions set, cancel path known',
+      headingZh: '退出条件：模式已命名、权限已设、取消路径已知',
+      text: 'You are done when the trap pattern is named, the five refusals are applied or explicitly excepted, and the cancel path is rehearsed if a trial exists. Reading trap lists without those artifacts is incomplete.',
+      textZh: '当陷阱模式已命名、五项拒绝已应用或明确例外、若有试用则取消路径已演练时才算完成。没有这些工件只读陷阱列表不完整。',
+    },
+    {
+      heading: 'One-page field card',
+      headingZh: '一页现场卡',
+      text: 'Compress into one page: goal, Apple ID identity, device, money or permission at stake, action today, verification tomorrow, control change this week. Screenshot into an adult note. If you cannot fill the card, you are reading ahead of acting.',
+      textZh: '压成一页：目标、Apple ID 身份、设备、金钱或权限、今天动作、明天验证、本周控制变化。截图进成人笔记。填不满说明读得比做得快。',
+    },
+    {
+      heading: 'Notifications as retention weapons',
+      headingZh: '通知作为留存武器',
+      text: 'Deny notifications until the app proves a non-marketing job for alerts. Win-back and re-trial pushes often arrive at weak hours. Audit notification settings on day two. Shared devices default deny for free utilities.',
+      textZh: '直到应用证明提醒有非营销用途前拒绝通知。挽回与再试用推送常在脆弱时段到来。第二天审计通知设置。共用设备上免费工具默认拒绝。',
+    },
+    {
+      heading: 'Microphone and speech for non-voice products',
+      headingZh: '非语音产品的麦克风与语音识别',
+      text: 'If the product is not voice-first, mic access is a pause. Allow Once only when a real spoken task is happening. Permanent mic on a cleaner or wallpaper app is a delete signal. Write the spoken job before granting.',
+      textZh: '若产品不是语音优先，麦克风访问应暂停。仅在真实口述任务发生时允许一次。清理或壁纸应用永久麦克风是删除信号。授权前写口述用途。',
+    },
+    {
+      heading: 'Exact location for coarse content',
+      headingZh: '粗内容却要精确位置',
+      text: 'Weather-ish or local content often works with approximate location or manual city entry. Exact location on day zero for novelty apps is rarely justified. Prefer While Using if truly needed later. Log the level granted.',
+      textZh: '天气类或本地内容常用大致位置或手动城市即可。猎奇应用第零天精确位置很少合理。若日后真需要优先使用期间。记录授予级别。',
+    },
+    {
+      heading: 'Same-day trap response order',
+      headingZh: '陷阱当日响应顺序',
+      text: 'Cancel renewals, revoke extra permissions, capture Purchase History and bank line, change free-download or Ask to Buy controls, then decide Report a Problem with a packet. Blame last. Order stops bleeding.',
+      textZh: '取消续费、收回多余权限、截购买记录与银行行、改免费下载或购买前询问，再带材料包决定 Report a Problem。追责放最后。顺序先止血。',
+    },
+    {
+      heading: 'Seven-day permission and trial joint review',
+      headingZh: '七日权限与试用联合复查',
+      text: 'On day seven, open Privacy settings and Subscriptions together. Revoke unused grants and confirm trial status. Joint review catches quiet re-prompts and silent conversions in one sitting. Put both on one calendar event.',
+      textZh: '第七天同时打开隐私设置与订阅。收回未使用授权并确认试用状态。联合复查一次抓住悄悄重授与静默转正。两者放同一日历事件。',
+    },
+    {
+      heading: 'Artifact checklist',
+      headingZh: '工件清单',
+      text: 'Leave with goal or pattern named, one screenshot or table, one calendar date, and one control change if money or permissions moved. Adult note storage. If you cannot name the artifacts, you are not done.',
+      textZh: '带走：已命名目标或模式、一张截图或表、一个日历日，若金钱或权限变动则一项控制变化。成人笔记存放。说不出工件就还没做完。',
     }
     ],
   },
@@ -4842,8 +4944,8 @@ export const articles = [
     category: 'Payments',
     tags: ['Gift cards', 'Scams', 'Balance', 'Apple ID'],
     publishedAt: '2026-04-19',
-    updatedAt: '2026-05-18',
-    readTime: '28 min read',
+    updatedAt: '2026-07-19',
+    readTime: '29 min read',
     sections: [
     {
       heading: 'Legitimate gift cards still need process discipline',
@@ -4898,6 +5000,24 @@ export const articles = [
       headingZh: '研究场景下更稳妥的资金方式',
       text: 'Safer funding alternatives for research. This section is written as practical publisher guidance for App Store and iOS research, not as a guarantee of outcomes. Start by writing the concrete decision you are trying to make, the Apple ID involved, the device owner, and the payment method owner. Those four fields prevent most confusion when something later renews, fails, or needs support. Next, capture screenshots of the relevant App Store page, privacy label, paywall, or system prompt before you change state. Memory is unreliable after a week, especially across multiple accounts and family devices. Use official Apple surfaces as the source of truth for account country, subscriptions, refunds, and trusted devices. a research helper tools and articles can help you structure comparison, cost estimation, risk review, and checklists, but they do not replace Settings or checkout. If a third-party chat, marketplace listing, or video promises guaranteed savings with no downside, treat the missing cost as risk transferred to you. Prefer reversible steps first: limited permissions, short trials, small purchases, and isolated Media accounts when research requires separation. Document cancel dates, renewal prices with currency, and recovery emails in a private note you can actually find later. For shared households, agree in advance who may approve purchases and who is responsible for monthly subscription audits. If a workflow requires remote control software, identity document uploads to strangers, or purchased finished accounts, stop. That path optimizes for someone else extracting value from your access, not for your long-term safety. After any change, run a verification pass: open Subscriptions, review payment methods, check trusted devices, and confirm the app still behaves with minimum permissions. Repeat the verification after seven days, because many problems appear only when trials convert or when background prompts return. Finally, keep a short postmortem: what worked, what failed, and whether the original goal still justifies the operational cost. This habit turns one-off panic into a reusable research process you can apply to the next app, region, or family device decision. In the context of Apple Gift Card Balance Safety and Common Scam Patterns, pay special attention to whether the action is reversible within twenty-four hours, whether a child or coworker can trigger the same flow, and whether money or identity data is at stake. If money is at stake, annualize the cost and write the cancel-by date before you continue. If identity data is at stake, minimize permissions and avoid installing on your primary device first. If neither money nor identity is at stake, you can move faster, but still keep screenshots. Cross-link your notes to related a research helper pages such as price comparison, subscription cost, trial reminders, risk assessor, and checklists so the research trail remains navigable. The goal is not to eliminate all risk; the goal is to make residual risk visible, owned, and time-bounded.',
       textZh: '研究场景下更稳妥的资金方式。本节是面向 App Store 与 iOS 研究的实用发布内容，不保证结果。先写下你要做的具体决策、涉及的 Apple ID、设备所有者与付款方式所有者。这四个字段能避免后续续费、失败或求助时的大多数混乱。接着在改变状态前，截取相关 App Store 页面、隐私标签、付费墙或系统提示。一周后记忆不可靠，尤其跨多个账号和家庭设备时更是如此。账号国家、订阅、退款与受信设备，以官方 Apple 界面为真相来源。研究工具 工具与文章可帮助结构化比价、成本估算、风险审查与清单，但不能替代设置或结算页。若第三方聊天、商品页或视频承诺无代价稳赚，请把缺失成本理解为转嫁给你的风险。优先可逆步骤：有限权限、短试用、小额购买，以及研究需要隔离时的独立媒体账号。把取消日期、带币种的续费价和恢复邮箱记在你真找得到的私密笔记里。对共享家庭，提前约定谁可批准购买、谁负责每月订阅审计。若流程要求远程控制软件、向陌生人上传证件或购买成品账号，立刻停止。那条路径优化的是别人从你的访问权里抽价值，而不是你的长期安全。任何变更后做核验：打开订阅、检查支付方式、查看受信设备，并确认应用在最小权限下仍可用。七天后再核验一次，因为很多问题只在试用转正或后台弹窗再次出现时才暴露。最后写简短复盘：什么有效、什么失败、原目标是否仍值得这些运维成本。这个习惯能把一次性惊慌变成可复用研究流程，用于下一次应用、地区或家庭设备决策。在《Apple 礼品卡余额安全与常见诈骗模式》这个主题下，特别关注动作是否能在二十四小时内逆转、孩子或同事是否会触发同一流程，以及是否涉及金钱或身份数据。若涉及金钱，先年化成本并写下取消截止日再继续。若涉及身份数据，先最小化权限，并避免先装在主设备。若两者都不涉及，可以更快推进，但仍要保留截图。把笔记交叉链接到 研究工具 的价格对比、订阅成本、试用提醒、风险评估和清单页面，让研究轨迹可回看。目标不是消灭全部风险，而是让剩余风险可见、有归属、有时限。',
+    },
+    {
+      heading: 'Redeem destination checklist before buying cards',
+      headingZh: '买卡前的兑换目标清单',
+      text: 'Write which Apple ID and storefront will redeem before you buy. Region mismatch is a top non-scam failure. Snapshot balance after redeem. Keep the receipt. Destination mistakes look like scams later and waste dispute time.',
+      textZh: '购买前写哪个 Apple ID 与店面将兑换。地区不匹配是头号非诈骗失败。兑换后快照余额。保留收据。目标错误事后像诈骗，浪费争议时间。',
+    },
+    {
+      heading: 'Remote control and fake support refusal script',
+      headingZh: '远程控制与假客服拒绝话术',
+      text: 'Say: we do not install remote apps or read codes to callers; we hang up and use official Apple paths we open ourselves. Practice once with household members. Urgency plus code requests is the payload. Write the script under Wi-Fi passwords.',
+      textZh: '说：我们不装远程应用，也不给来电者读验证码；我们挂断并用自己打开的官方 Apple 路径。与家人演练一次。紧迫加要验证码就是载荷。话术写在 Wi-Fi 密码下。',
+    },
+    {
+      heading: 'Secondary market red flags',
+      headingZh: '二手市场红旗',
+      text: 'Deep discounts, chat-only sellers, photo codes, and pressure to redeem immediately are stop signals. Prefer retail channels. If a deal requires secrecy, it is not a household funding method. Document any loss with timeline if you already fell for it.',
+      textZh: '深折扣、仅聊天卖家、照片发卡密、强迫立刻兑换都是停止信号。优先零售渠道。若交易要求保密，就不是家庭资金方式。若已中招，用时间线记录损失。',
     }
     ],
   },
@@ -5229,8 +5349,8 @@ export const articles = [
     category: 'Security',
     tags: ['TestFlight', 'Sideloading', 'Beta apps', 'Malware risk'],
     publishedAt: '2026-03-04',
-    updatedAt: '2026-03-04',
-    readTime: '28 min read',
+    updatedAt: '2026-07-19',
+    readTime: '29 min read',
     sections: [
     {
       heading: 'TestFlight is not a free App Store alternative',
@@ -5285,6 +5405,18 @@ export const articles = [
       headingZh: '更安全的研究流程',
       text: 'Safer research workflow. This section is written as practical publisher guidance for App Store and iOS research, not as a guarantee of outcomes. Start by writing the concrete decision you are trying to make, the Apple ID involved, the device owner, and the payment method owner. Those four fields prevent most confusion when something later renews, fails, or needs support. Next, capture screenshots of the relevant App Store page, privacy label, paywall, or system prompt before you change state. Memory is unreliable after a week, especially across multiple accounts and family devices. Use official Apple surfaces as the source of truth for account country, subscriptions, refunds, and trusted devices. a research helper tools and articles can help you structure comparison, cost estimation, risk review, and checklists, but they do not replace Settings or checkout. If a third-party chat, marketplace listing, or video promises guaranteed savings with no downside, treat the missing cost as risk transferred to you. Prefer reversible steps first: limited permissions, short trials, small purchases, and isolated Media accounts when research requires separation. Document cancel dates, renewal prices with currency, and recovery emails in a private note you can actually find later. For shared households, agree in advance who may approve purchases and who is responsible for monthly subscription audits. If a workflow requires remote control software, identity document uploads to strangers, or purchased finished accounts, stop. That path optimizes for someone else extracting value from your access, not for your long-term safety. After any change, run a verification pass: open Subscriptions, review payment methods, check trusted devices, and confirm the app still behaves with minimum permissions. Repeat the verification after seven days, because many problems appear only when trials convert or when background prompts return. Finally, keep a short postmortem: what worked, what failed, and whether the original goal still justifies the operational cost. This habit turns one-off panic into a reusable research process you can apply to the next app, region, or family device decision. In the context of TestFlight, Sideloading Narratives, and Unofficial Install Risks on iPhone, pay special attention to whether the action is reversible within twenty-four hours, whether a child or coworker can trigger the same flow, and whether money or identity data is at stake. If money is at stake, annualize the cost and write the cancel-by date before you continue. If identity data is at stake, minimize permissions and avoid installing on your primary device first. If neither money nor identity is at stake, you can move faster, but still keep screenshots. Cross-link your notes to related a research helper pages such as price comparison, subscription cost, trial reminders, risk assessor, and checklists so the research trail remains navigable. The goal is not to eliminate all risk; the goal is to make residual risk visible, owned, and time-bounded.',
       textZh: '更安全的研究流程。本节是面向 App Store 与 iOS 研究的实用发布内容，不保证结果。先写下你要做的具体决策、涉及的 Apple ID、设备所有者与付款方式所有者。这四个字段能避免后续续费、失败或求助时的大多数混乱。接着在改变状态前，截取相关 App Store 页面、隐私标签、付费墙或系统提示。一周后记忆不可靠，尤其跨多个账号和家庭设备时更是如此。账号国家、订阅、退款与受信设备，以官方 Apple 界面为真相来源。研究工具 工具与文章可帮助结构化比价、成本估算、风险审查与清单，但不能替代设置或结算页。若第三方聊天、商品页或视频承诺无代价稳赚，请把缺失成本理解为转嫁给你的风险。优先可逆步骤：有限权限、短试用、小额购买，以及研究需要隔离时的独立媒体账号。把取消日期、带币种的续费价和恢复邮箱记在你真找得到的私密笔记里。对共享家庭，提前约定谁可批准购买、谁负责每月订阅审计。若流程要求远程控制软件、向陌生人上传证件或购买成品账号，立刻停止。那条路径优化的是别人从你的访问权里抽价值，而不是你的长期安全。任何变更后做核验：打开订阅、检查支付方式、查看受信设备，并确认应用在最小权限下仍可用。七天后再核验一次，因为很多问题只在试用转正或后台弹窗再次出现时才暴露。最后写简短复盘：什么有效、什么失败、原目标是否仍值得这些运维成本。这个习惯能把一次性惊慌变成可复用研究流程，用于下一次应用、地区或家庭设备决策。在《TestFlight、侧载叙事与 iPhone 非官方安装风险》这个主题下，特别关注动作是否能在二十四小时内逆转、孩子或同事是否会触发同一流程，以及是否涉及金钱或身份数据。若涉及金钱，先年化成本并写下取消截止日再继续。若涉及身份数据，先最小化权限，并避免先装在主设备。若两者都不涉及，可以更快推进，但仍要保留截图。把笔记交叉链接到 研究工具 的价格对比、订阅成本、试用提醒、风险评估和清单页面，让研究轨迹可回看。目标不是消灭全部风险，而是让剩余风险可见、有归属、有时限。',
+    },
+    {
+      heading: 'Validate beta invites like an auditor',
+      headingZh: '像审计员一样核实测试邀请',
+      text: 'Confirm publisher identity, expected build purpose, and that the invite came through a channel you trust. Random TestFlight links in chats are not free App Store alternatives. Write the job of the beta in one line. No job means no install.',
+      textZh: '确认发布者身份、构建用途，以及邀请来自你信任的渠道。聊天里的随机 TestFlight 链接不是免费 App Store 替代。用一句话写测试用途。没有用途就不装。',
+    },
+    {
+      heading: 'Incident response for misbehaving betas',
+      headingZh: '异常测试版的应急响应',
+      text: 'Delete the beta, revoke permissions, check profiles and VPN settings, review Subscriptions if any IAP was tested, and screenshot the invite source. On shared devices, freeze free downloads until review. Log the incident even if no money moved.',
+      textZh: '删除测试版、收回权限、检查描述文件与 VPN 设置，若测过内购则查订阅，截图邀请来源。共用设备上复查前冻结免费下载。即使没扣费也记录事故。',
     }
     ],
   },
@@ -5298,8 +5430,8 @@ export const articles = [
     category: 'App Safety',
     tags: ['Lookalike apps', 'Reviews', 'Search ads', 'Install safety'],
     publishedAt: '2026-06-03',
-    updatedAt: '2026-07-10',
-    readTime: '28 min read',
+    updatedAt: '2026-07-19',
+    readTime: '29 min read',
     sections: [
     {
       heading: 'Why search rank is not a safety score',
@@ -5354,6 +5486,24 @@ export const articles = [
       headingZh: '安装前核验清单',
       text: 'A pre-install verification checklist. This section is written as practical publisher guidance for App Store and iOS research, not as a guarantee of outcomes. Start by writing the concrete decision you are trying to make, the Apple ID involved, the device owner, and the payment method owner. Those four fields prevent most confusion when something later renews, fails, or needs support. Next, capture screenshots of the relevant App Store page, privacy label, paywall, or system prompt before you change state. Memory is unreliable after a week, especially across multiple accounts and family devices. Use official Apple surfaces as the source of truth for account country, subscriptions, refunds, and trusted devices. a research helper tools and articles can help you structure comparison, cost estimation, risk review, and checklists, but they do not replace Settings or checkout. If a third-party chat, marketplace listing, or video promises guaranteed savings with no downside, treat the missing cost as risk transferred to you. Prefer reversible steps first: limited permissions, short trials, small purchases, and isolated Media accounts when research requires separation. Document cancel dates, renewal prices with currency, and recovery emails in a private note you can actually find later. For shared households, agree in advance who may approve purchases and who is responsible for monthly subscription audits. If a workflow requires remote control software, identity document uploads to strangers, or purchased finished accounts, stop. That path optimizes for someone else extracting value from your access, not for your long-term safety. After any change, run a verification pass: open Subscriptions, review payment methods, check trusted devices, and confirm the app still behaves with minimum permissions. Repeat the verification after seven days, because many problems appear only when trials convert or when background prompts return. Finally, keep a short postmortem: what worked, what failed, and whether the original goal still justifies the operational cost. This habit turns one-off panic into a reusable research process you can apply to the next app, region, or family device decision. In the context of App Store Search Manipulation, Lookalike Apps, and Fake Popularity Signals, pay special attention to whether the action is reversible within twenty-four hours, whether a child or coworker can trigger the same flow, and whether money or identity data is at stake. If money is at stake, annualize the cost and write the cancel-by date before you continue. If identity data is at stake, minimize permissions and avoid installing on your primary device first. If neither money nor identity is at stake, you can move faster, but still keep screenshots. Cross-link your notes to related a research helper pages such as price comparison, subscription cost, trial reminders, risk assessor, and checklists so the research trail remains navigable. The goal is not to eliminate all risk; the goal is to make residual risk visible, owned, and time-bounded.',
       textZh: '安装前核验清单。本节是面向 App Store 与 iOS 研究的实用发布内容，不保证结果。先写下你要做的具体决策、涉及的 Apple ID、设备所有者与付款方式所有者。这四个字段能避免后续续费、失败或求助时的大多数混乱。接着在改变状态前，截取相关 App Store 页面、隐私标签、付费墙或系统提示。一周后记忆不可靠，尤其跨多个账号和家庭设备时更是如此。账号国家、订阅、退款与受信设备，以官方 Apple 界面为真相来源。研究工具 工具与文章可帮助结构化比价、成本估算、风险审查与清单，但不能替代设置或结算页。若第三方聊天、商品页或视频承诺无代价稳赚，请把缺失成本理解为转嫁给你的风险。优先可逆步骤：有限权限、短试用、小额购买，以及研究需要隔离时的独立媒体账号。把取消日期、带币种的续费价和恢复邮箱记在你真找得到的私密笔记里。对共享家庭，提前约定谁可批准购买、谁负责每月订阅审计。若流程要求远程控制软件、向陌生人上传证件或购买成品账号，立刻停止。那条路径优化的是别人从你的访问权里抽价值，而不是你的长期安全。任何变更后做核验：打开订阅、检查支付方式、查看受信设备，并确认应用在最小权限下仍可用。七天后再核验一次，因为很多问题只在试用转正或后台弹窗再次出现时才暴露。最后写简短复盘：什么有效、什么失败、原目标是否仍值得这些运维成本。这个习惯能把一次性惊慌变成可复用研究流程，用于下一次应用、地区或家庭设备决策。在《App Store 搜索操纵、仿冒应用与虚假热度信号》这个主题下，特别关注动作是否能在二十四小时内逆转、孩子或同事是否会触发同一流程，以及是否涉及金钱或身份数据。若涉及金钱，先年化成本并写下取消截止日再继续。若涉及身份数据，先最小化权限，并避免先装在主设备。若两者都不涉及，可以更快推进，但仍要保留截图。把笔记交叉链接到 研究工具 的价格对比、订阅成本、试用提醒、风险评估和清单页面，让研究轨迹可回看。目标不是消灭全部风险，而是让剩余风险可见、有归属、有时限。',
+    },
+    {
+      heading: 'Search rank is not a safety score',
+      headingZh: '搜索排名不是安全分',
+      text: 'Ads and ranking optimize for acquisition, not household safety. Treat top results as candidates for a listing autopsy, not as approved installs. Write the job you want before you search so lookalike names do not hijack intent.',
+      textZh: '广告与排名优化获客，不是家庭安全。把顶部结果当上架解剖候选，而不是批准安装。搜索前写你要的用途，避免近似名劫持意图。',
+    },
+    {
+      heading: 'Mimicry checklist: icon, name, screenshots',
+      headingZh: '仿冒清单：图标、名称、截图',
+      text: 'Near-copy icons, one-letter typos, and screenshots that look like a famous brand are stop signals. Open the developer page and scan the catalog. Two mimicry hits mean leave even if ratings are high. Teach elderly relatives with side-by-side screenshots.',
+      textZh: '近似图标、单字母错名、看起来像大牌的截图是停止信号。打开开发者页扫目录。两项仿冒命中即使高分也离开。用并排截图教年长亲属。',
+    },
+    {
+      heading: 'When two apps look identical',
+      headingZh: '当两个应用看起来一模一样',
+      text: 'Prefer the developer you can explain in one sentence, with longer honest update history and coherent privacy labels. If still unsure, do not install on shared devices today. Waiting twenty-four hours is cheaper than a weekly trap. Capture both product pages for comparison notes.',
+      textZh: '优先你能一句话解释的开发者，更新历史更诚实、隐私标签更一致。仍不确定就今天不在共用设备安装。等二十四小时比周付陷阱便宜。两边产品页截图做比较笔记。',
     }
     ],
   },
