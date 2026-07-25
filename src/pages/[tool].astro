@@ -39,6 +39,9 @@ const contentFirstTools = new Set(['glossary', 'checklists']);
 const isContentFirst = contentFirstTools.has(tool);
 const hubTools = new Set(['guides', 'knowledge', 'risk']);
 const isHubTool = hubTools.has(tool);
+// Interactive research helpers (not content hubs): keep a fixed assist banner.
+const utilityTools = new Set(['price', 'appfree', 'icon', 'subcost', 'trial', 'risk']);
+const showAssistBanner = utilityTools.has(tool);
 
 
 const toolSoftwareSchema = {
@@ -72,6 +75,37 @@ const toolBreadcrumbs = [
   extraSchemas={[toolSoftwareSchema]}
 >
   {!isContentFirst && <ToolStaticContent tool={tool} variant="intro" />}
+
+  {showAssistBanner && (
+    <section class="card toolAssistBanner" aria-label="Research helper notice">
+      <div class="lang-en">
+        <h2 class="toolAssistTitle">Research helper — not the final authority</h2>
+        <p class="contentLead">
+          This page is an optional calculator or lookup after you understand the decision. Empty or partial results mean the feed is incomplete — not a price of zero and not a recommendation. Confirm final amounts, renewals, and permissions on official App Store and Settings screens.
+        </p>
+        <div class="contentLinks">
+          <span>Before you run the tool</span>
+          <a href="/articles">Research articles</a>
+          <a href="/checklists">Checklists</a>
+          <a href="/guides">Guides hub</a>
+          <a href="/disclaimer">Disclaimer</a>
+        </div>
+      </div>
+      <div class="lang-zh" lang="zh-CN">
+        <h2 class="toolAssistTitle">研究辅助 — 不是最终权威</h2>
+        <p class="contentLead">
+          本页是理解决策后的可选计算或查询。空结果或部分结果表示数据源不完整——不是价格为零，也不是购买建议。最终金额、续费与权限请在官方 App Store 与设置界面确认。
+        </p>
+        <div class="contentLinks">
+          <span>使用工具前</span>
+          <a href="/articles">研究文章</a>
+          <a href="/checklists">决策清单</a>
+          <a href="/guides">指南中心</a>
+          <a href="/disclaimer">免责声明</a>
+        </div>
+      </div>
+    </section>
+  )}
 
   <div id="tool-workspace" class="toolWorkspace">
     {tool === 'price' && <PriceIsland client:load />}

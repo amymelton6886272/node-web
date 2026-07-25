@@ -52,8 +52,8 @@ const seriesList = getAllSeriesForIndex();
       <div>
         <h2 class="lang-en">Topics & hubs</h2>
         <h2 class="lang-zh">主题与枢纽</h2>
-        <p class="lang-en contentLead">Jump into knowledge, guides, checklists, and policy pages that support the research corpus.</p>
-        <p class="lang-zh contentLead">进入支撑研究库的知识库、指南、清单与政策页。</p>
+        <p class="lang-en contentLead">Jump into series hubs, knowledge, guides, checklists, and policy pages that support the research corpus.</p>
+        <p class="lang-zh contentLead">进入系列枢纽、知识库、指南、清单与政策页。</p>
       </div>
     </div>
     <div class="articleTags" style="margin-bottom:12px;">
@@ -74,19 +74,27 @@ const seriesList = getAllSeriesForIndex();
       <div>
         <h2 class="lang-en">Reading series</h2>
         <h2 class="lang-zh">阅读系列</h2>
-        <p class="lang-en contentLead">Follow an ordered path instead of bouncing between isolated posts. Each series links prev/next guides for the same decision flow.</p>
-        <p class="lang-zh contentLead">按顺序阅读，而不是在孤立文章之间跳转。每个系列都把同一决策流程的上一篇/下一篇串起来。</p>
+        <p class="lang-en contentLead">Follow an ordered path instead of bouncing between isolated posts. Each series has a dedicated hub with exit criteria and prev/next guides.</p>
+        <p class="lang-zh contentLead">按顺序阅读，而不是在孤立文章之间跳转。每个系列都有独立枢纽页、完成标准与上一篇/下一篇。</p>
       </div>
+      <a class="homeSectionCta" href="/series">
+        <span class="lang-en">All series hubs</span>
+        <span class="lang-zh">全部系列枢纽</span>
+      </a>
     </div>
     <div class="seriesIndexGrid">
       {seriesList.map((series) => (
         <article class="seriesIndexCard">
+          <p class="seriesEyebrow lang-en">{series.count} guides · updated {series.latestUpdated || '—'}</p>
+          <p class="seriesEyebrow lang-zh">{series.count} 篇 · 更新 {series.latestUpdated || '—'}</p>
           <h3 class="lang-en">{series.title}</h3>
           <h3 class="lang-zh">{series.titleZh}</h3>
           <p class="lang-en">{series.description}</p>
           <p class="lang-zh">{series.descriptionZh}</p>
+          <p class="lang-en contentLead"><strong>When:</strong> {series.whenToUse}</p>
+          <p class="lang-zh contentLead"><strong>何时用：</strong>{series.whenToUseZh}</p>
           <ol class="seriesList compact">
-            {series.items.map((item, index) => (
+            {series.items.slice(0, 4).map((item, index) => (
               <li>
                 <a href={item.href}>
                   <span class="seriesStep">{index + 1}</span>
@@ -96,10 +104,16 @@ const seriesList = getAllSeriesForIndex();
               </li>
             ))}
           </ol>
-          <a class="homeSectionCta" href={series.startHref}>
-            <span class="lang-en">Start series</span>
-            <span class="lang-zh">开始本系列</span>
-          </a>
+          <div class="seriesCardActions">
+            <a class="homeSectionCta" href={series.href}>
+              <span class="lang-en">Series hub</span>
+              <span class="lang-zh">系列枢纽</span>
+            </a>
+            <a class="homeSectionCta secondary" href={series.startHref}>
+              <span class="lang-en">Start reading</span>
+              <span class="lang-zh">开始阅读</span>
+            </a>
+          </div>
         </article>
       ))}
     </div>

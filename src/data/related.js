@@ -105,6 +105,7 @@ export function getRelatedArticles(article, limit = 6) {
 export function getHubLinks() {
   return [
     { href: '/articles', label: 'All articles', labelZh: '全部文章' },
+    { href: '/series', label: 'Reading series', labelZh: '阅读系列' },
     { href: '/guides', label: 'Guides', labelZh: '指南' },
     { href: '/knowledge', label: 'Knowledge base', labelZh: '知识库' },
     { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
@@ -128,6 +129,25 @@ export const ARTICLE_SERIES = [
     titleZh: '试用 → 取消 → 退款',
     description: 'Start with trial traps, set a cancel path, then prepare refund evidence if needed.',
     descriptionZh: '从试用陷阱开始，规划取消路径，必要时准备退款证据。',
+    audience: 'Anyone starting a free trial, stacking subscriptions, or needing refund evidence.',
+    audienceZh: '准备开试用、订阅堆叠，或需要退款证据的人。',
+    whenToUse: 'Before you tap Start Trial, after a quiet renewal, or when a charge looks wrong.',
+    whenToUseZh: '点“开始试用”前、静默续费后，或扣费看起来不对时。',
+    exitCriteria: [
+      'Trial end date and cancel path written down',
+      'Subscriptions list screenshot saved',
+      'Refund evidence packet ready only if needed',
+    ],
+    exitCriteriaZh: [
+      '已记下试用结束日与取消路径',
+      '已保存订阅列表截图',
+      '仅在需要时准备好退款证据包',
+    ],
+    relatedTools: [
+      { href: '/trial', label: 'Trial reminder', labelZh: '试用提醒' },
+      { href: '/subcost', label: 'Sub cost calculator', labelZh: '订阅成本' },
+      { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
+    ],
     slugs: [
       'free-trial-trap-checklist',
       'free-trial-to-paid-conversion-defense-playbook',
@@ -145,6 +165,25 @@ export const ARTICLE_SERIES = [
     titleZh: '地区与 Apple ID 研究',
     description: 'Research storefront moves and payment pitfalls before changing account region.',
     descriptionZh: '在切换账号地区前，先研究商店与支付风险。',
+    audience: 'People comparing storefronts, gift cards, or multi-region Apple ID workflows.',
+    audienceZh: '需要对比商店、礼品卡，或多区 Apple ID 流程的人。',
+    whenToUse: 'Before switching region, buying a gift card for another storefront, or opening a second Apple ID.',
+    whenToUseZh: '切区前、为其他商店买礼品卡前，或新开第二个 Apple ID 前。',
+    exitCriteria: [
+      'Payment method and balance risks listed',
+      'Official region-change screens captured',
+      'Fallback plan if the switch fails mid-way',
+    ],
+    exitCriteriaZh: [
+      '已列出支付方式与余额风险',
+      '已截取官方切区界面',
+      '中途失败有回退方案',
+    ],
+    relatedTools: [
+      { href: '/price', label: 'Price compare', labelZh: '价格对比' },
+      { href: '/guides', label: 'Guides', labelZh: '指南' },
+      { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
+    ],
     slugs: [
       'safe-region-switching',
       'compare-app-store-regions-safely',
@@ -160,6 +199,25 @@ export const ARTICLE_SERIES = [
     titleZh: '隐私标签与权限',
     description: 'Read privacy labels, refuse risky prompts, and keep signup hygiene tight.',
     descriptionZh: '读懂隐私标签，拒绝高风险权限，并保持注册卫生。',
+    audience: 'Users who want fewer tracking prompts and cleaner app signups.',
+    audienceZh: '想减少跟踪提示、保持注册卫生的用户。',
+    whenToUse: 'Before first launch, during permission prompts, or when reviewing an installed app.',
+    whenToUseZh: '首次启动前、权限弹窗时，或复盘已装应用时。',
+    exitCriteria: [
+      'Privacy label notes captured',
+      'Default refuse list for high-risk prompts',
+      'Signup email strategy chosen (Hide My Email or dedicated alias)',
+    ],
+    exitCriteriaZh: [
+      '已记录隐私标签要点',
+      '高风险权限有默认拒绝清单',
+      '注册邮箱策略已定（隐藏邮件或专用别名）',
+    ],
+    relatedTools: [
+      { href: '/risk', label: 'App risk assessor', labelZh: '风险评估' },
+      { href: '/knowledge', label: 'Knowledge base', labelZh: '知识库' },
+      { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
+    ],
     slugs: [
       'privacy-labels-and-permissions',
       'app-store-privacy-labels-how-to-read-like-an-auditor',
@@ -176,6 +234,25 @@ export const ARTICLE_SERIES = [
     titleZh: '家庭共享与意外扣费',
     description: 'Control shared purchases, Ask to Buy, Screen Time, and dispute paths.',
     descriptionZh: '管控共享购买、购买前询问、屏幕使用时间与争议路径。',
+    audience: 'Parents, organizers, or anyone sharing a payment method in Family Sharing.',
+    audienceZh: '家长、家庭组织者，或共用付款方式的人。',
+    whenToUse: 'Before adding a child device, after a surprise charge, or when setting household rules.',
+    whenToUseZh: '添加儿童设备前、出现意外扣费后，或制定家庭规则时。',
+    exitCriteria: [
+      'Ask to Buy / Screen Time purchase locks verified',
+      'Shared-payment ownership written down',
+      'Dispute path agreed before the next charge',
+    ],
+    exitCriteriaZh: [
+      '已核验购买前询问 / 屏幕使用时间购买限制',
+      '共用支付归属已写明',
+      '下次扣费前已约定争议路径',
+    ],
+    relatedTools: [
+      { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
+      { href: '/risk', label: 'App risk assessor', labelZh: '风险评估' },
+      { href: '/guides', label: 'Guides', labelZh: '指南' },
+    ],
     slugs: [
       'family-sharing-purchase-safety',
       'child-device-app-install-rules',
@@ -190,6 +267,25 @@ export const ARTICLE_SERIES = [
     titleZh: '安装安全与配置描述文件',
     description: 'Spot low-quality listings, profile/VPN risks, and unofficial install narratives.',
     descriptionZh: '识别低质上架、配置描述文件/VPN 风险与非官方安装话术。',
+    audience: 'Anyone installing free apps, VPN clients, TestFlight builds, or configuration profiles.',
+    audienceZh: '安装免费应用、VPN、TestFlight 构建或配置描述文件的人。',
+    whenToUse: 'Before installing a free app, accepting a profile, or following sideload instructions.',
+    whenToUseZh: '安装免费应用、接受配置描述文件，或跟随旁加载说明前。',
+    exitCriteria: [
+      'Listing red flags reviewed',
+      'Profile / certificate install refused by default',
+      'Only official install paths remain',
+    ],
+    exitCriteriaZh: [
+      '已检查上架红旗',
+      '配置描述文件 / 证书默认拒绝安装',
+      '只保留官方安装路径',
+    ],
+    relatedTools: [
+      { href: '/risk', label: 'App risk assessor', labelZh: '风险评估' },
+      { href: '/appfree', label: 'Free apps', labelZh: '限免应用' },
+      { href: '/guides', label: 'Guides', labelZh: '指南' },
+    ],
     slugs: [
       'spot-low-quality-app-store-listings',
       'when-not-to-install-free-apps',
@@ -205,6 +301,26 @@ export const ARTICLE_SERIES = [
     titleZh: '付款前研究流程',
     description: 'Compare prices, IAP, paid vs subscription, and a full research workflow.',
     descriptionZh: '价格对比、内购、买断 vs 订阅，以及完整研究流程。',
+    audience: 'Buyers who want a short research loop before paid apps or subscriptions.',
+    audienceZh: '付款前想先走完短研究流程的购买者。',
+    whenToUse: 'Before checkout, when choosing paid vs subscription, or auditing purchase history.',
+    whenToUseZh: '结算前、在买断与订阅之间选择时，或审计购买记录时。',
+    exitCriteria: [
+      'Price and IAP notes captured',
+      'Paid vs subscription decision written',
+      'Official checkout screen confirmed last',
+    ],
+    exitCriteriaZh: [
+      '已记录价格与内购要点',
+      '买断 vs 订阅决策已写下',
+      '最后以官方结算页确认',
+    ],
+    relatedTools: [
+      { href: '/price', label: 'Price compare', labelZh: '价格对比' },
+      { href: '/subcost', label: 'Sub cost calculator', labelZh: '订阅成本' },
+      { href: '/iap', label: 'IAP research', labelZh: '内购研究' },
+      { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
+    ],
     slugs: [
       'app-store-research-workflow',
       'app-store-price-check-before-buying',
@@ -220,60 +336,82 @@ function articleBySlug(slug) {
   return articles.find((item) => item.slug === slug) || null;
 }
 
+export function getSeriesPath(seriesOrId) {
+  const id = typeof seriesOrId === 'string' ? seriesOrId : seriesOrId?.id;
+  return id ? `/series/${id}` : '/articles';
+}
+
+function hydrateSeries(series) {
+  const items = series.slugs
+    .map((slug) => articleBySlug(slug))
+    .filter(Boolean)
+    .map((item) => ({
+      slug: item.slug,
+      href: getArticlePath(item),
+      title: item.title,
+      titleZh: item.titleZh || item.title,
+      description: item.description,
+      descriptionZh: item.descriptionZh || item.description,
+      category: item.category,
+      readTime: item.readTime,
+      updatedAt: item.updatedAt || item.publishedAt,
+    }));
+
+  const latestUpdated = items
+    .map((item) => item.updatedAt)
+    .filter(Boolean)
+    .sort()
+    .at(-1) || null;
+
+  return {
+    id: series.id,
+    title: series.title,
+    titleZh: series.titleZh,
+    description: series.description,
+    descriptionZh: series.descriptionZh,
+    audience: series.audience || '',
+    audienceZh: series.audienceZh || '',
+    whenToUse: series.whenToUse || '',
+    whenToUseZh: series.whenToUseZh || '',
+    exitCriteria: series.exitCriteria || [],
+    exitCriteriaZh: series.exitCriteriaZh || [],
+    relatedTools: series.relatedTools || [],
+    href: getSeriesPath(series),
+    items,
+    count: items.length,
+    startHref: items[0]?.href || '/articles',
+    latestUpdated,
+  };
+}
+
 export function getArticleSeries(article) {
   if (!article?.slug) return null;
   for (const series of ARTICLE_SERIES) {
     const index = series.slugs.indexOf(article.slug);
     if (index === -1) continue;
 
-    const items = series.slugs
-      .map((slug) => articleBySlug(slug))
-      .filter(Boolean)
-      .map((item) => ({
-        slug: item.slug,
-        href: getArticlePath(item),
-        title: item.title,
-        titleZh: item.titleZh || item.title,
-      }));
-
-    const currentIndex = items.findIndex((item) => item.slug === article.slug);
+    const hydrated = hydrateSeries(series);
+    const currentIndex = hydrated.items.findIndex((item) => item.slug === article.slug);
     if (currentIndex === -1) return null;
 
     return {
-      id: series.id,
-      title: series.title,
-      titleZh: series.titleZh,
-      description: series.description,
-      descriptionZh: series.descriptionZh,
+      ...hydrated,
       position: currentIndex + 1,
-      total: items.length,
-      items,
-      prev: currentIndex > 0 ? items[currentIndex - 1] : null,
-      next: currentIndex < items.length - 1 ? items[currentIndex + 1] : null,
+      total: hydrated.items.length,
+      prev: currentIndex > 0 ? hydrated.items[currentIndex - 1] : null,
+      next: currentIndex < hydrated.items.length - 1 ? hydrated.items[currentIndex + 1] : null,
     };
   }
   return null;
 }
 
+export function getSeriesById(id) {
+  const series = ARTICLE_SERIES.find((item) => item.id === id);
+  if (!series) return null;
+  const hydrated = hydrateSeries(series);
+  return hydrated.items.length ? hydrated : null;
+}
+
 export function getAllSeriesForIndex() {
-  return ARTICLE_SERIES.map((series) => {
-    const items = series.slugs
-      .map((slug) => articleBySlug(slug))
-      .filter(Boolean)
-      .map((item) => ({
-        slug: item.slug,
-        href: getArticlePath(item),
-        title: item.title,
-        titleZh: item.titleZh || item.title,
-      }));
-    return {
-      id: series.id,
-      title: series.title,
-      titleZh: series.titleZh,
-      description: series.description,
-      descriptionZh: series.descriptionZh,
-      items,
-      startHref: items[0]?.href || '/articles',
-    };
-  }).filter((series) => series.items.length > 0);
+  return ARTICLE_SERIES.map(hydrateSeries).filter((series) => series.items.length > 0);
 }

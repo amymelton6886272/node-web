@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import { SITE } from '../astro/site.js';
 import { articles, getArticlePath } from '../data/articles.js';
+import { getAllSeriesForIndex } from '../data/related.js';
 
 export const prerender = true;
 
@@ -22,6 +23,22 @@ const FEATURED_SLUGS = [
   'ios-subscription-traps-and-five-permissions-to-refuse',
 ];
 
+/** Short Chinese blurb under featured cards (not the full description). */
+const FEATURED_BLURB_ZH = {
+  'app-store-research-workflow': '付款前先走完研究环，再点购买。',
+  'free-trial-trap-checklist': '开试用前先记下结束日与取消路径。',
+  'family-sharing-purchase-safety': '共用卡与儿童设备先锁购买权限。',
+  'app-store-refund-request-checklist': '退款前整理证据与时间窗口。',
+  'ios-vpn-profile-and-certificate-risks': '配置描述文件默认不装。',
+  'safe-region-switching': '切区前先核支付与余额风险。',
+  'privacy-labels-and-permissions': '隐私标签与高风险权限先过一遍。',
+  'screen-time-purchase-controls': '屏幕使用时间挡住冲动购买。',
+  'when-paid-app-beats-subscription': '买断 vs 订阅先算再用。',
+  'us-apple-id-registration-and-payment-research-2026': '美区注册与支付陷阱研究。',
+  'child-device-app-install-rules': '儿童设备安装规则先写清。',
+  'ios-subscription-traps-and-five-permissions-to-refuse': '订阅陷阱 + 五项默认拒绝。',
+};
+
 const bySlug = Object.fromEntries(articles.map((a) => [a.slug, a]));
 const curated = FEATURED_SLUGS.map((s) => bySlug[s]).filter(Boolean);
 const byRecency = [...articles].sort((a, b) =>
@@ -31,6 +48,7 @@ const seen = new Set(curated.map((a) => a.slug));
 const fill = byRecency.filter((a) => !seen.has(a.slug));
 const featuredDeep = [...curated, ...fill].slice(0, 8);
 const moreArticles = [...curated, ...fill].slice(8, 14);
+const seriesList = getAllSeriesForIndex();
 
 const hubs = [
   {
@@ -40,6 +58,14 @@ const hubs = [
     labelZh: '文章',
     desc: 'Long-form research playbooks',
     descZh: '长文研究与实操手册',
+  },
+  {
+    href: '/series',
+    icon: 'S',
+    label: 'Series',
+    labelZh: '系列',
+    desc: 'Ordered reading paths',
+    descZh: '有序阅读路径',
   },
   {
     href: '/knowledge',
@@ -72,14 +98,6 @@ const hubs = [
     labelZh: '应用风险',
     desc: 'Permission risk review',
     descZh: '权限与风险点自查',
-  },
-  {
-    href: '/glossary',
-    icon: 'T',
-    label: 'Glossary',
-    labelZh: '术语表',
-    desc: 'Plain definitions',
-    descZh: '术语白话释义',
   },
 ];
 
@@ -245,6 +263,37 @@ const trustLinks = [
     </div>
   </section>
 
+  <section class="richSection card homeSeries" aria-label="Reading series">
+    <div class="homeSectionHead">
+      <div>
+        <h2 class="lang-en">Reading series</h2>
+        <h2 class="lang-zh">阅读系列</h2>
+        <p class="lang-en contentLead">Six ordered paths. Open a series hub, then follow prev/next guides for one decision flow.</p>
+        <p class="lang-zh contentLead">六条有序路径。先打开系列枢纽，再按上一篇/下一篇走完同一决策流。</p>
+      </div>
+      <a class="homeSectionCta" href="/series">
+        <span class="lang-en">All series</span>
+        <span class="lang-zh">全部系列</span>
+      </a>
+    </div>
+    <div class="seriesIndexGrid homeSeriesGrid">
+      {seriesList.map((series) => (
+        <article class="seriesIndexCard">
+          <p class="seriesEyebrow lang-en">{series.count} guides</p>
+          <p class="seriesEyebrow lang-zh">{series.count} 篇</p>
+          <h3 class="lang-en">{series.title}</h3>
+          <h3 class="lang-zh">{series.titleZh}</h3>
+          <p class="lang-en">{series.description}</p>
+          <p class="lang-zh">{series.descriptionZh}</p>
+          <a class="homeSectionCta" href={series.href}>
+            <span class="lang-en">Open series</span>
+            <span class="lang-zh">打开系列</span>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+
   <section class="richSection card homeDeepGuides">
     <div class="homeSectionHead">
       <div>
@@ -268,7 +317,7 @@ const trustLinks = [
           <h3 class="lang-en">{article.title}</h3>
           <h3 class="lang-zh">{article.titleZh}</h3>
           <p class="lang-en">{article.description}</p>
-          <p class="lang-zh">{article.descriptionZh}</p>
+          <p class="lang-zh homeFeaturedBlurbZh">{FEATURED_BLURB_ZH[article.slug] || article.descriptionZh}</p>
           <div class="homeArticleMeta">
             <span class="lang-en">Updated {article.updatedAt}</span>
             <span class="lang-zh">更新于 {article.updatedAt}</span>

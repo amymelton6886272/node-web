@@ -15,6 +15,7 @@ export const navItems = [
 export const sidebarItems = [
   // Content first — long-form reading before utilities
   { href: '/articles', label: 'Articles', labelZh: '文章', icon: 'R', desc: 'Research guides & playbooks', descZh: '研究指南与实操手册' },
+  { href: '/series', label: 'Series', labelZh: '系列', icon: 'S', desc: 'Ordered reading paths', descZh: '有序阅读路径' },
   { href: '/knowledge', label: 'Knowledge', labelZh: '知识库', icon: 'K', desc: 'Concepts and explainers', descZh: '常见概念与基础说明' },
   { href: '/guides', label: 'Guides', labelZh: '指南', icon: 'G', desc: 'Step-by-step help', descZh: '按步骤完成常见任务' },
   // Decide next — decision aids
@@ -33,17 +34,17 @@ export const sidebarGroups = [
   {
     label: 'Content',
     labelZh: '内容',
-    items: sidebarItems.slice(0, 3),
+    items: sidebarItems.slice(0, 4),
   },
   {
     label: 'Decide',
     labelZh: '决策',
-    items: sidebarItems.slice(3, 6),
+    items: sidebarItems.slice(4, 7),
   },
   {
     label: 'Tools',
     labelZh: '工具',
-    items: sidebarItems.slice(6),
+    items: sidebarItems.slice(7),
   },
 ];
 

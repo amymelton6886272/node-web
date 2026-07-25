@@ -2,39 +2,49 @@ import { writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { articles } from '../src/data/articles.js';
+import { getAllSeriesForIndex } from '../src/data/related.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = join(__dirname, '..');
 const SITE = 'https://souk.eu.org';
+const TODAY = new Date().toISOString().slice(0, 10);
 
 const staticRoutes = [
-  { path: '/', changefreq: 'weekly', priority: '1.0', lastmod: '2026-07-19' },
-  { path: '/about', changefreq: 'monthly', priority: '0.8', lastmod: '2026-07-19' },
-  { path: '/contact', changefreq: 'monthly', priority: '0.7', lastmod: '2026-07-19' },
-  { path: '/privacy', changefreq: 'monthly', priority: '0.6', lastmod: '2026-07-19' },
-  { path: '/disclaimer', changefreq: 'monthly', priority: '0.5', lastmod: '2026-07-19' },
-  { path: '/terms', changefreq: 'monthly', priority: '0.6', lastmod: '2026-07-19' },
-  { path: '/editorial', changefreq: 'monthly', priority: '0.5', lastmod: '2026-07-19' },
-  { path: '/data-sources', changefreq: 'monthly', priority: '0.5', lastmod: '2026-07-19' },
-  { path: '/price', changefreq: 'weekly', priority: '0.9', lastmod: '2026-07-19' },
-  { path: '/appfree', changefreq: 'daily', priority: '0.9', lastmod: '2026-07-19' },
-  { path: '/iap', changefreq: 'weekly', priority: '0.8', lastmod: '2026-07-19' },
-  { path: '/icon', changefreq: 'weekly', priority: '0.7', lastmod: '2026-07-19' },
-  { path: '/guides', changefreq: 'weekly', priority: '0.9', lastmod: '2026-07-19' },
-  { path: '/knowledge', changefreq: 'weekly', priority: '0.9', lastmod: '2026-07-19' },
-  { path: '/articles', changefreq: 'weekly', priority: '0.9', lastmod: '2026-07-19' },
-  { path: '/checklists', changefreq: 'weekly', priority: '0.8', lastmod: '2026-07-19' },
-  { path: '/glossary', changefreq: 'monthly', priority: '0.7', lastmod: '2026-07-05' },
-  { path: '/risk', changefreq: 'monthly', priority: '0.7', lastmod: '2026-07-19' },
-  { path: '/subcost', changefreq: 'weekly', priority: '0.9', lastmod: '2026-07-19' },
-  { path: '/trial', changefreq: 'weekly', priority: '0.9', lastmod: '2026-07-19' },
+  { path: '/', changefreq: 'weekly', priority: '1.0', lastmod: TODAY },
+  { path: '/about', changefreq: 'monthly', priority: '0.8', lastmod: TODAY },
+  { path: '/contact', changefreq: 'monthly', priority: '0.7', lastmod: TODAY },
+  { path: '/privacy', changefreq: 'monthly', priority: '0.6', lastmod: TODAY },
+  { path: '/disclaimer', changefreq: 'monthly', priority: '0.5', lastmod: TODAY },
+  { path: '/terms', changefreq: 'monthly', priority: '0.6', lastmod: TODAY },
+  { path: '/editorial', changefreq: 'monthly', priority: '0.5', lastmod: TODAY },
+  { path: '/data-sources', changefreq: 'monthly', priority: '0.5', lastmod: TODAY },
+  { path: '/price', changefreq: 'weekly', priority: '0.9', lastmod: TODAY },
+  { path: '/appfree', changefreq: 'daily', priority: '0.9', lastmod: TODAY },
+  { path: '/iap', changefreq: 'weekly', priority: '0.8', lastmod: TODAY },
+  { path: '/icon', changefreq: 'weekly', priority: '0.7', lastmod: TODAY },
+  { path: '/guides', changefreq: 'weekly', priority: '0.9', lastmod: TODAY },
+  { path: '/knowledge', changefreq: 'weekly', priority: '0.9', lastmod: TODAY },
+  { path: '/articles', changefreq: 'weekly', priority: '0.9', lastmod: TODAY },
+  { path: '/series', changefreq: 'weekly', priority: '0.9', lastmod: TODAY },
+  { path: '/checklists', changefreq: 'weekly', priority: '0.8', lastmod: TODAY },
+  { path: '/glossary', changefreq: 'monthly', priority: '0.7', lastmod: TODAY },
+  { path: '/risk', changefreq: 'monthly', priority: '0.7', lastmod: TODAY },
+  { path: '/subcost', changefreq: 'weekly', priority: '0.9', lastmod: TODAY },
+  { path: '/trial', changefreq: 'weekly', priority: '0.9', lastmod: TODAY },
 ];
+
+const seriesRoutes = getAllSeriesForIndex().map((series) => ({
+  path: series.href,
+  changefreq: 'weekly',
+  priority: '0.85',
+  lastmod: series.latestUpdated || TODAY,
+}));
 
 const articleRoutes = articles.map((article) => ({
   path: `/articles/${article.slug}`,
   changefreq: 'monthly',
   priority: '0.8',
-  lastmod: article.updatedAt,
+  lastmod: article.updatedAt || TODAY,
 }));
 
 function xmlEscape(value) {
@@ -46,7 +56,7 @@ function xmlEscape(value) {
     .replaceAll("'", '&apos;');
 }
 
-const urls = [...staticRoutes, ...articleRoutes]
+const urls = [...staticRoutes, ...seriesRoutes, ...articleRoutes]
   .map(({ path, lastmod, changefreq, priority }) => [
     '  <url>',
     `    <loc>${xmlEscape(SITE + path)}</loc>`,
@@ -65,4 +75,4 @@ ${urls}
 
 const outPath = join(projectRoot, 'public', 'sitemap.xml');
 writeFileSync(outPath, sitemap, 'utf8');
-console.log(`Generated ${outPath}`);
+console.log(`Generated ${outPath} (${staticRoutes.length + seriesRoutes.length + articleRoutes.length} URLs)`);

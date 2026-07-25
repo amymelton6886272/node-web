@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import { SITE } from '../../astro/site.js';
+import { getAllSeriesForIndex, getHubLinks } from '../../data/related.js';
+
+export const prerender = true;
+
+const seriesList = getAllSeriesForIndex();
+const hubLinks = getHubLinks().filter((link) => !['/articles', '/series'].includes(link.href)).slice(0, 8);
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Storewise reading series',
+  itemListElement: seriesList.map((series, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: series.title,
+    url: `${SITE}${series.href}`,
+  })),
+};
+---
+<BaseLayout
+  title="Reading series - Storewise"
+  description="Ordered App Store research paths for free trials, family charges, privacy labels, region changes, install safety, and purchase research."
+  path="/series"
+  breadcrumbs={[
+    { name: 'Home', item: SITE },
+    { name: 'Series', item: `${SITE}/series` },
+  ]}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+  </Fragment>
+
+  <Hero
+    title="Reading series"
+    titleZh="阅读系列"
+    sub="Six ordered research paths. Start with the decision, follow the sequence, and only open a tool when a number or deadline helps."
+    subZh="六条有序研究路径。从决策出发，按顺序读完，只有数字或截止日有用时再开工具。"
+    eyebrow="Content hubs"
+    eyebrowZh="内容枢纽"
+  />
+
+  <section class="articleToolbar card">
+    <div class="lang-en">
+      <h2>Why series pages exist</h2>
+      <p>
+        Isolated posts are easy to bounce through. Each series is a crawlable hub with audience, exit criteria, and the next guide already chosen — so research stays sequential instead of random.
+      </p>
+    </div>
+    <div class="lang-zh">
+      <h2>为什么做系列页</h2>
+      <p lang="zh-CN">
+        孤立文章容易跳读。每个系列都是可抓取的枢纽：写清受众、退出条件与下一篇，研究路径保持有序而不是随机跳转。
+      </p>
+    </div>
+  </section>
+
+  <section class="richSection card homeSeries" aria-label="All reading series">
+    <div class="homeSectionHead">
+      <div>
+        <h2 class="lang-en">All series</h2>
+        <h2 class="lang-zh">全部系列</h2>
+        <p class="lang-en contentLead">{seriesList.length} decision paths covering trials, family money, privacy, region research, install safety, and purchase workflow.</p>
+        <p class="lang-zh contentLead">{seriesList.length} 条决策路径，覆盖试用、家庭金钱、隐私、地区研究、安装安全与购买流程。</p>
+      </div>
+      <a class="homeSectionCta" href="/articles">
+        <span class="lang-en">All articles</span>
+        <span class="lang-zh">全部文章</span>
+      </a>
+    </div>
+    <div class="seriesIndexGrid">
+      {seriesList.map((series) => (
+        <article class="seriesIndexCard">
+          <p class="seriesEyebrow lang-en">{series.count} guides · updated {series.latestUpdated || '—'}</p>
+          <p class="seriesEyebrow lang-zh">{series.count} 篇 · 更新 {series.latestUpdated || '—'}</p>
+          <h3 class="lang-en">{series.title}</h3>
+          <h3 class="lang-zh">{series.titleZh}</h3>
+          <p class="lang-en">{series.description}</p>
+          <p class="lang-zh">{series.descriptionZh}</p>
+          <p class="lang-en contentLead"><strong>When:</strong> {series.whenToUse}</p>
+          <p class="lang-zh contentLead"><strong>何时用：</strong>{series.whenToUseZh}</p>
+          <ol class="seriesList compact">
+            {series.items.slice(0, 4).map((item, index) => (
+              <li>
+                <a href={item.href}>
+                  <span class="seriesStep">{index + 1}</span>
+                  <span class="lang-en">{item.title}</span>
+                  <span class="lang-zh">{item.titleZh}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+          {series.items.length > 4 && (
+            <p class="lang-en contentLead">+{series.items.length - 4} more in the full series page.</p>
+          )}
+          {series.items.length > 4 && (
+            <p class="lang-zh contentLead">系列页还有 +{series.items.length - 4} 篇。</p>
+          )}
+          <div class="seriesCardActions">
+            <a class="homeSectionCta" href={series.href}>
+              <span class="lang-en">Open series hub</span>
+              <span class="lang-zh">打开系列枢纽</span>
+            </a>
+            <a class="homeSectionCta secondary" href={series.startHref}>
+              <span class="lang-en">Start reading</span>
+              <span class="lang-zh">开始阅读</span>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="relatedBlock card" aria-label="Related hubs">
+    <div class="homeSectionHead" style="margin-bottom:12px;">
+      <div>
+        <h2 class="lang-en">Nearby hubs</h2>
+        <h2 class="lang-zh">附近枢纽</h2>
+      </div>
+    </div>
+    <div class="contentLinks" style="border-top:0;margin-top:0;padding-top:0;">
+      {hubLinks.map((link) => (
+        <a href={link.href}>
+          <span class="lang-en">{link.label}</span>
+          <span class="lang-zh">{link.labelZh}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
