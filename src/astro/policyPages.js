@@ -22,6 +22,10 @@ export const policyPages = {
       { title: 'Independence and conflicts of interest', titleZh: '独立性与利益冲突', text: 'Storewise does not sell App Store accounts, gift-card arbitrage services, or paid region-switching. When advertising is present, ad delivery is separate from editorial ranking of guides. Product mentions, if any, should be readable as research notes with limitations stated nearby. Readers should still verify every price and policy on official surfaces.', textZh: 'Storewise 不出售 App Store 账号、礼品卡套利或付费切区服务。若有广告，投放与指南编辑排序分开。若出现产品提及，应作为带限制说明的研究笔记阅读。价格与政策仍须在官方界面核验。' },
 
       { title: 'Product focus after simplification', titleZh: '精简后的产品焦点', text: 'Storewise concentrates on App Store purchase research: prices, trials, subscription cost, free-app evaluation, risk review, checklists, and long-form guides. Removing low-fit utilities keeps the site coherent for readers who need decision help before they pay.', textZh: 'Storewise 集中于 App Store 购买研究：价格、试用、订阅成本、限免评估、风险审查、清单与长文指南。去掉不契合的工具，让需要在付款前做决策的读者看到更一致的站点。' },
+
+      { title: 'How to use the site in one pass', titleZh: '如何一次用完本站', text: '1) Open Articles or a series that matches your decision. 2) Write a one-sentence goal and a stop rule. 3) Use a checklist if money or family devices are involved. 4) Only then open a calculator or reminder if a number helps. 5) Finish on official Apple screens with screenshots. That order keeps tools from becoming impulse shopping.', textZh: '1）打开文章或匹配你决策的系列。2）写一句目标与一条停止规则。3）涉及金钱或家庭设备时用清单。4）只有数字有帮助时再打开计算器或提醒。5）在官方 Apple 界面收尾并截图。这顺序避免工具变成冲动购物。' },
+
+      { title: 'Content quality bar for guides', titleZh: '指南内容质量门槛', text: 'Research notes aim for unique section structure, household scenarios, and exit conditions a reader can finish the same day. Formula templates and thin tool shells are treated as quality bugs. When platform UI labels change, the concept and verification step stay even if a menu path needs a later edit.', textZh: '研究笔记追求独特章节结构、家庭场景，以及读者当天能完成的退出条件。公式模板与薄工具壳视为质量缺陷。当平台界面文案变化时，概念与验证步骤仍保留，菜单路径可稍后修订。' },
 ],
     checklist: {
       title: 'What you can expect here',
@@ -131,6 +135,10 @@ export const policyPages = {
       { title: 'Independent research boundaries', titleZh: '独立研究边界', text: 'Storewise pages summarize recurring purchase and safety workflows for education. They cannot guarantee refund outcomes, region switch success, malware absence, or subscription savings. Readers should treat every guide as decision support and keep official receipts when money is involved.', textZh: 'Storewise 页面概括反复出现的购买与安全流程，用于教育。不能保证退款结果、切区成功、无恶意软件或订阅省钱。请把每篇指南当决策支持，涉及金钱时保留官方收据。' },
 
       { title: 'No account brokerage or gift-card dealing', titleZh: '不做账号中介或礼品卡交易', text: 'The site does not sell Apple IDs, gift cards, paid region-switch services, or captcha/farm access. Any third-party chat offer that claims otherwise is not Storewise. Report impersonation through official platform channels.', textZh: '本站不出售 Apple ID、礼品卡、付费切区服务或打码/养号资源。任何第三方聊天声称与此相关均非 Storewise。冒充请通过官方平台渠道举报。' },
+
+      { title: 'Household money decisions remain yours', titleZh: '家庭金钱决策仍由你负责', text: 'Shared cards, Ask to Buy, Screen Time, and refund filings involve people and institutions this site cannot control. Guides suggest roles, packets, and verification dates so households fight less and document more. They do not replace adult judgment, bank policy, or Apple review outcomes.', textZh: '共用卡、购买前询问、屏幕使用时间与退款提交涉及本站无法控制的人与机构。指南建议角色、材料包与验证日期，让家庭少争吵、多记录。它们不替代成人判断、银行政策或 Apple 审核结果。' },
+
+      { title: 'Screenshots and evidence hygiene', titleZh: '截图与证据卫生', text: 'For refunds, region research, and family disputes, keep Purchase History lines, bank descriptors, and Settings screenshots with dates. Storewise cannot store those for you. Evidence quality usually matters more than long emotional explanations when you escalate.', textZh: '退款、切区研究与家庭争议请保留带日期的购买记录行、银行描述与设置截图。Storewise 不能替你保存。升级处理时证据质量通常比长情绪说明更重要。' },
 ],
   },
   terms: {
@@ -197,6 +205,10 @@ export const policyPages = {
       { title: 'How topics are chosen', titleZh: '主题如何选择', text: 'Topics come from repeated reader questions and common expensive mistakes: trial traps, family charges, privacy overreach, and confusing storefront pricing. We prioritize workflows a household can finish in one sitting over theoretical essays.', textZh: '主题来自反复出现的读者问题与高成本错误：试用陷阱、家庭扣费、隐私越权与混乱的店面定价。优先家庭一次性能做完的流程，而不是纯理论长文。' },
 
       { title: 'Language and bilingual publishing', titleZh: '语言与双语发布', text: 'Major guides are maintained in English and Chinese. When a UI label differs by region, we prefer the concept over a brittle screenshot caption. If a translation lags, the English research note remains the fuller technical reference until both sides match.', textZh: '主要指南维护中英双语。当界面文案因地区不同时，优先讲清概念而不是脆的截图说明。若译文滞后，在两侧对齐前以英文研究笔记作为更完整的技术参考。' },
+
+      { title: 'Series and internal linking', titleZh: '系列与内链', text: 'Articles are grouped into reading series such as trials-to-refund, family charges, privacy permissions, region research, install safety, and before-you-pay workflow. Related links prefer the same series so readers finish a decision path instead of bouncing across random titles. Series are editorial navigation, not paid placement.', textZh: '文章按阅读系列分组，例如试用到退款、家庭扣费、隐私权限、地区研究、安装安全与付款前流程。相关链接优先同系列，让读者走完决策路径而不是在随机标题间跳。系列是编辑导航，不是付费位。' },
+
+      { title: 'What we refuse to publish', titleZh: '我们拒绝发布什么', text: 'We do not publish finished-account markets, gift-card dealing desks, captcha farms, or instructions intended to evade Apple policy for fraud. Scam-pattern articles exist to help readers refuse those paths. If a request asks for that kind of content, it will be declined.', textZh: '我们不发布成品账号市场、礼品卡交易柜台、打码农场，或旨在为欺诈规避 Apple 政策的说明。诈骗模式文章存在是为了帮助读者拒绝那些路径。若请求属于此类内容，将被拒绝。' },
 ],
   },
   'data-sources': {
@@ -221,6 +233,10 @@ export const policyPages = {
       { title: 'Primary public sources', titleZh: '主要公开来源', text: 'App names, prices, icons, and public IAP markers come from Apple public metadata endpoints and storefront pages. Promotional free-app clues may come from public feeds that change quickly. Safety guidance is based on hands-on workflow testing and publicly documented Apple account surfaces such as Settings subscriptions and Report a Problem.', textZh: '应用名、价格、图标与公开内购标记来自 Apple 公开元数据接口与店面页面。限免线索可能来自变化很快的公开源。安全指导基于实际流程测试，以及订阅设置、Report a Problem 等公开的 Apple 账号界面。' },
 
       { title: 'What we no longer operate as product tools', titleZh: '哪些已不再作为产品工具运营', text: 'Storewise focuses on App Store purchase research. Network exit lookup and synthetic address generation are not product entry points on this site. Historical mentions in older notes should not be read as active features. Current tools are listed in the site navigation under Tools.', textZh: 'Storewise 聚焦 App Store 购买研究。网络出口查询与合成地址生成不是本站产品入口。旧笔记中的历史提及不应理解为仍在运营的功能。当前工具见导航中的工具分组。' },
+
+      { title: 'How to interpret empty tool results', titleZh: '如何理解空工具结果', text: 'An empty free-app list, missing IAP parse, or failed price row is a data state, not a recommendation to invent a price. Read the surrounding explanation, try official App Store pages, and treat Storewise as a map when feeds lag. Empty states intentionally keep educational copy so the page is never only a blank form.', textZh: '空限免列表、内购解析失败或价格行失败是数据状态，不是发明价格的建议。阅读周围说明，尝试官方 App Store 页面，并在源滞后时把 Storewise 当地图。空状态故意保留教育文案，让页面从不是空白表单。' },
+
+      { title: 'Reader verification loop', titleZh: '读者核验环', text: 'For any money decision: capture the official checkout or Settings surface, compare it with the research note, and keep a next verification date. Storewise cannot replace that loop. When official UI and a guide disagree, official wins and a correction report is welcome.', textZh: '任何金钱决策：截取官方结算或设置界面，与研究笔记对照，并保留下次验证日。Storewise 不能替代该环。当官方 UI 与指南不一致时，官方优先，也欢迎提交更正。' },
 ],
   },
 };

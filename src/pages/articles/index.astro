@@ -8,12 +8,12 @@ import { getHubLinks, getAllSeriesForIndex } from '../../data/related.js';
 export const prerender = true;
 
 const FEATURED_SLUGS = [
+  'app-store-research-workflow',
   'free-trial-trap-checklist',
-  'spot-subscription-fatigue-apps',
   'family-sharing-purchase-safety',
-  'when-not-to-install-free-apps',
-  'cancel-apple-subscription-step-by-step',
-  'app-store-price-check-before-buying',
+  'app-store-refund-request-checklist',
+  'ios-vpn-profile-and-certificate-risks',
+  'safe-region-switching',
 ];
 const bySlug = Object.fromEntries(articles.map((a) => [a.slug, a]));
 const curated = FEATURED_SLUGS.map((s) => bySlug[s]).filter(Boolean);

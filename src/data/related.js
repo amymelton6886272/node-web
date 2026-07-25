@@ -74,11 +74,14 @@ export function getRelatedTools(article, limit = 4) {
 export function getRelatedArticles(article, limit = 6) {
   const tags = new Set((article.tags || []).map((t) => String(t).toLowerCase()));
   const category = String(article.category || '').toLowerCase();
+  const series = getArticleSeries(article);
+  const seriesSlugs = new Set((series?.items || []).map((item) => item.slug));
 
   const scored = articles
     .filter((item) => item.slug !== article.slug)
     .map((item) => {
       let score = 0;
+      if (seriesSlugs.has(item.slug)) score += 8;
       if (String(item.category || '').toLowerCase() === category) score += 3;
       for (const tag of item.tags || []) {
         if (tags.has(String(tag).toLowerCase())) score += 2;
