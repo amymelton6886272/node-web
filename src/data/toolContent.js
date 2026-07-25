@@ -93,8 +93,8 @@ export const toolContent = {
       linksLabel: 'Related reading'
     },
     guides: {
-      title: 'App Store guides hub: research before you pay',
-      intro: 'This hub organizes practical App Store workflows for subscriptions, free trials, family devices, privacy labels, refunds, and region decisions. Read a topic overview first, then open the matching checklist, tool, or long-form research note.',
+      title: 'App Store guides hub: read the decision first',
+      intro: 'This hub maps App Store decisions—trials, family charges, permissions, refunds, and region research—before any tool. Start from the problem you have today, open the matching long-form article or checklist, and only then use a calculator or reminder if a number helps.',
       items: [
         { heading: 'How to use this hub', text: 'Start with the decision you face today: cancel a trial, compare a price, review a child install, or prepare a refund packet. Use the topic cards below as a map, not as a dump of links. Each path points to a deeper article series and a tool you can run in the browser.' },
         { heading: 'Subscription and trial paths', text: 'Weekly plans look cheap until annualized. Before you tap Start Trial, write the first charge date, cancel path, and post-trial yearly cost. Pair the trial reminder tool with the free-trial trap checklist and the after-trial management guide.' },
@@ -105,12 +105,12 @@ export const toolContent = {
         { heading: 'Reading order for new visitors', text: '1) research workflow article, 2) free-trial trap checklist, 3) subscription cost calculator, 4) family purchase safety, 5) privacy labels guide. That sequence covers most expensive mistakes without reading every page on day one.' },
         { heading: 'What this hub is not', text: 'These guides are independent research notes. They do not reverse charges, change Apple policy, or replace official documentation. When a tool feed is empty, the explanations and linked articles still stand on their own.' }
       ],
-      links: [{ href: '/articles', label: 'All research notes' }, { href: '/checklists', label: 'Decision checklists' }, { href: '/knowledge', label: 'Knowledge base' }, { href: '/subcost', label: 'Sub cost calculator' }, { href: '/trial', label: 'Trial reminder' }],
+      links: [{ href: '/articles', label: 'All research notes' }, { href: '/checklists', label: 'Decision checklists' }, { href: '/knowledge', label: 'Knowledge base' }, { href: '/articles/free-trial-trap-checklist', label: 'Free trial playbook' }, { href: '/articles/family-sharing-purchase-safety', label: 'Family purchase safety' }],
       linksLabel: 'Continue with'
     },
     knowledge: {
       title: 'Apple safety knowledge base: concepts before clicks',
-      intro: 'The knowledge base explains recurring App Store and iOS safety concepts in plain language: permissions, privacy labels, subscriptions, refunds, family controls, and common scam patterns. Use it when you need definitions and context before running a tool.',
+      intro: 'Plain-language definitions for permissions, privacy labels, subscriptions, refunds, family controls, and scam patterns. Use this hub when you need vocabulary and context before a long-form article or any optional tool.',
       items: [
         { heading: 'Why concepts matter more than one-off tips', text: 'App Store mistakes repeat because the same concepts are misunderstood: trial is not free forever, delete is not cancel, free install is not free to own, and a privacy label row is not a marketing badge. This page keeps those definitions stable while tools change.' },
         { heading: 'Permissions and tracking', text: 'Contacts, photos, microphone, camera, and precise location are high-cost permissions for low-value jobs. Tracking rows on Privacy labels deserve a pause. Prefer Allow Once and revoke after the task ends, especially on child devices.' },
@@ -235,8 +235,8 @@ export const toolContent = {
       linksLabel: '相关阅读'
     },
     guides: {
-      title: 'App Store 指南中心：付款前先研究',
-      intro: '本中心整理订阅、免费试用、家庭设备、隐私标签、退款与切区等实用流程。先读主题概览，再打开对应清单、工具或长文研究笔记。',
+      title: 'App Store 指南中心：先读决策',
+      intro: '本中心按决策组织：试用、家庭扣费、权限、退款与切区研究。先从今天的问题进入对应长文或清单，只有需要数字时再打开计算器或提醒工具。',
       items: [
         { heading: '如何使用本中心', text: '从今天的决策开始：取消试用、比价、审核儿童安装，或准备退款材料。把下方主题卡当地图，而不是链接堆。每条路径指向更深的文章系列和可在浏览器运行的工具。' },
         { heading: '订阅与试用路径', text: '周付在年化前总是看起来便宜。点开始试用前写好首次扣费日、取消路径与试用后年成本。把试用提醒工具与试用陷阱清单、试用后管理指南一起用。' },
@@ -252,7 +252,7 @@ export const toolContent = {
     },
     knowledge: {
       title: 'Apple 安全知识库：先懂概念再点击',
-      intro: '知识库用直白话解释反复出现的 App Store 与 iOS 安全概念：权限、隐私标签、订阅、退款、家庭控制与常见诈骗模式。在运行工具前需要定义与上下文时使用本页。',
+      intro: '用直白话解释权限、隐私标签、订阅、退款、家庭控制与诈骗模式。需要词汇与上下文时先来这里，再读长文；工具仍是可选。',
       items: [
         { heading: '为什么概念比零散技巧更重要', text: 'App Store 错误会重复，是因为同一概念被误解：试用不是永远免费，删除不等于取消，免费安装不等于免费拥有，隐私标签行不是营销徽章。工具会变，概念应保持稳定。' },
         { heading: '权限与跟踪', text: '通讯录、照片、麦克风、相机与精确位置，对低价值用途是高成本权限。隐私标签上的跟踪行值得暂停。优先“允许一次”，任务结束后收回，儿童设备尤其如此。' },
