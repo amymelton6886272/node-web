@@ -3,46 +3,49 @@ import { articles, getArticlePath } from './articles.js';
 /** Lightweight keyword maps so related links stay useful without a full search index. */
 const TOPIC_TOOLS = {
   purchase: [
-    { href: '/price', label: 'Price compare', labelZh: '价格对比' },
-    { href: '/subcost', label: 'Sub cost calculator', labelZh: '订阅成本' },
+    { href: '/articles/app-store-price-check-before-buying', label: 'Price check guide', labelZh: '价格核对指南' },
+    { href: '/articles/when-paid-app-beats-subscription', label: 'Paid vs subscription', labelZh: '买断 vs 订阅' },
     { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
   ],
   subscription: [
-    { href: '/subcost', label: 'Sub cost calculator', labelZh: '订阅成本' },
-    { href: '/trial', label: 'Trial reminder', labelZh: '试用提醒' },
-    { href: '/price', label: 'Price compare', labelZh: '价格对比' },
+    { href: '/articles/manage-apple-subscriptions-after-trial', label: 'After-trial management', labelZh: '试用后管理' },
+    { href: '/articles/free-trial-trap-checklist', label: 'Trial trap checklist', labelZh: '试用陷阱清单' },
+    { href: '/articles/spot-subscription-fatigue-apps', label: 'Subscription fatigue', labelZh: '订阅疲劳' },
     { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
   ],
   privacy: [
-    { href: '/risk', label: 'App risk assessor', labelZh: '风险评估' },
-    { href: '/knowledge', label: 'Knowledge base', labelZh: '知识库' },
+    { href: '/articles/privacy-labels-and-permissions', label: 'Privacy labels guide', labelZh: '隐私标签指南' },
+    { href: '/articles/ios-permission-prompts-decision-guide', label: 'Permission prompts', labelZh: '权限弹窗指南' },
+    { href: '/articles/hide-my-email-and-app-signups', label: 'Hide My Email', labelZh: '隐藏邮件' },
     { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
   ],
   family: [
+    { href: '/articles/family-sharing-purchase-safety', label: 'Family purchase safety', labelZh: '家庭购买安全' },
+    { href: '/articles/screen-time-purchase-controls', label: 'Screen Time controls', labelZh: '屏幕使用时间控制' },
+    { href: '/articles/child-device-app-install-rules', label: 'Child install rules', labelZh: '儿童安装规则' },
     { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
-    { href: '/risk', label: 'App risk assessor', labelZh: '风险评估' },
-    { href: '/guides', label: 'Guides', labelZh: '指南' },
   ],
   security: [
-    { href: '/risk', label: 'App risk assessor', labelZh: '风险评估' },
-    { href: '/knowledge', label: 'Knowledge base', labelZh: '知识库' },
+    { href: '/articles/ios-vpn-profile-and-certificate-risks', label: 'VPN & profile risks', labelZh: 'VPN 与描述文件风险' },
+    { href: '/articles/spot-low-quality-app-store-listings', label: 'Low-quality listings', labelZh: '低质上架识别' },
     { href: '/guides', label: 'Guides', labelZh: '指南' },
   ],
   region: [
-    { href: '/price', label: 'Price compare', labelZh: '价格对比' },
-    { href: '/appfree', label: 'Free apps', labelZh: '限免应用' },
+    { href: '/articles/safe-region-switching', label: 'Safe region switching', labelZh: '安全切区' },
+    { href: '/articles/compare-app-store-regions-safely', label: 'Compare regions', labelZh: '比较地区' },
+    { href: '/articles/app-store-gift-cards-and-balance-safety', label: 'Gift card safety', labelZh: '礼品卡安全' },
     { href: '/guides', label: 'Guides', labelZh: '指南' },
   ],
   support: [
-    { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
-    { href: '/guides', label: 'Guides', labelZh: '指南' },
+    { href: '/articles/app-store-refund-request-checklist', label: 'Refund checklist', labelZh: '退款清单' },
+    { href: '/articles/when-to-use-report-a-problem', label: 'Report a Problem', labelZh: 'Report a Problem' },
     { href: '/articles', label: 'All articles', labelZh: '全部文章' },
   ],
   default: [
-    { href: '/price', label: 'Price compare', labelZh: '价格对比' },
-    { href: '/subcost', label: 'Sub cost calculator', labelZh: '订阅成本' },
+    { href: '/articles/app-store-research-workflow', label: 'Research workflow', labelZh: '研究流程' },
+    { href: '/articles/understand-in-app-purchases', label: 'IAP guide', labelZh: '内购指南' },
     { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
-    { href: '/risk', label: 'App risk assessor', labelZh: '风险评估' },
+    { href: '/articles/family-sharing-purchase-safety', label: 'Family safety', labelZh: '家庭安全' },
   ],
 };
 
@@ -110,10 +113,8 @@ export function getHubLinks() {
     { href: '/knowledge', label: 'Knowledge base', labelZh: '知识库' },
     { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
     { href: '/glossary', label: 'Glossary', labelZh: '术语表' },
-    { href: '/price', label: 'Price compare', labelZh: '价格对比' },
-    { href: '/subcost', label: 'Sub cost calculator', labelZh: '订阅成本' },
-    { href: '/trial', label: 'Trial reminder', labelZh: '试用提醒' },
-    { href: '/risk', label: 'App risk assessor', labelZh: '风险评估' },
+    { href: '/editorial', label: 'Editorial policy', labelZh: '编辑政策' },
+    { href: '/about', label: 'About', labelZh: '关于' },
     { href: '/privacy', label: 'Privacy policy', labelZh: '隐私政策' },
   ];
 }

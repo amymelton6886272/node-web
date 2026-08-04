@@ -43,23 +43,63 @@
   ],
   "redirects": [
     {
-      "source": "/ip",
-      "destination": "/price",
+      "source": "/price",
+      "destination": "/articles/app-store-price-check-before-buying",
       "permanent": true
     },
     {
-      "source": "/ip/",
-      "destination": "/price",
+      "source": "/price/",
+      "destination": "/articles/app-store-price-check-before-buying",
       "permanent": true
     },
     {
-      "source": "/address",
-      "destination": "/price",
+      "source": "/appfree",
+      "destination": "/articles/when-not-to-install-free-apps",
       "permanent": true
     },
     {
-      "source": "/address/",
-      "destination": "/price",
+      "source": "/appfree/",
+      "destination": "/articles/when-not-to-install-free-apps",
+      "permanent": true
+    },
+    {
+      "source": "/subcost",
+      "destination": "/articles/manage-apple-subscriptions-after-trial",
+      "permanent": true
+    },
+    {
+      "source": "/subcost/",
+      "destination": "/articles/manage-apple-subscriptions-after-trial",
+      "permanent": true
+    },
+    {
+      "source": "/trial",
+      "destination": "/articles/free-trial-trap-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/trial/",
+      "destination": "/articles/free-trial-trap-checklist",
+      "permanent": true
+    },
+    {
+      "source": "/icon",
+      "destination": "/articles/spot-low-quality-app-store-listings",
+      "permanent": true
+    },
+    {
+      "source": "/icon/",
+      "destination": "/articles/spot-low-quality-app-store-listings",
+      "permanent": true
+    },
+    {
+      "source": "/iap",
+      "destination": "/articles/understand-in-app-purchases",
+      "permanent": true
+    },
+    {
+      "source": "/iap/",
+      "destination": "/articles/understand-in-app-purchases",
       "permanent": true
     }
   ]

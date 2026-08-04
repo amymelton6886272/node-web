@@ -18,10 +18,6 @@ const staticRoutes = [
   { path: '/terms', changefreq: 'monthly', priority: '0.6', lastmod: TODAY },
   { path: '/editorial', changefreq: 'monthly', priority: '0.5', lastmod: TODAY },
   { path: '/data-sources', changefreq: 'monthly', priority: '0.5', lastmod: TODAY },
-  { path: '/price', changefreq: 'weekly', priority: '0.9', lastmod: TODAY },
-  { path: '/appfree', changefreq: 'daily', priority: '0.9', lastmod: TODAY },
-  { path: '/iap', changefreq: 'weekly', priority: '0.8', lastmod: TODAY },
-  { path: '/icon', changefreq: 'weekly', priority: '0.7', lastmod: TODAY },
   { path: '/guides', changefreq: 'weekly', priority: '0.9', lastmod: TODAY },
   { path: '/knowledge', changefreq: 'weekly', priority: '0.9', lastmod: TODAY },
   { path: '/articles', changefreq: 'weekly', priority: '0.9', lastmod: TODAY },
@@ -29,8 +25,6 @@ const staticRoutes = [
   { path: '/checklists', changefreq: 'weekly', priority: '0.8', lastmod: TODAY },
   { path: '/glossary', changefreq: 'monthly', priority: '0.7', lastmod: TODAY },
   { path: '/risk', changefreq: 'monthly', priority: '0.7', lastmod: TODAY },
-  { path: '/subcost', changefreq: 'weekly', priority: '0.9', lastmod: TODAY },
-  { path: '/trial', changefreq: 'weekly', priority: '0.9', lastmod: TODAY },
 ];
 
 const seriesRoutes = getAllSeriesForIndex().map((series) => ({

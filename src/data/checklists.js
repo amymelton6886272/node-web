@@ -38,42 +38,42 @@ export const checklistContent = {
         title: 'Before buying a paid app', summary: 'Confirm price, region, in-app purchases, maintenance, and refund risk before paying.',
         items: ['Confirm App Store price, currency, and the storefront region of the signed-in Apple ID.', 'Check whether the app contains in-app purchases or subscriptions, especially auto-renewing trials.', 'Review the latest update date; apps that have not been maintained may have compatibility risks.', 'Read low-rating reviews and look for crashes, account bans, refund problems, or support issues.', 'Confirm Family Sharing, device compatibility, language support, and privacy labels.', 'For expensive apps, search the developer site or announcements to see whether discounts are cyclical.'],
         pitfalls: ['Looking only at the average rating can hide recent version problems.', 'Cross-region purchases can affect updates, payment methods, and support.', 'A subscription app may not include core features in the app’s base price.'],
-        related: ['price', 'iap', 'guides']
+        related: ['/articles/app-store-price-check-before-buying', '/articles/understand-in-app-purchases', '/guides']
       },
       {
         id: 'subscription-safety', icon: 'Shield', category: 'subscription', minutes: 4,
         title: 'Subscription and free-trial safety', summary: 'Identify auto-renewal, trial dates, cancellation paths, and family-device purchase controls.',
         items: ['Confirm the trial end date and set a reminder one day earlier.', 'Check whether billing is weekly, monthly, yearly, or a one-time unlock.', 'Open iOS Settings > Apple ID > Subscriptions and confirm the subscription can be managed or cancelled.', 'Save screenshots of the price page, trial wording, and developer promises.', 'Enable Ask to Buy or Screen Time restrictions on family devices.', 'If unsure, test with monthly billing first instead of committing to an annual plan.'],
         pitfalls: ['Deleting the app does not cancel the subscription.', 'Some trials must be cancelled at least 24 hours before renewal.', 'Prices shown in ads may differ from the App Store checkout page.'],
-        related: ['iap', 'price', 'privacy']
+        related: ['/articles/free-trial-trap-checklist', '/articles/manage-apple-subscriptions-after-trial', '/checklists']
       },
       {
         id: 'privacy-review', icon: 'Lock', category: 'privacy', minutes: 6,
         title: 'Privacy review before installing a new app', summary: 'Judge trust from permissions, accounts, data collection, and network environment.',
         items: ['Review App Store privacy labels, especially location, contacts, photos, and tracking data.', 'Grant only permissions needed for core features during first launch.', 'Avoid using your primary email for unfamiliar apps; use Hide My Email or an alias if possible.', 'Check that the developer website, privacy policy, and support channel are reachable.', 'Avoid signing into sensitive accounts over untrusted public Wi‑Fi.', 'After use, revisit Settings to disable unnecessary permissions, background refresh, and notifications.'],
         pitfalls: ['Free apps may monetize through data collection or ad tracking.', 'Similar names and icons can be used to mislead downloads.', 'Configuration profiles, certificates, and VPN permissions require extra caution.'],
-        related: ['icon', 'ip', 'privacy']
+        related: ['/articles/privacy-labels-and-permissions', '/articles/ios-permission-prompts-decision-guide', '/articles/hide-my-email-and-app-signups']
       },
       {
         id: 'region-switch', icon: 'Globe', category: 'region', minutes: 7,
         title: 'Before switching App Store region', summary: 'Check balance, subscriptions, payment methods, availability, and long-term maintenance cost.',
         items: ['Confirm Apple ID balance is cleared; remaining balance can block region switching.', 'Cancel or resolve active subscriptions, preorders, and rentals.', 'Confirm supported payment methods and billing-address requirements for the target region.', 'Record whether key apps are available in the target storefront.', 'Back up important data, especially apps relying on iCloud or local authorization.', 'Evaluate whether switching back later may affect purchased items and updates.'],
         pitfalls: ['Some apps may not be downloadable or updateable after region changes.', 'Region changes can affect Family Sharing, gift cards, and subscription prices.', 'Do not frequently switch your main account region just to download one app.'],
-        related: ['price', 'appfree', 'guides']
+        related: ['/articles/safe-region-switching', '/articles/compare-app-store-regions-safely', '/guides']
       },
       {
         id: 'subscription-cost-review', icon: 'DollarSign', category: 'subscription', minutes: 6,
         title: 'Monthly subscription cost review', summary: 'Annualize every plan, cut low-value renewals, and keep a cancel path for each active trial.',
         items: ['List every active subscription with price and billing cycle.', 'Convert weekly and monthly plans into yearly cost before comparing value.', 'Mark which plans are used weekly, monthly, or almost never.', 'Cancel unused trials and set calendar reminders one day before renewal.', 'Check Family Sharing or shared payment ownership for each charge.', 'Export or screenshot the list after cleanup for next month’s review.'],
         pitfalls: ['Comparing weekly prices to yearly unlocks without annualization.', 'Deleting an app instead of cancelling the subscription.', 'Ignoring tax and storefront differences when estimating spend.'],
-        related: ['subcost', 'price', 'guides']
+        related: ['/articles/spot-subscription-fatigue-apps', '/articles/ios-subscription-stack-audit-and-cancel-order', '/articles/apple-id-purchase-history-audit']
       },
       {
         id: 'profile-certificate-safety', icon: 'Shield', category: 'privacy', minutes: 5,
         title: 'Before installing a VPN, profile, or certificate', summary: 'Separate App Store VPN apps from configuration profiles and root certificates, and refuse vague install paths.',
         items: ['Confirm the source is an organization you already trust for device management.', 'Prefer App Store apps with clear policies over profile-based “unlock” websites.', 'Refuse certificates you cannot explain or reverse.', 'Check whether basic features truly require a profile install.', 'After any mistaken install, remove unknown profiles/certificates in Settings immediately.', 'Re-check Screen Time and purchase controls if the device is shared.'],
         pitfalls: ['Treating profiles and certificates as normal app permissions.', 'Installing tools for vague battery, streaming, or free-premium promises.', 'Leaving unknown trust settings after testing a network tool.'],
-        related: ['risk', 'knowledge', 'guides']
+        related: ['/articles/ios-vpn-profile-and-certificate-risks', '/articles/testflight-sideload-and-unofficial-install-risks', '/guides']
       }
     ]
   },
