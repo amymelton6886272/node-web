@@ -145,8 +145,9 @@ export const ARTICLE_SERIES = [
       '仅在需要时准备好退款证据包',
     ],
     relatedTools: [
-      { href: '/trial', label: 'Trial reminder', labelZh: '试用提醒' },
-      { href: '/subcost', label: 'Sub cost calculator', labelZh: '订阅成本' },
+      { href: '/articles/manage-apple-subscriptions-after-trial', label: 'After-trial management', labelZh: '试用后管理' },
+      { href: '/articles/app-subscription-cancel-from-web', label: 'Cancel from web', labelZh: '从网页取消' },
+      { href: '/articles/free-trial-trap-checklist', label: 'Trial trap checklist', labelZh: '试用陷阱清单' },
       { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
     ],
     slugs: [
@@ -154,6 +155,7 @@ export const ARTICLE_SERIES = [
       'free-trial-to-paid-conversion-defense-playbook',
       'manage-apple-subscriptions-after-trial',
       'cancel-apple-subscription-step-by-step',
+      'app-subscription-cancel-from-web',
       'ios-subscription-stack-audit-and-cancel-order',
       'when-to-use-report-a-problem',
       'report-a-problem-refund-evidence-and-timing',
@@ -221,6 +223,7 @@ export const ARTICLE_SERIES = [
     ],
     slugs: [
       'privacy-labels-and-permissions',
+      'ios-tracking-transparency-opt-out-guide',
       'app-store-privacy-labels-how-to-read-like-an-auditor',
       'ios-permission-prompts-decision-guide',
       'ios-permission-prompt-decision-tree-for-daily-apps',
@@ -256,6 +259,7 @@ export const ARTICLE_SERIES = [
     ],
     slugs: [
       'family-sharing-purchase-safety',
+      'app-store-age-ratings-and-parental-controls',
       'child-device-app-install-rules',
       'screen-time-purchase-controls',
       'family-sharing-ask-to-buy-and-unexpected-charges',
@@ -283,17 +287,19 @@ export const ARTICLE_SERIES = [
       '只保留官方安装路径',
     ],
     relatedTools: [
-      { href: '/risk', label: 'App risk assessor', labelZh: '风险评估' },
-      { href: '/appfree', label: 'Free apps', labelZh: '限免应用' },
+      { href: '/articles/spot-low-quality-app-store-listings', label: 'Low-quality listings guide', labelZh: '低质上架指南' },
+      { href: '/articles/app-store-scam-pattern-recognition', label: 'Scam pattern recognition', labelZh: '诈骗模式识别' },
       { href: '/guides', label: 'Guides', labelZh: '指南' },
     ],
     slugs: [
       'spot-low-quality-app-store-listings',
+      'app-store-scam-pattern-recognition',
       'when-not-to-install-free-apps',
       'app-store-search-ads-and-fake-popular-apps',
       'ios-vpn-profile-and-certificate-risks',
       'ios-configuration-profile-vpn-certificate-danger-guide',
       'testflight-sideload-and-unofficial-install-risks',
+      'apple-id-security-checklist',
     ],
   },
   {
