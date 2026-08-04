@@ -9,8 +9,8 @@ export const articles = [
     category: 'Support',
     tags: ['Refunds', 'Purchase history', 'Support'],
     publishedAt: '2026-04-28',
-    updatedAt: '2026-07-19',
-    readTime: '10 min read',
+    updatedAt: '2026-08-05',
+    readTime: '9 min read',
     sections: [
     {
       heading: 'Confirm the purchase record first',
@@ -103,18 +103,6 @@ export const articles = [
       textZh: '证据收集开始时启动二十四小时钟。到期时提交或带着新日期有意识等待——不要漂。把截止写在材料包。无限收集是回避。家人再次提交前先问是否已有单。',
     },
     {
-      heading: 'Exit condition: desk, packet, cancel status',
-      headingZh: '退出条件：柜台、材料包、取消状态',
-      text: 'You are done when the desk is chosen, the packet is filed or scheduled, and unwanted renewals show cancel/expire status. Reading refund tips without those artifacts is incomplete. Share the packet owner adult on Family Sharing charges.',
-      textZh: '当柜台已选、材料包已提交或排期、不想要的续费显示取消/到期状态时才算完成。没有这些工件只读退款技巧不完整。家庭共享扣费写明材料包负责成人。',
-    },
-    {
-      heading: 'One-page field card',
-      headingZh: '一页现场卡',
-      text: 'Compress into one page: goal, Apple ID identity, device, money or permission at stake, action today, verification tomorrow, control change this week. Screenshot into an adult note. If you cannot fill the card, you are reading ahead of acting. Share with the household payer when money is involved.',
-      textZh: '压成一页：目标、Apple ID 身份、设备、金钱或权限、今天动作、明天验证、本周控制变化。截图进成人笔记。填不满说明读得比做得快。涉及金钱与付款人共享。',
-    },
-    {
       heading: 'Write a short specific reason',
       headingZh: '写简短具体的原因',
       text: 'Three sentences: what you bought and when; what failed versus the offer; what you already tried and what you want. Attach two screenshots. Long anger without chronology slows outcomes. Save the three sentences in the packet before opening the form so household members do not rewrite mid-submit.',
@@ -145,18 +133,6 @@ export const articles = [
       textZh: 'App Store 项目在确认 Apple 身份后再退单，或欺诈明显非 Apple 且时间紧急时使用。并行可能冲突。写退单理由。保留 Apple 截图。退单后仍取消并改控制。',
     },
     {
-      heading: 'Seven-day verification loop',
-      headingZh: '七日验证环',
-      text: 'After you act, verify same day for cancels and removals, seven days for installs and trials, thirty days for family policy. Each loop checks one artifact. Missing artifact means incomplete action. Put the next date in the same note as the decision.',
-      textZh: '行动后：取消与移除看当天，安装与试用看七天，家庭策略看三十天。每次只核一份工件。工件缺失=动作未完成。把下一日期写在与决策同一笔记。',
-    },
-    {
-      heading: 'Artifact checklist',
-      headingZh: '工件清单',
-      text: 'Leave with at most three artifacts: screenshot or table, calendar date, control or inventory change. Store in an adult note. If you cannot name the three, you are not done. Share with the payer when money is family money.',
-      textZh: '最多三份工件：截图或表、日历日、控制或台账变化。放成人笔记。说不出三份就还没做完。金钱是家庭钱时与付款人共享。',
-    },
-    {
       heading: 'Subscription still active while refund pending',
       headingZh: '退款未决时订阅仍有效',
       text: 'A pending refund does not mean renewals stopped. Verify Subscriptions status the same day you file. Cancel if you do not want the next charge. Track both threads on the packet cover: refund status and cancel status.',
@@ -181,12 +157,6 @@ export const articles = [
       textZh: '若拒绝，仅补充新事实，或仅在合适时换柜台。不要每天重提同一材料包。考虑真正修复是否是类别上限与免费下载闸门，而不是退钱。学习是结果的一部分。',
     },
     {
-      heading: 'Owner adult when money is shared',
-      headingZh: '金钱共享时的负责成人',
-      text: 'If Family Sharing or a shared card is involved, name the owner adult for the decision and for verification dates. Ownerless research becomes parallel actions and duplicate filings. Write the name on the field card.',
-      textZh: '若涉及家庭共享或共用卡，为决策与验证日具名负责成人。无主研究会变成并行动作与重复提交。把名字写在现场卡上。',
-    },
-    {
       heading: 'Child purchase wording that stays factual',
       headingZh: '保持事实的儿童购买措辞',
       text: 'State age band, whether Ask to Buy was on, and that the purchase was not approved if true. Avoid insults. Facts help more than moral outrage. Still change controls the same day regardless of refund outcome.',
@@ -203,6 +173,12 @@ export const articles = [
       headingZh: '当商户不是 Apple',
       text: 'If the bank descriptor is not Apple and Purchase History has no line, stop the Apple form and switch desks. Forcing Report a Problem on non-Apple charges wastes the window. Write merchant identity before choosing a desk.',
       textZh: '若银行描述不是 Apple 且购买记录无行，停止 Apple 表单并换柜台。对非 Apple 扣费强走 Report a Problem 会浪费窗口。选柜台前写商户身份。',
+    },
+    {
+      heading: 'Refund filing decision tree',
+      headingZh: '退款提交决策树',
+      text: 'If the bank descriptor says Apple and Purchase History has a matching line: file Report a Problem with a one-page brief. If the descriptor is not Apple: stop, identify the merchant, then choose developer support or bank dispute. If the charge is under your household threshold and identity is confirmed: cancel, change one control, and file at the right desk within forty-eight hours. If the charge is large or involves a child: attach the role map and escalate with the packet.',
+      textZh: '若银行描述是 Apple 且购买记录有对应行：带一页简报提交 Report a Problem。若描述不是 Apple：停下，识别商户，再选开发者支持或银行争议。若金额低于家庭阈值且身份已确认：取消、改一项控制、四十八小时内在正确柜台提交。若金额大或涉及儿童：附角色图带材料包升级。',
     }
     ],
   },
@@ -216,7 +192,7 @@ export const articles = [
     category: 'Purchasing',
     tags: ['App Store', 'Pricing', 'Subscriptions'],
     publishedAt: '2026-03-28',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '11 min read',
     sections: [
     {
@@ -351,7 +327,7 @@ export const articles = [
     category: 'Family',
     tags: ['Family Sharing', 'Ask to Buy', 'Subscriptions'],
     publishedAt: '2026-05-29',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '10 min read',
     sections: [
     {
@@ -516,8 +492,8 @@ export const articles = [
     category: 'Purchasing',
     tags: ['IAP', 'Subscriptions', 'Trials'],
     publishedAt: '2026-05-01',
-    updatedAt: '2026-07-19',
-    readTime: '10 min read',
+    updatedAt: '2026-08-05',
+    readTime: '9 min read',
     sections: [
     {
       heading: 'Free to install is not free to use',
@@ -622,18 +598,6 @@ export const articles = [
       textZh: '不要假设每个内购都共享。消耗型通常不共享。部分订阅仅在特定方案下共享席位。若购买闸门弱，儿童免费安装仍可打开不共享的内购漏斗。写明哪些方案共享、负责成人是谁、组织者如何取消。无主共享方案会在付款卡上变幽灵。',
     },
     {
-      heading: 'Exit condition: one map, one alert, one control',
-      headingZh: '退出条件：一张图、一个提醒、一项控制',
-      text: 'You are done when the SKU-to-job map exists, a cancel alert is scheduled if a trial started, and shared devices have a purchase control that matches policy. Reading IAP definitions without those three is incomplete. Put artifacts in an adult note. If money already moved, match bank to Purchase History within twenty-four hours and choose the correct desk.',
-      textZh: '当 SKU-用途图存在、若已开试用则已设取消提醒、共用设备购买控制匹配政策时才算完成。只读内购定义没有这三样就不完整。工件放进成人笔记。若已扣费，二十四小时内把银行对齐购买记录并选对柜台。',
-    },
-    {
-      heading: 'One-page field card',
-      headingZh: '一页现场卡',
-      text: 'Compress into one page: goal, Apple ID identity, device, money or permission at stake, action today, verification tomorrow, control change this week. Screenshot into an adult note. If you cannot fill the card, you are reading ahead of acting. Share with the household payer when money is involved. Revisit in seven days and mark kept, cancelled, or escalated.',
-      textZh: '压成一页：目标、Apple ID 身份、设备、金钱或权限、今天动作、明天验证、本周控制变化。截图进成人笔记。填不满说明读得比做得快。涉及金钱与付款人共享。七天后标记保留、取消或升级。',
-    },
-    {
       heading: 'Consumables versus unlocks: restore expectations',
       headingZh: '消耗型与解锁：恢复预期',
       text: 'Consumable coins and packs usually will not restore after reinstall and often will not Family Share. One-time unlocks should restore on the same Apple ID via Restore Purchases. Auto-renew subscriptions restore by signing into the paying identity and opening Subscriptions. Mixing these expectations creates false refund fights. Write the type on your sticky note before the prompt so you know what recovery looks like if the device changes.',
@@ -658,18 +622,6 @@ export const articles = [
       textZh: '共用设备上，即使付费请求有购买前询问，儿童仍可能看到内购付费墙。免费下载仍要闸门。任何面向儿童且含内购的安装后，组织者当天查订阅。没有闸门的宝石教育会失败；没有教育的闸门会催生绕过。两者都记录。',
     },
     {
-      heading: 'Seven-day verification after you decide',
-      headingZh: '决策后的七日验证',
-      text: 'Verify on a schedule: same day for cancels and permission changes, seven days for installs and trials, thirty days for family policy. Each loop checks one artifact. Missing artifact means incomplete action. Put the next date in the same note as the decision and share it when Family Sharing money is involved.',
-      textZh: '按计划验证：取消与权限变更看当天，安装与试用看七天，家庭策略看三十天。每次只核一份工件。工件缺失=动作未完成。把下一日期写在与决策同一笔记，家庭共享涉及金钱时共享。',
-    },
-    {
-      heading: 'Artifact checklist when you finish',
-      headingZh: '完成时的工件清单',
-      text: 'Leave with at most three artifacts: one screenshot or table, one calendar date, one control or inventory change. More becomes clutter. Store them in an adult note. If you cannot name the three, you are not done. This checklist is the operational exit condition for the guide.',
-      textZh: '最多带走三份工件：一张截图或表、一个日历日、一项控制或台账变化。更多会变杂物。放进成人笔记。说不出三份就还没做完。此清单是本指南的运营退出条件。',
-    },
-    {
       heading: 'Annualize before emotion does the math',
       headingZh: '在情绪算账前先年化',
       text: 'Create a one-column list converting every weekly plan to yearly before keep decisions. Humans under-react to small weekly numbers. If annualized total exceeds your written cap, cancel until under. Post the list during Sunday triage. Unsentimental math is a feature.',
@@ -682,10 +634,10 @@ export const articles = [
       textZh: '同 Apple ID 丢失解锁走恢复购买。不想要的续费先取消。App Store 计费退款带证据 Report a Problem。产品 bug 找开发者。明确非 Apple 欺诈且身份确认后才银行。顺序错误浪费数天。',
     },
     {
-      heading: 'Owner adult and next verification date',
-      headingZh: '负责成人与下次验证日',
-      text: 'Write the next verification date beside today’s decision and name the owner adult if Family Sharing money is involved. One artifact beats five chats. If you cannot point to the artifact next week, reopen the guide and finish the exit condition. This note exists only to complete operational depth without repeating industrial templates.',
-      textZh: '把下一次验证日写在今天决策旁；若涉及家庭共享金钱，写负责成人。一份工件胜过五条聊天。若下周指不出工件，重开指南完成退出条件。本段仅用于补足运营深度，不重复工业模板。',
+      heading: 'IAP decision card you can copy',
+      headingZh: '可复制的内购决策卡',
+      text: 'Copy: App name, SKU list, job per SKU, annualized cost, post-cancel access yes/no, shared-device impact, walk-away max. Fill before Start Trial. Two empty cells means wait. This card replaces the need to remember fifteen IAP definitions under stress.',
+      textZh: '复制：应用名、SKU 列表、每个 SKU 用途、年化成本、取消后访问是否、共用设备影响、走开上限。开始试用前填。两个空格就等。这张卡替代了压力下记十五个内购定义的需要。',
     }
     ],
   },
@@ -699,8 +651,8 @@ export const articles = [
     category: 'Privacy',
     tags: ['Privacy labels', 'Permissions', 'Tracking'],
     publishedAt: '2026-05-07',
-    updatedAt: '2026-07-19',
-    readTime: '10 min read',
+    updatedAt: '2026-08-05',
+    readTime: '9 min read',
     sections: [
     {
       heading: 'Start with functional necessity',
@@ -823,18 +775,6 @@ export const articles = [
       textZh: '每季度打开隐私与安全性中的照片、通讯录、麦克风、相机、定位与跟踪列表。收回不再每周使用的应用。若用中继，与隐藏邮件台账一起做。写下收回了什么。仪式胜过只在事故时清理。共用设备记录日期与成人姓名缩写。',
     },
     {
-      heading: 'Exit condition: one job map and one revoke date',
-      headingZh: '退出条件：一张用途图与一个收回日',
-      text: 'You are done when every live sensitive permission has a one-line job and a next revoke or review date. Reading definitions without those artifacts is incomplete. If labels and prompts mismatch, keep both screenshots before you install or keep the app. Share the map on family devices so two adults do not apply different bars.',
-      textZh: '当每个仍开启的敏感权限都有一句话用途与下次收回或复查日时才算完成。没有这些工件只读定义不完整。若标签与提示不一致，安装或保留前保留两边截图。家庭设备共享用途图，避免两个成人门槛不同。',
-    },
-    {
-      heading: 'One-page field card',
-      headingZh: '一页现场卡',
-      text: 'Compress into one page: goal, Apple ID identity, device, money or permission at stake, action today, verification tomorrow, control change this week. Screenshot into an adult note. If you cannot fill the card, you are reading ahead of acting. Share with the household payer when money is involved. Revisit in seven days and mark kept, cancelled, or escalated.',
-      textZh: '压成一页：目标、Apple ID 身份、设备、金钱或权限、今天动作、明天验证、本周控制变化。截图进成人笔记。填不满说明读得比做得快。涉及金钱与付款人共享。七天后标记保留、取消或升级。',
-    },
-    {
       heading: 'Tracking rows and ATT prompts',
       headingZh: '跟踪行与 ATT 提示',
       text: 'When a Privacy label lists data used to track and the app later shows an App Tracking Transparency prompt, decide with the job map—not fatigue. Default no for utilities. Advertising-supported free apps may still not need tracking for the core job you care about. Screenshot the prompt and the label together. Revisit quarterly because apps re-prompt after updates.',
@@ -859,22 +799,16 @@ export const articles = [
       textZh: '工作手机上 MDM 可能强制或阻止权限。不要用个人默认对抗策略。写清哪一面受工作管理。工作设备上的个人 Apple ID 仍需要安装纪律。不确定时，在给猎奇应用通讯录或完整邮件访问前先问 IT。',
     },
     {
-      heading: 'Seven-day verification after you decide',
-      headingZh: '决策后的七日验证',
-      text: 'Verify on a schedule: same day for cancels and permission changes, seven days for installs and trials, thirty days for family policy. Each loop checks one artifact. Missing artifact means incomplete action. Put the next date in the same note as the decision and share it when Family Sharing money is involved.',
-      textZh: '按计划验证：取消与权限变更看当天，安装与试用看七天，家庭策略看三十天。每次只核一份工件。工件缺失=动作未完成。把下一日期写在与决策同一笔记，家庭共享涉及金钱时共享。',
-    },
-    {
-      heading: 'Artifact checklist when you finish',
-      headingZh: '完成时的工件清单',
-      text: 'Leave with at most three artifacts: one screenshot or table, one calendar date, one control or inventory change. More becomes clutter. Store them in an adult note. If you cannot name the three, you are not done. This checklist is the operational exit condition for the guide.',
-      textZh: '最多带走三份工件：一张截图或表、一个日历日、一项控制或台账变化。更多会变杂物。放进成人笔记。说不出三份就还没做完。此清单是本指南的运营退出条件。',
-    },
-    {
       heading: 'Second-day notification and tracking audit',
       headingZh: '次日通知与跟踪审计',
       text: 'On day two after install, open notification and tracking lists. Revoke anything not required for the core job. Free apps re-prompt after first launch. Write what you revoked. Combine with day-seven privacy pass so permissions are a system, not a mood.',
       textZh: '安装后第二天打开通知与跟踪列表。收回核心用途不需要的。免费应用首启后再提示。写下收回了什么。结合第七天隐私检查，让权限成为系统而非心情。',
+    },
+    {
+      heading: 'Permission budget worksheet',
+      headingZh: '权限预算工作表',
+      text: 'Two columns: permission requested, one-line job justification. Fill during first launch. Any row with no justification gets denied. On day seven, reopen and revoke rows where the job never happened. This worksheet turns vague unease into a dated decision artifact.',
+      textZh: '两列：请求权限、一句话用途理由。首启时填。没有理由的行拒绝。第七天重开，收回没发生用途的行。此表把模糊不安变成有日期的决策工件。',
     }
     ],
   },
@@ -888,8 +822,8 @@ export const articles = [
     category: 'Safety',
     tags: ['App quality', 'Reviews', 'ASO'],
     publishedAt: '2026-07-10',
-    updatedAt: '2026-07-19',
-    readTime: '10 min read',
+    updatedAt: '2026-08-05',
+    readTime: '9 min read',
     sections: [
     {
       heading: 'Look past star ratings alone',
@@ -1000,18 +934,6 @@ export const articles = [
       textZh: '新免费应用进隔离文件夹并关通知 48 小时。无真实用途：删除。若使用了，第二天离开隔离前重查权限与定价。结合类别上限，避免隔离区变成周付陷阱停车场。午夜冲动变成延迟决策。',
     },
     {
-      heading: 'Exit condition: scorecard plus one stop rule',
-      headingZh: '退出条件：记分卡加一条停止规则',
-      text: 'You are done when the five-cell scorecard is filled and at least one personal stop rule is written (for example: contacts on a utility equals no). Reading red-flag lists without a filled card is incomplete. Share the card with the household payer when installs hit shared devices. Revisit after any incident the same week.',
-      textZh: '当五格记分卡填完且至少写了一条个人停止规则（例如工具要通讯录=否）时才算完成。没有填卡只读红旗列表不完整。安装触及共用设备时与付款人共享记分卡。任何事故后当周复盘。',
-    },
-    {
-      heading: 'One-page field card',
-      headingZh: '一页现场卡',
-      text: 'Compress into one page: goal, Apple ID identity, device, money or permission at stake, action today, verification tomorrow, control change this week. Screenshot into an adult note. If you cannot fill the card, you are reading ahead of acting. Share with the household payer when money is involved. Revisit in seven days and mark kept, cancelled, or escalated.',
-      textZh: '压成一页：目标、Apple ID 身份、设备、金钱或权限、今天动作、明天验证、本周控制变化。截图进成人笔记。填不满说明读得比做得快。涉及金钱与付款人共享。七天后标记保留、取消或升级。',
-    },
-    {
       heading: 'Screenshots versus live paywall mismatch',
       headingZh: '截图与实机付费墙不一致',
       text: 'If marketing screenshots show full workflows but the live app is a paywall within one minute, treat it as dishonest packaging. Record both with timestamps. Mismatch is a delete signal even when ratings are high. Share the example with teens so they learn the pattern.',
@@ -1042,18 +964,6 @@ export const articles = [
       textZh: '一些不完美应用在成人个人手机上收紧权限且无共用卡风险时或可接受，但仍通不过共用设备门槛。写两套阈值。合并它们要么过度限制成人，要么保护不足孩子。任何共用卡事故后复盘。',
     },
     {
-      heading: 'Seven-day verification after you decide',
-      headingZh: '决策后的七日验证',
-      text: 'Verify on a schedule: same day for cancels and permission changes, seven days for installs and trials, thirty days for family policy. Each loop checks one artifact. Missing artifact means incomplete action. Put the next date in the same note as the decision and share it when Family Sharing money is involved.',
-      textZh: '按计划验证：取消与权限变更看当天，安装与试用看七天，家庭策略看三十天。每次只核一份工件。工件缺失=动作未完成。把下一日期写在与决策同一笔记，家庭共享涉及金钱时共享。',
-    },
-    {
-      heading: 'Artifact checklist when you finish',
-      headingZh: '完成时的工件清单',
-      text: 'Leave with at most three artifacts: one screenshot or table, one calendar date, one control or inventory change. More becomes clutter. Store them in an adult note. If you cannot name the three, you are not done. This checklist is the operational exit condition for the guide.',
-      textZh: '最多带走三份工件：一张截图或表、一个日历日、一项控制或台账变化。更多会变杂物。放进成人笔记。说不出三份就还没做完。此清单是本指南的运营退出条件。',
-    },
-    {
       heading: 'Developer catalog cross-check',
       headingZh: '开发者目录交叉核对',
       text: 'Open the developer name and scan other apps for the same permission and monetization patterns. One good app in a catalog of weekly cleaners is still risk. Write keep, avoid, or adult-only. Two minutes prevents clone-catalog surprises.',
@@ -1070,12 +980,6 @@ export const articles = [
       headingZh: '四十八小时后重打记分卡',
       text: 'After quarantine, re-score update freshness, identity, privacy, monetization honesty, offline usefulness. Subtract points for new paywalls or notification storms. Second scores catch bait-and-switch. Keep both scores side by side.',
       textZh: '隔离后重打更新活跃、身份、隐私、变现诚实、离线有用。新付费墙或通知风暴扣分。第二次打分抓住诱饵切换。两次分数并排保留。',
-    },
-    {
-      heading: 'Owner adult and next verification date',
-      headingZh: '负责成人与下次验证日',
-      text: 'Write the next verification date beside today’s decision and name the owner adult if Family Sharing money is involved. One artifact beats five chats. If you cannot point to the artifact next week, reopen the guide and finish the exit condition. This note exists only to complete operational depth without repeating industrial templates.',
-      textZh: '把下一次验证日写在今天决策旁；若涉及家庭共享金钱，写负责成人。一份工件胜过五条聊天。若下周指不出工件，重开指南完成退出条件。本段仅用于补足运营深度，不重复工业模板。',
     },
     {
       heading: 'Install freeze after two red cells',
@@ -1100,6 +1004,12 @@ export const articles = [
       headingZh: '隐私标签密度快扫',
       text: 'Dense tracking rows on a simple utility are a red cell even before permissions fire. Screenshot the label. Combine with runtime prompt behavior. Density alone is not proof of malice, but it is enough to slow install on shared devices.',
       textZh: '简单工具上密集跟踪行在权限弹出前就是红格。截图标签。结合运行时提示行为。仅密度不是恶意证明，但足够让共用设备放慢安装。',
+    },
+    {
+      heading: 'Listing scorecard template you can save',
+      headingZh: '可保存的上架记分卡模板',
+      text: 'Five cells scored 0-2: developer identity, privacy density, IAP honesty, update cadence, one-star billing themes. Install at 8/10 or higher. Any zero is a stop. Save the card in Purchases with the app name and date. Re-score after forty-eight hours if the app left quarantine.',
+      textZh: '五格 0-2 分：开发者身份、隐私密度、内购诚实度、更新节奏、一星扣费主题。8/10 以上才装。任一 0 分停。卡片存 Purchases 并注应用名与日期。若应用离开隔离，四十八小时后重打分。',
     }
     ],
   },
@@ -1113,8 +1023,8 @@ export const articles = [
     category: 'Regions',
     tags: ['Region switching', 'Gift cards', 'Account safety'],
     publishedAt: '2026-04-24',
-    updatedAt: '2026-07-19',
-    readTime: '10 min read',
+    updatedAt: '2026-08-05',
+    readTime: '9 min read',
     sections: [
     {
       heading: 'Clear blockers before you switch',
@@ -1213,18 +1123,6 @@ export const articles = [
       textZh: '问还有谁用该 Apple ID、哪些孩子设备共享购买、哪些订阅对家庭关键、切换是否会打断学校或工作应用。任一未知就停。切区是家庭系统决策，不是单个应用优惠券狩猎。任何真实操作指定一个成人负责人，并在变更前后七天冻结非必要购买。',
     },
     {
-      heading: 'Exit condition: stay, secondary experiment, or owned switch',
-      headingZh: '退出条件：留下、次要实验，或有主人的切换',
-      text: 'Close with an explicit decision and artifacts: complete sheet, screenshots, owner adult, and stop or return date. Settings changes without those artifacts are outages waiting to happen. If you stay, file the record anyway—future rumors die faster against a dated note.',
-      textZh: '以明确决策与工件收尾：完整表、截图、负责成人、停止或返回日。没有这些工件就改设置，等于预约故障。若留下，仍归档记录——有日期的笔记能更快杀死未来谣言。',
-    },
-    {
-      heading: 'One-page field card',
-      headingZh: '一页现场卡',
-      text: 'Compress into one page: goal, Apple ID identity, device, money or permission at stake, action today, verification tomorrow, control change this week. Screenshot into an adult note. If you cannot fill the card, you are reading ahead of acting. Share with the household payer when money is involved. Revisit in seven days and mark kept, cancelled, or escalated.',
-      textZh: '压成一页：目标、Apple ID 身份、设备、金钱或权限、今天动作、明天验证、本周控制变化。截图进成人笔记。填不满说明读得比做得快。涉及金钱与付款人共享。七天后标记保留、取消或升级。',
-    },
-    {
       heading: 'Media library and purchases inventory template',
       headingZh: '媒体库与购买盘点模板',
       text: 'List movies, seasons, books, and app purchases that matter, plus which identity owns them. Incomplete inventories create panic after a switch. Prefer not moving primary identities that hold irreplaceable media. Secondary experiments should not inherit the family photo library. Store the inventory with the exit plan.',
@@ -1255,18 +1153,6 @@ export const articles = [
       textZh: '若支付无法匹配、媒体风险高、家庭耦合不清，或唯一好处是单个应用的换算标价，正确输出是有日期的留下决策。永久只研究是健康结果。追逐每个海外标价不是策略。',
     },
     {
-      heading: 'Seven-day verification after you decide',
-      headingZh: '决策后的七日验证',
-      text: 'Verify on a schedule: same day for cancels and permission changes, seven days for installs and trials, thirty days for family policy. Each loop checks one artifact. Missing artifact means incomplete action. Put the next date in the same note as the decision and share it when Family Sharing money is involved.',
-      textZh: '按计划验证：取消与权限变更看当天，安装与试用看七天，家庭策略看三十天。每次只核一份工件。工件缺失=动作未完成。把下一日期写在与决策同一笔记，家庭共享涉及金钱时共享。',
-    },
-    {
-      heading: 'Artifact checklist when you finish',
-      headingZh: '完成时的工件清单',
-      text: 'Leave with at most three artifacts: one screenshot or table, one calendar date, one control or inventory change. More becomes clutter. Store them in an adult note. If you cannot name the three, you are not done. This checklist is the operational exit condition for the guide.',
-      textZh: '最多带走三份工件：一张截图或表、一个日历日、一项控制或台账变化。更多会变杂物。放进成人笔记。说不出三份就还没做完。此清单是本指南的运营退出条件。',
-    },
-    {
       heading: 'Three-column sheet required before debate',
       headingZh: '辩论前必须三列表',
       text: 'Original-currency sticker, payment eligibility, non-price costs. Blank cells mean research only. Attach owner adult. Social clips without sheets are not proposals. Keep sheets with screenshots in Purchases.',
@@ -1285,16 +1171,10 @@ export const articles = [
       textZh: '日期、应用、标价差、超过差的非价格成本、决策留下、若有下次复查。归档。有日期的留下记录能杀死未来谣言。完整研究后留下是成功。',
     },
     {
-      heading: 'Owner adult and next verification date',
-      headingZh: '负责成人与下次验证日',
-      text: 'Write the next verification date beside today’s decision and name the owner adult if Family Sharing money is involved. One artifact beats five chats. If you cannot point to the artifact next week, reopen the guide and finish the exit condition. This note exists only to complete operational depth without repeating industrial templates.',
-      textZh: '把下一次验证日写在今天决策旁；若涉及家庭共享金钱，写负责成人。一份工件胜过五条聊天。若下周指不出工件，重开指南完成退出条件。本段仅用于补足运营深度，不重复工业模板。',
-    },
-    {
-      heading: 'Owner adult sign-off box',
-      headingZh: '负责成人签核框',
-      text: 'Any real storefront change requires a named adult signature on the exit plan date. Without sign-off, the only allowed outcome is research. Sign-off is not bureaucracy; it is how households avoid anonymous account surgery.',
-      textZh: '任何真实店面变更需要退出计划日期上的具名成人签核。无签核则只允许研究。签核不是官僚，而是家庭避免匿名账号手术的方式。',
+      heading: 'Sign-off before any settings change',
+      headingZh: '设置变更前的签核',
+      text: 'Any real storefront change requires a named adult signature on the exit plan date. Without sign-off, the only allowed outcome is research. Sign-off is not bureaucracy; it is how households avoid anonymous account surgery. Put the sign-off requirement next to the pre-flight checklist.',
+      textZh: '任何真实店面变更需要退出计划日期上的具名成人签核。无签核则只允许研究。签核不是官僚，而是家庭避免匿名账号手术的方式。把签核要求放在飞行前检查清单旁。',
     },
     {
       heading: 'Screenshot pack before and after',
@@ -1319,6 +1199,12 @@ export const articles = [
       headingZh: '一句话家庭规则',
       text: 'No primary storefront change without a complete three-column sheet, exit plan, and owner adult. That single sentence prevents most account surgery disasters. Put it next to purchase thresholds.',
       textZh: '没有完整三列表、退出计划与负责成人，不做主店面变更。这一句话能阻止多数账号手术灾难。写在购买阈值旁。',
+    },
+    {
+      heading: 'Region switch pre-flight checklist',
+      headingZh: '切区飞行前检查清单',
+      text: 'Before any settings change: payment method matches storefront, balance is documented, subscriptions are inventoried, family impact is written, media library is backed up, and a return-by date is on the calendar. Six yes answers allow a secondary experiment. Seven yes answers allow a primary switch with exit plan. Anything less means stay.',
+      textZh: '任何设置变更前：支付方式匹配店面、余额已记录、订阅已盘点、家庭影响已写、媒体库已备份、返回截止日已在日历。六个是允许次要实验。七个是允许带退出计划的主切换。更少则留下。',
     }
     ],
   },
@@ -1332,8 +1218,8 @@ export const articles = [
     category: 'Subscriptions',
     tags: ['Trials', 'Auto-renew', 'Billing'],
     publishedAt: '2026-05-15',
-    updatedAt: '2026-07-19',
-    readTime: '10 min read',
+    updatedAt: '2026-08-05',
+    readTime: '9 min read',
     sections: [
     {
       heading: 'Record the trial end date immediately',
@@ -1420,18 +1306,6 @@ export const articles = [
       textZh: '试用在共用卡上转正时，付款人复查前冻结免费下载，确认购买前询问与屏幕使用时间购买锁，并写下次谁可开试用。转正却不改控制会变成家庭争吵。安静月份在有购买的日子仍要晚间检查。',
     },
     {
-      heading: 'Exit condition: status, annualized cost, next date',
-      headingZh: '退出条件：状态、年化成本、下一日期',
-      text: 'You are done when Subscriptions shows the intended status, annualized cost is written against a cap, and a next review or cancel date exists. If you kept the plan, export risk is priced. If you cancelled, confirmation screenshot is filed. Reading post-trial advice without those artifacts is incomplete.',
-      textZh: '当订阅显示预期状态、年化成本已对照上限写下、且存在下次复查或取消日时才算完成。若保留，已计价导出风险。若取消，确认截图已归档。没有这些工件只读试用后建议不完整。',
-    },
-    {
-      heading: 'One-page field card',
-      headingZh: '一页现场卡',
-      text: 'Compress into one page: goal, Apple ID identity, device, money or permission at stake, action today, verification tomorrow, control change this week. Screenshot into an adult note. If you cannot fill the card, you are reading ahead of acting. Share with the household payer when money is involved. Revisit in seven days and mark kept, cancelled, or escalated.',
-      textZh: '压成一页：目标、Apple ID 身份、设备、金钱或权限、今天动作、明天验证、本周控制变化。截图进成人笔记。填不满说明读得比做得快。涉及金钱与付款人共享。七天后标记保留、取消或升级。',
-    },
-    {
       heading: 'Introductory offer cliffs after free trials',
       headingZh: '免费试用后的首期优惠悬崖',
       text: 'Some trials convert into intro pricing that later cliffs into a higher plan. Calendar both the trial end and the intro end when present. Annualize the post-cliff price before you keep. Receipts after cliff should be matched within twenty-four hours. Missing the cliff is a common stack builder.',
@@ -1462,18 +1336,6 @@ export const articles = [
       textZh: '每次保留或取消都应更新九十天台账，写入下次续费或取消确认。没有试用后更新的审计会漂移。精确链接订阅标题。负责成人在行上签缩写。这让试用变成库存，而不是传说。',
     },
     {
-      heading: 'Seven-day verification after you decide',
-      headingZh: '决策后的七日验证',
-      text: 'Verify on a schedule: same day for cancels and permission changes, seven days for installs and trials, thirty days for family policy. Each loop checks one artifact. Missing artifact means incomplete action. Put the next date in the same note as the decision and share it when Family Sharing money is involved.',
-      textZh: '按计划验证：取消与权限变更看当天，安装与试用看七天，家庭策略看三十天。每次只核一份工件。工件缺失=动作未完成。把下一日期写在与决策同一笔记，家庭共享涉及金钱时共享。',
-    },
-    {
-      heading: 'Artifact checklist when you finish',
-      headingZh: '完成时的工件清单',
-      text: 'Leave with at most three artifacts: one screenshot or table, one calendar date, one control or inventory change. More becomes clutter. Store them in an adult note. If you cannot name the three, you are not done. This checklist is the operational exit condition for the guide.',
-      textZh: '最多带走三份工件：一张截图或表、一个日历日、一项控制或台账变化。更多会变杂物。放进成人笔记。说不出三份就还没做完。此清单是本指南的运营退出条件。',
-    },
-    {
       heading: 'Wrong Apple ID empty list checklist',
       headingZh: '错误 Apple ID 导致空列表检查',
       text: 'If Subscriptions is empty after a trial, check media and purchases identity versus iCloud, Family Sharing, and web management. Empty is often wrong identity, not zero plans. Screenshot the identity used. Organizers audit the paying account.',
@@ -1496,12 +1358,6 @@ export const articles = [
       headingZh: '确认截图命名',
       text: 'Name cancel or keep screenshots YYYY-MM-DD_app_status. Store in Purchases. Consistent names speed handoff and Report a Problem. Keep before/after pairs ninety days.',
       textZh: '取消或保留截图命名 YYYY-MM-DD_应用_状态。存 Purchases。一致命名加快交接与 Report a Problem。before/after 对保留九十天。',
-    },
-    {
-      heading: 'Owner adult and next verification date',
-      headingZh: '负责成人与下次验证日',
-      text: 'Write the next verification date beside today’s decision and name the owner adult if Family Sharing money is involved. One artifact beats five chats. If you cannot point to the artifact next week, reopen the guide and finish the exit condition. This note exists only to complete operational depth without repeating industrial templates.',
-      textZh: '把下一次验证日写在今天决策旁；若涉及家庭共享金钱，写负责成人。一份工件胜过五条聊天。若下周指不出工件，重开指南完成退出条件。本段仅用于补足运营深度，不重复工业模板。',
     },
     {
       heading: 'Trial season debrief',
@@ -1532,6 +1388,12 @@ export const articles = [
       headingZh: '一句话试用后规则',
       text: 'Decide keep or cancel within twenty-four hours of first paid charge using annualized cost and usage log, then update the ledger. That sentence stops week-long maybe stacks.',
       textZh: '用年化成本与使用日志在首次扣费二十四小时内决定保留或取消，然后更新台账。这句话能阻止拖一周的也许堆叠。',
+    },
+    {
+      heading: 'Post-trial decision matrix',
+      headingZh: '试用后决策矩阵',
+      text: 'Rows: usage frequency (weekly, monthly, rarely), annualized cost, post-cancel access, shared-card impact. Columns: keep, cancel, replace. Weekly use under cap with clean cancel path: keep. Rarely use or post-trial price exceeds cap: cancel. Duplicate category: cancel worse cancel path. Matrix beats gut feeling.',
+      textZh: '行：使用频率（每周、每月、很少）、年化成本、取消后访问、共用卡影响。列：保留、取消、替换。每周用且低于上限且取消路径清晰：保留。很少用或试用后价格超上限：取消。重复类别：取消取消路径更差者。矩阵胜过直觉。',
     }
     ],
   },
@@ -1545,8 +1407,8 @@ export const articles = [
     category: 'Workflow',
     tags: ['Workflow', 'Due diligence', 'Purchasing'],
     publishedAt: '2026-05-22',
-    updatedAt: '2026-07-19',
-    readTime: '10 min read',
+    updatedAt: '2026-08-05',
+    readTime: '9 min read',
     sections: [
     {
       heading: 'Define the decision before you open tools',
@@ -1663,12 +1525,6 @@ export const articles = [
       textZh: '周日十五分钟：用审计处理等待列表应用、年化新试用、确认免费下载闸门、清理半截研究标签。卫生防止半完成比价变成午夜安装。与购买复查同一日历。',
     },
     {
-      heading: 'One-page field card',
-      headingZh: '一页现场卡',
-      text: 'Compress into one page: goal, Apple ID identity, device, money or permission at stake, action today, verification tomorrow, control change this week. Screenshot into an adult note. If you cannot fill the card, you are reading ahead of acting. Share with the household payer when money is involved.',
-      textZh: '压成一页：目标、Apple ID 身份、设备、金钱或权限、今天动作、明天验证、本周控制变化。截图进成人笔记。填不满说明读得比做得快。涉及金钱与付款人共享。',
-    },
-    {
       heading: 'Identify the exact app before comparing anything',
       headingZh: '比任何东西前先识别准确应用',
       text: 'Confirm developer name, bundle identity signals, and that screenshots match the product you mean. Clone listings thrive on name similarity. Write the exact title you will install. Wrong identity makes every later price or privacy check useless. Prefer App Store links you open yourself over chat forwards.',
@@ -1705,18 +1561,6 @@ export const articles = [
       textZh: '若安装目标是儿童或共用 iPad，决策句要加上免费下载政策、购买前询问状态与组织者可见性。成人个人阈值太软。显式写下更高门槛，避免代管人降低标准。',
     },
     {
-      heading: 'Seven-day verification loop',
-      headingZh: '七日验证环',
-      text: 'After you act, verify same day for cancels and removals, seven days for installs and trials, thirty days for family policy. Each loop checks one artifact. Missing artifact means incomplete action. Put the next date in the same note as the decision.',
-      textZh: '行动后：取消与移除看当天，安装与试用看七天，家庭策略看三十天。每次只核一份工件。工件缺失=动作未完成。把下一日期写在与决策同一笔记。',
-    },
-    {
-      heading: 'Artifact checklist',
-      headingZh: '工件清单',
-      text: 'Leave with at most three artifacts: screenshot or table, calendar date, control or inventory change. Store in an adult note. If you cannot name the three, you are not done. Share with the payer when money is family money.',
-      textZh: '最多三份工件：截图或表、日历日、控制或台账变化。放成人笔记。说不出三份就还没做完。金钱是家庭钱时与付款人共享。',
-    },
-    {
       heading: 'Decision sentence templates you can copy',
       headingZh: '可复制的决策句模板',
       text: 'Templates: I will decide whether to start a trial for [app] on [device] under [Apple ID]. I will decide whether to keep or cancel [plan] after annualizing. I will decide whether a free install is allowed on the shared iPad this week. Copy, fill, then audit. Empty brackets mean stop.',
@@ -1733,12 +1577,6 @@ export const articles = [
       headingZh: '干净结束一次研究会话',
       text: 'End by stating the decision, the artifact locations, and the next date. Close extra tabs. If undecided, write wait until [date] rather than leaving a fog. Clean endings prevent midnight reversals.',
       textZh: '结束时陈述决策、工件位置与下一日期。关闭多余标签。若未决定，写等到 [日期] 而不是留下迷雾。干净结束防止午夜反转。',
-    },
-    {
-      heading: 'Owner adult when money is shared',
-      headingZh: '金钱共享时的负责成人',
-      text: 'If Family Sharing or a shared card is involved, name the owner adult for the decision and for verification dates. Ownerless research becomes parallel actions and duplicate filings. Write the name on the field card.',
-      textZh: '若涉及家庭共享或共用卡，为决策与验证日具名负责成人。无主研究会变成并行动作与重复提交。把名字写在现场卡上。',
     },
     {
       heading: 'Pre-purchase worksheet cells',
@@ -1759,22 +1597,10 @@ export const articles = [
       textZh: '若决策是家庭扣费，按顺序打开家庭系列文章而不是随机标签。系列减少上下文切换。在现场卡写你在哪个系列。随机标签重造混乱。',
     },
     {
-      heading: 'Success metric for the workflow',
-      headingZh: '流程的成功指标',
-      text: 'Success is fewer impulse installs, more dated decisions, and zero research tabs older than seven days. Track monthly. If impulse installs rise, tighten stop rules before adding more tools. Metrics keep the workflow honest.',
-      textZh: '成功是冲动安装更少、有日期决策更多、超过七天的研究标签为零。每月跟踪。若冲动安装上升，先收紧停止规则再加工具。指标让流程诚实。',
-    },
-    {
-      heading: 'Timer discipline for the twelve-minute audit',
-      headingZh: '十二分钟审计的计时纪律',
-      text: 'Set a visible timer. When it ends, either decide, schedule wait, or explicitly extend once with a new end time. Open-ended audits become shopping. Timer discipline is the difference between research and entertainment browsing on a Tuesday night.',
-      textZh: '设可见计时器。结束时要么决定、安排等待，要么明确延期一次并写新结束时间。无截止审计会变成购物。计时纪律区分研究与周二晚上的娱乐浏览。',
-    },
-    {
-      heading: 'Field card fields that must not stay blank',
-      headingZh: '现场卡不可空白的字段',
-      text: 'Decision sentence, Apple ID, device, stop rules result, official screenshot yes/no, next date, owner adult if shared money. Blank fields mean the session is incomplete even if you read three articles. Fill or stop.',
-      textZh: '决策句、Apple ID、设备、停止规则结果、是否截官方图、下一日期、共享金钱时的负责成人。空白字段意味着即使读了三篇文章会话仍不完整。填完或停下。',
+      heading: 'Research session close-out checklist',
+      headingZh: '研究会话收尾清单',
+      text: 'Before closing the tab: state the decision aloud, name where the artifact is stored, write the next date. If undecided, write wait until [date]. Close extra tabs. A clean close-out prevents midnight reversals and impulse trial starts. Research that does not end with a dated decision is browsing.',
+      textZh: '关标签前：大声陈述决策，说出工件存在哪里，写下一日期。未决定则写等到 [日期]。关多余标签。干净收尾防止午夜反转与冲动试用。没有有日期决策结尾的研究只是浏览。',
     }
     ],
   },
@@ -1788,7 +1614,7 @@ export const articles = [
     category: 'Safety',
     tags: ['Free apps', 'Risk', 'Permissions'],
     publishedAt: '2026-06-08',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '10 min read',
     sections: [
     {
@@ -1965,7 +1791,7 @@ export const articles = [
     category: 'Subscriptions',
     tags: ['Cancel subscription', 'Auto-renew', 'Apple ID'],
     publishedAt: '2026-06-30',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '10 min read',
     sections: [
     {
@@ -2130,8 +1956,8 @@ export const articles = [
     category: 'Support',
     tags: ['Purchase history', 'Billing', 'Account hygiene'],
     publishedAt: '2026-04-10',
-    updatedAt: '2026-07-19',
-    readTime: '10 min read',
+    updatedAt: '2026-08-05',
+    readTime: '9 min read',
     sections: [
     {
       heading: 'Pull the full history, not just the last charge',
@@ -2242,12 +2068,6 @@ export const articles = [
       textZh: '设重复事件：打开台账、打开订阅、对齐银行、分配动作、需要时改一项控制。没有日期，审计会腐坏。在事件描述附上台账链接或文件夹名，方便代管人执行。专注十五分钟胜过季度恐慌。',
     },
     {
-      heading: 'Exit condition for this guide',
-      headingZh: '本指南退出条件',
-      text: 'You are done when you have one written decision, one verification date, and one control or inventory change. Reading without those three is not completion. Put them in an adult note before closing the tab. If money moved, match bank to Purchase History within twenty-four hours.',
-      textZh: '当你有一个书面决策、一个验证日、一项控制或台账变化时才算完成。没有这三样只是阅读。关标签前放进成人笔记。若已扣费，二十四小时内把银行对齐购买记录。',
-    },
-    {
       heading: 'How to pull history without missing identities',
       headingZh: '如何拉取历史且不漏身份',
       text: 'Check media and purchases Apple ID versus iCloud identity, and open history on the paying identity. Empty lists often mean wrong ID, not zero spending. Screenshot the identity used. Family organizers should audit the paying account, not only personal devices.',
@@ -2264,18 +2084,6 @@ export const articles = [
       headingZh: '争议行的证据卫生',
       text: 'For any line you might dispute, keep Purchase History screenshot, bank descriptor, offer sheet if available, and subscription status. Name files with dates. Good evidence shortens Report a Problem paths. Bad evidence becomes multi-week loops.',
       textZh: '对任何可能争议的行，保留购买记录截图、银行描述、若有报价页、订阅状态。文件带日期命名。好证据缩短 Report a Problem 路径。坏证据变成多周循环。',
-    },
-    {
-      heading: 'One-page field card for this decision',
-      headingZh: '该决策的一页现场卡',
-      text: 'Compress into one page: goal, Apple ID identity, device, money or permission at stake, action today, verification tomorrow, control change this week. Screenshot into an adult note. If you cannot fill the card, you are reading ahead of acting. Share with the household payer when money is involved. Revisit in seven days and mark kept, cancelled, or escalated. Boring cards stop repeat incidents better than rereading long guides under stress. This card is the exit condition that turns research into operations.',
-      textZh: '压成一页：目标、Apple ID 身份、设备、金钱或权限、今天动作、明天验证、本周控制变化。截图进成人笔记。填不满说明读得比做得快。涉及金钱与付款人共享。七天后标记保留、取消或升级。压力下重读长文不如无聊现场卡更能阻止重复事故。这张卡是把研究变成运营的退出条件。',
-    },
-    {
-      heading: 'Seven-day verification loop',
-      headingZh: '七日验证环',
-      text: 'After you act, verify on a schedule: same day for cancels and permission changes, seven days for installs and trials, thirty days for family policy. Each loop checks one artifact only. Missing artifact means incomplete action. Put the next date in the same note as the decision. Share dates when Family Sharing money is involved so two adults do not hold partial facts. Verification loops are how households stop relearning the same expensive lesson.',
-      textZh: '行动后按计划验证：取消与权限变更看当天，安装与试用看七天，家庭策略看三十天。每次只核一份工件。工件缺失=动作未完成。把下一日期写在与决策同一笔记。家庭共享涉及金钱时共享日期，避免两人各握半份事实。验证环让家庭停止重学同一昂贵教训。',
     },
     {
       heading: 'Family organizer audit ownership',
@@ -2308,10 +2116,10 @@ export const articles = [
       textZh: '不要让审计发现躺着。四十八小时内取消无用周付、指定主人、改一项控制。陈旧发现会变常态支出。把四十八小时规则写在仪式事件上，让家庭期待动作而不只是观察。',
     },
     {
-      heading: 'Practical close: one artifact only',
-      headingZh: '实务收尾：只留一份工件',
-      text: 'Finish with one artifact only: a screenshot, calendar alert, ledger row, or control change note. Multiple half-saved chats are how households lose the thread. If you cannot point to the artifact a week later, the process did not finish. Share the artifact with the payer when money is involved.',
-      textZh: '收尾只留一份工件：截图、日历提醒、台账行或控制变化笔记。半截聊天会让家庭失去线索。若一周后指不出工件，流程就还没做完。涉及金钱时与付款人共享工件。',
+      heading: 'Audit findings to action template',
+      headingZh: '审计发现转动作模板',
+      text: 'For each finding row: write cancel, keep with review date, or escalate. Then name one control change: free downloads, Ask to Buy, category cap, or passcode. Stale findings become normalized spend. Process all rows within forty-eight hours of the audit ceremony.',
+      textZh: '每行发现：写取消、保留并写复查日、或升级。再命名一项控制变化：免费下载、购买前询问、类别上限或密码。陈旧发现变常态支出。审计仪式后四十八小时内处理所有行。',
     }
     ],
   },
@@ -2325,7 +2133,7 @@ export const articles = [
     category: 'Privacy',
     tags: ['Permissions', 'Privacy', 'iOS settings'],
     publishedAt: '2026-05-23',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '10 min read',
     sections: [
     {
@@ -2467,12 +2275,6 @@ export const articles = [
       textZh: '新应用默认使用应用期间或拒绝。始终需要书面用途，例如你明知需要的设备查找。若应用通过二次提示从使用期间升级到始终，当作新决策并用新的一句话用途映射重估。儿童设备上始终默认否，除非组织者书面批准学校或安全工具。',
     },
     {
-      heading: 'Artifact checklist after you finish reading',
-      headingZh: '读完后的工件清单',
-      text: 'Leave with three artifacts maximum: one screenshot or table, one calendar date, one control change. More artifacts become clutter and get ignored. Put them in Purchases or the adult household note. If you cannot name the three, you are not done. This checklist replaces repeated filler paragraphs with an exit condition.',
-      textZh: '最多带走三份工件：一张截图或表、一个日历日、一项控制变化。更多工件会变杂物被忽略。放进 Purchases 或成人家庭笔记。说不出三份就还没做完。此清单用退出条件替代重复填充段。',
-    },
-    {
       heading: 'Microphone and clipboard caution',
       headingZh: '麦克风与剪贴板谨慎',
       text: 'Microphone grants should require a spoken or recorded job happening now. Clipboard reads by free utilities are a stop signal unless the job is paste-centric and trusted. After any meeting or call app install, revoke mic when the event ends if use is rare. On shared devices, announce mic grants aloud. Write mic and clipboard decisions next to the permission budget so they are not forgotten day-seven revokes.',
@@ -2485,10 +2287,10 @@ export const articles = [
       textZh: '清理、扫码、键盘、壁纸几乎从不因营销用途需要通讯录。通讯录访问是营销与关系图谱面。先拒绝。若无通讯录就阻断用途，删除而不是谈判。对消息应用，仅在决定它是多周留存后再授通讯录。家庭笔记里给通讯录授权打更高严重级别标签。',
     },
     {
-      heading: 'Exit condition for this guide',
-      headingZh: '本指南退出条件',
-      text: 'You are done when you have one written decision, one verification date, and one control or inventory change. Reading without those three is not completion. Put them in Purchases or the adult note before closing the tab. If money moved, also match bank to Purchase History within twenty-four hours. Exit conditions prevent endless rereading under stress.',
-      textZh: '当你有一个书面决策、一个验证日、一项控制或台账变化时才算完成。没有这三样只是阅读。关标签前放进 Purchases 或成人笔记。若已扣费，还要在二十四小时内把银行对齐购买记录。退出条件避免压力下无限重读。',
+      heading: 'Permission decision card for the current app',
+      headingZh: '当前应用权限决策卡',
+      text: 'App name, core job, permissions requested, level granted (allow once, while using, always), next revoke date. Two cards per family: one for adult personal phone, one for shared iPad. Different bars prevent over-blocking adults and under-protecting kids.',
+      textZh: '应用名、核心用途、请求权限、授予级别（允许一次、使用期间、始终）、下次收回日。家庭两张卡：成人个人手机一张，共用 iPad 一张。不同门槛避免过度限制成人且保护不足孩子。',
     }
     ],
   },
@@ -2502,7 +2304,7 @@ export const articles = [
     category: 'Subscriptions',
     tags: ['Free trial', 'Auto-renew', 'Billing risk'],
     publishedAt: '2026-07-12',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '11 min read',
     sections: [
     {
@@ -2637,8 +2439,8 @@ export const articles = [
     category: 'Regions',
     tags: ['Region comparison', 'Account safety', 'Pricing'],
     publishedAt: '2026-03-13',
-    updatedAt: '2026-07-19',
-    readTime: '10 min read',
+    updatedAt: '2026-08-05',
+    readTime: '9 min read',
     sections: [
     {
       heading: 'Compare first, switch later if at all',
@@ -2743,12 +2545,6 @@ export const articles = [
       textZh: '计入切区风险、支付失败、语言或支持缺失、功能偏差与恢复摩擦。超过标价差就留下。在表上写走开计算。跳过这步的家庭会把截图当优惠券。',
     },
     {
-      heading: 'Exit condition for this guide',
-      headingZh: '本指南退出条件',
-      text: 'You are done when you have one written decision, one verification date, and one control or inventory change. Reading without those three is not completion. Put them in an adult note before closing the tab. If money moved, match bank to Purchase History within twenty-four hours.',
-      textZh: '当你有一个书面决策、一个验证日、一项控制或台账变化时才算完成。没有这三样只是阅读。关标签前放进成人笔记。若已扣费，二十四小时内把银行对齐购买记录。',
-    },
-    {
       heading: 'Media library and subscription inventory before research ends',
       headingZh: '研究结束前的媒体库与订阅盘点',
       text: 'List active subscriptions, season passes, and media dependencies that might break or become awkward after a storefront move. If the inventory is incomplete, you are not ready to switch. Research includes exit, not only entry price.',
@@ -2771,18 +2567,6 @@ export const articles = [
       headingZh: '为日后决策记录一次比较',
       text: 'Save the three-column sheet, screenshots, date, and decision: stay, secondary experiment, or primary switch with exit plan. Future-you will forget the social post that started the idea. Records prevent repeating the same impulsive switch discussion every quarter.',
       textZh: '保存三列表、截图、日期与决策：留下、次要实验，或带退出计划的主切换。未来的你会忘记引发想法的社媒帖。记录防止每季度重复同一冲动切区讨论。',
-    },
-    {
-      heading: 'One-page field card for this decision',
-      headingZh: '该决策的一页现场卡',
-      text: 'Compress into one page: goal, Apple ID identity, device, money or permission at stake, action today, verification tomorrow, control change this week. Screenshot into an adult note. If you cannot fill the card, you are reading ahead of acting. Share with the household payer when money is involved. Revisit in seven days and mark kept, cancelled, or escalated. Boring cards stop repeat incidents better than rereading long guides under stress. This card is the exit condition that turns research into operations.',
-      textZh: '压成一页：目标、Apple ID 身份、设备、金钱或权限、今天动作、明天验证、本周控制变化。截图进成人笔记。填不满说明读得比做得快。涉及金钱与付款人共享。七天后标记保留、取消或升级。压力下重读长文不如无聊现场卡更能阻止重复事故。这张卡是把研究变成运营的退出条件。',
-    },
-    {
-      heading: 'Seven-day verification loop',
-      headingZh: '七日验证环',
-      text: 'After you act, verify on a schedule: same day for cancels and permission changes, seven days for installs and trials, thirty days for family policy. Each loop checks one artifact only. Missing artifact means incomplete action. Put the next date in the same note as the decision. Share dates when Family Sharing money is involved so two adults do not hold partial facts. Verification loops are how households stop relearning the same expensive lesson.',
-      textZh: '行动后按计划验证：取消与权限变更看当天，安装与试用看七天，家庭策略看三十天。每次只核一份工件。工件缺失=动作未完成。把下一日期写在与决策同一笔记。家庭共享涉及金钱时共享日期，避免两人各握半份事实。验证环让家庭停止重学同一昂贵教训。',
     },
     {
       heading: 'Taxes, trials, and packaging break sticker math',
@@ -2833,12 +2617,6 @@ export const articles = [
       textZh: '对每条来自社媒的地区说法，记录来源、日期、应用身份、三列表状态与决策。多数说法死于不完整的表。日志防止每月重审同一谣言。日志与其他购买研究笔记放一起，不要埋在聊天里。',
     },
     {
-      heading: 'Practical close: one artifact only',
-      headingZh: '实务收尾：只留一份工件',
-      text: 'Finish with one artifact only: a screenshot, calendar alert, ledger row, or control change note. Multiple half-saved chats are how households lose the thread. If you cannot point to the artifact a week later, the process did not finish. Share the artifact with the payer when money is involved.',
-      textZh: '收尾只留一份工件：截图、日历提醒、台账行或控制变化笔记。半截聊天会让家庭失去线索。若一周后指不出工件，流程就还没做完。涉及金钱时与付款人共享工件。',
-    },
-    {
       heading: 'Decision record: stay is a valid win',
       headingZh: '决策记录：留下也是胜利',
       text: 'Close every comparison with an explicit decision: stay, secondary experiment only, or primary switch with exit plan. Staying after complete research is success, not indecision. Record the sticker gap and the non-price costs that exceeded it so the next social post does not restart a zero-based debate.',
@@ -2849,6 +2627,12 @@ export const articles = [
       headingZh: '改任何设置前的最终检查',
       text: 'Before touching region settings, confirm the three-column sheet is complete, the exit plan is written, non-essential purchases are frozen for seven days, and one adult owns recovery. If any item fails, stay. Settings changes without this check are how research becomes an outage.',
       textZh: '改地区设置前，确认三列表完整、退出计划已写、非必要购买冻结七天、有一名成人负责恢复。任一项失败就留下。没有这检查就改设置，研究会变成故障。',
+    },
+    {
+      heading: 'Stay decision record template',
+      headingZh: '留下决策记录模板',
+      text: 'Date, app, sticker gap, non-price costs that exceeded gap, decision: stay. File it. When the same social post resurfaces in three months, your dated record answers faster than re-debating. Staying after complete research is success.',
+      textZh: '日期、应用、标价差、超过差的非价格成本、决策：留下。归档。三个月后同一社媒帖再现时，有日期的记录比重辩更快。完整研究后留下是成功。',
     }
     ],
   },
@@ -2862,7 +2646,7 @@ export const articles = [
     category: 'Purchasing',
     tags: ['Subscriptions', 'Paywalls', 'Value'],
     publishedAt: '2026-03-08',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '10 min read',
     sections: [
     {
@@ -3009,8 +2793,8 @@ export const articles = [
     category: 'Family',
     tags: ['Family Sharing', 'Screen Time', 'Child safety'],
     publishedAt: '2026-03-23',
-    updatedAt: '2026-07-19',
-    readTime: '10 min read',
+    updatedAt: '2026-08-05',
+    readTime: '9 min read',
     sections: [
     {
       heading: 'Define who can approve purchases',
@@ -3127,12 +2911,6 @@ export const articles = [
       textZh: '孩子去亲戚家前，把共用设备调更严：关闭免费下载或开启购买前询问，确认屏幕使用时间购买密码在你而不是孩子那里，并写允许应用列表。告知亲戚不要从聊天链接安装。回来后即使他们说没事也跑购买日清单。',
     },
     {
-      heading: 'Exit condition for this guide',
-      headingZh: '本指南退出条件',
-      text: 'You are done when you have one written decision, one verification date, and one control or inventory change. Reading without those three is not completion. Put them in an adult note before closing the tab. If money moved, match bank to Purchase History within twenty-four hours.',
-      textZh: '当你有一个书面决策、一个验证日、一项控制或台账变化时才算完成。没有这三样只是阅读。关标签前放进成人笔记。若已扣费，二十四小时内把银行对齐购买记录。',
-    },
-    {
       heading: 'Allowlist maintenance without endless meetings',
       headingZh: '不靠无穷会议维护白名单',
       text: 'Review the allowlist monthly: remove unused apps, re-check privacy and IAP for keepers, and add at most a fixed number of new titles. Children can propose apps into a waiting list for Sunday clinic. Waiting lists teach delay. Infinite same-day approvals teach pressure.',
@@ -3157,18 +2935,6 @@ export const articles = [
       textZh: '学校受管设备可能隐藏控件或强制应用。不要用屏幕使用时间猜测对抗 MDM。写清学校管什么、家庭管什么。放学后使用的家庭 Apple ID 仍适用家庭规则。两个界面混淆会制造虚假信心。',
     },
     {
-      heading: 'One-page field card for this decision',
-      headingZh: '该决策的一页现场卡',
-      text: 'Compress into one page: goal, Apple ID identity, device, money or permission at stake, action today, verification tomorrow, control change this week. Screenshot into an adult note. If you cannot fill the card, you are reading ahead of acting. Share with the household payer when money is involved. Revisit in seven days and mark kept, cancelled, or escalated. Boring cards stop repeat incidents better than rereading long guides under stress. This card is the exit condition that turns research into operations.',
-      textZh: '压成一页：目标、Apple ID 身份、设备、金钱或权限、今天动作、明天验证、本周控制变化。截图进成人笔记。填不满说明读得比做得快。涉及金钱与付款人共享。七天后标记保留、取消或升级。压力下重读长文不如无聊现场卡更能阻止重复事故。这张卡是把研究变成运营的退出条件。',
-    },
-    {
-      heading: 'Seven-day verification loop',
-      headingZh: '七日验证环',
-      text: 'After you act, verify on a schedule: same day for cancels and permission changes, seven days for installs and trials, thirty days for family policy. Each loop checks one artifact only. Missing artifact means incomplete action. Put the next date in the same note as the decision. Share dates when Family Sharing money is involved so two adults do not hold partial facts. Verification loops are how households stop relearning the same expensive lesson.',
-      textZh: '行动后按计划验证：取消与权限变更看当天，安装与试用看七天，家庭策略看三十天。每次只核一份工件。工件缺失=动作未完成。把下一日期写在与决策同一笔记。家庭共享涉及金钱时共享日期，避免两人各握半份事实。验证环让家庭停止重学同一昂贵教训。',
-    },
-    {
       heading: 'Waiting list UX for kids',
       headingZh: '给孩子的等待列表体验',
       text: 'Provide a simple note or shared list where kids add app names during the week. Sunday clinic processes the list. Visible process reduces secret installs. If the list is ignored for weeks, kids invent workarounds—keep the clinic sacred.',
@@ -3191,6 +2957,12 @@ export const articles = [
       headingZh: '出行日的家长交接卡',
       text: 'When parents travel, leave a one-page handoff: allowlist, free-download state, who approves, Screen Time passcode holder, and emergency cancel path. Travel days without handoff create open gates. Review the card on return. Short handoffs beat long verbal instructions that get forgotten.',
       textZh: '父母出行时留一页交接：白名单、免费下载状态、谁批准、屏幕使用时间密码持有人、紧急取消路径。没有交接的出行日会打开闸门。返回后复查卡片。短交接胜过容易被忘的长口头说明。',
+    },
+    {
+      heading: 'Household install policy one-pager',
+      headingZh: '家庭安装政策一页纸',
+      text: 'Three bands (young kids, teens, shared iPad), weekly new-install cap, named approver, Sunday clinic time, hard-no list. Publish beside Wi-Fi passwords. Revisit on birthdays and after new devices. A one-pager prevents secret policy drift.',
+      textZh: '三档（低龄、青少年、共用 iPad）、每周新装上限、具名批准人、周日门诊时间、硬拒绝清单。贴在 Wi-Fi 密码旁。生日与新设备加入时复盘。一页纸防止秘密政策漂移。',
     }
     ],
   },
@@ -3204,7 +2976,7 @@ export const articles = [
     category: 'Support',
     tags: ['Refunds', 'Report a Problem', 'Support path'],
     publishedAt: '2026-06-18',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '10 min read',
     sections: [
     {
@@ -3346,12 +3118,6 @@ export const articles = [
       textZh: '一笔扣费、一个主柜台、一个材料包 ID。若已提交 Report a Problem，不要同一天用同一套截图再开 Apple 单。仅在 Apple 要求或出现新事实时补充。若有受理编号就记录。家人再次提交前先问是否已有单。重复噪音拖慢审核，也可能显得滥用。',
     },
     {
-      heading: 'Artifact checklist after you finish reading',
-      headingZh: '读完后的工件清单',
-      text: 'Leave with three artifacts maximum: one screenshot or table, one calendar date, one control change. More artifacts become clutter and get ignored. Put them in Purchases or the adult household note. If you cannot name the three, you are not done. This checklist replaces repeated filler paragraphs with an exit condition.',
-      textZh: '最多带走三份工件：一张截图或表、一个日历日、一项控制变化。更多工件会变杂物被忽略。放进 Purchases 或成人家庭笔记。说不出三份就还没做完。此清单用退出条件替代重复填充段。',
-    },
-    {
       heading: 'What to write in three sentences',
       headingZh: '三句话怎么写',
       text: 'Sentence one: what you bought and when. Sentence two: what failed versus what the offer stated. Sentence three: what you already tried and what you want now. Attach two screenshots. Reviewers scan; dense emotion without chronology slows outcomes. Save the three sentences in the packet before opening the form so household members do not rewrite them mid-submit.',
@@ -3364,16 +3130,16 @@ export const articles = [
       textZh: '家庭共享扣费通常由组织者掌握证据路径。指定一个提交成人。成员收集截图但不并行开单。提交后由该人负责日历跟进。归属避免三个成人提交三个故事。在材料包封面柜台选择旁写提交人姓名。',
     },
     {
-      heading: 'Exit condition for this guide',
-      headingZh: '本指南退出条件',
-      text: 'You are done when you have one written decision, one verification date, and one control or inventory change. Reading without those three is not completion. Put them in Purchases or the adult note before closing the tab. If money moved, also match bank to Purchase History within twenty-four hours. Exit conditions prevent endless rereading under stress.',
-      textZh: '当你有一个书面决策、一个验证日、一项控制或台账变化时才算完成。没有这三样只是阅读。关标签前放进 Purchases 或成人笔记。若已扣费，还要在二十四小时内把银行对齐购买记录。退出条件避免压力下无限重读。',
-    },
-    {
       heading: 'Calm clock: stop collecting at T+24h',
       headingZh: '冷静时钟：T+24 小时停止收集',
       text: 'Start a twenty-four hour clock when evidence collection begins. At the deadline, file or consciously wait with a new date—do not drift. Write the clock end time on the packet. Households that collect forever never choose a desk. If Apple asks for more later, that is a new mini-clock, not an excuse to reopen three desks.',
       textZh: '证据收集开始时启动二十四小时钟。到期时提交或带着新日期有意识等待——不要漂。把截止时间写在材料包。永远收集的家庭永远不选柜台。若 Apple 稍后要更多材料，那是新的小时钟，不是重开三个柜台的借口。',
+    },
+    {
+      heading: 'Report a Problem filing checklist',
+      headingZh: 'Report a Problem 提交清单',
+      text: 'Apple ID confirmed, Purchase History line screenshotted, amount and date noted, three-sentence reason written, cancel status verified, right desk confirmed. File once. Wait for review. Do not open duplicate claims. If denied, add new facts only.',
+      textZh: 'Apple ID 已确认、购买记录行已截图、金额与日期已记、三句理由已写、取消状态已核、正确柜台已确认。提交一次。等审核。不开重复单。若拒绝，仅补充新事实。',
     }
     ],
   },
@@ -3387,7 +3153,7 @@ export const articles = [
     category: 'Privacy',
     tags: ['Hide My Email', 'Privacy', 'Sign-up safety'],
     publishedAt: '2026-03-20',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '10 min read',
     sections: [
     {
@@ -3511,16 +3277,16 @@ export const articles = [
       textZh: '删除任何收过购买收据或客服回复的中继前，导出或转发这些线程到保留箱。许多应用只认原始收件箱。台账标记存在客服线程，避免季度清理抹掉证据。若已删除中继，在恢复访问或接受损失前停止新建工单。线程丢失是人们低估的隐私清理副作用。',
     },
     {
-      heading: 'Artifact checklist after you finish reading',
-      headingZh: '读完后的工件清单',
-      text: 'Leave with three artifacts maximum: one screenshot or table, one calendar date, one control change. More artifacts become clutter and get ignored. Put them in Purchases or the adult household note. If you cannot name the three, you are not done. This checklist replaces repeated filler paragraphs with an exit condition.',
-      textZh: '最多带走三份工件：一张截图或表、一个日历日、一项控制变化。更多工件会变杂物被忽略。放进 Purchases 或成人家庭笔记。说不出三份就还没做完。此清单用退出条件替代重复填充段。',
-    },
-    {
       heading: 'Password manager pairing rule',
       headingZh: '密码管理器配对规则',
       text: 'Every relay row should link to a password manager entry with the same app label. If you cannot find the password entry, the identity is incomplete. Prefer unique passwords even with Sign in with Apple backup paths. On shared family notes, never paste passwords—only labels and recovery hints. Incomplete identity pairs are how lockouts become permanent.',
       textZh: '每个中继行应链接到同标签的密码管理器条目。找不到密码条目则身份不完整。即使有通过 Apple 登录备用路径也优先唯一密码。家庭共享笔记永不粘贴密码——只写标签与恢复提示。不完整身份配对会让锁死变永久。',
+    },
+    {
+      heading: 'Signup hygiene inventory',
+      headingZh: '注册卫生盘点',
+      text: 'List apps where you used primary email, Hide My Email, or dedicated alias. Mark which apps still send marketing. Revoke aliases for deleted apps. Prefer Hide My Email for new signups. Inventory every quarter. Clean aliases prevent inbox spam and credential exposure.',
+      textZh: '列出用主邮箱、隐藏邮件或专用别名的应用。标记仍发营销的应用。为已删应用收回别名。新注册优先隐藏邮件。每季度盘点。清理别名防止收件箱垃圾与凭据暴露。',
     }
     ],
   },
@@ -3534,8 +3300,8 @@ export const articles = [
     category: 'Family',
     tags: ['Screen Time', 'Family Sharing', 'Purchase controls'],
     publishedAt: '2026-05-26',
-    updatedAt: '2026-07-19',
-    readTime: '10 min read',
+    updatedAt: '2026-08-05',
+    readTime: '9 min read',
     sections: [
     {
       heading: 'Surprise charges usually come from weak defaults',
@@ -3646,12 +3412,6 @@ export const articles = [
       textZh: '零元不等于零风险。写明免费下载是否敞开、谁可批准、不良免费安装后怎么办。共用 iPad 上免费下载默认关闭。为学校应用打开要有结束日。每周日与购买复查一起看免费下载状态。',
     },
     {
-      heading: 'Exit condition for this guide',
-      headingZh: '本指南退出条件',
-      text: 'You are done when you have one written decision, one verification date, and one control or inventory change. Reading without those three is not completion. Put them in an adult note before closing the tab. If money moved, match bank to Purchase History within twenty-four hours.',
-      textZh: '当你有一个书面决策、一个验证日、一项控制或台账变化时才算完成。没有这三样只是阅读。关标签前放进成人笔记。若已扣费，二十四小时内把银行对齐购买记录。',
-    },
-    {
       heading: 'Monthly control drill with a harmless free app',
       headingZh: '用无害免费应用做的每月控制演练',
       text: 'Once a month, with an adult watching, attempt a harmless free install on a child or shared device to confirm free-download gates and Ask to Buy still fire. Log pass or fail with date. Failed drills mean rotate passcodes and re-check settings the same day. Untested controls drift after iOS updates and guest weekends. Keep the drill under five minutes so it actually happens.',
@@ -3676,18 +3436,6 @@ export const articles = [
       textZh: '写谁可批购买前询问推送、谁持有屏幕使用时间密码、哪些免费应用预批准。没有文档的代管人要么全冻要么全批。卡片离线且短。任何事故后当天更新。',
     },
     {
-      heading: 'One-page field card for this decision',
-      headingZh: '该决策的一页现场卡',
-      text: 'Compress into one page: goal, Apple ID identity, device, money or permission at stake, action today, verification tomorrow, control change this week. Screenshot into an adult note. If you cannot fill the card, you are reading ahead of acting. Share with the household payer when money is involved. Revisit in seven days and mark kept, cancelled, or escalated. Boring cards stop repeat incidents better than rereading long guides under stress. This card is the exit condition that turns research into operations.',
-      textZh: '压成一页：目标、Apple ID 身份、设备、金钱或权限、今天动作、明天验证、本周控制变化。截图进成人笔记。填不满说明读得比做得快。涉及金钱与付款人共享。七天后标记保留、取消或升级。压力下重读长文不如无聊现场卡更能阻止重复事故。这张卡是把研究变成运营的退出条件。',
-    },
-    {
-      heading: 'Seven-day verification loop',
-      headingZh: '七日验证环',
-      text: 'After you act, verify on a schedule: same day for cancels and permission changes, seven days for installs and trials, thirty days for family policy. Each loop checks one artifact only. Missing artifact means incomplete action. Put the next date in the same note as the decision. Share dates when Family Sharing money is involved so two adults do not hold partial facts. Verification loops are how households stop relearning the same expensive lesson.',
-      textZh: '行动后按计划验证：取消与权限变更看当天，安装与试用看七天，家庭策略看三十天。每次只核一份工件。工件缺失=动作未完成。把下一日期写在与决策同一笔记。家庭共享涉及金钱时共享日期，避免两人各握半份事实。验证环让家庭停止重学同一昂贵教训。',
-    },
-    {
       heading: 'iOS update re-test checklist',
       headingZh: 'iOS 更新后重测清单',
       text: 'After major iOS updates, re-test free-download gates, Ask to Buy prompts, and Screen Time passcode still required for purchases. Updates move menus and occasionally reset assumptions. Log the re-test. Five minutes here prevents a month of open gates.',
@@ -3706,16 +3454,16 @@ export const articles = [
       textZh: '学期会带来例外压力。预先写哪些学校应用允许、例外何时结束、购买锁仍适用。周日门诊对齐开学。有日历意识的政策能避免开课前一晚 10 点紧急答应。',
     },
     {
-      heading: 'Success metrics for purchase controls',
-      headingZh: '购买控制的成功指标',
+      heading: 'Measuring whether controls actually work',
+      headingZh: '衡量控制是否真有效',
       text: 'Track sixty days of unexplained family Apple charges, failed free-download tests, and passcode leak events. Success is zero unexplained charges, passing monthly drills, and substitutes following the same card. If metrics worsen, tighten free downloads before adding more lectures. Metrics keep Screen Time honest.',
       textZh: '跟踪六十天无法解释的家庭 Apple 扣费、失败的免费下载测试与密码泄露事件。成功是零无法解释扣费、每月演练通过、代管人遵循同一卡片。若指标变差，先收紧免费下载再加说教。指标让屏幕使用时间诚实。',
     },
     {
-      heading: 'Practical close: one artifact only',
-      headingZh: '实务收尾：只留一份工件',
-      text: 'Finish with one artifact only: a screenshot, calendar alert, ledger row, or control change note. Multiple half-saved chats are how households lose the thread. If you cannot point to the artifact a week later, the process did not finish. Share the artifact with the payer when money is involved.',
-      textZh: '收尾只留一份工件：截图、日历提醒、台账行或控制变化笔记。半截聊天会让家庭失去线索。若一周后指不出工件，流程就还没做完。涉及金钱时与付款人共享工件。',
+      heading: 'Screen Time audit script',
+      headingZh: '屏幕使用时间审计脚本',
+      text: 'Open Settings > Screen Time. Confirm: purchase passcode is known only to payer, Ask to Buy is on for child accounts, free-download gates match policy, no unknown profiles. Test with a harmless free app. Log pass/fail with date. Failed test: rotate passcode and re-check same day.',
+      textZh: '打开设置 > 屏幕使用时间。确认：购买密码仅付款人知道、儿童账号购买前询问已开、免费下载闸门匹配政策、无未知描述文件。用无害免费应用测试。记录通过/失败与日期。失败：当天轮换密码并复查。',
     }
     ],
   },
@@ -3729,7 +3477,7 @@ export const articles = [
     category: 'Purchasing',
     tags: ['Gift cards', 'Apple balance', 'Account safety'],
     publishedAt: '2026-04-07',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '10 min read',
     sections: [
     {
@@ -3865,12 +3613,6 @@ export const articles = [
       textZh: '说：没有正规公司用礼品卡码收税、退款或发奖；码等于现金；有人催你就停下并打电话给成人；拉黑前截图聊天。演练一次。诈骗靠速度与保密成功。话术与设备密码规则放一起。任何险些中招后，当天轮换共用密码并复查免费下载闸门。',
     },
     {
-      heading: 'Artifact checklist after you finish reading',
-      headingZh: '读完后的工件清单',
-      text: 'Leave with three artifacts maximum: one screenshot or table, one calendar date, one control change. More artifacts become clutter and get ignored. Put them in Purchases or the adult household note. If you cannot name the three, you are not done. This checklist replaces repeated filler paragraphs with an exit condition.',
-      textZh: '最多带走三份工件：一张截图或表、一个日历日、一项控制变化。更多工件会变杂物被忽略。放进 Purchases 或成人家庭笔记。说不出三份就还没做完。此清单用退出条件替代重复填充段。',
-    },
-    {
       heading: 'Redeem confirmation and balance snapshot',
       headingZh: '兑换确认与余额快照',
       text: 'Immediately after redeem, screenshot success state and the new balance number with timestamp. Without a baseline, drain investigations become guesses. Store snapshots in Cards album. If redeem fails, keep error screenshots before retrying. Multiple retries on shady codes can lock accounts or waste time—stop and verify the seller channel first.',
@@ -3883,16 +3625,16 @@ export const articles = [
       textZh: '大额余额会吸引冲动免费安装并转正。兑换超过书面阈值后，共用设备冻结免费下载四十八小时，新应用需组织者批准。冻结写入日历。这比被刷排查便宜。仅在晚间余额检查 OK 后解除。',
     },
     {
-      heading: 'Exit condition for this guide',
-      headingZh: '本指南退出条件',
-      text: 'You are done when you have one written decision, one verification date, and one control or inventory change. Reading without those three is not completion. Put them in Purchases or the adult note before closing the tab. If money moved, also match bank to Purchase History within twenty-four hours. Exit conditions prevent endless rereading under stress.',
-      textZh: '当你有一个书面决策、一个验证日、一项控制或台账变化时才算完成。没有这三样只是阅读。关标签前放进 Purchases 或成人笔记。若已扣费，还要在二十四小时内把银行对齐购买记录。退出条件避免压力下无限重读。',
-    },
-    {
       heading: 'Small-test redeem before large loads',
       headingZh: '大额充值前先小额试兑',
       text: 'If a channel is new to you, redeem a small card first and verify balance and Apple ID target before loading hundreds. Failed large redeems waste time and create dispute complexity. Document the test. Only scale after success. This is especially true for online sellers even when they look popular.',
       textZh: '若渠道对你是新的，先兑小额卡并核实余额与目标 Apple ID，再充数百。大额失败浪费时间并增加争议复杂度。记录试兑。成功后再放大。即便线上卖家看起来很红也适用。',
+    },
+    {
+      heading: 'Gift card purchase safety card',
+      headingZh: '礼品卡购买安全卡',
+      text: 'Before buying: redeem destination confirmed, storefront matches, amount is small, source is retail not chat. After redeem: balance screenshotted. Never: photo codes from strangers, urgency redemption, gray-market finished accounts. File receipt for ninety days.',
+      textZh: '购买前：兑换目标已确认、店面匹配、金额小、来源是零售不是聊天。兑换后：余额已截图。绝不：陌生人照片发卡密、紧迫兑换、灰产成品账号。收据留九十天。',
     }
     ],
   },
@@ -3906,8 +3648,8 @@ export const articles = [
     category: 'Purchasing',
     tags: ['Paid apps', 'Subscriptions', 'Value'],
     publishedAt: '2026-04-23',
-    updatedAt: '2026-07-19',
-    readTime: '10 min read',
+    updatedAt: '2026-08-05',
+    readTime: '9 min read',
     sections: [
     {
       heading: 'Start from yearly cost, not weekly price',
@@ -4018,18 +3760,6 @@ export const articles = [
       textZh: '格子：用途、每年使用月数、买断价、订阅年化、取消后访问、退款难度、共用设备影响、走开上限。空格就等。共用卡上超过阈值需两个成人签。工作表故意比一键购买慢。',
     },
     {
-      heading: 'Exit condition: break-even and cap check',
-      headingZh: '退出条件：回本与上限检查',
-      text: 'You are done when break-even math is written, the yearly cap check is done, and a keep/cancel/paid-unlock decision exists with a next review date. Reading model comparisons without those artifacts is incomplete.',
-      textZh: '当回本计算写完、年上限检查完成、且存在保留/取消/买断决策与下次复查日时才算完成。没有这些工件只读模式对比不完整。',
-    },
-    {
-      heading: 'One-page field card',
-      headingZh: '一页现场卡',
-      text: 'Compress into one page: goal, Apple ID identity, device, money or permission at stake, action today, verification tomorrow, control change this week. Screenshot into an adult note. If you cannot fill the card, you are reading ahead of acting. Share with the household payer when money is involved.',
-      textZh: '压成一页：目标、Apple ID 身份、设备、金钱或权限、今天动作、明天验证、本周控制变化。截图进成人笔记。填不满说明读得比做得快。涉及金钱与付款人共享。',
-    },
-    {
       heading: 'Usage months per year beat launch excitement',
       headingZh: '每年使用月数胜过首日兴奋',
       text: 'Estimate realistic months of use before comparing models. A tool used two months a year rarely wins as a weekly sub. Write the estimate with a skeptical adult. Over-estimating usage is how subscriptions hide. Revisit after thirty days with a usage log.',
@@ -4066,18 +3796,6 @@ export const articles = [
       textZh: '每次保留都要在日历有下次复查日。买断需要九十天有用性检查；订阅需要每月或每季度复查。没有复查日=决策未完成。日期写在年上限笔记旁。',
     },
     {
-      heading: 'Seven-day verification loop',
-      headingZh: '七日验证环',
-      text: 'After you act, verify same day for cancels and removals, seven days for installs and trials, thirty days for family policy. Each loop checks one artifact. Missing artifact means incomplete action. Put the next date in the same note as the decision.',
-      textZh: '行动后：取消与移除看当天，安装与试用看七天，家庭策略看三十天。每次只核一份工件。工件缺失=动作未完成。把下一日期写在与决策同一笔记。',
-    },
-    {
-      heading: 'Artifact checklist',
-      headingZh: '工件清单',
-      text: 'Leave with at most three artifacts: screenshot or table, calendar date, control or inventory change. Store in an adult note. If you cannot name the three, you are not done. Share with the payer when money is family money.',
-      textZh: '最多三份工件：截图或表、日历日、控制或台账变化。放成人笔记。说不出三份就还没做完。金钱是家庭钱时与付款人共享。',
-    },
-    {
       heading: 'Break-even examples on paper',
       headingZh: '纸上的回本例子',
       text: 'Example: 40 unlock versus 8 monthly breaks even at five months. Example: 40 unlock versus 5 weekly is about 260 yearly—unlock wins for light use. Write your own numbers; do not reuse social examples with different taxes. Paper math beats vibe math.',
@@ -4094,12 +3812,6 @@ export const articles = [
       headingZh: '与自己谈判：先上限',
       text: 'Set the yearly software cap before comparing offers. Offers that exceed the cap are no unless another cancel frees room. Caps first prevents clever rationalizations. Review caps quarterly with the payer.',
       textZh: '比较报价前先设软件年上限。超过上限的报价为否，除非另一取消腾出空间。先上限防止聪明的合理化。每季度与付款人复盘上限。',
-    },
-    {
-      heading: 'Owner adult when money is shared',
-      headingZh: '金钱共享时的负责成人',
-      text: 'If Family Sharing or a shared card is involved, name the owner adult for the decision and for verification dates. Ownerless research becomes parallel actions and duplicate filings. Write the name on the field card.',
-      textZh: '若涉及家庭共享或共用卡，为决策与验证日具名负责成人。无主研究会变成并行动作与重复提交。把名字写在现场卡上。',
     },
     {
       heading: 'Taxes and storefront caveats',
@@ -4130,6 +3842,12 @@ export const articles = [
       headingZh: '只用你的数字做纸上回本',
       text: 'Copy P and M from the confirm sheet you will actually pay, not from a foreign video. Compute months to break even and compare to realistic usage months. If usage months are fewer, subscription can win only for true weekly living services under a cap. Write both numbers beside the walk-away max.',
       textZh: '从你实际会付的确认页抄 P 与 M，不要从海外视频抄。算回本月数并与真实使用月数比。若使用月数更少，订阅仅在真每周活服务且有上限时可能赢。两个数字写在走开上限旁。',
+    },
+    {
+      heading: 'Break-even worksheet cells',
+      headingZh: '回本工作表格子',
+      text: 'Paid price P, subscription monthly M or weekly W, usage months per year, break-even months P/M, post-cancel access yes/no, shared-card impact, walk-away max. Empty cell means wait. This worksheet prevents subscription rationalization.',
+      textZh: '买断价 P、订阅月费 M 或周费 W、每年使用月数、回本月数 P/M、取消后访问是否、共用卡影响、走开上限。空格就等。此表防止订阅合理化。',
     }
     ],
   },
@@ -4143,8 +3861,8 @@ export const articles = [
     category: 'Security',
     tags: ['VPN', 'Profiles', 'Certificates', 'Security'],
     publishedAt: '2026-05-11',
-    updatedAt: '2026-07-19',
-    readTime: '10 min read',
+    updatedAt: '2026-08-05',
+    readTime: '9 min read',
     sections: [
     {
       heading: 'Not every network tool is equal',
@@ -4231,18 +3949,6 @@ export const articles = [
       textZh: '被信任的证书若恶意可导致拦截式攻击。绝不从紧迫视频或“客服”来电安装证书。工作手机只装 IT 批准证书。若已信任未知证书，移除、重启，并在干净设备改密前把账号视为可能暴露。',
     },
     {
-      heading: 'Exit condition: removed, rebooted, re-checked',
-      headingZh: '退出条件：已移除、已重启、已复查',
-      text: 'You are done when unknown profiles are gone, the device rebooted, trust settings re-checked, and sensitive accounts handled. Screenshots of before/after help if support is needed. Reading risk lists without removal verification is incomplete.',
-      textZh: '当未知描述文件已移除、设备已重启、信任设置已复查、敏感账号已处理后才算完成。若需支持，前后截图有帮助。没有移除核验只读风险列表不完整。',
-    },
-    {
-      heading: 'One-page field card',
-      headingZh: '一页现场卡',
-      text: 'Compress into one page: goal, Apple ID identity, device, money or permission at stake, action today, verification tomorrow, control change this week. Screenshot into an adult note. If you cannot fill the card, you are reading ahead of acting. Share with the household payer when money is involved.',
-      textZh: '压成一页：目标、Apple ID 身份、设备、金钱或权限、今天动作、明天验证、本周控制变化。截图进成人笔记。填不满说明读得比做得快。涉及金钱与付款人共享。',
-    },
-    {
       heading: 'On-demand VPN rules deserve a plain-language read',
       headingZh: '按需 VPN 规则要用白话读',
       text: 'If a profile enables VPN on-demand for broad domains, understand that traffic may route unexpectedly. Ask who benefits from the route. If the answer is a chat seller, refuse. Enterprise on-demand configs should come with IT documentation you can re-read later.',
@@ -4285,18 +3991,6 @@ export const articles = [
       textZh: '用你自己输入的学校门户或学校公布的 IT 联系方式核实——不要只靠 PDF。确认描述文件名与文档一致。若压力说现在安装否则失去访问，放慢并打学校总机。真机构等得起核实。',
     },
     {
-      heading: 'Seven-day verification loop',
-      headingZh: '七日验证环',
-      text: 'After you act, verify same day for cancels and removals, seven days for installs and trials, thirty days for family policy. Each loop checks one artifact. Missing artifact means incomplete action. Put the next date in the same note as the decision.',
-      textZh: '行动后：取消与移除看当天，安装与试用看七天，家庭策略看三十天。每次只核一份工件。工件缺失=动作未完成。把下一日期写在与决策同一笔记。',
-    },
-    {
-      heading: 'Artifact checklist',
-      headingZh: '工件清单',
-      text: 'Leave with at most three artifacts: screenshot or table, calendar date, control or inventory change. Store in an adult note. If you cannot name the three, you are not done. Share with the payer when money is family money.',
-      textZh: '最多三份工件：截图或表、日历日、控制或台账变化。放成人笔记。说不出三份就还没做完。金钱是家庭钱时与付款人共享。',
-    },
-    {
       heading: 'Remote support apps that demand profiles',
       headingZh: '要求描述文件的远程支持应用',
       text: 'Anyone demanding a profile or certificate to help with refunds or bank issues is a social engineer until proven otherwise through official channels you initiate. Hang up, navigate yourself, and verify. Fear plus urgency is the payload.',
@@ -4319,12 +4013,6 @@ export const articles = [
       headingZh: '不羞辱的家庭沟通',
       text: 'Say: we do not install profiles from chat; we verify school profiles with the main office; we remove first and discuss later. Short rules beat lectures after fear. Practice once so both adults say the same lines to kids.',
       textZh: '说：我们不从聊天装描述文件；学校描述文件打总机核实；先移除再讨论。短规则胜过恐惧后的长训。演练一次，让两个成人对孩子说同样的话。',
-    },
-    {
-      heading: 'Owner adult when money is shared',
-      headingZh: '金钱共享时的负责成人',
-      text: 'If Family Sharing or a shared card is involved, name the owner adult for the decision and for verification dates. Ownerless research becomes parallel actions and duplicate filings. Write the name on the field card.',
-      textZh: '若涉及家庭共享或共用卡，为决策与验证日具名负责成人。无主研究会变成并行动作与重复提交。把名字写在现场卡上。',
     },
     {
       heading: 'iCloud and account session caution',
@@ -4373,6 +4061,12 @@ export const articles = [
       headingZh: '安装时的一行拒绝规则',
       text: 'If the install path began in a chat app or urgency call, refuse before reading marketing claims. Verify institutions through contacts you initiate. This one-line rule blocks most malicious profile stories before technical cleanup is needed.',
       textZh: '若安装路径始于聊天应用或紧迫来电，先拒绝再看营销宣称。通过你主动发起的联系核实机构。这一行规则在需要技术清理前就挡住多数恶意描述文件故事。',
+    },
+    {
+      heading: 'Profile incident response card',
+      headingZh: '描述文件应急卡',
+      text: 'Suspected malicious profile: remove unknown profiles, reboot, re-check certificate trust and DNS, rotate banking and email passwords from a clean device, screenshot before/after, contact IT if work-managed. Log the incident even if no money moved. Seven-day watch for reappearance.',
+      textZh: '疑似恶意描述文件：移除未知描述文件、重启、复查证书信任与 DNS、从干净设备轮换银行与邮箱密码、前后截图、工作受管则联系 IT。即使没扣费也记录。七日观察是否再现。',
     }
     ],
   },
@@ -4386,8 +4080,8 @@ export const articles = [
     category: 'Family',
     tags: ['Family Sharing', 'Billing', 'Shared payment'],
     publishedAt: '2026-03-29',
-    updatedAt: '2026-07-19',
-    readTime: '10 min read',
+    updatedAt: '2026-08-05',
+    readTime: '9 min read',
     sections: [
     {
       heading: 'Shared cards create shared ambiguity',
@@ -4498,12 +4192,6 @@ export const articles = [
       textZh: '若两个成人共用卡，写清个人试用的偿还时点与阈值。组织者不是免息信贷。没有规则，每次取消都会变成道德辩论。规则要短，并每季度可复盘。规则不替代儿童设备上的购买锁。',
     },
     {
-      heading: 'Exit condition for this guide',
-      headingZh: '本指南退出条件',
-      text: 'You are done when you have one written decision, one verification date, and one control or inventory change. Reading without those three is not completion. Put them in an adult note before closing the tab. If money moved, match bank to Purchase History within twenty-four hours.',
-      textZh: '当你有一个书面决策、一个验证日、一项控制或台账变化时才算完成。没有这三样只是阅读。关标签前放进成人笔记。若已扣费，二十四小时内把银行对齐购买记录。',
-    },
-    {
       heading: 'Thresholds for personal experiments on shared cards',
       headingZh: '共用卡上个人实验的阈值',
       text: 'Write a local-currency threshold above which personal trials need a same-day heads-up to the payer. Below-threshold trials still need cancel dates. Thresholds without cancel hygiene just become many small surprises. Review thresholds quarterly as incomes and stacks change.',
@@ -4528,18 +4216,6 @@ export const articles = [
       textZh: '睡前：订阅、购买前询问队列、免费下载开关、付款卡位置、今天免费安装。有未知项就冻结免费下载到早上。这检查比吵架短，且能在证据新鲜时抓住静默试用。',
     },
     {
-      heading: 'One-page field card for this decision',
-      headingZh: '该决策的一页现场卡',
-      text: 'Compress into one page: goal, Apple ID identity, device, money or permission at stake, action today, verification tomorrow, control change this week. Screenshot into an adult note. If you cannot fill the card, you are reading ahead of acting. Share with the household payer when money is involved. Revisit in seven days and mark kept, cancelled, or escalated. Boring cards stop repeat incidents better than rereading long guides under stress. This card is the exit condition that turns research into operations.',
-      textZh: '压成一页：目标、Apple ID 身份、设备、金钱或权限、今天动作、明天验证、本周控制变化。截图进成人笔记。填不满说明读得比做得快。涉及金钱与付款人共享。七天后标记保留、取消或升级。压力下重读长文不如无聊现场卡更能阻止重复事故。这张卡是把研究变成运营的退出条件。',
-    },
-    {
-      heading: 'Seven-day verification loop',
-      headingZh: '七日验证环',
-      text: 'After you act, verify on a schedule: same day for cancels and permission changes, seven days for installs and trials, thirty days for family policy. Each loop checks one artifact only. Missing artifact means incomplete action. Put the next date in the same note as the decision. Share dates when Family Sharing money is involved so two adults do not hold partial facts. Verification loops are how households stop relearning the same expensive lesson.',
-      textZh: '行动后按计划验证：取消与权限变更看当天，安装与试用看七天，家庭策略看三十天。每次只核一份工件。工件缺失=动作未完成。把下一日期写在与决策同一笔记。家庭共享涉及金钱时共享日期，避免两人各握半份事实。验证环让家庭停止重学同一昂贵教训。',
-    },
-    {
       heading: 'Mediation order when both adults are angry',
       headingZh: '两个成人都在气头上时的调解顺序',
       text: 'Order: facts packet, cancel renewals, one control change, sleep, then policy talk. Reversing the order produces overnight reinstalls and more charges. Write the order on the role map. If one adult refuses the order, pause shared-card experiments until both agree.',
@@ -4562,6 +4238,12 @@ export const articles = [
       headingZh: '共用卡政策年度重置',
       text: 'Once a year, re-read role map, thresholds, category caps, and repayment rules. Remove adults who left the household from Family Sharing. Rotate Screen Time passcodes if too many people learned them. Write the reset date. Annual resets catch drift monthly reviews miss.',
       textZh: '每年重读角色图、阈值、类别上限与偿还规则。把离开家庭的成人移出家庭共享。若太多人知道屏幕使用时间密码则轮换。写下重置日。年度重置能抓住月复查遗漏的漂移。',
+    },
+    {
+      heading: 'Shared-card dispute resolution flow',
+      headingZh: '共用卡争议解决流',
+      text: 'Day 0: build charge packet, cancel renewals. Day 1: change one control (passcode, free downloads, or Ask to Buy). Day 2-7: quiet period, no new trials on shared method. Day 7+: policy talk with facts, not character. Escalate only with packet and role map.',
+      textZh: '第 0 天：做扣费材料包，取消续费。第 1 天：改一项控制（密码、免费下载或购买前询问）。第 2-7 天：静默期，共用方式上无新试用。第 7 天后：用事实谈政策，不贴性格。仅带材料包与角色图升级。',
     }
     ],
   },
@@ -4575,7 +4257,7 @@ export const articles = [
     category: 'Account Safety',
     tags: ['Apple ID', 'US region', 'Payment methods', 'Gift cards'],
     publishedAt: '2026-06-26',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '13 min read',
     sections: [
     {
@@ -4663,12 +4345,6 @@ export const articles = [
       textZh: '使用你控制的唯一密码与 2FA、你拥有的恢复联系人，不与灰产共享凭据。不要向承诺解锁地区的陌生人上传证件。任何可疑描述文件或远程协助路径后，从干净设备轮换凭据。卫生是注册研究的一部分，不是事后补丁。',
     },
     {
-      heading: 'Exit condition: goal, funding, stop date',
-      headingZh: '退出条件：目标、资金、停止日',
-      text: 'You are done when the goal is written, funding is legitimate and matched, and a stop or review date exists. Creating accounts without those three is incomplete research. If you decide not to register, file the stay decision with date—that is a valid outcome.',
-      textZh: '当目标写清、资金合法且匹配、存在停止或复查日时才算完成。没有这三样就建号是不完整研究。若决定不注册，把留下决策与日期归档——那是有效结果。',
-    },
-    {
       heading: 'Payment methods: cards, balance, and myths',
       headingZh: '支付方式：卡、余额与神话',
       text: 'Document what payment methods the target storefront accepts for your situation. Balance-only experiments still need region thinking. Do not force unsupported cards. Write a fallback if payment fails mid-experiment. Payment reality kills more plans than registration UI.',
@@ -4693,10 +4369,10 @@ export const articles = [
       textZh: '目标→清单→次要身份决策→资金计划→格子填满才创建→停止日→审计订阅→留下或有限实验。先创建会打开支持死胡同。把流程写在一页。',
     },
     {
-      heading: 'Owner adult for any identity that can spend',
-      headingZh: '任何能花钱身份的负责成人',
-      text: 'If an identity can charge a shared card or hold family-critical media, name an owner adult. Ownerless secondary accounts become forgotten charge sources. Put the name on the checklist cover.',
-      textZh: '若身份能打共用卡或持有家庭关键媒体，具名负责成人。无主次要账号会变成被遗忘的扣费源。名字写在清单封面。',
+      heading: 'Naming the owner of each spending identity',
+      headingZh: '为每个能花钱的身份指定主人',
+      text: 'If an identity can charge a shared card or hold family-critical media, name an owner adult. Ownerless secondary accounts become forgotten charge sources. Put the name on the checklist cover so the household knows who controls each identity.',
+      textZh: '若身份能打共用卡或持有家庭关键媒体，具名负责成人。无主次要账号会变成被遗忘的扣费源。名字写在清单封面，让家庭知道谁控制每个身份。',
     }
     ],
   },
@@ -4710,7 +4386,7 @@ export const articles = [
     category: 'Privacy',
     tags: ['Permissions', 'Subscriptions', 'Free trials', 'Privacy labels'],
     publishedAt: '2026-07-03',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '10 min read',
     sections: [
     {
@@ -4798,18 +4474,6 @@ export const articles = [
       textZh: '工具类除非说得出好处，否则要求 App 不跟踪。单次上传优先有限照片。内容类应用第零天很少需要精确位置。默认减少决策疲劳，同时真实相机或麦克风用途仍可用允许一次完成。',
     },
     {
-      heading: 'Exit condition: pattern named, permissions set, cancel path known',
-      headingZh: '退出条件：模式已命名、权限已设、取消路径已知',
-      text: 'You are done when the trap pattern is named, the five refusals are applied or explicitly excepted, and the cancel path is rehearsed if a trial exists. Reading trap lists without those artifacts is incomplete.',
-      textZh: '当陷阱模式已命名、五项拒绝已应用或明确例外、若有试用则取消路径已演练时才算完成。没有这些工件只读陷阱列表不完整。',
-    },
-    {
-      heading: 'One-page field card',
-      headingZh: '一页现场卡',
-      text: 'Compress into one page: goal, Apple ID identity, device, money or permission at stake, action today, verification tomorrow, control change this week. Screenshot into an adult note. If you cannot fill the card, you are reading ahead of acting.',
-      textZh: '压成一页：目标、Apple ID 身份、设备、金钱或权限、今天动作、明天验证、本周控制变化。截图进成人笔记。填不满说明读得比做得快。',
-    },
-    {
       heading: 'Notifications as retention weapons',
       headingZh: '通知作为留存武器',
       text: 'Deny notifications until the app proves a non-marketing job for alerts. Win-back and re-trial pushes often arrive at weak hours. Audit notification settings on day two. Shared devices default deny for free utilities.',
@@ -4840,10 +4504,10 @@ export const articles = [
       textZh: '第七天同时打开隐私设置与订阅。收回未使用授权并确认试用状态。联合复查一次抓住悄悄重授与静默转正。两者放同一日历事件。',
     },
     {
-      heading: 'Artifact checklist',
-      headingZh: '工件清单',
-      text: 'Leave with goal or pattern named, one screenshot or table, one calendar date, and one control change if money or permissions moved. Adult note storage. If you cannot name the artifacts, you are not done.',
-      textZh: '带走：已命名目标或模式、一张截图或表、一个日历日，若金钱或权限变动则一项控制变化。成人笔记存放。说不出工件就还没做完。',
+      heading: 'Five refusals quick card',
+      headingZh: '五项拒绝速查卡',
+      text: 'Tracking: deny on utilities. Full photos: prefer limited. Mic: allow once for spoken tasks only. Exact location: prefer coarse or manual city. Notifications: deny until non-marketing job is proven. Teach teens this card. Two broken refusals without explanation: delete.',
+      textZh: '跟踪：工具类拒绝。完整照片：优先有限。麦克风：仅口述任务允许一次。精确位置：优先粗略或手动城市。通知：直到证明非营销用途前拒绝。教青少年此卡。两项无解释被打破：删除。',
     }
     ],
   },
@@ -4857,7 +4521,7 @@ export const articles = [
     category: 'Account Safety',
     tags: ['Region switching', 'Apple ID', 'Risk matrix', 'Subscriptions'],
     publishedAt: '2026-03-17',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '29 min read',
     sections: [
     {
@@ -4944,7 +4608,7 @@ export const articles = [
     category: 'Payments',
     tags: ['Gift cards', 'Scams', 'Balance', 'Apple ID'],
     publishedAt: '2026-04-19',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '29 min read',
     sections: [
     {
@@ -5031,7 +4695,7 @@ export const articles = [
     category: 'Subscriptions',
     tags: ['Free trials', 'Auto renew', 'Cancel path', 'Reminders'],
     publishedAt: '2026-06-13',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '29 min read',
     sections: [
     {
@@ -5118,7 +4782,7 @@ export const articles = [
     category: 'Privacy',
     tags: ['Privacy labels', 'Permissions', 'Data collection', 'App review'],
     publishedAt: '2026-04-01',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '29 min read',
     sections: [
     {
@@ -5205,7 +4869,7 @@ export const articles = [
     category: 'Security',
     tags: ['VPN', 'Profiles', 'Certificates', 'iOS security'],
     publishedAt: '2026-04-13',
-    updatedAt: '2026-05-13',
+    updatedAt: '2026-08-05',
     readTime: '28 min read',
     sections: [
     {
@@ -5274,7 +4938,7 @@ export const articles = [
     category: 'Family',
     tags: ['Family Sharing', 'Ask to Buy', 'Shared payment', 'Children'],
     publishedAt: '2026-07-06',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '29 min read',
     sections: [
     {
@@ -5349,7 +5013,7 @@ export const articles = [
     category: 'Security',
     tags: ['TestFlight', 'Sideloading', 'Beta apps', 'Malware risk'],
     publishedAt: '2026-03-04',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '29 min read',
     sections: [
     {
@@ -5430,7 +5094,7 @@ export const articles = [
     category: 'App Safety',
     tags: ['Lookalike apps', 'Reviews', 'Search ads', 'Install safety'],
     publishedAt: '2026-06-03',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '29 min read',
     sections: [
     {
@@ -5517,7 +5181,7 @@ export const articles = [
     category: 'Subscriptions',
     tags: ['Subscription audit', 'Cancel order', 'Budget', 'Apple ID'],
     publishedAt: '2026-06-10',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '29 min read',
     sections: [
     {
@@ -5598,7 +5262,7 @@ export const articles = [
     category: 'Privacy',
     tags: ['Hide My Email', 'Signups', 'Passwords', 'Account hygiene'],
     publishedAt: '2026-03-03',
-    updatedAt: '2026-04-08',
+    updatedAt: '2026-08-05',
     readTime: '28 min read',
     sections: [
     {
@@ -5667,7 +5331,7 @@ export const articles = [
     category: 'Support',
     tags: ['Refunds', 'Report a Problem', 'Evidence', 'Subscriptions'],
     publishedAt: '2026-05-05',
-    updatedAt: '2026-05-17',
+    updatedAt: '2026-08-05',
     readTime: '28 min read',
     sections: [
     {
@@ -5736,7 +5400,7 @@ export const articles = [
     category: 'Privacy',
     tags: ['Permissions', 'Decision tree', 'Daily apps', 'Privacy'],
     publishedAt: '2026-06-21',
-    updatedAt: '2026-07-19',
+    updatedAt: '2026-08-05',
     readTime: '29 min read',
     sections: [
     {
