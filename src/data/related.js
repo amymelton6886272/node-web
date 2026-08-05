@@ -301,6 +301,9 @@ export const ARTICLE_SERIES = [
       'ios-configuration-profile-vpn-certificate-danger-guide',
       'testflight-sideload-and-unofficial-install-risks',
       'apple-id-security-checklist',
+      'eu-dma-third-party-app-stores-safety-implications',
+      'used-iphone-apple-id-purchase-history-check-before-buying',
+      'cross-device-purchase-sync-ipad-mac-appletv-risks',
     ],
   },
   {
@@ -360,6 +363,8 @@ export const ARTICLE_SERIES = [
       'chargeback-vs-apple-refund-which-to-choose',
       'app-store-bank-dispute-chargeback-consequences',
       'case-study-refund-denied-then-approved-on-appeal',
+      'google-play-vs-app-store-refund-protection-compared',
+      'switching-from-android-to-ios-purchase-history-migration',
       'app-store-refund-request-checklist',
       'when-to-use-report-a-problem',
       'report-a-problem-refund-evidence-and-timing',
