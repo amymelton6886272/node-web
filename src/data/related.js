@@ -260,6 +260,7 @@ export const ARTICLE_SERIES = [
     slugs: [
       'family-sharing-purchase-safety',
       'app-store-age-ratings-and-parental-controls',
+      'case-study-family-sharing-charge-dispute-resolved',
       'child-device-app-install-rules',
       'screen-time-purchase-controls',
       'family-sharing-ask-to-buy-and-unexpected-charges',
@@ -323,9 +324,9 @@ export const ARTICLE_SERIES = [
       '最后以官方结算页确认',
     ],
     relatedTools: [
-      { href: '/price', label: 'Price compare', labelZh: '价格对比' },
-      { href: '/subcost', label: 'Sub cost calculator', labelZh: '订阅成本' },
-      { href: '/iap', label: 'IAP research', labelZh: '内购研究' },
+      { href: '/articles/app-store-price-check-before-buying', label: 'Price check guide', labelZh: '价格核对指南' },
+      { href: '/articles/manage-apple-subscriptions-after-trial', label: 'Sub management', labelZh: '订阅管理' },
+      { href: '/articles/understand-in-app-purchases', label: 'IAP guide', labelZh: '内购指南' },
       { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
     ],
     slugs: [
@@ -336,6 +337,35 @@ export const ARTICLE_SERIES = [
       'when-paid-app-beats-subscription',
       'apple-id-purchase-history-audit',
     ],
+  },
+  {
+    id: 'disputes-and-escalation',
+    title: 'Disputes & escalation',
+    titleZh: '争议与申诉升级',
+    description: 'Chargebacks, Apple refund appeals, support escalation, and consumer rights paths.',
+    descriptionZh: '银行拒付、Apple 退款申诉、客服升级与消费者权益路径。',
+    audience: 'Users whose refunds have been denied or who are considering a chargeback.',
+    audienceZh: '退款被拒或考虑拒付的用户。',
+    whenToUse: 'When automated refunds fail and you need to escalate or choose between chargeback and refund.',
+    whenToUseZh: '当自动退款失败且需要升级或在拒付与退款之间选择时。',
+    exitCriteria: ['Clear decision on refund vs chargeback', 'Documented escalation path', 'Evidence package assembled'],
+    exitCriteriaZh: ['对退款或拒付有明确决策', '有据可查的升级路径', '证据包已组装'],
+    relatedTools: [
+      { href: '/articles/app-store-refund-request-checklist', label: 'Refund checklist', labelZh: '退款清单' },
+      { href: '/articles/when-to-use-report-a-problem', label: 'Report a Problem', labelZh: 'Report a Problem' },
+      { href: '/checklists', label: 'Decision checklists', labelZh: '决策清单' },
+    ],
+    slugs: [
+      'apple-support-escalation-when-appeal-fails',
+      'chargeback-vs-apple-refund-which-to-choose',
+      'app-store-bank-dispute-chargeback-consequences',
+      'case-study-refund-denied-then-approved-on-appeal',
+      'app-store-refund-request-checklist',
+      'when-to-use-report-a-problem',
+      'report-a-problem-refund-evidence-and-timing',
+    ],
+    when: 'When a refund is denied or you are considering a chargeback',
+    whenZh: '当退款被拒或考虑拒付时',
   },
 ];
 
