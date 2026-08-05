@@ -13,6 +13,8 @@ const {
   extraSchemas = [],
 } = Astro.props;
 
+const gaMeasurementId = import.meta.env.GA_MEASUREMENT_ID || '';
+
 // Always canonicalize to path without query/hash so dynamic tool searches never mint indexable URLs.
 const cleanPath = String(path || '/').split('?')[0].split('#')[0] || '/';
 const canonical = new URL(cleanPath, SITE).toString();
@@ -112,6 +114,18 @@ const breadcrumbSchema = buildBreadcrumbSchema(breadcrumbs);
     {extraSchemas.map((schema) => (
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     ))}
+    <!-- Google tag (gtag.js) — set GA_MEASUREMENT_ID in .env to enable -->
+    {gaMeasurementId && (
+      <Fragment>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', gaMeasurementId);
+        </script>
+      </Fragment>
+    )}
     <script is:inline>
       const savedLang = localStorage.getItem('lang');
       const preferredLang = savedLang || ((navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en');

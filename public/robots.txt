@@ -12,16 +12,9 @@ Allow: /terms
 Allow: /contact
 Allow: /editorial
 Allow: /data-sources
-Allow: /price
-Allow: /appfree
-Allow: /icon
-Allow: /subcost
-Allow: /trial
-Allow: /risk
-Allow: /iap
 
-# Block thin/dynamic tool query URLs (search terms, app IDs, country variants)
-# Prefer crawling clean tool shells + /articles/* research notes.
+# Stop crawling tool pages that are now 301-redirected to articles.
+# Keep query-string blocking to prevent index bloat from dynamic searches.
 Disallow: /*?*
 Disallow: /price?*
 Disallow: /appfree?*
