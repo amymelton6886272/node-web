@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-privacy-labels-and-permissions" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ecfeff"/>
+      <stop offset="100%" style="stop-color:#a5f3fc"/>
+    </linearGradient>
+    <linearGradient id="acc-privacy-labels-and-permissions" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0891b2"/>
+      <stop offset="100%" style="stop-color:#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-privacy-labels-and-permissions)" rx="20"/>
+  <circle cx="392" cy="202" r="52" fill="#0891b2" opacity="0.12"/><circle cx="121" cy="95" r="92" fill="#22d3ee" opacity="0.10"/><circle cx="204" cy="258" r="87" fill="#0891b2" opacity="0.06"/><circle cx="609" cy="149" r="107" fill="#22d3ee" opacity="0.12"/><circle cx="134" cy="225" r="109" fill="#0891b2" opacity="0.14"/><circle cx="55" cy="210" r="39" fill="#22d3ee" opacity="0.18"/>
+  <rect x="102" y="182" width="82" height="82" rx="12" fill="none" stroke="#0891b2" stroke-width="2" opacity="0.15" transform="rotate(262 143 223)"/><rect x="568" y="57" width="111" height="111" rx="12" fill="none" stroke="#0891b2" stroke-width="2" opacity="0.15" transform="rotate(75 623 112)"/><rect x="599" y="199" width="94" height="94" rx="12" fill="none" stroke="#0891b2" stroke-width="2" opacity="0.15" transform="rotate(238 646 246)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-privacy-labels-and-permissions)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">🔒</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#0891b2" letter-spacing="0.08em">PRIVACY</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-privacy-labels-and-permissions)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">Reading App Privacy Labels and Permissions</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#0891b2" font-weight="600">souk.eu.org/articles/privacy-labels-and-permissions</text>
+</svg>

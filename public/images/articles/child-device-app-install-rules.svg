@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-child-device-app-install-rules" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff7ed"/>
+      <stop offset="100%" style="stop-color:#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="acc-child-device-app-install-rules" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ea580c"/>
+      <stop offset="100%" style="stop-color:#fb923c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-child-device-app-install-rules)" rx="20"/>
+  <circle cx="426" cy="236" r="86" fill="#ea580c" opacity="0.16"/><circle cx="73" cy="271" r="77" fill="#fb923c" opacity="0.19"/><circle cx="601" cy="237" r="75" fill="#ea580c" opacity="0.08"/><circle cx="734" cy="105" r="65" fill="#fb923c" opacity="0.05"/><circle cx="392" cy="101" r="74" fill="#ea580c" opacity="0.16"/><circle cx="371" cy="285" r="75" fill="#fb923c" opacity="0.07"/>
+  <rect x="136" y="216" width="116" height="116" rx="12" fill="none" stroke="#ea580c" stroke-width="2" opacity="0.15" transform="rotate(56 194 274)"/><rect x="262" y="45" width="63" height="63" rx="12" fill="none" stroke="#ea580c" stroke-width="2" opacity="0.15" transform="rotate(91 293 76)"/><rect x="231" y="124" width="91" height="91" rx="12" fill="none" stroke="#ea580c" stroke-width="2" opacity="0.15" transform="rotate(137 276 169)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-child-device-app-install-rules)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">👨‍👩‍👧</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#ea580c" letter-spacing="0.08em">FAMILY</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-child-device-app-install-rules)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">App Install Rules for Child and Shared Family Devices</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#ea580c" font-weight="600">souk.eu.org/articles/child-device-app-install-rules</text>
+</svg>

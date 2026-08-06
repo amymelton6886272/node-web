@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-free-trial-to-paid-conversion-defense-playbook" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f3ff"/>
+      <stop offset="100%" style="stop-color:#e9d5ff"/>
+    </linearGradient>
+    <linearGradient id="acc-free-trial-to-paid-conversion-defense-playbook" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-free-trial-to-paid-conversion-defense-playbook)" rx="20"/>
+  <circle cx="676" cy="286" r="96" fill="#7c3aed" opacity="0.16"/><circle cx="139" cy="264" r="48" fill="#a78bfa" opacity="0.11"/><circle cx="705" cy="263" r="92" fill="#7c3aed" opacity="0.14"/><circle cx="690" cy="80" r="37" fill="#a78bfa" opacity="0.07"/><circle cx="140" cy="65" r="30" fill="#7c3aed" opacity="0.05"/><circle cx="255" cy="56" r="50" fill="#a78bfa" opacity="0.08"/>
+  <rect x="186" y="66" width="66" height="66" rx="12" fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.15" transform="rotate(146 219 99)"/><rect x="471" y="62" width="129" height="129" rx="12" fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.15" transform="rotate(4 535 126)"/><rect x="320" y="80" width="95" height="95" rx="12" fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.15" transform="rotate(123 367 127)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-free-trial-to-paid-conversion-defense-playbook)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">⟳</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#7c3aed" letter-spacing="0.08em">SUBSCRIPTIONS</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-free-trial-to-paid-conversion-defense-playbook)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">Free Trial to Paid Conversion: A Defense Playbook for iOS Us</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#7c3aed" font-weight="600">souk.eu.org/articles/free-trial-to-paid-conversion-defense-playbook</text>
+</svg>

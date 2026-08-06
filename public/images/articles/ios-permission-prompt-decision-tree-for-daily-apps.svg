@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-ios-permission-prompt-decision-tree-for-daily-apps" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ecfeff"/>
+      <stop offset="100%" style="stop-color:#a5f3fc"/>
+    </linearGradient>
+    <linearGradient id="acc-ios-permission-prompt-decision-tree-for-daily-apps" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0891b2"/>
+      <stop offset="100%" style="stop-color:#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-ios-permission-prompt-decision-tree-for-daily-apps)" rx="20"/>
+  <circle cx="613" cy="23" r="33" fill="#0891b2" opacity="0.08"/><circle cx="685" cy="177" r="100" fill="#22d3ee" opacity="0.05"/><circle cx="189" cy="94" r="108" fill="#0891b2" opacity="0.05"/><circle cx="308" cy="92" r="99" fill="#22d3ee" opacity="0.08"/><circle cx="266" cy="293" r="48" fill="#0891b2" opacity="0.09"/><circle cx="563" cy="221" r="62" fill="#22d3ee" opacity="0.09"/>
+  <rect x="623" y="203" width="103" height="103" rx="12" fill="none" stroke="#0891b2" stroke-width="2" opacity="0.15" transform="rotate(3 674 254)"/><rect x="239" y="198" width="75" height="75" rx="12" fill="none" stroke="#0891b2" stroke-width="2" opacity="0.15" transform="rotate(157 276 235)"/><rect x="624" y="98" width="79" height="79" rx="12" fill="none" stroke="#0891b2" stroke-width="2" opacity="0.15" transform="rotate(274 663 137)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-ios-permission-prompt-decision-tree-for-daily-apps)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">🔒</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#0891b2" letter-spacing="0.08em">PRIVACY</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-ios-permission-prompt-decision-tree-for-daily-apps)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">An iOS Permission Prompt Decision Tree for Daily Apps</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#0891b2" font-weight="600">souk.eu.org/articles/ios-permission-prompt-decision-tree-for-daily-apps</text>
+</svg>

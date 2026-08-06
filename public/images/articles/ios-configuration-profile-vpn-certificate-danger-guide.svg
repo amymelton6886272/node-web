@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-ios-configuration-profile-vpn-certificate-danger-guide" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ecfdf5"/>
+      <stop offset="100%" style="stop-color:#d1fae5"/>
+    </linearGradient>
+    <linearGradient id="acc-ios-configuration-profile-vpn-certificate-danger-guide" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#059669"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-ios-configuration-profile-vpn-certificate-danger-guide)" rx="20"/>
+  <circle cx="244" cy="174" r="64" fill="#059669" opacity="0.14"/><circle cx="412" cy="121" r="34" fill="#34d399" opacity="0.18"/><circle cx="622" cy="163" r="80" fill="#059669" opacity="0.12"/><circle cx="735" cy="85" r="76" fill="#34d399" opacity="0.10"/><circle cx="842" cy="179" r="75" fill="#059669" opacity="0.17"/><circle cx="649" cy="278" r="95" fill="#34d399" opacity="0.08"/>
+  <rect x="354" y="234" width="134" height="134" rx="12" fill="none" stroke="#059669" stroke-width="2" opacity="0.15" transform="rotate(234 421 301)"/><rect x="505" y="130" width="102" height="102" rx="12" fill="none" stroke="#059669" stroke-width="2" opacity="0.15" transform="rotate(221 556 181)"/><rect x="331" y="125" width="112" height="112" rx="12" fill="none" stroke="#059669" stroke-width="2" opacity="0.15" transform="rotate(63 387 181)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-ios-configuration-profile-vpn-certificate-danger-guide)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">🛡</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#059669" letter-spacing="0.08em">SECURITY</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-ios-configuration-profile-vpn-certificate-danger-guide)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">iOS Configuration Profiles, VPN Apps, and Certificate Danger</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#059669" font-weight="600">souk.eu.org/articles/ios-configuration-profile-vpn-certificate-danger-guide</text>
+</svg>

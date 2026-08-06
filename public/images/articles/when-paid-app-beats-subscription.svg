@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-when-paid-app-beats-subscription" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fdf2f8"/>
+      <stop offset="100%" style="stop-color:#fbcfe8"/>
+    </linearGradient>
+    <linearGradient id="acc-when-paid-app-beats-subscription" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#db2777"/>
+      <stop offset="100%" style="stop-color:#f472b6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-when-paid-app-beats-subscription)" rx="20"/>
+  <circle cx="654" cy="64" r="74" fill="#db2777" opacity="0.14"/><circle cx="87" cy="38" r="105" fill="#f472b6" opacity="0.11"/><circle cx="352" cy="55" r="39" fill="#db2777" opacity="0.17"/><circle cx="518" cy="178" r="101" fill="#f472b6" opacity="0.19"/><circle cx="629" cy="156" r="98" fill="#db2777" opacity="0.12"/><circle cx="186" cy="94" r="68" fill="#f472b6" opacity="0.10"/>
+  <rect x="664" y="44" width="44" height="44" rx="12" fill="none" stroke="#db2777" stroke-width="2" opacity="0.15" transform="rotate(324 686 66)"/><rect x="64" y="49" width="77" height="77" rx="12" fill="none" stroke="#db2777" stroke-width="2" opacity="0.15" transform="rotate(178 102 87)"/><rect x="377" y="108" width="42" height="42" rx="12" fill="none" stroke="#db2777" stroke-width="2" opacity="0.15" transform="rotate(275 398 129)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-when-paid-app-beats-subscription)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">🛒</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#db2777" letter-spacing="0.08em">PURCHASING</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-when-paid-app-beats-subscription)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">When a Paid App Is Better Than a Subscription</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#db2777" font-weight="600">souk.eu.org/articles/when-paid-app-beats-subscription</text>
+</svg>

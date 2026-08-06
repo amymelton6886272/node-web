@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-app-store-search-ads-and-fake-popular-apps" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef2f2"/>
+      <stop offset="100%" style="stop-color:#fecaca"/>
+    </linearGradient>
+    <linearGradient id="acc-app-store-search-ads-and-fake-popular-apps" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#b91c1c"/>
+      <stop offset="100%" style="stop-color:#ef4444"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-app-store-search-ads-and-fake-popular-apps)" rx="20"/>
+  <circle cx="136" cy="226" r="36" fill="#b91c1c" opacity="0.06"/><circle cx="405" cy="157" r="100" fill="#ef4444" opacity="0.16"/><circle cx="622" cy="243" r="78" fill="#b91c1c" opacity="0.15"/><circle cx="85" cy="44" r="76" fill="#ef4444" opacity="0.18"/><circle cx="702" cy="20" r="65" fill="#b91c1c" opacity="0.12"/><circle cx="290" cy="107" r="54" fill="#ef4444" opacity="0.18"/>
+  <rect x="546" y="126" width="126" height="126" rx="12" fill="none" stroke="#b91c1c" stroke-width="2" opacity="0.15" transform="rotate(166 609 189)"/><rect x="304" y="128" width="95" height="95" rx="12" fill="none" stroke="#b91c1c" stroke-width="2" opacity="0.15" transform="rotate(297 351 175)"/><rect x="668" y="75" width="112" height="112" rx="12" fill="none" stroke="#b91c1c" stroke-width="2" opacity="0.15" transform="rotate(223 724 131)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-app-store-search-ads-and-fake-popular-apps)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">📱</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#b91c1c" letter-spacing="0.08em">APP SAFETY</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-app-store-search-ads-and-fake-popular-apps)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">App Store Search Manipulation, Lookalike Apps, and Fake Popu</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#b91c1c" font-weight="600">souk.eu.org/articles/app-store-search-ads-and-fake-popular-apps</text>
+</svg>

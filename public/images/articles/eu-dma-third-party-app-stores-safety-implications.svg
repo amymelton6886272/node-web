@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-eu-dma-third-party-app-stores-safety-implications" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff0f6"/>
+      <stop offset="100%" style="stop-color:#fce7f3"/>
+    </linearGradient>
+    <linearGradient id="acc-eu-dma-third-party-app-stores-safety-implications" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e11d48"/>
+      <stop offset="100%" style="stop-color:#fb7185"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-eu-dma-third-party-app-stores-safety-implications)" rx="20"/>
+  <circle cx="454" cy="104" r="34" fill="#e11d48" opacity="0.19"/><circle cx="675" cy="92" r="80" fill="#fb7185" opacity="0.16"/><circle cx="189" cy="214" r="106" fill="#e11d48" opacity="0.15"/><circle cx="58" cy="201" r="99" fill="#fb7185" opacity="0.11"/><circle cx="300" cy="95" r="38" fill="#e11d48" opacity="0.14"/><circle cx="565" cy="31" r="51" fill="#fb7185" opacity="0.14"/>
+  <rect x="564" y="44" width="44" height="44" rx="12" fill="none" stroke="#e11d48" stroke-width="2" opacity="0.15" transform="rotate(164 586 66)"/><rect x="638" y="196" width="65" height="65" rx="12" fill="none" stroke="#e11d48" stroke-width="2" opacity="0.15" transform="rotate(72 670 228)"/><rect x="562" y="48" width="79" height="79" rx="12" fill="none" stroke="#e11d48" stroke-width="2" opacity="0.15" transform="rotate(114 601 87)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-eu-dma-third-party-app-stores-safety-implications)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">↺</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#e11d48" letter-spacing="0.08em">REFUNDS</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-eu-dma-third-party-app-stores-safety-implications)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">EU DMA and Third-Party App Stores: What Changed for Purchase</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#e11d48" font-weight="600">souk.eu.org/articles/eu-dma-third-party-app-stores-safety-implications</text>
+</svg>

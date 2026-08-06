@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-app-store-price-check-before-buying" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fdf2f8"/>
+      <stop offset="100%" style="stop-color:#fbcfe8"/>
+    </linearGradient>
+    <linearGradient id="acc-app-store-price-check-before-buying" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#db2777"/>
+      <stop offset="100%" style="stop-color:#f472b6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-app-store-price-check-before-buying)" rx="20"/>
+  <circle cx="305" cy="275" r="45" fill="#db2777" opacity="0.05"/><circle cx="715" cy="272" r="81" fill="#f472b6" opacity="0.08"/><circle cx="641" cy="167" r="76" fill="#db2777" opacity="0.05"/><circle cx="286" cy="129" r="85" fill="#f472b6" opacity="0.16"/><circle cx="564" cy="172" r="106" fill="#db2777" opacity="0.11"/><circle cx="282" cy="77" r="99" fill="#f472b6" opacity="0.17"/>
+  <rect x="315" y="95" width="95" height="95" rx="12" fill="none" stroke="#db2777" stroke-width="2" opacity="0.15" transform="rotate(255 362 142)"/><rect x="543" y="206" width="105" height="105" rx="12" fill="none" stroke="#db2777" stroke-width="2" opacity="0.15" transform="rotate(52 595 258)"/><rect x="419" y="76" width="131" height="131" rx="12" fill="none" stroke="#db2777" stroke-width="2" opacity="0.15" transform="rotate(147 484 141)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-app-store-price-check-before-buying)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">🛒</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#db2777" letter-spacing="0.08em">PURCHASING</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-app-store-price-check-before-buying)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">How to Check App Store Prices Before Buying</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#db2777" font-weight="600">souk.eu.org/articles/app-store-price-check-before-buying</text>
+</svg>

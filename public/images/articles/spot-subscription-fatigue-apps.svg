@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-spot-subscription-fatigue-apps" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fdf2f8"/>
+      <stop offset="100%" style="stop-color:#fbcfe8"/>
+    </linearGradient>
+    <linearGradient id="acc-spot-subscription-fatigue-apps" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#db2777"/>
+      <stop offset="100%" style="stop-color:#f472b6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-spot-subscription-fatigue-apps)" rx="20"/>
+  <circle cx="441" cy="251" r="101" fill="#db2777" opacity="0.16"/><circle cx="624" cy="27" r="58" fill="#f472b6" opacity="0.07"/><circle cx="185" cy="133" r="93" fill="#db2777" opacity="0.09"/><circle cx="258" cy="146" r="97" fill="#f472b6" opacity="0.13"/><circle cx="513" cy="268" r="78" fill="#db2777" opacity="0.10"/><circle cx="778" cy="27" r="76" fill="#f472b6" opacity="0.13"/>
+  <rect x="151" y="231" width="131" height="131" rx="12" fill="none" stroke="#db2777" stroke-width="2" opacity="0.15" transform="rotate(71 216 296)"/><rect x="131" y="183" width="114" height="114" rx="12" fill="none" stroke="#db2777" stroke-width="2" opacity="0.15" transform="rotate(47 188 240)"/><rect x="312" y="48" width="75" height="75" rx="12" fill="none" stroke="#db2777" stroke-width="2" opacity="0.15" transform="rotate(113 349 85)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-spot-subscription-fatigue-apps)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">🛒</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#db2777" letter-spacing="0.08em">PURCHASING</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-spot-subscription-fatigue-apps)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">How to Spot Apps That Create Subscription Fatigue</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#db2777" font-weight="600">souk.eu.org/articles/spot-subscription-fatigue-apps</text>
+</svg>

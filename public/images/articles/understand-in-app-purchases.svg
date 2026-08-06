@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-understand-in-app-purchases" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fdf2f8"/>
+      <stop offset="100%" style="stop-color:#fbcfe8"/>
+    </linearGradient>
+    <linearGradient id="acc-understand-in-app-purchases" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#db2777"/>
+      <stop offset="100%" style="stop-color:#f472b6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-understand-in-app-purchases)" rx="20"/>
+  <circle cx="55" cy="145" r="35" fill="#db2777" opacity="0.05"/><circle cx="100" cy="85" r="50" fill="#f472b6" opacity="0.16"/><circle cx="203" cy="258" r="82" fill="#db2777" opacity="0.15"/><circle cx="509" cy="97" r="106" fill="#f472b6" opacity="0.07"/><circle cx="428" cy="153" r="89" fill="#db2777" opacity="0.13"/><circle cx="423" cy="286" r="67" fill="#f472b6" opacity="0.18"/>
+  <rect x="465" y="45" width="45" height="45" rx="12" fill="none" stroke="#db2777" stroke-width="2" opacity="0.15" transform="rotate(165 487 67)"/><rect x="566" y="52" width="90" height="90" rx="12" fill="none" stroke="#db2777" stroke-width="2" opacity="0.15" transform="rotate(185 611 97)"/><rect x="74" y="99" width="93" height="93" rx="12" fill="none" stroke="#db2777" stroke-width="2" opacity="0.15" transform="rotate(118 120 145)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-understand-in-app-purchases)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">🛒</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#db2777" letter-spacing="0.08em">PURCHASING</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-understand-in-app-purchases)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">Understanding In-App Purchases Before Installing</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#db2777" font-weight="600">souk.eu.org/articles/understand-in-app-purchases</text>
+</svg>

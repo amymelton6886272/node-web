@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-apple-id-purchase-history-audit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef3c7"/>
+      <stop offset="100%" style="stop-color:#fde68a"/>
+    </linearGradient>
+    <linearGradient id="acc-apple-id-purchase-history-audit" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d97706"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-apple-id-purchase-history-audit)" rx="20"/>
+  <circle cx="724" cy="254" r="64" fill="#d97706" opacity="0.19"/><circle cx="692" cy="141" r="34" fill="#fbbf24" opacity="0.08"/><circle cx="240" cy="67" r="70" fill="#d97706" opacity="0.17"/><circle cx="811" cy="275" r="45" fill="#fbbf24" opacity="0.15"/><circle cx="497" cy="237" r="71" fill="#d97706" opacity="0.15"/><circle cx="227" cy="175" r="45" fill="#fbbf24" opacity="0.07"/>
+  <rect x="434" y="114" width="114" height="114" rx="12" fill="none" stroke="#d97706" stroke-width="2" opacity="0.15" transform="rotate(314 491 171)"/><rect x="440" y="200" width="82" height="82" rx="12" fill="none" stroke="#d97706" stroke-width="2" opacity="0.15" transform="rotate(201 481 241)"/><rect x="150" y="201" width="130" height="130" rx="12" fill="none" stroke="#d97706" stroke-width="2" opacity="0.15" transform="rotate(287 215 266)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-apple-id-purchase-history-audit)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">💬</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#d97706" letter-spacing="0.08em">SUPPORT</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-apple-id-purchase-history-audit)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">How to Audit Your Apple ID Purchase History</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#d97706" font-weight="600">souk.eu.org/articles/apple-id-purchase-history-audit</text>
+</svg>

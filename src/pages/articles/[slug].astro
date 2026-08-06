@@ -75,6 +75,9 @@ const breadcrumbSchema = {
       <span>{article.readTime}</span>
       <span>{article.category}</span>
     </div>
+    <div class="articleHeroImg">
+      <img src={`/images/articles/${article.slug}.svg`} alt="" loading="lazy" width="800" height="320" />
+    </div>
 
 
     {series && (
@@ -148,7 +151,7 @@ const breadcrumbSchema = {
       </nav>
       <div class="articleBody">
         {article.sections.map((section, index) => (
-          <section id={`section-${index}`}>
+          <section id={`section-${index}`} class:list={[{ hasDivider: index > 0 && index % 3 === 0 }]}>
             <h2 class="lang-en">{section.heading}</h2>
             <p class="lang-en">{section.text}</p>
             {section.headingZh && <h2 class="lang-zh" lang="zh-CN">{section.headingZh}</h2>}

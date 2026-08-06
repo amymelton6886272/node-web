@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-spot-low-quality-app-store-listings" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef2f2"/>
+      <stop offset="100%" style="stop-color:#fecaca"/>
+    </linearGradient>
+    <linearGradient id="acc-spot-low-quality-app-store-listings" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#dc2626"/>
+      <stop offset="100%" style="stop-color:#f87171"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-spot-low-quality-app-store-listings)" rx="20"/>
+  <circle cx="201" cy="251" r="101" fill="#dc2626" opacity="0.11"/><circle cx="559" cy="114" r="88" fill="#f87171" opacity="0.17"/><circle cx="681" cy="57" r="77" fill="#dc2626" opacity="0.19"/><circle cx="89" cy="204" r="105" fill="#f87171" opacity="0.12"/><circle cx="702" cy="60" r="69" fill="#dc2626" opacity="0.06"/><circle cx="290" cy="117" r="54" fill="#f87171" opacity="0.12"/>
+  <rect x="711" y="191" width="91" height="91" rx="12" fill="none" stroke="#dc2626" stroke-width="2" opacity="0.15" transform="rotate(231 756 236)"/><rect x="223" y="167" width="49" height="49" rx="12" fill="none" stroke="#dc2626" stroke-width="2" opacity="0.15" transform="rotate(254 247 191)"/><rect x="569" y="79" width="71" height="71" rx="12" fill="none" stroke="#dc2626" stroke-width="2" opacity="0.15" transform="rotate(277 604 114)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-spot-low-quality-app-store-listings)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">⚠</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#dc2626" letter-spacing="0.08em">SAFETY</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-spot-low-quality-app-store-listings)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">How to Spot Low-Quality App Store Listings</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#dc2626" font-weight="600">souk.eu.org/articles/spot-low-quality-app-store-listings</text>
+</svg>

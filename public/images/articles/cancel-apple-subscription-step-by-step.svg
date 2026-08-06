@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-cancel-apple-subscription-step-by-step" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f3ff"/>
+      <stop offset="100%" style="stop-color:#e9d5ff"/>
+    </linearGradient>
+    <linearGradient id="acc-cancel-apple-subscription-step-by-step" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-cancel-apple-subscription-step-by-step)" rx="20"/>
+  <circle cx="732" cy="262" r="72" fill="#7c3aed" opacity="0.17"/><circle cx="142" cy="106" r="55" fill="#a78bfa" opacity="0.15"/><circle cx="605" cy="118" r="93" fill="#7c3aed" opacity="0.07"/><circle cx="84" cy="224" r="67" fill="#a78bfa" opacity="0.13"/><circle cx="352" cy="78" r="64" fill="#7c3aed" opacity="0.10"/><circle cx="68" cy="240" r="74" fill="#a78bfa" opacity="0.13"/>
+  <rect x="442" y="122" width="122" height="122" rx="12" fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.15" transform="rotate(162 503 183)"/><rect x="571" y="63" width="132" height="132" rx="12" fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.15" transform="rotate(286 637 129)"/><rect x="468" y="74" width="95" height="95" rx="12" fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.15" transform="rotate(98 515 121)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-cancel-apple-subscription-step-by-step)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">⟳</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#7c3aed" letter-spacing="0.08em">SUBSCRIPTIONS</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-cancel-apple-subscription-step-by-step)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">How to Cancel an Apple Subscription Step by Step</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#7c3aed" font-weight="600">souk.eu.org/articles/cancel-apple-subscription-step-by-step</text>
+</svg>

@@ -1944,3 +1944,10 @@ body.dark .keyTakeaway{
     padding:18px 14px !important;
   }
 }
+
+/* ===== Article images ===== */
+.articleHeroImg{margin:0 0 20px;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 14px 36px #1118270a}
+.articleHeroImg img{display:block;width:100%;height:auto}
+.articleBody .hasDivider{margin-top:24px;padding-top:24px !important;border-top:2px dashed color-mix(in srgb,var(--accent) 20%,var(--line));position:relative}
+.articleBody .hasDivider::before{content:"";position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:12px;height:12px;border-radius:50%;background:var(--accent);opacity:0.5}
+body.dark .articleHeroImg{border-color:#303a4f;box-shadow:0 14px 36px #00000033}

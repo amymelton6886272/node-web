@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-hide-my-email-signups-and-app-account-hygiene" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ecfeff"/>
+      <stop offset="100%" style="stop-color:#a5f3fc"/>
+    </linearGradient>
+    <linearGradient id="acc-hide-my-email-signups-and-app-account-hygiene" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0891b2"/>
+      <stop offset="100%" style="stop-color:#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-hide-my-email-signups-and-app-account-hygiene)" rx="20"/>
+  <circle cx="386" cy="196" r="46" fill="#0891b2" opacity="0.11"/><circle cx="271" cy="130" r="72" fill="#22d3ee" opacity="0.14"/><circle cx="113" cy="75" r="45" fill="#0891b2" opacity="0.11"/><circle cx="103" cy="126" r="61" fill="#22d3ee" opacity="0.10"/><circle cx="803" cy="207" r="83" fill="#0891b2" opacity="0.13"/><circle cx="197" cy="69" r="96" fill="#22d3ee" opacity="0.10"/>
+  <rect x="96" y="176" width="76" height="76" rx="12" fill="none" stroke="#0891b2" stroke-width="2" opacity="0.15" transform="rotate(96 134 214)"/><rect x="87" y="95" width="61" height="61" rx="12" fill="none" stroke="#0891b2" stroke-width="2" opacity="0.15" transform="rotate(70 117 125)"/><rect x="273" y="93" width="103" height="103" rx="12" fill="none" stroke="#0891b2" stroke-width="2" opacity="0.15" transform="rotate(215 324 144)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-hide-my-email-signups-and-app-account-hygiene)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">🔒</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#0891b2" letter-spacing="0.08em">PRIVACY</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-hide-my-email-signups-and-app-account-hygiene)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">Hide My Email, App Signups, and Long-Term Account Hygiene on</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#0891b2" font-weight="600">souk.eu.org/articles/hide-my-email-signups-and-app-account-hygiene</text>
+</svg>

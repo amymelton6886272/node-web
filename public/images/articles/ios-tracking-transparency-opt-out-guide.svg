@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-ios-tracking-transparency-opt-out-guide" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ecfeff"/>
+      <stop offset="100%" style="stop-color:#a5f3fc"/>
+    </linearGradient>
+    <linearGradient id="acc-ios-tracking-transparency-opt-out-guide" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0891b2"/>
+      <stop offset="100%" style="stop-color:#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-ios-tracking-transparency-opt-out-guide)" rx="20"/>
+  <circle cx="273" cy="243" r="93" fill="#0891b2" opacity="0.08"/><circle cx="763" cy="96" r="97" fill="#22d3ee" opacity="0.05"/><circle cx="844" cy="258" r="88" fill="#0891b2" opacity="0.08"/><circle cx="699" cy="281" r="107" fill="#22d3ee" opacity="0.13"/><circle cx="240" cy="281" r="39" fill="#0891b2" opacity="0.14"/><circle cx="711" cy="150" r="91" fill="#22d3ee" opacity="0.18"/>
+  <rect x="283" y="63" width="63" height="63" rx="12" fill="none" stroke="#0891b2" stroke-width="2" opacity="0.15" transform="rotate(303 314 94)"/><rect x="149" y="218" width="53" height="53" rx="12" fill="none" stroke="#0891b2" stroke-width="2" opacity="0.15" transform="rotate(76 175 244)"/><rect x="722" y="89" width="134" height="134" rx="12" fill="none" stroke="#0891b2" stroke-width="2" opacity="0.15" transform="rotate(238 789 156)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-ios-tracking-transparency-opt-out-guide)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">🔒</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#0891b2" letter-spacing="0.08em">PRIVACY</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-ios-tracking-transparency-opt-out-guide)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">iOS Tracking Transparency: When to Allow and When to Deny Ap</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#0891b2" font-weight="600">souk.eu.org/articles/ios-tracking-transparency-opt-out-guide</text>
+</svg>

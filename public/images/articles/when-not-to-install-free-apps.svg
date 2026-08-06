@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-when-not-to-install-free-apps" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef2f2"/>
+      <stop offset="100%" style="stop-color:#fecaca"/>
+    </linearGradient>
+    <linearGradient id="acc-when-not-to-install-free-apps" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#dc2626"/>
+      <stop offset="100%" style="stop-color:#f87171"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-when-not-to-install-free-apps)" rx="20"/>
+  <circle cx="320" cy="50" r="60" fill="#dc2626" opacity="0.05"/><circle cx="716" cy="73" r="83" fill="#f87171" opacity="0.12"/><circle cx="691" cy="100" r="36" fill="#dc2626" opacity="0.06"/><circle cx="340" cy="276" r="30" fill="#f87171" opacity="0.16"/><circle cx="318" cy="246" r="80" fill="#dc2626" opacity="0.11"/><circle cx="716" cy="35" r="86" fill="#f87171" opacity="0.10"/>
+  <rect x="230" y="110" width="110" height="110" rx="12" fill="none" stroke="#dc2626" stroke-width="2" opacity="0.15" transform="rotate(270 285 165)"/><rect x="143" y="206" width="106" height="106" rx="12" fill="none" stroke="#dc2626" stroke-width="2" opacity="0.15" transform="rotate(53 196 259)"/><rect x="432" y="130" width="81" height="81" rx="12" fill="none" stroke="#dc2626" stroke-width="2" opacity="0.15" transform="rotate(80 472 170)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-when-not-to-install-free-apps)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">⚠</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#dc2626" letter-spacing="0.08em">SAFETY</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-when-not-to-install-free-apps)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">When You Should Not Install a Free App</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#dc2626" font-weight="600">souk.eu.org/articles/when-not-to-install-free-apps</text>
+</svg>

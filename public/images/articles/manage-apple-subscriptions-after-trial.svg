@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-manage-apple-subscriptions-after-trial" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f3ff"/>
+      <stop offset="100%" style="stop-color:#e9d5ff"/>
+    </linearGradient>
+    <linearGradient id="acc-manage-apple-subscriptions-after-trial" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-manage-apple-subscriptions-after-trial)" rx="20"/>
+  <circle cx="157" cy="287" r="57" fill="#7c3aed" opacity="0.17"/><circle cx="806" cy="238" r="103" fill="#a78bfa" opacity="0.11"/><circle cx="697" cy="61" r="59" fill="#7c3aed" opacity="0.06"/><circle cx="690" cy="100" r="33" fill="#a78bfa" opacity="0.09"/><circle cx="690" cy="250" r="30" fill="#7c3aed" opacity="0.17"/><circle cx="240" cy="210" r="30" fill="#a78bfa" opacity="0.11"/>
+  <rect x="467" y="147" width="47" height="47" rx="12" fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.15" transform="rotate(27 490 170)"/><rect x="254" y="229" width="96" height="96" rx="12" fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.15" transform="rotate(338 302 277)"/><rect x="220" y="80" width="87" height="87" rx="12" fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.15" transform="rotate(201 263 123)"/>
+  <rect x="40" y="40" width="72" height="72" rx="18" fill="url(#acc-manage-apple-subscriptions-after-trial)"/>
+  <text x="76" y="92" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="38" font-weight="900" fill="white" text-anchor="middle">⟳</text>
+  <text x="130" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="14" font-weight="800" fill="#7c3aed" letter-spacing="0.08em">SUBSCRIPTIONS</text>
+  <text x="40" y="160" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#64748b" font-weight="500">Storewise · Decision Research</text>
+  <rect x="40" y="180" width="6" height="60" rx="3" fill="url(#acc-manage-apple-subscriptions-after-trial)"/>
+  <text x="60" y="210" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="18" font-weight="700" fill="#1e293b">Managing Apple Subscriptions After a Free Trial</text>
+  <text x="40" y="250" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" fill="#7c3aed" font-weight="600">souk.eu.org/articles/manage-apple-subscriptions-after-trial</text>
+</svg>
