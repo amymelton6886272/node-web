@@ -1951,3 +1951,35 @@ body.dark .keyTakeaway{
 .articleBody .hasDivider{margin-top:24px;padding-top:24px !important;border-top:2px dashed color-mix(in srgb,var(--accent) 20%,var(--line));position:relative}
 .articleBody .hasDivider::before{content:"";position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:12px;height:12px;border-radius:50%;background:var(--accent);opacity:0.5}
 body.dark .articleHeroImg{border-color:#303a4f;box-shadow:0 14px 36px #00000033}
+
+/* ===== Article visual enrichment v2 ===== */
+
+/* Reading progress bar */
+.readingProgress{position:sticky;top:58px;z-index:5;height:3px;background:transparent;overflow:hidden;border-radius:0}
+.readingProgressBar{height:100%;width:0;background:linear-gradient(90deg,var(--accent),#fb7185,#60a5fa);transition:width .1s ease-out;border-radius:0 3px 3px 0}
+
+/* Article card thumbnails */
+.articleThumb{display:block;width:100%;height:140px;object-fit:cover;border-radius:12px 12px 0 0;margin:-22px -22px 14px;border:1px solid var(--line);border-bottom:0}
+.homeArticleCard .articleThumb{height:120px;border-radius:14px 14px 0 0;margin:-16px -16px 10px}
+body.dark .articleThumb{border-color:#303a4f}
+
+/* Section number badges */
+.sectionNum{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#fb7185);color:#fff;font-size:14px;font-weight:900;margin-right:8px;vertical-align:middle;flex-shrink:0}
+body.dark .sectionNum{background:linear-gradient(135deg,#e11d48,#7c3aed)}
+
+/* Pull quote */
+.pullQuote{margin:20px 0;padding:18px 22px;border-left:4px solid var(--accent);background:color-mix(in srgb,var(--accent) 6%,var(--card));border-radius:0 14px 14px 0;font-size:17px;line-height:1.7;font-style:italic;color:var(--text);font-weight:600}
+.pullQuote p{margin:0;font-size:inherit;line-height:inherit;color:inherit;font-style:italic}
+.pullQuote p+p{margin-top:6px}
+body.dark .pullQuote{background:color-mix(in srgb,var(--accent) 10%,#0c0d12);border-color:#fb7185}
+
+/* Article detail section spacing with badge */
+.articleBody section h2 .lang-en{display:flex;align-items:center;gap:0}
+.articleBody section h2{display:flex;align-items:center;gap:6px}
+
+/* Tighten thumb on mobile */
+@media(max-width:760px){
+  .articleThumb{height:100px}
+  .pullQuote{font-size:15px;padding:14px 16px}
+  .readingProgress{top:52px}
+}

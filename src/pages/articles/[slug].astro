@@ -63,6 +63,7 @@ const breadcrumbSchema = {
     subZh={article.descriptionZh || article.description}
     eyebrow={article.category}
   />
+  <div class="readingProgress" id="readingProgress"><div class="readingProgressBar" id="readingProgressBar"></div></div>
   <article class="articleDetail card">
     {article.titleZh && (
       <div class="articleZhIntro lang-zh" lang="zh-CN">
@@ -152,7 +153,7 @@ const breadcrumbSchema = {
       <div class="articleBody">
         {article.sections.map((section, index) => (
           <section id={`section-${index}`} class:list={[{ hasDivider: index > 0 && index % 3 === 0 }]}>
-            <h2 class="lang-en">{section.heading}</h2>
+            <h2 class="lang-en"><span class="sectionNum">{index + 1}</span> {section.heading}</h2>
             <p class="lang-en">{section.text}</p>
             {section.headingZh && <h2 class="lang-zh" lang="zh-CN">{section.headingZh}</h2>}
             {section.textZh && <p class="lang-zh" lang="zh-CN">{section.textZh}</p>}
@@ -162,6 +163,12 @@ const breadcrumbSchema = {
                 <div class="ktLabel lang-zh">核心要点</div>
                 <p class="lang-en">{article.description}</p>
                 <p class="lang-zh" lang="zh-CN">{article.descriptionZh || article.description}</p>
+              </div>
+            )}
+            {index === Math.floor(article.sections.length / 2) && (
+              <div class="pullQuote">
+                <p class="lang-en">"{section.text.split('.')[0]}."</p>
+                <p class="lang-zh" lang="zh-CN">「{(section.textZh || section.text).split('。')[0]}。」</p>
               </div>
             )}
           </section>
@@ -251,4 +258,19 @@ const breadcrumbSchema = {
       <a href="/privacy"><span class="lang-en">Privacy</span><span class="lang-zh">隐私政策</span></a>
     </div>
   </article>
+  <script>
+    (function(){
+      const bar = document.getElementById('readingProgressBar');
+      if(!bar) return;
+      function updateProgress(){
+        const h = document.documentElement;
+        const scrolled = h.scrollTop;
+        const total = h.scrollHeight - h.clientHeight;
+        const pct = total > 0 ? (scrolled / total) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', updateProgress, {passive:true});
+      updateProgress();
+    })();
+  </script>
 </BaseLayout>
