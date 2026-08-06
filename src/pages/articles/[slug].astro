@@ -75,11 +75,7 @@ const breadcrumbSchema = {
       <span>{article.readTime}</span>
       <span>{article.category}</span>
     </div>
-    <nav class="articleToc" aria-label="Article sections">
-      <strong class="lang-en">On this page</strong>
-      <strong class="lang-zh">本文目录</strong>
-      {article.sections.map((section, index) => <a href={`#section-${index}`}><span class="lang-en">{section.heading}</span><span class="lang-zh">{section.headingZh || section.heading}</span></a>)}
-    </nav>
+
 
     {series && (
       <section class="seriesNav card" aria-label="Reading series">
@@ -139,14 +135,36 @@ const breadcrumbSchema = {
       </section>
     )}
 
-    {article.sections.map((section, index) => (
-      <section id={`section-${index}`}>
-        <h2 class="lang-en">{section.heading}</h2>
-        <p class="lang-en">{section.text}</p>
-        {section.headingZh && <h2 class="lang-zh" lang="zh-CN">{section.headingZh}</h2>}
-        {section.textZh && <p class="lang-zh" lang="zh-CN">{section.textZh}</p>}
-      </section>
-    ))}
+    <div class="articleLayout">
+      <aside class="tocAside" aria-label="Article sections">
+        <strong class="lang-en">On this page</strong>
+        <strong class="lang-zh">本文目录</strong>
+        {article.sections.map((section, index) => (
+          <a href={`#section-${index}`} data-toc-link>
+            <span class="lang-en">{section.heading}</span>
+            <span class="lang-zh">{section.headingZh || section.heading}</span>
+          </a>
+        ))}
+      </aside>
+      <div class="articleBody">
+        {article.sections.map((section, index) => (
+          <section id={`section-${index}`}>
+            <h2 class="lang-en">{section.heading}</h2>
+            <p class="lang-en">{section.text}</p>
+            {section.headingZh && <h2 class="lang-zh" lang="zh-CN">{section.headingZh}</h2>}
+            {section.textZh && <p class="lang-zh" lang="zh-CN">{section.textZh}</p>}
+            {index === 0 && (
+              <div class="keyTakeaway">
+                <div class="ktLabel lang-en">Key takeaway</div>
+                <div class="ktLabel lang-zh">核心要点</div>
+                <p class="lang-en">{article.description}</p>
+                <p class="lang-zh" lang="zh-CN">{article.descriptionZh || article.description}</p>
+              </div>
+            )}
+          </section>
+        ))}
+      </div>
+    </div>
 
     {series && series.next && (
       <section class="seriesContinue card" aria-label="Continue series">
