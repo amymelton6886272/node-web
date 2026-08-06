@@ -136,7 +136,7 @@ const breadcrumbSchema = {
     )}
 
     <div class="articleLayout">
-      <aside class="tocAside" aria-label="Article sections">
+      <nav class="tocAside" aria-label="Article sections">
         <strong class="lang-en">On this page</strong>
         <strong class="lang-zh">本文目录</strong>
         {article.sections.map((section, index) => (
@@ -145,7 +145,7 @@ const breadcrumbSchema = {
             <span class="lang-zh">{section.headingZh || section.heading}</span>
           </a>
         ))}
-      </aside>
+      </nav>
       <div class="articleBody">
         {article.sections.map((section, index) => (
           <section id={`section-${index}`}>
