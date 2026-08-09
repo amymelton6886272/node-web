@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0e1118"/>
+      <stop offset="55%" style="stop-color:#1a1f2e"/>
+      <stop offset="100%" style="stop-color:#172554"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#fb7185"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="140" r="220" fill="#22c55e" opacity="0.10"/>
+  <circle cx="1100" cy="520" r="160" fill="#60a5fa" opacity="0.07"/>
+  <circle cx="80" cy="560" r="130" fill="#22c55e" opacity="0.06"/>
+  <rect x="0" y="0" width="8" height="630" fill="url(#accent)"/>
+  <text x="64" y="120" font-size="22" font-weight="700" fill="#22c55e" font-family="Segoe UI, -apple-system, sans-serif" letter-spacing="3">STOREWISE · SAFETY</text>
+  <text x="62" y="196" font-size="52" font-weight="800" fill="#e6e9f3" font-family="Segoe UI, -apple-system, sans-serif">How to Spot Low-Quality App Store</text><text x="64" y="280" fill="#e5e9f2" font-size="34" font-weight="700" font-family="Segoe UI, -apple-system, sans-serif">Listings</text>
+  <line x1="64" y1="430" x2="1136" y2="430" stroke="#293244" stroke-width="1"/>
+  <text x="64" y="472" font-size="18" fill="#9aa6bb" font-family="Segoe UI, -apple-system, sans-serif">Spot low-quality App Store listings before install: clone branding, review walls, stale updates, permission overreach, and monetization trap…</text>
+  <text x="64" y="540" font-size="16" fill="#697386" font-family="Segoe UI, -apple-system, sans-serif">9 min read · Updated 2026-08-05 · Check before you pay</text>
+</svg>

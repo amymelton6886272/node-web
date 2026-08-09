@@ -51,7 +51,7 @@ const breadcrumbSchema = {
   ],
 };
 ---
-<BaseLayout title={`${article.title} - Storewise`} description={article.description} path={path} ogType="article">
+<BaseLayout title={`${article.title} - Storewise`} description={article.description} path={path} ogType="article" ogImage={`${SITE}/og/${article.slug}.svg`}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
@@ -143,12 +143,14 @@ const breadcrumbSchema = {
       <nav class="tocAside" aria-label="Article sections">
         <strong class="lang-en">On this page</strong>
         <strong class="lang-zh">本文目录</strong>
+        <div class="tocLinks">
         {article.sections.map((section, index) => (
           <a href={`#section-${index}`} data-toc-link>
             <span class="lang-en">{section.heading}</span>
             <span class="lang-zh">{section.headingZh || section.heading}</span>
           </a>
         ))}
+        </div>
       </nav>
       <div class="articleBody">
         {article.sections.map((section, index) => (
