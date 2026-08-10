@@ -42,7 +42,7 @@ const articleSchema = {
   isPartOf: { '@type': 'WebSite', name: 'Storewise', url: SITE },
   wordCount: article.sections.reduce((n, s) => n + (s.text || '').split(/\s+/).length, 0),
   timeRequired: article.readTime,
-  image: `${SITE}/og/${article.slug}.svg`,
+  image: `${SITE}/og/${article.slug}.png`,
 };
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -82,7 +82,7 @@ const deviceSeriesSchema = series ? {
   })),
 } : null;
 ---
-<BaseLayout title={`${article.title} - Storewise`} description={article.description} path={path} ogType="article" ogImage={`${SITE}/og/${article.slug}.svg`}>
+<BaseLayout title={`${article.title} - Storewise`} description={article.description} path={path} ogType="article" ogImage={`${SITE}/og/${article.slug}.png`}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
@@ -112,7 +112,7 @@ const deviceSeriesSchema = series ? {
       <span>{article.category}</span>
     </div>
     <div class="articleHeroImg">
-      <img src={`/images/articles/${article.slug}.svg`} alt={`${article.title} - illustrated guide from Storewise`} loading="lazy" width="800" height="320" />
+      <img src={`/images/articles/${article.slug}.svg`} alt={`${article.title} - illustrated guide from Storewise`} loading="eager" fetchpriority="high" width="800" height="320" />
     </div>
 
 
