@@ -4,7 +4,7 @@
 export const articles = [
 {
   "slug": "google-play-vs-app-store-refund-protection-compared",
-  "title": "Google Play vs App Store Refund Protection: A Practical Comparison",
+  "title": "Google Play vs App Store Refund Protection",
   "titleZh": "Google Play vs App Store 退款保护对比：实用指南",
   "description": "A side-by-side comparison of refund windows, policies, approval rates, and account consequences for Google Play and the Apple App Store.",
   "descriptionZh": "Google Play 与 Apple App Store 退款窗口、政策、批准率及账户后果的并排对比，为双平台用户提供实用决策指导。",
@@ -73,9 +73,9 @@ export const articles = [
 },
 {
   "slug": "switching-from-android-to-ios-purchase-history-migration",
-  "title": "Switching from Android to iOS: Purchase History, Subscription Migration, and Hidden Costs",
+  "title": "Android to iOS: Purchase & Subscription Migration",
   "titleZh": "从 Android 换 iOS：购买记录、订阅迁移与隐藏成本",
-  "description": "What happens to your Google Play purchases, subscriptions, and in-app purchases when you switch to iPhone — and how to avoid paying twice.",
+  "description": "What happens to your Google Play purchases, subscriptions, and in-app purchases when you switch to iPhone.",
   "descriptionZh": "当你换到 iPhone 时，Google Play 购买、订阅和应用内购买会怎样——以及如何避免付两次钱。",
   "category": "Refunds",
   "tags": [
@@ -142,7 +142,7 @@ export const articles = [
 },
 {
   "slug": "eu-dma-third-party-app-stores-safety-implications",
-  "title": "EU DMA and Third-Party App Stores: What Changed for Purchase Safety and Refunds",
+  "title": "EU DMA and Third-Party App Stores: Purchase Safety Impact",
   "titleZh": "欧盟 DMA 与第三方应用商店：购买安全与退款的变化",
   "description": "How the Digital Markets Act affects iOS app purchases, refunds, payment safety, and scam risks for EU users.",
   "descriptionZh": "《数字市场法案》如何影响欧盟用户的 iOS 应用购买、退款、支付安全和诈骗风险。",
@@ -187,7 +187,7 @@ export const articles = [
       "heading": "Scam and Fraud Risks: The New Attack Surface Created by the DMA",
       "headingZh": "诈骗和欺诈风险：DMA 创建的新攻击面",
       "text": "The DMA has created new attack surfaces for scammers. Before the DMA, the only way to get an app on an iPhone was through the App Store, which Apple reviewed. Now, third-party app stores can distribute apps that Apple's review process has not examined for scams. This does not mean all third-party stores are dangerous — it means users need to apply their own judgment in a way that was not necessary before. The specific risks include: fake payment screens that mimic Apple's in-app purchase interface but send your credit card information to scammers; apps that redirect to external websites that look legitimate but are designed to steal credentials; subscription traps that use alternative payment systems to avoid Apple's cancellation requirements; and fake app stores that mimic legitimate third-party stores but are actually malware distribution points. The protection against these risks is not technical — it is behavioral. Before installing any third-party app store, verify it is listed on Apple's official page of authorized marketplaces. Before completing any payment through an alternative system, verify the URL and look for the lock icon indicating HTTPS. Before entering your Apple ID password on any screen, verify that the screen is from Apple and not a phishing overlay. And if a deal seems too good to be true — a premium app for free, a subscription at 90 percent off — it probably is.",
-      "textZh": ""
+      "textZh": "DMA 为诈骗者创造了新的攻击面。在 DMA 之前，iPhone 安装应用的唯一途径是经过 Apple 审核的 App Store。现在，第三方应用商店可以分发未经 Apple 审核流程检查的应用。这并不意味着所有第三方商店都危险——而是意味着用户需要以过去没有必要的方式自行判断。具体风险包括：伪造支付页面，模仿 Apple 的应用内购买界面，却将你的信用卡信息发送给诈骗者；应用跳转到看似合法的外部网站，实为窃取凭证；订阅陷阱使用替代支付系统绕过 Apple 的取消要求；以及伪装成合法第三方商店、实为恶意软件分发点的假应用商店。防范这些风险的手段不是技术性的，而是行为性的。安装任何第三方应用商店前，请确认它出现在 Apple 官方授权市场列表页上。通过替代系统完成任何支付前，请核对 URL 并确认 HTTPS 锁形图标。在任何界面输入 Apple ID 密码前，请确认该界面来自 Apple 而非钓鱼覆盖层。如果某笔交易好得不像真的——免费的高级应用、九折的订阅——那它很可能就是假的。",
     },
     {
       "heading": "The Practical Guide: How to Stay Safe on iOS in the EU Under the DMA",
@@ -211,9 +211,9 @@ export const articles = [
 },
 {
   "slug": "used-iphone-apple-id-purchase-history-check-before-buying",
-  "title": "Buying a Used iPhone: How to Check Apple ID Purchase History and Avoid Residual Charges",
+  "title": "Buying a Used iPhone: Check Apple ID Purchase History",
   "titleZh": "购买二手 iPhone：如何检查 Apple ID 购买记录并避免残余扣费",
-  "description": "What to check before and after buying a used iPhone — activation lock, residual subscriptions, hardware-linked purchases, and the proper factory reset sequence.",
+  "description": "What to check before and after buying a used iPhone: activation lock, residual Apple ID charges, and hidden payment liabilities.",
   "descriptionZh": "购买二手 iPhone 前后要检查什么——激活锁、残余订阅、硬件关联购买和正确的出厂重置顺序。",
   "category": "Security",
   "tags": [
@@ -280,9 +280,9 @@ export const articles = [
 },
 {
   "slug": "cross-device-purchase-sync-ipad-mac-appletv-risks",
-  "title": "Cross-Device Purchase Risks: iPad, Mac, Apple TV, and the Hidden Costs of Apple's Ecosystem",
+  "title": "Cross-Device Purchase Risks: iPad, Mac, and Apple TV",
   "titleZh": "跨设备购买风险：iPad、Mac、Apple TV 与 Apple 生态系统的隐藏成本",
-  "description": "How subscriptions, in-app purchases, and family sharing across Apple devices create unexpected charges — and how to audit and prevent them.",
+  "description": "How purchases sync across iPad, Mac, and Apple TV — and the hidden charges that come with Apple ecosystem buying.",
   "descriptionZh": "Apple 设备间的订阅、应用内购买和家庭共享如何产生意外扣费——以及如何审计和预防。",
   "category": "Security",
   "tags": [
@@ -350,9 +350,9 @@ export const articles = [
 },
 {
   "slug": "app-store-bank-dispute-chargeback-consequences",
-  "title": "What Happens When You Dispute an App Store Charge With Your Bank",
+  "title": "Disputing an App Store Charge With Your Bank",
   "titleZh": "当你在银行对 App Store 扣款提出争议时会发生什么",
-  "description": "Bank chargebacks against App Store charges can lock your Apple ID, block all purchases, and disable your devices. What to do before, during, and after a dispute.",
+  "description": "Bank chargebacks against App Store charges can lock your Apple ID and block purchases. Learn the real consequences before you dispute.",
   "descriptionZh": "对 App Store 扣款发起银行争议会锁定你的 Apple ID、阻止所有购买并禁用设备。争议前、中、后该怎么做。",
   "category": "Payments",
   "tags": [
@@ -417,9 +417,9 @@ export const articles = [
 },
 {
   "slug": "apple-support-escalation-when-appeal-fails",
-  "title": "Apple Support Escalation: What to Do When Your Refund Appeal Is Denied",
+  "title": "Apple Support Escalation: When Refund Appeals Fail",
   "titleZh": "Apple 客服升级：退款申诉被拒后怎么办",
-  "description": "Step-by-step escalation guide for Apple refund denials: how to reach a human review, what evidence to send, and when to involve external consumer protection agencies.",
+  "description": "Step-by-step escalation guide for Apple refund denials: how to reach a human reviewer and get a second look at your case.",
   "descriptionZh": "Apple 退款被拒后的逐步升级指南：如何联系人工审核、提交什么证据、何时涉及外部消费者保护机构。",
   "category": "Refunds",
   "tags": [
@@ -491,9 +491,9 @@ export const articles = [
 },
 {
   "slug": "case-study-family-sharing-charge-dispute-resolved",
-  "title": "Case Study: A Family Sharing Charge Dispute Resolved — What We Learned",
+  "title": "Case Study: Family Sharing Charge Dispute Resolved",
   "titleZh": "案例复盘：一次家庭共享扣费纠纷的解决过程与教训",
-  "description": "An anonymized walkthrough of a real family sharing dispute: how a $347 charge appeared on a shared card, the investigation process, and the settings that would have prevented it.",
+  "description": "An anonymized walkthrough of a real family sharing dispute: how a $347 charge appeared, and how it was resolved.",
   "descriptionZh": "一个匿名化的真实家庭共享纠纷复盘：347 美元扣费如何在共享卡上出现、调查过程以及本可以防止的设置。",
   "category": "Family",
   "tags": [
@@ -565,9 +565,9 @@ export const articles = [
 },
 {
   "slug": "chargeback-vs-apple-refund-which-to-choose",
-  "title": "Credit Card Chargeback vs Apple Refund: Which One to Choose and When",
+  "title": "Chargeback vs Apple Refund: Which to Choose",
   "titleZh": "信用卡拒付 vs Apple 退款：选择哪个、何时选择",
-  "description": "A practical comparison of the two paths for recovering money from App Store purchases: eligibility, timeline, success rates, and how each choice affects your Apple ID.",
+  "description": "Compare the two paths for recovering money from App Store purchases and understand the account risks of each.",
   "descriptionZh": "从 App Store 购买中追回资金的两种路径的实用比较：资格、时间线、成功率以及每种选择如何影响你的 Apple ID。",
   "category": "Refunds",
   "tags": [
@@ -639,9 +639,9 @@ export const articles = [
 },
 {
   "slug": "case-study-refund-denied-then-approved-on-appeal",
-  "title": "Case Study: Refund Denied Twice, Then Approved — The Appeal Process That Worked",
+  "title": "Case Study: Refund Denied, Then Approved on Appeal",
   "titleZh": "案例复盘：退款被拒两次后成功——奏效的申诉流程",
-  "description": "An anonymized walkthrough of a refund appeal that succeeded after two automated denials. The evidence package, the escalation path, and the communication strategy that made the difference.",
+  "description": "An anonymized case study of an App Store refund denied twice then approved on appeal: the evidence and process that worked.",
   "descriptionZh": "一个匿名化的退款申诉案例，在两次自动拒绝后成功。证据包、升级路径和沟通策略如何产生差异。",
   "category": "Refunds",
   "tags": [
@@ -713,7 +713,7 @@ export const articles = [
 },
 {
   "slug": "apple-id-security-checklist",
-  "title": "Apple ID Security Checklist: Two-Factor, Recovery, and Trusted Devices",
+  "title": "Apple ID Security Checklist: 2FA and Recovery",
   "titleZh": "Apple ID 安全清单：双重认证、恢复与受信设备",
   "description": "A practical checklist for auditing Apple ID security: two-factor authentication, recovery contacts, trusted devices, and password rotation.",
   "descriptionZh": "审计 Apple ID 安全的实用清单：双重认证、恢复联系人、受信设备与密码轮换。",
@@ -779,7 +779,7 @@ export const articles = [
 },
 {
   "slug": "app-subscription-cancel-from-web",
-  "title": "How to Cancel App Subscriptions from the Web: Apple ID Management Without iOS",
+  "title": "How to Cancel App Subscriptions from the Web",
   "titleZh": "如何从网页取消 App 订阅：不用 iOS 的 Apple ID 管理",
   "description": "Cancel and manage App Store subscriptions through the Apple ID web portal when you do not have access to an iOS device.",
   "descriptionZh": "在无法使用 iOS 设备时，通过 Apple ID 网页门户取消和管理 App Store 订阅。",
@@ -845,7 +845,7 @@ export const articles = [
 },
 {
   "slug": "ios-tracking-transparency-opt-out-guide",
-  "title": "iOS Tracking Transparency: When to Allow and When to Deny App Tracking",
+  "title": "iOS Tracking Transparency: When to Allow or Deny",
   "titleZh": "iOS 跟踪透明度：何时允许、何时拒绝应用跟踪",
   "description": "A decision guide for App Tracking Transparency prompts: when tracking is justified, when to deny, and how to audit tracking after install.",
   "descriptionZh": "应用跟踪透明度提示的决策指南：何时跟踪合理、何时拒绝、安装后如何审计跟踪。",
@@ -911,7 +911,7 @@ export const articles = [
 },
 {
   "slug": "app-store-age-ratings-and-parental-controls",
-  "title": "App Store Age Ratings and Parental Controls: A Family Setup Guide",
+  "title": "App Store Age Ratings and Parental Controls",
   "titleZh": "App Store 年龄分级与家长控制：家庭设置指南",
   "description": "Understand App Store age ratings, Content Restrictions, Screen Time, and how to set up parental controls for children of different ages.",
   "descriptionZh": "了解 App Store 年龄分级、内容限制、屏幕使用时间，以及如何为不同年龄段儿童设置家长控制。",
@@ -1470,7 +1470,7 @@ export const articles = [
 {
   "slug": "understand-in-app-purchases",
   "title": "Understanding In-App Purchases Before Installing",
-  "titleZh": "安装前先理解 App 内购买",
+  "titleZh": "安装前先理解 App 内购买：避免意外扣费指南",
   "description": "Read App Store IAP types like a buyer: consumables, unlocks, subscriptions, trials, Family Sharing limits, and a pre-purchase evidence pack.",
   "descriptionZh": "像买家一样读 App Store 内购类型：消耗型、解锁、订阅、试用、家庭共享限制与购买前证据包。",
   "category": "Purchasing",
@@ -2610,7 +2610,7 @@ export const articles = [
 {
   "slug": "when-not-to-install-free-apps",
   "title": "When You Should Not Install a Free App",
-  "titleZh": "什么时候不该安装免费应用",
+  "titleZh": "什么时候不该安装免费应用：识别免费陷阱的清单",
   "description": "Skip free App Store installs that fail privacy, permission, billing, and quality checks — a 2026 stop-install checklist for iPhone households.",
   "descriptionZh": "跳过通不过隐私、权限、扣费与质量检查的免费安装——2026 家庭 iPhone 停装清单。",
   "category": "Safety",
@@ -3137,7 +3137,7 @@ export const articles = [
 },
 {
   "slug": "compare-app-store-regions-safely",
-  "title": "How to Compare App Store Regions Without Breaking Your Account",
+  "title": "Compare App Store Regions Without Breaking Your Account",
   "titleZh": "如何在不伤账号的前提下比较 App Store 地区",
   "description": "Compare App Store regions safely without reckless ID switching: price signals, media libraries, payment match, and walk-away rules.",
   "descriptionZh": "安全比较 App Store 地区而不盲目切 ID：价格信号、媒体库、支付匹配与走开规则。",
@@ -3348,7 +3348,7 @@ export const articles = [
 {
   "slug": "spot-subscription-fatigue-apps",
   "title": "How to Spot Apps That Create Subscription Fatigue",
-  "titleZh": "如何识别制造订阅疲劳的应用",
+  "titleZh": "如何识别制造订阅疲劳的应用：避免冲动订阅",
   "description": "Spot weekly traps, stacked renewals, and dark-pattern paywalls before subscription fatigue drains your Apple ID budget in 2026.",
   "descriptionZh": "2026 年如何在订阅疲劳掏空 Apple ID 预算前，识别周付陷阱、堆叠续费与暗模式付费墙。",
   "category": "Purchasing",
@@ -3683,7 +3683,7 @@ export const articles = [
 },
 {
   "slug": "screen-time-purchase-controls",
-  "title": "Screen Time Purchase Controls That Actually Reduce Surprise Charges",
+  "title": "Screen Time Purchase Controls That Reduce Charges",
   "titleZh": "真正能减少意外扣费的屏幕使用时间购买控制",
   "description": "Set Screen Time purchase controls that actually hold: passcodes, free downloads, Ask to Buy overlap, and monthly family audits.",
   "descriptionZh": "设置真正有效的屏幕使用时间购买控制：密码、免费下载、与购买前询问的配合，以及每月家庭审计。",
@@ -4079,7 +4079,7 @@ export const articles = [
 },
 {
   "slug": "shared-payment-method-family-disputes",
-  "title": "How to Handle Shared Payment Method Disputes in Family Sharing",
+  "title": "Handling Shared Payment Method Disputes in Family Sharing",
   "titleZh": "家庭共享中如何处理共用付款方式争议",
   "description": "Resolve Family Sharing payment disputes with charge packets, role clarity, and controls that stop the next surprise Apple ID debit.",
   "descriptionZh": "用扣费材料包、角色清晰度与控制措施处理家庭共享支付争议，阻止下一次意外 Apple ID 扣款。",
@@ -4259,9 +4259,9 @@ export const articles = [
 },
 {
   "slug": "us-apple-id-registration-and-payment-research-2026",
-  "title": "2026 Guide: Researching a US-Region Apple ID Setup Without Payment Pitfalls",
+  "title": "US Apple ID Setup: Registration Without Payment Pitfalls",
   "titleZh": "2026 年美区 Apple ID 注册与支付避坑研究指南",
-  "description": "A practical research guide for evaluating US-region Apple ID setup, payment method limits, gift-card balance rules, and common account risks before changing storefronts.",
+  "description": "2026 research on setting up a US-region Apple ID: payment methods, tax state choices, and pitfalls to avoid.",
   "descriptionZh": "面向准备研究美区 Apple ID 注册、支付方式限制、礼品卡余额规则和常见账号风险的实用避坑指南，帮助你在切区前先看清边界。",
   "category": "Account Safety",
   "tags": [
@@ -4392,7 +4392,7 @@ export const articles = [
 },
 {
   "slug": "cross-region-apple-id-switching-risk-matrix-2026",
-  "title": "Cross-Region Apple ID Switching: A 2026 Risk Matrix Before You Move Storefronts",
+  "title": "Cross-Region Apple ID Switching: 2026 Risk Matrix",
   "titleZh": "跨区切换 Apple ID：2026 年切区前风险矩阵",
   "description": "A structured risk matrix for changing App Store regions, covering payment methods, gift cards, Family Sharing, subscriptions, and recovery paths.",
   "descriptionZh": "结构化梳理切换 App Store 地区前的风险矩阵，覆盖支付方式、礼品卡、家庭共享、订阅与账号恢复路径。",
@@ -4574,7 +4574,7 @@ export const articles = [
 },
 {
   "slug": "free-trial-to-paid-conversion-defense-playbook",
-  "title": "Free Trial to Paid Conversion: A Defense Playbook for iOS Users",
+  "title": "Free Trial to Paid: A Defense Playbook for iOS",
   "titleZh": "从免费试用到付费转正：iOS 用户防御手册",
   "description": "A defense playbook for evaluating free trials, setting cancel reminders, and avoiding multi-account renewal chaos on iOS.",
   "descriptionZh": "面向 iOS 用户的免费试用评估、取消提醒设置，以及避免多账号续费混乱的防御手册。",
@@ -4756,7 +4756,7 @@ export const articles = [
 },
 {
   "slug": "ios-configuration-profile-vpn-certificate-danger-guide",
-  "title": "iOS Configuration Profiles, VPN Apps, and Certificate Danger Signs",
+  "title": "iOS Configuration Profiles and VPN Certificate Risks",
   "titleZh": "iOS 配置描述文件、VPN 应用与证书危险信号指南",
   "description": "How to evaluate VPN apps and configuration profiles on iOS, including certificate prompts, always-on claims, and safer verification steps.",
   "descriptionZh": "如何评估 iOS 上的 VPN 应用与配置描述文件，包括证书提示、始终开启宣传，以及更安全的核验步骤。",
@@ -4829,7 +4829,7 @@ export const articles = [
 },
 {
   "slug": "family-sharing-ask-to-buy-and-unexpected-charges",
-  "title": "Family Sharing, Ask to Buy, and Unexpected Charges on Shared Cards",
+  "title": "Family Sharing, Ask to Buy, and Unexpected Charges",
   "titleZh": "家庭共享、购买前询问与共享卡意外扣费",
   "description": "A practical guide to preventing unexpected App Store charges in families, including organizer duties, Ask to Buy gaps, and dispute prep.",
   "descriptionZh": "预防家庭场景下 App Store 意外扣费的实用指南，包括组织者职责、购买前询问缺口与争议准备。",
@@ -4908,7 +4908,7 @@ export const articles = [
 },
 {
   "slug": "testflight-sideload-and-unofficial-install-risks",
-  "title": "TestFlight, Sideloading Narratives, and Unofficial Install Risks on iPhone",
+  "title": "TestFlight and Unofficial Install Risks on iPhone",
   "titleZh": "TestFlight、侧载叙事与 iPhone 非官方安装风险",
   "description": "How to evaluate TestFlight invites and unofficial install narratives without confusing legitimate beta testing with high-risk distribution channels.",
   "descriptionZh": "如何评估 TestFlight 邀请与非官方安装叙事，避免把正当内测与高风险分发渠道混为一谈。",
@@ -4993,7 +4993,7 @@ export const articles = [
 },
 {
   "slug": "app-store-search-ads-and-fake-popular-apps",
-  "title": "App Store Search Manipulation, Lookalike Apps, and Fake Popularity Signals",
+  "title": "App Store Search Manipulation and Fake Popularity",
   "titleZh": "App Store 搜索操纵、仿冒应用与虚假热度信号",
   "description": "How to detect lookalike apps and inflated popularity signals before you install, subscribe, or grant permissions.",
   "descriptionZh": "在安装、订阅或授权前，如何识别仿冒应用与被放大的热度信号。",
@@ -5084,7 +5084,7 @@ export const articles = [
 },
 {
   "slug": "ios-subscription-stack-audit-and-cancel-order",
-  "title": "How to Audit Your iOS Subscription Stack and Choose a Cancel Order",
+  "title": "Audit Your iOS Subscription Stack and Cancel Order",
   "titleZh": "如何审计你的 iOS 订阅堆叠并选择取消顺序",
   "description": "A step-by-step method to inventory Apple subscriptions, estimate annual burn, and cancel in an order that protects critical tools first.",
   "descriptionZh": "分步盘点 Apple 订阅、估算年化开销，并按先保护关键工具的顺序取消的方法。",
@@ -5169,7 +5169,7 @@ export const articles = [
 },
 {
   "slug": "hide-my-email-signups-and-app-account-hygiene",
-  "title": "Hide My Email, App Signups, and Long-Term Account Hygiene on iOS",
+  "title": "Hide My Email, App Signups, and Account Hygiene",
   "titleZh": "隐藏邮件地址、App 注册与 iOS 长期账号卫生",
   "description": "How to use Hide My Email and signup discipline to reduce spam, credential reuse, and abandoned app account risk.",
   "descriptionZh": "如何用隐藏邮件地址与注册纪律减少垃圾邮件、密码复用和废弃 App 账号风险。",
@@ -5242,7 +5242,7 @@ export const articles = [
 },
 {
   "slug": "report-a-problem-refund-evidence-and-timing",
-  "title": "Report a Problem, Refund Evidence, and Timing Strategy for App Store Purchases",
+  "title": "Report a Problem: Refund Evidence and Timing Strategy",
   "titleZh": "Report a Problem、退款证据与 App Store 购买时机策略",
   "description": "How to prepare evidence, choose timing, and communicate clearly when using Apple Report a Problem for purchases and subscriptions.",
   "descriptionZh": "在使用 Apple Report a Problem 处理购买与订阅时，如何准备证据、选择时机并清楚表达。",
