@@ -387,7 +387,7 @@ function hydrateSeries(series) {
   const items = series.slugs
     .map((slug) => articleBySlug(slug))
     .filter(Boolean)
-    .map((item) => ({
+    .map((item, index) => ({
       slug: item.slug,
       href: getArticlePath(item),
       title: item.title,
@@ -397,6 +397,7 @@ function hydrateSeries(series) {
       category: item.category,
       readTime: item.readTime,
       updatedAt: item.updatedAt || item.publishedAt,
+      position: index + 1,
     }));
 
   const latestUpdated = items
