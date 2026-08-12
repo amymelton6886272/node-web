@@ -2007,3 +2007,100 @@ body.dark .pullQuote{background:color-mix(in srgb,var(--accent) 10%,#0c0d12);bor
   .pullQuote{font-size:15px;padding:14px 16px}
   .readingProgress{top:52px}
 }
+
+/* ============================================================
+   Visual enhancement pass: sidebar emoji theming, category
+   accent colors, series progress, hero depth.
+   Dark-mode safe: all new colors derive from var(--card)/var(--line)
+   via color-mix, so they re-tint automatically under body.dark.
+   ============================================================ */
+
+/* ---- 1. Sidebar: distinct soft tint per hub (emoji icons) ---- */
+.sideGroup a[href="/articles"] .sideIcon,
+.mobileToolsList a[href="/articles"] .sideIcon{background:color-mix(in srgb,#ff6b9b 16%,var(--card));border-color:color-mix(in srgb,#ff6b9b 34%,var(--line))}
+.sideGroup a[href="/series"] .sideIcon,
+.mobileToolsList a[href="/series"] .sideIcon{background:color-mix(in srgb,#a855f7 16%,var(--card));border-color:color-mix(in srgb,#a855f7 34%,var(--line))}
+.sideGroup a[href="/knowledge"] .sideIcon,
+.mobileToolsList a[href="/knowledge"] .sideIcon{background:color-mix(in srgb,#3b82f6 16%,var(--card));border-color:color-mix(in srgb,#3b82f6 34%,var(--line))}
+.sideGroup a[href="/guides"] .sideIcon,
+.mobileToolsList a[href="/guides"] .sideIcon{background:color-mix(in srgb,#14b8a6 16%,var(--card));border-color:color-mix(in srgb,#14b8a6 34%,var(--line))}
+.sideGroup a[href="/risk"] .sideIcon,
+.mobileToolsList a[href="/risk"] .sideIcon{background:color-mix(in srgb,#f59e0b 18%,var(--card));border-color:color-mix(in srgb,#f59e0b 38%,var(--line))}
+.sideGroup a[href="/checklists"] .sideIcon,
+.mobileToolsList a[href="/checklists"] .sideIcon{background:color-mix(in srgb,#22c55e 16%,var(--card));border-color:color-mix(in srgb,#22c55e 34%,var(--line))}
+.sideGroup a[href="/glossary"] .sideIcon,
+.mobileToolsList a[href="/glossary"] .sideIcon{background:color-mix(in srgb,#06b6d4 16%,var(--card));border-color:color-mix(in srgb,#06b6d4 34%,var(--line))}
+
+/* Emoji need a bit more room + neutral frame so color-tint reads as the bg */
+.sideIcon{font-size:16px;line-height:1}
+.mobileToolsList .sideIcon{font-size:16px}
+
+/* Sidebar active tint should stay distinct from per-item tint */
+.sideGroup a.active .sideIcon{background:#fff}
+body.dark .sideGroup a.active .sideIcon{background:#111827}
+
+/* ---- 2. Article card category accent colors ---- */
+.articleCard[data-category="Refunds"]{--cat:#ec4899}
+.articleCard[data-category="Security"]{--cat:#ef4444}
+.articleCard[data-category="Payments"]{--cat:#14b8a6}
+.articleCard[data-category="Family"]{--cat:#f97316}
+.articleCard[data-category="Subscriptions"]{--cat:#3b82f6}
+.articleCard[data-category="Privacy"]{--cat:#8b5cf6}
+.articleCard[data-category="Support"]{--cat:#06b6d4}
+.articleCard[data-category="Purchasing"]{--cat:#22c55e}
+.articleCard[data-category="Safety"]{--cat:#f59e0b}
+.articleCard[data-category="Regions"]{--cat:#6366f1}
+.articleCard[data-category="Workflow"]{--cat:#84cc16}
+.articleCard[data-category="Account Safety"]{--cat:#f43f5e}
+.articleCard[data-category="App Safety"]{--cat:#0ea5e9}
+
+/* Category top-bar uses the per-card accent */
+.articleCard::before{background:linear-gradient(90deg,var(--cat,var(--accent)),var(--cat,var(--accent-2)),transparent 82%)}
+
+/* Category badge borrows the accent */
+.articleCard .articleCategory,
+.articleCategory{
+  border-color:color-mix(in srgb,var(--cat,var(--accent)) 34%,var(--line));
+  color:var(--cat,var(--accent));
+  background:color-mix(in srgb,var(--cat,var(--accent)) 10%,var(--card));
+}
+
+/* ---- 3. Series progress markers ---- */
+.seriesProgress{
+  flex:0 0 auto;
+  margin-left:auto;
+  display:inline-flex;align-items:center;gap:3px;
+  padding:2px 9px;border-radius:999px;
+  font-size:11px;font-weight:800;
+  color:color-mix(in srgb,#a855f7 70%,var(--muted));
+  background:color-mix(in srgb,#a855f7 12%,var(--card));
+  border:1px solid color-mix(in srgb,#a855f7 22%,var(--line));
+}
+.seriesStep{position:relative}
+.seriesStep.current{box-shadow:0 0 0 2px color-mix(in srgb,#a855f7 40%,transparent)}
+
+/* ---- 4. Hero depth: decorative grid + gradient border ---- */
+.hero::before{
+  content:"";
+  position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background-image:
+    radial-gradient(color-mix(in srgb,var(--accent) 22%,transparent) 1px,transparent 1px),
+    radial-gradient(color-mix(in srgb,var(--accent-2) 18%,transparent) 1px,transparent 1px);
+  background-size:26px 26px,26px 26px;
+  background-position:0 0,13px 13px;
+  opacity:.5;
+  -webkit-mask-image:radial-gradient(circle at top right,black,transparent 70%);
+          mask-image:radial-gradient(circle at top right,black,transparent 70%);
+}
+.hero::after{
+  content:"";
+  position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  padding:2px;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 55%,transparent),transparent 40%,color-mix(in srgb,var(--accent-2) 45%,transparent));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask-composite:exclude;
+  opacity:.7;
+}
+.heroInner{position:relative;z-index:1}

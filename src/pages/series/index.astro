@@ -88,6 +88,8 @@ const itemListSchema = {
                   <span class="seriesStep">{index + 1}</span>
                   <span class="lang-en">{item.title}</span>
                   <span class="lang-zh">{item.titleZh}</span>
+                  <span class="seriesProgress lang-en">#{item.position} / {series.items.length}</span>
+                  <span class="seriesProgress lang-zh">第 {item.position} / {series.items.length} 篇</span>
                 </a>
               </li>
             ))}

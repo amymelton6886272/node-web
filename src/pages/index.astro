@@ -309,7 +309,7 @@ const trustLinks = [
     </div>
     <div class="articleGrid">
       {featuredDeep.map((article) => (
-        <a class="articleCard homeArticleCard" href={getArticlePath(article)}>
+        <a class="articleCard homeArticleCard" data-category={article.category} href={getArticlePath(article)}>
           <div class="articleMeta">
             <span>{article.category}</span>
             <span>{article.readTime}</span>
@@ -342,7 +342,7 @@ const trustLinks = [
     </div>
     <div class="articleGrid">
       {moreArticles.map((article) => (
-        <a class="articleCard homeArticleCard" href={getArticlePath(article)}>
+        <a class="articleCard homeArticleCard" data-category={article.category} href={getArticlePath(article)}>
           <div class="articleMeta">
             <span>{article.category}</span>
             <span>{article.readTime}</span>

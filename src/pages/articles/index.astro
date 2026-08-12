@@ -130,7 +130,7 @@ const seriesList = getAllSeriesForIndex();
     </div>
     <div class="articleGrid">
       {featured.map((article) => (
-        <a class="articleCard homeArticleCard" href={getArticlePath(article)}>
+        <a class="articleCard homeArticleCard" data-category={article.category} href={getArticlePath(article)}>
           <img class="articleThumb" src={`/images/articles/${article.slug}.svg`} alt="" loading="lazy" />
           <div class="articleMeta">
             <span>{article.category}</span>
@@ -151,7 +151,7 @@ const seriesList = getAllSeriesForIndex();
 
   <div class="articleGrid">
     {rest.map((article) => (
-      <a class="articleCard card" href={getArticlePath(article)}>
+      <a class="articleCard card" data-category={article.category} href={getArticlePath(article)}>
         <img class="articleThumb" src={`/images/articles/${article.slug}.svg`} alt="" loading="lazy" />
         <span class="articleCategory">{article.category}</span>
         <h2 class="lang-en">{article.title}</h2>
