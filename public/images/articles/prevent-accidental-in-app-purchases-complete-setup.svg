@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="320" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="bg-prevent-accidental-in-app-purchases-complete-setup" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fffbeb"/>
+      <stop offset="100%" style="stop-color:#fef3c7"/>
+    </linearGradient>
+    <linearGradient id="acc-prevent-accidental-in-app-purchases-complete-setup" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d97706"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="320" fill="url(#bg-prevent-accidental-in-app-purchases-complete-setup)" rx="20"/>
+  <circle cx="120" cy="40" r="68" fill="#d97706" opacity="0.1"/><circle cx="293" cy="137" r="99" fill="#fbbf24" opacity="0.1"/><circle cx="466" cy="234" r="86" fill="#d97706" opacity="0.1"/><circle cx="639" cy="91" r="73" fill="#fbbf24" opacity="0.1"/><circle cx="812" cy="188" r="104" fill="#d97706" opacity="0.1"/><circle cx="285" cy="45" r="91" fill="#fbbf24" opacity="0.1"/><rect x="218" y="76" width="87" height="87" rx="12" fill="none" stroke="#d97706" stroke-width="2" opacity="0.15" transform="rotate(40 261.5 119.5)"/><rect x="358" y="199" width="92" height="92" rx="12" fill="none" stroke="#d97706" stroke-width="2" opacity="0.15" transform="rotate(83 404 245)"/><rect x="498" y="76" width="97" height="97" rx="12" fill="none" stroke="#d97706" stroke-width="2" opacity="0.15" transform="rotate(126 546.5 124.5)"/>
+  <rect x="40" y="40" width="8" height="240" fill="url(#acc-prevent-accidental-in-app-purchases-complete-setup)" rx="4"/>
+  <text x="72" y="86" font-size="15" font-weight="700" fill="#d97706" font-family="Segoe UI, -apple-system, sans-serif" letter-spacing="2">STOREWISE · FAMILY</text>
+  <text x="72" y="136" font-size="30" font-weight="800" fill="#1f2937" font-family="Segoe UI, -apple-system, sans-serif">Prevent Accidental In-App Purchases: The</text>
+  <text x="72" y="174" font-size="21" font-weight="700" fill="#374151" font-family="Segoe UI, -apple-system, sans-serif">Complete Device Setup</text>
+  <text x="72" y="246" font-size="14" fill="#6b7280" font-family="Segoe UI, -apple-system, sans-serif">Every layer of defense against accidental purchases on iPhone and iPad: purchase authentication, Screen Time restrictions, Ask to Buy, gift-card-on…</text>
+</svg>
