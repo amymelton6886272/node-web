@@ -160,6 +160,7 @@ export const ARTICLE_SERIES = [
       'when-to-use-report-a-problem',
       'report-a-problem-refund-evidence-and-timing',
       'app-store-refund-request-checklist',
+      'subscription-dark-patterns-recognition-guide',
     ],
   },
   {
@@ -265,6 +266,7 @@ export const ARTICLE_SERIES = [
       'screen-time-purchase-controls',
       'family-sharing-ask-to-buy-and-unexpected-charges',
       'shared-payment-method-family-disputes',
+      'prevent-accidental-in-app-purchases-complete-setup',
     ],
   },
   {
@@ -301,9 +303,12 @@ export const ARTICLE_SERIES = [
       'ios-configuration-profile-vpn-certificate-danger-guide',
       'testflight-sideload-and-unofficial-install-risks',
       'apple-id-security-checklist',
+      'apple-account-recovery-locked-out-guide',
+      'passkeys-apple-account-security-upgrade-2026',
       'eu-dma-third-party-app-stores-safety-implications',
       'used-iphone-apple-id-purchase-history-check-before-buying',
       'cross-device-purchase-sync-ipad-mac-appletv-risks',
+      'fake-apple-support-refund-scams-how-to-verify',
     ],
   },
   {
@@ -339,6 +344,7 @@ export const ARTICLE_SERIES = [
       'spot-subscription-fatigue-apps',
       'when-paid-app-beats-subscription',
       'apple-id-purchase-history-audit',
+      'app-store-review-manipulation-fake-ratings-guide',
     ],
   },
   {
