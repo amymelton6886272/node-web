@@ -28,7 +28,7 @@ const articleSchema = {
   alternativeHeadline: article.titleZh,
   datePublished: article.publishedAt,
   dateModified: article.updatedAt,
-  author: { '@type': 'Organization', name: 'Storewise', url: SITE },
+  author: { '@type': 'Organization', name: 'Storewise Editorial Team', url: SITE },
   publisher: {
     '@type': 'Organization',
     name: 'Storewise',
@@ -82,7 +82,7 @@ const deviceSeriesSchema = series ? {
   })),
 } : null;
 ---
-<BaseLayout title={`${article.title} - Storewise`} description={article.description} path={path} ogType="article" ogImage={`${SITE}/og/${article.slug}.png`}>
+<BaseLayout title={`${article.title} · ${article.titleZh || article.title} - Storewise`} description={article.description} path={path} ogType="article" ogImage={`${SITE}/og/${article.slug}.png`}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
@@ -107,6 +107,8 @@ const deviceSeriesSchema = series ? {
       </div>
     )}
     <div class="articleMeta articleMetaTop">
+      <span class="lang-en">By Storewise Editorial Team</span>
+      <span class="lang-zh" lang="zh-CN">Storewise 编辑部</span>
       <span>Updated {article.updatedAt}</span>
       <span>{article.readTime}</span>
       <span>{article.category}</span>
